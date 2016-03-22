@@ -1,0 +1,236 @@
+
+ 
+html, body{
+            font-family: 'Roboto', sans-serif;
+            overflow-x:hidden;
+        }
+        .logoWrapper{
+            float:left;margin-left:15px;
+        }
+        .navMenu {
+            margin:0 15px 0 15px;
+            font-size:12px;
+            text-align:center;
+            font-weight:500;
+        }
+        .navButtonMobile{
+            display:none;
+        }
+        .navButtonMobile:hover{
+            background-color:rgba(0, 0, 0, 0.2);padding:8px 16px 9px 17px;border-radius:40px;margin:-6px -3px 0 0;
+        }
+        .navButton{
+            border:2px solid #fff;background-color:rgba(0, 0, 0, 0);border-radius:3px;padding:5px 20px 5px 20px;
+        }
+        .navButton:hover{
+            text-decoration:none;
+        }
+        .navButton:visited{
+            color:#fff;
+            text-decoration:none;
+        }
+        .buttonOrange{
+            background-color:#FF3D23;border:0px;color:#fff;height:40px;padding:12px 25px 32px 25px;border-radius:3px;font-weight:bold;
+        }
+        .buttonOrange:hover{
+            background-color:#FF2D23;
+        }
+        .primaryContent{
+            background-color:#fff;height:335px;padding-top:60px;
+        }
+        .moviePoster{
+            margin-top:20px;
+        }
+        .homeSecondTitle{
+            font-size:18px;font-weight:400;color:#555;padding:0 0 5px 0;
+        }
+        .moviePoster img{
+            width:100%;
+        }
+        .footerContent a{
+            color:#333;
+        }
+        
+        #content2Feature{
+            background-color:#e0e0e0;background-image:url(../../img/Groovy-feature-image-laptop.png);background-repeat: no-repeat;background-size:35%;background-position: right;
+        }
+        #content3Feature{
+            background-color:#fff;background-image:url(../../img/live-tv.png);background-repeat: no-repeat;background-size:48%;background-position: left;
+        }
+        #content5Feature{
+            background-color:#000;background-image:url(../../img/social-tv.png);background-repeat: no-repeat;background-size:45%;background-position: right;height:600px;
+        }
+        #content6Feature{
+            background-color:#fff;background-image:url(../../img/catch-up-tv.jpg);background-repeat: no-repeat;background-size:100%;background-position: cover;height:660px;text-align:center;
+        }
+        #content7Feature{
+            background-color:#fff;background-image:url(../../img/radio.png);background-repeat: no-repeat;background-size:100%;background-position:center bottom;text-align:center;
+        }
+        .featureContentWrap{
+            padding:0 10px 180px 10px;
+        }
+        .mainFeatureHeading{
+            margin-top:80px;margin-bottom:30px;font-weight:bold;font-size:40px;
+        }
+        .secondFeatureHeading{
+            font-size:30px;
+            padding-top:60px;
+        }
+        .featureParagraph{
+            font-size:18px;
+            font-weight:300;
+            color:#666;
+        }
+        /* Package */
+        .packageList{
+            padding:0 0 0 19px;font-size:16px;color:#555;font-weight:300;
+        }
+        .packageList li{
+            padding:5px 0 20px 0;
+        }
+        .buttonPackage{
+            background-color:rgba(255,255,255,0.2);
+            border-radius:5px;padding:12px 40px 12px 40px;
+        }
+        .buttonPackage:hover{
+            background-color:rgba(255,255,255,0);
+        }
+        
+        /* Support */
+        .supportMenuWrapper{
+            padding:150px 15px 50px 15px;width:300px;position:fixed;z-index: 1;
+        }
+        .supportMenu{
+            background-color:#f0f0f0;color:#000;font-size:18px;width:100%;border:0px;border-radius:5px;padding:15px 0 15px 0;margin-bottom:13px;
+        }
+        .supportContentWrapper{
+            padding:150px 10px 150px 10px;
+        }
+        .supportContent{
+            background-color:#f0f0f0;border-radius:5px;margin-top:15px;
+        }
+        .supportHeading4{
+            font-size:24px;font-weight:700;border-top:1px solid #aaa;padding:109px 0 0 0;margin-top:50px;
+        }
+        .supportButtonFaq{
+            font-weight:500;border:0px;width:100%;background-color:rgba(0, 0, 0, 0);font-size:16px;border-radius:5px;padding:30px 0 30px 15px;text-align:left;
+        }
+        .supportParagraphFaq{
+            padding:15px;color:#555;font-size:16px;
+        }
+        
+        /* Sign In, Sign Up, Forgot Password Card */
+        .signInCard{
+            width:500px;
+            padding-left:35px;
+            padding-right:35px;
+        }
+        
+        @media only screen and (max-width : 768px){
+            .navMenu{
+                display:none;
+            }
+            .navButtonMobile{
+                color:#fff;
+                display:inline;
+                background-color:rgba(0, 0, 0, 0);padding:2px 10px 9px 17px;border-radius:40px;border:0px;margin:0 3px 0 0;
+            }
+            .test4{
+                display:hide;
+            }
+            .homeSecondTitle{
+                text-align:center;
+            }
+            .logoWrapper{
+                margin-left:0px;
+            }
+            .primaryContent{
+                padding-bottom:330px;
+            }
+            .footerContent{
+                text-align:center;
+            }
+            .centerAtMobile{
+                text-align:center;
+            }
+            #content2Feature{
+                background-image: none !important;
+            }
+            #content3Feature{
+                background-image: none !important;
+            }
+            #content5Feature{
+                background-image: none !important;
+            }
+            #content6Feature{
+                background-image: none !important;
+                height:200px;
+            }
+            #content7Feature{
+                background-image: none !important;
+            }
+            
+            .featureContentWrap{
+                padding:0 10px 50px 10px;
+            }
+            .mainFeatureHeading{
+                font-size:25px;margin-top:40px;
+            }
+            .secondFeatureHeading{
+                font-size:25px;
+                padding-top:20px;
+            }
+            .featureParagraph{
+                font-size:15px;
+            }
+            .content1 p{
+                font-size:12px;
+            }
+            /* Support */
+            .supportMenuWrapper{
+                display:none;
+            }
+            .supportContentWrapper{
+                padding:150px 10px 50px 10px;
+            }
+            /* Sign In, Sign Up, Forgot Password Card */
+            .signInCard{
+                width:90%;
+                padding-left:10px;
+                padding-right:10px;
+            }
+        }
+        /* Animated Poster */
+        @keyframes animatedBackground {
+            0% { background-position: 0 0; }
+            100% { background-position: -22000px 0; }
+        }
+        @-moz-keyframes animatedBackground {
+            0% { background-position: 0 0; }
+            100% { background-position: -22000px 0; }
+        }
+        @-webkit-keyframes animatedBackground {
+            0% { background-position: 0 0; }
+            100% { background-position: -22000px 0; }
+        }
+        @-ms-keyframes animatedBackground {
+            0% { background-position: 0 0; }
+            100% { background-position: -22000px 0; }
+        }
+        @-o-keyframes animatedBackground {
+            0% { background-position: 0 0; }
+            100% { background-position: -20000px 0; }
+        }
+        
+        #animate-poster {  
+            height: 100%;
+            background-image: url(../../img/video-on-demand.jpg);
+            background-size: 1364px;
+            background-position: 0px 0px;
+        
+            animation: animatedBackground 800s linear infinite;
+            -moz-animation: animatedBackground 800s linear infinite;
+            -webkit-animation: animatedBackground 800s linear infinite;
+            -ms-animation: animatedBackground 800s linear infinite;
+            -o-animation: animatedBackground 800s linear infinite;
+        }

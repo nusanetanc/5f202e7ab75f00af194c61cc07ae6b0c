@@ -1,0 +1,93 @@
+body{
+font-family: 'Poppins', sans-serif;
+}
+
+.thumbnail1 {
+	 display: block;
+  padding: 4px;
+  margin-bottom: 20px;
+  line-height: 1.42857143;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  -webkit-transition: border .2s ease-in-out;
+       -o-transition: border .2s ease-in-out;
+          transition: border .2s ease-in-out;
+}
+.thumbnail1 > img,
+.thumbnail1 a > img {
+  margin-right: auto;
+  margin-left: auto;
+}
+a.thumbnail1:hover,
+a.thumbnail1:focus,
+a.thumbnail1.active {
+  border-color: #337ab7;
+}
+.thumbnail1 .caption {
+  padding: 9px;
+  color: #333;
+}
+#header-sidebar-member {
+  background-color:white;
+  width: 100%;  
+}
+.grey-background{
+  background-color: #e0e0e0;
+  padding:20px;
+}
+.background-btn-gray{
+  background-color: gray;
+  border:0px;
+}
+.background-btn-red{
+  background-color: #F1453C;
+  border:0px;
+}
+.background-btn-blue{
+  background-color: #3397F1;
+  border:0px;
+}
+.background-btn-yellow{
+  background-color: #FC9822;
+  border:0px;
+}
+.background-info-white{
+  background-color: #FFFFFF;
+  border:0px;
+}
+.background-info-gray{
+  background-color: gray;
+}
+.profile-img-card-sml {
+  border-radius:100em;
+    width: 30px;
+    height: 30px;
+}
+.profile-img-card-mdm {
+  border-radius:100em;
+    width: 50px;
+    height: 50px;
+}
+.profile-img-card-lrg {
+  border-radius:100em;
+    width: 70px;
+    height: 70px;
+}
+.profile-img-card-xlrg {
+    width: 250px;
+    height: 250px;
+}
+.pic-container {
+    height: 150px;
+    overflow-y: scroll;
+    overflow-position: 
+}
+.textBold{
+  font-weight: 600;
+}
+.sidebarProfile{
+  font-family:Arial;line-height:20px;
+}
+.sidebarProfile td{
+  padding-top:5px;
+}
