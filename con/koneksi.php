@@ -7,7 +7,7 @@
 	$col2 = $db->info; 
 	*/
 	$link = new MongoClient();
-	$db = $link->nusanettv;
+	$db = $link->test;
 	$col_user = $db->user;
 	$col_ticket = $db->ticket; 
 	$col_info = $db->info; 
