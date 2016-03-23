@@ -256,14 +256,14 @@
                             if (isset($_POST['active'])){
                                 $passwordBaru1 = $_POST['activepassword1'];
                                 $passwordBaru2 = $_POST['activepassword2'];
+                                $lokasifile= $_FILES['regisktp']['tmp_name'];
+                                $fileName = $_FILES['regisktp']['name']; 
                                 echo $passwordBaru1.'/'.$passwordBaru2;
-                                if ($passwordBaru1=="" || $passwordBaru2=="" || $_FILES['regisktp']['name']==""){ ?>
+                                if ($passwordBaru1=="" || $passwordBaru2=="" || $fileName==""){ ?>
                                 <b><h5 style="margin-top:10px;float:right;color:#fff;font-size:14px;text-align:right">Please enter your password and photo id card!!</h5></b><br/>
                                 <br/>
                             <?php    } else if ($passwordBaru1==$passwordBaru2){   
                                         $date = date("Y/m/d");
-                                    $lokasifile= $_FILES['regisktp']['tmp_name'];
-                                    $fileName = $_FILES['regisktp']['name']; 
                                     $dir = "./ktp/";
                                     $move = move_uploaded_file($lokasifile, "$dir".$fileName);
                                     $active_acount = $col_user->update(array("email"=>$email_aktif),
