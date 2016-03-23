@@ -12,7 +12,7 @@ if (!isset($_SESSION["id"])) {
 		$hal = "index";
 	}
 
-			include('con/koneksi.php');
+			//include('con/koneksi.php');
 			include('con/function.php');
 			include('themes/srclink.php');		
 			include('themes/header.php');
