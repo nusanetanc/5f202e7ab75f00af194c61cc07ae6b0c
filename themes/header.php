@@ -551,8 +551,8 @@
                                                                                   <p>Tempat : '.$location.', '.$decription.', '.$place.', '.$city.'</p>
                                                                                   <br/>
                                                                                   <p>Untuk mengaktifkan akun anda silahkan klik atau copy link berikut ini</p>
-                                                                                  <p><a href="'.$base_url.'/'.$result.'">Aktivasi</a></p>
-                                                                                  <p>groovy.id/'.$base_url.'</p>
+                                                                                  <p><a href="'.$base_url.'/?a='.$result.'">Aktivasi</a></p>
+                                                                                  <p>'.$base_url.'/?a='.$result.'</p>
                                                                                   <br/>
                                                                                   <p>Best Regards</p>
                                                                                   <p>Customer Service</p>
