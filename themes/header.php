@@ -70,6 +70,7 @@
                                             foreach($res as $row)
                                             { 
                                                 $email_aktif=$row['email'];
+                                                $id_aktif=$row['id_user'];
                                             } 
     if(empty($email_aktif)){
 ?>
@@ -269,7 +270,7 @@
                                     $active_acount = $col_user->update(array("email"=>$email_aktif),
                                                                         array('$set'=>array("password"=>$passwordBaru1, "aktif"=>"1", "ktp"=>$namaktp)));
                                     $detail_info=array("share_id"=>"00000000","description"=>"Selamat Bergabung dengan groovy tv, Selamat Menikmati Layanan Kami","date"=>$date);
-                                    $write_info = $col_info->insert(array("for"=>$id, "subject"=>"Selamat Bergabung Dengan groovy", "tanggal_update"=>$date, "informasi"=>array($detail_info)));
+                                    $write_info = $col_info->insert(array("for"=>$id_aktif, "subject"=>"Selamat Bergabung Dengan groovy", "tanggal_update"=>$date, "informasi"=>array($detail_info)));
                                     if ($active_acount && $write_info){
                                                                                     ?>
                                                                                 <script >

@@ -5,7 +5,7 @@ $(document).ready(function(){
     $('#editgagal').modal('hide');
 }); </script> 
 <?php
-	$id_info = $_GET['i'];
+	$id_info=new mongoId($_GET['i']);
 	$res = $col_info->find(array("id_info"=>$id_info));
 	foreach($res as $row)
 { 
