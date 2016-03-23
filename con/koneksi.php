@@ -7,7 +7,7 @@
 	$col2 = $db->info; 
 	*/
 	$link = new MongoClient("mongodb://groovy:1sampe8@localhost:27017/groovy");
-	$db = $link->test;
+	$db = $link->groovy;
 	$col_user = $db->user;
 	$col_ticket = $db->ticket; 
 	$col_info = $db->info; 
