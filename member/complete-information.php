@@ -6,7 +6,7 @@ $(document).ready(function(){
 }); </script> 
 <?php
 	$id_info=new mongoId($_GET['i']);
-	$res = $col_info->find(array("id_info"=>$id_info));
+	$res = $col_info->find(array("_id"=>$id_info));
 	foreach($res as $row)
 { 
 	$subject=$row['subject'];
