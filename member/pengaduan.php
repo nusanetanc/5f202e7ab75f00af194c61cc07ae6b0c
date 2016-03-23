@@ -25,6 +25,7 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 														$subject=$_POST['subject'];
 														$kategori=$_POST['kategori'];
 														$message=$_POST['message'];
+														$captcha=$_POST['g-recaptcha-response'];
 														$to=$_POST['to'];
 														$date = date("Y/m/d H:i:s");
 														$dateopen = date("Y/m/d");
@@ -32,6 +33,14 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 														$panjang = 45;
 														$txtlen = strlen($text)-1;
 														$result = '';
+							if ($subject=="" || $kategori=="" || $message=="" || !$captcha){ ?>
+										<div class="col-sm-9">
+											<div class="alert alert-dismissible alert-warning">
+							  					<button type="button" class="close" data-dismiss="alert">x</button>
+							  					Gagal Membuat Pengaduan, silahkan lengkapi pengaduan anda.
+											</div>
+										</div>	
+									<?php	} else {
 							for($i=1; $i<=$panjang; $i++){
 															$result .= $text[rand(0, $txtlen)];
 														 }
@@ -48,10 +57,7 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 							if ($insert) { ?>
 											<script type="" language="JavaScript">
 											document.location='../member/?hal=pengaduan'</script>
-							<?php 
-										}		
-											}
-							?>
+							<?php } } } ?>
 								<div class="col-sm-12 col-md-12 col-lg-9">
 									<div class="list-group">
 										<div class="panel" style="border:0px;" >
@@ -66,22 +72,22 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 								  					<div class="panel-body">		
 							  							<div class="col-sm-4">	
 								       						<select class="form-control" id="kategori" name="kategori">
-														       <option disabled selected="selected">Pilih Kategori</option>
+														       <option disabled selected="selected" value="">Pilih Kategori</option>
 														       <option>Tv</option>
 														       <option>Internet</option>
 														       <option>Billing</option>
 														     </select>
 								      					</div>
 								      					<div class="col-sm-8">	
-								       						 <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+								       						 <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
 								      					</div>
 								      					<div class="col-sm-12">
 								      						<br/>
-								       						<textarea class="form-control" rows="3" id="message" name="message" placeholder="Message" required></textarea>
+								       						<textarea class="form-control" rows="3" id="message" name="message" placeholder="Message"></textarea>
 								       						<br/>
 															<div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>
 															<br/>
-															<button class="btn btn-default background-btn-red" type="submit" name="kirim" id="kirim">KIRIM</button>
+															<input type="submit" class="btn btn-default background-btn-red" type="submit" name="kirim" id="kirim" value="KIRIM">
 														</div>	
 												</div>				
 										</div>
@@ -165,7 +171,7 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 			        								<br/>
 			        								<div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>	
 			        								<br/>
-			        								<button class="btn btn-default background-btn-red" type="submit" name="kirim" id="kirim">REPLY</button>
+			        								<input type="submit" class="btn btn-default background-btn-red" type="submit" name="kirim" id="kirim" value="REPLY">
 												</div>
 											</div>	
 										</li>
@@ -186,7 +192,7 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 			        								<br/>
 			        								<div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8" disabled="true"></div>	
 			        								<br/>
-			        								<button class="btn btn-default background-btn-red" type="submit" name="kirim" id="kirim" disabled="true">REPLY</button>
+			        								<input type="submit" class="btn btn-default background-btn-red" type="submit" name="kirim" id="kirim" disabled="true" value="REPLY">
 												</div>
 											</div>	
 										</li>

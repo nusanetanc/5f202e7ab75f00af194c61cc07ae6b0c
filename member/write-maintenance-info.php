@@ -27,7 +27,7 @@ $info=array(
 			"description"=>$inputDescription,
 			"date"=>$date
 		);					
-$insert = $col_info->insert(array("id_info"=>$id_info, "tempat"=>$inputTempat, "subject"=>$inputSubject, 
+$insert = $col_info->insert(array("id_info"=>$id_info, "tempat"=>$inputTempat, "subject"=>$inputSubject, "tanggal_update"=>$date,
 									"tanggal_maintenance"=>$inputTanggal, "status"=>$inputStatus, "informasi"=>array($info)));
 			if ($inputTempat=="All"){
 				$res0 = $col_user->find(array("level"=>"0"));

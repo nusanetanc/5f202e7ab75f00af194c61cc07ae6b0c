@@ -30,7 +30,9 @@ if ($level=="0"){
                         $foto = $row['foto'];
                         $ktp = $row['ktp'];
                         $tanggal_akhir = $row['tanggal_akhir'];
-                        $invoice = $row['invoice'];
+                        $no_virtual = $row['no_virtual'];
+                        $registrasi = $row['registrasi'];
+                        $status = $row['status'];
                       }
                     }                                            
   ?>
@@ -60,21 +62,20 @@ if ($level=="0"){
              foreach($res as $row)
                       {  
       ?>
-        <?php if ($row['title']<>"PAYMENT"){ ?>
-      <ul class="nav navbar-nav">  
-        <li ><a href="<?php echo $base_url_member; ?>/?hal=<?php echo $row['file']; ?>"  style="font-size:14px;padding-top:20px;padding-bottom:19px;font-weight:500; color:gray;"><i style="padding-right:10px;" class="fa fa-<?php echo $row['image']; ?> fa-lg"></i><?php echo $row['title'].' '; ?></a></li>
-      </ul>   
-        <?php } else { ?>
+        <?php if ($row['title']=="PAYMENT"){ ?>
       <ul class="nav navbar-nav dropdown navbar-primary">  
         <li class="dropdown-toggle" data-toggle="dropdown" style="font-size:14px;padding-top:20px;padding-bottom:17px;font-weight:500; color:gray; cursor:pointer;"><i style="padding-right:10px;" class="fa fa-<?php echo $row['image']; ?> fa-lg"></i><?php echo $row['title']; ?></li>
           <ul class="dropdown-menu nav navbar-nav navbar-primary">
             <li style="font-size:14px;font-weight:500; color:gray;"><a href="<?php echo $base_url_member; ?>?hal=payment">Verification Payment</a></li>
             <li style="font-size:14px;font-weight:500; color:gray;"><a href="<?php echo $base_url_member; ?>?hal=listpayment">List Payment</a></li>
           </ul>
+      </ul>  
+      <?php } else { ?>
+      <ul class="nav navbar-nav">  
+        <li ><a href="<?php echo $base_url_member; ?>/?hal=<?php echo $row['file']; ?>"  style="font-size:14px;padding-top:20px;padding-bottom:19px;font-weight:500; color:gray;"><i style="padding-right:10px;" class="fa fa-<?php echo $row['image']; ?> fa-lg"></i><?php echo $row['title'].' '; ?></a></li>
       </ul>    
       <?php } } ?>
       <ul class="dropdown nav navbar-nav navbar-right navbar-primary">
-        <li><a href="<?php echo $base_url; ?>"  style="color:gray;"><i style="padding-right:0px;" class="fa fa-bell-o fa-2x"></i></a></li>
           <li class="dropdown-toggle" data-toggle="dropdown">    
               <?php if ($foto=="" || $foto==null){ ?>
                           <img style="width:45px;height:45px;margin-top:7px;margin-left:10px;cursor:pointer" class="profile-img-card profile-img-card-mdm" src="<?php echo $base_url; ?>/img/Avatar_member.png"/>
@@ -83,7 +84,7 @@ if ($level=="0"){
        <?php } ?>
           </li>
             <ul class="dropdown-menu">
-              <li><a href="<?php echo $base_url_member; ?>/?hal=editprofile">Edit Profile</a></li>
+              <li><a href="<?php  ?>/?hal=editprofile">Edit Profile</a></li>
               <li><a href="<?php echo $base_url_member; ?>/?hal=logout">Logout</a></li>
             </ul>
         </ul>

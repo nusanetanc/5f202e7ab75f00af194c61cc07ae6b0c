@@ -6,14 +6,11 @@
   				    <div class="panel-body">
 		    					<table class="table table-striped table-hover ">
 								<?php
-									$res = $col_info->find();
+									$res = $col_info->find()->sort(array("tanggal_update"=>-1))->limit(5);
 									foreach($res as $row)
-									  { 
+									  { 											  								  	
 									  	if($row['tempat']==$tempat || $row['tempat']=="All" || $row['for']==$id) {
-										$tanggal = $row['tanggal_maintenance'];
-										if(empty($tanggal)){
-											$tanggal = $row['tanggal_info'];
-										}
+										$tanggal = $row['tanggal_update'];
 										$thn = substr($tanggal, 0,4);
 										$bln = substr($tanggal, 5,2);
 										$tgl = substr($tanggal, 8,10);
@@ -38,6 +35,7 @@
 									  </tbody>
 								<?php } } ?>	  
 								</table> 
+								<a href="<?php echo $base_url_member; ?>/?hal=information" class="btn btn-link">View All</a>
 					</div>
  				</div>
 			</div>

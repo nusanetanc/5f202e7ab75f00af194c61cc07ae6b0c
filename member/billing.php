@@ -1,5 +1,9 @@
 <?php
 if ($level=="0"){
+	if($no_virtual=="" || $no_virtual==null){ ?>
+		<script type="" language="JavaScript">
+		document.location='<?php echo $base_url_member; ?>'</script>
+<?php	}
 $date = date("Y/m/d");
 	$thn = substr($date, 0,4);
 	$bln = substr($date, 5,2);

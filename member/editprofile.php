@@ -26,11 +26,11 @@ if(isset($_SESSION['groovy_message'])){
 								$editPasswordbaru1=$_POST['editPasswordbaru1'];
 								$editPasswordbaru2=$_POST['editPasswordbaru2'];
 								
-if($editNama=="" || $editEmail=="" || $editPhone==""){	
+if($editNama=="" || $editEmail=="" || $editPhone=="" || $editPasswordlama=="" || $editPasswordbaru1=="" || $editPasswordbaru2=="" || $editPasswordbaru1<>$editPasswordbaru2 || $password<>$editPasswordlama){	
 				$_SESSION['groovy_message_status']="danger";
 				$_SESSION['groovy_message']="Edit profile data failed";
  } 
- else if (($editPasswordlama<>"" || $editPasswordbaru1<>"" || $editPasswordbaru2<>"") && ($editPasswordlama=="" || $editPasswordbaru1=="" || $editPasswordbaru2=="" || $editPasswordbaru1<>$editPasswordbaru2 || $password<>$editPasswordlama)) { 
+ else if ($editPasswordlama<>"" || $editPasswordbaru1<>"" || $editPasswordbaru2<>"") { 
 				$_SESSION['groovy_message_status']="danger";
 				$_SESSION['groovy_message']="Edit profile data failed";
  } else {

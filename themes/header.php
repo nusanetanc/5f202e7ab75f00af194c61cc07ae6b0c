@@ -69,9 +69,9 @@
         $res = $col_user->find(array("password"=>$a, "level"=>"0", "aktif"=>"0"));
                                             foreach($res as $row)
                                             { 
-                                                $id=$row['id_user'];
+                                                $email_aktif=$row['email'];
                                             } 
-    if(empty($id)){
+    if(empty($email_aktif)){
 ?>
     <script type="" language="JavaScript">
     document.location='<?php echo $base_url; ?>'</script>
@@ -81,6 +81,26 @@
     <script >
     $(document).ready(function(){
         $('#activationacountModal').modal('show');
+    }); </script> 
+            <?php  
+                    } }
+    if (isset($_GET['rp'])) {
+                            $change_id = new MongoId($_GET['rp']);
+        $res = $col_user->find(array("_id"=>$change_id, "aktif"=>"1"));
+                                            foreach($res as $row)
+                                            { 
+                                                $change_email=$row['email'];
+                                            } 
+    if(empty($change_email)){
+?>
+    <script type="" language="JavaScript">
+    document.location='<?php echo $base_url; ?>'</script>
+            <?php 
+    } else {
+?>
+    <script >
+    $(document).ready(function(){
+        $('#replacepasswordModal').modal('show');
     }); </script> 
             <?php  
                     } }
@@ -170,7 +190,8 @@
                                                             <?php
                                                             }   else {  
                                                                         $res = $col_user->findOne(array("email"=>$email)); 
-                                                                        if (empty($res['id_user'])) { ?>
+                                                                        $user_id=$res['_id'];
+                                                                        if (empty($res['email'])) { ?>
                                                                                 <script >
                                                                                 $(document).ready(function(){
                                                                                     $('#emailnotfoundModal').modal('show');
@@ -188,7 +209,7 @@
                                                                             <body>
                                                                               <p>Hi '.$nama.'.<br/>
                                                                               Jika anda lupa password akun groovy.id, Untuk proses penggantian kata sandi, silahkan link di bawah ini:.<br/>
-                                                                              <a href="groovy.id/'.$result.'">Aktivasi</a><br/>
+                                                                              <a href="groovy.id/?rp='.$user_id.'">Aktivasi</a><br/>
                                                                               </p>
                                                                               <br/>
                                                                               <br/>
@@ -230,31 +251,25 @@
                         <form style="form-group" method="post">
                             <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Masukan Password Anda" type="password" class="form-control" name="activepassword1" id="activepassword1">
                             <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Masukan Lagi Password Anda" type="password" class="form-control" name="activepassword2" id="activepassword2">
-                            <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="KTP" type="file" class="form-control" name="regisktp" id="regisktp">                             <?php
+                            <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="KTP" type="file" class="form-control" name="regisktp" id="regisktp">                             
+                            <?php
                             if (isset($_POST['active'])){
                                 $passwordBaru1 = $_POST['activepassword1'];
                                 $passwordBaru2 = $_POST['activepassword2'];
 
-                                if (empty($passwordBaru1) || empty($passwordBaru2)){ ?>
-                                <b><h5 style="margin-top:10px;float:right;color:#fff;font-size:14px;text-align:right">Please enter your password!!</h5></b><br/>
+                                if (empty($passwordBaru1) || empty($passwordBaru2) || empty($_FILES['regisktp'])){ ?>
+                                <b><h5 style="margin-top:10px;float:right;color:#fff;font-size:14px;text-align:right">Please enter your password and photo id card!!</h5></b><br/>
                                 <br/>
-                            <?php    } else if ($passwordBaru1==$passwordBaru2){
-                                    $text = 'abcdefghijklmnopqrstuvwxyz123457890';
-                                        $panjang = 40;
-                                        $txtlen = strlen($text)-1;
-                                        $id_info = '';
-                                        for($i=1; $i<=$panjang; $i++){
-                                            $id_info .= $text[rand(0, $txtlen)];
-                                        }    
+                            <?php    } else if ($passwordBaru1==$passwordBaru2){   
                                         $date = date("Y/m/d");
                                     $lokasifile= $_FILES['regisktp']['tmp_name'];
                                     $fileName = $_FILES['regisktp']['name']; 
                                     $dir = "./ktp/";
                                     $move = move_uploaded_file($lokasifile, "$dir".$fileName);
-                                    $active_acount = $col_user->update(array("id_user"=>$id),
-                                                                        array('$set'=>array("password"=>$passwordBaru1, "aktif"=>"1", "ktp"=>$fileName, "tanggal_info"=>$date)));
+                                    $active_acount = $col_user->update(array("email"=>$email_aktif),
+                                                                        array('$set'=>array("password"=>$passwordBaru1, "aktif"=>"1", "ktp"=>$fileName)));
                                     $detail_info=array("share_id"=>"00000000","description"=>"Selamat Bergabung dengan groovy tv, Selamat Menikmati Layanan Kami","date"=>$date);
-                                    $write_info = $col_info->insert(array("id_info"=>$id_info, "for"=>$id, "subject"=>"Selamat Bergabung Dengan groovy", "informasi"=>array($detail_info)));
+                                    $write_info = $col_info->insert(array("for"=>$id, "subject"=>"Selamat Bergabung Dengan groovy", "tanggal_update"=>$date, "informasi"=>array($detail_info)));
                                     if ($active_acount && $write_info){
                                                                                     ?>
                                                                                 <script >
@@ -278,6 +293,49 @@
             </div>
         </div>
         <!-- /Modal Forgot Password-->
+         <!-- Modal Replace Password-->
+        <div class="modal fade" id="replacepasswordModal" role="dialog" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog">
+                <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
+                    <div class="modal-body">
+                        <h4 class="modal-title" style="color:#fff;text-align:center;padding:8px 0 5px 0"><b>Change Password</b></h4><br/>
+                        <form style="form-group" method="post">
+                            <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Masukan Password Anda" type="password" class="form-control" name="changepassword3" id="changepassword3">
+                            <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Masukan Lagi Password Anda" type="password" class="form-control" name="changepassword4" id="changepassword4">                         
+                            <?php
+                            if (isset($_POST['change'])){
+                                $passwordBaru3 = $_POST['changepassword3'];
+                                $passwordBaru4 = $_POST['changepassword4'];
+
+                                if (empty($passwordBaru3) || empty($passwordBaru4)){ ?>
+                                <b><h5 style="margin-top:10px;float:right;color:#fff;font-size:14px;text-align:right">Please enter your password!</h5></b><br/>
+                                <br/>
+                            <?php    } else if ($passwordBaru3==$passwordBaru4){   
+                                    $change_password = $col_user->update(array("email"=>$change_email),
+                                                                        array('$set'=>array("password"=>$passwordBaru3)));
+                                    if ($change_password){
+                                                                                    ?>
+                                                                                <script >
+                                                                                $(document).ready(function(){
+                                                                                    $('#replacepasswordModal').modal('hide');
+                                                                                    $('#changepasswordvalidModal').modal('show');
+                                                                            });</script>
+                                                                                <?php }
+                                }  else  if ($passwordBaru3<>$passwordBaru4){
+                                                                                ?>
+                                                                           <b><h5 style="margin-top:10px;float:right;color:#fff;font-size:14px;text-align:right">Password don't macth !</h5></b><br/>
+                                                                           <br/>
+                                                                                <?php
+                                }
+                            }
+                            ?>  
+                            <center><input name="change" id="change" type="submit" style="background-color:#fff;border:0px;color:#333;height:40px;padding:0 40px 0 40px;margin-top:15px;border-radius:3px;font-weight:bold;" value="CHANGE"/></center>                      
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Replace Password-->
         <!-- Modal Sign Up-->
         <div class="modal fade" id="signupModal" role="dialog" data-toggle="modal" data-backdrop="static" data-keyboard="false">
             <div class="modal-dialog">
@@ -332,7 +390,7 @@
                                                                   $decription=$_POST['regisdescription'];
                                                                   $place=$_POST['regisplace'];
                                                                   $date = date("Y/m/d");
-                                                                  $add_date_2days = date('Y/m/d', strtotime("+2 days"));
+                                                                  //$add_date_2days = date('Y/m/d', strtotime("+2 days"));
                                                                   $date_days = date("d");
                                                                   $date_month = date("m");
                                                                   $date_years = date("y");  
@@ -448,7 +506,7 @@
                                                                                 }
                                                                             }
                                                                             $userid=new userId();
-                                                                            $id=$userid->baru();
+                                                                            $newid=$userid->baru();
                                                                             //generate password and code activation
                                                                                 $text = 'abcdefghijklmnopqrstuvwxyz123457890';
                                                                                 $panjang = 40;
@@ -470,9 +528,9 @@
                                                                                             $place=$row['place'];
                                                                                         }
 
-                                                                          $insert_customer=$col_user->insert(array("id_user"=>"9384758","nama"=>$name,"email"=>$email, "phone"=>$phone, "foto"=>"","level"=>"0","password"=>$result, "aktif"=>"0", "registrasi"=>"personal",
-                                                                                                                "tanggal_registrasi"=>$date, "paket"=>$package, "harga"=>$harga, "tanggal_akhir"=>$add_date_2days,"tanggal_aktivasi"=>"",
-                                                                                                                "tempat"=>$location, "kota"=>$city, "keterangan"=>$decription, "alamat"=>$place, "pembayaran"=>"0", "invoice"=>$date_month.$date_years.'001',"status"=>"registrasi")); 
+                                                                          $insert_customer=$col_user->insert(array("id_user"=>$newid,"nama"=>$name,"email"=>$email, "phone"=>$phone, "foto"=>"","level"=>"0","password"=>$result, "aktif"=>"0", "registrasi"=>"personal",
+                                                                                                                "tanggal_registrasi"=>$date, "paket"=>$package, "harga"=>$harga, "tanggal_akhir"=>"","tanggal_aktivasi"=>"",
+                                                                                                                "tempat"=>$location, "kota"=>$city, "keterangan"=>$decription, "alamat"=>$place, "pembayaran"=>"0", "no_virtual"=>"","status"=>"registrasi")); 
                                                                               // mail for customer to registrasi
                                                                                 $to = $email;
 
@@ -507,7 +565,7 @@
                                                                                 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
                                                                                 $headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
-                                                                                $headers .= 'Cc: cs@groovy.id' . "\r\n";
+                                                                                $headers .= 'Cc: cs@groovy.id, billing@groovy.id' . "\r\n";
 
                                                                                 mail($to, $subject, $message, $headers);
 
@@ -670,7 +728,19 @@
                 </div>
             </div> 
         </div>
-        <!-- /Location not Valid -->                          
+        <!-- /Location not Valid --> 
+        <!-- Modal Location not Valid -->
+        <div class="modal fade" id="changepasswordvalidModal" role="dialog"> 
+            <div class="modal-dialog">
+                <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h5 style="font-color=white;"><b>Password successfully replaced</b></h5>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <!-- /Modal Location not Valid -->                          
     <!-- /Header -->
     
     <!-- Content1 -->   
