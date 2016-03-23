@@ -251,7 +251,7 @@
                         <form style="form-group" method="post">
                             <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Masukan Password Anda" type="password" class="form-control" name="activepassword1" id="activepassword1">
                             <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Masukan Lagi Password Anda" type="password" class="form-control" name="activepassword2" id="activepassword2">
-                            <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="KTP" type="file" class="form-control" name="regisktp" id="regisktp">                             
+                            <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" type="file" class="form-control" name="regisktp" id="regisktp">                             
                             <?php
                             if (isset($_POST['active'])){
                                 $passwordBaru1 = $_POST['activepassword1'];
@@ -259,7 +259,7 @@
                                 $lokasifilektp= $_FILES['regisktp']['tmp_name'];
                                 $namaktp = $_FILES['regisktp']['name']; 
                                 echo $namaktp;
-                                if ($passwordBaru1=="" || $passwordBaru2=="" || !$_FILES['regisktp']){ ?>
+                                if ($passwordBaru1=="" || $passwordBaru2==""){ ?>
                                 <b><h5 style="margin-top:10px;float:right;color:#fff;font-size:14px;text-align:right">Please enter your password and photo id card!!</h5></b><br/>
                                 <br/>
                             <?php    } else if ($passwordBaru1==$passwordBaru2){   
