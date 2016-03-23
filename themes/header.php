@@ -259,7 +259,7 @@
                                 $lokasifilektp= $_FILES['regisktp']['tmp_name'];
                                 $namaktp = $_FILES['regisktp']['name']; 
                                 echo $namaktp;
-                                if ($passwordBaru1=="" || $passwordBaru2=="" || $namaktp==""){ ?>
+                                if ($passwordBaru1=="" || $passwordBaru2=="" || $_FILES['regisktp']['size'] == 0){ ?>
                                 <b><h5 style="margin-top:10px;float:right;color:#fff;font-size:14px;text-align:right">Please enter your password and photo id card!!</h5></b><br/>
                                 <br/>
                             <?php    } else if ($passwordBaru1==$passwordBaru2){   
