@@ -541,7 +541,7 @@
                                                                                 <body>
                                                                                   <p>Terimakasih telah registrasi di groovy.id berikut rincian data anda : </p>
                                                                                   <br/>
-                                                                                  <p>ID Customer : '.$id.'</p>
+                                                                                  <p>ID Customer : '.$newid.'</p>
                                                                                   <p>Nama : '.$name.'</p>
                                                                                   <p>Paket : '.$package.'</p>
                                                                                   <p>Email : '.$email.'</p>
@@ -551,8 +551,8 @@
                                                                                   <p>Tempat : '.$location.', '.$decription.', '.$place.', '.$city.'</p>
                                                                                   <br/>
                                                                                   <p>Untuk mengaktifkan akun anda silahkan klik atau copy link berikut ini</p>
-                                                                                  <p><a href="groovy.id/'.$result.'">Aktivasi</a></p>
-                                                                                  <p>groovy.id/'.$result.'</p>
+                                                                                  <p><a href="'.$base_url.'/'.$result.'">Aktivasi</a></p>
+                                                                                  <p>groovy.id/'.$base_url.'</p>
                                                                                   <br/>
                                                                                   <p>Best Regards</p>
                                                                                   <p>Customer Service</p>
