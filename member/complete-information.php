@@ -22,7 +22,7 @@ $(document).ready(function(){
   					<br/>
   				    <div class="panel-body">
   				    <?php 
-  				    $res = $col_info->findOne(array("id_info"=>$id_info));
+  				    $res = $col_info->findOne(array("_id"=>$id_info));
   				    $tempatinfo=$res['tempat'];
   				    foreach ($res['informasi'] as $informasi => $info) {
   				    													$tanggal = $info['date'];
