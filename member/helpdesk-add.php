@@ -22,6 +22,7 @@ if ($add_support){
       <p>Nama : '.$nama_sup.'<br/>
       	 Email : '.$email_sup.'<br/>
       	 Password : g56789 <br/>
+      	 Level Akses : Helpdesk<br/>
       	 Karena password default, silahkan login dan ganti password anda.<br/>
       </p>
       <br/>

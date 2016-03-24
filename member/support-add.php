@@ -9,6 +9,7 @@
 	$fileName = $_FILES['inputPhoto']['name']; 
 	$dir = "<?php echo $base_url_member; ?>/foto/";
 	$move = move_uploaded_file($lokasifile, "$dir".$fileName);
+	$nama_jab = lev($Jab_sup);
 if ($fileName==""){
 	$fileName="staff.jpg";
 }
@@ -23,6 +24,7 @@ if ($add_support){
       <p>Nama : '.$nama_sup.'<br/>
       	 Email : '.$email_sup.'<br/>
       	 Password : g56789 <br/>
+      	 Level Akses : '.$nama_jab.'<br/>
       	 Karena password default, silahkan login dan ganti password anda.<br/>
       </p>
       <br/>

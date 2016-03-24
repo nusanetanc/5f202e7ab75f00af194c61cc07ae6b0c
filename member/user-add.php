@@ -23,7 +23,7 @@ if ($add_support){
     <body>
       <p>Nama : '.$nama_sup.'<br/>
       	 Email : '.$email_sup.'<br/>
-      	 Level Akses : '.$Jab_sup.'<br/>
+      	 Level Akses : '.$nama_jab.'<br/>
       	 Password : g56789 <br/>
       	 Karena password default, silahkan login dan ganti password anda.<br/>
       </p>
