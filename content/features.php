@@ -2,7 +2,7 @@
     <div style="background-color:#fff;padding-bottom:80px;margin-top:40px;">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12"><img width="100%" src="<?php echo $base_url; ?>/img/Groovy-feature-image-tv.png"/></div>
+                <div class="col-sm-12"><img width="100%" src="<?php echo $base_url; ?>/img/background-feature-tv.png"/></div>
             
                 <div class="col-sm-12 text-center">
                     <h2 class="mainFeatureHeading">All entertainments in one product</h2>
