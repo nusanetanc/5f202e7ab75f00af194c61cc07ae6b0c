@@ -14,7 +14,11 @@ if ($fileName==""){
 }
 $add_support = $col_user->insert(array("id_user"=>$id_sup, "nama"=>$nama_sup, "email"=>$email_sup, "level"=>$jab_sup, "password"=>"g56789", "aktif"=>"1", "phone"=>$phone_sup, "foto"=>$fileName));
 if ($add_support){ 
-	$nama_jab = lev($Jab_sup);
+		if($jab_sup=="301"){
+			$nama_jab="Field Engineer";
+		} elseif($jab_sup=="302"){
+			$nama_jab="Assisten Field Engineer";
+		}
 	$to=$email_sup;
     $subject = 'User untuk groovy.id';
 
