@@ -158,27 +158,18 @@
 				  	<div class="text-center">
 				  	<br/>
 				  	<div class="row">
-				  		<div class="col-sm-3">
+				  		<div class="col-sm-5">
 				  			<a href="<?php echo $base_url_member; ?>/?hal=send-invoice" style=" text-decoration:none">
 							  	<b style="color:white; font-size:2em;"><i class="fa fa-check-square-o fa-2x"></i></b>
-							  	<h5 style="color:white;">Kirim Invoice</h5>
+							  	<h5 style="color:white;">Kirim Invoice(New Customer)</h5>
 							</a>  	
 						</div>
-						<div class="col-sm-1">								
+						<div class="col-sm-2">								
 						</div>
-					  	<div class="row">
-					  		<div class="col-sm-3">
-					  			<a href="<?php echo $base_url_member; ?>/?hal=payment" style=" text-decoration:none">
-								  	<b style="color:white; font-size:2em;"><i class="fa fa-check-square-o fa-2x"></i></b>
-								  	<h5 style="color:white;">verification</h5>
-								</a>  	
-							</div>
-							<div class="col-sm-1">								
-							</div>
-							<div class="col-sm-3">  
-								<a href="<?php echo $base_url_member; ?>/?hal=listpayment" style=" text-decoration:none">
+							<div class="col-sm-5">  
+								<a href="<?php echo $base_url_member; ?>/?hal=payment" style=" text-decoration:none">
 								  	<b style="color:white; font-size:2em;"><i class="fa fa-navicon fa-2x"></i></b>
-								  	<h5 style="color:white;">List</h5>
+								  	<h5 style="color:white;">List Customer</h5>
 								</a>  	
 							</div>  	
 					 	</div>

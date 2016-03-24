@@ -44,43 +44,8 @@ $date = date("Y/m/d");
 						                        $tanggal_akhir = $row['tanggal_akhir'];
 						                        $tanggal_aktif = $row['tanggal_aktif'];
 						                        $harga_paket = $row['harga'];
-	                                            	$no_invoice = $row['invoice'];
-	                                            	$noinvoice_3 = substr($no_invoice, 4,7);
-													$inovice_3last = substr($no_invoice, 4,7)+1;
-	                                                $date_month = substr($tanggal_akhir, 5,2);
-	                                                $date_years = substr($tanggal_akhir, 2,2);
-	                                                $count_no = count($inovice_3last);
+	                                            	$no_virtual = $row['no_virtual'];
 	                                        }
-$count_revenue = $col_revenue->find(array("date"=>$date));
-foreach ($count_revenue as $row_revenue) {
-                                        	$total_revenue=$row_revenue['total'];
-                                        }                                        
-						$res = $col_package->find(array("nama"=>$package_cust));
-						    foreach($res as $row)
-						    { 
-						        $harga=$row['harga'];
-						    }                                        
-if ($date_month=="12"){
-	$date_month = "01";
-	$date_years1 = substr($tanggal_akhir, 0,4)+1;
-} else {
-	$date_month = substr($tanggal_akhir, 5,2)+1;
-	$count_month = count($count_month);
-	if ($count_no=="1"){
-		$date_month='0'.$date_month;
-	}
-	$date_years1 = substr($tanggal_akhir, 0,4);
-}	   
-	$last_aktif = $date_years1.'/'.$date_month.'/'.'01';                                          
-	                                                
-						if ($count_no=="1"){
-							$last_noinvoice = $date_month.$date_years.'00'.$inovice_3last;
-						} else if ($count_no=="2"){
-							$last_noinvoice = $date_month.$date_years.'0'.$inovice_3last;
-						} else {
-							$last_noinvoice = $date_month.$date_years.$inovice_3last;
-						}										
-
 if(isset($_POST['verifikasi'])){  
 	$tanggal_bayar = $_POST['inputPaymentdate'];
 		$thn_bayar = substr($tanggal_bayar, 0,4);
@@ -264,7 +229,7 @@ if ($update_user && $update_bayar && $emailinvoice){
 							  </div>
 							</div>
 							<div class="form-group">
-							  <label class="col-lg-3 control-label">Paket/Harga : </label>
+							  <label class="col-lg-3 control-label">Paket Aktif/Harga : </label>
 							  <div class="col-lg-9">
 								<h4><?php echo $package_cust.'/'.$harga_paket; ?></h4>
 							  </div>
@@ -280,17 +245,11 @@ if ($update_user && $update_bayar && $emailinvoice){
 							  <div class="col-lg-9">
 								<h4><?php echo $tgl_registrasi.' '.$month_registrasi.' '.$thn_registrasi; ?></h4>
 							  </div>
-							</div>	
-							<div class="form-group">
-						      <label class="col-lg-3 control-label"> Tanggal Akhir Pembayaran : </label>
-						      <div class="col-lg-9">
-						        <h4><?php echo $tgl_akhir.' '.$month_akhir.' '.$thn_akhir; ?></h4>
-						      </div>
-						    </div>								
+							</div>								
 							<div class="form-group">
 							  <label class="col-lg-3 control-label">No Virtual : </label>
 							  <div class="col-lg-9">
-								<h4><?php echo $no_invoice; ?></h4>
+								<h4><?php echo $no_virtual ?></h4>
 							  </div>
 							</div>	
 							<div class="form-group">

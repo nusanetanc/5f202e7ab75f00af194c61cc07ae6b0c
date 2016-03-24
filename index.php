@@ -1,6 +1,8 @@
 <?php
-	$base_url="http://www.groovy.id/beta";
-	$base_url_member="http://www.groovy.id/beta/member";
+	$base_url="http://groovy.id/beta";
+	$base_url_member="http://groovy.id/beta/member";*/
+/*	$base_url="http://localhost/groovy";
+	$base_url_member="http://localhost/groovy/member"; */
 session_start();
 if (!isset($_SESSION["id"])) { 
 	if (isset($_GET['hal'])){	

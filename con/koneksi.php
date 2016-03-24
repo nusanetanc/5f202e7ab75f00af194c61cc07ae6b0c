@@ -1,13 +1,8 @@
-<?php /*
-	$server = "mongodb://groovy:1sampe8@localhost:27017/groovy";
-	$link = new MongoClient($server);
-	$db = $link->groovy;
-	$col = $db->groovy; 
-	$col1 = $db->ticket; 
-	$col2 = $db->info; 
-	*/
+<?php 
 	$link = new MongoClient("mongodb://groovy:1sampe8@localhost:27017/groovy");
-	$db = $link->groovy;
+	$db = $link->groovy; 
+/*	$link = new MongoClient();
+	$db = $link->nusanettv; */
 	$col_user = $db->user;
 	$col_ticket = $db->ticket; 
 	$col_info = $db->info; 
