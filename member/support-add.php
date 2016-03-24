@@ -13,7 +13,33 @@ if ($fileName==""){
 	$fileName="staff.jpg";
 }
 $add_support = $col_user->insert(array("id_user"=>$id_sup, "nama"=>$nama_sup, "email"=>$email_sup, "level"=>$jab_sup, "password"=>"g56789", "aktif"=>"1", "phone"=>$phone_sup, "foto"=>$fileName));
-if ($add_support){ ?>
+if ($add_support){ 
+	$to=$email_sup;
+    $subject = 'User untuk groovy.id';
+
+    $message = '
+    <html>
+    <body>
+      <p>Nama : '.$nama_sup.'<br/>
+      	 Email : '.$email_sup.'<br/>
+      	 Password : g56789 <br/>
+      	 Karena password default, silahkan login dan ganti password anda.<br/>
+      </p>
+      <br/>
+      <br/>
+      <p>groovy.id</p>
+    </body>
+    </html>
+    ';
+
+    $headers  = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+    $headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
+    $headers .= 'Cc: cs@groovy.id' . "\r\n";
+
+    mail($to, $subject, $message, $headers);
+	?>
 		<script type="" language="JavaScript">
 		document.location='<?php echo $base_url_member; ?>/?hal=support-list'</script>
 <?php	}
