@@ -13,7 +13,7 @@
 if ($fileName==""){
 	$fileName="staff.jpg";
 }
-$add_support = $col_user->insert(array("id_user"=>$id_sup, "nama"=>$nama_sup, "email"=>$email_sup, "level"=>$nama_jab, "password"=>"g56789", "aktif"=>"1", "phone"=>$phone_sup, "foto"=>$fileName));
+$add_support = $col_user->insert(array("id_user"=>$id_sup, "nama"=>$nama_sup, "email"=>$email_sup, "level"=>$Jab_sup, "password"=>"g56789", "aktif"=>"1", "phone"=>$phone_sup, "foto"=>$fileName));
 if ($add_support){ 
 	$to=$email_sup;
     $subject = 'User untuk groovy.id';

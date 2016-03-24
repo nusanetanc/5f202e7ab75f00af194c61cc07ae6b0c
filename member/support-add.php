@@ -9,12 +9,12 @@
 	$fileName = $_FILES['inputPhoto']['name']; 
 	$dir = "<?php echo $base_url_member; ?>/foto/";
 	$move = move_uploaded_file($lokasifile, "$dir".$fileName);
-	$nama_jab = lev($Jab_sup);
 if ($fileName==""){
 	$fileName="staff.jpg";
 }
 $add_support = $col_user->insert(array("id_user"=>$id_sup, "nama"=>$nama_sup, "email"=>$email_sup, "level"=>$jab_sup, "password"=>"g56789", "aktif"=>"1", "phone"=>$phone_sup, "foto"=>$fileName));
 if ($add_support){ 
+	$nama_jab = lev($Jab_sup);
 	$to=$email_sup;
     $subject = 'User untuk groovy.id';
 
