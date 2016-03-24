@@ -32,7 +32,7 @@
                 <div class="col-sm-4">
                     <div class="text-center" style="background-color:#ff6520;color:#fff;padding:45px 0 45px 0;border-radius:10px;margin-bottom:20px;">
                         <h5 style="font-size:26px;font-weight:200;">Gold</h5>
-                        <span style="font-size:45px;font-weight:600">799</span><br/>
+                        <span style="font-size:45px;font-weight:600">800</span><br/>
                         <span style="font-size:35px;line-height:20px;font-weight:200">RIBU</span><br/><br/>
                         <p style="font-size:13px;">for lorem ipsum dolor sit amet</p><br/>
                         <button style="background-image:url(<?php echo $base_url; ?>/img/gold-button.png);background-size:cover;border:0px;border-radius:5px;padding:10px 0 10px 0;font-weight:500;color:#000;" data-toggle="modal" data-target="#signupModal" data-dismiss="modal"><span class="buttonPackage">SUBSCRIBE</span></button>
