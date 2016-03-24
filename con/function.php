@@ -1,4 +1,5 @@
 <?php
+$kode_perusahaan ="123456";
 	function bulan($bln) {
 switch ($bln) {
 				case '12':
