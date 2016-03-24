@@ -31,15 +31,7 @@ $pdf->SetFillColor(224,235,255);
 $pdf->SetTextColor(0);
 $pdf->SetFont('');
 $fill=false;
-foreach ($data as $baris) {
-	$i = 0;
-	foreach ($baris as $cell) {
-		$pdf->Cell($header[$i]['length'], 5, $cell, 1, '0', $kolom['align'], $fill);
-		$i++;
-	}
-	$fill = !$fill;
-	$pdf->Ln();
-}
+
 $pdf->Ln();
 $pdf->Ln();
 $pdf->Ln();
