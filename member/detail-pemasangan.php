@@ -1,50 +1,40 @@
 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 <?php
 $id_cust = $_GET['id'];
+$date = date("Y/m/d");
+$date_days = date("d");
+$date_years = date("Y");
+$date_month = date("m");
+$date_month1 = bulan($date_month);
 $res = $col_user->find(array("id_user"=>$id_cust,"tanggal_aktivasi"=>"","status"=>"bayar","level"=>"0"));	
 						foreach ($res as $row) {
-					  $email_cust = $row['email'];
-                      $nama_cust = $row['nama'];
-                      $notelp_cust = $row['phone'];
-                      $tempat_cust = $row['tempat'];
-                      $kota_cust = $row['kota'];
-                      $alamat_cust = $row['alamat'];
-                      $keterangan_cust = $row['keterangan'];
-        $tanggal_akhir = $row['tanggal_akhir'];
-		$tanggal_aktiv = $row['tanggal_aktivasi'];
-		$tanggal_registrasi = $row['tanggal_registrasi'];
-		$nama_paket = $row['paket'];
-		$harga_paket = $row['harga'];
-	    $no_invoice = $row['invoice'];
-		$inovice_3last = substr($no_invoice, 4,7)+1;
-	    $date_month = substr($tanggal_akhir, 5,2);
-	    $date_years = substr($tanggal_akhir, 2,2);
-	    $count_no = count($inovice_3last);
-	$thn_regis = substr($tanggal_registrasi, 0,4);
-	$bln_regis = substr($tanggal_registrasi, 5,2);
-	$tgl_regis = substr($$tanggal_registrasi, 8,10);
-	$month_regis = bulan($bln_regis);
-}
-if ($date_month=="12"){
-	$date_month = "01";
-	$date_years1 = substr($tanggal_akhir, 0,4)+1;
-} else {
-	$date_month = substr($tanggal_akhir, 5,2)+1;
-	$count_month = count($count_month);
-	if ($count_no=="1"){
-		$date_month='0'.$date_month;
-	}
-	$date_years1 = substr($tanggal_akhir, 0,4);
-}	   
-	$last_aktif = $date_years1.'/'.$date_month.'/'.'01';                                          
-	                                                
-						if ($count_no=="1"){
-							$last_noinvoice = $date_month.$date_years.'00'.$inovice_3last;
-						} else if ($count_no=="2"){
-							$last_noinvoice = $date_month.$date_years.'0'.$inovice_3last;
-						} else {
-							$last_noinvoice = $date_month.$date_years.$inovice_3last;
-						}	
+												$tanggal_registrasi = $row['tanggal_registrasi'];
+												$thn_registrasi = substr($tanggal_registrasi, 0,4);
+												$bln_registrasi = substr($tanggal_registrasi, 5,2);
+												$tgl_registrasi = substr($tanggal_registrasi, 8,10);
+												$month_registrasi = bulan($bln_registrasi);
+
+												$registrasi_cust = $row['registrasi'];
+												$sales =$row['sales'];
+												$nama_cust = $row['nama'];
+												$email_cust = $row['email'];
+												$phone_cust = $row['phone'];
+												$package_cust = $row['paket'];
+												$tempat_cust = $row['tempat'];
+						                        $kota_cust = $row['kota'];
+						                        $status_cust = $row['status'];
+						                        $alamat_cust = $row['alamat'];
+						                        $ket_cust = $row['keterangan'];
+						                        $harga_paket = $row['harga'];
+	                                            $no_virtual = $row['no_virtual'];
+	                                            $pembayaran = $row['pembayaran'];
+	                                            $proraide = $row['proraide'];
+	                                        }
+$res1 = $col_package->find(array("nama"=>$package_cust));	
+						foreach ($res1 as $row1) {
+							$deskripsi_paket=$row1['deskripsi'];
+						}                                         
+	                                                	
 if (isset($_POST['save'])){
 	$tanggal_pasang = $_POST['inputTanggal'];
 	$boxtv = $_POST['inputKodebox'];
@@ -55,14 +45,7 @@ if (isset($_POST['save'])){
 		$bln_psng = substr($tanggal_pasang, 5,2);
 		$tgl_psng = substr($tanggal_pasang, 8,10);
 		$month_psng = bulan($bln_psng);
-					$tgl = substr($tanggal_pasang, 8,10);
-					$kurangtgl = 30-$tgl;
-					$paketperhari = $harga_paket/30;
-					$prorate = $paketperhari*$kurangtgl;
-					echo $tgl;
-					echo $kurangtgl;
-					echo $prorate;
-$update_user = $col_user->update(array("id_user"=>$id_cust),array('$set'=>array("harga"=>"$prorate"."000", "tanggal_pasang"=>$tanggal_pasang, "field_engginer"=>$support_field, "ass_field"=>$support_Assfield, "status"=>"progress pasang","invoice"=>$last_noinvoice, "tanggal_akhir"=>$last_aktif, "no_box"=>$boxtv)));
+$update_user = $col_user->update(array("id_user"=>$id_cust),array('$set'=>array("tanggal_pasang"=>$tanggal_pasang, "field_engginer"=>$support_field, "ass_field"=>$support_Assfield, "status"=>"progress pasang", "no_box"=>$boxtv)));
 $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$tanggal_pasang, "field_engineer"=>$support_field, "ass_field"=>$support_Assfield, "status"=>"progress", "id_customer"=>$id_cust, "nama_customer"=>$nama_cust, "tempat_customer"=>$tempat_cust, "alamat_customer"=>$alamat_cust, "kota_customer"=>$kota_cust ,"keterangan_customer"=>$keterangan_cust, "phone_customer"=>$notelp_cust, "paket"=>$nama_paket, "status"=>"progress", "no_box"=>$boxtv));
 		// mail for field engineer
 		$to = $support_field.', '.$support_Assfield;
@@ -123,7 +106,96 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 			$headers1 .= 'Cc: cs@groovy.id' . "\r\n";
 
 			$kirim_email1=mail($to1, $subject1, $message1, $headers1);
-if ($update_user && $insert_activty && $kirim_email1 && $kirim_email){ ?>
+							require('../content/scrpdf/fpdf.php');
+							$pdf = new FPDF();
+							$pdf->AddPage();
+							$pdf->SetFont('Arial','B','10');
+							$pdf->Cell(0,20, 'PT Media Andalan Nusa (Nusanet)', '0', 1, 'R');
+							$pdf->SetFont('Arial','B','14');
+							$pdf->Cell(0,10, 'FORMULIR PENDAFTRAN', '0', 5, 'C');
+							$pdf->Ln();
+							$pdf->SetFont('Arial','B','10');
+							$pdf->Cell(0,7, 'DATA PELANGGAN', '0', 1, 'L');
+							$pdf->Ln();
+							$pdf->SetFont('Arial','','10');
+							$pdf->Cell(0,7, 'Jenis Pendaftaran        : Baru', '0', 1, 'L');
+							$pdf->Cell(0,7, 'Nama Lengkap             : '.$nama_cust, '0', 1, 'L');
+							$pdf->Cell(0,7, 'No ID Pelanggan          : '.$id_cust, '0', 1, 'L');
+							$pdf->Cell(0,7, 'Alamat Pemasangan    : '.$tempat_cust.' '.$keterangan_cust.' '.$alamat_cust.' '.$kota_cust, '0', 1, 'L');
+							$pdf->Cell(0,7, 'Nomor Telepon             : '.$phone_cust, '0', 1, 'L');
+							$pdf->Ln();
+							$pdf->SetFont('Arial','B','10');
+							$pdf->Cell(0,7, 'LAYANAN', '0', 1, 'L');
+							$pdf->Ln();
+							$pdf->SetFont('Arial','','10');
+							$pdf->Cell(0,7, 'Jenis Layanan               : '.$package_cust.' - '.$deskripsi_paket, '0', 1, 'L');
+							$pdf->Cell(0,7, 'Layanan Tembahan      : No', '0', 1, 'L');
+							$pdf->Cell(0,7, 'Nomor SN STB             : '.$boxtv, '0', 1, 'L');
+							$pdf->Cell(0,7, 'Alamat Email                 : '.$email_cust, '0', 1, 'L');
+							$pdf->Cell(0,7, 'Kata Sandi                    : g456789', '0', 1, 'L');
+							$pdf->Ln();
+							$pdf->Ln();
+							$pdf->Ln();
+							$pdf->SetFont('Arial','B','10');
+							$pdf->Cell(0,7, 'Tanggal : '.$date_days.' '.$date_month1.' '.$date_years, '0', 1, 'R');
+							$pdf->SetFont('Arial','','10');
+							$pdf->Ln();
+							$pdf->Ln();
+							$pdf->Ln();
+							$pdf->Ln();
+							$pdf->Image('./img/tanda_tangan.jpg','165','185','33','33');
+							$pdf->SetFont('Arial','','10');
+							$pdf->Cell(0,7, 'John Doe              ', '0', 1, 'R');
+							$pdf->Cell(0,7, 'Customer Relation Officer', '0', 1, 'R');
+							$pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R');
+
+							// Filename that will be used for the file as the attachment
+							$fileatt_name = $id_cust.'-'.$tanggal_pasang.'-'.$boxtv.".pdf";
+							$dir='pasang/';
+							// save pdf in directory
+							$pdf ->Output($dir.$fileatt_name);
+
+							//....................
+
+							$data = $pdf->Output("", "S");
+
+							//..................
+
+							$email_subject = "[REGISTRATION] - Nusanet - ".$nama_cust; // The Subject of the email
+							$email_to = "nurhandiy@gmail.com"; // Who the email is to
+
+
+							$semi_rand = md5(time());
+							$data = chunk_split(base64_encode($data));
+
+							$fileatt_type = "application/pdf"; // File Type
+							$mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";
+
+							// set header ........................
+							$headers = "From: cs@groovy.id";
+							$headers .= "\nMIME-Version: 1.0\n" .
+							"Content-Type: multipart/mixed;\n" .
+							" boundary=\"{$mime_boundary}\"";
+
+							// set email message......................
+							$email_message = "Mohon segera diaktivasi STB dengan serial number  : ".$boxtv."<br>";
+							$email_message .= "Work Order : Instalasi<br>";// Message that the email has in it
+							$email_message .= "This is a multi-part message in MIME format.\n\n" .
+							"--{$mime_boundary}\n" .
+							"Content-Type:text/html; charset=\"iso-8859-1\"\n" .
+							"Content-Transfer-Encoding: 7bit\n\n" .
+							$email_message .= "\n\n";
+							$email_message .= "--{$mime_boundary}\n" .
+							"Content-Type: {$fileatt_type};\n" .
+							" name=\"{$fileatt_name}\"\n" .
+							"Content-Disposition: attachment;\n" .
+							" filename=\"{$fileatt_name}\"\n" .
+							"Content-Transfer-Encoding: base64\n\n" .
+							$data .= "\n\n" .
+							"--{$mime_boundary}--\n";
+
+							$sent_aktivasi = mail($email_to, $email_subject, $email_message, $headers);
+if ($update_user && $insert_activty && $kirim_email1 && $kirim_email && $sent_aktivasi){ ?>
 	<script type="" language="JavaScript">
 	document.location='<?php echo $base_url_member; ?>/?hal=setup-progress'</script>
 <?php }

@@ -242,7 +242,7 @@
 					  			<a href="<?php echo $base_url_member; ?>/?hal=setup-pending" style=" text-decoration:none">
 					  				<h5 style="color:white;">PENDING</h5>
 								  	<?php
-										$res = $col_user->find(array("tanggal_aktivasi"=>"","status"=>"bayar","level"=>"0"));
+										$res = $col_user->find(array("status"=>"registrasi","level"=>"0"));
 										$length = $res->count();
 														  { 
 
@@ -255,7 +255,7 @@
 								<a href="<?php echo $base_url_member; ?>/?hal=setup-progress" style=" text-decoration:none">
 									<h5 style="color:white;">PROGRESS</h5>
 								  	<?php
-										$res = $col_user->find(array("tanggal_aktivasi"=>"","status"=>"progress pasang","level"=>"0"));
+										$res = $col_user->find(array("status"=>"progress pasang","level"=>"0"));
 										$length = $res->count();
 														  { 
 

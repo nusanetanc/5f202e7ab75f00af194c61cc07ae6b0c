@@ -19,10 +19,9 @@
 						    </tr>
 						  </thead>
 						  <?php
-								$res = $col_history->find(array("status"=>"progress"))->sort(array("tanggal_kerja"));
+								$res = $col_history->find(array("status"=>"progress pasang"))->sort(array("tanggal_kerja"));
 								foreach($res as $row)
 								{ 
-									if ($row['status']<>"bayar"){
 						?>
 						  <tbody>
 						    <tr>
@@ -34,7 +33,7 @@
 						    </tr>
 						   </tbody>
 						<?php
-							} }
+							}
 						?>   
 						</table>    
 					</div>	
