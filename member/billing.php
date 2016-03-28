@@ -4,6 +4,12 @@ if ($level=="0"){
 												$bln_akhir = substr($tanggal_akhir, 5,2);
 												$tgl_akhir = substr($tanggal_akhir, 8,10);
 												$month_akhir = bulan($bln_akhir);
+
+												$thn_aktif = substr($tanggal_aktivasi, 0,4);
+												$bln_aktif = substr($tanggal_aktivasi, 5,2);
+												$tgl_aktif = substr($tanggal_aktivasi, 8,10);
+												$month_aktif = bulan($bln_aktif);
+	?>
 	?>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
@@ -17,6 +23,7 @@ if ($level=="0"){
 					<div class="col-sm-12">	
 						  <fieldset>
 						<p>No Virtual Pembayaran : <strong><?php echo $no_virtual; ?></strong>.</p><br/>
+						<p>Tanggal Mulai Aktif : <strong><?php echo $tgl_aktif.' '.$month_aktif.' '.$thn_aktif; ?></strong>.</p><br/>
 						<p>Tanggal Akhir Pembayaran : <strong><?php echo $tgl_akhir.' '.$month_akhir.' '.$thn_akhir; ?></strong>.</p><br/>
 						</div>
 							<table class="table table-striped table-hover ">
@@ -35,7 +42,7 @@ if ($level=="0"){
 						<?php 
 							$total_harga = $harga-$proraide;
 						?>
-						<p>Total Harga : <strong><?php echo $total_harga; ?></strong>.</p><br/>	
+						<p>Total Harga : <strong><?php echo $total_harga.'000,-'; ?></strong>.</p><br/>	
 						</fieldset>
 				</div>
 			</div>				

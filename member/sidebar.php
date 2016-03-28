@@ -62,10 +62,14 @@
                   <tr>
                     <td>Active Until</td> 
                     <td>&nbsp;:&nbsp;</td>
+                    <?php if($tanggal_akhir==""){ ?>
+                      <td class="textBold"><?php echo "Not Active";  ?></td>
+                    <?php } else { ?>
                     <td class="textBold"><?php $thn_akhir = substr($tanggal_akhir, 0,4);
                                       $bln_akhir = substr($tanggal_akhir, 5,2);
                                       $tgl_akhir = substr($tanggal_akhir, 8,10);
-                                      $month_akhir = bulan($bln_akhir); echo $tgl_akhir.' '.$month_akhir.' '.$thn_akhir;  ?></td>    
+                                      $month_akhir = bulan($bln_akhir); echo $tgl_akhir.' '.$month_akhir.' '.$thn_akhir;  ?></td> 
+                    <?php } ?>                  
                   </tr>
                 </table>    
                   <h5><a  style="margin-top:20px;" href="<?php echo $base_url_member; ?>/?hal=editprofile" class="btn btn-default background-btn-gray"><b>Update Your Profile</b></a></h5> 

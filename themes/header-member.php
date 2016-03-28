@@ -30,9 +30,11 @@ if ($level=="0"){
                         $foto = $row['foto'];
                         $ktp = $row['ktp'];
                         $tanggal_akhir = $row['tanggal_akhir'];
+                        $tanggal_aktivasi = $row['tanggal_aktivasi'];
                         $no_virtual = $row['no_virtual'];
                         $registrasi = $row['registrasi'];
                         $status = $row['status'];
+                        $proraide = $row['proraide'];
                       }
                     }                                            
   ?>
