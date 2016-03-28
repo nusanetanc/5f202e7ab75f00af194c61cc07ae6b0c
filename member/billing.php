@@ -31,12 +31,11 @@ if ($level=="0"){
  										<td><?php echo $harga; ?></td>
 									  </tbody>
 								</table> 
-						<div class="form-group">
-						  	<label class="col-lg-6 control-label">Total Harga : </label>
-						  <div class="col-lg-6">
-							<h4><?php echo $harga; ?></h4>
-						  </div>
-						</div>	
+						<p>Proraide : <strong><?php echo $proraide; ?></strong>.</p><br/>
+						<?php 
+							$total_harga = $harga-$proraide;
+						?>
+						<p>Total Harga : <strong><?php echo $total_harga; ?></strong>.</p><br/>	
 						</fieldset>
 				</div>
 			</div>				
