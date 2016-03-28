@@ -12,6 +12,8 @@
 		$id_cust = $_POST['id_cust'];
 		$update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("no_virtual"=>$kode_perusahaan.$id_cust)));
 		$res0 = $col_user->find(array("id_user"=>$id_cust,"level"=>"0"));
+		echo yudi;
+		echo $res0['email'];
 	require('../content/srcpdf/fpdf.php');
 	$header = array(
 		array("label"=>"Paket : ".$res0['paket'], "length"=>130, "align"=>"L"),
