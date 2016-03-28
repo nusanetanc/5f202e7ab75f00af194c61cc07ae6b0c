@@ -44,10 +44,19 @@ if (isset($_POST['save'])){
 		$bln_psng = substr($tanggal_pasang, 5,2);
 		$tgl_psng = substr($tanggal_pasang, 8,10);
 		$month_psng = bulan($bln_psng);
-$update_user = $col_user->update(array("id_user"=>$id_cust),array('$set'=>array("tanggal_pasang"=>$tanggal_pasang, "field_engginer"=>$support_field, "ass_field"=>$support_Assfield, "status"=>"progress pasang", "no_box"=>$boxtv)));
-$insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$tanggal_pasang, "field_engineer"=>$support_field, "ass_field"=>$support_Assfield, "status"=>"progress", "id_customer"=>$id_cust, "nama_customer"=>$nama_cust, "tempat_customer"=>$tempat_cust, "alamat_customer"=>$alamat_cust, "kota_customer"=>$kota_cust ,"keterangan_customer"=>$keterangan_cust, "phone_customer"=>$notelp_cust, "paket"=>$nama_paket, "status"=>"progress", "no_box"=>$boxtv));
+$res2 = $col_user->find(array("nama"=>$support_field, "level"=>"301"));	
+						foreach ($res2 as $row2) {
+							$email_field=$row1['email'];
+						} 	
+$res3 = $col_user->find(array("nama"=>$support_Assfield, "level"=>"302"));	
+						foreach ($res3 as $row3) {
+							$email_Assfield=$row1['email'];
+						} 
+$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("tanggal_pasang"=>$tanggal_pasang, "field_engginer"=>$support_field, "ass_field"=>$support_Assfield, "status"=>"progress pasang", "no_box"=>$boxtv)));
+$insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$tanggal_pasang, "field_engineer"=>$support_field, "ass_field"=>$support_Assfield, "status"=>"progress", "id_cust"=>$id_cust, "nama_cust"=>$nama_cust, "tempat_customer"=>$tempat_cust, "alamat_customer"=>$alamat_cust, "kota_customer"=>$kota_cust ,"keterangan_customer"=>$ket_cust, "phone_customer"=>$phone_cust, "paket"=>$package_cust, "status"=>"progress", "no_box"=>$boxtv));
+		
 		// mail for field engineer
-		$to = $support_field.', '.$support_Assfield;
+		$to = $email_field.', '.$email_Assfield;
 
 		$subject = 'Info Pemasangan';
 
@@ -56,12 +65,12 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 		<body>
 		  <p>Lakukan pemasangan dengan rincian customer berikut : </p>
 		  <br/>
-		  <p>Customer : '.$id_cust.' / '.$nama_cust.' / '.$notelp_cust.'</p>
-		  <p>Paket : '.$nama_paket.'</p>
+		  <p>Customer : '.$id_cust.' / '.$nama_cust.' / '.$phone_cust.'</p>
+		  <p>Paket : '.$package_cust.'</p>
 		  <p>Tanggal Registrasi : '.$tgl_regis.' '.$bln_regis.' '.$thn_regis.'</p>
-		  <p>Tempat : '.$tempat_cust.' '.$keterangan_cust.' '.$alamat_cust.' '.$kota_cust.'</p>
+		  <p>Tempat : '.$tempat_cust.' '.$ket_cust.' '.$alamat_cust.' '.$kota_cust.'</p>
 		  <p>No STB : '.$boxtv.'</p>
-		  <p>Tanggal Pemasangan : '.$tgl_psng.' '.$bln_psng.' '.$thn_psng.'</p>
+		  <p>Tanggal Pemasangan : '.$tgl_psng.' '.$month_psng.' '.$thn_psng.'</p>
 		  <p>Support : '.$support_field.' dan '.$support_Assfield.'</p>
 		  <br/>
 		  <p>Mohon untuk melakukan report pada halaman member di groovy.id setelah TV customer aktif</p>
@@ -85,7 +94,7 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 			<html>
 			<body>
 			  <p>Terima kasih sudah menjadi customer groovy,<br/>
-			  kami akan melakukan pemasangan dan aktivasi pada tanggal : '.$tgl_psng.' '.$bln_psng.' '.$thn_psng.',<br/>
+			  kami akan melakukan pemasangan dan aktivasi pada tanggal : '.$tgl_psng.' '.$month_psng.' '.$thn_psng.',<br/>
 			  untuk info lebih lanjut bisa membuat pengaduan pada halaman member anda.<br>
 			  Selamat menikmati layanan tv dari groovy.
 			</p>
@@ -194,6 +203,7 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 							"--{$mime_boundary}--\n";
 
 							$sent_aktivasi = mail($email_to, $email_subject, $email_message, $headers);
+
 if ($update_user && $insert_activty && $kirim_email1 && $kirim_email && $sent_aktivasi){ ?>
 	<script type="" language="JavaScript">
 	document.location='<?php echo $base_url_member; ?>/?hal=setup-progress'</script>
@@ -242,13 +252,13 @@ if ($update_user && $insert_activty && $kirim_email1 && $kirim_email && $sent_ak
 						    <div class="form-group">
 						      <label class="col-lg-3 control-label">Phone Number</label>
 						      <div class="col-lg-9">
-						        <h4>:<?php echo $notelp_cust; ?></h4>
+						        <h4>:<?php echo $phone_cust; ?></h4>
 						      </div>
 						    </div>
 						    <div class="form-group">
 						      <label class="col-lg-3 control-label">Paket</label>
 						      <div class="col-lg-9">
-						        <h4>:<?php echo $nama_paket; ?></h4>
+						        <h4>:<?php echo $package_cust; ?></h4>
 						      </div>
 						    </div>
 						    <div class="form-group">
