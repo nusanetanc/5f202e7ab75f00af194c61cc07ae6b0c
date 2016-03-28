@@ -11,7 +11,6 @@
 						<table class="table table-striped table-hover ">
 						  <thead>
 						    <tr>
-						      <th width="10%">ID Cust</th>
 						      <th width="20%">Customer</th>
 						      <th width="15%">Paket</th>
 						      <th width="35%">Location</th>
@@ -25,8 +24,7 @@
 						?>
 						  <tbody>
 						    <tr>
-						      <td><?php echo $row['id_customer']; ?></td>
-						      <td><?php echo $row['nama_customer'].' / '.$row['phone_customer']; ?></td>
+						      <td><?php echo $row['id_customer'].' / '.$row['nama_cust'].' / '.$row['phone_customer']; ?></td>
 						      <td><?php echo $row['paket']; ?></td>
 						      <td><?php echo $row['tempat_customer'].', '.$row['keterangan_customer'].', '.$row['kota_customer']; ?></td>
 						      <td><b><a href="<?php echo $base_url_member; ?>/?hal=report-jobs&id=<?php echo $row['id_customer']?>&status=progress&job=pasang" class="btn btn-success">Progress</a></b></td>						      
