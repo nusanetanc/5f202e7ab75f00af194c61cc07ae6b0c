@@ -65,9 +65,9 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 		<body>
 		  <p>Lakukan pemasangan dengan rincian customer berikut : </p>
 		  <br/>
-		  <p>Customer : '.$id_cust.' / '.$nama_cust.' / '.$phone_cust.'</p>
+		  <p>Customer : '.$id_cust.' / '.$nama_cust.' / '.$phone_cust.' / '.$email_cust.'</p>
 		  <p>Paket : '.$package_cust.'</p>
-		  <p>Tanggal Registrasi : '.$tgl_regis.' '.$bln_regis.' '.$thn_regis.'</p>
+		  <p>Tanggal Registrasi : '.$tgl_registrasi.' '.$bln_registrasi.' '.$thn_registrasi.'</p>
 		  <p>Tempat : '.$tempat_cust.' '.$ket_cust.' '.$alamat_cust.' '.$kota_cust.'</p>
 		  <p>No STB : '.$boxtv.'</p>
 		  <p>Tanggal Pemasangan : '.$tgl_psng.' '.$month_psng.' '.$thn_psng.'</p>
@@ -170,7 +170,7 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 							//..................
 
 							$email_subject = "[REGISTRATION] - Nusanet - ".$nama_cust; // The Subject of the email
-							$email_to = "nurhandiy@gmail.com"; // Who the email is to
+							$email_to = "nurhandiy@ymail.com"; // Who the email is to
 
 
 							$semi_rand = md5(time());
