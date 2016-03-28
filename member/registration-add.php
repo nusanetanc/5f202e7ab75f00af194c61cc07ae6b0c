@@ -189,7 +189,7 @@ foreach($res as $row)
                                           $headers .= 'Cc: cs@groovy.id, billing@groovy.id' . "\r\n";
 
                                           $kirimemail1 =mail($to, $subject, $message, $headers);
-if($insert_customer && $kirimemail && $kirimemail =1){                                          
+if($insert_customer && $kirimemail && $kirimemail){                                          
     echo '<p class="text-primary">Registration succeed, please wait for confirmation from the sales manager!</p>';
      } } } } ?>
 <section>
