@@ -99,8 +99,8 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust),array('$push'=>arra
 				//mail to bukti pembayaran
 				require('../content/srcpdf/fpdf.php');
 				$header = array(
-						array("label"=>"PAKET".$package_cust, "length"=>130, "align"=>"L"),
-						array("label"=>"HARGA".$harga_paket, "length"=>55, "align"=>"L")
+						array("label"=>"Paket : ".$package_cust, "length"=>130, "align"=>"C"),
+						array("label"=>"Harga : ".$harga_paket, "length"=>55, "align"=>"C")
 					);
 				$pdf = new FPDF();
 				$pdf->AddPage();
@@ -127,7 +127,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust),array('$push'=>arra
 				$pdf->SetTextColor(0);
 				$pdf->SetDrawColor(0,0,0);
 				foreach ($header as $kolom) {
-					$pdf->Cell($kolom['length'], 5, $kolom['label'], 1, '0', $kolom['align'], true);
+					$pdf->Cell($kolom['length'], 10, $kolom['label'], 5, '0', $kolom['align'], true);
 				}
 				$pdf->Ln();
 				$pdf->Ln();
@@ -145,10 +145,10 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust),array('$push'=>arra
 				$pdf->Image('../img/logo-nusanet.png','65','250','50');
 				$pdf->Image('../img/a.jpg','170','240','30');
 				// Filename that will be used for the file as the attachment
-				$fileatt_name = $no_virtual.$last_pembayaran;
+				$fileatt_name = $no_virtual.$last_pembayaran.'.pdf';
 				$dir='bukti/';
 				// save pdf in directory
-				$pdf ->Output($dir.$fileatt_name.'.pdf');
+				$pdf ->Output($dir.$fileatt_name);
 				//....................
 
 				$data = $pdf->Output("", "S");
