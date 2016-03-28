@@ -6,8 +6,7 @@ $date_days = date("d");
 $date_years = date("Y");
 $date_month = date("m");
 $date_month1 = bulan($date_month);
-echo yudi;
-$res = $col_user->find(array("id_user"=>$id_cust,"tanggal_aktivasi"=>"","status"=>"bayar","level"=>"0"));	
+$res = $col_user->find(array("id_user"=>$id_cust,"tanggal_aktivasi"=>"","status"=>"registrasi","level"=>"0"));	
 						foreach ($res as $row) {
 												$tanggal_registrasi = $row['tanggal_registrasi'];
 												$thn_registrasi = substr($tanggal_registrasi, 0,4);
@@ -34,8 +33,7 @@ $res = $col_user->find(array("id_user"=>$id_cust,"tanggal_aktivasi"=>"","status"
 $res1 = $col_package->find(array("nama"=>$package_cust));	
 						foreach ($res1 as $row1) {
 							$deskripsi_paket=$row1['deskripsi'];
-						}
-echo yudi;                                        	                                                	
+						}                                       	                                                	
 if (isset($_POST['save'])){
 	$tanggal_pasang = $_POST['inputTanggal'];
 	$boxtv = $_POST['inputKodebox'];
@@ -199,7 +197,7 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 if ($update_user && $insert_activty && $kirim_email1 && $kirim_email && $sent_aktivasi){ ?>
 	<script type="" language="JavaScript">
 	document.location='<?php echo $base_url_member; ?>/?hal=setup-progress'</script>
-<?php } } echo yudi; ?>
+<?php } } ?>
 <style>
     .datepicker{z-index:1151;}
 </style>
