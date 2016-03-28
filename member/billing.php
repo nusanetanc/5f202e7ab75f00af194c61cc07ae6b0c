@@ -1,90 +1,64 @@
 <?php
-if ($level=="0"){
-	if($no_virtual=="" || $no_virtual==null){ ?>
-		<script type="" language="JavaScript">
-		document.location='<?php echo $base_url_member; ?>'</script>
-<?php	}
-$date = date("Y/m/d");
-	$thn = substr($date, 0,4);
-	$bln = substr($date, 5,2);
-	$tgl = substr($date, 8,10);
-	$month = bulan($bln);
-$thn1 = substr($tanggal_akhir, 0,4);
-$bln1 = substr($tanggal_akhir, 5,2);
-$tgl1 = substr($tanggal_akhir, 8,2);
-$month1 = bulan($bln1);
-?>
+if ($level=="0"){ ?>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
 		<div class="list-group">
-			<div class="panel" style="border:0px;">
-  				<div class="panel-heading" style="background-color:#FF6D20">
-    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">TAGIHAN PEMBAYARAN</h3>
+			<div class="panel" style="border:0px;" >
+				<div class="panel-body" style="background-color:#1B5E12;">
+					<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">PAYMENT CUSTOMER</h3>
+				</div>
+				<div class="panel-body">
+					<br/>
+					<div class="col-sm-12">	
+						<form class="form-horizontal">
+						  <fieldset>
+							<div class="form-group">
+							  <label class="col-lg-3 control-label">Nama : </label>
+							  <div class="col-lg-9">
+								<h4><?php echo $nama_cust; ?></h4>
+							  </div>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>				
+  				<div class="panel-heading" style="background-color:#1B5E12">
+    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">History Payment</h3>
   				</div>
   					<br/>
-	  				    <div class="panel-body">
+  				    <div class="panel-body">
   				    	<div class="panel panel-default">
-  				    		<div class="col-sm-5">
-	  							<div class="well well-lg">
-	 					 	<h5><b>Ditagihkan Kepada </b></h5>
-	 					 	<br/>
-	 					 	<h6><b>ID Pelanggan : <?php echo $id; ?></b></h6>
-	 					 	<h6><b>Nama : <?php echo $nama; ?></b></h6>
-	 					 	<h6><b>Email : <?php echo $email; ?></b></h6>
-	 					 	<h6><b>Tempat : <?php echo $tempat.', '.$keterangan.', '.$alamat.', '.$kota; ?></b></h6>
-								</div>
-							</div>	
-							 <div class="col-sm-5">
-	  							<div class="well well-lg">
-	 					 	<h5><b>Bayar Kepada </b></h5>
-	 					 	<br/>
-	 					 	<h6><b>PT Media Andalan Nusa </b></h6>
-	 					 	<h6><b>Cyber Building 7th Floor, </b></h6>
-	 					 	<h6><b>Jl Kuningan Barat,</b></h6>
-	 					 	<h6><b>jakarta, Indonesia </b></h6>
-								</div>
-							</div>	
-							<div class="col-sm-2">
-								<img src="<?php echo $base_url; ?>/img/a.jpg" height="150px" width="150px"></img>
-								<h1><b><?php echo $invoice; ?></b></h1>
-							</div>
-							<div class="col-sm-12">
-							<h4>No Invoice : <b><?php echo $invoice; ?></b></h4>
-							<h5>Tanggal Invoice : <b><?php echo $tgl.' '.$month.' '.$thn; ?></b></h5>
-							<h5>Tanggal Jatuh Tempo : <b><?php echo $tgl1.' '.$month1.' '.$thn1; ?></b></h5>
-							<br/>
-							</div>
-							<div class="col-sm-12">
-								<table class="table table-striped table-hover ">
-								  <thead>
-								    <tr>
-								      <th width="50%">Deskripsi</th>
-								      <th width="50%">Jumlah</th>
-								    </tr>
-								  </thead>
-								  <tbody>
-								    <tr class="active">
-								      <td><?php echo $paket. ' (1 Bulan)'; ?></td>
-								      <td><?php echo $harga. ',-'; ?></td> 
-								    </tr>
-								  </tbody>
-								</table>
-								<div class="col-sm-7">
-									<h5 style="text-align:right;"><b>Total : <?php echo $harga. ',-'; ?></b></h5>
-									<br/>
-									<h5><b>Cara Melakukan Pembayaran</b></h5>
-									<h6><b>1. Pembayaran Dapat Dilakukan Dengan Melakukan Transfer Pada No Rekening Kami :</b></h6>
-									<h6><b>   - BCA (No Rek : 3453 xxxx xxx)</b></h6>
-									<h6><b>   - BRI (No Rek : 3453 xxxx xxx)</b></h6>
-									<h6><b>2. Login Di groovyplay.com Kemudian Konfirmasi Pembayaran Pada Dasboard Anda</b></h6>
-								</div>	
-								<div class="col-sm-12">
-									<p style="text-align:right;">
-									<a href="<?php echo $base_url_member; ?>/?hal=listpayment" class="btn" role="button" style="background-color:#757575; color:#fff">History Paymment</a>
-									<a href="<?php echo $base_url_member; ?>/invoicepdf.php" class="btn" role="button" style="background-color:#d50000; color:#fff">Print As PDF</a></p>
-									<h6><b>* Keterangan : Mohon Untuk Melakukan Pembayaran Sebelum Tanggal Jatuh Tempo</b></h6>
-								</div>
-							</div>	  
+		    					<table class="table table-striped table-hover ">
+									 <thead>
+									    <tr>
+									      <th width="20%">Tanggal Pembayaran</th>
+									      <th width="20%">Tanggal Konfirmasi</th>
+									      <th width="30%">Deskripsi</th>
+									      <th width="15%">Total</th>
+									    </tr>
+									  </thead>
+									  <?php
+										$res = $col_user->findOne(array("id_user"=>$id, "level"=>$level));	
+										foreach ($res['payment'] as $byr => $payment) {
+												$tanggal = $payment['tanggal_bayar'];
+											  	$thn = substr($tanggal, 0,4);
+											    $bln = substr($tanggal, 5,2);
+												$tgl = substr($tanggal, 8,10);
+											    $month = bulan($bln);
+												    $tanggal1 = $payment['tanggal_konfirmasi'];
+												  	$thn1 = substr($tanggal1, 0,4);
+												    $bln1 = substr($tanggal1, 5,2);
+													$tgl1 = substr($tanggal1, 8,10);
+												    $month1 = bulan($bln1);
+										?>
+									  <tbody>
+ 										<td><?php echo $tgl.' '.$month.' '.$thn; ?></td>
+ 										<td><?php echo $tgl1.' '.$month1.' '.$thn1; ?></td>
+									    <td>Pembayaran Paket <?php echo $payment['paket']; ?> </td>
+									    <td><?php echo $payment['harga'].',-'; ?></td>
+									  </tbody>
+									  <?php } ?>
+								</table> 
 						</div>
 					</div>
  				</div>

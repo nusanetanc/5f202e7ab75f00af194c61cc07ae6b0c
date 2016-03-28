@@ -90,7 +90,7 @@
 		$pdf->Image($base_url.'/img/a.jpg','170','220','30');
 
 // Filename that will be used for the file as the attachment
-$fileatt_name = $kode_perusahaan.$id_cust;
+$fileatt_name = $kode_perusahaan.$id_cust.'.pdf';
 $dir='invoice/';
 // save pdf in directory
 $pdf ->Output($dir.$fileatt_name);

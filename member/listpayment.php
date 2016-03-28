@@ -1,62 +1,3 @@
-<?php if($level=="0"){ ?>
-<section>
-	<div class="col-sm-9" style="font-family:Arial;">
-		<div class="list-group">
-			<div class="panel" style="border:0px;">
-  				<div class="panel-heading" style="background-color:#1B5E12">
-    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">History Payment</h3>
-  				</div>
-  					<br/>
-  				    <div class="panel-body">
-  				    	<div class="panel panel-default">
-		    					<table class="table table-striped table-hover ">
-									 <thead>
-									    <tr>
-									      <th width="15%">No Virtual</th>
-									      <th width="20%">Tanggal Pembayaran</th>
-									      <th width="20%">Tanggal Konfirmasi</th>
-									      <th width="30%">Deskripsi</th>
-									      <th width="15%">Total</th>
-									    </tr>
-									  </thead>
-									  <?php
-										$res = $col_user->findOne(array("id_user"=>$id, "level"=>$level));	
-										foreach ($res['payment'] as $byr => $payment) {
-												$tanggal = $payment['tanggal_bayar'];
-											  	$thn = substr($tanggal, 0,4);
-											    $bln = substr($tanggal, 5,2);
-												$tgl = substr($tanggal, 8,10);
-											    $month = bulan($bln);
-												    $tanggal1 = $payment['tanggal_konfirmasi'];
-												  	$thn1 = substr($tanggal1, 0,4);
-												    $bln1 = substr($tanggal1, 5,2);
-													$tgl1 = substr($tanggal1, 8,10);
-												    $month1 = bulan($bln1);
-										?>
-									  <tbody>
-									  	<td><?php echo $payment['invoice']; ?></td>
- 										<td><?php echo $tgl.' '.$month.' '.$thn; ?></td>
- 										<?php 
- 										if ($tanggal1 == ""){ ?>
- 												<td style="color:red;">waiting for payment activation</td> 
- 												<?php
- 										}else{ 
- 										?>
- 												<td><?php echo $tgl1.' '.$month1.' '.$thn1; ?></td>
- 											<?php } ?>	
-									    <td>Pembayaran Paket <?php echo $payment['paket']; ?> </td>
-									    <td><?php echo $payment['harga'].',-'; ?></td>
-									  </tbody>
-									  <?php } ?>
-								</table> 
-						</div>
-					</div>
- 				</div>
-			</div>
-		</div>
-	</div>	
-</section>
-<?php } else if ($level=="2"){ ?>
 <style>
     .datepicker{z-index:1151;}
 </style>
@@ -140,4 +81,3 @@
 			</div>
 		</div>
 </section>
-<?php } ?>

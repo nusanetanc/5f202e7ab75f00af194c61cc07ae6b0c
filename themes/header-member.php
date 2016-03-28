@@ -66,8 +66,8 @@ if ($level=="0"){
       <ul class="nav navbar-nav dropdown navbar-primary">  
         <li class="dropdown-toggle" data-toggle="dropdown" style="font-size:14px;padding-top:20px;padding-bottom:17px;font-weight:500; color:gray; cursor:pointer;"><i style="padding-right:10px;" class="fa fa-<?php echo $row['image']; ?> fa-lg"></i><?php echo $row['title']; ?></li>
           <ul class="dropdown-menu nav navbar-nav navbar-primary">
-            <li style="font-size:14px;font-weight:500; color:gray;"><a href="<?php echo $base_url_member; ?>?hal=payment">Verification Payment</a></li>
-            <li style="font-size:14px;font-weight:500; color:gray;"><a href="<?php echo $base_url_member; ?>?hal=listpayment">List Payment</a></li>
+            <li style="font-size:14px;font-weight:500; color:gray;"><a href="<?php echo $base_url_member; ?>?hal=payment">Kirim Invoice</a></li>
+            <li style="font-size:14px;font-weight:500; color:gray;"><a href="<?php echo $base_url_member; ?>?hal=listpayment">List Customer</a></li>
           </ul>
       </ul>  
       <?php } else { ?>
