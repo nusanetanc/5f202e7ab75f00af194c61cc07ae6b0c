@@ -19,7 +19,7 @@
 						    </tr>
 						  </thead>
 						  <?php
-								$res = $col_history->find(array("status"=>"done"))->sort(array("tanggal_selesai"));
+								$$res = $col_history->find(array("status"=>"done", "hal"=>"pasang"))->sort(array("tanggal_selesai"));
 								foreach($res as $row)
 								{ 
 									if ($row['status']<>"bayar"){

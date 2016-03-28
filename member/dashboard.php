@@ -255,7 +255,7 @@
 								<a href="<?php echo $base_url_member; ?>/?hal=setup-progress" style=" text-decoration:none">
 									<h5 style="color:white;">PROGRESS</h5>
 								  	<?php
-										$res = $col_user->find(array("status"=>"progress pasang","level"=>"0"));
+										$res = $col_history->find(array("status"=>"progress", "hal"=>"pasang"));
 										$length = $res->count();
 														  { 
 
@@ -268,7 +268,7 @@
 								<a href="<?php echo $base_url_member; ?>/?hal=setup-done" style=" text-decoration:none">
 									<h5 style="color:white;">DONE</h5>
 								  	<?php
-										$res = $col_history->find(array("status"=>"done"));
+										$res = $col_history->find(array("status"=>"done", "hal"=>"pasang"));
 										$length = $res->count();
 														  { 
 
