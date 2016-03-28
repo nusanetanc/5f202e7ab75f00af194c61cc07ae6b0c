@@ -115,7 +115,7 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 
 			$kirim_email1=mail($to1, $subject1, $message1, $headers1);
 							echo yudi1;
-							require('../content/scrpdf/fpdf.php');
+							require('../content/srcpdf/fpdf.php');
 							$pdf = new FPDF();
 							$pdf->AddPage();
 							$pdf->SetFont('Arial','B','10');
