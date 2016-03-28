@@ -1,7 +1,15 @@
-<?php
-	if(isset($_GET['kirim'])){
+<section>
+	<div class="col-sm-9" style="font-family:Arial;">
+		<div class="list-group">
+			<div class="panel" style="border:0px;">
+  				<div class="panel-body"  style="background-color:#1B5E12">
+    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">SEND INVOICE</h3>
+  				</div>
+  			  <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+  			  	<?php
+	if(isset($_POST['send'])){
 		
-		$id_cust = $_GET['kirim'];
+		$id_cust = $_POST['id_cust'];
 		$update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("no_virtual"=>$kode_perusahaan.$id_cust)));
 		$res0 = $col_user->find(array("id_user"=>$id_cust,"level"=>"0"));
 	$pdf = new FPDF();
@@ -111,13 +119,6 @@ $sent = mail($email_to, $email_subject, $email_message, $headers);?>
 		<script type="" language="JavaScript">
 		document.location='<?php echo $base_url_member; ?>/?hal=send-invoice'</script>
 <?php } ?>
-<section>
-	<div class="col-sm-9" style="font-family:Arial;">
-		<div class="list-group">
-			<div class="panel" style="border:0px;">
-  				<div class="panel-body"  style="background-color:#1B5E12">
-    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">SEND INVOICE</h3>
-  				</div>
   				<div class="panel-body">
   					<br/>
 					<div class="col-sm-12">	
@@ -130,7 +131,7 @@ $sent = mail($email_to, $email_subject, $email_message, $headers);?>
 						      <th width="15%">Paket</th>
 						      <th width="15%">Tgl Registrasi</th>
 						      <th width="15%">Registrasi</th>
-						      <th width="10%">Detail</th>
+						      <th width="10%">Kirim</th>
 						    </tr>
 						  </thead>
 						  <?php
@@ -141,19 +142,20 @@ $sent = mail($email_to, $email_subject, $email_message, $headers);?>
                       	?>
 						  <tbody>
 						    <tr>
-						      <td><?php echo $row['id_user']; ?></td>
+						      <td><?php echo $row['id_user']; ?><input type="hidden" value="<?php echo $row['id_user']; ?>" name="id_cust" id="id_cust"></td>
 						      <td><?php echo $row['nama'].' / '. $row['phone'].' / '.$row['email']; ?></td>
 						      <td><?php echo $kode_perusahaan.$row['id_user']; ?></td>
 						      <td><?php echo $row['paket']; ?></td>
 						      <td><?php echo $row['tanggal_registrasi']; ?></td>
 						      <td><?php echo $row['registrasi']; ?></td>
-						      <td><b><a href="<?php echo $base_url_member; ?>/?hal=send-invoice&kirim=<?php echo $row['id_user']; ?>" class="btn btn-primary btn-xs">Kirim Invoice</a></b></td>						      
+						      <td><input type="submit" name="send" id="send" class="btn btn-primary btn-xs" value="Invoice"></td>						      
 						    </tr>
 						   </tbody>
 					<?php } } ?>	   
 						</table>    
 					</div>	
  				</div>
+ 			  </form>	
 			</div>
 		</div>
 	</div>	
