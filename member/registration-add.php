@@ -5,6 +5,7 @@
                       { 
                           $email_sm = $row['email'];
                         }
+echo yudi1;
 if (isset($_POST['register'])){
                               $regisname= $_POST['regisname'];
                               $regisemail=$_POST['regisemail'];
@@ -83,7 +84,7 @@ class userId
 }
 $userid=new userId();
 $newid=$userid->baru();
-
+echo yudi2;
         if ($name=="" || $email=="" || $phone=="" || $package=="-- Select Package --" || $location=="-- Location --" || $decription==""){
                                                    echo '<p class="text-danger">Registration Failed, Please Try Again!</p>';
                                                     } else {     
@@ -107,6 +108,7 @@ foreach($res as $row)
 { 
     $email1=$row['email'];
 } 
+echo yudi3;
                       //generate password and code activation
                     $text = 'abcdefghijklmnopqrstuvwxyz123457890';
                     $panjang = 10;
@@ -115,7 +117,7 @@ foreach($res as $row)
                     for($i=1; $i<=$panjang; $i++){
                                                     $result .= $text[rand(0, $txtlen)];
                                                     }
-
+echo yudi4;
           if ($email1==$email){
                         echo '<p class="text-warning">Email already exist!!</p>';
                               } else {
@@ -188,7 +190,7 @@ foreach($res as $row)
                                           $headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
                                           $headers .= 'Cc: cs@groovy.id, billing@groovy.id' . "\r\n";
 
-                                          $kirimemail1 =mail($to, $subject, $message, $headers);
+                                          $kirimemail1 =mail($to, $subject, $message, $headers); echo yudi5;
 if($insert_customer && $kirimemail && $kirimemail){                                          
     echo '<p class="text-primary">Registration succeed, please wait for confirmation from the sales manager!</p>';
      } } } } ?>
