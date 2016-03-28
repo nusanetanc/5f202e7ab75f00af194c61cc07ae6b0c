@@ -144,7 +144,11 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust),array('$push'=>arra
 				$pdf->Image('../img/denstv-logo.png','10','250','50');
 				$pdf->Image('../img/logo-nusanet.png','65','250','50');
 				$pdf->Image('../img/a.jpg','170','240','30');
-
+				// Filename that will be used for the file as the attachment
+				$fileatt_name = $no_virtual.$last_pembayaran;
+				$dir='bukti/';
+				// save pdf in directory
+				$pdf ->Output($dir.$fileatt_name);
 				//....................
 
 				$data = $pdf->Output("", "S");
@@ -163,7 +167,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust),array('$push'=>arra
 
 				// set header ........................
 				$headers1 = "From: groovy.id <no_reply@groovy.id>";
-				$headers1 .= "\nMIME-Version: 1.0\n" .
+				$headers1.= "\nMIME-Version: 1.0\n" .
 				"Content-Type: multipart/mixed;\n" .
 				" boundary=\"{$mime_boundary}\"";
 
