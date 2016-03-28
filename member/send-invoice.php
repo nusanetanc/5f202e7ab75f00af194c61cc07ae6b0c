@@ -12,11 +12,10 @@
 		$id_cust = $_POST['id_cust'];
 		$update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("no_virtual"=>$kode_perusahaan.$id_cust)));
 		$res0 = $col_user->find(array("id_user"=>$id_cust,"level"=>"0"));
-	$pdf = new FPDF();
-	$pdf->AddPage();
+	require('../content/srcpdf/fpdf.php');
 	$header = array(
-		array("label"=>"DESKRIPSI PEMBAYARAN", "length"=>130, "align"=>"L"),
-		array("label"=>"HARGA", "length"=>55, "align"=>"L")
+		array("label"=>"Paket : ".$res0['paket'], "length"=>130, "align"=>"L"),
+		array("label"=>"Harga : ".$res0['harga'], "length"=>55, "align"=>"L")
 	);
 		$pdf = new FPDF();
 		$pdf->AddPage();
@@ -39,7 +38,7 @@
 		$pdf->SetTextColor(0);
 		$pdf->SetDrawColor(0,0,0);
 		foreach ($header as $kolom) {
-			$pdf->Cell($kolom['length'], 5, $kolom['label'], 1, '0', $kolom['align'], true);
+			$pdf->Cell($kolom['length'], 10, $kolom['label'], 1, '0', $kolom['align'], true);
 		}
 		$pdf->Ln();
 		$pdf->Ln();
