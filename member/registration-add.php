@@ -19,7 +19,72 @@ if (isset($_POST['register'])){
                               $date_years = date("y");
                               $date_days = date("d");  
                               $bulan1 = bulan($date_month);
-
+                //membuat id user
+                /**
+                 * Luhn algorithm
+                 *
+                 * The Luhn algorithm or Luhn formula, also known as the "modulus 10" or
+                 * "mod 10" algorithm, is a simple checksum formula used to validate a
+                 * variety of identification numbers, such as credit card numbers,
+                 * IMEI numbers, National Provider Identifier numbers in the US, and
+                 * Canadian Social Insurance Numbers. It was created by IBM scientist
+                 * Hans Peter Luhn and described in U.S. Patent No. 2,950,048, filed
+                 * on January 6, 1954, and granted on August 23, 1960.
+                 *
+                 * @author odan
+                 * @copyright 2015-2016 odan
+                 * @license http://opensource.org/licenses/MIT The MIT License (MIT)
+                 * @link https://github.com/odan/luhn
+                 */
+                class userId
+                {
+                    /**
+                     * Returns the luhn check digit
+                     *
+                     * @param string $s numbers as string
+                     * @return int checksum digit
+                     */
+                    public function baru(){
+                        $six_digit_random_number = mt_rand(000001, 999999);
+                        $s=new userId;
+                        $userid = $s->create($six_digit_random_number);
+                        return $six_digit_random_number.$userid;
+                    }
+                    public function create($s)
+                    {
+                        // Add a zero check digit
+                        $s = $s . '0';
+                        $sum = 0;
+                        // Find the last character
+                        $i = strlen($s);
+                        $odd_length = $i % 2;
+                        // Iterate all digits backwards
+                        while ($i-- > 0) {
+                            // Add the current digit
+                            $sum+=$s[$i];
+                            // If the digit is even, add it again. Adjust for digits 10+ by subtracting 9.
+                            ($odd_length == ($i % 2)) ? ($s[$i] > 4) ? ($sum+=($s[$i] - 9)) : ($sum+=$s[$i]) : false;
+                        }
+                        return (10 - ($sum % 10)) % 10;
+                    }
+                    public function validate($number)
+                    {
+                        $sum = 0;
+                        $numDigits = strlen($number) - 1;
+                        $parity = $numDigits % 2;
+                        for ($i = $numDigits; $i >= 0; $i--) {
+                            $digit = substr($number, $i, 1);
+                            if (!$parity == ($i % 2)) {
+                                $digit <<= 1;
+                            }
+                            $digit = ($digit > 9) ? ($digit - 9) : $digit;
+                            $sum += $digit;
+                        }
+                        return (0 == ($sum % 10));
+                    }
+                }
+                $userid=new userId();
+                $newid=$userid->baru();
 echo yudi2;
         if ($name=="" || $email=="" || $phone=="" || $package=="-- Select Package --" || $location=="-- Location --" || $decription==""){
                                                    echo '<p class="text-danger">Registration Failed, Please Try Again!</p>';
@@ -45,14 +110,7 @@ foreach($res as $row)
     $email1=$row['email'];
 } 
 echo yudi3;
-                      //generate password and code activation
-                    $text = 'abcdefghijklmnopqrstuvwxyz123457890';
-                    $panjang = 10;
-                    $txtlen = strlen($text)-1;
-                    $result = '';
-                    for($i=1; $i<=$panjang; $i++){
-                                                    $result .= $text[rand(0, $txtlen)];
-                                                    }
+
 echo yudi4;
           if ($email1==$email){
                         echo '<p class="text-warning">Email already exist!!</p>';
@@ -127,7 +185,7 @@ echo yudi4;
                                           $headers .= 'Cc: cs@groovy.id, billing@groovy.id' . "\r\n";
 
                                           $kirimemail1 =mail($to, $subject, $message, $headers); echo yudi5;
-if($insert_customer && $kirimemail && $kirimemail){                                          
+if($insert_customer && $kirimemail && $kirimemail1){                                          
     echo '<p class="text-primary">Registration succeed, please wait for confirmation from the sales manager!</p>';
      } } } } ?>
 <section>
