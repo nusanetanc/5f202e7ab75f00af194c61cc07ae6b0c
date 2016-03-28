@@ -2,9 +2,10 @@
 	if(isset($_POST['submit'])){
 			$inputPaket=$_POST['inputPaket'];
 			$inputHarga=$_POST['inputHarga'];
+			$inputHargahari=$_POST['inputHargahari'];
 			$inputDeskripsi=$_POST['inputDeskripsi'];
 
-$add_paket = $col_package->insert(array("nama"=>$inputPaket, "harga"=>$inputHarga, "deskripsi"=>$inputDeskripsi));
+$add_paket = $col_package->insert(array("nama"=>$inputPaket, "harga"=>$inputHarga, "harga_hari"=>$inputHargahari, "deskripsi"=>$inputDeskripsi));
 if ($add_paket){ ?>
 		<script type="" language="JavaScript">
 		document.location='<?php echo $base_url_member; ?>/?hal=package-list'</script>
@@ -26,15 +27,19 @@ if ($add_paket){ ?>
 		  				    	<form class="form-horizontal">
 								  <fieldset>
 									<div class="form-group">
-									  <label class="control-label" for="inputNama">Nama Paket</label>
+									  <label class="control-label" for="inputPaket">Nama Paket</label>
 									  <input type="text" class="form-control" id="inputPaket" name="inputPaket" placeholder="Masukan Nama Paket">
 									</div>								  
 									<div class="form-group">
-									  <label class="control-label" for="inputNama">Harga</label>
+									  <label class="control-label" for="inputHarga">Harga</label>
 									  <input type="text" class="form-control" id="inputHarga" name="inputHarga" placeholder="Masukan Harga Paket">
 									</div>
 									<div class="form-group">
-									  <label class="control-label" for="inputNama">Deskripsi</label>
+									  <label class="control-label" for="inputHargahari>Harga/Hari</label>
+									  <input type="text" class="form-control" id="inputHargahari" name="inputHargahari" placeholder="Masukan Harga Paket Perhari">
+									</div>
+									<div class="form-group">
+									  <label class="control-label" for="inputDeskripsi">Deskripsi</label>
 									  <textarea name="inputDeskripsi" id="inputDeskripsi" class="form-control" rows="3" id="textArea" placeholder="Masukan Deskripsi Paket"></textarea>
 									</div>
 									<div class="form-group">

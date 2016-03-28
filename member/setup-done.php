@@ -11,7 +11,6 @@
 						<table class="table table-striped table-hover ">
 						  <thead>
 						    <tr>
-						      <th width="10%">ID Cust</th>
 						      <th width="20%">Customer</th>
 						      <th width="15%">Paket</th>
 						      <th width="35%">Location</th>
@@ -19,22 +18,20 @@
 						    </tr>
 						  </thead>
 						  <?php
-								$$res = $col_history->find(array("status"=>"done", "hal"=>"pasang"))->sort(array("tanggal_selesai"));
+								$res = $col_history->find(array("status"=>"done", "hal"=>"pasang"))->sort(array("tanggal_kerja"));
 								foreach($res as $row)
 								{ 
-									if ($row['status']<>"bayar"){
 						?>
 						  <tbody>
 						    <tr>
-						      <td><?php echo $row['id_cust']; ?></td>
-						      <td><?php echo $row['nama_cust'].' / '.$row['phone_customer']; ?></td>
+						      <td><?php echo $row['id_cust'].' / '.$row['nama_cust'].' / '.$row['phone_customer']; ?></td>
 						      <td><?php echo $row['paket']; ?></td>
 						      <td><?php echo $row['tempat_customer'].', '.$row['keterangan_customer'].', '.$row['kota_customer']; ?></td>
-						      <td><b><a href="<?php echo $base_url_member; ?>/?hal=report-jobs&id=<?php echo $row['id_customer']?>&status=done&job=pasang" class="btn btn-success">Report</a></b></td>						      
+						      <td><b><a href="<?php echo $base_url_member; ?>/?hal=report-jobs&id=<?php echo $row['id_cust']?>&status=progress&job=pasang" class="btn btn-success">Progress</a></b></td>						      
 						    </tr>
 						   </tbody>
 						<?php
-							} }
+							}
 						?>   
 						</table>    
 					</div>	

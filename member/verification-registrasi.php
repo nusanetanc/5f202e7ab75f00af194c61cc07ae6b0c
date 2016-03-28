@@ -21,7 +21,7 @@
 									    </tr>
 									  </thead>
 									<?php 
-											  		$rslt = $col_user->find(array("level"=>"0", "registrasi"=>"sales", "status"=>"registrasi"));
+											  		$rslt = $col_user->find(array("level"=>"0", "registrasi"=>"sales", "status"=>"permintaan registrasi"));
 										  		foreach ($rslt as $row) {
 									   ?>
 									  <tbody>

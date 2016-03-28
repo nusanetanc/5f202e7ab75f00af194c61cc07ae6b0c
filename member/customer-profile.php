@@ -21,6 +21,7 @@
 										  	 $sales_cust=$row['sales'];
 										  	 $invoice_cust=$row['invoice'];
 										  	 $harga_cust=$row['harga'];
+										  	 $email_sales=$row['email_sales'];
 									$tanggal = $tglregis_cust;
 										  	$thn = substr($tanggal, 0,4);
 										    $bln = substr($tanggal, 5,2);
@@ -37,27 +38,20 @@
 											$tgl2 = substr($tanggal2, 8,10);
 										    $month2 = bulan($bln2);
 										  }
-									if(isset($_POST['konfirmregis'])){
-										$text = 'abcdefghijklmnopqrstuvwxyz123457890';
-                                        $panjang = 40;
-                                        $txtlen = strlen($text)-1;
-                                        $id_info = '';
-                                        for($i=1; $i<=$panjang; $i++){
-                                            $id_info .= $text[rand(0, $txtlen)];
-                                        }    
+									if(isset($_POST['konfirmregis'])){ 
                                         $date = date("Y/m/d");
                                     $lokasifile= $_FILES['regisktp']['tmp_name'];
                                     $fileName = $_FILES['regisktp']['name']; 
                                     $dir = "./ktp/";
                                     $move = move_uploaded_file($lokasifile, "$dir".$fileName);
-										$konfirmasi = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("status"=>"konfirmasi registrasi", "aktif"=>"1")));
+										$konfirmasi = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("status"=>"registrasi", "aktif"=>"0")));
 										$detail_info=array("share_id"=>"00000000","description"=>"Selamat Bergabung dengan groovy tv, Selamat Menikmati Layanan Kami","date"=>$date);
-                                    	$write_info = $col_info->insert(array("id_info"=>$id_info, "for"=>$id, "subject"=>"Selamat Bergabung Dengan groovy", "informasi"=>array($detail_info)));
+                                    	$write_info = $col_info->insert(array("for"=>$id_cust, "subject"=>"Selamat Bergabung Dengan groovy", "tanggal_update"=>$date, "informasi"=>array($detail_info)));
 	                                    	  //mail for sales manager
-	                                          $to = 'yudi.nurhandi@nusa.net.id';
-	                                          $subject = 'Veririfikasi Registrasi Sales';
+	                                          $to1 = $email_sales;
+	                                          $subject1 = 'Veririfikasi Registrasi Sales';
 
-	                                          $message = '
+	                                          $message1 = '
 	                                          <html>
 	                                          <body>
 	                                            <p>Regisrtrasi sudah di validasi oleh sales manager</p>
@@ -73,54 +67,51 @@
 	                                          </html>
 	                                          ';
 
-	                                          $headers  = 'MIME-Version: 1.0' . "\r\n";
-	                                          $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+	                                          $headers1  = 'MIME-Version: 1.0' . "\r\n";
+	                                          $headers1 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
-	                                          $headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
-	                                          $headers .= 'Cc: cs@groovy.id' . "\r\n";
+	                                          $headers1 .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
+	                                          $headers1 .= 'Cc: cs@groovy.id' . "\r\n";
 
-	                                          $kirimemail1 = mail($to, $subject, $message, $headers);
-	                                          // mail for customer to registrasi
-												$to = $email_cust;
+	                                          $kirimemail1 = mail($to1, $subject1, $message1, $headers1);
+																				// mail for customer to registrasi
+                                                                                $to2 = $email;
 
-												$subject = 'Registrasi groovy TV';
+                                                                                $subject2 = 'Registrasi groovy TV';
 
-												$message = '
-												<html>
-												<body>
-												  <p>Terimakasih telah registrasi di groovy.id berikut rincian data anda : </p>
-												  <br/>
-												  <p>ID Customer : '.$id_cust.'</p>
-												  <p>Nama : '.$nama_cust.'</p>
-												  <p>Paket : '.$paket_cust.'</p>
-												  <p>Email : '.$email_cust.'</p>
-												  <p>Phone : '.$phone_cust.'</p>
-												  <p>Tanggal Registrasi : '.$tgl.' '.$month.' '.$thn.'</p>
-												  <p>Registrasi : '.$regis_cust.' '.$sales_cust.'</p>
-												  <p>Tempat : '.$tempat_cust.', '.$alamat_cust.', '.$kota_cust.'</p>
-												  <br/>
-												  <p>Silahkan untuk melakukan pembayaran agar kami bisa memproses untuk pemasangan,</p>
-												  <p>Kode pembayaran adalah : '.$invoice_cust.'</p>
-												  <p>Anda harus melakukan pembyaran paling lambat : '.$tgl1.' '.$month1.' '.$thn1.'</p>
-												  <p>Untuk mengaktifkan akun anda silahkan klik atau copy link berikut ini</p>
-												  <p><a href="groovy.id/4328924hhvi432y432y3vh74bfid">Aktivasi</a></p>
-												  <p>groovy.id/4328924hhvi432y432y3vh74bfid</p>
-												  <br/>
-												  <p>Best Regards</p>
-												  <p>Customer Service</p>
-												  <p>groovy.id</p>
-												</body>
-												</html>
-												';
+                                                                                $message2 = '
+                                                                                <html>
+                                                                                <body>
+                                                                                  <p>Terimakasih telah registrasi di groovy.id berikut rincian data anda : </p>
+                                                                                  <br/>
+                                                                                  <p>ID Customer : '.$newid.'</p>
+                                                                                  <p>Nama : '.$nama_cust.'</p>
+                                                                                  <p>Paket : '.$package.'</p>
+                                                                                  <p>Email : '.$email_cust.'</p>
+                                                                                  <p>Phone : '.$phone_cust.'</p>
+                                                                                  <p>Tanggal Registrasi : '.$date_days.' '.$month1.' '.$date_years.'</p>
+                                                                                  <p>Registrasi : Personal</p>
+                                                                                  <p>Tempat : '.$location.', '.$decription.', '.$place.', '.$city.'</p>
+                                                                                  <br/>
+                                                                                  <p>Untuk mengaktifkan akun anda silahkan klik atau copy link berikut ini</p>
+                                                                                  <p><a href="'.$base_url.'/?a='.$result.'">Aktivasi</a></p>
+                                                                                  <p>'.$base_url.'/?a='.$result.'</p>
+                                                                                  <br/>
+                                                                                  <p>Best Regards</p>
+                                                                                  <p>Customer Service</p>
+                                                                                  <p>groovy.id</p>
+                                                                                </body>
+                                                                                </html>
+                                                                                ';
 
-												$headers  = 'MIME-Version: 1.0' . "\r\n";
-												$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+                                                                                $headers2  = 'MIME-Version: 1.0' . "\r\n";
+                                                                                $headers2 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
-												$headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
-												$headers .= 'Cc: cs@groovy.id' . "\r\n";
+                                                                                $headers2 .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
+                                                                                $headers2 .= 'Cc: cs@groovy.id, billing@groovy.id' . "\r\n";
 
-												mail($to, $subject, $message, $headers);
-									if ($konfirmasi && $write_info && $kirimemail){ ?>
+                                                                                $kirimemail2 = mail($to2, $subject2, $message2, $headers2);
+									if ($konfirmasi && $write_info && $kirimemail && $kirimemai2){ ?>
 										<p class="text-muted text-primary">Registrasi Customer telah di konfirmasi.!!</p>
 								<?php } } 	
 								?>

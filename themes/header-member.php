@@ -36,6 +36,9 @@ if ($level=="0"){
                         $status = $row['status'];
                         $proraide = $row['proraide'];
                       }
+if($level=="501"){
+                      $sm=$row['sm'];
+}
                     }                                            
   ?>
 <!DOCTYPE html>
