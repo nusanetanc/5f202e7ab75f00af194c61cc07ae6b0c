@@ -1,5 +1,5 @@
  <form enctype="multipart/form-data" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
-<?php
+<?php echo yudi0;
   $res = $col_user->find(array("id_user"=>$sm));
   foreach($res as $row)
                       { 
