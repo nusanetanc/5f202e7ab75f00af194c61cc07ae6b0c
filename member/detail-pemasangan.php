@@ -157,7 +157,7 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 							$pdf->Cell(0,7, 'Customer Relation Officer', '0', 1, 'R');
 							$pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R');
 							// Filename that will be used for the file as the attachment
-							$fileatt_name = $id_cust.'-'.$tanggal_pasang.'-'.$boxtv.".pdf";
+							$fileatt_name = $id_cust.'-'.$tgl_psng.$bln_psng.$thn_psng.'-'.$boxtv.".pdf";
 							$dir='pasang/';
 							// save pdf in directory
 							$pdf ->Output($dir.$fileatt_name);
