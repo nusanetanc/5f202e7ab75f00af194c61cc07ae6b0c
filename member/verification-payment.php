@@ -148,7 +148,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust),array('$push'=>arra
 				$fileatt_name = $no_virtual.$last_pembayaran;
 				$dir='bukti/';
 				// save pdf in directory
-				$pdf ->Output($dir.$fileatt_name);
+				$pdf ->Output($dir.$fileatt_name.'.pdf');
 				//....................
 
 				$data = $pdf->Output("", "S");
