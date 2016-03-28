@@ -19,7 +19,7 @@
 						    </tr>
 						  </thead>
 						  <?php
-								$res = $col_user->find(array("tanggal_aktivasi"=>"","status"=>"bayar","level"=>"0"))->sort(array("tanggal_registrasi"));
+								$res = $col_user->find(array("tanggal_aktivasi"=>"","status"=>"progress pasang","level"=>"0"))->sort(array("tanggal_registrasi"));
 								foreach($res as $row)
 								{ 
 						?>

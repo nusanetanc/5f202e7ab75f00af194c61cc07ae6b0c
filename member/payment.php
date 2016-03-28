@@ -12,10 +12,12 @@
 						<table class="table table-striped table-hover ">
 						  <thead>
 						    <tr>
-						      <th width="15%">ID Cust</th>
-						      <th width="30%">Customer</th>
-						      <th width="15">Pembayaran</th>
-						      <th width="30%">Waktu Akhir Pembayaran</th>
+						      <th width="10%">ID Cust</th>
+						      <th width="25%">Customer</th>
+						      <th width="10">No Virtual</th>
+						      <th width="10">Pembayaran</th>
+						      <th width="25%">Waktu Akhir Pembayaran</th>
+						      <th width="10%">Status</th>
 						      <th width="10%">Detail</th>
 						    </tr>
 						  </thead>
@@ -23,12 +25,14 @@
 					$res = $col_user->find(array("level"=>"0"));
 					foreach($res as $row) 
                       { if($row['no_virtual']<>""){ ?>
-						  <tbody>
+						  <tbody  style="position:center;">
 						    <tr>
 						      <td><?php echo $row['id_user']; ?></td>
 						      <td><?php echo $row['nama'].' / '. $row['phone'].' / '.$row['email']; ?></td>
+						      <td><?php echo $row['no_virtual']; ?></td>
 						      <td><?php echo $row['pembayaran']; ?></td>
 						      <td><?php echo $row['tanggal_akhir']; ?></td>
+						      <td><?php echo $row['status']; ?></td>
 						      <td><b><a href="<?php echo $base_url_member; ?>/?hal=verification-payment&id_cust=<?php echo $row['id_user']; ?>" class="btn btn-primary btn-xs">Show</a></b></td>						      
 						    </tr>
 						   </tbody>

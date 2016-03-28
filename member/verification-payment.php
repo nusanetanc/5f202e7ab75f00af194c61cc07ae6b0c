@@ -15,6 +15,7 @@
 <?php
 $id_cust = $_GET['id_cust'];
 $date = date("Y/m/d");
+$date_month = date("d");
 						$res = $col_user->find(array("id_user"=>$id_cust));
 						foreach($res as $row)
 											{ 
@@ -44,22 +45,29 @@ $date = date("Y/m/d");
 						                        $tanggal_akhir = $row['tanggal_akhir'];
 						                        $tanggal_aktif = $row['tanggal_aktif'];
 						                        $harga_paket = $row['harga'];
-	                                            	$no_virtual = $row['no_virtual'];
-	                                        }
+	                                            $no_virtual = $row['no_virtual'];
+	                                            $pembayaran = $row['pembayaran'];
+	                                            $proraide = $row['proraide'];
+	                                        } 
+	            $res_pack = $col_package->find(array("nama"=>$package_cust));
+	            foreach($res_pack as $row_pack) { $harga_hari = $row_pack['harga_hari']; }
 if(isset($_POST['verifikasi'])){  
-	$tanggal_bayar = $_POST['inputPaymentdate'];
+		$tanggal_bayar = $_POST['inputPaymentdate'];
 		$thn_bayar = substr($tanggal_bayar, 0,4);
 		$bln_bayar = substr($tanggal_bayar, 5,2);
 		$tgl_bayar = substr($tanggal_bayar, 8,10);
 		$month_bayar = bulan($bln_bayar);
+		$last_pembayaran = $pembayaran + 1;
 if ($total_revenue=="" || empty($total_revenue)){
 	$update_revenue = $col_revenue->insert(array("date"=>$date, "total"=>$harga_paket));
 } else {
 	$revenue=$total_revenue+$harga_paket;
 	$update_revenue = $col_revenue->update(array("date"=>$date), array('$set'=>array("total"=>$revenue.'.000')));
 }
-	if ($status_cust=="registrasi"){
-		$update_user = $col_user->update(array("id_user"=>$id_cust), array('$set'=>array("status"=>"bayar")));
+	if ($status_cust=="registrasi" || $status_cust=="konfirmasi registrasi" || $status_cust=="tidak aktif"){
+		$sisa_hari = 30-$date_month;
+		$last_proraide = $sisa_hari*$harga_hari;
+		$update_user = $col_user->update(array("id_user"=>$id_cust), array('$set'=>array("status"=>"progress pasang", "pembayaran"=>$last_pembayaran, "proraide"=>$last_proraide.'.000')));
 				// mail for supevisior teknik
 				$to = 'yudi.nurhandi@nusa.net.id';
 				$subject = 'Atur Jadwal Pemasangan';
@@ -84,15 +92,15 @@ if ($total_revenue=="" || empty($total_revenue)){
 				$headers .= 'Cc: cs@groovy.id' . "\r\n";
 				$emailpasang=mail($to, $subject, $message, $headers); 
 	} else {
-		$update_user = $col_user->update(array("id_user"=>$id_cust), array('$set'=>array("invoice"=>$last_noinvoice, "tanggal_akhir"=>$last_aktif, "harga"=>$harga)));
+		$update_user = $col_user->update(array("id_user"=>$id_cust), array('$set'=>array("tanggal_akhir"=>$last_aktif, "pembayaran"=>$last_pembayaran, "proraide"=>"0")));
 	}
-		$pay = array("tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date, "paket"=>$package_cust, "harga"=>$harga_paket, "invoice"=>$no_invoice);
+		$pay = array("tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date, "paket"=>$package_cust, "harga"=>$harga_paket, "no"=>$last_pembayaran);
 $update_bayar = $col_user->update(array("id_user"=>$id_cust),array('$push'=>array("payment"=>$pay))); 
 				//mail to bukti pembayaran
-				require('fpdf.php');
+				require('../content/srcpdf/fpdf.php');
 				$header = array(
-						array("label"=>"DESKRIPSI PEMBAYARAN", "length"=>130, "align"=>"L"),
-						array("label"=>"HARGA", "length"=>55, "align"=>"L")
+						array("label"=>"PAKET".$package_cust, "length"=>130, "align"=>"L"),
+						array("label"=>"HARGA".$harga_paket, "length"=>55, "align"=>"L")
 					);
 				$pdf = new FPDF();
 				$pdf->AddPage();
@@ -129,7 +137,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust),array('$push'=>arra
 				$pdf->Ln();
 				$pdf->SetFont('Arial','','10');
 				$pdf->Cell(0,7, 'Tanggal Bayar                : '.$tgl_akhir.' '.$month_akhir.' '.$thn_akhir, '0', 1, 'L');
-				$pdf->Cell(0,7, 'Kode Virtual                   : '.$no_invoice, '0', 1, 'L');
+				$pdf->Cell(0,7, 'Kode Virtual                   : '.$no_virtual, '0', 1, 'L');
 				$pdf->Cell(0,7, 'Jumlah Pembayaran      : '.$harga_paket, '0', 1, 'L');
 				$pdf->Ln();
 				$pdf->Ln();
@@ -138,7 +146,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust),array('$push'=>arra
 				$pdf->Image('../img/a.jpg','170','240','30');
 
 				// Filename that will be used for the file as the attachment
-				$fileatt_name = $id_cust."-".$no_invoice.".pdf";
+				$fileatt_name = $no_virtual.".pdf";
 				$dir='invoice/';
 				// save pdf in directory
 				$pdf ->Output($dir.$fileatt_name);
@@ -185,19 +193,19 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust),array('$push'=>arra
 				$data .= "\n\n" .
 				"--{$mime_boundary}--\n";
 
-				$emailinvoice = @mail($email_to, $email_subject, $email_message, $headers);
+				$emailinvoice = mail($email_to, $email_subject, $email_message, $headers);
 if ($update_user && $update_bayar && $emailinvoice){
 	?>
 		<script type="" language="JavaScript">
-		document.location='<?php echo $base_url_member; ?>/?hal=payment'</script>	
+		document.location='<?php echo $base_url_member; ?>/?hal=verification-payment&id_cust=<?php echo $id_cust; ?>'</script>	
 <?php } }
 ?>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
 		<div class="list-group">
 			<div class="panel" style="border:0px;" >
-				<div class="panel-body" style="background-color:#3FB618;">
-					<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">PAYMENT - VERIFIKASI PEMBAYARAN</h3>
+				<div class="panel-body" style="background-color:#1B5E12;">
+					<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">PAYMENT CUSTOMER</h3>
 				</div>
 				<div class="panel-body">
 					<br/>
@@ -229,9 +237,9 @@ if ($update_user && $update_bayar && $emailinvoice){
 							  </div>
 							</div>
 							<div class="form-group">
-							  <label class="col-lg-3 control-label">Paket Aktif/Harga : </label>
+							  <label class="col-lg-3 control-label">Paket Aktif/Harga/Proraide : </label>
 							  <div class="col-lg-9">
-								<h4><?php echo $package_cust.'/'.$harga_paket; ?></h4>
+								<h4><?php echo $package_cust.'/'.$harga_paket.'/'.$proraide; ?></h4>
 							  </div>
 							</div>
 							<div class="form-group">
@@ -262,12 +270,53 @@ if ($update_user && $update_bayar && $emailinvoice){
 								<br/>
 								<div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>	
 								<br/>
-								<input type="submit" class="btn btn-success" name="verifikasi" id="verifikasi" value="Vertifikasi">
+								<input type="submit" class="btn" style="background-color:#1B5E12; color:#FFFFFF" name="verifikasi" id="verifikasi" value="Vertifikasi">
 							  </div>
 							</div>	
 						  </fieldset>	
 						</form>    		
 					</div>	
+				</div>
+				<div class="col-sm-12">
+				<div class="list-group">
+			<div class="panel" style="border:0px;">
+  				<div class="panel-heading" style="background-color:#1B5E12">
+    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">DATA PEMBAYARAN - <?php echo $pembayaran; ?></h3>
+  				</div>
+	  					<br/>
+	  				    <div class="panel-body">
+	  				    <form method="post">
+	  				    <div class="row">
+	  				    	<div class="col-sm-12">
+		  				    	<table class="table table-striped table-hover ">
+									 <thead>
+									    <tr>
+									      <th width="20%">No</th>
+									      <th width="20%">Tanggal Pembayaran</th>
+									      <th width="20%">Tanggal Konfirmasi</th>
+									      <th width="20%">Deskripsi Pembayaran</th>
+									      <th width="20%">Total Harga</th>
+									    </tr>
+									  </thead>
+									  <?php 
+									  	$res = $col_user->findOne(array("id_user"=>$id_cust));	
+										foreach ($res['payment'] as $bayar => $byr) {
+									   ?>
+									  <tbody>
+									  	<td><?php echo $byr['no']; ?></td>
+									  	<td><?php echo $byr['tanggal_bayar']; ?></td>
+									  	<td><?php echo $byr['tanggal_konfirmasi']; ?></td>
+									  	<td><?php echo $byr['paket']; ?></td>
+									  	<td><?php echo $byr['harga']; ?></td>
+									  </tbody>
+									  <?php } ?>
+								</table>	  
+		  				    </div>
+		  				 </div>
+		  				 </form>
+		  				 </div>
+					  	</div>
+					</div>
 				</div>
 			</div>
 		</div>
