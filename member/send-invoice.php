@@ -92,7 +92,7 @@ $headers .= "\nMIME-Version: 1.0\n" .
 " boundary=\"{$mime_boundary}\"";
 
 // set email message......................
-$email_message = "No virtual pembayaran anda adalah : , waktu pembayaran pertama sampai tanggal : .<br>";
+$email_message = "No virtual pembayaran anda adalah :".$kode_perusahaan.$res0['id_user'].", proraide pembayaran ke dua dapat dilihat pada halaman billing di akun groovy.id anda.<br>";
 $email_message .= "This is a multi-part message in MIME format.\n\n" .
 "--{$mime_boundary}\n" .
 "Content-Type:text/html; charset=\"iso-8859-1\"\n" .

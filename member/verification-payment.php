@@ -127,7 +127,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust),array('$push'=>arra
 				$pdf->SetTextColor(0);
 				$pdf->SetDrawColor(0,0,0);
 				foreach ($header as $kolom) {
-					$pdf->Cell($kolom['length'], 5, $kolom['label'], 1, '0', $kolom['align'], true);
+					$pdf->Cell($kolom['length'], 10, $kolom['label'], 1, '0', $kolom['align'], true);
 				}
 				$pdf->Ln();
 				$pdf->Ln();
@@ -136,7 +136,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust),array('$push'=>arra
 				$pdf->Cell(0,7, 'KONFIRMASI PEMBAYRAN - PAYMENT CONFIRMATION', '0', 1, 'L');
 				$pdf->Ln();
 				$pdf->SetFont('Arial','','10');
-				$pdf->Cell(0,7, 'Tanggal Bayar                : '.$tgl_bayar.' '.$month_bayar.' '.$thn_bayar, '0', 1, 'L');
+				$pdf->Cell(0,7, 'Tanggal Bayar               : '.$tgl_bayar.' '.$month_bayar.' '.$thn_bayar, '0', 1, 'L');
 				$pdf->Cell(0,7, 'Kode Virtual                   : '.$no_virtual, '0', 1, 'L');
 				$pdf->Cell(0,7, 'Jumlah Pembayaran      : '.$harga_paket, '0', 1, 'L');
 				$pdf->Ln();
