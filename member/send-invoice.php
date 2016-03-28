@@ -39,7 +39,7 @@
 	);
 		$pdf = new FPDF();
 		$pdf->AddPage();
-		$pdf->Image('./img/groovy-logo-orange.png','140','15','60');
+		$pdf->Image($base_url.'/img/groovy-logo-orange.png','140','15','60');
 		$pdf->SetFont('Arial','B','20');
 		$pdf->Cell(0,30, '', '0', 5, 'L');
 		$pdf->Cell(0,10, 'INVOICE PEMBAYARAN', '0', 5, 'C');
