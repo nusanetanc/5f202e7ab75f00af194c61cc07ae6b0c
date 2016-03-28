@@ -86,9 +86,9 @@
 		$pdf->Ln();
 		$pdf->Ln();
 		$pdf->Cell(0,7, '* Tata cara pembayaran dapat dilihat pada FAQ web groovy.id', '0', 1, 'R');
-		$pdf->Image('../img/denstv-logo.png','10','230','50');
-		$pdf->Image('../img/logo-nusanet.png','65','230','50');
-		$pdf->Image('../img/a.jpg','170','220','30');
+		$pdf->Image($base_url.'/img/denstv-logo.png','10','230','50');
+		$pdf->Image($base_url.'/img/logo-nusanet.png','65','230','50');
+		$pdf->Image($base_url.'/img/a.jpg','170','220','30');
 
 // Filename that will be used for the file as the attachment
 $fileatt_name = $kode_perusahaan.$id_cust;
