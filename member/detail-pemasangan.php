@@ -114,6 +114,7 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 			$headers1 .= 'Cc: cs@groovy.id' . "\r\n";
 
 			$kirim_email1=mail($to1, $subject1, $message1, $headers1);
+							echo yudi;
 							require('../content/scrpdf/fpdf.php');
 							$pdf = new FPDF();
 							$pdf->AddPage();
@@ -156,13 +157,13 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 							$pdf->Cell(0,7, 'John Doe              ', '0', 1, 'R');
 							$pdf->Cell(0,7, 'Customer Relation Officer', '0', 1, 'R');
 							$pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R');
-
+							echo yudi;
 							// Filename that will be used for the file as the attachment
 							$fileatt_name = $id_cust.'-'.$tanggal_pasang.'-'.$boxtv.".pdf";
 							$dir='pasang/';
 							// save pdf in directory
 							$pdf ->Output($dir.$fileatt_name);
-
+							echo yudi;
 							//....................
 
 							$data = $pdf->Output("", "S");
@@ -170,7 +171,7 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 							//..................
 
 							$email_subject = "[REGISTRATION] - Nusanet - ".$nama_cust; // The Subject of the email
-							$email_to = "nurhandiy@ymail.com"; // Who the email is to
+							$email_to = "yudi.nurhandi@nusa.net.id"; // Who the email is to
 
 
 							$semi_rand = md5(time());
@@ -201,7 +202,7 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 							"Content-Transfer-Encoding: base64\n\n" .
 							$data .= "\n\n" .
 							"--{$mime_boundary}--\n";
-
+							echo yudi;
 							$sent_aktivasi = mail($email_to, $email_subject, $email_message, $headers);
 
 if ($update_user && $insert_activty && $kirim_email1 && $kirim_email && $sent_aktivasi){ ?>
