@@ -1,28 +1,57 @@
 <?php
-if ($level=="0"){ ?>
+if ($level=="0"){ 
+												$thn_akhir = substr($tanggal_akhir, 0,4);
+												$bln_akhir = substr($tanggal_akhir, 5,2);
+												$tgl_akhir = substr($tanggal_akhir, 8,10);
+												$month_akhir = bulan($bln_akhir);
+	?>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
 		<div class="list-group">
 			<div class="panel" style="border:0px;" >
-				<div class="panel-body" style="background-color:#1B5E12;">
-					<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">PAYMENT CUSTOMER</h3>
+				<div class="panel-body" style="background-color:#FF6D20;">
+					<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">BILLING</h3>
 				</div>
 				<div class="panel-body">
 					<br/>
 					<div class="col-sm-12">	
 						<form class="form-horizontal">
 						  <fieldset>
-							<div class="form-group">
-							  <label class="col-lg-3 control-label">Nama : </label>
-							  <div class="col-lg-9">
-								<h4><?php echo $nama_cust; ?></h4>
-							  </div>
-							</div>
+							<table class="table table-striped table-hover ">
+									 <thead>
+									    <tr>
+									      <th width="50%">Deskripsi Pembayaran</th>
+									      <th width="50%">Harga</th>
+									    </tr>
+									  </thead>
+									  <tbody>
+ 										<td>Paket <?php echo $paket; ?></td>
+ 										<td><?php echo $harga; ?></td>
+									  </tbody>
+								</table> 
 						</fieldset>
+						<div class="form-group">
+						  <label class="col-lg-3 control-label">No Virtual Pembayaran : </label>
+						  <div class="col-lg-9">
+							<h4><?php echo $no_virtual; ?></h4>
+						  </div>
+						</div>
+						<div class="form-group">
+						  <label class="col-lg-3 control-label">Tanggal Akhir Pembayaran : </label>
+						  <div class="col-lg-9">
+							<h4><?php echo $tgl1.' '.$month1.' '.$thn1; ?></h4>
+						  </div>
+						</div>
+						<div class="form-group">
+						  <label class="col-lg-3 control-label">Total Harga : </label>
+						  <div class="col-lg-9">
+							<h4><?php echo $harga; ?></h4>
+						  </div>
+						</div>
 					</form>
 				</div>
 			</div>				
-  				<div class="panel-heading" style="background-color:#1B5E12">
+  				<div class="panel-heading" style="background-color:#FF6D20">
     				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">History Payment</h3>
   				</div>
   					<br/>
