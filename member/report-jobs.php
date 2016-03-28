@@ -25,7 +25,7 @@ if ($update_user && $update_jobs){ ?>
 				<script type="" language="JavaScript">
 				document.location='<?php echo $base_url_member; ?>/?hal=jobs-list-pending'</script>	
 <?php } }
-$res = $col_history->find(array("id_customer"=>$id_cust, "status"=>$status_jobs, "hal"=>$nama_jobs));
+$res = $col_history->find(array("id_cust"=>$id_cust, "status"=>$status_jobs, "hal"=>$nama_jobs));
 foreach ($res as $row) {
 	$jobs_report = $row['catatan'];
 	$no_box = $row['no_box'];

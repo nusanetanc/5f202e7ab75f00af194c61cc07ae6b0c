@@ -26,8 +26,8 @@
 						?>
 						  <tbody>
 						    <tr>
-						      <td><?php echo $row['id_customer']; ?></td>
-						      <td><?php echo $row['nama_customer'].' / '.$row['phone_customer']; ?></td>
+						      <td><?php echo $row['id_cust']; ?></td>
+						      <td><?php echo $row['nama_cust'].' / '.$row['phone_customer']; ?></td>
 						      <td><?php echo $row['paket']; ?></td>
 						      <td><?php echo $row['tempat_customer'].', '.$row['keterangan_customer'].', '.$row['kota_customer']; ?></td>
 						      <td><b><a href="<?php echo $base_url_member; ?>/?hal=report-jobs&id=<?php echo $row['id_customer']?>&status=done&job=pasang" class="btn btn-success">Report</a></b></td>						      
