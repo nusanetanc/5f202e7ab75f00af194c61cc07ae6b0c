@@ -1,12 +1,10 @@
  <form enctype="multipart/form-data" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 <?php
- echo yudi0;
   $res = $col_user->find(array("id_user"=>$sm));
   foreach($res as $row)
                       { 
                           $email_sm = $row['email'];
                         }
-echo yudi1;
 if (isset($_POST['register'])){
                               $regisname= $_POST['regisname'];
                               $regisemail=$_POST['regisemail'];
@@ -19,7 +17,41 @@ if (isset($_POST['register'])){
                               $date_years = date("y");
                               $date_days = date("d");  
                               $bulan1 = bulan($date_month);
-                //membuat id user
+        if ($regisname=="" || $regisemail=="" || $regisphone=="" || $package=="-- Select Package --" || $location=="-- Location --" || $decription==""){
+                                                   echo '<p class="text-danger">Registration Failed, Please Try Again!</p>';
+                                                    } else {     
+        $lokasifile = $_FILES['regisktp']['tmp_name'];
+				$fileName = $_FILES['regisktp']['name']; 
+				$dir = "./ktp/";
+				$move = move_uploaded_file($lokasifile, "$dir".$fileName);                  
+$res = $col_location->find(array("name"=>$location));
+        foreach($res as $row)
+        { 
+            $city=$row['city'];
+            $place=$row['place'];
+        }                                 
+	    $res = $col_package->find(array("nama"=>$package));
+	    foreach($res as $row)
+		    { 
+		        $harga=$row['harga'];
+		    }   
+$res = $col_user->find(array("email"=>$email, "level"=>"0"));
+foreach($res as $row)
+{ 
+    $email1=$row['email'];
+} 
+                      //generate password and code activation
+                    $text = 'abcdefghijklmnopqrstuvwxyz123457890';
+                    $panjang = 10;
+                    $txtlen = strlen($text)-1;
+                    $result = '';
+                    for($i=1; $i<=$panjang; $i++){
+                                                    $result .= $text[rand(0, $txtlen)];
+                                                    }
+          if ($email1==$email){
+                        echo '<p class="text-warning">Email already exist!!</p>';
+                              } else {
+                                                //membuat id user
                 /**
                  * Luhn algorithm
                  *
@@ -85,43 +117,6 @@ if (isset($_POST['register'])){
                 }
                 $userid=new userId();
                 $newid=$userid->baru();
-echo yudi2;
-        if ($name=="" || $email=="" || $phone=="" || $package=="-- Select Package --" || $location=="-- Location --" || $decription==""){
-                                                   echo '<p class="text-danger">Registration Failed, Please Try Again!</p>';
-                                                    } else {     
-        $lokasifile = $_FILES['regisktp']['tmp_name'];
-				$fileName = $_FILES['regisktp']['name']; 
-				$dir = "./ktp/";
-				$move = move_uploaded_file($lokasifile, "$dir".$fileName);                  
-$res = $col_location->find(array("name"=>$location));
-        foreach($res as $row)
-        { 
-            $city=$row['city'];
-            $place=$row['place'];
-        }                                 
-	    $res = $col_package->find(array("nama"=>$package));
-	    foreach($res as $row)
-		    { 
-		        $harga=$row['harga'];
-		    }   
-$res = $col_user->find(array("email"=>$email, "level"=>"0"));
-foreach($res as $row)
-{ 
-    $email1=$row['email'];
-} 
-echo yudi3;
-                      //generate password and code activation
-                    $text = 'abcdefghijklmnopqrstuvwxyz123457890';
-                    $panjang = 10;
-                    $txtlen = strlen($text)-1;
-                    $result = '';
-                    for($i=1; $i<=$panjang; $i++){
-                                                    $result .= $text[rand(0, $txtlen)];
-                                                    }
-echo yudi4;
-          if ($email1==$email){
-                        echo '<p class="text-warning">Email already exist!!</p>';
-                              } else {
                                       $insert_customer=$col_user->insert(array("id_user"=>$newid,"nama"=>$regisname,"email"=>$regisemail, "phone"=>$regisphone, "foto"=>"","level"=>"0","password"=>$result, "aktif"=>"0", "ktp"=>$fileName, "registrasi"=>"sales", "id_sales"=>$id, "nama_sales"=>$nama,
                                                                             "email_sales"=>$email, "tanggal_registrasi"=>$date, "paket"=>$package, "harga"=>$harga, "tanggal_akhir"=>"","tanggal_aktivasi"=>"",
                                                                              "tempat"=>$location, "kota"=>$city, "keterangan"=>$decription, "alamat"=>$place, "pembayaran"=>"0", "no_virtual"=>"","status"=>"permintaan registrasi")); 
