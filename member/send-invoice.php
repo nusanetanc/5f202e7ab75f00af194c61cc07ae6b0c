@@ -10,7 +10,6 @@
 	if(isset($_POST['send'])){
 		
 		$id_cust = $_POST['id_cust'];
-		$update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("no_virtual"=>$kode_perusahaan.$id_cust)));
 		$res0 = $col_user->find(array("id_user"=>$id_cust,"level"=>"0"));
 		foreach($res0 as $row0)
 					{ 
@@ -134,7 +133,9 @@ $email_message .= "--{$mime_boundary}\n" .
 $data .= "\n\n" .
 "--{$mime_boundary}--\n";
 
-$sent = mail($email_to, $email_subject, $email_message, $headers);?>
+$sent = mail($email_to, $email_subject, $email_message, $headers);
+$update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("no_virtual"=>$kode_perusahaan.$id_cust)));
+?>
 		<script type="" language="JavaScript">
 		document.location='<?php echo $base_url_member; ?>/?hal=send-invoice'</script>
 <?php } ?>
