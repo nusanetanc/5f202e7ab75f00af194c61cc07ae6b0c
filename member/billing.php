@@ -17,6 +17,18 @@ if ($level=="0"){
 					<div class="col-sm-12">	
 						<form class="form-horizontal">
 						  <fieldset>
+						<div class="form-group">
+						  <label class="col-lg-3 control-label">No Virtual Pembayaran : </label>
+						  <div class="col-lg-9">
+							<h4><?php echo $no_virtual; ?></h4>
+						  </div>
+						</div>
+						<div class="form-group">
+						  <label class="col-lg-3 control-label">Tanggal Akhir Pembayaran : </label>
+						  <div class="col-lg-9">
+							<h4><?php echo $tgl_akhir.' '.$month_akhir.' '.$thn_akhir; ?></h4>
+						  </div>
+						</div>
 							<table class="table table-striped table-hover ">
 									 <thead>
 									    <tr>
@@ -29,25 +41,13 @@ if ($level=="0"){
  										<td><?php echo $harga; ?></td>
 									  </tbody>
 								</table> 
-						</fieldset>
 						<div class="form-group">
-						  <label class="col-lg-3 control-label">No Virtual Pembayaran : </label>
-						  <div class="col-lg-9">
-							<h4><?php echo $no_virtual; ?></h4>
-						  </div>
-						</div>
-						<div class="form-group">
-						  <label class="col-lg-3 control-label">Tanggal Akhir Pembayaran : </label>
-						  <div class="col-lg-9">
-							<h4><?php echo $tgl1.' '.$month1.' '.$thn1; ?></h4>
-						  </div>
-						</div>
-						<div class="form-group">
-						  <label class="col-lg-3 control-label">Total Harga : </label>
+						  	<label class="col-lg-3 control-label">Total Harga : </label>
 						  <div class="col-lg-9">
 							<h4><?php echo $harga; ?></h4>
 						  </div>
-						</div>
+						</div>	
+						</fieldset>
 					</form>
 				</div>
 			</div>				
