@@ -122,7 +122,76 @@ echo yudi4;
           if ($email1==$email){
                         echo '<p class="text-warning">Email already exist!!</p>';
                               } else {
-                                     
+                                      $insert_customer=$col_user->insert(array("id_user"=>$newid,"nama"=>$regisname,"email"=>$regisemail, "phone"=>$regisphone, "foto"=>"","level"=>"0","password"=>$result, "aktif"=>"0", "ktp"=>$fileName, "registrasi"=>"sales", "id_sales"=>$id, "nama_sales"=>$nama,
+                                                                            "email_sales"=>$email, "tanggal_registrasi"=>$date, "paket"=>$package, "harga"=>$harga, "tanggal_akhir"=>"","tanggal_aktivasi"=>"",
+                                                                             "tempat"=>$location, "kota"=>$city, "keterangan"=>$decription, "alamat"=>$place, "pembayaran"=>"0", "no_virtual"=>""",status"=>"permintaan registrasi")); 
+                                          //mail for sales manager
+                                          // multiple recipients
+                                          $to1 = $email_sm;
+
+                                          // subject
+                                          $subject1 = 'Veririfikasi Registrasi Sales';
+
+                                          // message
+                                          $message1 = '
+                                          <html>
+                                          <body>
+                                            <p>Mohon Segera di validasi customer baru</p>
+                                            <br/>
+                                            <p>ID Customer : '.$newid.'</p>
+                                            <p>Nama : '.$regisname.'</p>
+                                            <p>Alamat : '.$regisemail.'</p>
+                                            <p>Tanggal Registrasi : '.$date.'</p>
+                                            <p>Sales : '.$nama.'</p>
+                                            <p>Paket : '.$package.'</p>
+                                            <br/>
+                                          </body>
+                                          </html>
+                                          ';
+
+                                          // To send HTML mail, the Content-type header must be set
+                                          $headers1  = 'MIME-Version: 1.0' . "\r\n";
+                                          $headers1 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+                                          // Additional headers
+                                          $headers1 .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
+                                          $headers1 .= 'Cc: cs@groovy.id' . "\r\n";
+
+                                          // Mail it
+                                          $kirimemail = mail($to1, $subject1, $message1, $headers1);
+                                          // mail for customer to registrasi
+                                          $to = $regisemail;
+
+                                          $subject = 'Registrasi groovy TV';
+
+                                          $message = '
+                                          <html>
+                                          <body>
+                                            <p>Terimakasih telah registrasi di groovy.id berikut rincian data anda : </p>
+                                            <br/>
+                                            <p>ID Customer : '.$newid.'</p>
+                                            <p>Nama : '.$regisname.'</p>
+                                            <p>Paket : '.$package.'</p>
+                                            <p>Email : '.$regisemail.'</p>
+                                            <p>Phone : '.$regisphone.'</p>
+                                            <p>Tanggal Registrasi : '.$date_days.' '.$month1.' '.$date_years.'</p>
+                                            <p>Registrasi : Personal</p>
+                                            <p>Tempat : '.$location.', '.$decription.', '.$place.', '.$city.'</p>
+                                            <br/>
+                                            <p>Best Regards</p>
+                                            <p>Customer Service</p>
+                                            <p>groovy.id</p>
+                                          </body>
+                                          </html>
+                                          ';
+
+                                          $headers  = 'MIME-Version: 1.0' . "\r\n";
+                                          $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+                                          $headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
+                                          $headers .= 'Cc: cs@groovy.id, billing@groovy.id' . "\r\n";
+
+                                          $kirimemail1 =mail($to, $subject, $message, $headers); echo yudi5;
 if($insert_customer && $kirimemail && $kirimemail1){                                          
     echo '<p class="text-primary">Registration succeed, please wait for confirmation from the sales manager!</p>';
      } } } } ?>
