@@ -10,7 +10,6 @@ if ($level=="0"){
 												$tgl_aktif = substr($tanggal_aktivasi, 8,10);
 												$month_aktif = bulan($bln_aktif);
 	?>
-	?>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
 		<div class="list-group">
@@ -42,7 +41,7 @@ if ($level=="0"){
 						<?php 
 							$total_harga = $harga-$proraide;
 						?>
-						<p>Total Harga : <strong><?php echo $total_harga.'000,-'; ?></strong>.</p><br/>	
+						<p>Total Harga : <strong><?php echo $total_harga.'.000,-'; ?></strong>.</p><br/>	
 						</fieldset>
 				</div>
 			</div>				
