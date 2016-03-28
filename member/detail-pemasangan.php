@@ -46,11 +46,11 @@ if (isset($_POST['save'])){
 		$month_psng = bulan($bln_psng);
 $res2 = $col_user->find(array("nama"=>$support_field, "level"=>"301"));	
 						foreach ($res2 as $row2) {
-							$email_field=$row1['email'];
+							$email_field=$row2['email'];
 						} 	
 $res3 = $col_user->find(array("nama"=>$support_Assfield, "level"=>"302"));	
 						foreach ($res3 as $row3) {
-							$email_Assfield=$row1['email'];
+							$email_Assfield=$row3['email'];
 						} 
 $update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("tanggal_pasang"=>$tanggal_pasang, "field_engginer"=>$support_field, "ass_field"=>$support_Assfield, "status"=>"progress pasang", "no_box"=>$boxtv)));
 $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$tanggal_pasang, "field_engineer"=>$support_field, "ass_field"=>$support_Assfield, "status"=>"progress", "id_cust"=>$id_cust, "nama_cust"=>$nama_cust, "tempat_customer"=>$tempat_cust, "alamat_customer"=>$alamat_cust, "kota_customer"=>$kota_cust ,"keterangan_customer"=>$ket_cust, "phone_customer"=>$phone_cust, "paket"=>$package_cust, "status"=>"progress", "no_box"=>$boxtv));
