@@ -12,12 +12,30 @@
 		$id_cust = $_POST['id_cust'];
 		$update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("no_virtual"=>$kode_perusahaan.$id_cust)));
 		$res0 = $col_user->find(array("id_user"=>$id_cust,"level"=>"0"));
-		echo yudi;
-		echo $res0['email'];
+		foreach($res0 as $row0)
+					{ 
+
+						$registrasi_cust = $row0['registrasi'];
+						$sales =$row0['sales'];
+						$nama_cust = $row0['nama'];
+						$email_cust = $row0['email'];
+						$phone_cust = $row0['phone'];
+						$package_cust = $row0['paket'];
+						$tempat_cust = $row0['tempat'];
+                        $kota_cust = $row0['kota'];
+                        $status_cust = $row0['status'];
+                        $alamat_cust = $row0['alamat'];
+                        $ket_cust = $row0['keterangan'];
+                        $tanggal_akhir = $row0['tanggal_akhir'];
+                        $tanggal_aktif = $row0['tanggal_aktif'];
+                        $harga_paket = $row0['harga'];
+                        $no_virtual = $row0['no_virtual'];
+                        $pembayaran = $row0['pembayaran'];
+                    } 
 	require('../content/srcpdf/fpdf.php');
 	$header = array(
-		array("label"=>"Paket : ".$res0['paket'], "length"=>130, "align"=>"L"),
-		array("label"=>"Harga : ".$res0['harga'], "length"=>55, "align"=>"L")
+		array("label"=>"Paket : ".$package_cust, "length"=>130, "align"=>"L"),
+		array("label"=>"Harga : ".$harga_paket, "length"=>55, "align"=>"L")
 	);
 		$pdf = new FPDF();
 		$pdf->AddPage();
@@ -30,10 +48,10 @@
 		$pdf->Cell(0,7, 'DATA PELANGGAN', '0', 1, 'L');
 		$pdf->Ln();
 		$pdf->SetFont('Arial','','10');
-		$pdf->Cell(0,7, 'Nama Lengkap            : '.$res0['id_user'], '0', 1, 'L');
-		$pdf->Cell(0,7, 'No ID Pelanggan         : '.$res0['nama'], '0', 1, 'L');
-		$pdf->Cell(0,7, 'Alamat Pemasangan   : '.$res0['tempat'].', '.$res0['keterangan'].', '.$res0['alamat'].', '.$res0['kota'], '0', 1, 'L');
-		$pdf->Cell(0,7, 'Nomor Telepon           : '.$res0['phone'], '0', 1, 'L');
+		$pdf->Cell(0,7, 'Nama Lengkap            : '.$id_cust, '0', 1, 'L');
+		$pdf->Cell(0,7, 'No ID Pelanggan         : '.$nama_cust, '0', 1, 'L');
+		$pdf->Cell(0,7, 'Alamat Pemasangan   : '.$tempat_cust.', '.$ket_cust.', '.$alamat_cust.', '.$kota_cust, '0', 1, 'L');
+		$pdf->Cell(0,7, 'Nomor Telepon           : '.$phone_cust, '0', 1, 'L');
 		$pdf->Ln();
 		$pdf->SetFont('Arial','','10');
 		$pdf->SetFillColor(255,255,255);
@@ -50,7 +68,7 @@
 		$pdf->Ln();
 		$pdf->SetFont('Arial','','10');
 		$pdf->Cell(0,7, 'Kode Virtual     : '.$kode_perusahaan.$res0['id_user'], '0', 1, 'L');
-		$pdf->Cell(0,7, 'Total Harga      : '.$res0['harga'], '0', 1, 'L');
+		$pdf->Cell(0,7, 'Total Harga      : '.$harga_paket, '0', 1, 'L');
 		$pdf->Ln();
 		$pdf->Ln();
 		$pdf->Ln();
@@ -85,7 +103,7 @@ $data = $pdf->Output("", "S");
 //..................
 
 $email_subject = "INVOICE"; // The Subject of the email
-$email_to = $res0['email']; // Who the email is to
+$email_to = $email_cust; // Who the email is to
 
 
 $semi_rand = md5(time());
@@ -101,7 +119,7 @@ $headers .= "\nMIME-Version: 1.0\n" .
 " boundary=\"{$mime_boundary}\"";
 
 // set email message......................
-$email_message = "No virtual pembayaran anda adalah :".$kode_perusahaan.$res0['id_user'].", proraide pembayaran ke dua dapat dilihat pada halaman billing di akun groovy.id anda.<br>";
+$email_message = "No virtual pembayaran anda adalah :".$kode_perusahaan.$id_cust.", proraide pembayaran ke dua dapat dilihat pada halaman billing di akun groovy.id anda.<br>";
 $email_message .= "This is a multi-part message in MIME format.\n\n" .
 "--{$mime_boundary}\n" .
 "Content-Type:text/html; charset=\"iso-8859-1\"\n" .
