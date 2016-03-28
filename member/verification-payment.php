@@ -145,20 +145,14 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust),array('$push'=>arra
 				$pdf->Image('../img/logo-nusanet.png','65','250','50');
 				$pdf->Image('../img/a.jpg','170','240','30');
 
-				// Filename that will be used for the file as the attachment
-				$fileatt_name = $no_virtual.".pdf";
-				$dir='invoice/';
-				// save pdf in directory
-				$pdf ->Output($dir.$fileatt_name);
-
 				//....................
 
 				$data = $pdf->Output("", "S");
 
 				//..................
 
-				$email_subject = "Bukti Pembayaran groovy"; // The Subject of the email
-				$email_to = $email_cust; // Who the email is to
+				$email_subject1 = "Bukti Pembayaran groovy"; // The Subject of the email
+				$email_to1 = $email_cust; // Who the email is to
 
 
 				$semi_rand = md5(time());
@@ -168,23 +162,23 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust),array('$push'=>arra
 				$mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";
 
 				// set header ........................
-				$headers = "From: groovy.id <no_reply@groovy.id>";
-				$headers .= "\nMIME-Version: 1.0\n" .
+				$headers1 = "From: groovy.id <no_reply@groovy.id>";
+				$headers1 .= "\nMIME-Version: 1.0\n" .
 				"Content-Type: multipart/mixed;\n" .
 				" boundary=\"{$mime_boundary}\"";
 
 				// set email message......................
-				$email_message = "Terimakasih ".$nama_cust." sudah menggunakan layanan Tv groovy.id.<br>";
-				$email_message .= "Bukti pembayaran ini menandakan bahwa pembayaran anda sudah kami konfirmasi dan terima.<br>";// Message that the email has in it
-				$email_message .= "Untuk pelanggan baru kami akan segera memberi inforamsi untuk jadwal pemasangan.<br>";
-				$email_message .= "Terimakasih sudah menggunakan layanan Tv groovy.id.<br>";
-				$email_message .= "Selamat menikamati layanan TV dari groovy.id.<br>";
-				$email_message .= "Untuk info lebih lanjut bisa membuat pengaduan pada halaman member anda di groovy.id.\n\n" .
+				$email_message1 = "Terimakasih ".$nama_cust." sudah menggunakan layanan Tv groovy.id.<br>";
+				$email_message1 .= "Bukti pembayaran ini menandakan bahwa pembayaran anda sudah kami konfirmasi dan terima.<br>";// Message that the email has in it
+				$email_message1 .= "Untuk pelanggan baru kami akan segera memberi inforamsi untuk jadwal pemasangan.<br>";
+				$email_message1 .= "Terimakasih sudah menggunakan layanan Tv groovy.id.<br>";
+				$email_message1 .= "Selamat menikamati layanan TV dari groovy.id.<br>";
+				$email_message1 .= "Untuk info lebih lanjut bisa membuat pengaduan pada halaman member anda di groovy.id.\n\n" .
 				"--{$mime_boundary}\n" .
 				"Content-Type:text/html; charset=\"iso-8859-1\"\n" .
 				"Content-Transfer-Encoding: 7bit\n\n" .
-				$email_message .= "\n\n";
-				$email_message .= "--{$mime_boundary}\n" .
+				$email_message1 .= "\n\n";
+				$email_message1 .= "--{$mime_boundary}\n" .
 				"Content-Type: {$fileatt_type};\n" .
 				" name=\"{$fileatt_name}\"\n" .
 				"Content-Disposition: attachment;\n" .
@@ -193,7 +187,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust),array('$push'=>arra
 				$data .= "\n\n" .
 				"--{$mime_boundary}--\n";
 
-				$emailinvoice = mail($email_to, $email_subject, $email_message, $headers);
+				$emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1);
 if ($update_user && $update_bayar && $emailinvoice){
 	?>
 		<script type="" language="JavaScript">
