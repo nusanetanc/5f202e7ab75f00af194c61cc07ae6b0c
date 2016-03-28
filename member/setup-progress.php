@@ -24,10 +24,10 @@
 						?>
 						  <tbody>
 						    <tr>
-						      <td><?php echo $row['id_customer'].' / '.$row['nama_cust'].' / '.$row['phone_customer']; ?></td>
+						      <td><?php echo $row['id_cust'].' / '.$row['nama_cust'].' / '.$row['phone_customer']; ?></td>
 						      <td><?php echo $row['paket']; ?></td>
 						      <td><?php echo $row['tempat_customer'].', '.$row['keterangan_customer'].', '.$row['kota_customer']; ?></td>
-						      <td><b><a href="<?php echo $base_url_member; ?>/?hal=report-jobs&id=<?php echo $row['id_customer']?>&status=progress&job=pasang" class="btn btn-success">Progress</a></b></td>						      
+						      <td><b><a href="<?php echo $base_url_member; ?>/?hal=report-jobs&id=<?php echo $row['id_cust']?>&status=progress&job=pasang" class="btn btn-success">Progress</a></b></td>						      
 						    </tr>
 						   </tbody>
 						<?php
