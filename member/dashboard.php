@@ -317,7 +317,7 @@
 					<div class="well well-lg" style="background-color:#263238;">
 					  <h4 style="color:white;"><b>INFORMATION</b></h4>
 					  <div class="text-center">
-					  	<b style="color:white; font-size:2em;"><i class="fa fa-bell fa-5x"></i></b>
+					  	<b style="color:white; font-size:2em;"><i class="fa fa-bell fa-4x"></i></b>
 					  </div>
 					</div>
 				</a>	
