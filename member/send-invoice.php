@@ -30,7 +30,7 @@
                         $harga_paket = $row0['harga'];
                         $no_virtual = $row0['no_virtual'];
                         $pembayaran = $row0['pembayaran'];
-                    } echo "yudi1";
+                    }
 	require('../content/srcpdf/fpdf.php');
 	$header = array(
 		array("label"=>"Paket : ".$package_cust, "length"=>130, "align"=>"L"),
@@ -52,6 +52,10 @@
 		$pdf->Cell(0,7, 'Alamat Pemasangan   : '.$tempat_cust.', '.$ket_cust.', '.$alamat_cust.', '.$kota_cust, '0', 1, 'L');
 		$pdf->Cell(0,7, 'Nomor Telepon           : '.$phone_cust, '0', 1, 'L');
 		$pdf->Ln();
+		$pdf->Ln();
+		$pdf->SetFont('Arial','B','10');
+		$pdf->Cell(0,7, 'DATA PEMBAYRAN - PAYMENT DATA', '0', 1, 'L');
+		$pdf->Ln();
 		$pdf->SetFont('Arial','','10');
 		$pdf->SetFillColor(255,255,255);
 		$pdf->SetTextColor(0);
@@ -60,10 +64,6 @@
 			$pdf->Cell($kolom['length'], 10, $kolom['label'], 1, '0', $kolom['align'], true);
 		}
 		$pdf->Ln();
-		$pdf->Ln();
-		$pdf->Ln();
-		$pdf->SetFont('Arial','B','10');
-		$pdf->Cell(0,7, 'DATA PEMBAYRAN - PAYMENT DATA', '0', 1, 'L');
 		$pdf->Ln();
 		$pdf->SetFont('Arial','','10');
 		$pdf->Cell(0,7, 'Kode Virtual     : '.$kode_perusahaan.$id_cust, '0', 1, 'L');
@@ -80,15 +80,10 @@
 		$pdf->Ln();
 		$pdf->Ln();
 		$pdf->Ln();
-		$pdf->Ln();
-		$pdf->Ln();
-		$pdf->Ln();
-		$pdf->Ln();
 		$pdf->Cell(0,7, '* Tata cara pembayaran dapat dilihat pada FAQ web groovy.id', '0', 1, 'R');
 		$pdf->Image($base_url.'/img/denstv-logo.png','10','230','50');
 		$pdf->Image($base_url.'/img/logo-nusanet.png','65','230','50');
 		$pdf->Image($base_url.'/img/a.jpg','170','220','30');
-		echo "yudi2";
 // Filename that will be used for the file as the attachment
 $fileatt_name = $kode_perusahaan.$id_cust.'.pdf';
 $dir='invoice/';
@@ -100,7 +95,6 @@ $pdf ->Output($dir.$fileatt_name);
 $data = $pdf->Output("", "S");
 
 //..................
-echo "yudi3";
 $email_subject = "INVOICE"; // The Subject of the email
 $email_to = $email_cust; // Who the email is to
 
@@ -132,7 +126,6 @@ $email_message .= "--{$mime_boundary}\n" .
 "Content-Transfer-Encoding: base64\n\n" .
 $data .= "\n\n" .
 "--{$mime_boundary}--\n";
-echo "yudi4";
 $sent = mail($email_to, $email_subject, $email_message, $headers);
 $update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("no_virtual"=>$kode_perusahaan.$id_cust)));
 ?>
