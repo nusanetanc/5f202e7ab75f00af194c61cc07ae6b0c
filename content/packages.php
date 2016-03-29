@@ -17,14 +17,15 @@
                     </div>
                     <div style="padding-left:5px;">
                         <h4 style="font-size:28px;font-weight:bold;color:#FF3D23;">Silver</h4>
-                        <h6 style="color:#FF3D23;font-size:20px;font-weight:400;">All of these greate feature</h6>
+                        <!--<h6 style="color:#FF3D23;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
                         <div style="border-top:1px solid #FF3D23;padding:20px 0 0 0;margin-top:20px;">
                             <ul class="packageList">
-                                <li>Search and browse 10k</li>
-                                <li>most recent messages</li>
-                                <li>10 service integrations</li>
-                                <li>Free native apps for iOS, Android, Mac Desktop & Windows Desktop</li>
-                                <li>Multi-team Support</li>
+                                <li>Internet up to 20 Mbps</li>
+                                <li>94 + Local & International Channel with 24 HD Channel Quality.</li>
+                                <li>Social TV</li>
+                                <li>Catch-up TV Channel</li>
+                                <li>Radio Streaming</li>
+                                <li>24/7 Live Support</li>
                             </ul>
                         </div>
                     </div>
@@ -39,15 +40,15 @@
                     </div>
                     <div style="padding-left:5px;">
                         <h4 style="font-size:28px;font-weight:bold;color:#ff6520;">Gold</h4>
-                        <h6 style="color:#ff6520;font-size:20px;font-weight:400;">All of these greate feature</h6>
+                        <!--<h6 style="color:#ff6520;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
                         <div style="border-top:1px solid #ff6520;padding:20px 0 0 0;margin-top:20px;">
                             <ul class="packageList">
-                                <li>Searchable archive with unlimited messages</li>
-                                <li>Unlimited service integrations</li>
-                                <li>Custom retention policies</li>
-                                <li>Simple usage statistics</li>
-                                <li>Guest access</li>
-                                <li>Priority support</li>
+                                <li>Internet up to 50 Mbps</li>
+                                <li>94 + Local & International Channel with 24 HD Channel Quality.</li>
+                                <li>Social TV</li>
+                                <li>Catch-up TV Channel</li>
+                                <li>Radio Streaming</li>
+                                <li>24/7 Live Support</li>
                             </ul>
                         </div>
                     </div>
@@ -62,15 +63,15 @@
                     </div>
                     <div style="padding-left:5px;">
                         <h4 style="font-size:28px;font-weight:bold;color:#FF931E;">Platinum</h4>
-                        <h6 style="color:#FF931E;font-size:20px;font-weight:400;">All of these greate feature</h6>
+                        <!--<h6 style="color:#FF931E;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
                         <div style="border-top:1px solid #FF931E;padding:20px 0 0 0;margin-top:20px;">
                             <ul class="packageList">
-                                <li>SAML-based single sign-on (SSO)</li>
-                                <li>Compliance Exports of all message history</li>
-                                <li>Support for external message and archival solutions</li>
-                                <li>99.99% guaranteed uptime SLA</li>
-                                <li>24/7 support with 4 hour response time</li>
-                                <li>User provisioning and deprovisioning</li>
+                                <li>Internet up to 100 Mbps</li>
+                                <li>94 + Local & International Channel with 24 HD Channel Quality.</li>
+                                <li>Social TV</li>
+                                <li>Catch-up TV Channel</li>
+                                <li>Radio Streaming</li>
+                                <li>24/7 Live Support</li>
                             </ul>
                         </div>
                     </div>

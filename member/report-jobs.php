@@ -35,7 +35,16 @@ foreach ($res as $row) {
 if (isset($_POST['save'])){
 	$note = $_POST['inputNote'];
 	$date = date("Y/m/d");
-	$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("tanggal_aktivasi"=>$date, "status"=>"aktif"))); 
+	$date_years = date("Y");
+	$date_month = date("m");
+	if ($date_month=="12"){
+		$next_month="01";
+		$next_years=$date_years+1;
+	} else {
+		$next_month=$date_years+1;
+		$next_years=$date_years;
+	}
+	$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("tanggal_aktivasi"=>$date, "status"=>"aktif", "tanggal_akhir"=>$next_years.'/'.$next_month.'/01'.))); 
 	$update_jobs = $col_history->update(array("id_cust"=>$id_cust, "status"=>$status_jobs, "hal"=>$nama_jobs),array('$set'=>array("catatan"=>$note, "status"=>"done", "tanggal_selesai"=>$date)));
 				// mail for supevisior teknik
 				$subject = 'Laporan Job Support - '.$nama_jobs.' - '.$nama.' - Coba Sistem';
