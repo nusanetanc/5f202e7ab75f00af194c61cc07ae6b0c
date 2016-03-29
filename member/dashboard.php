@@ -185,28 +185,14 @@
 	<div class="col-sm-12 col-md-12 col-lg-9" style="font-family:Arial;">
 		<div class="row">
 			<div class="col-sm-4">
-				<div class="well well-lg" style="background-color:#37474F;">
-				  <h5 style="color:white;"><b>INFO MAINTENANCE</b></h5>
-				  	<div class="text-center">
-				  	<br/>
-					  	<div class="row">
-					  		<div class="col-sm-5">
-					  			<a href="<?php echo $base_url_member; ?>/?hal=write-maintenance-info" style=" text-decoration:none">
-								  	<b style="color:white; font-size:2em;"><i class="fa fa-pencil-square-o fa-2x"></i></b>
-								  	<h5 style="color:white;">Tulis Info Maintenance</h5>
-								</a>  	
-							</div>
-							<div class="col-sm-2">								
-							</div>
-							<div class="col-sm-5">  
-								<a href="<?php echo $base_url_member; ?>/?hal=information" style=" text-decoration:none">
-								  	<b style="color:white; font-size:2em;"><i class="fa fa-list fa-2x"></i></b>
-								  	<h5 style="color:white;">Lihat Semua Info Maintenance</h5>
-								</a>  	
-							</div>  	
-					 	</div>
+				<a href="<?php echo $base_url_member; ?>/?hal=information" style=" text-decoration:none">
+					<div class="well well-lg" style="background-color:#263238;">
+					  <h4 style="color:white;"><b>INFORMATION</b></h4>
+					  <div class="text-center">
+					  	<b style="color:white; font-size:2em;"><i class="fa fa-bell fa-5x"></i></b>
+					  </div>
 					</div>
-				</div>	
+				</a>	
 			</div>		
 			<div class="col-sm-4">
 				<div class="well well-lg" style="background-color:#FF6D20;">
@@ -289,12 +275,22 @@
 <section>
 	<div class="col-sm-12 col-md-12 col-lg-9" style="font-family:Arial;">
 		<div class="row">
-			<div class="col-sm-12 col-md-5 col-lg-5">
+			<div class="col-sm-4">
 				<a href="<?php echo $base_url_member; ?>/?hal=jobs-list-pending" style=" text-decoration:none">
 					<div class="well well-lg" style="background-color:#263238;">
 					  <h4 style="color:white;"><b>JOBS</b></h4>
 					  <div class="text-center">
 					  	<b style="color:white; font-size:2em;"><i class="fa fa-list-alt fa-5x"></i></b>
+					  </div>
+					</div>
+				</a>	
+			</div>
+			<div class="col-sm-4">
+				<a href="<?php echo $base_url_member; ?>/?hal=information" style=" text-decoration:none">
+					<div class="well well-lg" style="background-color:#263238;">
+					  <h4 style="color:white;"><b>INFORMATION</b></h4>
+					  <div class="text-center">
+					  	<b style="color:white; font-size:2em;"><i class="fa fa-bell fa-5x"></i></b>
 					  </div>
 					</div>
 				</a>	
@@ -317,28 +313,14 @@
 				</a>	
 			</div>	
 			<div class="col-sm-4">
-				<div class="well well-lg" style="background-color:#37474F;">
-				  <h5 style="color:white;"><b>INFO MAINTENANCE</b></h5>
-				  	<div class="text-center">
-				  	<br/>
-					  	<div class="row">
-					  		<div class="col-sm-5">
-					  			<a href="<?php echo $base_url_member; ?>/?hal=write-maintenance-info" style=" text-decoration:none">
-								  	<b style="color:white; font-size:2em;"><i class="fa fa-pencil-square-o fa-2x"></i></b>
-								  	<h5 style="color:white;">Tulis Info Maintenance</h5>
-								</a>  	
-							</div>
-							<div class="col-sm-2">								
-							</div>
-							<div class="col-sm-5">  
-								<a href="<?php echo $base_url_member; ?>/?hal=information" style=" text-decoration:none">
-								  	<b style="color:white; font-size:2em;"><i class="fa fa-list fa-2x"></i></b>
-								  	<h5 style="color:white;">Lihat Semua Info Maintenance</h5>
-								</a>  	
-							</div>  	
-					 	</div>
+				<a href="<?php echo $base_url_member; ?>/?hal=information" style=" text-decoration:none">
+					<div class="well well-lg" style="background-color:#263238;">
+					  <h4 style="color:white;"><b>INFORMATION</b></h4>
+					  <div class="text-center">
+					  	<b style="color:white; font-size:2em;"><i class="fa fa-bell fa-5x"></i></b>
+					  </div>
 					</div>
-				</div>	
+				</a>	
 			</div>	
 			<div class="col-sm-4">
 				<div class="well well-lg" style="background-color:#FF6D20;">

@@ -109,11 +109,11 @@ switch ($level) {
     $panel="#263238";
   break;
   case '301':
-    $level_user="FILED ENGINEER";
+    $level_user="FIELD ENGINEER";
     $panel="#263238";
   break;
   case '302':
-    $level_user="ASS FILED ENGINEER";
+    $level_user="ASS FIELD ENGINEER";
     $panel="#263238";
   break;
   case '2':
