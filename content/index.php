@@ -7,8 +7,8 @@
                 <button data-toggle="modal" data-target="#signupModal" class="buttonOrange">Get Started</button>&nbsp;
                 <a href="<?php echo $base_url; ?>/?hal=features" style="background-color:rgba(255, 255, 255, 0);border:2px solid #FF3D23;color:#FF3D23;height:40px;padding:12px 25px 12px 25px;border-radius:3px;font-weight:bold;">Learn More</a>&nbsp;&nbsp;
             </div>
-            <div class="col-sm-6 hidden-sm">
-                <img class="hidden-sm" src="<?php echo $base_url; ?>/img/background-groovy-2.png" style="width:90%;margin-top:50px;"/>
+            <div class="col-sm-6 hidden-sm hidden-xs">
+                <img class="hidden-sm hidden-xs" src="<?php echo $base_url; ?>/img/background-groovy-2.png" style="width:90%;margin-top:50px;"/>
             </div>
         </div>
     </div>
