@@ -14,10 +14,14 @@
                 </p>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-3 text-left">
-                <h5 style="font-size:17px;margin-top:40px;margin-bottom:15px;">CONTACT</h5>
+                <h5 style="font-size:17px;margin-top:40px;margin-bottom:15px;">FEATURES</h5>
                 <p style="line-height:25px;">
-                    <a href="">Contact Us</a><br/>
-                    <a href="">Help Center</a>
+                    <a href="">Internet</a><br/>
+                    <a href="">Live TV</a><br/>
+                    <a href="">Video on Demand</a><br/>
+                    <a href="">Social TV</a><br/>
+                    <a href="">Catch-Up TV Channel</a><br/>
+                    <a href="">Radio Streaming</a>
                 </p>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-3 text-left">
@@ -26,6 +30,8 @@
                     <a href="">Groovy Info</a><br/>
                     <a href="">Job Opportunity</a><br/>
                     <a href="">Events</a><br/>
+                    <a href="">Contact Us</a><br/>
+                    <a href="">Help Center</a>
                 </p>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-3 text-left">
