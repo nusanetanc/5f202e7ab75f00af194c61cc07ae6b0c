@@ -110,7 +110,7 @@
 
                                                                                 $kirimemail2 = mail($to2, $subject2, $message2, $headers2);
                                         $status_cust = "registrasi";
-									if ($konfirmasi && $write_info && $kirimemail1 && $kirimemai2){ ?>
+									if ($konfirmasi && $write_info && $kirimemail1 && $kirimemail2){ ?>
 										<p class="text-muted text-primary">Registrasi Customer telah di konfirmasi.!!</p>
 								<?php } } 	
 								?>

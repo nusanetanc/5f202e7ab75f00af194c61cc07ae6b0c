@@ -30,7 +30,7 @@
                         $harga_paket = $row0['harga'];
                         $no_virtual = $row0['no_virtual'];
                         $pembayaran = $row0['pembayaran'];
-                    } 
+                    } echo "yudi1";
 	require('../content/srcpdf/fpdf.php');
 	$header = array(
 		array("label"=>"Paket : ".$package_cust, "length"=>130, "align"=>"L"),
@@ -88,7 +88,7 @@
 		$pdf->Image($base_url.'/img/denstv-logo.png','10','230','50');
 		$pdf->Image($base_url.'/img/logo-nusanet.png','65','230','50');
 		$pdf->Image($base_url.'/img/a.jpg','170','220','30');
-
+		echo "yudi2";
 // Filename that will be used for the file as the attachment
 $fileatt_name = $kode_perusahaan.$id_cust.'.pdf';
 $dir='invoice/';
@@ -100,7 +100,7 @@ $pdf ->Output($dir.$fileatt_name);
 $data = $pdf->Output("", "S");
 
 //..................
-
+echo "yudi3";
 $email_subject = "INVOICE"; // The Subject of the email
 $email_to = $email_cust; // Who the email is to
 
@@ -132,7 +132,7 @@ $email_message .= "--{$mime_boundary}\n" .
 "Content-Transfer-Encoding: base64\n\n" .
 $data .= "\n\n" .
 "--{$mime_boundary}--\n";
-
+echo "yudi4";
 $sent = mail($email_to, $email_subject, $email_message, $headers);
 $update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("no_virtual"=>$kode_perusahaan.$id_cust)));
 ?>
