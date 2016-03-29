@@ -43,11 +43,11 @@
 						  <thead>
 						    <tr>
 						      <th width="20%">Customer</th>
-						      <th width="25%">Location</th>
-						      <th width="10%">Jobs</th>
-						      <th width="10%">Status</th>
-						      <th width="15%">Date Jobs</th>
-						      <th width="15%">Support</th>
+						      <th class="desktop-only" width="25%">Location</th>
+						      <th class="desktop-only" width="10%">Jobs</th>
+						      <th class="desktop-only" width="10%">Status</th>
+						      <th class="desktop-only" width="15%">Date Jobs</th>
+						      <th class="desktop-only" width="15%">Support</th>
 						      <th width="5%">Action</th>
 						    </tr>
 						  </thead>
@@ -63,11 +63,11 @@
 						  ?>
 						    <tr>
 						      <td><?php echo $row['id_cust'].' / '.$row['nama_cust'].' / '.$row['phone_customer']; ?></td>
-						      <td><?php echo $row['tempat_customer'].' / '.$row['keterangan_customer'].' / '.$row['alamat_customer'].' / '.$row['kota_customer']; ?></td>
-						      <td><?php echo $row['hal']; ?></td>
-						      <td><?php echo $row['status']; ?></td>
-						      <td><?php echo $tgl.' '.$month.' '.$thn; ?></td>
-						      <td><?php echo $row['field_engineer'].' / '.$row['ass_field']; ?></td>
+						      <td class="desktop-only" ><?php echo $row['tempat_customer'].' / '.$row['keterangan_customer'].' / '.$row['alamat_customer'].' / '.$row['kota_customer']; ?></td>
+						      <td class="desktop-only" ><?php echo $row['hal']; ?></td>
+						      <td class="desktop-only" ><?php echo $row['status']; ?></td>
+						      <td class="desktop-only" ><?php echo $tgl.' '.$month.' '.$thn; ?></td>
+						      <td class="desktop-only" ><?php echo $row['field_engineer'].' / '.$row['ass_field']; ?></td>
 						      <td><b><a href="<?php echo $base_url_member; ?>/?hal=report-jobs&id=<?php echo $row['id_cust']; ?>&status=<?php echo $row['status']; ?>&job=<?php echo $row['hal']; ?>" class="btn btn-default btn-sm">Report</a></b></td>						      
 						    </tr>
 						<?php } ?>
