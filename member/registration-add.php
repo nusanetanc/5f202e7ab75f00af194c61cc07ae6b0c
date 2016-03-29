@@ -153,41 +153,8 @@ foreach($res as $row)
                                           $headers1 .= 'Cc: cs@groovy.id' . "\r\n";
 
                                           // Mail it
-                                          $kirimemail = mail($to1, $subject1, $message1, $headers1);
-                                          // mail for customer to registrasi
-                                          $to = $regisemail;
-
-                                          $subject = 'Registrasi groovy TV';
-
-                                          $message = '
-                                          <html>
-                                          <body>
-                                            <p>Terimakasih telah registrasi di groovy.id berikut rincian data anda : </p>
-                                            <br/>
-                                            <p>ID Customer : '.$newid.'</p>
-                                            <p>Nama : '.$regisname.'</p>
-                                            <p>Paket : '.$package.'</p>
-                                            <p>Email : '.$regisemail.'</p>
-                                            <p>Phone : '.$regisphone.'</p>
-                                            <p>Tanggal Registrasi : '.$date_days.' '.$month1.' '.$date_years.'</p>
-                                            <p>Registrasi : Personal</p>
-                                            <p>Tempat : '.$location.', '.$decription.', '.$place.', '.$city.'</p>
-                                            <br/>
-                                            <p>Best Regards</p>
-                                            <p>Customer Service</p>
-                                            <p>groovy.id</p>
-                                          </body>
-                                          </html>
-                                          ';
-
-                                          $headers  = 'MIME-Version: 1.0' . "\r\n";
-                                          $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-
-                                          $headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
-                                          $headers .= 'Cc: cs@groovy.id, billing@groovy.id' . "\r\n";
-
-                                          $kirimemail1 =mail($to, $subject, $message, $headers); echo yudi5;
-if($insert_customer && $kirimemail && $kirimemail1){                                          
+                                          $kirimemail1 = mail($to1, $subject1, $message1, $headers1);
+if($insert_customer && $kirimemail1){                                          
     echo '<p class="text-primary">Registration succeed, please wait for confirmation from the sales manager!</p>';
      } } } } ?>
 <section>

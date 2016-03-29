@@ -18,7 +18,7 @@
 										  	 $tglaktiv_cust=$row['tanggal_aktivasi'];
 										  	 $status_cust=$row['status'];
 										  	 $regis_cust=$row['registrasi'];
-										  	 $sales_cust=$row['sales'];
+										  	 $sales_cust=$row['nama_sales'];
 										  	 $invoice_cust=$row['invoice'];
 										  	 $harga_cust=$row['harga'];
 										  	 $email_sales=$row['email_sales'];
@@ -134,7 +134,7 @@
 						    <div class="form-group">
 						      <label class="col-lg-3 control-label">Email :</label>
 						      <div class="col-lg-9">
-						        <h4><?php echo $email; ?></h4>
+						        <h4><?php echo $email_cust; ?></h4>
 						      </div>
 						    </div>
 						    <div class="form-group">
@@ -198,7 +198,7 @@
 						   </div>     						    						    						    						    						    
 							  </fieldset>	
 							<?php 
-							if($level=="5" && $status_cust=="registrasi" && $regis_cust=="sales"){ ?>
+							if($level=="5" && $status_cust=="permintaan registrasi" && $regis_cust=="sales"){ ?>
 							 		<td><input type="submit" name="konfirmregis" id="konfirmregis" class="btn btn-primary btn-sm" value="Konfirmasi Registrasi"></td>	
 							<?php } elseif($regis_cust=="konfirmasi registrasi") { ?>
 							<div class="form-group">
