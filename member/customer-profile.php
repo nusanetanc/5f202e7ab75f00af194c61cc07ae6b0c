@@ -88,7 +88,7 @@
                                                                                   <br/>
                                                                                   <p>ID Customer : '.$id_cust.'</p>
                                                                                   <p>Nama : '.$nama_cust.'</p>
-                                                                                  <p>Paket : '.$package.'</p>
+                                                                                  <p>Paket : '.$paket_cust.'</p>
                                                                                   <p>Email : '.$email_cust.'</p>
                                                                                   <p>Phone : '.$phone_cust.'</p>
                                                                                   <p>Tanggal Registrasi : '.$date_days.' '.$month1.' '.$date_years.'</p>
@@ -113,7 +113,7 @@
                                                                                 $headers2 .= 'Cc: cs@groovy.id, billing@groovy.id' . "\r\n";
 
                                                                                 $kirimemail2 = mail($to2, $subject2, $message2, $headers2);
-									if ($konfirmasi && $write_info && $kirimemail1 && $kirimemai2){ ?>
+									if ($konfirmasi && $write_info && $kirimemail1 && $kirimemail2){ ?>
 										<p class="text-muted text-primary">Registrasi Customer telah di konfirmasi.!!</p>
 								<?php } } 	
 								?>
