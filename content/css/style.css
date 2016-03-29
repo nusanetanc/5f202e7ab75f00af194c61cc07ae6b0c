@@ -91,7 +91,7 @@ a.thumbnail1.active {
 .sidebarProfile td{
   padding-top:5px;
 }
-@media only screen and (min-width : 600px){
+@media only screen and (max-width : 600px){
   .desktop-only{
     display:none;
   }
