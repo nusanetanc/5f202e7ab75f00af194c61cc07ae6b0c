@@ -3,12 +3,30 @@
 	$id_cust = $_GET['id'];
 	$status_jobs = $_GET['status'];
 	$nama_jobs = $_GET['job'];
+	$res = $col_history->find(array("id_cust"=>$id_cust, "status"=>$status_jobs, "hal"=>$nama_jobs));
+foreach ($res as $row) {
+	$jobs_report = $row['catatan'];
+	$no_box = $row['no_box'];
+	$nama_field = $row['field_engineer'];
+	$nama_assfield = $row['ass_field'];
+	$tanggal_kerja = $row['tanggal_kerja'];
+		$thn = substr($tanggal_kerja, 0,4);
+		$bln = substr($tanggal_kerja, 5,2);
+		$tgl = substr($tanggal_kerja, 8,10);
+		$month = bulan($bln);
+	$tanggal_selesai= $row['tanggal_selesai'];
+		$thn1 = substr($tanggal_selesai, 0,4);
+		$bln1 = substr($tanggal_selesai, 5,2);
+		$tgl1 = substr($tanggal_selesai, 8,10);
+		$month1 = bulan($bln1);
+}
 	$res = $col_user->find(array("id_user"=>$id_cust));
 	foreach($res as $row)
 	{ 
 		$email_cust = $row['email'];
         $nama_cust = $row['nama'];
         $notelp_cust = $row['phone'];
+        $package_cust = $row['paket'];
         $tempat_cust = $row['tempat'];
         $kota_cust = $row['kota'];
         $alamat_cust = $row['alamat'];
@@ -20,7 +38,7 @@ if (isset($_POST['save'])){
 	$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("tanggal_aktivasi"=>$date, "status"=>"aktif"))); 
 	$update_jobs = $col_history->update(array("id_cust"=>$id_cust, "status"=>$status_jobs, "hal"=>$nama_jobs),array('$set'=>array("catatan"=>$note, "status"=>"done", "tanggal_selesai"=>$date)));
 				// mail for supevisior teknik
-				$subject = 'Laporan Job Support - '.$nama_jobs.' - '.$nama;
+				$subject = 'Laporan Job Support - '.$nama_jobs.' - '.$nama.' - Coba Sistem';
 				$message = '
 				<html>
 				<body>
@@ -30,6 +48,7 @@ if (isset($_POST['save'])){
 				  <p>Nama : '.$nama_cust.'</p>
 				  <p>Tempat : '.$tempat_cust.', '.$ket_cust.', '.$kota_cust.'</p>
 				  <p>Paket : '.$package_cust.'</p>
+				  <p>Paket : '.$no_box.'</p>
 				  <p>Status : Done</p>
 				  <p>Catatan Job : '.$note.'</p>
 				  <br/>
@@ -51,23 +70,6 @@ if ($update_user && $update_jobs){ ?>
 				<script type="" language="JavaScript">
 				document.location='<?php echo $base_url_member; ?>/?hal=jobs-list-pending'</script>	
 <?php } }
-$res = $col_history->find(array("id_cust"=>$id_cust, "status"=>$status_jobs, "hal"=>$nama_jobs));
-foreach ($res as $row) {
-	$jobs_report = $row['catatan'];
-	$no_box = $row['no_box'];
-	$nama_field = $row['field_engineer'];
-	$nama_assfield = $row['ass_field'];
-	$tanggal_kerja = $row['tanggal_kerja'];
-		$thn = substr($tanggal_kerja, 0,4);
-		$bln = substr($tanggal_kerja, 5,2);
-		$tgl = substr($tanggal_kerja, 8,10);
-		$month = bulan($bln);
-	$tanggal_selesai= $row['tanggal_selesai'];
-		$thn1 = substr($tanggal_selesai, 0,4);
-		$bln1 = substr($tanggal_selesai, 5,2);
-		$tgl1 = substr($tanggal_selesai, 8,10);
-		$month1 = bulan($bln1);
-}
 ?>
 <style>
     .datepicker{z-index:1151;}
