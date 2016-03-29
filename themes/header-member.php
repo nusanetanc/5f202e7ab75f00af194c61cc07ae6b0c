@@ -57,7 +57,7 @@ if($level=="501"){
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <h1><b><a class="navbar-brand" style = "color:black;margin-top:-21px;font-size:40px;padding-right:50px;" href="<?php echo $base_url_member; ?>"  >groovy</a></b></h1>
+      <a href="<?php echo $base_url_member; ?>"><img src="<?php echo $base_url; ?>/img/groovy-logo-colour.png"/></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
