@@ -62,13 +62,13 @@
 								$month = bulan($bln);
 						  ?>
 						    <tr>
-						      <td><?php echo $row['id_customer'].' / '.$row['nama_customer'].' / '.$row['phone_customer']; ?></td>
+						      <td><?php echo $row['id_cust'].' / '.$row['nama_cust'].' / '.$row['phone_cust']; ?></td>
 						      <td><?php echo $row['tempat_customer'].' / '.$row['keterangan_customer'].' / '.$row['alamat_customer'].' / '.$row['kota_customer']; ?></td>
 						      <td><?php echo $row['hal']; ?></td>
 						      <td><?php echo $row['status']; ?></td>
 						      <td><?php echo $tgl.' '.$month.' '.$thn; ?></td>
 						      <td><?php echo $row['field_engineer'].' / '.$row['ass_field']; ?></td>
-						      <td><b><a href="<?php echo $base_url_member; ?>/?hal=report-jobs&id=<?php echo $row['id_customer']; ?>&status=<?php echo $row['status']; ?>&job=<?php echo $row['hal']; ?>" class="btn btn-default btn-sm">Report</a></b></td>						      
+						      <td><b><a href="<?php echo $base_url_member; ?>/?hal=report-jobs&id=<?php echo $row['id_cust']; ?>&status=<?php echo $row['status']; ?>&job=<?php echo $row['hal']; ?>" class="btn btn-default btn-sm">Report</a></b></td>						      
 						    </tr>
 						<?php } ?>
 						   </tbody>  

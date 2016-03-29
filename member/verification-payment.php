@@ -67,7 +67,7 @@ if ($total_revenue=="" || empty($total_revenue)){
 	if ($status_cust=="registrasi"){
 		$sisa_hari = 30-$date_month;
 		$last_proraide = $sisa_hari*$harga_hari;
-		$update_user = $col_user->update(array("id_user"=>$id_cust), array('$set'=>array("status"=>"progress pasang", "pembayaran"=>$last_pembayaran, "proraide"=>$last_proraide.'.000')));
+		$update_user = $col_user->update(array("id_user"=>$id_cust), array('$set'=>array("pembayaran"=>$last_pembayaran, "proraide"=>$last_proraide.'.000')));
 				// mail for supevisior teknik
 				$subject = 'Atur Jadwal Pemasangan';
 				$message = '
