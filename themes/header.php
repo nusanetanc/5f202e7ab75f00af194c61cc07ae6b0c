@@ -592,7 +592,7 @@
                 <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h5 style="font-color=white;"><b>The email and password you entered don't match !</b></h5>
+                              <h5 style="color:white;"><b>The email and password you entered don't match !</b></h5>
                     </div>
                 </div>
             </div> 
@@ -604,7 +604,7 @@
                 <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h5 style="font-color=white;"><b>Please enter your email & password!</b></h5>
+                              <h5 style="color:white;"><b>Please enter your email & password!</b></h5>
                     </div>
                 </div>
             </div> 
@@ -616,7 +616,7 @@
                 <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h5 style="font-color=white;"><b>Please enter your email!</b></h5>
+                              <h5 style="color:white;"><b>Please enter your email!</b></h5>
                     </div>
                 </div>
             </div> 
@@ -628,7 +628,7 @@
                 <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h5 style="font-color=white;"><b>Please enter your password!</b></h5>
+                              <h5 style="color:white;"><b>Please enter your password!</b></h5>
                     </div>
                 </div>
             </div> 
@@ -640,7 +640,7 @@
                 <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h5 style="font-color=white;"><b>Registration failed, please try again!</b></h5>
+                              <h5 style="color:white;"><b>Registration failed, please try again!</b></h5>
                     </div>
                 </div>
             </div> 
@@ -652,7 +652,7 @@
                 <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h5 style="font-color=white;"><b>Registration succeed, please check your email!</b></h5>
+                              <h5 style="color:white;"><b>Registration succeed, please check your email!</b></h5>
                     </div>
                 </div>
             </div> 
@@ -664,7 +664,7 @@
                 <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h5 style="font-color=white;"><b>Email already exist!</b></h5>
+                              <h5 style="color:white;"><b>Email already exist!</b></h5>
                     </div>
                 </div>
             </div> 
@@ -676,7 +676,7 @@
                 <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h5 style="font-color=white;"><b>Acount already exist!</b></h5>
+                              <h5 style="color:white;"><b>Acount already exist!</b></h5>
                     </div>
                 </div>
             </div> 
@@ -688,7 +688,7 @@
                 <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h5 style="font-color=white;"><b>Email was not found in the list costumer</b></h5>
+                              <h5 style="color:white;"><b>Email was not found in the list costumer</b></h5>
                     </div>
                 </div>
             </div> 
@@ -700,7 +700,7 @@
                 <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h5 style="font-color=white;"><b>Please check your email for reset password</b></h5>
+                              <h5 style="color:white;"><b>Please check your email for reset password</b></h5>
                     </div>
                 </div>
             </div> 
@@ -712,7 +712,7 @@
                 <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h5 style="font-color=white;"><b>Account has been active, please login</b></h5>
+                              <h5 style="color:white;"><b>Account has been active, please login</b></h5>
                     </div>
                 </div>
             </div> 
@@ -724,7 +724,7 @@
                 <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h5 style="font-color=white;"><b>Registration failed, because our services have not reached your</b></h5>
+                              <h5 style="color:white;"><b>Registration failed, because our services have not reached your</b></h5>
                     </div>
                 </div>
             </div> 
@@ -736,7 +736,7 @@
                 <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h5 style="font-color=white;"><b>Password successfully replaced</b></h5>
+                              <h5 style="color:white;"><b>Password successfully replaced</b></h5>
                     </div>
                 </div>
             </div> 
