@@ -42,7 +42,7 @@
       <div class="row" style="margin-top:90px">
         <h3 style="text-align:center;color:#555;margin-bottom:40px;">Sign in with Groovy Account</h3>
         <div class="signInCard" style="background-color:#fff;margin:0 auto;padding-top:35px;padding-bottom:10px;border-radius:5px;text-align:center">
-            <img style="width:70px;margin-bottom:20px;" src="http://groovy.id/groovy/img/default-avatar-groovy.png"/>
+            <img style="width:70px;margin-bottom:20px;" src="<?php echo $base_url; ?>/img/default-avatar-groovy.png"/>
             <form style="form-group" method="post">
                 <input name="loginemail" id="loginemail" style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Email" type="email" class="form-control">
                 <input name="loginpassword" id="loginpassword" style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Password" type="password" class="form-control">

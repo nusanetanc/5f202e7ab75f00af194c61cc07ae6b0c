@@ -12,7 +12,7 @@
                         <h5 style="font-size:26px;font-weight:200;">Silver</h5>
                         <span style="font-size:45px;font-weight:600">499</span><br/>
                         <span style="font-size:35px;line-height:20px;font-weight:200">RIBU</span><br/><br/>
-                        <p style="font-size:13px;">for lorem ipsum dolor sit amet</p><br/>
+                        <p style="font-size:13px;">10/20 Mbps + Elementrary Tv Package</p><br/>
                         <button style="background-image:url(<?php echo $base_url; ?>/img/silver-button.png);background-size:cover;border:0px;border-radius:5px;padding:10px 0px 10px 0px;font-weight:500;color:#000;" data-toggle="modal" data-target="#signupModal" data-dismiss="modal"><span class="buttonPackage">SUBSCRIBE</span></button>
                     </div>
                     <div style="padding-left:5px;">
@@ -34,7 +34,7 @@
                         <h5 style="font-size:26px;font-weight:200;">Gold</h5>
                         <span style="font-size:45px;font-weight:600">800</span><br/>
                         <span style="font-size:35px;line-height:20px;font-weight:200">RIBU</span><br/><br/>
-                        <p style="font-size:13px;">for lorem ipsum dolor sit amet</p><br/>
+                        <p style="font-size:13px;">30/50 Mbps + Basic Tv Package</p><br/>
                         <button style="background-image:url(<?php echo $base_url; ?>/img/gold-button.png);background-size:cover;border:0px;border-radius:5px;padding:10px 0 10px 0;font-weight:500;color:#000;" data-toggle="modal" data-target="#signupModal" data-dismiss="modal"><span class="buttonPackage">SUBSCRIBE</span></button>
                     </div>
                     <div style="padding-left:5px;">
@@ -57,7 +57,7 @@
                         <h5 style="font-size:26px;font-weight:200;">Platinum</h5>
                         <span style="font-size:45px;font-weight:600">945</span><br/>
                         <span style="font-size:35px;line-height:20px;font-weight:200">RIBU</span><br/><br/>
-                        <p style="font-size:13px;">for lorem ipsum dolor sit amet</p><br/>
+                        <p style="font-size:13px;">100 Mbps + Basic Plus SVOD Tv Package</p><br/>
                         <button style="background-image:url(<?php echo $base_url; ?>/img/platinum-button.png);background-size:cover;border:0px;border-radius:5px;padding:10px 0 10px 0;font-weight:500;color:#000;" data-toggle="modal" data-target="#signupModal" data-dismiss="modal"><span class="buttonPackage">SUBSCRIBE</span></button>
                     </div>
                     <div style="padding-left:5px;">
