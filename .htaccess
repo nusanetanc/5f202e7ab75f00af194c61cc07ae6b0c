@@ -2,13 +2,7 @@
 
 RewriteEngine On
 
-RewriteRule ^/ groovy.id/beta/index.php?hal=index [L]
-RewriteRule ^features groovy.id/beta/index.php?hal=features [L]
-RewriteRule ^forgot-password index.php?hal=forgot-password [L]
-RewriteRule ^not-found index.php?hal=not-found [L]
-RewriteRule ^packages index.php?hal=packages [L]
-RewriteRule ^signin index.php?hal=signin [L]
-RewriteRule ^signup index.php?hal=signup [L]
-RewriteRule ^support index.php?hal=support [L]
+RewriteRule ^features/?$ index.php?hal=features [L]
+
 
 </IfModule>
