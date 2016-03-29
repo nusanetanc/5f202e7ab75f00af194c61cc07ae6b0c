@@ -36,10 +36,10 @@
             <div class="col-xs-6 col-sm-6 col-md-3 text-left">
                 <h5 style="font-size:17px;margin-top:40px;margin-bottom:15px;">STAY CONNECTED</h5>
                 <p style="line-height:25px;">
-                    <i class="fa fa-facebook-square fa-3x" style="color:#3b5998"></i>&nbsp;
-                    <i class="fa fa-instagram-square fa-3x" style="color:#517fa4"></i>&nbsp;
-                    <i class="fa fa-twitter-square fa-3x" style="color:#00aced"></i>&nbsp;
-                    <i class="fa fa-youtube-square fa-3x" style="color:#bb0000"></i>
+                    <i class="fa fa-facebook fa-3x" style="color:#3b5998"></i>&nbsp;
+                    <i class="fa fa-instagram fa-3x" style="color:#517fa4"></i>&nbsp;
+                    <i class="fa fa-twitter fa-3x" style="color:#00aced"></i>&nbsp;
+                    <i class="fa fa-youtube-play fa-3x" style="color:#bb0000"></i>
                 </p>
             </div>
         </div>
