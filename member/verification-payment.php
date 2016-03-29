@@ -64,12 +64,11 @@ if ($total_revenue=="" || empty($total_revenue)){
 	$revenue=$total_revenue+$harga_paket;
 	$update_revenue = $col_revenue->update(array("date"=>$date), array('$set'=>array("total"=>$revenue.'.000')));
 }
-	if ($status_cust=="registrasi" || $status_cust=="konfirmasi registrasi" || $status_cust=="tidak aktif"){
+	if ($status_cust=="registrasi"){
 		$sisa_hari = 30-$date_month;
 		$last_proraide = $sisa_hari*$harga_hari;
 		$update_user = $col_user->update(array("id_user"=>$id_cust), array('$set'=>array("status"=>"progress pasang", "pembayaran"=>$last_pembayaran, "proraide"=>$last_proraide.'.000')));
 				// mail for supevisior teknik
-				$to = 'yudi.nurhandi@nusa.net.id';
 				$subject = 'Atur Jadwal Pemasangan';
 				$message = '
 				<html>
@@ -90,7 +89,11 @@ if ($total_revenue=="" || empty($total_revenue)){
 				$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 				$headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
 				$headers .= 'Cc: cs@groovy.id' . "\r\n";
-				$emailpasang=mail($to, $subject, $message, $headers); 
+			$res = $col_user->find(array("level"=>"5"));
+						foreach($res as $row)
+											{ 	
+				$emailpasang=mail($row['email'], $subject, $message, $headers); 
+			}
 	} else {
 		$update_user = $col_user->update(array("id_user"=>$id_cust), array('$set'=>array("tanggal_akhir"=>$last_aktif, "pembayaran"=>$last_pembayaran, "proraide"=>"0")));
 	}

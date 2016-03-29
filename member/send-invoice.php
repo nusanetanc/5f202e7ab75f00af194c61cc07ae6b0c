@@ -80,6 +80,7 @@
 		$pdf->Ln();
 		$pdf->Ln();
 		$pdf->Ln();
+		$pdf->Ln();
 		$pdf->Cell(0,7, '* Tata cara pembayaran dapat dilihat pada FAQ web groovy.id', '0', 1, 'R');
 		$pdf->Image($base_url.'/img/denstv-logo.png','10','230','50');
 		$pdf->Image($base_url.'/img/logo-nusanet.png','65','230','50');
