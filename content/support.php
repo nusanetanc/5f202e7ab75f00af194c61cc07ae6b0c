@@ -60,18 +60,7 @@
                         <p class="supportParagraphFaq">Anda bisa membayar tagihan dengan melakukan transfer ke rekening bank yang tertera pada invoice Anda. Besarnya pembayaran juga bisa Anda lihat di dalam invoice.<br/><br/>Setelah Anda melakukan pembayaran diharapkan untuk melakukan konfirmasi pembayaran dihalaman Billing pada Dashboard Anda. <a href="http://www.groovy.id/member/billing/konfirmasi">http://www.groovy.id/member/billing/konfirmasi</a></p>
                     </div>
                 </div>
-                <div class="supportContent">
-                    <button class="supportButtonFaq" data-toggle="collapse" data-target="#supportContent10">Bagiamana cara melakukan konfirmasi pembayaran ?<span style="float:right;margin-right:20px;"><i class="fa fa-plus"></i></span></button>
-                    <div id="supportContent10" class="collapse">
-                        <p class="supportParagraphFaq">Untuk melakukan konfirmasi pembayaran silahkan login terlebih dahulu pada halaman Dashboard member Anda <a href="http://www.groovy.id/member">http://www.groovy.id/member</a>.<br/><br/>Setelah Anda masuk ke Dashboard member, silahkan klik tab BILLING pada bagian header<br/><br/>selanjutnya ....</p>
-                    </div>
-                </div>
-                <div class="supportContent">
-                    <button class="supportButtonFaq" data-toggle="collapse" data-target="#supportContent11">Apa yang terjadi jika saya telat melakukan pembayaran ?<span style="float:right;margin-right:20px;"><i class="fa fa-plus"></i></span></button>
-                    <div id="supportContent11" class="collapse">
-                        <p class="supportParagraphFaq">...</p>
-                    </div>
-                </div>
+                
             </div>   
         </div>
       </div>
