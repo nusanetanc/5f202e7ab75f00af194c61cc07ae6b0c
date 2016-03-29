@@ -19,6 +19,32 @@ if (isset($_POST['save'])){
 	$date = date("Y/m/d");
 	$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("tanggal_aktivasi"=>$date, "status"=>"aktif"))); 
 	$update_jobs = $col_history->update(array("id_cust"=>$id_cust, "status"=>$status_jobs, "hal"=>$nama_jobs),array('$set'=>array("catatan"=>$note, "status"=>"done", "tanggal_selesai"=>$date)));
+				// mail for supevisior teknik
+				$subject = 'Laporan Job Support - '.$nama_jobs.' - '.$nama;
+				$message = '
+				<html>
+				<body>
+				  <p>Berikut laporan kerja : </p>
+				  <br/>
+				  <p>ID Customer : '.$id_cust.'</p>
+				  <p>Nama : '.$nama_cust.'</p>
+				  <p>Tempat : '.$tempat_cust.', '.$ket_cust.', '.$kota_cust.'</p>
+				  <p>Paket : '.$package_cust.'</p>
+				  <p>Status : Done</p>
+				  <p>Catatan Job : '.$note.'</p>
+				  <br/>
+				</body>
+				</html>
+				';
+				$headers  = 'MIME-Version: 1.0' . "\r\n";
+				$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+				$headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
+				$headers .= 'Cc: cs@groovy.id' . "\r\n";
+			$res = $col_user->find(array("level"=>"3"));
+						foreach($res as $row)
+											{ 	
+				$emailpasang=mail($row['email'], $subject, $message, $headers); 
+			}
 } 
 
 if ($update_user && $update_jobs){ ?>
