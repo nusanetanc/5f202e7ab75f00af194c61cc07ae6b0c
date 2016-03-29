@@ -41,6 +41,45 @@
 										    $month2 = bulan($bln2);
 										  }
 									if(isset($_POST['konfirmregis'])){ 
+									$id_cust=$_GET['id_cust'];
+									$res = $col_user->find(array("id_user"=>$_GET['id_cust'],"level"=>"0"));
+									foreach($res as $row)
+										  {
+										  	 $nama_cust=$row['nama'];
+										  	 $email_cust=$row['email'];
+										  	 $paket_cust=$row['paket'];
+										  	 $phone_cust=$row['phone'];
+										  	 $tempat_cust=$row['tempat'];
+										  	 $alamat_cust=$row['alamat'];
+										  	 $kota_cust=$row['kota'];
+										  	 $ket_cust=$row['keterangan'];
+										  	 $ktp_cust=$row['ktp'];
+										  	 $tglregis_cust=$row['tanggal_registrasi'];
+										  	 $tglakhir_cust=$row['tanggal_akhir'];
+										  	 $tglaktiv_cust=$row['tanggal_aktivasi'];
+										  	 $status_cust=$row['status'];
+										  	 $regis_cust=$row['registrasi'];
+										  	 $sales_cust=$row['nama_sales'];
+										  	 $invoice_cust=$row['invoice'];
+										  	 $harga_cust=$row['harga'];
+										  	 $email_sales=$row['email_sales'];
+										  	 $password_sales=$row['password'];
+									$tanggal = $tglregis_cust;
+										  	$thn = substr($tanggal, 0,4);
+										    $bln = substr($tanggal, 5,2);
+											$tgl = substr($tanggal, 8,10);
+										    $month = bulan($bln);
+									$tanggal1 = $tglakhir_cust;
+										  	$thn1 = substr($tanggal1, 0,4);
+										    $bln1 = substr($tanggal1, 5,2);
+											$tgl1 = substr($tanggal1, 8,10);
+										    $month1 = bulan($bln1);
+									$tanggal2 = $tglaktiv_cust;
+										  	$thn2 = substr($tanggal2, 0,4);
+										    $bln2 = substr($tanggal2, 5,2);
+											$tgl2 = substr($tanggal2, 8,10);
+										    $month2 = bulan($bln2);
+										  }
                                         $date = date("Y/m/d");
                                     $lokasifile= $_FILES['regisktp']['tmp_name'];
                                     $fileName = $_FILES['regisktp']['name']; 

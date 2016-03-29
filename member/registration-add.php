@@ -154,7 +154,7 @@ foreach($res as $row)
 
                                           // Mail it
                                           $kirimemail1 = mail($to1, $subject1, $message1, $headers1);
-if($insert_customer && $kirimemail1){                                          
+if($insert_customer && $kirimemail1){                                     
     echo '<p class="text-primary">Registration succeed, please wait for confirmation from the sales manager!</p>';
      } } } } ?>
 <section>
