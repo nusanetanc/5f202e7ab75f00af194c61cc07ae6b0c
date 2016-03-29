@@ -18,7 +18,7 @@ if (isset($_POST['save'])){
 	$note = $_POST['inputNote'];
 	$date = date("Y/m/d");
 	$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("tanggal_aktivasi"=>$date, "status"=>"aktif"))); 
-	$update_jobs = $col_history->update(array("id_customer"=>$id_cust, "status"=>$status_jobs, "hal"=>$nama_jobs),array('$set'=>array("catatan"=>$note, "status"=>"done", "tanggal_selesai"=>$date)));
+	$update_jobs = $col_history->update(array("id_cust"=>$id_cust, "status"=>$status_jobs, "hal"=>$nama_jobs),array('$set'=>array("catatan"=>$note, "status"=>"done", "tanggal_selesai"=>$date)));
 } 
 
 if ($update_user && $update_jobs){ ?>
