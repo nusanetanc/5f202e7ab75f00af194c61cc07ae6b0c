@@ -66,7 +66,7 @@
 		$pdf->Cell(0,7, 'DATA PEMBAYRAN - PAYMENT DATA', '0', 1, 'L');
 		$pdf->Ln();
 		$pdf->SetFont('Arial','','10');
-		$pdf->Cell(0,7, 'Kode Virtual     : '.$kode_perusahaan.$res0['id_user'], '0', 1, 'L');
+		$pdf->Cell(0,7, 'Kode Virtual     : '.$kode_perusahaan.$id_cust, '0', 1, 'L');
 		$pdf->Cell(0,7, 'Total Harga      : '.$harga_paket, '0', 1, 'L');
 		$pdf->Ln();
 		$pdf->Ln();
