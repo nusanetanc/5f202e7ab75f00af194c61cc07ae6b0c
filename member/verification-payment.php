@@ -89,7 +89,7 @@ if ($total_revenue=="" || empty($total_revenue)){
 				$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 				$headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
 				$headers .= 'Cc: cs@groovy.id' . "\r\n";
-			$res = $col_user->find(array("level"=>"5"));
+			$res = $col_user->find(array("level"=>"3"));
 						foreach($res as $row)
 											{ 	
 				$emailpasang=mail($row['email'], $subject, $message, $headers); 
