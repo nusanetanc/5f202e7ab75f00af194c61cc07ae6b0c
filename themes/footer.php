@@ -10,7 +10,6 @@
                 <p style="line-height:25px;">
                     <a href="">Services</a><br/>
                     <a href="">Getting Started</a><br/>
-                    <a href="">Technical Problems</a><br/>
                     <a href="">Billing &amp; Membership</a>
                 </p>
             </div>
@@ -18,8 +17,7 @@
                 <h5 style="font-size:17px;margin-top:40px;margin-bottom:15px;">CONTACT</h5>
                 <p style="line-height:25px;">
                     <a href="">Contact Us</a><br/>
-                    <a href="">Help Center</a><br/>
-                    <a href="">Email Offers</a>
+                    <a href="">Help Center</a>
                 </p>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-3 text-left">
@@ -27,10 +25,7 @@
                 <p style="line-height:25px;">
                     <a href="">Groovy Info</a><br/>
                     <a href="">Job Opportunity</a><br/>
-                    <a href="">Press Info</a><br/>
                     <a href="">Events</a><br/>
-                    <a href="">Hot News</a><br/>
-                    <a href="">Legal</a>
                 </p>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-3 text-left">
