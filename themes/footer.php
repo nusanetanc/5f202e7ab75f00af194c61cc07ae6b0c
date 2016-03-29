@@ -6,27 +6,21 @@
     <div class="container footerContent" style="padding:0 20px 50px 20px">
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-3 text-left">
-                <h5 style="font-size:17px;margin-top:40px;margin-bottom:15px;">PACKAGE</h5>
-                <p style="line-height:25px;">
-                    <a href="">Silver</a><br/>
-                    <a href="">Gold</a><br/>
-                    <a href="">Platinum</a><br/>
-                    <!--<a href="">Diamond</a></p>-->
-            </div>
-            <div class="col-xs-6 col-sm-6 col-md-3 text-left">
                 <h5 style="font-size:17px;margin-top:40px;margin-bottom:15px;">SUPPORT</h5>
                 <p style="line-height:25px;">
                     <a href="">Services</a><br/>
                     <a href="">Getting Started</a><br/>
                     <a href="">Technical Problems</a><br/>
-                    <a href="">Billing &amp; Membership</a><br/>
+                    <a href="">Billing &amp; Membership</a>
+                </p>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-3 text-left">
                 <h5 style="font-size:17px;margin-top:40px;margin-bottom:15px;">CONTACT</h5>
                 <p style="line-height:25px;">
                     <a href="">Contact Us</a><br/>
                     <a href="">Help Center</a><br/>
-                    <a href="">Email Offers</a></p>
+                    <a href="">Email Offers</a>
+                </p>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-3 text-left">
                 <h5 style="font-size:17px;margin-top:40px;margin-bottom:15px;">ABOUT</h5>
@@ -36,7 +30,17 @@
                     <a href="">Press Info</a><br/>
                     <a href="">Events</a><br/>
                     <a href="">Hot News</a><br/>
-                    <a href="">Legal</a></p>
+                    <a href="">Legal</a>
+                </p>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3 text-left">
+                <h5 style="font-size:17px;margin-top:40px;margin-bottom:15px;">STAY CONNECTED</h5>
+                <p style="line-height:25px;">
+                    <i class="fa fa-facebook-square"></i>
+                    <i class="fa fa-instagram-square"></i>
+                    <i class="fa fa-twitter-square"></i>
+                    <i class="fa fa-youtube-square"></i>
+                </p>
             </div>
         </div>
     </div>
