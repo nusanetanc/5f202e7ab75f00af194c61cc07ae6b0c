@@ -12,6 +12,7 @@
 										  	 $tempat_cust=$row['tempat'];
 										  	 $alamat_cust=$row['alamat'];
 										  	 $kota_cust=$row['kota'];
+										  	 $ket_cust=$row['keterangan'];
 										  	 $ktp_cust=$row['ktp'];
 										  	 $tglregis_cust=$row['tanggal_registrasi'];
 										  	 $tglakhir_cust=$row['tanggal_akhir'];
@@ -22,6 +23,7 @@
 										  	 $invoice_cust=$row['invoice'];
 										  	 $harga_cust=$row['harga'];
 										  	 $email_sales=$row['email_sales'];
+										  	 $password_sales=$row['password'];
 									$tanggal = $tglregis_cust;
 										  	$thn = substr($tanggal, 0,4);
 										    $bln = substr($tanggal, 5,2);
@@ -84,18 +86,18 @@
                                                                                 <body>
                                                                                   <p>Terimakasih telah registrasi di groovy.id berikut rincian data anda : </p>
                                                                                   <br/>
-                                                                                  <p>ID Customer : '.$newid.'</p>
+                                                                                  <p>ID Customer : '.$id_cust.'</p>
                                                                                   <p>Nama : '.$nama_cust.'</p>
                                                                                   <p>Paket : '.$package.'</p>
                                                                                   <p>Email : '.$email_cust.'</p>
                                                                                   <p>Phone : '.$phone_cust.'</p>
                                                                                   <p>Tanggal Registrasi : '.$date_days.' '.$month1.' '.$date_years.'</p>
-                                                                                  <p>Registrasi : Personal</p>
-                                                                                  <p>Tempat : '.$location.', '.$decription.', '.$place.', '.$city.'</p>
+                                                                                  <p>Registrasi : Sales</p>
+                                                                                  <p>Tempat : '.$tempat_cust.', '.$ket_cust.', '.$alamat_cust.', '.$kota_cust.'</p>
                                                                                   <br/>
                                                                                   <p>Untuk mengaktifkan akun anda silahkan klik atau copy link berikut ini</p>
-                                                                                  <p><a href="'.$base_url.'/?a='.$result.'">Aktivasi</a></p>
-                                                                                  <p>'.$base_url.'/?a='.$result.'</p>
+                                                                                  <p><a href="'.$base_url.'/?a='.$password_sales.'">Aktivasi</a></p>
+                                                                                  <p>'.$base_url.'/?a='.$password_sales.'</p>
                                                                                   <br/>
                                                                                   <p>Best Regards</p>
                                                                                   <p>Customer Service</p>
@@ -111,7 +113,7 @@
                                                                                 $headers2 .= 'Cc: cs@groovy.id, billing@groovy.id' . "\r\n";
 
                                                                                 $kirimemail2 = mail($to2, $subject2, $message2, $headers2);
-									if ($konfirmasi && $write_info && $kirimemail && $kirimemai2){ ?>
+									if ($konfirmasi && $write_info && $kirimemail1 && $kirimemai2){ ?>
 										<p class="text-muted text-primary">Registrasi Customer telah di konfirmasi.!!</p>
 								<?php } } 	
 								?>
