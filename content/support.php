@@ -6,7 +6,7 @@
             <h3 style="margin:0;font-size:33px;font-weight:bold;">Selamat Datang di Pusat Bantuan Groovy</h3>
             <h6 style="font-size:18px;font-weight:400;line-height:24px;margin:25px 0 0 0;color:#777">Butuh bantuan ?<br/>Semua informasi yang Anda butuhkan ada disini</h6>
             <div id="supportMenu1"> <br/>
-                <div class="supportContent">
+                <div class="supportContent" id="support-services">
                     <button class="supportButtonFaq" data-toggle="collapse" data-target="#supportContent1">Apa itu Groovy ?<span style="float:right;margin-right:20px;"><i class="fa fa-plus"></i></span></button>
                     <div id="supportContent1" class="collapse">
                         <p class="supportParagraphFaq">Groovy adalah layanan hiburan yang menggabungkan Internet, Live TV, Video On Demand, Social TV, Catch Up TV Channel dan Radio Streaming menggunakan jalur internet. 
@@ -24,7 +24,7 @@
                         <p class="supportParagraphFaq">Biaya langganan setiap bulanya bervariasi. Terdapat 3 paket yang bisa Anda sesuaikan dengan kebutuhan Anda. <a href="http://www.groovy.id/packages">http://www.groovy.id/packages</a></p>
                     </div>
                 </div>
-                <div class="supportContent">
+                <div class="supportContent"id="support-getting-started">
                     <button class="supportButtonFaq" data-toggle="collapse" data-target="#supportContent4">Apa yang saya butuhkan untuk berlangganan Groovy ?<span style="float:right;margin-right:20px;"><i class="fa fa-plus"></i></span></button>
                     <div id="supportContent4" class="collapse">
                         <p class="supportParagraphFaq">Untuk berlangganan Groovy Anda membutuhkan perangkat TV dengan input HDMI. Anda tidak perlu mempermasalahkan jaringan internet, karena Groovy sudah menyertakan jaringan internet berkecepatan tinggi bersama dengan paket Groovy.</p>
@@ -48,7 +48,7 @@
                         <p class="supportParagraphFaq">Untuk masuk ke akun Groovy Anda silahkan buka <a href="http://www.groovy.id">http://www.groovy.id</a> Kemudian klik Sign In di pojok kanan atas. Setelah modal popup terbuka masukan email dan kata sandi Anda, kemudian klik SIGN IN. Setelah berhasil Anda akan diarahkan ke halaman dashboard.</p>
                     </div>
                 </div>
-                <div class="supportContent">
+                <div class="supportContent"id="support-billing">
                     <button class="supportButtonFaq" data-toggle="collapse" data-target="#supportContent8">Berapa yang harus saya bayar masa awal pendaftaran/berlangganan ?<span style="float:right;margin-right:20px;"><i class="fa fa-plus"></i></span></button>
                     <div id="supportContent8" class="collapse">
                         <p class="supportParagraphFaq">Groovy menggunakan metode perhitungan pembayaran "Prorate". Artinya di masa awal pendaftaran Anda akan diminta untuk membayar paket 1 bulan full tidak perduli tanggal berapa Anda mendaftar. Baru di bulan berikutnya Anda tidak membayar tahihan 1 bulan full, tetapi hanya dibebankan tagihan di awal bulan yang sebelumnya.<br/><br/>Besarnya pembayaran di awal pendaftaran berbeda-beda tergantung dari masing-masing paket (<a  href="http://www.groovy.id/packages">lihat harga paket</a>)</p>

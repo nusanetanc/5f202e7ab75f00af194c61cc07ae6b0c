@@ -8,20 +8,20 @@
             <div class="col-xs-6 col-sm-6 col-md-3 text-left">
                 <h5 style="font-size:17px;margin-top:40px;margin-bottom:15px;">SUPPORT</h5>
                 <p style="line-height:25px;">
-                    <a href="">Services</a><br/>
-                    <a href="">Getting Started</a><br/>
-                    <a href="">Billing &amp; Membership</a>
+                    <a href="<?php echo $base_url; ?>/support#support-services">Services</a><br/>
+                    <a href="<?php echo $base_url; ?>/support#support-getting-started">Getting Started</a><br/>
+                    <a href="<?php echo $base_url; ?>/support#support-billing">Billing &amp; Membership</a>
                 </p>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-3 text-left">
                 <h5 style="font-size:17px;margin-top:40px;margin-bottom:15px;">FEATURES</h5>
                 <p style="line-height:25px;">
-                    <a href="">Internet</a><br/>
-                    <a href="">Live TV</a><br/>
-                    <a href="">Video on Demand</a><br/>
-                    <a href="">Social TV</a><br/>
-                    <a href="">Catch-Up TV Channel</a><br/>
-                    <a href="">Radio Streaming</a>
+                    <a href="<?php echo $base_url; ?>/features#feature-internet">Internet</a><br/>
+                    <a href="<?php echo $base_url; ?>/features#feature-livetv">Live TV</a><br/>
+                    <a href="<?php echo $base_url; ?>/features#feature-vod">Video on Demand</a><br/>
+                    <a href="<?php echo $base_url; ?>/features#feature-socialtv">Social TV</a><br/>
+                    <a href="<?php echo $base_url; ?>/features#feature-catchuptv">Catch-Up TV Channel</a><br/>
+                    <a href="<?php echo $base_url; ?>/features#feature-radio">Radio Streaming</a>
                 </p>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-3 text-left">
@@ -37,10 +37,10 @@
             <div class="col-xs-6 col-sm-6 col-md-3 text-left">
                 <h5 style="font-size:17px;margin-top:40px;margin-bottom:15px;">STAY CONNECTED</h5>
                 <p style="line-height:25px;">
-                    <a href="" target="_blank"><i class="fa fa-facebook-square fa-3x" style="color:#3b5998"></i></a>&nbsp;
-                    <a href="" target="_blank"><i class="fa fa-instagram fa-3x" style="color:#517fa4"></i></a>&nbsp;
-                    <a href="" target="_blank"><i class="fa fa-twitter-square fa-3x" style="color:#00aced"></i></a>&nbsp;
-                    <a href="" target="_blank"><i class="fa fa-youtube-square fa-3x" style="color:#bb0000"></i></a>
+                    <a href="" target="_blank"><i class="fa fa-facebook-square fa-3x footer-facebook"></i></a>&nbsp;
+                    <a href="" target="_blank"><i class="fa fa-instagram fa-3x footer-instagram"></i></a>&nbsp;
+                    <a href="" target="_blank"><i class="fa fa-twitter-square fa-3x footer-twitter"></i></a>&nbsp;
+                    <a href="" target="_blank"><i class="fa fa-youtube-square fa-3x footer-youtube"></i></a>
                 </p>
             </div>
         </div>

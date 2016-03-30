@@ -23,6 +23,7 @@
                                 <li>Internet up to 20 Mbps</li>
                                 <li>94 + Local & International Channel with 24 HD Channel Quality.</li>
                                 <li>Social TV</li>
+                                <li>Video on Demand</li>
                                 <li>Catch-up TV Channel</li>
                                 <li>Radio Streaming</li>
                                 <li>24/7 Live Support</li>
@@ -46,6 +47,7 @@
                                 <li>Internet up to 50 Mbps</li>
                                 <li>94 + Local & International Channel with 24 HD Channel Quality.</li>
                                 <li>Social TV</li>
+                                <li>Video on Demand</li>
                                 <li>Catch-up TV Channel</li>
                                 <li>Radio Streaming</li>
                                 <li>24/7 Live Support</li>
@@ -69,6 +71,7 @@
                                 <li>Internet up to 100 Mbps</li>
                                 <li>94 + Local & International Channel with 24 HD Channel Quality.</li>
                                 <li>Social TV</li>
+                                <li>Video on Demand</li>
                                 <li>Catch-up TV Channel</li>
                                 <li>Radio Streaming</li>
                                 <li>24/7 Live Support</li>
