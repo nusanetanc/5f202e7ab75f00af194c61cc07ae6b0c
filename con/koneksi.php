@@ -13,4 +13,5 @@
 	$col_location = $db->location;
 	$col_demand = $db->demand;
 	$col_history = $db->history;
+	$col_contactus = $db->contactus;
 ?>
