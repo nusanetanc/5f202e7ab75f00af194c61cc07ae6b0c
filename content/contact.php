@@ -24,7 +24,6 @@
                 </p>
             </div>
             <div class="col-sm-12 col-md-6">
-<<<<<<< HEAD
                 <h5 style="font-size:17px;color:#888;margin-top:40px;margin-bottom:15px;">CONTACT FORM</h5>
                 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" style="margin-top:30px;margin-bottom:100px;">
                     <?php
@@ -71,7 +70,6 @@
                     <input name ="subject" id = "subject" style="background-color:rgba(255, 255, 255, 1);margin-bottom:9px;height:40px" placeholder="Subject" type="text" class="form-control">
                     <textarea name ="message" id = "message" rows="5" class="form-control" style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:100px;width:100%;" placeholder="Message"></textarea>
                     <input id="send" name="send" type="submit" style=";text-align:center;background-color:#FF3D23;border:0px;color:#fff;height:40px;padding:0 40px 0 40px;border-radius:3px;font-weight:bold;" value="SEND"/>                    
-=======
                 <h5 style="font-size:17px;color:#777;margin-top:40px;margin-bottom:15px;">CONTACT FORM</h5>
                 <form style="margin-top:30px;margin-bottom:100px;">
                     <input style="background-color:rgba(255, 255, 255, 1);margin-bottom:9px;height:40px" placeholder="Name" type="text" class="form-control">
@@ -83,7 +81,6 @@
                     <!-- Notification -->
                     <span style="margin-left:20px;">Message Sent / <i>Pesan Telah Terkirim</i></span>
                     <!-- /Notification -->
->>>>>>> 2931ba6996c555b6f280406ac9cdff779a22c41a
                 </form>
             </div>
             
