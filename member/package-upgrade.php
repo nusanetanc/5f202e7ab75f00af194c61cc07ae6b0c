@@ -82,10 +82,10 @@ foreach($res as $row)
 						  	<?php
 					$res = $col_package->find();
 					foreach($res as $row) 
-                      {  if($row['nama']<>$paket)
+                      {  if($row['nama']<>$paket) {
                       	?>
 					          <option><?php echo $row['nama']; ?></option>
-					        <?php } ?>
+					        <?php } } ?>
 					        </select>
 						</li>
 						<li class="list-group-item">
