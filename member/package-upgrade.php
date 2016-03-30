@@ -109,19 +109,13 @@ foreach($res as $row)
   				<div class="panel-body">
   					<br/>
   					<div class="col-sm-12">
-						<table class="table table-striped table-hover ">
-						  <thead>
-						    <tr>
-						      <th>Deskripsi Upgrade</th>
-						      <th></th>
-						    </tr>
-						  </thead>
-						  <tbody>
-						      <td></td>
-						      <td></td>
-						    </tr>
-						  </tbody>
-						</table>  						
+						<li class="list-group-item" style="border:2;">
+							Tanggal Permintaan : <b><?php echo $tgl.' '.$month.' '.$thn; ?></b><br/>
+							Nama Paket : <b><?php echo $tgl1.' '.$month1.' '.$thn1; ?></b><br/>
+					    	Status : <b><?php echo $payment['paket']; ?></b><br/>
+					    	Tanggal Aktif : <b><?php echo $payment['paket']; ?></b><br/>
+					    	Tanggal Berhenti : <b><?php echo $payment['harga'].',-'; ?></b>
+						</li>						
 					</div>	
  				</div>
 			</div>
