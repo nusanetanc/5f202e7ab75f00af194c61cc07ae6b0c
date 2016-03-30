@@ -3,6 +3,6 @@
 RewriteEngine On
 RewriteBase  /beta
 
-RewriteRule ^info.html$ info.php
+RewriteRule ^packages$ ?hal=packages
 
 </IfModule>
