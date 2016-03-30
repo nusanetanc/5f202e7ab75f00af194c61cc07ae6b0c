@@ -61,11 +61,10 @@ foreach($res as $row)
 				$headers .= 'Cc: cs@groovy.id' . "\r\n";
 
 				$kirimemail=mail($to, $subject, $message, $headers);		
-	if ($update_user && $upgrade_paket && $kirimemail){
-
-		}
-	}
-?>
+	if ($update_user && $upgrade_paket && $kirimemail){ ?>
+		<script type="" language="JavaScript">
+		document.location='<?php echo $base_url_member; ?>/?hal=package-upgrade'</script>
+<?php } } ?>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
 		<div class="list-group">
@@ -113,12 +112,12 @@ foreach($res as $row)
 							    $bln = substr($tanggal, 5,2);
 								$tgl = substr($tanggal, 8,10);
 							    $month = bulan($bln);
-								    $tanggal1 = $payment['tanggal_aktif'];
+								    $tanggal1 = $paket['tanggal_aktif'];
 								  	$thn1 = substr($tanggal1, 0,4);
 								    $bln1 = substr($tanggal1, 5,2);
 									$tgl1 = substr($tanggal1, 8,10);
 								    $month1 = bulan($bln1);
-								$tanggal2 = $payment['tanggal_henti'];
+								$tanggal2 = $paket['tanggal_henti'];
 							  	$thn2 = substr($tanggal1, 0,4);
 							    $bln2 = substr($tanggal1, 5,2);
 								$tgl2 = substr($tanggal1, 8,10);
@@ -126,12 +125,13 @@ foreach($res as $row)
 						?>
 							<li class="list-group-item" style="border:2;">
 								Tanggal Permintaan : <b><?php echo $tgl.' '.$month.' '.$thn; ?></b><br/>
-								Nama/Harga Paket : <b><?php echo $tgl1.' '.$month1.' '.$thn1; ?></b><br/>
-						    	Status : <b><?php echo $payment['paket']; ?></b><br/>
+								Nama/Harga Paket : <b><?php echo $paket['paket']; ?></b><br/>
+						    	Status : <b><?php echo $paket['paket']; ?></b><br/>
 						    	<input type="submit" name="batal" id="batal" class="btn btn-primary btn-xs" value="Batal Pindah"><br/>
-						    	Tanggal Aktif : <b><?php echo $payment['paket']; ?></b><br/>
-						    	Tanggal Berhenti : <b><?php echo $payment['harga'].',-'; ?></b>
-							</li>						
+						    	Tanggal Aktif : <b><?php echo $tgl1.' '.$month1.' '.$thn1; ?></b><br/>
+						    	Tanggal Berhenti : <b><?php echo $tgl2.' '.$month2.' '.$thn2; ?></b>
+							</li>	
+						<?php } ?>					
 					</div>	
  				</div>
 			</div>
