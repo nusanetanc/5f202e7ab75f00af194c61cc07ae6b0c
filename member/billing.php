@@ -15,7 +15,7 @@ if ($level=="0"){
 		<div class="list-group">
 			<div class="panel" style="border:0px;" >
 				<div class="panel-body" style="background-color:#FF6D20;">
-					<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">BILLING</h3>
+					<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">BILLING - TAGIHAN</h3>
 				</div>
 				<div class="panel-body">
 					<br/>
@@ -47,10 +47,10 @@ if ($level=="0"){
 			</div>				
 			<div class="panel" style="border:0px;" >
 				<div class="panel-body" style="background-color:#FF6D20;">
-					<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">BILLING</h3>
+					<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">BILLING - DATA</h3>
 				</div>
   				    <div class="panel-body">
-		    					<table class="table table-striped table-hover ">
+  				    	<ul class="list-group">
 									  <?php
 										$res = $col_user->findOne(array("id_user"=>$id, "level"=>$level));	
 										foreach ($res['payment'] as $byr => $payment) {
@@ -65,15 +65,15 @@ if ($level=="0"){
 													$tgl1 = substr($tanggal1, 8,10);
 												    $month1 = bulan($bln1);
 										?>
-									  <thead>
- 										<th>Tanggal Pembayaran : <b><?php echo $tgl.' '.$month.' '.$thn; ?></b><br/>
- 											Tanggal Konfirmasi Billing : <b><?php echo $tgl1.' '.$month1.' '.$thn1; ?></b><br/>
-									    	Pembayaran Paket : <b><?php echo $payment['paket']; ?></b><br/>
-									    	Total Harga : <b><?php echo $payment['harga'].',-'; ?></b></th>
-									  </thead>
+									  
+  									<li class="list-group-item" style="border:2;">
+										Tanggal Pembayaran : <b><?php echo $tgl.' '.$month.' '.$thn; ?></b><br/>
+										Tanggal Konfirmasi Billing : <b><?php echo $tgl1.' '.$month1.' '.$thn1; ?></b><br/>
+								    	Pembayaran Paket : <b><?php echo $payment['paket']; ?></b><br/>
+								    	Total Harga : <b><?php echo $payment['harga'].',-'; ?></b>
+									</li>
 									  <?php } ?>
-								</table> 
-						</div>
+						</ul> 
 					</div>
  				</div>
 			</div>
