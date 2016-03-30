@@ -114,7 +114,7 @@ foreach($res as $row)
 							Tanggal Permintaan : <b><?php echo $tgl.' '.$month.' '.$thn; ?></b><br/>
 							Nama Paket : <b><?php echo $tgl1.' '.$month1.' '.$thn1; ?></b><br/>
 					    	Status : <b><?php echo $payment['paket']; ?></b><br/>
-					    	<input type="submit" name="batal" id="batal" class="label label-warning" value="Batal">
+					    	<input type="submit" name="batal" id="batal" class="btn btn-primary btn-xs" value="Batal">
 					    	Tanggal Aktif : <b><?php echo $payment['paket']; ?></b><br/>
 					    	Tanggal Berhenti : <b><?php echo $payment['harga'].',-'; ?></b>
 						</li>						
