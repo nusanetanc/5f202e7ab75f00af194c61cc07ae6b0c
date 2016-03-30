@@ -1,4 +1,5 @@
-<?php 
+<?php
+//tes 
 	if($no_virtual=="" || $no_virtual==null){ ?>
 		<script type="" language="JavaScript">
 		document.location='<?php echo $base_url_member; ?>'</script>
@@ -75,7 +76,7 @@ foreach($res as $row)
 		<div class="list-group">
 			<div class="panel" style="border:0px;" >
   				<div class="panel-heading" style="background-color:#FC9822">
-    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">PACKAGE - UPGRADE</h3>
+    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">PACKAGE - MOVE</h3>
   				</div>
   				<div class="panel-body">
   					<br/>
@@ -104,7 +105,7 @@ foreach($res as $row)
 			</div>
 			<div class="panel" style="border:0px;" >
   				<div class="panel-heading" style="background-color:#FC9822">
-    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">PACKAGE - DATA UPGRADE</h3>
+    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">PACKAGE - MOVE</h3>
   				</div>
   				<div class="panel-body">
   					<br/>
@@ -113,6 +114,7 @@ foreach($res as $row)
 							Tanggal Permintaan : <b><?php echo $tgl.' '.$month.' '.$thn; ?></b><br/>
 							Nama Paket : <b><?php echo $tgl1.' '.$month1.' '.$thn1; ?></b><br/>
 					    	Status : <b><?php echo $payment['paket']; ?></b><br/>
+					    	<input type="submit" name="batal" id="batal" class="btn btn-primary btn-xs" value="Batal">
 					    	Tanggal Aktif : <b><?php echo $payment['paket']; ?></b><br/>
 					    	Tanggal Berhenti : <b><?php echo $payment['harga'].',-'; ?></b>
 						</li>						
