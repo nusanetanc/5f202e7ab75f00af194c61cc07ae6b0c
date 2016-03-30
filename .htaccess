@@ -11,4 +11,6 @@ RewriteRule ^signup$ ?hal=signup
 RewriteRule ^404$ ?hal=not-found
 RewriteRule ^forgot-password$ ?hal=forgote-password
 RewriteRule ^contact-us$ ?hal=contact
+RewriteRule ^career$ ?hal=career
+RewriteRule ^events$ ?hal=events
 </IfModule>
