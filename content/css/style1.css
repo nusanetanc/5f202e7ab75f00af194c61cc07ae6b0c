@@ -126,6 +126,33 @@ html, body{
             padding-right:35px;
         }
         
+        
+        /* Footer */
+        .footer-facebook{
+            color:#888;
+        }
+        .footer-facebook:hover{
+            color:#3b5998;
+        }
+        .footer-instagram{
+            color:#888;
+        }
+        .footer-instagram:hover{
+            color:#517fa4;
+        }
+        .footer-twitter{
+            color:#888;
+        }
+        .footer-twitter:hover{
+            color:#00aced;
+        }
+        .footer-youtube{
+            color:#888;
+        }
+        .footer-youtube:hover{
+            color:#bb0000;
+        }
+        
         @media only screen and (max-width : 768px){
             .navMenu{
                 display:none;
