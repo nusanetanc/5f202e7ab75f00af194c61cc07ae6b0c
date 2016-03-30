@@ -6,8 +6,8 @@ RewriteBase  /beta
 RewriteRule ^packages$ ?hal=packages
 RewriteRule ^support$ ?hal=support
 RewriteRule ^features$ ?hal=features
-RewriteRule ^sign-in$ ?hal=signin
-RewriteRule ^sign-up$ ?hal=signup
-RewriteRule ^not-found$ ?hal=not-found
+RewriteRule ^signin$ ?hal=signin
+RewriteRule ^signup$ ?hal=signup
+RewriteRule ^404$ ?hal=not-found
 RewriteRule ^forgot-password$ ?hal=forgote-password
 </IfModule>
