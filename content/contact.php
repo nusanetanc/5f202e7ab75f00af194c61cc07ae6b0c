@@ -10,21 +10,21 @@
         </div>
         <div class="row">
             <div class="col-sm-12 col-md-6">
-                <h5 style="font-size:17px;color:#888;margin-top:40px;margin-bottom:15px;">OUR OFFICE</h5>
+                <h5 style="font-size:17px;color:#777;margin-top:40px;margin-bottom:15px;">OUR OFFICE</h5>
                 
                 <p style="margin-top:27px;font-size:15px;color:#333;font-weight:light;line-height:1.5">Nusanet Office<br/>Cyber Building, 7th Floor<br/>
                 Jl. Kuningan Barat 8<br/>
                 Jakarta 12710, Indonesia</p>
-                <h5 style="font-size:17px;color:#888;margin-top:40px;margin-bottom:15px;">SOCIAL MEDIA</h5>
+                <h5 style="font-size:17px;color:#777;margin-top:40px;margin-bottom:15px;">SOCIAL MEDIA</h5>
                 <p style="line-height:25px;">
-                    <a href="" target="_blank"><i class="fa fa-facebook fa-2x footer-facebook"></i></a>&nbsp;&nbsp;&nbsp; 
-                    <a href="" target="_blank"><i class="fa fa-instagram fa-2x footer-instagram"></i></a>&nbsp;&nbsp;&nbsp; 
-                    <a href="" target="_blank"><i class="fa fa-twitter fa-2x footer-twitter"></i></a>&nbsp;&nbsp;&nbsp; 
-                    <a href="" target="_blank"><i class="fa fa-youtube-play fa-2x footer-youtube"></i></a>
+                    <a href="" target="_blank"><i style="color:#3b5998" class="fa fa-facebook fa-2x footer-facebook"></i></a>&nbsp;&nbsp;&nbsp; 
+                    <a href="" target="_blank"><i style="color:#517fa4" class="fa fa-instagram fa-2x footer-instagram"></i></a>&nbsp;&nbsp;&nbsp; 
+                    <a href="" target="_blank"><i style="color:#00aced" class="fa fa-twitter fa-2x footer-twitter"></i></a>&nbsp;&nbsp;&nbsp; 
+                    <a href="" target="_blank"><i style="color:#bb0000" class="fa fa-youtube-play fa-2x footer-youtube"></i></a>
                 </p>
             </div>
             <div class="col-sm-12 col-md-6">
-                <h5 style="font-size:17px;color:#888;margin-top:40px;margin-bottom:15px;">CONTACT FORM</h5>
+                <h5 style="font-size:17px;color:#777;margin-top:40px;margin-bottom:15px;">CONTACT FORM</h5>
                 <form style="margin-top:30px;margin-bottom:100px;">
                     <input style="background-color:rgba(255, 255, 255, 1);margin-bottom:9px;height:40px" placeholder="Name" type="text" class="form-control">
                     <input style="background-color:rgba(255, 255, 255, 1);margin-bottom:9px;height:40px" placeholder="Email" type="email" class="form-control">
