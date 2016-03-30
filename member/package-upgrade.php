@@ -81,18 +81,6 @@ foreach($res as $row)
   					<br/>
   					<div class="col-sm-12">
 						<li class="list-group-item">
-							Paket Aktif Anda : <b><?php echo $paket; ?></b>
-						</li>	
-						<li class="list-group-item">
-						  	Batas Waktu Aktif : <b><?php echo $tgl.' '.$month.' '.$thn; ?></b>
-						</li>	
-						<li class="list-group-item">
-							Permintaan Pindah Paket : <b><?php echo $paket; ?></b>
-						</li>
-						<li class="list-group-item">
-							Tanggal Permintaan Pindah : <b><?php echo $paket; ?></b>
-						</li>
-						<li class="list-group-item">
 						  	Upgrade Paket : 
 						  	<select class="form-control" id="upgrade_paket" name="upgrade_paket">
 						  	<option disabled="true" selected="true">Selected Package</option>
@@ -109,11 +97,31 @@ foreach($res as $row)
 							<div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>	
 						</li>	
 						<br/>	
-						<button type="submit" class="btn btn-warning" name="upgrade" id="upgrade"><b>Konfirmasi</b></button>	
-						<br/>
-						* Pergantian paket dilakukan jika masa aktif sudah habis
-						<br/>
-						* Pembayaran selanjutnya sudah masuk pada paket baru anda								
+						<input type="submit" class="btn btn-warning" name="upgrade" id="upgrade" value="Konfirmasi">	
+						<br/>							
+					</div>	
+ 				</div>
+			</div>
+			<div class="panel" style="border:0px;" >
+  				<div class="panel-heading" style="background-color:#FC9822">
+    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">PACKAGE - DATA UPGRADE</h3>
+  				</div>
+  				<div class="panel-body">
+  					<br/>
+  					<div class="col-sm-12">
+						<table class="table table-striped table-hover ">
+						  <thead>
+						    <tr>
+						      <th>Deskripsi Upgrade</th>
+						      <th></th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						      <td></td>
+						      <td></td>
+						    </tr>
+						  </tbody>
+						</table>  						
 					</div>	
  				</div>
 			</div>
