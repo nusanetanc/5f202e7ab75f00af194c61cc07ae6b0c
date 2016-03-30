@@ -7,6 +7,10 @@
 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 <?php
 	$date = date("Y/m/d"); 
+  	$thn0 = substr($date, 0,4);
+    $bln0 = substr($date, 5,2);
+	$tgl0 = substr($date, 8,10);
+    $month0 = bulan($bln0);
 		if (isset($_POST['upgrade'])){
 			$upgrade_paket=$_POST['upgrade_paket']; 
 $res = $col_package->find(array("nama"=>$upgrade_paket));
@@ -40,9 +44,8 @@ foreach($res as $row)
 				  Email : '.$email.'<br/>
 				  Phone : '.$notelp.'<br/>
 				  Tempat : '.$tempat.' '.$keterangan.' '.$alamat.' '.$kota.'<br/>
-				  Tanggal Akhir aktif : '.$tgl.' '.$month.' '.$thn.'<br/>
 				  Permitaan pindah paket ke : '.$upgrade_paket.'<br/>
-				  Tanggal permintaan : '.$tgl1.' '.$month1.' '.$thn1.'</p>
+				  Tanggal permintaan : '.$tgl0.' '.$month0.' '.$thn0.'</p>
 				  <br/>
 				  <p>Silahkan untuk melakukan pembayaran agar kami bisa memproses untuk pindah paket, info pembayaran terdapat pada billing di halaman member anda.</p>
 				  <p>Paket baru akan aktif, setelah masa waktu paket lama habis.</p>
