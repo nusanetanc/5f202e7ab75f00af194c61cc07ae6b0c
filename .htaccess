@@ -2,8 +2,6 @@
 
 RewriteEngine On
 
-RewriteRule ^features/?$ beta/index.php?hal=features [L]
-
 RewriteRule ^/?([A-Za-z\-/]+)/?$ index.php?hal=$1 [L]
 
 </IfModule>
