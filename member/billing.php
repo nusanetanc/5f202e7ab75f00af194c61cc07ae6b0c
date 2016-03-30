@@ -51,12 +51,6 @@ if ($level=="0"){
 				</div>
   				    <div class="panel-body">
 		    					<table class="table table-striped table-hover ">
-									 <thead>
-									    <tr>
-									      <th width="50%">Deskripsi</th>
-									      <th width="50%">Total</th>
-									    </tr>
-									  </thead>
 									  <?php
 										$res = $col_user->findOne(array("id_user"=>$id, "level"=>$level));	
 										foreach ($res['payment'] as $byr => $payment) {
@@ -74,8 +68,8 @@ if ($level=="0"){
 									  <tbody>
  										<td><?php echo 'Tanggal Pembayaran : '.$tgl.' '.$month.' '.$thn; ?><br/>
  										<?php echo 'Tanggal Konfirmasi Billing : '.$tgl1.' '.$month1.' '.$thn1; ?><br/>
-									    <?php echo 'Pembayaran Paket : '.$payment['paket']; ?> </td>
-									    <td><?php echo 'Total Harga : '.$payment['harga'].',-'; ?></td>
+									    <?php echo 'Pembayaran Paket : '.$payment['paket']; ?><br/>
+									    <?php echo 'Total Harga : '.$payment['harga'].',-'; ?></td>
 									  </tbody>
 									  <?php } ?>
 								</table> 
