@@ -2,7 +2,7 @@
 
 RewriteEngine On
 
-RewriteRule ^features/?$ index.php?hal=features [L]
+RewriteRule ^features?$ beta/index.php?hal=features [L]
 
 
 </IfModule>
