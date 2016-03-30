@@ -1,4 +1,5 @@
-<?php 
+<?php
+//tes 
 	if($no_virtual=="" || $no_virtual==null){ ?>
 		<script type="" language="JavaScript">
 		document.location='<?php echo $base_url_member; ?>'</script>
