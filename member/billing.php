@@ -53,10 +53,8 @@ if ($level=="0"){
 		    					<table class="table table-striped table-hover ">
 									 <thead>
 									    <tr>
-									      <th width="20%">Tanggal Pembayaran</th>
-									      <th width="20%">Tanggal Konfirmasi</th>
-									      <th width="30%">Deskripsi</th>
-									      <th width="15%">Total</th>
+									      <th width="50%">Deskripsi</th>
+									      <th width="50%">Total</th>
 									    </tr>
 									  </thead>
 									  <?php
@@ -74,10 +72,10 @@ if ($level=="0"){
 												    $month1 = bulan($bln1);
 										?>
 									  <tbody>
- 										<td><?php echo $tgl.' '.$month.' '.$thn; ?></td>
- 										<td><?php echo $tgl1.' '.$month1.' '.$thn1; ?></td>
-									    <td>Pembayaran Paket <?php echo $payment['paket']; ?> </td>
-									    <td><?php echo $payment['harga'].',-'; ?></td>
+ 										<td><?php echo 'Tanggal Pembayaran : '.$tgl.' '.$month.' '.$thn; ?><br/>
+ 										<?php echo 'Tanggal Konfirmasi Billing : '.$tgl1.' '.$month1.' '.$thn1; ?><br/>
+									    <?php echo 'Pembayaran Paket : '.$payment['paket']; ?> </td>
+									    <td><?php echo 'Total Harga : '.$payment['harga'].',-'; ?></td>
 									  </tbody>
 									  <?php } ?>
 								</table> 
