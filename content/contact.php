@@ -27,53 +27,54 @@
                 <h5 style="font-size:17px;color:#777;margin-top:40px;margin-bottom:15px;">CONTACT FORM</h5>
                 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" style="margin-top:30px;margin-bottom:100px;">
                     <?php
-                        if (isset($post['send'])){
-                            $name = $_POST['name'];
-                            $email = $_POST['email'];
-                            $subject = $_POST['subject'];
-                            $message = $_POST['message'];
+                        if (isset($post['contact_send'])){
+                            $contact_name = $_POST['contact_name'];
+                            $contact_email = $_POST['contact_email'];
+                            $contact_subject = $_POST['contact_subject'];
+                            $contact_message = $_POST['contact_message'];
                         if ($name<>"" || $email<>"" || $subject<>"" || $message<>""){
-                        $insert=$col_contactus->insert(array("name"=>$name, "email"=>$email, "subject"=>$subject, "message"=>$message));
-                                            $to1 = $email;
+                        $insert_contact=$col_contactus->insert(array("name"=>$contact_name, "email"=>$contact_email, "subject"=>$contact_subject, "message"=>$contact_message));
+                                            $to_contact = $contact_email;
 
                                           // subject
-                                          $subject1 = 'Contact Us groovy.id';
+                                          $subject_contact = 'Contact Us groovy.id';
 
                                           // message
-                                          $message1 = '
+                                          $message_contact = '
                                           <html>
                                           <body>
-                                            <p>Dear :'.$name.'</p>
+                                            <p>Dear :'.$contact_name.'</p>
                                             <p>Dear : Thank you for writing to us. Our team will be responding to your query as soon as possible. </p>
                                             <br/>
-                                            <p>Email : '.$email.'</p>
-                                            <p>Subject : '.$subject.'</p>
-                                            <p>Message : '.$message.'</p>
+                                            <p>Email : '.$contact_email.'</p>
+                                            <p>Subject : '.$contact_subject.'</p>
+                                            <p>Message : '.$contact_message.'</p>
                                             <br/>
                                           </body>
                                           </html>
                                           ';
 
                                           // To send HTML mail, the Content-type header must be set
-                                          $headers1  = 'MIME-Version: 1.0' . "\r\n";
-                                          $headers1 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+                                          $headers_contact  = 'MIME-Version: 1.0' . "\r\n";
+                                          $headers_contact .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
                                           // Additional headers
-                                          $headers1 .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
-                                          $headers1 .= 'Cc: cs@groovy.id' . "\r\n";
+                                          $headers_contact .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
+                                          $headers_contact .= 'Cc: cs@groovy.id' . "\r\n";
 
                                           // Mail it
-                                          $kirimemail1 = mail($to1, $subject1, $message1, $headers1);
+                                          $kirimemail_contact = mail($to_contact, $subject_contact, $message_contact, $headers_contact);
                                 $_SESSION['message-sent']="Message Sent";
                         } else {
                                 $_SESSION['message-sent']="Message Not Sent";
                         } }
                     ?>
-                    <input name ="name" id = "name" style="background-color:rgba(255, 255, 255, 1);margin-bottom:9px;height:40px" placeholder="Name" type="text" class="form-control" required>
-                    <input name ="email" id = "email" style="background-color:rgba(255, 255, 255, 1);margin-bottom:9px;height:40px" placeholder="Email" type="email" class="form-control" required>
-                    <input name ="subject" id = "subject" style="background-color:rgba(255, 255, 255, 1);margin-bottom:9px;height:40px" placeholder="Subject" type="text" class="form-control" require>
-                    <textarea name ="message" id = "message" rows="5" class="form-control" style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:100px;width:100%;" placeholder="Message" require></textarea>
-                    <input id="send" name="send" type="submit" style=";text-align:center;background-color:#FF3D23;border:0px;color:#fff;height:40px;padding:0 40px 0 40px;border-radius:3px;font-weight:bold;" value="SEND"/>  
+                    <input name ="contact_name" id = "contact_name" style="background-color:rgba(255, 255, 255, 1);margin-bottom:9px;height:40px" placeholder="Name" type="text" class="form-control" required>
+                    <input name ="contact_email" id = "contact_email" style="background-color:rgba(255, 255, 255, 1);margin-bottom:9px;height:40px" placeholder="Email" type="email" class="form-control" required>
+                    <input name ="contact_subject" id = "contact_subject" style="background-color:rgba(255, 255, 255, 1);margin-bottom:9px;height:40px" placeholder="Subject" type="text" class="form-control" require>
+                    <textarea name ="contact_message" id = "contact_message" rows="5" class="form-control" style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:100px;width:100%;" placeholder="Message" require></textarea>
+                    <div style="margin-bottom:7px;" class="g-recaptcha" data-sitekey="6Ldx_BsTAAAAAOYrQegHLVhslSvd6z78zAr-4Knc"></div> 
+                    <input id="contact_send" name="contact_send" type="submit" style=";text-align:center;background-color:#FF3D23;border:0px;color:#fff;height:40px;padding:0 40px 0 40px;border-radius:3px;font-weight:bold;" value="SEND"/>  
                     <?php if(isset($_SESSION['message-sent'])) { ?>
                     <!-- Notification -->
                     <span style="margin-left:20px;"><?php echo $_SESSION['message-sent']; ?></span>
