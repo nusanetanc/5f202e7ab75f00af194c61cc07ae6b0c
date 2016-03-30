@@ -32,7 +32,7 @@
                             $contact_email = $_POST['contact_email'];
                             $contact_subject = $_POST['contact_subject'];
                             $contact_message = $_POST['contact_message'];
-                        if ($name<>"" || $email<>"" || $subject<>"" || $message<>""){
+                        if ($contact_name<>"" || $contact_email<>"" || $contact_subject<>"" || $contact_message<>""){
                         $insert_contact=$col_contactus->insert(array("name"=>$contact_name, "email"=>$contact_email, "subject"=>$contact_subject, "message"=>$contact_message));
                                             $to_contact = $contact_email;
 
