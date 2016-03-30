@@ -66,10 +66,10 @@ if ($level=="0"){
 												    $month1 = bulan($bln1);
 										?>
 									  <tbody>
- 										<td><?php echo 'Tanggal Pembayaran : '.$tgl.' '.$month.' '.$thn; ?><br/>
- 										<?php echo 'Tanggal Konfirmasi Billing : '.$tgl1.' '.$month1.' '.$thn1; ?><br/>
-									    <?php echo 'Pembayaran Paket : '.$payment['paket']; ?><br/>
-									    <?php echo 'Total Harga : '.$payment['harga'].',-'; ?></td>
+ 										<td>Tanggal Pembayaran : <b><?php echo $tgl.' '.$month.' '.$thn; ?></b><br/>
+ 											Tanggal Konfirmasi Billing : <b><?php echo $tgl1.' '.$month1.' '.$thn1; ?></b><br/>
+									    	Pembayaran Paket : <b><?php echo ' : '.$payment['paket']; ?></b><br/>
+									    	Total Harga : <b><?php echo $payment['harga'].',-'; ?></b></td>
 									  </tbody>
 									  <?php } ?>
 								</table> 
