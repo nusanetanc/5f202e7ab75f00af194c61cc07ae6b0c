@@ -68,7 +68,7 @@ if ($level=="0"){
 									  <thead>
  										<th>Tanggal Pembayaran : <b><?php echo $tgl.' '.$month.' '.$thn; ?></b><br/>
  											Tanggal Konfirmasi Billing : <b><?php echo $tgl1.' '.$month1.' '.$thn1; ?></b><br/>
-									    	Pembayaran Paket : <b><?php echo ' : '.$payment['paket']; ?></b><br/>
+									    	Pembayaran Paket : <b><?php echo $payment['paket']; ?></b><br/>
 									    	Total Harga : <b><?php echo $payment['harga'].',-'; ?></b></th>
 									  </thead>
 									  <?php } ?>

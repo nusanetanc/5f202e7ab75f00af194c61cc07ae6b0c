@@ -10,4 +10,5 @@ RewriteRule ^signin$ ?hal=signin
 RewriteRule ^signup$ ?hal=signup
 RewriteRule ^404$ ?hal=not-found
 RewriteRule ^forgot-password$ ?hal=forgote-password
+RewriteRule ^contact-us$ ?hal=contact
 </IfModule>
