@@ -45,11 +45,11 @@ if ($level=="0"){
 						</fieldset>
 				</div>
 			</div>				
-  				<div class="panel-heading" style="background-color:#FF6D20">
-    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">History Payment</h3>
-  				</div>
+			<div class="panel" style="border:0px;" >
+				<div class="panel-body" style="background-color:#FF6D20;">
+					<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">BILLING</h3>
+				</div>
   				    <div class="panel-body">
-  				    	<div class="panel panel-default">
 		    					<table class="table table-striped table-hover ">
 									 <thead>
 									    <tr>
