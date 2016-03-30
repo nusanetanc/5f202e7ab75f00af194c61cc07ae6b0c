@@ -27,7 +27,7 @@
                 <h5 style="font-size:17px;color:#777;margin-top:40px;margin-bottom:15px;">CONTACT FORM</h5>
                 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" style="margin-top:30px;margin-bottom:100px;">
                     <?php
-                        if (isset($post['contact_send'])){
+                        if (isset($_POST['contact_send'])){
                             $contact_name = $_POST['contact_name'];
                             $contact_email = $_POST['contact_email'];
                             $contact_subject = $_POST['contact_subject'];
