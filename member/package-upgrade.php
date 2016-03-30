@@ -7,14 +7,6 @@
 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 <?php
 	$date = date("Y/m/d"); 
-		$thn1 = substr($date, 0,4);
-	    $bln1 = substr($date, 5,2);
-		$tgl1 = substr($date, 8,10);
-	    $month1 = bulan($bln1); 
-			$thn = substr($tanggal_akhir, 0,4);
-		    $bln = substr($tanggal_akhir, 5,2);
-			$tgl = substr($tanggal_akhir, 8,10);
-		    $month = bulan($bln);
 		if (isset($_POST['upgrade'])){
 			$upgrade_paket=$_POST['upgrade_paket']; 
 $res = $col_package->find(array("nama"=>$upgrade_paket));
@@ -23,14 +15,17 @@ foreach($res as $row)
     $upgrade_harga=$row['harga'];
 } 
 	$upgrade=array(
-			"date_request"=>$date,
+			"tanggal_request"=>$date,
 			"paket"=>$upgrade_paket,
-			"harga"=>$upgrade_harga
+			"harga"=>$upgrade_harga,
+			"tanggal_aktif"=>"",
+			"tanggal_henti"=>"",
+			"status"=>"request"
 		);
-		$update_user=$col_user->update(array("id_user"=>$id),array('$set'=>array("paket"=>$upgrade_paket, "harga"=>$upgrade_harga)));
-		$upgrade_paket=$col_user->update(array("id_user"=>$id),array('$push'=>array("data_paket"=>$upgrade)));
+		$update_user=$col_user->update(array("id_user"=>$id, "level"=>"0"),array('$set'=>array("move_paket"=>$upgrade_paket, "move_harga"=>$upgrade_harga)));
+		$upgrade_paket=$col_user->update(array("id_user"=>$id, "level"=>"0"),array('$push'=>array("paket"=>$upgrade)));
 			// mail for customer to update paket
-				$to = 'yudi.nurhandi@nusa.net.id';
+				$to = $email;
 
 				$subject = 'Upgrade Paket';
 
@@ -110,14 +105,33 @@ foreach($res as $row)
   				<div class="panel-body">
   					<br/>
   					<div class="col-sm-12">
-						<li class="list-group-item" style="border:2;">
-							Tanggal Permintaan : <b><?php echo $tgl.' '.$month.' '.$thn; ?></b><br/>
-							Nama Paket : <b><?php echo $tgl1.' '.$month1.' '.$thn1; ?></b><br/>
-					    	Status : <b><?php echo $payment['paket']; ?></b><br/>
-					    	<input type="submit" name="batal" id="batal" class="btn btn-primary btn-xs" value="Batal">
-					    	Tanggal Aktif : <b><?php echo $payment['paket']; ?></b><br/>
-					    	Tanggal Berhenti : <b><?php echo $payment['harga'].',-'; ?></b>
-						</li>						
+						<?php
+						$res = $col_user->findOne(array("id_user"=>$id, "level"=>"0"));	
+						foreach ($res['package'] as $pkt => $paket) {
+								$tanggal = $paket['tanggal_request'];
+							  	$thn = substr($tanggal, 0,4);
+							    $bln = substr($tanggal, 5,2);
+								$tgl = substr($tanggal, 8,10);
+							    $month = bulan($bln);
+								    $tanggal1 = $payment['tanggal_aktif'];
+								  	$thn1 = substr($tanggal1, 0,4);
+								    $bln1 = substr($tanggal1, 5,2);
+									$tgl1 = substr($tanggal1, 8,10);
+								    $month1 = bulan($bln1);
+								$tanggal2 = $payment['tanggal_henti'];
+							  	$thn2 = substr($tanggal1, 0,4);
+							    $bln2 = substr($tanggal1, 5,2);
+								$tgl2 = substr($tanggal1, 8,10);
+							    $month2 = bulan($bln2);
+						?>
+							<li class="list-group-item" style="border:2;">
+								Tanggal Permintaan : <b><?php echo $tgl.' '.$month.' '.$thn; ?></b><br/>
+								Nama/Harga Paket : <b><?php echo $tgl1.' '.$month1.' '.$thn1; ?></b><br/>
+						    	Status : <b><?php echo $payment['paket']; ?></b><br/>
+						    	<input type="submit" name="batal" id="batal" class="btn btn-primary btn-xs" value="Batal Pindah"><br/>
+						    	Tanggal Aktif : <b><?php echo $payment['paket']; ?></b><br/>
+						    	Tanggal Berhenti : <b><?php echo $payment['harga'].',-'; ?></b>
+							</li>						
 					</div>	
  				</div>
 			</div>
