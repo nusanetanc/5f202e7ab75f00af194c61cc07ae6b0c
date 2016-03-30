@@ -41,8 +41,10 @@
     <!-- /Content3 -->
     
     <!-- Content4 -->
-    <h3 class="mainFeatureHeading text-center" id="feature-vod">Premium Video On Demand</h3>
-    <div style="height:400px;" id="animate-poster">
+    <div id="feature-vod">
+        <h3 class="mainFeatureHeading text-center">Premium Video On Demand</h3>
+        <div style="height:400px;" id="animate-poster">
+    </div>
         
     </div>
     <!-- /Content4 -->
