@@ -1,7 +1,8 @@
 <IfModule mod_rewrite.c>
 
 RewriteEngine On
+RewriteBase  /beta
 
-RewriteRule ^/?([A-Za-z\-/]+)/?$ index.php?hal=$1 [L]
+RewriteRule ^info.html$ info.php
 
 </IfModule>
