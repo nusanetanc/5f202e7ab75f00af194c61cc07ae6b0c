@@ -16,12 +16,12 @@
             <div class="col-xs-6 col-sm-6 col-md-3 text-left">
                 <h5 style="font-size:17px;margin-top:40px;margin-bottom:15px;">FEATURES</h5>
                 <p style="line-height:25px;">
-                    <a href="">Internet</a><br/>
-                    <a href="">Live TV</a><br/>
-                    <a href="">Video on Demand</a><br/>
-                    <a href="">Social TV</a><br/>
-                    <a href="">Catch-Up TV Channel</a><br/>
-                    <a href="">Radio Streaming</a>
+                    <a href="<?php echo $base_url; ?>/feature#feature-internet">Internet</a><br/>
+                    <a href="<?php echo $base_url; ?>/feature#feature-livetv">Live TV</a><br/>
+                    <a href="<?php echo $base_url; ?>/feature#feature-vod">Video on Demand</a><br/>
+                    <a href="<?php echo $base_url; ?>/feature#feature-socialtv">Social TV</a><br/>
+                    <a href="<?php echo $base_url; ?>/feature#feature-catchuptv">Catch-Up TV Channel</a><br/>
+                    <a href="<?php echo $base_url; ?>/feature#feature-radio">Radio Streaming</a>
                 </p>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-3 text-left">

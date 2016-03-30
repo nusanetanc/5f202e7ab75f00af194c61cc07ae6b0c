@@ -15,7 +15,7 @@
     
     <!-- Content2 -->
     <div id="content2Feature">
-        <div class="container">
+        <div class="container" id="feature-internet">
             <div class="row">
                 <div class="col-sm-6 featureContentWrap">
                     <h3 class="secondFeatureHeading">High Speed Internet Access</h3>
@@ -28,7 +28,7 @@
     
     <!-- Content3 -->
     <div id="content3Feature">
-        <div class="container">
+        <div class="container" id="feature-livetv">
             <div class="row">
                 <div class="col-sm-6"></div>
                 <div class="col-sm-6 featureContentWrap">
@@ -41,7 +41,7 @@
     <!-- /Content3 -->
     
     <!-- Content4 -->
-    <h3 class="mainFeatureHeading text-center">Premium Video On Demand</h3>
+    <h3 class="mainFeatureHeading text-center" id="feature-vod">Premium Video On Demand</h3>
     <div style="height:400px;" id="animate-poster">
         
     </div>
@@ -49,7 +49,7 @@
         
      <!-- Content5 -->
     <div id="content5Feature">
-        <div class="container">
+        <div class="container" id="feature-socialtv">
             <div class="row">
                 <div class="col-sm-6 featureContentWrap">
                     <h3 class="secondFeatureHeading" style="color:#fff;">Social TV</h3>
@@ -62,7 +62,7 @@
     
     <!-- Content6 -->
     <div id="content6Feature">
-        <div class="container">
+        <div class="container" id="feature-catchuptv">
             <div class="row">
                 <div class="col-sm-12 featureContentWrap">
                     <h3 class="secondFeatureHeading">Catch-Up TV Channel</h3>
@@ -75,7 +75,7 @@
     
     <!-- Content7 -->
     <div id="content7Feature">
-        <div class="container">
+        <div class="container" id="feature-radio">
             <div class="row">
                 <div class="col-sm-12 featureContentWrap">
                     <h3 class="secondFeatureHeading">Radio Streaming</h3>
