@@ -65,12 +65,12 @@ if ($level=="0"){
 													$tgl1 = substr($tanggal1, 8,10);
 												    $month1 = bulan($bln1);
 										?>
-									  <tbody>
- 										<td>Tanggal Pembayaran : <b><?php echo $tgl.' '.$month.' '.$thn; ?></b><br/>
+									  <thead>
+ 										<th>Tanggal Pembayaran : <b><?php echo $tgl.' '.$month.' '.$thn; ?></b><br/>
  											Tanggal Konfirmasi Billing : <b><?php echo $tgl1.' '.$month1.' '.$thn1; ?></b><br/>
 									    	Pembayaran Paket : <b><?php echo ' : '.$payment['paket']; ?></b><br/>
-									    	Total Harga : <b><?php echo $payment['harga'].',-'; ?></b></td>
-									  </tbody>
+									    	Total Harga : <b><?php echo $payment['harga'].',-'; ?></b></th>
+									  </thead>
 									  <?php } ?>
 								</table> 
 						</div>
