@@ -1,5 +1,5 @@
 <!-- Contact -->
-<div style="background:url(<?php echo $base_url; ?>/img/background-contact-us.jpg)background-position:center;margin-top:40px;">
+<div style="background:url(<?php echo $base_url; ?>/img/background-contact-us.jpg);height:500px;background-position:center;margin-top:40px;">
     <div class="container">
         <div class="row">
             <div class="col-sm-12"><img width="100%" src="<?php echo $base_url; ?>/img/background-feature-tv.png"/></div>
