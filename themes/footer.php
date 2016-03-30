@@ -9,8 +9,8 @@
                 <h5 style="font-size:17px;margin-top:40px;margin-bottom:15px;">SUPPORT</h5>
                 <p style="line-height:25px;">
                     <a href="<?php echo $base_url; ?>/support#support-services">Services</a><br/>
-                    <a href="">Getting Started</a><br/>
-                    <a href="">Billing &amp; Membership</a>
+                    <a href="<?php echo $base_url; ?>/support#support-getting-started">Getting Started</a><br/>
+                    <a href="<?php echo $base_url; ?>/support#support-billing">Billing &amp; Membership</a>
                 </p>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-3 text-left">
