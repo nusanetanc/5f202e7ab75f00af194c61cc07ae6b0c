@@ -18,16 +18,7 @@ foreach($res as $row)
 { 
     $upgrade_harga=$row['harga'];
 } 
-	$upgrade=array(
-			"tanggal_request"=>$date,
-			"paket"=>$upgrade_paket,
-			"harga"=>$upgrade_harga,
-			"tanggal_aktif"=>"",
-			"tanggal_henti"=>"",
-			"status"=>"request"
-		);
-	$update_user=$col_user->update(array("id_user"=>$id, "level"=>"0"),array('$set'=>array("move_paket"=>$upgrade_paket, "move_harga"=>$upgrade_harga)));
-	$push_paket=$col_user->update(array("id_user"=>$id, "level"=>"0"),array('$push'=>array("paket"=>$upgrade)));
+	$update_user=$col_user->update(array("id_user"=>$id, "level"=>"0"),array('$set'=>array("move_paket"=>$upgrade_paket, "move_harga"=>$upgrade_harga, "move_request"=>$date)));
 			// mail for customer to update paket
 				$to = $email;
 
@@ -109,7 +100,7 @@ foreach($res as $row)
   					<div class="col-sm-12">
 						<?php
 						$res = $col_user->findOne(array("id_user"=>$id, "level"=>"0"));	
-						foreach ($res['package'] as $pkt => $paket) {
+						foreach ($res as $pkt) {
 								$tanggal = $paket['tanggal_request'];
 							  	$thn = substr($tanggal, 0,4);
 							    $bln = substr($tanggal, 5,2);
