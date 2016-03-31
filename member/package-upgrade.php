@@ -115,6 +115,9 @@ foreach($res as $row)
 						<?php
 						$res = $col_user->findOne(array("id_user"=>$id, "level"=>"0"));	
 						foreach ($res['paket'] as $res_paket => $row_paket) {
+							if (empty($row_paket)){
+								echo "no data";
+							}
 								$tanggal = $row_paket['tanggal_request'];
 							  	$thn = substr($tanggal, 0,4);
 							    $bln = substr($tanggal, 5,2);
