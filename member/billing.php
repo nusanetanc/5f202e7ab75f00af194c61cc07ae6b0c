@@ -9,6 +9,10 @@ if ($level=="0"){
 												$bln_aktif = substr($tanggal_aktivasi, 5,2);
 												$tgl_aktif = substr($tanggal_aktivasi, 8,10);
 												$month_aktif = bulan($bln_aktif);
+		if ($move_paket<>""){
+			$paket==$move_paket;
+			$harga=$move_harga;
+		}
 	?>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
