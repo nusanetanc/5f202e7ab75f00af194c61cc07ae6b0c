@@ -43,8 +43,8 @@
                                           $message_contact = '
                                           <html>
                                           <body>
-                                            <p>Hi : '.$contact_name.'</p>
-                                            <p>Thank you for writing to us. Our team will be responding to your query as soon as possible. </p>
+                                            <p>Hi '.$contact_name.'</p>
+                                            <p>Thank you for contact to us. Our team will be responding to your message as soon as possible. </p>
                                             <br/>
                                             <p>Email : '.$contact_email.'</p>
                                             <p>Subject : '.$contact_subject.'</p>
