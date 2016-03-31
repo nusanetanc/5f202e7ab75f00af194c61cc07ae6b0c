@@ -58,7 +58,13 @@ foreach($res as $row)
 	if ($update_user && $push_paket && $kirimemail){ ?>
 		<script type="" language="JavaScript">
 		document.location='<?php echo $base_url_member; ?>/?hal=package-upgrade'</script>
-<?php } } ?>
+<?php } } 
+	if(isset($_POST['batal'])){
+		$delete_upgrade=$col_user->update(array("id_user"=>$id, "level"=>"0"),array('$set'=>array("move_paket"=>"", "move_harga"=>"", "move_request"=>"")));	
+		if ($delete_upgrade){ ?>
+		<script type="" language="JavaScript">
+		document.location='<?php echo $base_url_member; ?>/?hal=package-upgrade'</script>
+<?php }	} ?>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
 		<div class="list-group">
@@ -119,9 +125,6 @@ foreach($res as $row)
 						<?php
 						$res = $col_user->findOne(array("id_user"=>$id, "level"=>"0"));	
 						foreach ($res['upgrade_paket'] as $res_paket => $row_paket) {
-							if (empty($row_paket['paket'])){
-								echo "no data";
-							}
 								$tanggal = $row_paket['tanggal_request'];
 							  	$thn = substr($tanggal, 0,4);
 							    $bln = substr($tanggal, 5,2);
