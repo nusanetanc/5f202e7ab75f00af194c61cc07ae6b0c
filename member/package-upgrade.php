@@ -90,13 +90,17 @@ foreach($res as $row)
 						<input type="submit" class="btn btn-warning" name="upgrade" id="upgrade" value="Konfirmasi">	
 						<br/>							
 					</div>	
-					<?php } elseif($move_paket<>"") { ?>
+					<?php } elseif($move_paket<>"") { 
+					  	$move_thn = substr($move_request, 0,4);
+					    $move_bln = substr($move_request, 5,2);
+						$move_tgl = substr($move_request, 8,10);
+					    $move_month = bulan($bln); ?>
 					<div class="col-sm-12">
 						<li class="list-group-item">
 						  	Upgrade Paket/Harga : <?php echo $move_paket.' / '.$move_harga; ?> 
 						</li>
 						<li class="list-group-item">
-						  	Tanggal Permintaan : <?php echo $move_request; ?> 
+						  	Tanggal Permintaan : <?php echo $move_tgl.' '.$move_month.' '.$move_thn; ?> 
 						</li>
 						<br/>	
 						<input type="submit" class="btn btn-warning" name="batal" id="batal" value="batal">	
@@ -115,7 +119,7 @@ foreach($res as $row)
 						<?php
 						$res = $col_user->findOne(array("id_user"=>$id, "level"=>"0"));	
 						foreach ($res['paket'] as $res_paket => $row_paket) {
-							if (empty($row_paket)){
+							if (empty($row_paket['paket'])){
 								echo "no data";
 							}
 								$tanggal = $row_paket['tanggal_request'];
