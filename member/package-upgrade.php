@@ -94,7 +94,7 @@ foreach($res as $row)
 					  	$move_thn = substr($move_request, 0,4);
 					    $move_bln = substr($move_request, 5,2);
 						$move_tgl = substr($move_request, 8,10);
-					    $move_month = bulan($bln); ?>
+					    $move_month = bulan($move_bln); ?>
 					<div class="col-sm-12">
 						<li class="list-group-item">
 						  	Upgrade Paket/Harga : <?php echo $move_paket.' / '.$move_harga; ?> 
@@ -118,7 +118,7 @@ foreach($res as $row)
   					<div class="col-sm-12">
 						<?php
 						$res = $col_user->findOne(array("id_user"=>$id, "level"=>"0"));	
-						foreach ($res['paket'] as $res_paket => $row_paket) {
+						foreach ($res['upgrade_paket'] as $res_paket => $row_paket) {
 							if (empty($row_paket['paket'])){
 								echo "no data";
 							}
