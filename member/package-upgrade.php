@@ -113,6 +113,8 @@ foreach($res as $row)
 						<br/>							
 					</div>	
 					<?php } ?>
+					* Pindah paket bisa di batalkan jika belum melakukan pembayaran
+					* Jika batal maka data paket kembali ke paket aktif
  				</div>
 			</div>
 			<div class="panel" style="border:0px;" >
