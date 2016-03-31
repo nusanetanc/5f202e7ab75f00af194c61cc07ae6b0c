@@ -35,6 +35,9 @@ if ($level=="0"){
                         $registrasi = $row['registrasi'];
                         $status = $row['status'];
                         $proraide = $row['proraide'];
+                        $move_paket = $row['move_paket'];
+                        $move_harga = $row['move_harga'];
+                        $move_request = $row['move_request'];
                       }
 if($level=="501"){
                       $sm=$row['sm'];
