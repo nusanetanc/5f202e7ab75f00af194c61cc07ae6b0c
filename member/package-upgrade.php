@@ -52,10 +52,10 @@ foreach($res as $row)
 				$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
 				$headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
-				$headers .= 'Cc: cs@groovy.id' . "\r\n";
+				$headers .= 'Cc: cs@groovy.id, billing@groovy.id' . "\r\n";
 
 				$kirimemail=mail($to, $subject, $message, $headers);		
-	if ($update_user && $push_paket && $kirimemail){ ?>
+	if ($update_user && $kirimemail){ ?>
 		<script type="" language="JavaScript">
 		document.location='<?php echo $base_url_member; ?>/?hal=package-upgrade'</script>
 <?php } } 
@@ -113,7 +113,7 @@ foreach($res as $row)
 						<br/>							
 					</div>	
 					<?php } ?>
-					* Pindah paket bisa di batalkan jika belum melakukan pembayaran
+					* Pindah paket bisa di batalkan jika belum melakukan pembayaran <br/>
 					* Jika batal maka data paket kembali ke paket aktif
  				</div>
 			</div>
