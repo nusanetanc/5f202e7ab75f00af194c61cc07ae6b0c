@@ -36,10 +36,10 @@
             <div class="col-xs-6 col-sm-6 col-md-3 text-left">
                 <h5 style="font-size:17px;margin-top:40px;margin-bottom:15px;">STAY CONNECTED</h5>
                 <p style="line-height:25px;">
-                    <a href="" target="_blank"><i class="fa fa-facebook-square fa-3x footer-facebook"></i></a>&nbsp;
-                    <a href="" target="_blank"><i class="fa fa-instagram fa-3x footer-instagram"></i></a>&nbsp;
-                    <a href="" target="_blank"><i class="fa fa-twitter-square fa-3x footer-twitter"></i></a>&nbsp;
-                    <a href="" target="_blank"><i class="fa fa-youtube-square fa-3x footer-youtube"></i></a>
+                    <a href="http://www.facebook.com/groovyplay" target="_blank"><i class="fa fa-facebook-square fa-3x footer-facebook"></i></a>&nbsp;
+                    <a href="http://www.instagram.com/groovy_play" target="_blank"><i class="fa fa-instagram fa-3x footer-instagram"></i></a>&nbsp;
+                    <a href="http://www.twitter.com/groovy_play" target="_blank"><i class="fa fa-twitter-square fa-3x footer-twitter"></i></a>&nbsp;
+                    <a href="http://www.youtube.com/groovy_play" target="_blank"><i class="fa fa-youtube-square fa-3x footer-youtube"></i></a>
                 </p>
             </div>
         </div>
