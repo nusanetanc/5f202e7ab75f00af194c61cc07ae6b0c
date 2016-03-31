@@ -10,7 +10,7 @@ if ($level=="0"){
 												$tgl_aktif = substr($tanggal_aktivasi, 8,10);
 												$month_aktif = bulan($bln_aktif);
 		if ($move_paket<>""){
-			$paket==$move_paket;
+			$paket=$move_paket;
 			$harga=$move_harga;
 		}
 	?>
