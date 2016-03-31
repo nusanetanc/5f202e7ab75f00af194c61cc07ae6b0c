@@ -12,7 +12,6 @@
 	$tgl0 = substr($date, 8,10);
     $month0 = bulan($bln0);
 		if (isset($_POST['upgrade'])){
-			echo yudi1;
 $upgrade_paket=$_POST['upgrade_paket']; 
 $res = $col_package->find(array("nama"=>$upgrade_paket));
 foreach($res as $row)
@@ -26,9 +25,9 @@ foreach($res as $row)
 			"tanggal_aktif"=>"",
 			"tanggal_henti"=>"",
 			"status"=>"request"
-		); echo yudi2;
+		);
 	$update_user=$col_user->update(array("id_user"=>$id, "level"=>"0"),array('$set'=>array("move_paket"=>$upgrade_paket, "move_harga"=>$upgrade_harga)));
-	$upgrade_paket=$col_user->update(array("id_user"=>$id, "level"=>"0"),array('$push'=>array("paket"=>$upgrade)));
+	$push_paket=$col_user->update(array("id_user"=>$id, "level"=>"0"),array('$push'=>array("paket"=>$upgrade)));
 			// mail for customer to update paket
 				$to = $email;
 
@@ -65,7 +64,7 @@ foreach($res as $row)
 				$headers .= 'Cc: cs@groovy.id' . "\r\n";
 
 				$kirimemail=mail($to, $subject, $message, $headers);		
-	if ($update_user && $upgrade_paket && $kirimemail){ ?>
+	if ($update_user && $push_paket && $kirimemail){ ?>
 		<script type="" language="JavaScript">
 		document.location='<?php echo $base_url_member; ?>/?hal=package-upgrade'</script>
 <?php } } ?>
