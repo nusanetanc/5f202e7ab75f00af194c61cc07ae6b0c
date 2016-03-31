@@ -12,7 +12,8 @@
 	$tgl0 = substr($date, 8,10);
     $month0 = bulan($bln0);
 		if (isset($_POST['upgrade'])){
-			$upgrade_paket=$_POST['upgrade_paket']; 
+			echo yudi1;
+$upgrade_paket=$_POST['upgrade_paket']; 
 $res = $col_package->find(array("nama"=>$upgrade_paket));
 foreach($res as $row)
 { 
@@ -25,9 +26,9 @@ foreach($res as $row)
 			"tanggal_aktif"=>"",
 			"tanggal_henti"=>"",
 			"status"=>"request"
-		);
-		$update_user=$col_user->update(array("id_user"=>$id, "level"=>"0"),array('$set'=>array("move_paket"=>$upgrade_paket, "move_harga"=>$upgrade_harga)));
-		$upgrade_paket=$col_user->update(array("id_user"=>$id, "level"=>"0"),array('$push'=>array("paket"=>$upgrade)));
+		); echo yudi2;
+	$update_user=$col_user->update(array("id_user"=>$id, "level"=>"0"),array('$set'=>array("move_paket"=>$upgrade_paket, "move_harga"=>$upgrade_harga)));
+	$upgrade_paket=$col_user->update(array("id_user"=>$id, "level"=>"0"),array('$push'=>array("paket"=>$upgrade)));
 			// mail for customer to update paket
 				$to = $email;
 
