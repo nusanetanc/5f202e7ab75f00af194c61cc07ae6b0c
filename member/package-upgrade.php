@@ -68,6 +68,7 @@ foreach($res as $row)
   				</div>
   				<div class="panel-body">
   					<br/>
+  					<?php if($move_paket=="") { ?>
   					<div class="col-sm-12">
 						<li class="list-group-item">
 						  	Upgrade Paket : 
@@ -89,6 +90,19 @@ foreach($res as $row)
 						<input type="submit" class="btn btn-warning" name="upgrade" id="upgrade" value="Konfirmasi">	
 						<br/>							
 					</div>	
+					<?php } elseif($move_paket<>"") { ?>
+					<div class="col-sm-12">
+						<li class="list-group-item">
+						  	Upgrade Paket/Harga : <?php echo $move_paket.' / '.$move_harga; ?> 
+						</li>
+						<li class="list-group-item">
+						  	Tanggal Permintaan : <?php echo $move_request; ?> 
+						</li>
+						<br/>	
+						<input type="submit" class="btn btn-warning" name="batal" id="batal" value="batal">	
+						<br/>							
+					</div>	
+					<?php } ?>
  				</div>
 			</div>
 			<div class="panel" style="border:0px;" >
@@ -100,18 +114,18 @@ foreach($res as $row)
   					<div class="col-sm-12">
 						<?php
 						$res = $col_user->findOne(array("id_user"=>$id, "level"=>"0"));	
-						foreach ($res as $pkt) {
-								$tanggal = $paket['tanggal_request'];
+						foreach ($res['paket'] as $res_paket => $row_paket) {
+								$tanggal = $row_paket['tanggal_request'];
 							  	$thn = substr($tanggal, 0,4);
 							    $bln = substr($tanggal, 5,2);
 								$tgl = substr($tanggal, 8,10);
 							    $month = bulan($bln);
-								    $tanggal1 = $paket['tanggal_aktif'];
+								    $tanggal1 = $row_paket['tanggal_aktif'];
 								  	$thn1 = substr($tanggal1, 0,4);
 								    $bln1 = substr($tanggal1, 5,2);
 									$tgl1 = substr($tanggal1, 8,10);
 								    $month1 = bulan($bln1);
-								$tanggal2 = $paket['tanggal_henti'];
+								$tanggal2 = $row_paket['tanggal_henti'];
 							  	$thn2 = substr($tanggal1, 0,4);
 							    $bln2 = substr($tanggal1, 5,2);
 								$tgl2 = substr($tanggal1, 8,10);
@@ -119,9 +133,7 @@ foreach($res as $row)
 						?>
 							<li class="list-group-item" style="border:2;">
 								Tanggal Permintaan : <b><?php echo $tgl.' '.$month.' '.$thn; ?></b><br/>
-								Nama/Harga Paket : <b><?php echo $paket['paket']; ?></b><br/>
-						    	Status : <b><?php echo $paket['paket']; ?></b><br/>
-						    	<input type="submit" name="batal" id="batal" class="btn btn-primary btn-xs" value="Batal Pindah"><br/>
+								Nama/Harga Paket : <b><?php echo $row_paket['paket']; ?></b><br/>
 						    	Tanggal Aktif : <b><?php echo $tgl1.' '.$month1.' '.$thn1; ?></b><br/>
 						    	Tanggal Berhenti : <b><?php echo $tgl2.' '.$month2.' '.$thn2; ?></b>
 							</li>	
