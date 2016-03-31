@@ -43,8 +43,8 @@
                                           $message_contact = '
                                           <html>
                                           <body>
-                                            <p>Dear :'.$contact_name.'</p>
-                                            <p>Dear : Thank you for writing to us. Our team will be responding to your query as soon as possible. </p>
+                                            <p>Hi : '.$contact_name.'</p>
+                                            <p>Thank you for writing to us. Our team will be responding to your query as soon as possible. </p>
                                             <br/>
                                             <p>Email : '.$contact_email.'</p>
                                             <p>Subject : '.$contact_subject.'</p>
@@ -64,9 +64,9 @@
 
                                           // Mail it
                                           $kirimemail_contact = mail($to_contact, $subject_contact, $message_contact, $headers_contact);
-                                $_SESSION['message-sent']="Message Sent";
+                                $_SESSION['message-sent']="Message Sent / Pesan Terkirim";
                         } else {
-                                $_SESSION['message-sent']="Message Not Sent";
+                                $_SESSION['message-sent']="Message Not Sent / Pesan Tidak Terkirim";
                         } }
                     ?>
                     <input name ="contact_name" id = "contact_name" style="background-color:rgba(255, 255, 255, 1);margin-bottom:9px;height:40px" placeholder="Name" type="text" class="form-control" required>
