@@ -13,7 +13,7 @@ RewriteRule ^complete-information/([0-9A-Za-z]+)/? ?hal=complete-information&i=$
 RewriteRule ^histori-pengaduan$ ?hal=historipengaduan
 RewriteRule ^edit-profile$ ?hal=editprofile
 RewriteRule ^chat-pengaduan$ ?hal=chatpengaduan
-RewriteRule ^detail-pemasangan$ ?hal=editprofile
+RewriteRule ^detail-pemasangan/([0-9A-Za-z]+)/? ?hal=detail-pemasangan&id=6363006
 RewriteRule ^customer-list$ ?hal=customer-list
 RewriteRule ^customer-profile$ ?hal=customer-profile
 RewriteRule ^helpdesk-add$ ?hal=helpdesk-add
