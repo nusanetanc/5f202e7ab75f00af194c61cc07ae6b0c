@@ -8,7 +8,7 @@ RewriteRule ^dashboard$ ?hal=dashboard
 RewriteRule ^billing$ ?hal=billing
 RewriteRule ^change-package$ ?hal=package-upgrade
 RewriteRule ^information$ ?hal=information
-RewriteRule ^complete-information/$i$ ?hal=complete-information&i=$i
+RewriteRule ^complete-information/([0-9A-Za-z]+)/? ?hal=complete-information&i=$1
 RewriteRule ^histori-pengaduan$ ?hal=historipengaduan
 RewriteRule ^edit-profile$ ?hal=editprofile
 RewriteRule ^chat-pengaduan$ ?hal=chatpengaduan
