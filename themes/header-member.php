@@ -92,7 +92,7 @@ if($level=="501"){
        <?php } ?>
           </li>
             <ul class="dropdown-menu">
-              <li><a href="<?php  ?>/edit-profile">Edit Profile</a></li>
+              <li><a href="<?php echo $base_url_member; ?>/edit-profile">Edit Profile</a></li>
               <li><a href="<?php echo $base_url_member; ?>/logout">Logout</a></li>
             </ul>
         </ul>
