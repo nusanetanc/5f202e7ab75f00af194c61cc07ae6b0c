@@ -13,4 +13,7 @@ RewriteRule ^forgot-password$ ?hal=forgote-password
 RewriteRule ^contact-us$ ?hal=contact
 RewriteRule ^career$ ?hal=career
 RewriteRule ^events$ ?hal=events
+
+RewriteRule ^member/$ member/?hal=dashboard
+RewriteRule ^member/pengaduan$ member/?hal=pengaduan
 </IfModule>
