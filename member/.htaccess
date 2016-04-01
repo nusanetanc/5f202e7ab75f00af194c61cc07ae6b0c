@@ -1,0 +1,8 @@
+<IfModule mod_rewrite.c>
+
+RewriteEngine On
+RewriteBase  /beta/member
+
+RewriteRule ^pengaduan$ ?hal=pengaduan
+
+</IfModule>
