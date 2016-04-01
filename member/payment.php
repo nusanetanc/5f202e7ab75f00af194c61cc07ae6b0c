@@ -33,7 +33,7 @@
 						      <td><?php echo $row['pembayaran']; ?></td>
 						      <td><?php echo $row['tanggal_akhir']; ?></td>
 						      <td><?php echo $row['status']; ?></td>
-						      <td><b><a href="<?php echo $base_url_member; ?>/verification-payment&id_cust=<?php echo $row['id_user']; ?>" class="btn btn-primary btn-xs">Show</a></b></td>						      
+						      <td><b><a href="<?php echo $base_url_member; ?>/verification-payment/<?php echo $row['id_user']; ?>" class="btn btn-primary btn-xs">Show</a></b></td>						      
 						    </tr>
 						   </tbody>
 					<?php } } ?>	   

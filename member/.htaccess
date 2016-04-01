@@ -42,7 +42,7 @@ RewriteRule ^support-list$ ?hal=support-list
 RewriteRule ^support$ ?hal=support
 RewriteRule ^user-add$ ?hal=user-add
 RewriteRule ^user-list$ ?hal=user-list
-RewriteRule ^verification-payment$ ?hal=verification-payment
+RewriteRule ^verification-payment/([0-9A-Za-z]+)/? ?hal=verification-payment&=$1
 RewriteRule ^verification-registrasi$ ?hal=verification-registrasi
 RewriteRule ^write-maintenance-info$ ?hal=write-maintenance-info
 RewriteRule ^logout$ ?hal=logout
