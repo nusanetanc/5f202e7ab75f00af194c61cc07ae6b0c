@@ -4,7 +4,7 @@ RewriteEngine On
 RewriteBase  /beta/member
 
 RewriteRule ^pengaduan$ ?hal=pengaduan
-RewriteRule ^ $ ?hal=dashboard
+RewriteRule ^dashboard$ ?hal=dashboard
 RewriteRule ^billing$ ?hal=billing
 RewriteRule ^change-package$ ?hal=package-upgrade
 RewriteRule ^information$ ?hal=information
@@ -45,3 +45,5 @@ RewriteRule ^verification-payment$ ?hal=verification-payment
 RewriteRule ^verification-registrasi$ ?hal=verification-registrasi
 RewriteRule ^write-maintenance-info$ ?hal=write-maintenance-info
 RewriteRule ^logout$ ?hal=logout
+
+</IfModule>
