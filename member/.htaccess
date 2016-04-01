@@ -4,5 +4,44 @@ RewriteEngine On
 RewriteBase  /beta/member
 
 RewriteRule ^pengaduan$ ?hal=pengaduan
+RewriteRule ^ $ ?hal=dashboard
+RewriteRule ^billing$ ?hal=billing
+RewriteRule ^change-package$ ?hal=package-upgrade
+RewriteRule ^information$ ?hal=information
+RewriteRule ^complete-information$ ?hal=complete-information
+RewriteRule ^histori-pengaduan$ ?hal=historipengaduan
+RewriteRule ^edit-profile$ ?hal=editprofile
+RewriteRule ^chat-pengaduan$ ?hal=chatpengaduan
+RewriteRule ^detail-pemasangan$ ?hal=editprofile
+RewriteRule ^customer-list$ ?hal=customer-list
+RewriteRule ^customer-profile$ ?hal=customer-profile
+RewriteRule ^helpdesk-add$ ?hal=helpdesk-add
+RewriteRule ^helpdesk-list$ ?hal=helpdesk-list
+RewriteRule ^jobs-list-pending$ ?hal=jobs-list-pending
+RewriteRule ^list-pengaduan$ ?hal=list-pengaduan
+RewriteRule ^list-payment$ ?hal=listpayment
+RewriteRule ^location-add$ ?hal=location-add
+RewriteRule ^location-list$ ?hal=location-list
+RewriteRule ^303$ ?hal=not-found
+RewriteRule ^package-add$ ?hal=package-add
+RewriteRule ^package-list$ ?hal=package-list
+RewriteRule ^payment$ ?hal=payment
+RewriteRule ^payment-confrim$ ?hal=paymentconfrim
+RewriteRule ^registration-add$ ?hal=registration-add
+RewriteRule ^report-jobs$ ?hal=report-jobs
+RewriteRule ^sales-add$ ?hal=sales-add
+RewriteRule ^sales-list$ ?hal=sales-list
+RewriteRule ^send-invoice$ ?hal=send-invoice
+RewriteRule ^setup-done$ ?hal=setup-done
+RewriteRule ^setup-pending$ ?hal=setup-pending
+RewriteRule ^setup-progress$ ?hal=setup-progress
+RewriteRule ^support-add$ ?hal=support-add
+RewriteRule ^support-list$ ?hal=support-list
 
-</IfModule>
+RewriteRule ^support$ ?hal=support
+RewriteRule ^user-add$ ?hal=user-add
+RewriteRule ^user-list$ ?hal=user-list
+RewriteRule ^verification-payment$ ?hal=verification-payment
+RewriteRule ^verification-registrasi$ ?hal=verification-registrasi
+RewriteRule ^write-maintenance-info$ ?hal=write-maintenance-info
+RewriteRule ^logout$ ?hal=logout
