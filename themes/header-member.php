@@ -74,13 +74,13 @@ if($level=="501"){
       <ul class="nav navbar-nav dropdown navbar-primary">  
         <li class="dropdown-toggle" data-toggle="dropdown" style="font-size:14px;padding-top:20px;padding-bottom:17px;font-weight:500; color:gray; cursor:pointer;"><i style="padding-right:10px;" class="fa fa-<?php echo $row['image']; ?> fa-lg"></i><?php echo $row['title']; ?></li>
           <ul class="dropdown-menu nav navbar-nav navbar-primary">
-            <li style="font-size:14px;font-weight:500; color:gray;"><a href="<?php echo $base_url_member; ?>?hal=payment">Kirim Invoice</a></li>
-            <li style="font-size:14px;font-weight:500; color:gray;"><a href="<?php echo $base_url_member; ?>?hal=listpayment">List Customer</a></li>
+            <li style="font-size:14px;font-weight:500; color:gray;"><a href="<?php echo $base_url_member; ?>/payment">Kirim Invoice</a></li>
+            <li style="font-size:14px;font-weight:500; color:gray;"><a href="<?php echo $base_url_member; ?>/listpayment">List Customer</a></li>
           </ul>
       </ul>  
       <?php } else { ?>
       <ul class="nav navbar-nav">  
-        <li ><a href="<?php echo $base_url_member; ?>/?hal=<?php echo $row['file']; ?>"  style="font-size:14px;padding-top:20px;padding-bottom:19px;font-weight:500; color:gray;"><i style="padding-right:10px;" class="fa fa-<?php echo $row['image']; ?> fa-lg"></i><?php echo $row['title'].' '; ?></a></li>
+        <li ><a href="<?php echo $base_url_member; ?>/<?php echo $row['file']; ?>"  style="font-size:14px;padding-top:20px;padding-bottom:19px;font-weight:500; color:gray;"><i style="padding-right:10px;" class="fa fa-<?php echo $row['image']; ?> fa-lg"></i><?php echo $row['title'].' '; ?></a></li>
       </ul>    
       <?php } } ?>
       <ul class="dropdown nav navbar-nav navbar-right navbar-primary">
@@ -92,8 +92,8 @@ if($level=="501"){
        <?php } ?>
           </li>
             <ul class="dropdown-menu">
-              <li><a href="<?php  ?>/?hal=editprofile">Edit Profile</a></li>
-              <li><a href="<?php echo $base_url_member; ?>/?hal=logout">Logout</a></li>
+              <li><a href="<?php  ?>/editprofile">Edit Profile</a></li>
+              <li><a href="<?php echo $base_url_member; ?>/logout">Logout</a></li>
             </ul>
         </ul>
     </div><!-- /.navbar-collapse -->
