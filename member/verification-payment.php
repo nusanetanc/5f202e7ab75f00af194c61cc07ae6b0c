@@ -198,7 +198,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust),array('$push'=>arra
 if ($update_user && $update_bayar && $emailinvoice){
 	?>
 		<script type="" language="JavaScript">
-		document.location='<?php echo $base_url_member; ?>/?hal=verification-payment&id_cust=<?php echo $id_cust; ?>'</script>	
+		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>	
 <?php } }
 ?>
 <section>
