@@ -30,7 +30,7 @@
 											  	?>
  										<tr>
 									      <td><?php echo $tgl.' '.$month.' '.$thn; ?></td>
-									      <td><a href="<?php echo $base_url_member; ?>/?hal=pengaduan&c=<?php echo $row['idchat'] ?>" style=" text-decoration:none"><?php echo $row['subject']; ?><a></td>
+									      <td><a href="<?php echo $base_url_member; ?>/pengaduan&c=<?php echo $row['idchat'] ?>" style=" text-decoration:none"><?php echo $row['subject']; ?><a></td>
 									      <?php $action = $row['status'];
 										         switch ($action) { 
 										         	case close: ?>

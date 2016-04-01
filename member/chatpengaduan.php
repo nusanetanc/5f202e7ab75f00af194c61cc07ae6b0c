@@ -36,7 +36,7 @@ if ($inputStatus<>""){
 						if ($insert || $update){
 								  		?>
 										<script type="" language="JavaScript">
-										document.location='<?php echo $base_url_member; ?>/?hal=chatpengaduan&c=<?php echo $idchat; ?>'</script>
+										document.location='<?php echo $base_url_member; ?>/chatpengaduan&c=<?php echo $idchat; ?>'</script>
 							<?php 	} 						
 								}
 								}	
@@ -111,7 +111,7 @@ foreach($res as $row)
 										<div class="col-sm-12">
 											<h5 class="list-group-item-heading"><b>
 											<?php if ($level_user_chat=="0" && $level<>"0") { ?>
-												<a style="text-decoration:none;" href="<?php echo $base_url_member; ?>/?hal=customer-profile&id_cust=<?php echo $reply_id; ?>"><?php echo $name_user_chat.' ('.$lvl.')'?></a>
+												<a style="text-decoration:none;" href="<?php echo $base_url_member; ?>/customer-profile&id_cust=<?php echo $reply_id; ?>"><?php echo $name_user_chat.' ('.$lvl.')'?></a>
 
 											<?php } else if ($level_user_chat=="2" || $level_user_chat=="3" || $level_user_chat=="4" ||$level_user_chat=="401" || $level=="0")  { ?>
 
@@ -129,7 +129,7 @@ foreach($res as $row)
 											<h5 class="list-group-item-heading"><b>
 											<?php if ($level_user_chat=="0"  && $level<>"0") { ?>
 
-												<a style="text-decoration:none;" href="<?php echo $base_url_member; ?>/?hal=customer-profile&id_cust=<?php echo $reply_id; ?>"><?php echo $name_user_chat.' ('.$lvl.')'?></a>
+												<a style="text-decoration:none;" href="<?php echo $base_url_member; ?>/customer-profile&id_cust=<?php echo $reply_id; ?>"><?php echo $name_user_chat.' ('.$lvl.')'?></a>
 
 											<?php } else if ($level_user_chat=="2" || $level_user_chat=="3" || $level_user_chat=="4" ||$level_user_chat=="401" || $level=="0")  { ?>
 

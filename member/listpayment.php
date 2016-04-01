@@ -25,7 +25,7 @@
   				    	$inputEnddate = $_POST['inputEnddate'];
   				    	?>
   				    	<ul class="pager">
-						  <li class="previous"><a href="<?php echo $base_url_member; ?>/?hal=listpayment">&larr; Back To Search</a></li>
+						  <li class="previous"><a href="<?php echo $base_url_member; ?>/listpayment">&larr; Back To Search</a></li>
 						</ul>
 						<table class="table table-striped table-hover ">
 									 <thead>

@@ -22,7 +22,7 @@
 								?>		    					
 									  <tbody>
  										<td width="20%"><?php echo $tgl.' '.$month.' '.$thn; ?></td>
-									    <td width="50%"><a href="<?php echo $base_url_member; ?>/?hal=complete-information&i=<?php echo $row['_id'] ?>" style="text-decoration:none"> <?php echo $row['subject']; ?></td>
+									    <td width="50%"><a href="<?php echo $base_url_member; ?>/complete-information&i=<?php echo $row['_id'] ?>" style="text-decoration:none"> <?php echo $row['subject']; ?></td>
 									    <td width="30%"> 
 									    				<?php switch ($row['status']) {
 									    						case 'on schedule':
@@ -60,7 +60,7 @@
   				<div class="panel-body">
   					<?php if ($level=="401"){ ?>
   					<br/>
-					<a href="<?php echo $base_url_member; ?>/?hal=write-maintenance-info" class="btn" role="button" style="background-color:#757575; color:#fff">Tulis Info Maintenance</a>
+					<a href="<?php echo $base_url_member; ?>/write-maintenance-info" class="btn" role="button" style="background-color:#757575; color:#fff">Tulis Info Maintenance</a>
 					<?php } ?>
 					<br/>
 					<table class="table table-striped table-hover">
@@ -95,7 +95,7 @@
 									    					<?php break; 
 									    					} ?>
 
-									<?php echo $row['status']; ?></span><a href="<?php echo $base_url_member; ?>/?hal=complete-information&i=<?php echo $row['id_info']; ?>" style="text-decoration:none"><b><?php echo ' '.$row['subject']; ?></b></a></h5>
+									<?php echo $row['status']; ?></span><a href="<?php echo $base_url_member; ?>/complete-information&i=<?php echo $row['id_info']; ?>" style="text-decoration:none"><b><?php echo ' '.$row['subject']; ?></b></a></h5>
 						      <h5><?php echo 'Tanggal Maintenance : '.$tgl.' '.$month.' '.$thn; ?></h5>
 						      </td>
 						    </tr>

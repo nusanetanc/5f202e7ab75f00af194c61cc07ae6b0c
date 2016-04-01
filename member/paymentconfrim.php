@@ -23,7 +23,7 @@ $insert = $col_user->update(
 if ($insert){
 		  		?>
 				<script type="" language="JavaScript">
-				document.location='<?php echo $base_url_member; ?>/?hal=listpayment'</script>
+				document.location='<?php echo $base_url_member; ?>/listpayment'</script>
 	<?php 	} }
 ?>
 <section>

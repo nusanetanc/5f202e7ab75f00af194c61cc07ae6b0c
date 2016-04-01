@@ -8,7 +8,7 @@
 $add_paket = $col_package->insert(array("nama"=>$inputPaket, "harga"=>$inputHarga, "harga_hari"=>$inputHargahari, "deskripsi"=>$inputDeskripsi));
 if ($add_paket){ ?>
 		<script type="" language="JavaScript">
-		document.location='<?php echo $base_url_member; ?>/?hal=package-list'</script>
+		document.location='<?php echo $base_url_member; ?>/package-list'</script>
 <?php	}
 }
 ?>

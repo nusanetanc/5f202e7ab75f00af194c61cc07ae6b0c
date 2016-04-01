@@ -33,7 +33,7 @@
 									  		} elseif($row['level']=="302"){ 
 									  				echo "Ass Field Engineer"; } ?></td>
 									  	<td><?php echo $row['phone']; ?></td>
-									  	<td><a href="<?php echo $base_url_member; ?>/?hal=detail-jobs" class="btn btn-primary btn-xs">Show</a></td>
+									  	<td><a href="<?php echo $base_url_member; ?>/detail-jobs" class="btn btn-primary btn-xs">Show</a></td>
 									  </tbody>
 									  <?php } } ?>
 								</table>	  

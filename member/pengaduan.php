@@ -8,7 +8,7 @@ if ($level=="0"){
 							}
 							if ($update){ ?>
 											<script type="" language="JavaScript">
-											document.location='../member/?hal=pengaduan'</script>
+											document.location='../member/pengaduan'</script>
 							<?php }
  $res = $col_ticket->findOne(array("id_user"=>$id));
 if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
@@ -56,7 +56,7 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 																 "status"=>"open", "message"=>(array($msg))));
 							if ($insert) { ?>
 											<script type="" language="JavaScript">
-											document.location='../member/?hal=pengaduan'</script>
+											document.location='../member/pengaduan'</script>
 							<?php } } } ?>
 								<div class="col-sm-12 col-md-12 col-lg-9">
 									<div class="list-group">
@@ -66,7 +66,7 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 							  				</div>
 							  						<div class="panel-body container">
 									  					<br/>
-									  						<a href="<?php echo $base_url_member; ?>/?hal=historipengaduan" class="btn btn-primary">Histori Pengaduan</a>	
+									  						<a href="<?php echo $base_url_member; ?>/historipengaduan" class="btn btn-primary">Histori Pengaduan</a>	
 									  					<br/>
 									  				</div>	
 								  					<div class="panel-body">		
@@ -110,7 +110,7 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 			if (empty($subjectchat)){	?>
 
 					<script type="" language="JavaScript">
-					document.location='../member/?hal=pengaduan'</script>
+					document.location='../member/pengaduan'</script>
 
 			<?php }				
 			if(isset($_POST['kirim'])) {	
@@ -142,7 +142,7 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 			if ($insert){
 					  		?>
 							<script type="" language="JavaScript">
-							document.location='../member/?hal=pengaduan'</script>
+							document.location='../member/pengaduan'</script>
 				<?php 	} 						
 							}
 								}	
@@ -155,7 +155,7 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 			  				</div>
 			  				<div class="panel-body container">
 			  					<br/>
-			  						<a href="<?php echo $base_url_member; ?>/?hal=historipengaduan" class="btn btn-primary">Histori Pengaduan</a>	
+			  						<a href="<?php echo $base_url_member; ?>/histori-pengaduan" class="btn btn-primary">Histori Pengaduan</a>	
 			  					<br/>
 			  				</div>	
 			  					<div class="panel-body container-pull-center">
@@ -179,7 +179,7 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 									<?php } else if ($statuschat=="solved") {
 									?>	
 										<div class="alert alert-dismissible alert-success">
-										  <strong>Our complaint has been solved !</strong> Do you want to <a href="<?php echo $base_url_member; ?>/?hal=pengaduan&a=close" class="alert-link">close</a> or still <a href="./?hal=pengaduan&a=open" class="alert-link">open</a> this complaint.
+										  <strong>Our complaint has been solved !</strong> Do you want to <a href="<?php echo $base_url_member; ?>/pengaduan&a=close" class="alert-link">close</a> or still <a href="./pengaduan&a=open" class="alert-link">open</a> this complaint.
 										</div>
 										<div class="panel panel-default container-full-center">
 									  	<ul class="list-group">
@@ -226,7 +226,7 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 										<div class="col-sm-12">
 											<h5 class="list-group-item-heading"><b>
 											<?php if ($level_user_chat=="0" && $level<>"0") { ?>
-												<a style="text-decoration:none;" href="<?php echo $base_url_member; ?>/?hal=customer-profile&id_cust=<?php echo $reply_id; ?>"><?php echo $name_user_chat.' ('.$lvl.')'?></a>
+												<a style="text-decoration:none;" href="<?php echo $base_url_member; ?>/customer-profile&id_cust=<?php echo $reply_id; ?>"><?php echo $name_user_chat.' ('.$lvl.')'?></a>
 
 											<?php } else if ($level_user_chat=="2" || $level_user_chat=="3" || $level_user_chat=="4" ||$level_user_chat=="401" || $level=="0")  { ?>
 
@@ -244,7 +244,7 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 											<h5 class="list-group-item-heading"><b>
 											<?php if ($level_user_chat=="0"  && $level<>"0") { ?>
 
-												<a style="text-decoration:none;" href="<?php echo $base_url_member; ?>/?hal=customer-profile&id_cust=<?php echo $reply_id; ?>"><?php echo $name_user_chat.' ('.$lvl.')'?></a>
+												<a style="text-decoration:none;" href="<?php echo $base_url_member; ?>/customer-profile&id_cust=<?php echo $reply_id; ?>"><?php echo $name_user_chat.' ('.$lvl.')'?></a>
 
 											<?php } else if ($level_user_chat=="2" || $level_user_chat=="3" || $level_user_chat=="4" ||$level_user_chat=="401" || $level=="0")  { ?>
 
@@ -307,7 +307,7 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 											  	?>
  										<tr>
 									      <td><?php echo $tgl.' '.$month.' '.$thn; ?></td>
-									      <td><a style=" text-decoration:none" href="<?php echo $base_url_member; ?>/?hal=chatpengaduan&c=<?php echo $row['idchat'] ?>"><?php echo $row['subject']; ?><a></td>
+									      <td><a style=" text-decoration:none" href="<?php echo $base_url_member; ?>/chat-pengaduan&c=<?php echo $row['idchat'] ?>"><?php echo $row['subject']; ?><a></td>
 									      <?php $action = $row['status'];
 										         switch ($action) { 
 										         	case close: ?>
@@ -365,7 +365,7 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 											  	?>
  										<tr>
 									      <td><?php echo $tgl.' '.$month.' '.$thn; ?></td>
-									      <td><a style=" text-decoration:none" href="<?php echo $base_url_member; ?>/?hal=chatpengaduan&c=<?php echo $row['idchat'] ?>"><?php echo $row['subject']; ?><a></td>
+									      <td><a style=" text-decoration:none" href="<?php echo $base_url_member; ?>/chatpengaduan&c=<?php echo $row['idchat'] ?>"><?php echo $row['subject']; ?><a></td>
  											<?php $action = $row['status'];
 										         switch ($action) { 
 										         	case close: ?>

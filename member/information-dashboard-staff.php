@@ -17,7 +17,7 @@
 								?>		    					
 									  <tbody>
  										<td width="35%"><?php echo $tgl.' '.$month.' '.$thn; ?></td>
-									    <td width="50%"><a href="<?php echo $base_url_member; ?>/?hal=complete-information&i=<?php echo $row['id_info'] ?>" style=" text-decoration:none"> <?php echo $row['subject']; ?></td>
+									    <td width="50%"><a href="<?php echo $base_url_member; ?>/complete-information&i=<?php echo $row['id_info'] ?>" style=" text-decoration:none"> <?php echo $row['subject']; ?></td>
 									    <td width="15%"> 
 									    				<?php switch ($row['status']) {
 									    						case 'on progress':

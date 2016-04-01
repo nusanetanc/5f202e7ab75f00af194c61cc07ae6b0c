@@ -59,7 +59,7 @@ if ($update_user){
  } }
  					?>
 						<script type="" language="JavaScript">
-						document.location='<?php echo $base_url_member; ?>/?hal=editprofile'</script>
+						document.location='<?php echo $base_url_member; ?>/edit-profile'</script>
 					<?php }
   ?>
 <section>
@@ -196,7 +196,7 @@ if ($update_user){
  } } 
  					?>
 						<script type="" language="JavaScript">
-						document.location='<?php echo $base_url_member; ?>/?hal=editprofile'</script>
+						document.location='<?php echo $base_url_member; ?>/edit-profile'</script>
 					<?php } ?>
 <section>
 	<div class="col-sm-12" style="font-family:Arial;">

@@ -30,7 +30,7 @@
 									  	<td><?php echo $row['nama']; ?></td>
 									  	<td><?php echo $row['phone']; ?></td>
 									  	<td><?php echo $row['email']; ?></td>
-									  	<td><a href="<?php echo $base_url_member; ?>/?hal=customer-list&sales=<?php echo $row['id_user']; ?>" class="btn btn-primary btn-xs">View</a></td>
+									  	<td><a href="<?php echo $base_url_member; ?>/customer-list&sales=<?php echo $row['id_user']; ?>" class="btn btn-primary btn-xs">View</a></td>
 									  </tbody>
 									  <?php } ?>
 								</table>	  

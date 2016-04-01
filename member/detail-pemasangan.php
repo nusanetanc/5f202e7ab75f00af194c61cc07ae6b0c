@@ -203,7 +203,7 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 
 if ($update_user && $insert_activty && $kirim_email1 && $kirim_email && $sent_aktivasi){ ?>
 	<script type="" language="JavaScript">
-	document.location='<?php echo $base_url_member; ?>/?hal=setup-progress'</script>
+	document.location='<?php echo $base_url_member; ?>/setup-progress'</script>
 <?php } } ?>
 <style>
     .datepicker{z-index:1151;}

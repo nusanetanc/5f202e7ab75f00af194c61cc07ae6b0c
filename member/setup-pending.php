@@ -29,7 +29,7 @@
 						      <td><?php echo $row['nama'].' / '.$row['phone'].' / '.$row['email']; ?></td>
 						      <td><?php echo $row['paket']; ?></td>
 						      <td><?php echo $row['tempat'].', '.$row['keterangan'].', '.$row['kota']; ?></td>
-						      <td><b><a href="<?php echo $base_url_member; ?>/?hal=detail-pemasangan&id=<?php echo $row['id_user']; ?>" class="btn btn-success">Pasang</a></b></td>						      
+						      <td><b><a href="<?php echo $base_url_member; ?>/detail-pemasangan&id=<?php echo $row['id_user']; ?>" class="btn btn-success">Pasang</a></b></td>						      
 						    </tr>
 						   </tbody>
 						<?php

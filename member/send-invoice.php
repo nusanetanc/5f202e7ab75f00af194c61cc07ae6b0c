@@ -131,7 +131,7 @@ $sent = mail($email_to, $email_subject, $email_message, $headers);
 $update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("no_virtual"=>$kode_perusahaan.$id_cust)));
 ?>
 		<script type="" language="JavaScript">
-		document.location='<?php echo $base_url_member; ?>/?hal=send-invoice'</script>
+		document.location='<?php echo $base_url_member; ?>/send-invoice'</script>
 <?php } ?>
   				<div class="panel-body">
   					<br/>

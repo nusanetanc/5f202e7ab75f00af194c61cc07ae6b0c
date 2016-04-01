@@ -22,7 +22,7 @@
 											  	?>
  										<tr>
 									      <td><?php echo $tgl.' '.$month.' '.$thn; ?></td>
-									      <td><a style=" text-decoration:none" href="<?php echo $base_url_member; ?>/?hal=chatpengaduan&c=<?php echo $row['idchat'] ?>"><?php echo $row['subject']; ?><a></td>
+									      <td><a style=" text-decoration:none" href="<?php echo $base_url_member; ?>/chatpengaduan&c=<?php echo $row['idchat'] ?>"><?php echo $row['subject']; ?><a></td>
 									      <?php $action = $row['status'];
 										         switch ($action) { 
 										         	case close: ?>

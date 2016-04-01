@@ -41,7 +41,7 @@ if ($add_support){
     mail($to, $subject, $message, $headers);
 	?>
 		<script type="" language="JavaScript">
-		document.location='<?php echo $base_url_member; ?>/?hal=helpdesk-list'</script>
+		document.location='<?php echo $base_url_member; ?>/helpdesk-list'</script>
 <?php	}
 }
 ?>

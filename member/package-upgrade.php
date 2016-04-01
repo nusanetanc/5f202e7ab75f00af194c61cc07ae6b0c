@@ -57,13 +57,13 @@ foreach($res as $row)
 				$kirimemail=mail($to, $subject, $message, $headers);		
 	if ($update_user && $kirimemail){ ?>
 		<script type="" language="JavaScript">
-		document.location='<?php echo $base_url_member; ?>/?hal=package-upgrade'</script>
+		document.location='<?php echo $base_url_member; ?>/package-upgrade'</script>
 <?php } } 
 	if(isset($_POST['batal'])){
 		$delete_upgrade=$col_user->update(array("id_user"=>$id, "level"=>"0"),array('$set'=>array("move_paket"=>"", "move_harga"=>"", "move_request"=>"")));	
 		if ($delete_upgrade){ ?>
 		<script type="" language="JavaScript">
-		document.location='<?php echo $base_url_member; ?>/?hal=package-upgrade'</script>
+		document.location='<?php echo $base_url_member; ?>/package-upgrade'</script>
 <?php }	} ?>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">

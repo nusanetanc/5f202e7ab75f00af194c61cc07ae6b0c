@@ -7,7 +7,7 @@
 $add_tempat = $col_location->insert(array("name"=>$inputTempat, "city"=>$inputKota, "place"=>$inputAlamat));
 if ($add_tempat){ ?>
 		<script type="" language="JavaScript">
-		document.location='<?php echo $base_url_member; ?>/?hal=location-list'</script>
+		document.location='<?php echo $base_url_member; ?>/location-list'</script>
 <?php	}
 }
 ?>

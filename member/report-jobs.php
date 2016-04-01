@@ -77,7 +77,7 @@ if (isset($_POST['save'])){
 
 if ($update_user && $update_jobs){ ?>
 				<script type="" language="JavaScript">
-				document.location='<?php echo $base_url_member; ?>/?hal=jobs-list-pending'</script>	
+				document.location='<?php echo $base_url_member; ?>/jobs-list-pending'</script>	
 <?php } }
 ?>
 <style>
