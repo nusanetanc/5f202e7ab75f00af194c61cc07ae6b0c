@@ -72,7 +72,7 @@
                     <?php } ?>                  
                   </tr>
                 </table>    
-                  <h5><a  style="margin-top:20px;" href="<?php echo $base_url_member; ?>/editprofile" class="btn btn-default background-btn-gray"><b>Update Your Profile</b></a></h5> 
+                  <h5><a  style="margin-top:20px;" href="<?php echo $base_url_member; ?>/edit-profile" class="btn btn-default background-btn-gray"><b>Update Your Profile</b></a></h5> 
                           <br/>  
 
         	      </div>	
