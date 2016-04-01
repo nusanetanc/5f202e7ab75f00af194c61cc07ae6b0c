@@ -22,7 +22,7 @@
 								?>		    					
 									  <tbody>
  										<td width="20%"><?php echo $tgl.' '.$month.' '.$thn; ?></td>
-									    <td width="50%"><a href="<?php echo $base_url_member; ?>/complete-information&i=<?php echo $row['_id'] ?>" style="text-decoration:none"> <?php echo $row['subject']; ?></td>
+									    <td width="50%"><a href="<?php echo $base_url_member; ?>/complete-information/<?php echo $row['_id'] ?>" style="text-decoration:none"> <?php echo $row['subject']; ?></td>
 									    <td width="30%"> 
 									    				<?php switch ($row['status']) {
 									    						case 'on schedule':
@@ -95,7 +95,7 @@
 									    					<?php break; 
 									    					} ?>
 
-									<?php echo $row['status']; ?></span><a href="<?php echo $base_url_member; ?>/complete-information&i=<?php echo $row['id_info']; ?>" style="text-decoration:none"><b><?php echo ' '.$row['subject']; ?></b></a></h5>
+									<?php echo $row['status']; ?></span><a href="<?php echo $base_url_member; ?>/complete-information/<?php echo $row['id_info']; ?>" style="text-decoration:none"><b><?php echo ' '.$row['subject']; ?></b></a></h5>
 						      <h5><?php echo 'Tanggal Maintenance : '.$tgl.' '.$month.' '.$thn; ?></h5>
 						      </td>
 						    </tr>
