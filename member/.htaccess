@@ -4,6 +4,7 @@ RewriteEngine On
 RewriteBase  /beta/member
 
 RewriteRule ^pengaduan$ ?hal=pengaduan
+RewriteRule ^pengaduan/([0-9A-Za-z]+)/? ?hal=pengaduan&c=$1
 RewriteRule ^dashboard$ ?hal=dashboard
 RewriteRule ^billing$ ?hal=billing
 RewriteRule ^change-package$ ?hal=package-upgrade
