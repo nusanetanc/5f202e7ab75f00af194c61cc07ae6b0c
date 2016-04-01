@@ -13,9 +13,9 @@ RewriteRule ^complete-information/([0-9A-Za-z]+)/? ?hal=complete-information&i=$
 RewriteRule ^histori-pengaduan$ ?hal=historipengaduan
 RewriteRule ^edit-profile$ ?hal=editprofile
 RewriteRule ^chat-pengaduan/([0-9A-Za-z]+)/? ?hal=chatpengaduan&c=$1
-RewriteRule ^detail-pemasangan/([0-9A-Za-z]+)/? ?hal=detail-pemasangan&id=6363006
+RewriteRule ^detail-pemasangan/([0-9A-Za-z]+)/? ?hal=detail-pemasangan&id=$1
 RewriteRule ^customer-list$ ?hal=customer-list
-RewriteRule ^customer-profile$ ?hal=customer-profile
+RewriteRule ^customer-profile/([0-9A-Za-z]+)/? ?hal=customer-profile&id_cust=$1
 RewriteRule ^helpdesk-add$ ?hal=helpdesk-add
 RewriteRule ^helpdesk-list$ ?hal=helpdesk-list
 RewriteRule ^jobs-list-pending$ ?hal=jobs-list-pending
