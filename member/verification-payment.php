@@ -52,10 +52,10 @@ $date_month = date("d");
 	                                            $move_harga_cust = $row['move_harga'];
 	                                        }  
 	                                        	echo $move_paket_cust;
-	if($move_paket_cust=="" || $move_paket_cust==null){
+	if($move_paket_cust==""){
 		$paket_bayar = $move_paket_cust;
 		$harga_bayar = $move_harga_cust;
-	}else if($move_paket_cust<>"" || $move_paket_cust<>null){
+	}else if($move_paket_cust<>""){
 		$paket_bayar = $package_cust;
 		$harga_bayar = $harga_paket;	
 	}    
@@ -70,7 +70,7 @@ if(isset($_POST['verifikasi'])){
 		$month_bayar = bulan($bln_bayar);
 		$last_pembayaran = $pembayaran + 1;
 if ($total_revenue=="" || empty($total_revenue)){
-	$update_revenue = $col_revenue->insert(array("date"=>$date, "total"=>$total_bayar));
+	$update_revenue = $col_revenue->insert(array("date"=>$date, "total"=>$total_bayar.'.000'));
 } else {
 	$revenue=$total_revenue+$total_bayar;
 	$update_revenue = $col_revenue->update(array("date"=>$date), array('$set'=>array("total"=>$revenue.'.000')));
@@ -313,7 +313,7 @@ if ($update_user && $update_bayar && $emailinvoice){
 									  	<td><?php echo $paket_bayar; ?></td>
 									  	<td><?php echo $harga_bayar; ?></td>
 									  	<td><?php echo $proraide; ?></td>
-									  	<td><?php echo $total_bayar; ?></td>
+									  	<td><?php echo $total_bayar.'.000'; ?></td>
 									  </tbody>
 								</table>	  
 		  				    </div>
