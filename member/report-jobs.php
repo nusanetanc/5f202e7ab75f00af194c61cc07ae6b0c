@@ -1,8 +1,8 @@
 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 <?php
-	$_id = new mongoId($_GET['id']);
-	echo $_id;
-	$res = $col_history->find(array("_id"=>$_id));
+	$id_jobs = new mongoId($_GET['id']);
+	echo $id_jobs;
+	$res = $col_history->find(array("_id"=>$id_jobs));
 foreach ($res as $row) {
 	$id_cust = $row['id_cust'];
 	$status_jobs = $row['status'];
