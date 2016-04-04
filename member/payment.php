@@ -29,14 +29,18 @@
 						    $bln = substr($row['tanggal_akhir'], 5,2);
 							$tgl = substr($row['tanggal_akhir'], 8,10);
 							$month = bulan($bln);
+							$date_days = date("d");
+							$date_years = date("Y");
+							$date_month = date("m");
                       	?>
 						  <tbody  style="position:center;">
-						    <tr>
+						<?php  if ($date_days<=$tgl && $date_month<=$bln && $date_years<=$thn){ 
+						    '<tr class="warning">' } elseif($row['status']=="tidak aktif"){'<tr class="info">'} elseif($row['status']=="registrasi"){'<tr class="success">'} else{'<tr>'} ?>
 						      <td><?php echo $row['id_user']; ?></td>
 						      <td><?php echo $row['nama'].' / '. $row['phone'].' / '.$row['email']; ?></td>
 						      <td><?php echo $row['no_virtual']; ?></td>
 						      <td><?php echo $row['pembayaran']; ?></td>
-						      <td><?php echo $tgl.' '.$bln.' '.$thn; ?></td>
+						      <td><?php echo $tgl.' '.$month.' '.$thn; ?></td>
 						      <td><?php echo $row['status']; ?></td>
 						      <td><b><a href="<?php echo $base_url_member; ?>/verification-payment/<?php echo $row['id_user']; ?>" class="btn btn-primary btn-xs">Show</a></b></td>						      
 						    </tr>
