@@ -1,5 +1,5 @@
 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
-<?php /*
+<?php 
 	$id_jobs =new mongoId($_GET['id']);
 	$res = $col_history->find(array("_id"=>$id_jobs));
 foreach ($res as $row) {
@@ -20,7 +20,7 @@ foreach ($res as $row) {
 		$bln1 = substr($tanggal_selesai, 5,2);
 		$tgl1 = substr($tanggal_selesai, 8,10);
 		$month1 = bulan($bln1);
-}
+} /*
 	$res = $col_user->find(array("id_user"=>$id_cust));
 	foreach($res as $row)
 	{ 
