@@ -51,6 +51,7 @@ $date_month = date("d");
 	                                            $move_paket = $row['move_paket'];
 	                                            $move_harga = $row['move_harga'];
 	                                        }  
+	                                        	echo $move_paket;
 	if($move_paket=="" || $move_paket==null){
 		$paket_bayar = $move_paket;
 		$harga_bayar = $move_harga;
