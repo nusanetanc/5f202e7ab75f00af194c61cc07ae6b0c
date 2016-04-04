@@ -63,7 +63,7 @@ foreach($res as $row)
 		$delete_upgrade=$col_user->update(array("id_user"=>$id, "level"=>"0"),array('$set'=>array("move_paket"=>"", "move_harga"=>"", "move_request"=>"")));	
 		if ($delete_upgrade){ ?>
 		<script type="" language="JavaScript">
-		document.location='<?php echo $base_url_member; ?>/package-upgrade'</script>
+		document.location='<?php echo $base_url_member; ?>/change-package'</script>
 <?php }	} ?>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
