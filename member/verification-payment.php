@@ -52,10 +52,10 @@ $date_month = date("d");
 	                                            $move_harga_cust = $row['move_harga'];
 	                                        }  
 	                                        	echo $move_paket_cust;
-	if($move_paket_cust==""){
+	if($move_paket_cust<>""){
 		$paket_bayar = $move_paket_cust;
 		$harga_bayar = $move_harga_cust;
-	}else if($move_paket_cust<>""){
+	}else if($move_paket_cust==""){
 		$paket_bayar = $package_cust;
 		$harga_bayar = $harga_paket;	
 	}    
