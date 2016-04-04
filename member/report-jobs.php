@@ -1,7 +1,6 @@
 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
-<?php
-	$id_jobs = new mongoId($_GET['id']);
-	echo $id_jobs;
+<?php /*
+	$id_jobs =new mongoId($_GET['id']);
 	$res = $col_history->find(array("_id"=>$id_jobs));
 foreach ($res as $row) {
 	$id_cust = $row['id_cust'];
@@ -80,7 +79,7 @@ if (isset($_POST['save'])){
 if ($update_user && $update_jobs){ ?>
 				<script type="" language="JavaScript">
 				document.location='<?php echo $base_url_member; ?>/jobs-list-pending'</script>	
-<?php } }
+<?php } } */
 ?>
 <style>
     .datepicker{z-index:1151;}
