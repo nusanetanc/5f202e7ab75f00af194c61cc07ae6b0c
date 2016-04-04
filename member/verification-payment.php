@@ -55,11 +55,11 @@ $date_month = date("d");
 	if($move_paket_cust<>""){
 		$paket_bayar = $move_paket_cust;
 		$harga_bayar = $move_harga_cust;
-		$pindah_paket = "Pindah Paket"
+		$pindah_paket = "Pindah Paket";
 	}else if($move_paket_cust==""){
 		$paket_bayar = $package_cust;
 		$harga_bayar = $harga_paket;	
-		$pindah_paket = "Paket Aktif"
+		$pindah_paket = "Paket Aktif";
 	}    
 	$total_bayar = $harga_paket - $proraide;            
 	            $res_pack = $col_package->find(array("nama"=>$package_cust));
