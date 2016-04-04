@@ -48,6 +48,8 @@ $date_month = date("d");
 	                                            $no_virtual = $row['no_virtual'];
 	                                            $pembayaran = $row['pembayaran'];
 	                                            $proraide = $row['proraide'];
+	                                            $move_paket = $row['move_paket'];
+	                                            $move_harga = $row['move_harga'];
 	                                        } 
 	            $res_pack = $col_package->find(array("nama"=>$package_cust));
 	            foreach($res_pack as $row_pack) { $harga_hari = $row_pack['harga_hari']; }
@@ -240,13 +242,7 @@ if ($update_user && $update_bayar && $emailinvoice){
 							<div class="form-group">
 							  <label class="col-lg-3 control-label">Paket Aktif/Harga/Proraide : </label>
 							  <div class="col-lg-9">
-								<h4><?php echo $package_cust.'/'.$harga_paket.'/'.$proraide; ?></h4>
-							  </div>
-							</div>
-							<div class="form-group">
-							  <label class="col-lg-3 control-label">Paket Aktif/Harga/Proraide : </label>
-							  <div class="col-lg-9">
-								<h4><?php echo $package_cust.'/'.$harga_paket.'/'.$proraide; ?></h4>
+								<h4><?php echo $package_cust.'/'.$harga_paket; ?></h4>
 							  </div>
 							</div>
 							<div class="form-group">
@@ -299,15 +295,23 @@ if ($update_user && $update_bayar && $emailinvoice){
 									 <thead>
 									    <tr>
 									      <th width="20%">Deskripsi Pembayaran</th>
+									      <th width="20%">Harga</th>
 									      <th width="20%">Prorate</th>
-									      <th width="20%">Total Harga</th>
 									    </tr>
 									  </thead>
+									  <?php if($move_paket=="" || $move_paket==null){ ?>
 									  <tbody>
-									  	<td><?php echo $byr['paket']; ?></td>
-									  	<td><?php echo $byr['tanggal_bayar']; ?></td>
-									  	<td><?php echo $byr['tanggal_konfirmasi']; ?></td>
+									  	<td><?php echo $move_paket; ?></td>
+									  	<td><?php echo $move_harga; ?></td>
+									  	<td><?php echo $proraide; ?></td>
 									  </tbody>
+									  <?php } elseif($move_paket<>"" || $move_paket<>null){ ?>
+									  <tbody>
+									  	<td><?php echo $package_cust; ?></td>
+									  	<td><?php echo $harga_paket; ?></td>
+									  	<td><?php echo $proraide; ?></td>
+									  </tbody>
+									  <?php } ?>
 								</table>	  
 		  				    </div>
 		  				 </div>
