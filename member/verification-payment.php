@@ -16,7 +16,7 @@
 $id_cust = $_GET['id_cust'];
 $date = date("Y/m/d");
 $date_month = date("d");
-						$res = $col_user->find(array("id_user"=>$id_cust));
+						$res = $col_user->find(array("id_user"=>$id_cust, "level"=>"0"));
 						foreach($res as $row)
 											{ 
 												$tanggal_registrasi = $row['tanggal_registrasi'];
@@ -51,6 +51,14 @@ $date_month = date("d");
 	                                            $move_paket = $row['move_paket'];
 	                                            $move_harga = $row['move_harga'];
 	                                        } 
+	if($move_paket=="" || $move_paket==null){
+		$paket_bayar = $package_cust;
+		$harga_bayar = $harga_paket;
+	}elseif($move_paket<>"" || $move_paket<>null){
+		$paket_bayar = $move_paket;
+		$harga_bayar = $move_harga;
+	}    
+	$total_bayar = $harga_paket - $proraide;            
 	            $res_pack = $col_package->find(array("nama"=>$package_cust));
 	            foreach($res_pack as $row_pack) { $harga_hari = $row_pack['harga_hari']; }
 if(isset($_POST['verifikasi'])){  
@@ -61,15 +69,15 @@ if(isset($_POST['verifikasi'])){
 		$month_bayar = bulan($bln_bayar);
 		$last_pembayaran = $pembayaran + 1;
 if ($total_revenue=="" || empty($total_revenue)){
-	$update_revenue = $col_revenue->insert(array("date"=>$date, "total"=>$harga_paket));
+	$update_revenue = $col_revenue->insert(array("date"=>$date, "total"=>$total_bayar));
 } else {
-	$revenue=$total_revenue+$harga_paket;
+	$revenue=$total_revenue+$total_bayar;
 	$update_revenue = $col_revenue->update(array("date"=>$date), array('$set'=>array("total"=>$revenue.'.000')));
 }
 	if ($status_cust=="registrasi"){
 		$sisa_hari = 30-$date_month;
 		$last_proraide = $sisa_hari*$harga_hari;
-		$update_user = $col_user->update(array("id_user"=>$id_cust), array('$set'=>array("pembayaran"=>$last_pembayaran, "proraide"=>$last_proraide.'.000')));
+		$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("pembayaran"=>$last_pembayaran, "proraide"=>$last_proraide.'.000')));
 				// mail for supevisior teknik
 				$subject = 'Atur Jadwal Pemasangan';
 				$message = '
@@ -97,10 +105,10 @@ if ($total_revenue=="" || empty($total_revenue)){
 				$emailpasang=mail($row['email'], $subject, $message, $headers); 
 			}
 	} else {
-		$update_user = $col_user->update(array("id_user"=>$id_cust), array('$set'=>array("tanggal_akhir"=>$last_aktif, "pembayaran"=>$last_pembayaran, "proraide"=>"0")));
+		$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("tanggal_akhir"=>$last_aktif, "pembayaran"=>$last_pembayaran, "proraide"=>"0")));
 	}
 		$pay = array("tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date, "paket"=>$package_cust, "harga"=>$harga_paket, "no"=>$last_pembayaran);
-$update_bayar = $col_user->update(array("id_user"=>$id_cust),array('$push'=>array("payment"=>$pay))); 
+$update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("payment"=>$pay))); 
 				//mail to bukti pembayaran
 				require('../content/srcpdf/fpdf.php');
 				$header = array(
@@ -240,7 +248,7 @@ if ($update_user && $update_bayar && $emailinvoice){
 							  </div>
 							</div>
 							<div class="form-group">
-							  <label class="col-lg-3 control-label">Paket Aktif/Harga/Proraide : </label>
+							  <label class="col-lg-3 control-label">Paket Aktif/Harga : </label>
 							  <div class="col-lg-9">
 								<h4><?php echo $package_cust.'/'.$harga_paket; ?></h4>
 							  </div>
@@ -297,21 +305,15 @@ if ($update_user && $update_bayar && $emailinvoice){
 									      <th width="20%">Deskripsi Pembayaran</th>
 									      <th width="20%">Harga</th>
 									      <th width="20%">Prorate</th>
+									      <th width="20%">Total Bayar</th>
 									    </tr>
 									  </thead>
-									  <?php if($move_paket=="" || $move_paket==null){ ?>
 									  <tbody>
-									  	<td><?php echo $move_paket; ?></td>
-									  	<td><?php echo $move_harga; ?></td>
+									  	<td><?php echo $paket_bayar; ?></td>
+									  	<td><?php echo $harga_bayar; ?></td>
 									  	<td><?php echo $proraide; ?></td>
+									  	<td><?php echo $total_bayar; ?></td>
 									  </tbody>
-									  <?php } elseif($move_paket<>"" || $move_paket<>null){ ?>
-									  <tbody>
-									  	<td><?php echo $package_cust; ?></td>
-									  	<td><?php echo $harga_paket; ?></td>
-									  	<td><?php echo $proraide; ?></td>
-									  </tbody>
-									  <?php } ?>
 								</table>	  
 		  				    </div>
 		  				 </div>
@@ -338,7 +340,7 @@ if ($update_user && $update_bayar && $emailinvoice){
 									      <th width="20%">Tanggal Pembayaran</th>
 									      <th width="20%">Tanggal Konfirmasi</th>
 									      <th width="20%">Deskripsi Pembayaran</th>
-									      <th width="20%">Total Harga</th>
+									      <th width="20%">Total Pembayaran</th>
 									    </tr>
 									  </thead>
 									  <?php 
