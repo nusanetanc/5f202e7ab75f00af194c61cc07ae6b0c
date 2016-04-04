@@ -32,7 +32,7 @@
 									  	<td><?php echo $row['id_user'].' / '.$row['nama'].' / '.$row['phone'].' / '.$row['email']; ?></td>
 									  	<td><?php echo $row['tempat'].' / '.$row['alamat'].' / '.$row['kota'].' / '.$row['keterangan']; ?></td>
 									  	<td><?php echo $row['status']; ?></td>
-									  	<td><a href="<?php echo $base_url_member; ?>/customer-profile&id_cust=<?php echo $row['id_user']; ?>" class="btn btn-primary btn-xs">Show</a></td>
+									  	<td><a href="<?php echo $base_url_member; ?>/customer-profile/<?php echo $row['id_user']; ?>" class="btn btn-primary btn-xs">Show</a></td>
 									  </tbody>
 									  <?php } $res_aktif = $col_user->find(array("level"=>"0", "id_sales"=>$sales, "registrasi"=>"sales", "status"=>"aktif"))->count(); 
 									  		  $res_registrasi = $col_user->find(array("level"=>"0", "id_sales"=>$sales, "registrasi"=>"sales", "status"=>"registrasi"))->count(); 
