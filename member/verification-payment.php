@@ -55,7 +55,7 @@ $date_month = date("d");
 	if($move_paket=="" || $move_paket==null){
 		$paket_bayar = $move_paket;
 		$harga_bayar = $move_harga;
-	}elseif($move_paket<>"" || $move_paket<>null){
+	}else if($move_paket<>"" || $move_paket<>null){
 		$paket_bayar = $package_cust;
 		$harga_bayar = $harga_paket;	
 	}    
