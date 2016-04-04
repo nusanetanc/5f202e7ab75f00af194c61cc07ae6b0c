@@ -55,11 +55,11 @@ $date_month = date("d");
 	if($move_paket_cust<>""){
 		$paket_bayar = $move_paket_cust;
 		$harga_bayar = $move_harga_cust;
-		$pindah_paket = "Pindah Paket";
+		$pindah_paket = "PINDAH PAKET";
 	}else if($move_paket_cust==""){
 		$paket_bayar = $package_cust;
 		$harga_bayar = $harga_paket;	
-		$pindah_paket = "Paket Aktif";
+		$pindah_paket = "PAKET AKTIF";
 	}    
 	$total_bayar = $harga_paket - $proraide;            
 	            $res_pack = $col_package->find(array("nama"=>$package_cust));
@@ -110,13 +110,13 @@ if ($total_revenue=="" || empty($total_revenue)){
 	} else {
 		$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("tanggal_akhir"=>$last_aktif, "pembayaran"=>$last_pembayaran, "proraide"=>"0")));
 	}
-		$pay = array("tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date, "paket"=>$package_cust, "harga"=>$harga_paket, "no"=>$last_pembayaran);
+		$pay = array("tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date, "paket"=>$paket_bayar, "harga"=>$harga_bayar, "no"=>$last_pembayaran);
 $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("payment"=>$pay))); 
 				//mail to bukti pembayaran
 				require('../content/srcpdf/fpdf.php');
 				$header = array(
-						array("label"=>"Paket : ".$package_cust, "length"=>130, "align"=>"C"),
-						array("label"=>"Harga : ".$harga_paket, "length"=>55, "align"=>"C")
+						array("label"=>"Paket : ".$paket_bayar, "length"=>130, "align"=>"C"),
+						array("label"=>"Harga : ".$harga_bayar, "length"=>55, "align"=>"C")
 					);
 				$pdf = new FPDF();
 				$pdf->AddPage();
@@ -154,7 +154,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				$pdf->SetFont('Arial','','10');
 				$pdf->Cell(0,7, 'Tanggal Bayar               : '.$tgl_bayar.' '.$month_bayar.' '.$thn_bayar, '0', 1, 'L');
 				$pdf->Cell(0,7, 'Kode Virtual                   : '.$no_virtual, '0', 1, 'L');
-				$pdf->Cell(0,7, 'Jumlah Pembayaran      : '.$harga_paket, '0', 1, 'L');
+				$pdf->Cell(0,7, 'Jumlah Pembayaran      : '.$total_bayar, '0', 1, 'L');
 				$pdf->Ln();
 				$pdf->Ln();
 				$pdf->Image('../img/denstv-logo.png','10','250','50');
