@@ -34,7 +34,14 @@
 							$date_month = date("m");
                       	?>
 						  <tbody  style="position:center;">
-
+						<?php  if ($date_days==$tgl && $date_month==$bln && $date_years==$thn){ ?>
+						    <tr class="warning"> 
+						<?php } elseif($row['status']=="tidak aktif"){ ?>
+						    <tr class="info">
+						<?php } elseif($row['status']=="registrasi"){ ?>
+						    <tr class="success">
+						    <?php }else{ ?> 
+						    <tr> <?php } ?>
 						      <td><?php echo $row['id_user']; ?></td>
 						      <td><?php echo $row['nama'].' / '. $row['phone'].' / '.$row['email']; ?></td>
 						      <td><?php echo $row['no_virtual']; ?></td>
