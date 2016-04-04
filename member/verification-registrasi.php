@@ -29,7 +29,7 @@
 									  	<td><?php echo $row['tempat'].' / '.$row['alamat'].' / '.$row['kota'].' / '.$row['keterangan']; ?></td>
 									  	<td><?php echo $row['status']; ?></td>
 									  	<td><?php echo $row['nama_sales']; ?></td>
-									  	<td><a href="<?php echo $base_url_member; ?>/?hal=customer-profile&id_cust=<?php echo $row['id_user']; ?>" class="btn btn-primary btn-xs">Show</a></td>
+									  	<td><a href="<?php echo $base_url_member; ?>/?hal=customer-profile/<?php echo $row['id_user']; ?>" class="btn btn-primary btn-xs">Show</a></td>
 									  </tbody>
 									  <?php } ?>
 								</table>	  
