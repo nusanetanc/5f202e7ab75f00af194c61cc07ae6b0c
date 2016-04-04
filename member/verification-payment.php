@@ -244,6 +244,12 @@ if ($update_user && $update_bayar && $emailinvoice){
 							  </div>
 							</div>
 							<div class="form-group">
+							  <label class="col-lg-3 control-label">Paket Aktif/Harga/Proraide : </label>
+							  <div class="col-lg-9">
+								<h4><?php echo $package_cust.'/'.$harga_paket.'/'.$proraide; ?></h4>
+							  </div>
+							</div>
+							<div class="form-group">
 							  <label class="col-lg-3 control-label">Lokasi : </label>
 							  <div class="col-lg-9">
 								<h4><?php echo $tempat_cust.', '.$ket_cust.', '.$kota_cust; ?></h4>
@@ -278,8 +284,40 @@ if ($update_user && $update_bayar && $emailinvoice){
 						</form>    		
 					</div>	
 				</div>
-				<div class="col-sm-12">
-				<div class="list-group">
+		<div class="col-sm-12">
+		<div class="list-group">
+			<div class="panel" style="border:0px;">
+  				<div class="panel-heading" style="background-color:#1B5E12">
+    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">BILLING</h3>
+  				</div>
+	  					<br/>
+	  				    <div class="panel-body">
+	  				    <form method="post">
+	  				    <div class="row">
+	  				    	<div class="col-sm-12">
+		  				    	<table class="table table-striped table-hover ">
+									 <thead>
+									    <tr>
+									      <th width="20%">Deskripsi Pembayaran</th>
+									      <th width="20%">Prorate</th>
+									      <th width="20%">Total Harga</th>
+									    </tr>
+									  </thead>
+									  <tbody>
+									  	<td><?php echo $byr['paket']; ?></td>
+									  	<td><?php echo $byr['tanggal_bayar']; ?></td>
+									  	<td><?php echo $byr['tanggal_konfirmasi']; ?></td>
+									  </tbody>
+								</table>	  
+		  				    </div>
+		  				 </div>
+		  				 </form>
+		  				 </div>
+					  	</div>
+					</div>
+				</div>
+		<div class="col-sm-12">
+		<div class="list-group">
 			<div class="panel" style="border:0px;">
   				<div class="panel-heading" style="background-color:#1B5E12">
     				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">DATA PEMBAYARAN - <?php echo $pembayaran; ?></h3>
