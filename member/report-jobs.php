@@ -34,7 +34,7 @@ foreach ($res as $row) {
         $keterangan_cust = $row['keterangan'];
         $paket_cust = $row['paket'];
     } 
-if (isset($_POST['save'])){
+if (isset($_POST['save'])){ /*
 	$note = $_POST['inputNote'];
 	$date = date("Y/m/d");
 	$date_years = date("Y");
@@ -45,7 +45,7 @@ if (isset($_POST['save'])){
 	} else {
 		$next_month=$date_years+1;
 		$next_years=$date_years;
-	}
+	} */
 	$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("tanggal_aktivasi"=>$date, "status"=>"aktif", "tanggal_akhir"=>$next_years.'/'.$next_month.'/01'.))); 
 	$update_jobs = $col_history->update(array("id_cust"=>$id_cust, "status"=>$status_jobs, "hal"=>$nama_jobs),array('$set'=>array("catatan"=>$note, "status"=>"done", "tanggal_selesai"=>$date)));
 				// mail for supevisior teknik
