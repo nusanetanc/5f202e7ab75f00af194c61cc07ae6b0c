@@ -20,7 +20,7 @@ foreach ($res as $row) {
 		$bln1 = substr($tanggal_selesai, 5,2);
 		$tgl1 = substr($tanggal_selesai, 8,10);
 		$month1 = bulan($bln1);
-} /*
+} 
 	$res = $col_user->find(array("id_user"=>$id_cust));
 	foreach($res as $row)
 	{ 
@@ -33,6 +33,7 @@ foreach ($res as $row) {
         $alamat_cust = $row['alamat'];
         $keterangan_cust = $row['keterangan'];
         $paket_cust = $row['paket'];
+    }
 if (isset($_POST['save'])){
 	$note = $_POST['inputNote'];
 	$date = date("Y/m/d");
@@ -79,7 +80,7 @@ if (isset($_POST['save'])){
 if ($update_user && $update_jobs){ ?>
 				<script type="" language="JavaScript">
 				document.location='<?php echo $base_url_member; ?>/jobs-list-pending'</script>	
-<?php } } */
+<?php } 
 ?>
 <style>
     .datepicker{z-index:1151;}
