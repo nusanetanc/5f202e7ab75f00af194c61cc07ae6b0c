@@ -152,29 +152,25 @@
 <section>
 	<div class="col-sm-12 col-md-12 col-lg-9" style="font-family:Arial;">
 		<div class="row">
-			<div class="col-sm-6">
-				<div class="well well-lg" style="background-color:#1B5E12;">
-				  <h5 style="color:white;"><b>PAYMENT</b></h5>
-				  	<div class="text-center">
-				  	<br/>
-				  	<div class="row">
-				  		<div class="col-sm-5">
-				  			<a href="<?php echo $base_url_member; ?>/send-invoice" style=" text-decoration:none">
-							  	<b style="color:white; font-size:2em;"><i class="fa fa-check-square-o fa-2x"></i></b>
-							  	<h5 style="color:white;">Kirim Invoice(New Customer)</h5>
-							</a>  	
-						</div>
-						<div class="col-sm-2">								
-						</div>
-							<div class="col-sm-5">  
-								<a href="<?php echo $base_url_member; ?>/payment" style=" text-decoration:none">
-								  	<b style="color:white; font-size:2em;"><i class="fa fa-navicon fa-2x"></i></b>
-								  	<h5 style="color:white;">List Customer</h5>
-								</a>  	
-							</div>  	
-					 	</div>
+			<div class="col-sm-4">
+				<a href="<?php echo $base_url_member; ?>/send-invoice" style=" text-decoration:none">
+					<div class="well well-lg" style="background-color:#263238;">
+					  <h4 style="color:white;"><b>New Customer</b></h4>
+					  <div class="text-center">
+					  	<b style="color:white; font-size:2em;"><i class="fa fa-check-square-o fa-5x"></i></b>
+					  </div>
 					</div>
-				</div>	
+				</a>	
+			</div>
+			<div class="col-sm-4">
+				<a href="<?php echo $base_url_member; ?>/payment" style=" text-decoration:none">
+					<div class="well well-lg" style="background-color:#263238;">
+					  <h4 style="color:white;"><b>List Customer</b></h4>
+					  <div class="text-center">
+					  	<b style="color:white; font-size:2em;"><i class="fa fa-navicon fa-5x"></i></b>
+					  </div>
+					</div>
+				</a>	
 			</div>	
 		</div>
 	</div>
