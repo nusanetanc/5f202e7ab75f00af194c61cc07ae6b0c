@@ -50,13 +50,13 @@ $date_month = date("d");
 	                                            $proraide = $row['proraide'];
 	                                            $move_paket = $row['move_paket'];
 	                                            $move_harga = $row['move_harga'];
-	                                        } 
+	                                        }  
 	if($move_paket=="" || $move_paket==null){
-		$paket_bayar = $package_cust;
-		$harga_bayar = $harga_paket;
-	}elseif($move_paket<>"" || $move_paket<>null){
 		$paket_bayar = $move_paket;
 		$harga_bayar = $move_harga;
+	}elseif($move_paket<>"" || $move_paket<>null){
+		$paket_bayar = $package_cust;
+		$harga_bayar = $harga_paket;	
 	}    
 	$total_bayar = $harga_paket - $proraide;            
 	            $res_pack = $col_package->find(array("nama"=>$package_cust));
