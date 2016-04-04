@@ -1,10 +1,11 @@
 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 <?php
-	$id_cust = $_GET['id'];
-	$status_jobs = $_GET['status'];
-	$nama_jobs = $_GET['job'];
-	$res = $col_history->find(array("id_cust"=>$id_cust, "status"=>$status_jobs, "hal"=>$nama_jobs));
+	$_id = new mongoId($_GET['_id']);
+	$res = $col_history->find(array("_id"=>$_id));
 foreach ($res as $row) {
+	$id_cust = $row['id_cust'];
+	$status_jobs = $row['status'];
+	$nama_jobs = $row['hal'];
 	$jobs_report = $row['catatan'];
 	$no_box = $row['no_box'];
 	$nama_field = $row['field_engineer'];
