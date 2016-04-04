@@ -68,7 +68,7 @@
 						      <td class="desktop-only" ><?php echo $row['status']; ?></td>
 						      <td class="desktop-only" ><?php echo $tgl.' '.$month.' '.$thn; ?></td>
 						      <td class="desktop-only" ><?php echo $row['field_engineer'].' / '.$row['ass_field']; ?></td>
-						      <td><b><a href="<?php echo $base_url_member; ?>/report-jobs&id=<?php echo $row['id_cust']; ?>&status=<?php echo $row['status']; ?>&job=<?php echo $row['hal']; ?>" class="btn btn-default btn-sm">Report</a></b></td>						      
+						      <td><b><a href="<?php echo $base_url_member; ?>/report-jobs/<?php echo $row['_id']; ?>" class="btn btn-default btn-sm">Report</a></b></td>						      
 						    </tr>
 						<?php } ?>
 						   </tbody>  
