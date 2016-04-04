@@ -48,14 +48,14 @@ $date_month = date("d");
 	                                            $no_virtual = $row['no_virtual'];
 	                                            $pembayaran = $row['pembayaran'];
 	                                            $proraide = $row['proraide'];
-	                                            $move_paket = $row['move_paket'];
-	                                            $move_harga = $row['move_harga'];
+	                                            $move_paket_cust = $row['move_paket'];
+	                                            $move_harga_cust = $row['move_harga'];
 	                                        }  
-	                                        	echo $move_paket;
-	if($move_paket=="" || $move_paket==null){
-		$paket_bayar = $move_paket;
-		$harga_bayar = $move_harga;
-	}else if($move_paket<>"" || $move_paket<>null){
+	                                        	echo $move_paket_cust;
+	if($move_paket_cust=="" || $move_paket_cust==null){
+		$paket_bayar = $move_paket_cust;
+		$harga_bayar = $move_harga_cust;
+	}else if($move_paket_cust<>"" || $move_paket_cust<>null){
 		$paket_bayar = $package_cust;
 		$harga_bayar = $harga_paket;	
 	}    
