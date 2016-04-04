@@ -30,7 +30,7 @@ RewriteRule ^package-list$ ?hal=package-list
 RewriteRule ^payment$ ?hal=payment
 RewriteRule ^payment-confrim$ ?hal=paymentconfrim
 RewriteRule ^registration-add$ ?hal=registration-add
-RewriteRule ^report-jobs/([0-9A-Za-z]+)/([0-9A-Za-z]+)/([0-9A-Za-z]+)/? ?hal=report-jobs&id=$1&status=$2&job=$3
+RewriteRule ^report-jobs/([0-9A-Za-z]+)/([0-9A-Za-z]+)/([0-9A-Za-z]+)/? ?hal=report-jobs&id=$1&status=$1&job=$1
 RewriteRule ^report-jobs$ ?hal=report-jobs
 RewriteRule ^sales-add$ ?hal=sales-add
 RewriteRule ^sales-list$ ?hal=sales-list
