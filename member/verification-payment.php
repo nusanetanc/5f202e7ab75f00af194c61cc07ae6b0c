@@ -55,9 +55,11 @@ $date_month = date("d");
 	if($move_paket_cust<>""){
 		$paket_bayar = $move_paket_cust;
 		$harga_bayar = $move_harga_cust;
+		$pindah_paket = "Pindah Paket"
 	}else if($move_paket_cust==""){
 		$paket_bayar = $package_cust;
 		$harga_bayar = $harga_paket;	
+		$pindah_paket = "Paket Aktif"
 	}    
 	$total_bayar = $harga_paket - $proraide;            
 	            $res_pack = $col_package->find(array("nama"=>$package_cust));
@@ -293,7 +295,7 @@ if ($update_user && $update_bayar && $emailinvoice){
 		<div class="list-group">
 			<div class="panel" style="border:0px;">
   				<div class="panel-heading" style="background-color:#1B5E12">
-    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">BILLING</h3>
+    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">BILLING - <?php echo $pindah_paket; ?></h3>
   				</div>
 	  					<br/>
 	  				    <div class="panel-body">
