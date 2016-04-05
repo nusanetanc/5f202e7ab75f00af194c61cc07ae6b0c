@@ -110,7 +110,15 @@ if($level=="501"){
         <h4 class="modal-title">Permintaan Berhenti Berlanganan</h4>
       </div>
       <div class="modal-body">
-        <p>One fine body…</p>
+        <p>
+        <select class="form-control" id="select">
+          <option disabled="true" selected="true">Alasan Penutupan</option>
+          <option>Harga Mahal</option>
+          <option>Jaringan Internet Tidak Stabil</option>
+          <option>Chanel Tv Tidak Sesuai</option>
+          <option value="Other">Other</option>
+        </select>
+        </p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
