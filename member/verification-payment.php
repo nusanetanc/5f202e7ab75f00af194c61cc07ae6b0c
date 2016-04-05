@@ -269,13 +269,9 @@ if(isset($_POST['terminasi'])){
 				$headers1 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 				$headers1 .= 'From: cs@groovy.id' . "\r\n";
 				$headers1 .= 'Cc: billing@groovy.id' . "\r\n";	
-				$emailnotice=mail($email_cust, $subject1, $message1, $headers1); 
+				$emailnotice=mail($email_cust, $subject1, $message1, $headers1); }
 
-if ($update_user && $emailbongkar && $emailnotice && $sent){
-	?>
-		<script type="" language="JavaScript">
-		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>	
-<?php }  } echo tes 2; 
+
 ?>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
