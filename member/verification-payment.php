@@ -13,7 +13,6 @@
     </script>
 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 <?php
-echo tes01;
 $id_cust = $_GET['id_cust'];
 $date = date("Y/m/d");
 $date_month = date("d");
@@ -60,7 +59,7 @@ $date_month = date("d");
 		$paket_bayar = $package_cust;
 		$harga_bayar = $harga_paket;	
 		$pindah_paket = "PAKET AKTIF";
-	}    echo tes02;
+	}   
 	$total_bayar = $harga_paket - $proraide;            
 	            $res_pack = $col_package->find(array("nama"=>$package_cust));
 	            foreach($res_pack as $row_pack) { $harga_hari = $row_pack['harga_hari']; }
@@ -81,7 +80,7 @@ if($move_paket_cust<>""){
 		
 	}else if($move_paket_cust==""){
 
-}  echo tes0;
+}  
 	if ($status_cust=="registrasi"){
 		$sisa_hari = 30-$date_month;
 		$last_proraide = $sisa_hari*$harga_hari;
@@ -217,7 +216,7 @@ if ($update_user && $update_bayar && $emailinvoice){
 	?>
 		<script type="" language="JavaScript">
 		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>	
-<?php } } echo tes1;
+<?php } } 
 if(isset($_POST['terminasi'])){
 	$termination_date=$_POST['inputTerminationdate'];
 		$thn_tutup = substr($termination_date, 0,4);
@@ -269,14 +268,12 @@ if(isset($_POST['terminasi'])){
 				$headers1 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 				$headers1 .= 'From: cs@groovy.id' . "\r\n";
 				$headers1 .= 'Cc: billing@groovy.id' . "\r\n";	
-				$emailnotice=mail($email_cust, $subject1, $message1, $headers1); }
+				$emailnotice=mail($email_cust, $subject1, $message1, $headers1); 
 
-if ($update_user && $emailbongkar && $emailnotice && $sent){
-	?>
+if ($update_user && $emailbongkar && $emailnotice && $sent){ ?>
 		<script type="" language="JavaScript">
 		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>	
-<?php } 
-?>
+<?php } } ?>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
 		<div class="list-group">
