@@ -13,6 +13,7 @@
     </script>
 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 <?php
+tes01;
 $id_cust = $_GET['id_cust'];
 $date = date("Y/m/d");
 $date_month = date("d");
