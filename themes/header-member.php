@@ -1,5 +1,5 @@
-<script >
-  $(document).ready(function(){
+<script>
+ $(document).ready(function(){
       $("#textalasantermination").hide(); 
       $("#selectalasantermination").change(function(){
         var a =  $("#selectalasantermination").val();
@@ -153,7 +153,7 @@ if($level=="501"){
           <option disabled="true" selected="true">Alasan Penutupan</option>
           <option>Harga Mahal</option>
           <option>Jaringan Internet Tidak Stabil</option>
-          <option>Chanel Tv Tidak Sesuai</option>
+          <option>Chanel Tv Bermasalah</option>
           <option value="Other">Other</option>
         </select>
         </p>
