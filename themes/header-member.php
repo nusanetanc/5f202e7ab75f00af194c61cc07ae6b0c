@@ -94,7 +94,7 @@ if($level=="501"){
             <ul class="dropdown-menu">
               <li><a href="<?php echo $base_url_member; ?>/edit-profile">Edit Profile</a></li>
               <?php if ($level=="0"){ ?>
-              <li><a href="">Berhenti Berlanganan</a></li>
+              <li><a href="#" data-toggle="modal" data-target="#confrimtermination">Berhenti Berlanganan</a></li>
               <?php } ?>
               <li><a href="<?php echo $base_url_member; ?>/logout">Logout</a></li>
             </ul>
