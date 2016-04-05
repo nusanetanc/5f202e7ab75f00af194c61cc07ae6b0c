@@ -346,12 +346,12 @@ if(isset($_POST['terminasi'])){
 				$data .= "\n\n" .
 				"--{$mime_boundary}--\n";
 
-				$sent = mail($email_to, $email_subject, $email_message, $headers); */
+				$sent = mail($email_to, $email_subject, $email_message, $headers); 
 if ($update_user && $emailbongkar && $emailnotice && $sent){
 	?>
 		<script type="" language="JavaScript">
 		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>	
-<?php } } echo tes 2;
+<?php } */ } echo tes 2; 
 ?>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
