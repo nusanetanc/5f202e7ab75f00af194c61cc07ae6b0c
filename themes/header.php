@@ -664,7 +664,7 @@
                 <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h5 style="color:white;"><b>Email already exist!</b></h5>
+                              <h5 style="color:white;"><b>Email already exist! Please register with other email</b></h5>
                     </div>
                 </div>
             </div> 
