@@ -13,7 +13,7 @@
     </script>
 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 <?php
-tes01;
+echo tes01;
 $id_cust = $_GET['id_cust'];
 $date = date("Y/m/d");
 $date_month = date("d");
@@ -60,7 +60,7 @@ $date_month = date("d");
 		$paket_bayar = $package_cust;
 		$harga_bayar = $harga_paket;	
 		$pindah_paket = "PAKET AKTIF";
-	}    
+	}    echo tes02;
 	$total_bayar = $harga_paket - $proraide;            
 	            $res_pack = $col_package->find(array("nama"=>$package_cust));
 	            foreach($res_pack as $row_pack) { $harga_hari = $row_pack['harga_hari']; }
