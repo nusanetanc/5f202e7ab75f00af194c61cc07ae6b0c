@@ -271,7 +271,11 @@ if(isset($_POST['terminasi'])){
 				$headers1 .= 'Cc: billing@groovy.id' . "\r\n";	
 				$emailnotice=mail($email_cust, $subject1, $message1, $headers1); }
 
-
+if ($update_user && $emailbongkar && $emailnotice && $sent){
+	?>
+		<script type="" language="JavaScript">
+		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>	
+<?php } 
 ?>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
