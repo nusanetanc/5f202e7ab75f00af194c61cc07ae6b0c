@@ -80,7 +80,7 @@ if($move_paket_cust<>""){
 		
 	}else if($move_paket_cust==""){
 
-} 
+}  echo tes0;
 	if ($status_cust=="registrasi"){
 		$sisa_hari = 30-$date_month;
 		$last_proraide = $sisa_hari*$harga_hari;
