@@ -111,7 +111,7 @@ if($level=="501"){
       </div>
       <div class="modal-body">
         <p>
-        <select class="form-control" id="select">
+        <select class="form-control" name="selectalasantermination" id="selectalasantermination">
           <option disabled="true" selected="true">Alasan Penutupan</option>
           <option>Harga Mahal</option>
           <option>Jaringan Internet Tidak Stabil</option>
@@ -119,6 +119,8 @@ if($level=="501"){
           <option value="Other">Other</option>
         </select>
         </p>
+        <p><input type="text" class="form-control" name="textalasantermination" id="textalasantermination" placeholder="Alasan Penutupan"></p>
+        <p><div style="margin-bottom:7px;" class="g-recaptcha" data-sitekey="6Ldx_BsTAAAAAOYrQegHLVhslSvd6z78zAr-4Knc"></div></p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
