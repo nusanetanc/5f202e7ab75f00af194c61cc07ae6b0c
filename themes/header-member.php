@@ -93,7 +93,7 @@ if($level=="501"){
           </li>
             <ul class="dropdown-menu">
               <li><a href="<?php echo $base_url_member; ?>/edit-profile">Edit Profile</a></li>
-              <?php if $level=="0"{ ?>
+              <?php if ($level=="0"){ ?>
               <li><a href="">Berhenti Berlanganan</a></li>
               <?php } ?>
               <li><a href="<?php echo $base_url_member; ?>/logout">Logout</a></li>
@@ -102,3 +102,20 @@ if($level=="501"){
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
   <div class="col-sm-12 grey-background">
+  <div class="modal" name="confrimtermination" id="confrimtermination">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Permintaan Berhenti Berlanganan</h4>
+      </div>
+      <div class="modal-body">
+        <p>One fine body…</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+        <button type="button" class="btn btn-primary">Kirim</button>
+      </div>
+    </div>
+  </div>
+</div>
