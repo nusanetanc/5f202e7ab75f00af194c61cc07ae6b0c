@@ -308,7 +308,7 @@ if(isset($_POST['terminasi'])){
 				$pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R');
 
 				// Filename that will be used for the file as the attachment
-				$fileatt_name = $tgl_tutup.$month_tutup.$thn_tutup.'-'.$id_cust.".pdf";
+				$fileatt_name = $tgl_tutup.$month_tutup.$thn_tutup.$id_cust.".pdf";
 				$dir='termination/';
 				$pdf ->Output($dir.$fileatt_name);
 
