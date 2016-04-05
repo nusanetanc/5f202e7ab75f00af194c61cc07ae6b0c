@@ -535,37 +535,68 @@
                                                                               // mail for customer to registrasi
                                                                                 $to = $email;
 
-                                                                                $subject = 'Registrasi groovy TV';
+                                                                                $subject = 'Pendaftaran Akun Groovy';
 
                                                                                 $message = '
                                                                                 <html>
-                                                                                <body>
-                                                                                  <p>Terimakasih telah registrasi di groovy.id berikut rincian data anda : </p>
-                                                                                  <br/>
-                                                                                  <p>ID Customer : '.$newid.'</p>
-                                                                                  <p>Nama : '.$name.'</p>
-                                                                                  <p>Paket : '.$package.'</p>
-                                                                                  <p>Email : '.$email.'</p>
-                                                                                  <p>Phone : '.$phone.'</p>
-                                                                                  <p>Tanggal Registrasi : '.$date_days.' '.$month1.' '.$date_years.'</p>
-                                                                                  <p>Registrasi : Personal</p>
-                                                                                  <p>Tempat : '.$location.', '.$decription.', '.$place.', '.$city.'</p>
-                                                                                  <br/>
-                                                                                  <p>Untuk mengaktifkan akun anda silahkan klik atau copy link berikut ini</p>
-                                                                                  <p><a href="'.$base_url.'/?a='.$result.'">Aktivasi</a></p>
-                                                                                  <p>'.$base_url.'/?a='.$result.'</p>
-                                                                                  <br/>
-                                                                                  <p>Best Regards</p>
-                                                                                  <p>Customer Service</p>
-                                                                                  <p>groovy.id</p>
-                                                                                </body>
-                                                                                </html>
+                                                                                    <body style="background-color:#f0f0f0;padding:50px 0 50px 0;font-family:arial;font-size:15px;">
+                                                                                        <div style="margin:0 auto;max-width:500px;background-color:#fff;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
+                                                                                            <div style="background: linear-gradient(to right, #FF3D23 , #fc742f);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
+                                                                                                <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
+                                                                                            </div>
+                                                                                            <div style="padding:20px;color:#333;">
+                                                                                                <p style="font-size:20px;font-weight:bold;line-height:1px">Hai John Doe,</p>
+                                                                                                <p>Terimakasih telah mendaftarkan akun Groovy. Berikut adalah rincian akun yang anda daftarkan.</p>
+                                                                                                <table style="margin-top:20px;margin-bottom:20px;border:0px solid #ccc;color:#333;background-color:#fff;#ddd;width:100%;font-size:14px;">
+                                                                                                    <tr style="border:1px solid #bbb;">
+                                                                                                        <td style="border:1px solid #bbb;padding:5px;color:#777;">ID Customer</td>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px">'.$newid.'</td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px;color:#777">Nama</td>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px">'.$name.'</td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px;color:#777">Email</td>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px">'.$email.'</td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px;color:#777">Telepon</td>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px">'.$phone.'</td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px;color:#777">Paket</td>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px">'.$package.'</td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px;color:#777">Tanggal Registrasi</td>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px">'.$date_days.' '.$month1.' '.$date_years.'</td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px;color:#777">Tipe Akun</td>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px">Personal</td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px;color:#777">Tempat</td>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px">'.$location.', '.$decription.', '.$place.', '.$city.'</td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                                <p>Untuk mengaktifkan akun silahkan klik tombol aktivasi ini.</p>
+                                                                                                <div style="text-align:center;margin:30px 0 30px 0;">
+                                                                                                    <a href="'.$base_url.'/?a='.$result.'" style="text-decoration:none;color:#fff;"><span style="background-color:#FF3D23;border:0;border-radius:5px;padding:10px 40px 10px 40px;color:#fff;font-size:17px;">Aktivasi Akun</span></a>
+                                                                                                </div>
+                                                                                                <p>Jika tombol tidak berfungsi silahkan copy link berikut <a href="'.$base_url.'/?a='.$result.'">'.$base_url.'/?a='.$result.'</a></p>
+                                                                                            </div>
+                                                                                            </div>
+                                                                                        </div>        
+                                                                                    </body>
+                                                                                    </html>
                                                                                 ';
 
                                                                                 $headers  = 'MIME-Version: 1.0' . "\r\n";
                                                                                 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
-                                                                                $headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
+                                                                                $headers .= 'From: Groovy <no-reply@groovy.id>' . "\r\n";
                                                                                 $headers .= 'Cc: cs@groovy.id, billing@groovy.id' . "\r\n";
 
                                                                                 mail($to, $subject, $message, $headers);
