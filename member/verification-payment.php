@@ -12,7 +12,60 @@
             });
     </script>
 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+<?php
+echo tes01;
+$id_cust = $_GET['id_cust'];
+$date = date("Y/m/d");
+$date_month = date("d");
+						$res = $col_user->find(array("id_user"=>$id_cust, "level"=>"0"));
+						foreach($res as $row)
+											{ 
+												$tanggal_registrasi = $row['tanggal_registrasi'];
+												$thn_registrasi = substr($tanggal_registrasi, 0,4);
+												$bln_registrasi = substr($tanggal_registrasi, 5,2);
+												$tgl_registrasi = substr($tanggal_registrasi, 8,10);
+												$month_registrasi = bulan($bln_registrasi);
 
+												$tanggal_akhir = $row['tanggal_akhir'];
+												$thn_akhir = substr($tanggal_akhir, 0,4);
+												$bln_akhir = substr($tanggal_akhir, 5,2);
+												$tgl_akhir = substr($tanggal_akhir, 8,10);
+												$month_akhir = bulan($bln_akhir);
+
+												$registrasi_cust = $row['registrasi'];
+												$sales =$row['sales'];
+												$nama_cust = $row['nama'];
+												$email_cust = $row['email'];
+												$phone_cust = $row['phone'];
+												$package_cust = $row['paket'];
+												$tempat_cust = $row['tempat'];
+						                        $kota_cust = $row['kota'];
+						                        $status_cust = $row['status'];
+						                        $alamat_cust = $row['alamat'];
+						                        $ket_cust = $row['keterangan'];
+						                        $tanggal_akhir = $row['tanggal_akhir'];
+						                        $tanggal_aktif = $row['tanggal_aktif'];
+						                        $harga_paket = $row['harga'];
+	                                            $no_virtual = $row['no_virtual'];
+	                                            $pembayaran = $row['pembayaran'];
+	                                            $proraide = $row['proraide'];
+	                                            $move_paket_cust = $row['move_paket'];
+	                                            $move_harga_cust = $row['move_harga'];
+	                                        }  
+	if($move_paket_cust<>""){
+		$paket_bayar = $move_paket_cust;
+		$harga_bayar = $move_harga_cust;
+		$pindah_paket = "PINDAH PAKET";
+	}else if($move_paket_cust==""){
+		$paket_bayar = $package_cust;
+		$harga_bayar = $harga_paket;	
+		$pindah_paket = "PAKET AKTIF";
+	}    echo tes02;
+	$total_bayar = $harga_paket - $proraide;            
+	            $res_pack = $col_package->find(array("nama"=>$package_cust));
+	            foreach($res_pack as $row_pack) { $harga_hari = $row_pack['harga_hari']; }
+
+?>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
 		<div class="list-group">
