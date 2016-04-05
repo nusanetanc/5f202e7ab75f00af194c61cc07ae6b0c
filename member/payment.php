@@ -32,22 +32,21 @@
 							$date_days = date("d");
 							$date_years = date("Y");
 							$date_month = date("m");
-                      	?>
+                      	if ($date_days==$tgl && $date_month==$bln && $date_years==$thn){
+                      		$label_status = "label label-warning";
+                      	 } elseif($row['status']=="tidak aktif"){ 
+                      	 	$label_status = "label label-danger";
+                      	 } elseif($row['status']=="registrasi"){ 
+                      	 	$label_status = "label label-success";
+                      	 } else { $label_status = "label label-primary"}?>
 						  <tbody  style="position:center;">
-						<?php  if ($date_days==$tgl && $date_month==$bln && $date_years==$thn){ ?>
-						    <tr class="warning"> 
-						<?php } elseif($row['status']=="tidak aktif"){ ?>
-						    <tr class="info">
-						<?php } elseif($row['status']=="registrasi"){ ?>
-						    <tr class="success">
-						    <?php }else{ ?> 
-						    <tr> <?php } ?>
+						    <tr> 
 						      <td><?php echo $row['id_user']; ?></td>
 						      <td><?php echo $row['nama'].' / '. $row['phone'].' / '.$row['email']; ?></td>
 						      <td><?php echo $row['no_virtual']; ?></td>
 						      <td><?php echo $row['pembayaran']; ?></td>
 						      <td><?php echo $tgl.' '.$month.' '.$thn; ?></td>
-						      <td><?php echo $row['status']; ?></td>
+						      <td><span class="<?php echo $label_status; ?>"><?php echo $row['status']; ?></span></td>
 						      <td><b><a href="<?php echo $base_url_member; ?>/verification-payment/<?php echo $row['id_user']; ?>" class="btn btn-primary btn-xs">Show</a></b></td>						      
 						    </tr>
 						   </tbody>

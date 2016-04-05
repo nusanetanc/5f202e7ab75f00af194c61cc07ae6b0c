@@ -77,6 +77,11 @@ if ($total_revenue=="" || empty($total_revenue)){
 	$revenue=$total_revenue+$total_bayar;
 	$update_revenue = $col_revenue->update(array("date"=>$date), array('$set'=>array("total"=>$revenue.'.000')));
 }
+if($move_paket_cust<>""){
+		
+	}else if($move_paket_cust==""){
+
+} 
 	if ($status_cust=="registrasi"){
 		$sisa_hari = 30-$date_month;
 		$last_proraide = $sisa_hari*$harga_hari;
@@ -154,7 +159,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				$pdf->SetFont('Arial','','10');
 				$pdf->Cell(0,7, 'Tanggal Bayar               : '.$tgl_bayar.' '.$month_bayar.' '.$thn_bayar, '0', 1, 'L');
 				$pdf->Cell(0,7, 'Kode Virtual                   : '.$no_virtual, '0', 1, 'L');
-				$pdf->Cell(0,7, 'Jumlah Pembayaran      : '.$total_bayar, '0', 1, 'L');
+				$pdf->Cell(0,7, 'Jumlah Pembayaran      : '.$total_bayar.'.000', '0', 1, 'L');
 				$pdf->Ln();
 				$pdf->Ln();
 				$pdf->Image('../img/denstv-logo.png','10','250','50');
