@@ -51,7 +51,6 @@ $date_month = date("d");
 	                                            $move_paket_cust = $row['move_paket'];
 	                                            $move_harga_cust = $row['move_harga'];
 	                                        }  
-	                                        	echo $move_paket_cust;
 	if($move_paket_cust<>""){
 		$paket_bayar = $move_paket_cust;
 		$harga_bayar = $move_harga_cust;
@@ -370,6 +369,29 @@ if ($update_user && $update_bayar && $emailinvoice){
 									  </tbody>
 									  <?php } ?>
 								</table>	  
+		  				    </div>
+		  				 </div>
+		  				 </form>
+		  				 </div>
+					  	</div>
+					</div>
+				</div>
+		<div class="col-sm-12">
+		<div class="list-group">
+			<div class="panel" style="border:0px;">
+  				<div class="panel-heading" style="background-color:#1B5E12">
+    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">TERMINASI LAYANAN</h3>
+  				</div>
+	  					<br/>
+	  				    <div class="panel-body">
+	  				    <form method="post">
+	  				    <div class="row">
+	  				    	<div class="col-sm-12">
+								<input type="text" class="form-control" id="inputPaymentdate1" name="inputPaymentdat1e" placeholder="Termination Date" required>
+									<br/>
+								<div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>	
+									<br/>
+								<input type="submit" class="btn" style="background-color:#1B5E12; color:#FFFFFF" name="terminasi" id="terminasi" value="TUTUP">	  
 		  				    </div>
 		  				 </div>
 		  				 </form>
