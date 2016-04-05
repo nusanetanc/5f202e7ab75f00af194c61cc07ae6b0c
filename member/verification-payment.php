@@ -252,8 +252,8 @@ if(isset($_POST['terminasi'])){
 				$message1 = '
 				<html>
 				<body>
-				  <p>Hi'.$nama_cust.', Terimakasih sudah berlangganan groovy</p>
-				  <p>Layanan anda akan berakhir pada tanggal'.$tgl_tutup.' '.$month_tutup.' '.$thn_tutup.'</p>
+				  <p>Hi '.$nama_cust.', Terimakasih sudah berlangganan groovy</p>
+				  <p>Layanan anda akan berakhir pada tanggal '.$tgl_tutup.' '.$month_tutup.' '.$thn_tutup.'</p>
 				  <p>Kami akan memberi info lagi untuk pengambilan perangkat yang anda gunakan.</p>
 				  <p>Untuk Melakukan aktivasi kembali layanan kami bisa di halaman member anda.</p>
 				  <br/><br/><br/>
