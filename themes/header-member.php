@@ -118,7 +118,7 @@ if($level=="501"){
           <p>ID Customer : '.$id.'</p>
           <p>Nama : '.$nama.'</p>
           <p>Tempat : '.$tempat', '.$ket.', '.$kota.'</p>
-          <p>Tanggal Permintaan : '.date("d-m-Y")'</p>
+          <p>Tanggal Permintaan : '.date("d-m-Y").'</p>
           <p>Paket : '.$paket.'</p>
           <p>Alasan Penutupan : '.$_POST['selectalasantermination'].'</p>
           <br/>
