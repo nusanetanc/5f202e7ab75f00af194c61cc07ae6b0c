@@ -225,7 +225,7 @@ if(isset($_POST['terminasi'])){
 		$tgl_tutup = substr($termination_date, 8,10);
 		$month_tutup = bulan($bln_tutup);
 	$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("tanggal_akhir"=>$termination_date, "status"=>"Tidak Aktif"))); }
-/*				// mail for supevisior teknik
+				// mail for supevisior teknik
 				$subject0 = 'Request Ambil Perangkat';
 				$message0 = '
 				<html>
@@ -264,12 +264,12 @@ if(isset($_POST['terminasi'])){
 				  <br/>
 				</body>
 				</html>
-				';
+				'; 
 				$headers1  = 'MIME-Version: 1.0' . "\r\n";
 				$headers1 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 				$headers1 .= 'From: cs@groovy.id' . "\r\n";
 				$headers1 .= 'Cc: billing@groovy.id' . "\r\n";	
-				$emailnotice=mail($email_cust, $subject1, $message1, $headers1); 
+				$emailnotice=mail($email_cust, $subject1, $message1, $headers1); /*
 				require('../content/srcpdf/fpdf.php');
 				$pdf = new FPDF();
 				$pdf->AddPage();
