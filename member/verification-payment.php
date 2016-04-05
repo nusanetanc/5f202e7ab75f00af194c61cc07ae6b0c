@@ -247,7 +247,7 @@ if(isset($_POST['terminasi'])){
 				$res = $col_user->find(array("level"=>"3"));
 			foreach($res as $row) { 	
 				$emailbongkar=mail($row['email'], $subject0, $message0, $headers0); 
-			} */
+			} 
 			// mail for customer
 				$subject1 = 'Berhenti Berlangganan';
 				$message1 = '
@@ -269,8 +269,8 @@ if(isset($_POST['terminasi'])){
 				$headers1 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 				$headers1 .= 'From: cs@groovy.id' . "\r\n";
 				$headers1 .= 'Cc: billing@groovy.id' . "\r\n";	
-				$emailnotice=mail($email_cust, $subject1, $message1, $headers1); 
-				require('../fpdf.php');
+				$emailnotice=mail($email_cust, $subject1, $message1, $headers1); */
+				require('../content/srcpdf/fpdf.php');
 				$pdf = new FPDF();
 				$pdf->AddPage();
 				$pdf->SetFont('Arial','B','10');
