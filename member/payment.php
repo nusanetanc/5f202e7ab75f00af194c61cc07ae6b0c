@@ -38,7 +38,7 @@
                       	 	$label_status = "label label-danger";
                       	 } elseif($row['status']=="registrasi"){ 
                       	 	$label_status = "label label-success";
-                      	 } else { $label_status = "label label-primary"}?>
+                      	 } else { $label_status = "label label-primary"; }?>
 						  <tbody  style="position:center;">
 						    <tr> 
 						      <td><?php echo $row['id_user']; ?></td>
