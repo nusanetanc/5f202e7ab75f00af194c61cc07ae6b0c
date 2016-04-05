@@ -1,7 +1,15 @@
 <script >
   $(document).ready(function(){
-      $('#account').modal('show');
-  }); 
+      $("#textalasantermination").hide(); 
+      $("#selectalasantermination").change(function(){
+        var a =  $("#selectalasantermination").val();
+        var b = "Other";
+        if (a == b){
+          $("#textalasantermination").show();
+        } else {
+          $("#textalasantermination").hide();
+        }
+  })}); 
 </script>  
 <?php
 if (!isset($_SESSION["id"]))
@@ -93,9 +101,70 @@ if($level=="501"){
           </li>
             <ul class="dropdown-menu">
               <li><a href="<?php echo $base_url_member; ?>/edit-profile">Edit Profile</a></li>
+              <?php if ($level=="0"){ ?>
+              <li><a href="#" data-toggle="modal" data-target="#confrimtermination">Berhenti Berlanganan</a></li>
+              <?php } ?>
               <li><a href="<?php echo $base_url_member; ?>/logout">Logout</a></li>
             </ul>
         </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
   <div class="col-sm-12 grey-background">
+  <div class="modal" name="confrimtermination" id="confrimtermination">
+  <div class="modal-dialog">
+    <div class="modal-content">
+     <form style="form-group" method="post">
+        <?php
+        if (isset($_POST['terminationsend'])) { 
+                    // mail for billing dan cs
+        $subject = 'Permintaan Berhenti Berlanganan';
+        $message = '
+        <html>
+        <body>
+          <p>Permintaan berhenti berlangganan, berikut data customernya : </p>
+          <br/>
+          <p>ID Customer : '.$id.'</p>
+          <p>Nama : '.$nama.'</p>
+          <p>Tempat : '.$tempat.', '.$ket.', '.$kota.'</p>
+          <p>Tanggal Permintaan : '.date("d-m-Y").'</p>
+          <p>Paket : '.$paket.'</p>
+          <p>Alasan Penutupan : '.$_POST['selectalasantermination'].'</p>
+          <br/>
+        </body>
+        </html>
+        ';
+        $headers  = 'MIME-Version: 1.0' . "\r\n";
+        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+        $headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
+        $headers .= 'Cc: cs@groovy.id' . "\r\n";
+      $res = $col_user->find(array("level"=>"2"));
+            foreach($res as $row)
+                      {   
+        $emailpasang=mail($row['email'], $subject, $message, $headers); 
+      } }
+          ?>
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Permintaan Berhenti Berlanganan</h4>
+      </div>
+      <div class="modal-body">
+        <p>
+        <select class="form-control" name="selectalasantermination" id="selectalasantermination">
+          <option disabled="true" selected="true">Alasan Penutupan</option>
+          <option>Harga Mahal</option>
+          <option>Jaringan Internet Tidak Stabil</option>
+          <option>Chanel Tv Tidak Sesuai</option>
+          <option value="Other">Other</option>
+        </select>
+        </p>
+        <p><input type="text" class="form-control" name="textalasantermination" id="textalasantermination" placeholder="Alasan Penutupan"></p>
+        <p><div style="margin-bottom:7px;" class="g-recaptcha" data-sitekey="6Ldx_BsTAAAAAOYrQegHLVhslSvd6z78zAr-4Knc"></div></p>
+      </div>
+      <div class="modal-footer">
+        <input type="submit" class="btn btn-default" data-dismiss="modal" value="Batal">
+        <input type="submit" class="btn btn-primary" value="Kirim" name="terminationsend" id="terminationsend">
+      </div>
+    </div>
+    </form>
+  </div>
+</div>

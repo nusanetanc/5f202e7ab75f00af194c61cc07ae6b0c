@@ -13,7 +13,6 @@
     </script>
 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 <?php
-echo tes01;
 $id_cust = $_GET['id_cust'];
 $date = date("Y/m/d");
 $date_month = date("d");
@@ -60,7 +59,7 @@ $date_month = date("d");
 		$paket_bayar = $package_cust;
 		$harga_bayar = $harga_paket;	
 		$pindah_paket = "PAKET AKTIF";
-	}    echo tes02;
+	} 
 	$total_bayar = $harga_paket - $proraide;            
 	            $res_pack = $col_package->find(array("nama"=>$package_cust));
 	            foreach($res_pack as $row_pack) { $harga_hari = $row_pack['harga_hari']; }
@@ -81,7 +80,7 @@ if($move_paket_cust<>""){
 		
 	}else if($move_paket_cust==""){
 
-}  echo tes0;
+} 
 	if ($status_cust=="registrasi"){
 		$sisa_hari = 30-$date_month;
 		$last_proraide = $sisa_hari*$harga_hari;
@@ -217,7 +216,7 @@ if ($update_user && $update_bayar && $emailinvoice){
 	?>
 		<script type="" language="JavaScript">
 		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>	
-<?php } } echo tes1;
+<?php } }
 if(isset($_POST['terminasi'])){
 	$termination_date=$_POST['inputTerminationdate'];
 		$thn_tutup = substr($termination_date, 0,4);
@@ -269,14 +268,90 @@ if(isset($_POST['terminasi'])){
 				$headers1 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 				$headers1 .= 'From: cs@groovy.id' . "\r\n";
 				$headers1 .= 'Cc: billing@groovy.id' . "\r\n";	
-				$emailnotice=mail($email_cust, $subject1, $message1, $headers1); }
+				$emailnotice=mail($email_cust, $subject1, $message1, $headers1);
 
+				require('../content/srcpdf/fpdf.php');
+				$pdf = new FPDF();
+				$pdf->AddPage();
+				$pdf->SetFont('Arial','B','10');
+				$pdf->Cell(0,20, 'PT Media Andalan Nusa (Nusanet)', '0', 1, 'R');
+				$pdf->SetFont('Arial','B','14');
+				$pdf->Cell(0,10, 'FORMULIR PERUBAHAN JENIS LAYANAN', '0', 5, 'C');
+				$pdf->Ln();
+				$pdf->SetFont('Arial','B','10');
+				$pdf->Cell(0,7, 'DATA PELANGGAN', '0', 1, 'L');
+				$pdf->Ln();
+				$pdf->SetFont('Arial','','10');
+				$pdf->Cell(0,7, 'Nama Lengkap                     : '.$nama_cust, '0', 1, 'L');
+				$pdf->Cell(0,7, 'No ID Pelanggan                  : '.$id_cust, '0', 1, 'L');
+				$pdf->Cell(0,7, 'Nomor Telepon                    : '.$phone_cust, '0', 1, 'L');
+				$pdf->Cell(0,7, 'Alamat Email                        : '.$email_cust, '0', 1, 'L');
+				$pdf->Cell(0,7, 'Layanan yang Digunakan    : '.$package_cust, '0', 1, 'L');
+				$pdf->Cell(0,7, 'Layanan Add-ons                 : No', '0', 1, 'L');
+				$pdf->Ln();
+				$pdf->SetFont('Arial','B','10');
+				$pdf->Cell(0,7, 'PENUTUPAN / TERMINASI', '0', 1, 'L');
+				$pdf->SetFont('Arial','','10');
+				$pdf->Cell(0,7, 'Tanggal Penutupan : '.$tgl_tutup.' '.$month_tutup.' '.$thn_tutup, '0', 1, 'L');
+				$pdf->Cell(0,7, 'Alasan Penutupan   : Harga Mahal', '0', 1, 'L');
+				$pdf->Ln();
+				$pdf->SetFont('Arial','B','10');
+				$pdf->Cell(0,7, 'Tanggal : '.$tgl_tutup.' '.$month_tutup.' '.$thn_tutup, '0', 1, 'R');
+				$pdf->Ln();
+				$pdf->Ln();
+				$pdf->Ln();
+				$pdf->Ln();
+				$pdf->Image('../img/tanda_tangan.jpg','165','150','33','33');
+				$pdf->SetFont('Arial','','10');
+				$pdf->Cell(0,7, 'John Doe              ', '0', 1, 'R');
+				$pdf->Cell(0,7, 'Customer Relation Officer', '0', 1, 'R');
+				$pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R');
+
+				// Filename that will be used for the file as the attachment
+				$fileatt_name = $tgl_tutup.$month_tutup.$thn_tutup.$id_cust."termination.pdf";
+				$dir='bukti/';
+				$pdf ->Output($dir.$fileatt_name);
+
+				$data = $pdf->Output("", "S");
+
+				$email_from = "cs@groovy.id"; // Who the email is from
+				$email_subject = "[SERVICE TERMINATION REQUEST] - Nusanet - ".$nama_cust; // The Subject of the email
+				$email_to = "anc.nusanet@gmail.com"; // Who the email is to
+
+
+				$semi_rand = md5(time());
+				$data = chunk_split(base64_encode($data));
+
+				$fileatt_type = "application/pdf"; // File Type
+				$mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";
+
+				// set header ........................
+				$headers = "From: ".$email_from;
+				$headers .= "\nMIME-Version: 1.0\n" .
+				"Content-Type: multipart/mixed;\n" .
+				" boundary=\"{$mime_boundary}\"";
+
+				// set email message......................
+				$email_message .= "This is a multi-part message in MIME format.\n\n" .
+				"--{$mime_boundary}\n" .
+				"Content-Type:text/html; charset=\"iso-8859-1\"\n" .
+				"Content-Transfer-Encoding: 7bit\n\n" .
+				$email_message .= "\n\n";
+				$email_message .= "--{$mime_boundary}\n" .
+				"Content-Type: {$fileatt_type};\n" .
+				" name=\"{$fileatt_name}\"\n" .
+				"Content-Disposition: attachment;\n" .
+				" filename=\"{$fileatt_name}\"\n" .
+				"Content-Transfer-Encoding: base64\n\n" .
+				$data .= "\n\n" .
+				"--{$mime_boundary}--\n";
+
+				$sent = mail($email_to, $email_subject, $email_message, $headers); 
 if ($update_user && $emailbongkar && $emailnotice && $sent){
 	?>
 		<script type="" language="JavaScript">
 		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>	
-<?php } 
-?>
+<?php }  } ?>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
 		<div class="list-group">
