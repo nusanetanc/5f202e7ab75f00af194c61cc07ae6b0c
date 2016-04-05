@@ -6,7 +6,7 @@
         $("#inputPaymentdate").datepicker({
       	format:'yyyy/mm/dd'
         });
-        $("#inputPaymentdate").datepicker({
+        $("#inputTerminationdate").datepicker({
       	format:'yyyy/mm/dd'
         });
             });
@@ -387,7 +387,7 @@ if ($update_user && $update_bayar && $emailinvoice){
 	  				    <form method="post">
 	  				    <div class="row">
 	  				    	<div class="col-sm-12">
-								<input type="text" class="form-control" id="inputPaymentdate1" name="inputPaymentdat1e" placeholder="Termination Date" required>
+								<input type="text" class="form-control" id="inputTerminationdate" name="inputTerminationdate" placeholder="Termination Date" required>
 									<br/>
 								<div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>	
 									<br/>
