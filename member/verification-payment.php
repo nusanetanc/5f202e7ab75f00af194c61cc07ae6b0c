@@ -216,7 +216,7 @@ if ($update_user && $update_bayar && $emailinvoice){
 	?>
 		<script type="" language="JavaScript">
 		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>	
-<?php } }
+<?php } } echo tes1;
 if(isset($_POST['terminasi'])){
 	$termination_date=$_POST['inputTerminationdate'];
 		$thn_tutup = substr($termination_date, 0,4);
@@ -300,7 +300,7 @@ if(isset($_POST['terminasi'])){
 				$pdf->Ln();
 				$pdf->Ln();
 				$pdf->Ln();
-				$pdf->Image('./img/tanda_tangan.jpg','165','150','33','33');
+				$pdf->Image('../img/tanda_tangan.jpg','165','150','33','33');
 				$pdf->SetFont('Arial','','10');
 				$pdf->Cell(0,7, 'John Doe              ', '0', 1, 'R');
 				$pdf->Cell(0,7, 'Customer Relation Officer', '0', 1, 'R');
@@ -350,7 +350,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 	?>
 		<script type="" language="JavaScript">
 		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>	
-<?php } }
+<?php } } echo tes 2;
 ?>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
