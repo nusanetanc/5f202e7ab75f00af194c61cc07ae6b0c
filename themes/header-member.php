@@ -120,6 +120,7 @@ if($level=="501"){
           <p>Tempat : '.$tempat', '.$ket.', '.$kota.'</p>
           <p>Tanggal Permintaan : '.date("d-m-Y")'</p>
           <p>Paket : '.$paket.'</p>
+          <p>Alasan Penutupan : '.$_POST['selectalasantermination'].'</p>
           <br/>
         </body>
         </html>
@@ -132,7 +133,7 @@ if($level=="501"){
             foreach($res as $row)
                       {   
         $emailpasang=mail($row['email'], $subject, $message, $headers); 
-      }
+      } }
           ?>
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
