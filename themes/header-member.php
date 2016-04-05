@@ -1,7 +1,15 @@
 <script >
   $(document).ready(function(){
-      $('#account').modal('show');
-  }); 
+      $("#textalasantermination").hide(); 
+      $("#selectalasantermination").change(function(){
+        var a =  $("#selectalasantermination").val();
+        var b = "Other";
+        if (a == b){
+          $("#textalasantermination").show();
+        } else {
+          $("#textalasantermination").hide();
+        }
+  })}); 
 </script>  
 <?php
 if (!isset($_SESSION["id"]))
