@@ -218,7 +218,8 @@ if ($update_user && $update_bayar && $emailinvoice){
 		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>	
 <?php } }
 if(isset($_POST['terminasi'])){
-	echo yudi;
+	$termination_date=$_POST['inputTerminationdate'];
+	$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("tanggal_akhir"=>$termination_date, "status"=>"Tidak Aktif")));
 }
 ?>
 <section>
