@@ -217,6 +217,9 @@ if ($update_user && $update_bayar && $emailinvoice){
 		<script type="" language="JavaScript">
 		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>	
 <?php } }
+if(isset($_POST['terminasi'])){
+	echo yudi;
+}
 ?>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
