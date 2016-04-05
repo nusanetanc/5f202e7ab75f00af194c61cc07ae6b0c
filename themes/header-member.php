@@ -93,6 +93,9 @@ if($level=="501"){
           </li>
             <ul class="dropdown-menu">
               <li><a href="<?php echo $base_url_member; ?>/edit-profile">Edit Profile</a></li>
+              <?php if $level=="0"{ ?>
+              <li><a href="">Berhenti Berlanganan</a></li>
+              <?php } ?>
               <li><a href="<?php echo $base_url_member; ?>/logout">Logout</a></li>
             </ul>
         </ul>
