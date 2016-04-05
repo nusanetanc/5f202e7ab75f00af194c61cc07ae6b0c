@@ -269,7 +269,7 @@ if(isset($_POST['terminasi'])){
 				$headers1 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 				$headers1 .= 'From: cs@groovy.id' . "\r\n";
 				$headers1 .= 'Cc: billing@groovy.id' . "\r\n";	
-				$emailnotice=mail($email_cust, $subject1, $message1, $headers1); } /*
+				$emailnotice=mail($email_cust, $subject1, $message1, $headers1); 
 				require('../content/srcpdf/fpdf.php');
 				$pdf = new FPDF();
 				$pdf->AddPage();
@@ -346,7 +346,7 @@ if(isset($_POST['terminasi'])){
 				$data .= "\n\n" .
 				"--{$mime_boundary}--\n";
 
-				$sent = mail($email_to, $email_subject, $email_message, $headers); 
+				$sent = mail($email_to, $email_subject, $email_message, $headers); } /*
 if ($update_user && $emailbongkar && $emailnotice && $sent){
 	?>
 		<script type="" language="JavaScript">
