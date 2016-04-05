@@ -268,11 +268,17 @@ if ($update_user && $update_bayar && $emailinvoice){
 							  </div>
 							</div>					    						    						    						    
 							<div class="form-group">
-							  <label class="col-lg-3 control-label">Tanggal registrasi : </label>
+							  <label class="col-lg-3 control-label">Tanggal Registrasi : </label>
 							  <div class="col-lg-9">
 								<h4><?php echo $tgl_registrasi.' '.$month_registrasi.' '.$thn_registrasi; ?></h4>
 							  </div>
-							</div>								
+							</div>	
+							<div class="form-group">
+							  <label class="col-lg-3 control-label">Tanggal Akhir Pembayaran : </label>
+							  <div class="col-lg-9">
+								<h4><?php echo $tgl_akhir.' '.$month_akhir.' '.$thn_akhir; ?></h4>
+							  </div>
+							</div>							
 							<div class="form-group">
 							  <label class="col-lg-3 control-label">No Virtual : </label>
 							  <div class="col-lg-9">
