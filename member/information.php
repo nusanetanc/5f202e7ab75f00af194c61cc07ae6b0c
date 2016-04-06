@@ -49,7 +49,7 @@
 		</div>
 	</div>	
 </section>
-<?php } else if($level=="1" || $level=="3" || $level=="4" || $level=="401") { ?>
+<?php } else if($level=="1" || $level=="3" || $level=="301" || $level=="302" || $level=="4" || $level=="401") { ?>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
 		<div class="list-group">
