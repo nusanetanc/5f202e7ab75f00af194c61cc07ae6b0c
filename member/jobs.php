@@ -25,8 +25,8 @@
 								foreach($res as $row)
 								{ 
 									$thn_kerja = substr($row['tanggal_kerja'], 0,4);
-									$bln_kerja = substr($tanggal_akhir, 5,2);
-									$tgl_kerja = substr($tanggal_akhir, 8,10);
+									$bln_kerja = substr($row['tanggal_kerja'], 5,2);
+									$tgl_kerja = substr($row['tanggal_kerja'], 8,10);
 									$month_kerja = bulan($bln_kerja);
 						?>
 						  <tbody>
@@ -34,7 +34,7 @@
 						      <td><?php echo $row['id_cust'].' / '.$row['nama_cust'].' / '.$row['phone_customer']; ?></td>
 						      <td><?php echo $tgl_kerja.' '.$bln_kerja.' '.$thn_kerja; ?></td>
 						      <td><?php echo $row['tempat_customer'].', '.$row['keterangan_customer'].', '.$row['kota_customer']; ?></td>
-						      <td><?php echo $row['jobs']; ?></td>
+						      <td><?php echo $row['hal']; ?></td>
 						      <td><?php echo $row['field_engineer'].', '.$row['ass_field']; ?></td>
 						      <td><b><a href="<?php echo $base_url_member; ?>/report-jobs/<?php echo $row['_id']?>/" class="btn btn-primary btn-sm">view</a></b></td>						      
 						    </tr>
