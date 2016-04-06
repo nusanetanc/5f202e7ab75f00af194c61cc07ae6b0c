@@ -219,11 +219,13 @@ if ($update_user && $update_bayar && $emailinvoice){
 <?php } }
 if(isset($_POST['terminasi'])){
 	$termination_date=$_POST['inputTerminationdate'];
+	$textalasanberhenti=$_POST['textalasanberhenti'];
 		$thn_tutup = substr($termination_date, 0,4);
 		$bln_tutup = substr($termination_date, 5,2);
 		$tgl_tutup = substr($termination_date, 8,10);
 		$month_tutup = bulan($bln_tutup);
-	$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("tanggal_akhir"=>$termination_date, "status"=>"Tidak Aktif"))); 
+	$termination=array("tanggal_berhenti"=>$termination_date, "alasan"=>$textalasanberhenti);
+	$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("tanggal_akhir"=>$termination_date, "status"=>"Tidak Aktif")),('$push'=>array("termination"=>$termination))); 
 				// mail for supevisior teknik
 				$subject0 = 'Request Ambil Perangkat';
 				$message0 = '
@@ -293,7 +295,7 @@ if(isset($_POST['terminasi'])){
 				$pdf->Cell(0,7, 'PENUTUPAN / TERMINASI', '0', 1, 'L');
 				$pdf->SetFont('Arial','','10');
 				$pdf->Cell(0,7, 'Tanggal Penutupan : '.$tgl_tutup.' '.$month_tutup.' '.$thn_tutup, '0', 1, 'L');
-				$pdf->Cell(0,7, 'Alasan Penutupan   : Harga Mahal', '0', 1, 'L');
+				$pdf->Cell(0,7, 'Alasan Penutupan   : '.$textalasanberhenti, '0', 1, 'L');
 				$pdf->Ln();
 				$pdf->SetFont('Arial','B','10');
 				$pdf->Cell(0,7, 'Tanggal : '.$tgl_tutup.' '.$month_tutup.' '.$thn_tutup, '0', 1, 'R');
