@@ -3,7 +3,7 @@
 		<div class="list-group">
 			<div class="panel" style="border:0px;" >
   				<div class="panel-heading" style="background-color:#F1453C">
-    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">PEMASANGAN</h3>
+    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">List Jobs Supoort <?php echo $_GET['status']; ?></h3>
   				</div>
   				<div class="panel-body">
   					<br/>
@@ -13,8 +13,10 @@
 						    <tr>
 						      <th width="20%">Customer</th>
 						      <th width="15%">Paket</th>
-						      <th width="35%">Location</th>
-						      <th width="20%">Jobs</th>
+						      <th width="20%">Location</th>
+						      <th width="15%">Jobs</th>
+						      <th width="20%">Support</th>
+						      <th width="10%"></th>
 						    </tr>
 						  </thead>
 						  <?php
@@ -28,7 +30,8 @@
 						      <td><?php echo $row['id_cust'].' / '.$row['nama_cust'].' / '.$row['phone_customer']; ?></td>
 						      <td><?php echo $row['paket']; ?></td>
 						      <td><?php echo $row['tempat_customer'].', '.$row['keterangan_customer'].', '.$row['kota_customer']; ?></td>
-						      <td><b><a href="<?php echo $base_url_member; ?>/report-jobs/<?php echo $row['_id']?>/" class="btn btn-primary btn-sm">Progress</a></b></td>						      
+						      <td><?php echo $row['field engineer'].', '.$row['ass_field']; ?></td>
+						      <td><b><a href="<?php echo $base_url_member; ?>/report-jobs/<?php echo $row['_id']?>/" class="btn btn-primary btn-sm">view</a></b></td>						      
 						    </tr>
 						   </tbody>
 						<?php
