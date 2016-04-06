@@ -3,7 +3,7 @@
 		<div class="list-group">
 			<div class="panel" style="border:0px;" >
   				<div class="panel-heading" style="background-color:#F1453C">
-    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">PEMASANGAN</h3>
+    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">CUSTOMER - <?php echo $_GET['status']; ?></h3>
   				</div>
   				<div class="panel-body">
   					<br/>
@@ -31,11 +31,11 @@
 						      <td><?php echo $row['paket']; ?></td>
 						      <td><?php echo $row['tempat'].', '.$row['keterangan'].', '.$row['kota']; ?></td>
 						      <?php if($status=="registrasi"){ ?>
-						      <td><b><a href="<?php echo $base_url_member; ?>/detail-pemasangan/<?php echo $row['id_user']; ?>" class="btn btn-success">Pasang</a></b></td>	
+						      <td><b><a href="<?php echo $base_url_member; ?>/detail-pemasangan/<?php echo $row['id_user']; ?>" class="btn btn-warning btn-sm">Pasang</a></b></td>	
 						      <?php } elseif($status=="aktif"){ ?>					      
-						      <td><b><a href="<?php echo $base_url_member; ?>/detail-maintanance/<?php echo $row['id_user']; ?>" class="btn btn-success">Maintanance/Update</a></b></td>
+						      <td><b><a href="<?php echo $base_url_member; ?>/detail-maintanance/<?php echo $row['id_user']; ?>" class="btn btn-warning btn-sm">Maintanance/Update</a></b></td>
 						      <?php } elseif($status=="unaktif"){ ?>					      
-						      <td><b><a href="<?php echo $base_url_member; ?>/detail-bongkar/<?php echo $row['id_user']; ?>" class="btn btn-success">Bongkar</a></b></td>
+						      <td><b><a href="<?php echo $base_url_member; ?>/detail-bongkar/<?php echo $row['id_user']; ?>" class="btn btn-warning btn-sm">Bongkar</a></b></td>
 						      <?php } ?>
 						    </tr>
 						   </tbody>
