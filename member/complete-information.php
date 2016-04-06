@@ -4,7 +4,15 @@ $(document).ready(function(){
     $('#editsukses').modal('hide');
     $('#editgagal').modal('hide');
 }); </script> 
-
+<?php
+	$i = $_GET['i'];
+	$id_info = new mongoId($i);
+	$res = $col_info->find(array("_id"=>$id_info));
+	foreach($res as $row)
+{ 
+	$subject=$row['subject'];
+}
+?>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
 		<div class="list-group">
