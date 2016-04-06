@@ -211,7 +211,7 @@
 				  	<br/>
 					  	<div class="row">
 							<div class="col-sm-4">  
-								<a href="<?php echo $base_url_member; ?>/customer/reigistrasi" style=" text-decoration:none">
+								<a href="<?php echo $base_url_member; ?>/customer/registrasi" style=" text-decoration:none">
 									<h5 style="color:white;">REGISTRASI</h5>
 								  	<?php
 										$res = $col_user->find(array("status"=>"registrasi"));
@@ -240,7 +240,7 @@
 								<a href="<?php echo $base_url_member; ?>/customer/unaktif" style=" text-decoration:none">
 									<h5 style="color:white;">TIDAK AKTIF</h5>
 								  	<?php
-										$res = $col_user->find(array("status"=>"tidak aktif"));
+										$res = $col_user->find(array("status"=>"unaktif"));
 										$length = $res->count();
 														  { 
 
