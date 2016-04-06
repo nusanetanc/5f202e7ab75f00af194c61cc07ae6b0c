@@ -19,7 +19,7 @@
 						    </tr>
 						  </thead>
 						  <?php
-						  $hal=$_GET['hal'];
+						  $status=$_GET['status'];
 								$res = $col_user->find(array("status"=>$hal))->sort(array("tanggal_registrasi"));
 								foreach($res as $row)
 								{ 

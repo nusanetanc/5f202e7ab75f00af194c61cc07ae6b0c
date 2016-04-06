@@ -39,7 +39,7 @@ RewriteRule ^setup-done$ ?hal=setup-done
 RewriteRule ^setup-progress$ ?hal=setup-progress
 RewriteRule ^support-add$ ?hal=support-add
 RewriteRule ^support-list$ ?hal=support-list
-RewriteRule ^customer/([0-9A-Za-z]+)/? ?hal=customer&hal=$1
+RewriteRule ^customer/([0-9A-Za-z]+)/? ?hal=customer&status=$1
 
 RewriteRule ^support$ ?hal=support
 RewriteRule ^user-add$ ?hal=user-add
