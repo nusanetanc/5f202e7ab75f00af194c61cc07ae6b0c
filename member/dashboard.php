@@ -179,17 +179,7 @@
 <?php } else if ($level=="3") { ?>
 <section>
 	<div class="col-sm-12 col-md-12 col-lg-9" style="font-family:Arial;">
-		<div class="row">
-			<div class="col-sm-4">
-				<a href="<?php echo $base_url_member; ?>/information" style=" text-decoration:none">
-					<div class="well well-lg" style="background-color:#263238;">
-					  <h4 style="color:white;"><b>INFORMATION</b></h4>
-					  <div class="text-center">
-					  	<b style="color:white; font-size:2em;"><i class="fa fa-bell fa-5x"></i></b>
-					  </div>
-					</div>
-				</a>	
-			</div>		
+		<div class="row">	
 			<div class="col-sm-4">
 				<div class="well well-lg" style="background-color:#FF6D20;">
 				  <h5 style="color:white;"><b>SUPPORT</b></h5>
@@ -216,23 +206,10 @@
 			</div>		
 			<div class="col-sm-4">
 				<div class="well well-lg background-btn-red">
-				  <h5 style="color:white;"><b>SETUP</b></h5>
+				  <h5 style="color:white;"><b>Jobs</b></h5>
 				  	<div class="text-center">
 				  	<br/>
 					  	<div class="row">
-					  		<div class="col-sm-4">
-					  			<a href="<?php echo $base_url_member; ?>/setup-pending" style=" text-decoration:none">
-					  				<h5 style="color:white;">PENDING</h5>
-								  	<?php
-										$res = $col_user->find(array("status"=>"registrasi","level"=>"0"));
-										$length = $res->count();
-														  { 
-
-								   ?>
-								  	<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
-								  	<?php } ?>
-								</a>  	
-							</div>	
 							<div class="col-sm-4">  
 								<a href="<?php echo $base_url_member; ?>/setup-progress" style=" text-decoration:none">
 									<h5 style="color:white;">PROGRESS</h5>
