@@ -483,21 +483,25 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 		  				    	<table class="table table-striped table-hover ">
 									 <thead>
 									    <tr>
-									      <th width="20%">No</th>
+									      <th width="10%">No</th>
 									      <th width="20%">Tanggal Pembayaran</th>
 									      <th width="20%">Tanggal Konfirmasi</th>
-									      <th width="20%">Deskripsi Pembayaran</th>
-									      <th width="20%">Total Pembayaran</th>
+									      <th width="25%">Deskripsi Pembayaran</th>
+									      <th width="25%">Total Pembayaran</th>
 									    </tr>
 									  </thead>
 									  <?php 
 									  	$res = $col_user->findOne(array("id_user"=>$id_cust));	
 										foreach ($res['payment'] as $bayar => $byr) {
+											$thn_konfirmasi = substr($byr['tanggal_konfirmasi'], 0,4);
+											$bln_konfirmasi = substr($byr['tanggal_konfirmasi'], 5,2);
+											$tgl_konfirmasi = substr($byr['tanggal_konfirmasi'], 8,10);
+											$month_konfirmasi = bulan($bln_konfirmasi);
 									   ?>
 									  <tbody>
 									  	<td><?php echo $byr['no']; ?></td>
 									  	<td><?php echo $byr['tanggal_bayar']; ?></td>
-									  	<td><?php echo $byr['tanggal_konfirmasi']; ?></td>
+									  	<td><?php echo $tgl_konfirmasi.' '.$month_konfirmasi.' '.$thn_konfirmasi; ?></td>
 									  	<td><?php echo $byr['paket']; ?></td>
 									  	<td><?php echo $byr['harga']; ?></td>
 									  </tbody>
