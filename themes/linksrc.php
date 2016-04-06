@@ -11,6 +11,7 @@
   <script src="<?php echo $base_url ?>/content/js/bootstrap-datepicker.js"></script>
   <script src="https://www.google.com/jsapi" type="text/javascript"></script> 
     <script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="<?php echo $base_url; ?>/content/js/registrationvalidate.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
         $('#example').DataTable();

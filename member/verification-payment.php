@@ -276,7 +276,7 @@ if(isset($_POST['terminasi'])){
 				$pdf->SetFont('Arial','B','10');
 				$pdf->Cell(0,20, 'PT Media Andalan Nusa (Nusanet)', '0', 1, 'R');
 				$pdf->SetFont('Arial','B','14');
-				$pdf->Cell(0,10, 'FORMULIR PERUBAHAN JENIS LAYANAN', '0', 5, 'C');
+				$pdf->Cell(0,10, 'FORMULIR PENUTUPAN LAYANAN', '0', 5, 'C');
 				$pdf->Ln();
 				$pdf->SetFont('Arial','B','10');
 				$pdf->Cell(0,7, 'DATA PELANGGAN', '0', 1, 'L');

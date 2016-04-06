@@ -24,4 +24,14 @@ if (a == b) {
       $("#regiscity").val('City');
       $("#regisplace").val('');
 }})
+      $("#textalasantermination").hide(); 
+      $("#selectalasantermination").change(function(){
+        var a =  $("#selectalasantermination").val();
+        var b = "Other";
+        if (a == b){
+          $("#textalasantermination").show();
+        } else {
+          $("#textalasantermination").hide();
+        }
+  })
       });
