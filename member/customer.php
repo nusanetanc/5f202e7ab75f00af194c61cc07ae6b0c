@@ -19,7 +19,8 @@
 						    </tr>
 						  </thead>
 						  <?php
-								$res = $col_user->find(array("status"=>"registrasi"))->sort(array("tanggal_registrasi"));
+						  $hal=$_GET['hal'];
+								$res = $col_user->find(array("status"=>$hal))->sort(array("tanggal_registrasi"));
 								foreach($res as $row)
 								{ 
 						?>
@@ -29,7 +30,13 @@
 						      <td><?php echo $row['nama'].' / '.$row['phone'].' / '.$row['email']; ?></td>
 						      <td><?php echo $row['paket']; ?></td>
 						      <td><?php echo $row['tempat'].', '.$row['keterangan'].', '.$row['kota']; ?></td>
-						      <td><b><a href="<?php echo $base_url_member; ?>/detail-pemasangan/<?php echo $row['id_user']; ?>" class="btn btn-success">Pasang</a></b></td>						      
+						      <?php if($hal=="registrasi"){ ?>
+						      <td><b><a href="<?php echo $base_url_member; ?>/detail-pemasangan/<?php echo $row['id_user']; ?>" class="btn btn-success">Pasang</a></b></td>	
+						      <?php } elseif($hal=="aktif"){ ?>					      
+						      <td><b><a href="<?php echo $base_url_member; ?>/detail-maintanance/<?php echo $row['id_user']; ?>" class="btn btn-success">Maintanance/Update</a></b></td>
+						      <?php } elseif($hal=="unaktif"){ ?>					      
+						      <td><b><a href="<?php echo $base_url_member; ?>/detail-bongkar/<?php echo $row['id_user']; ?>" class="btn btn-success">Bongkar</a></b></td>
+						      <?php } ?>
 						    </tr>
 						   </tbody>
 						<?php
