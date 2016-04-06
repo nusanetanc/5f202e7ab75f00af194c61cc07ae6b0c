@@ -12,9 +12,9 @@
 						  <thead>
 						    <tr>
 						      <th width="20%">Customer</th>
-						      <th width="15%">Paket</th>
+						      <th width="20%">Tanggal Jobs</th>
 						      <th width="20%">Location</th>
-						      <th width="15%">Jobs</th>
+						      <th width="10%">Jobs</th>
 						      <th width="20%">Support</th>
 						      <th width="10%"></th>
 						    </tr>
@@ -24,13 +24,18 @@
 								$res = $col_history->find(array("status"=>$progress))->sort(array("tanggal_kerja"));
 								foreach($res as $row)
 								{ 
+									$thn_kerja = substr($row['tanggal_kerja'], 0,4);
+									$bln_kerja = substr($tanggal_akhir, 5,2);
+									$tgl_kerja = substr($tanggal_akhir, 8,10);
+									$month_kerja = bulan($bln_kerja);
 						?>
 						  <tbody>
 						    <tr>
 						      <td><?php echo $row['id_cust'].' / '.$row['nama_cust'].' / '.$row['phone_customer']; ?></td>
-						      <td><?php echo $row['paket']; ?></td>
+						      <td><?php echo $tgl_kerja.' '.$bln_kerja.' '.$thn_kerja; ?></td>
 						      <td><?php echo $row['tempat_customer'].', '.$row['keterangan_customer'].', '.$row['kota_customer']; ?></td>
-						      <td><?php echo $row['field engineer'].', '.$row['ass_field']; ?></td>
+						      <td><?php echo $row['jobs']; ?></td>
+						      <td><?php echo $row['field_engineer'].', '.$row['ass_field']; ?></td>
 						      <td><b><a href="<?php echo $base_url_member; ?>/report-jobs/<?php echo $row['_id']?>/" class="btn btn-primary btn-sm">view</a></b></td>						      
 						    </tr>
 						   </tbody>
