@@ -203,10 +203,59 @@
 					 	</div>
 					</div>
 				</div>	
-			</div>		
-			<div class="col-sm-4">
+			</div>
+			<div class="col-sm-5">
 				<div class="well well-lg background-btn-red">
-				  <h5 style="color:white;"><b>Jobs</b></h5>
+				  <h5 style="color:white;"><b>CUSTOMER</b></h5>
+				  	<div class="text-center">
+				  	<br/>
+					  	<div class="row">
+							<div class="col-sm-4">  
+								<a href="<?php echo $base_url_member; ?>/setup-progress" style=" text-decoration:none">
+									<h5 style="color:white;">REGISTRASI</h5>
+								  	<?php
+										$res = $col_user->find(array("status"=>"registrasi"));
+										$length = $res->count();
+														  { 
+
+								   ?>
+								  	<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
+								  	<?php } ?>
+								</a>  	
+							</div>  											
+							<div class="col-sm-4">  
+								<a href="<?php echo $base_url_member; ?>/setup-done" style=" text-decoration:none">
+									<h5 style="color:white;">AKTIF</h5>
+								  	<?php
+										$res = $col_user->find(array("status"=>"aktif"));
+										$length = $res->count();
+														  { 
+
+								   ?>
+								  	<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
+								  	<?php } ?>
+								</a>  	
+							</div>  
+							<div class="col-sm-4">  
+								<a href="<?php echo $base_url_member; ?>/setup-done" style=" text-decoration:none">
+									<h5 style="color:white;">TIDAK AKTIF</h5>
+								  	<?php
+										$res = $col_user->find(array("status"=>"tidak aktif"));
+										$length = $res->count();
+														  { 
+
+								   ?>
+								  	<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
+								  	<?php } ?>
+								</a>  	
+							</div>  	
+					 	</div>
+					</div>
+				</div>	
+			</div>			
+			<div class="col-sm-3">
+				<div class="well well-lg background-btn-red">
+				  <h5 style="color:white;"><b>JOBS</b></h5>
 				  	<div class="text-center">
 				  	<br/>
 					  	<div class="row">
@@ -222,9 +271,7 @@
 								  	<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
 								  	<?php } ?>
 								</a>  	
-							</div>  
-							<div class="col-sm-2">								
-							</div>												
+							</div>  											
 							<div class="col-sm-5">  
 								<a href="<?php echo $base_url_member; ?>/setup-done" style=" text-decoration:none">
 									<h5 style="color:white;">DONE</h5>
