@@ -260,7 +260,7 @@
 				  	<br/>
 					  	<div class="row">
 							<div class="col-sm-6">  
-								<a href="<?php echo $base_url_member; ?>/jobs-progress" style=" text-decoration:none">
+								<a href="<?php echo $base_url_member; ?>/jobs/progress" style=" text-decoration:none">
 									<h5 style="color:white;">PROGRESS</h5>
 								  	<?php
 										$res = $col_history->find(array("status"=>"progress", "hal"=>"pasang"));
