@@ -4,14 +4,7 @@ $(document).ready(function(){
     $('#editsukses').modal('hide');
     $('#editgagal').modal('hide');
 }); </script> 
-<?php
-	$id_info=new mongoId($_GET['i']);
-	$res = $col_info->find(array("_id"=>$id_info));
-	foreach($res as $row)
-{ 
-	$subject=$row['subject'];
-}
-?>
+
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
 		<div class="list-group">
@@ -46,7 +39,7 @@ $(document).ready(function(){
 							?>
 						  <small>Update By : <?php echo $nama_share. '('.$lvl.')'; ?></small>
 						</blockquote>	
-					<?php } ?> <?php if ($level=="3" || $level=="4" || $level=="401"){ ?>
+					<?php } ?> <?php if ($level=="401"){ ?>
 						<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#updateinfo">Update Informasi</button>
 						 <?php } ?>
 						<!-- Modal Update Info -->
