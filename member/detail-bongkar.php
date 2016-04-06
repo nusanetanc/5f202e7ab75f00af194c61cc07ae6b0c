@@ -6,7 +6,7 @@ $date_days = date("d");
 $date_years = date("Y");
 $date_month = date("m");
 $date_month1 = bulan($date_month);
-$res = $col_user->find(array("id_user"=>$id_cust,"tanggal_aktivasi"=>"","status"=>"registrasi","level"=>"0"));	
+$res = $col_user->find(array("id_user"=>$id_cust,"status"=>"unaktif","level"=>"0"));	
 						foreach ($res as $row) {
 												$tanggal_registrasi = $row['tanggal_registrasi'];
 												$thn_registrasi = substr($tanggal_registrasi, 0,4);
