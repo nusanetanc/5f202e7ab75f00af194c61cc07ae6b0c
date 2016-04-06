@@ -101,7 +101,7 @@ if ($update_user && $insert_activty && $kirim_email1 && $kirim_email && $sent_ak
 						      <div class="col-lg-9">
 						        <h4>:<?php echo $tgl_akhir.' '.$month_akhir.' '.$thn_akhir; ?></h4>
 						      </div>
-						    </div>						    
+						    </div><br/>						    
 						    <div class="form-group">
 						      <label for="inputField" class="col-lg-3 control-label">Support</label>
 						      <div class="col-lg-4">
@@ -130,7 +130,7 @@ if ($update_user && $insert_activty && $kirim_email1 && $kirim_email && $sent_ak
 						    <div class="col-lg-9">	
 						        <div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>
 						        <br/>
-						      	<button class="btn btn-success" type="submit" name="save" id="save"><b>PASANG</b></button>	
+						      	<button class="btn btn-success" type="submit" name="save" id="save"><b>AMBIL PERANGKAT</b></button>	
 						    </div>
 						  </fieldset>	
 						</form>    		
