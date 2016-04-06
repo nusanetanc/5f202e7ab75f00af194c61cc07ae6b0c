@@ -210,7 +210,7 @@
 				  	<div class="text-center">
 				  	<br/>
 					  	<div class="row">
-							<div class="col-sm-4">  
+							<div class="col-sm-5">  
 								<a href="<?php echo $base_url_member; ?>/setup-progress" style=" text-decoration:none">
 									<h5 style="color:white;">PROGRESS</h5>
 								  	<?php
@@ -222,8 +222,10 @@
 								  	<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
 								  	<?php } ?>
 								</a>  	
-							</div>  						
-							<div class="col-sm-4">  
+							</div>  
+							<div class="col-sm-2">								
+							</div>												
+							<div class="col-sm-5">  
 								<a href="<?php echo $base_url_member; ?>/setup-done" style=" text-decoration:none">
 									<h5 style="color:white;">DONE</h5>
 								  	<?php
