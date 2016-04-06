@@ -497,10 +497,15 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 											$bln_konfirmasi = substr($byr['tanggal_konfirmasi'], 5,2);
 											$tgl_konfirmasi = substr($byr['tanggal_konfirmasi'], 8,10);
 											$month_konfirmasi = bulan($bln_konfirmasi);
+
+											$thn_bayar = substr($byr['tanggal_bayar'], 0,4);
+											$bln_bayar = substr($byr['tanggal_bayar'], 5,2);
+											$tgl_bayar = substr($byr['tanggal_bayar'], 8,10);
+											$month_bayar = bulan($bln_bayar);
 									   ?>
 									  <tbody>
 									  	<td><?php echo $byr['no']; ?></td>
-									  	<td><?php echo $byr['tanggal_bayar']; ?></td>
+									  	<td><?php echo $tgl_bayar.' '.$month_bayar.' '.$thn_bayar; ?></td>
 									  	<td><?php echo $tgl_konfirmasi.' '.$month_konfirmasi.' '.$thn_konfirmasi; ?></td>
 									  	<td><?php echo $byr['paket']; ?></td>
 									  	<td><?php echo $byr['harga']; ?></td>
@@ -525,9 +530,16 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 	  				    <form method="post">
 	  				    <div class="row">
 	  				    	<div class="col-sm-12">
-								<input type="text" class="form-control" id="inputTerminationdate" name="inputTerminationdate" placeholder="Termination Date" required>
-									<br/>
-								<div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>	
+								<input type="text" class="form-control" id="inputTerminationdate" name="inputTerminationdate" placeholder="Termination Date" required> <br/>
+						        <select class="form-control" name="selectalasantermination" id="selectalasantermination"> 
+						          <option disabled="true" selected="true">Alasan Penutupan</option>
+						          <option>Harga Mahal</option>
+						          <option>Jaringan Internet Tidak Stabil</option>
+						          <option>Chanel Tv Bermasalah</option>
+						          <option value="Other">Other</option>
+						        </select><br/>
+								<input type="text" class="form-control" name="textalasantermination" id="textalasantermination" placeholder="Alasan Penutupan"><br/>
+								<div style="margin-bottom:7px;" class="g-recaptcha" data-sitekey="6Ldx_BsTAAAAAOYrQegHLVhslSvd6z78zAr-4Knc"></div>
 									<br/>
 								<input type="submit" class="btn" style="background-color:#1B5E12; color:#FFFFFF" name="terminasi" id="terminasi" value="TUTUP">	  
 		  				    </div>
