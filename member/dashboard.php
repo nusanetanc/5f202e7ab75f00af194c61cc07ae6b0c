@@ -263,7 +263,7 @@
 								<a href="<?php echo $base_url_member; ?>/jobs/progress" style=" text-decoration:none">
 									<h5 style="color:white;">PROGRESS</h5>
 								  	<?php
-										$res = $col_history->find(array("status"=>"progress", "hal"=>"pasang"));
+										$res = $col_history->find(array("status"=>"progress"));
 										$length = $res->count();
 														  { 
 
@@ -276,7 +276,7 @@
 								<a href="<?php echo $base_url_member; ?>/jobs-done" style=" text-decoration:none">
 									<h5 style="color:white;">DONE</h5>
 								  	<?php
-										$res = $col_history->find(array("status"=>"done", "hal"=>"pasang"));
+										$res = $col_history->find(array("status"=>"done"));
 										$length = $res->count();
 														  { 
 

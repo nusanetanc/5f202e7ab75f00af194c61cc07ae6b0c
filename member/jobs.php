@@ -19,7 +19,7 @@
 						  </thead>
 						  <?php
 						  	$progress=$_GET['status'];
-								$res = $col_history->find(array("status"=>$progress, "hal"=>"pasang"))->sort(array("tanggal_kerja"));
+								$res = $col_history->find(array("status"=>$progress))->sort(array("tanggal_kerja"));
 								foreach($res as $row)
 								{ 
 						?>
