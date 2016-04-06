@@ -259,7 +259,7 @@
 				  	<div class="text-center">
 				  	<br/>
 					  	<div class="row">
-							<div class="col-sm-5">  
+							<div class="col-sm-6">  
 								<a href="<?php echo $base_url_member; ?>/setup-progress" style=" text-decoration:none">
 									<h5 style="color:white;">PROGRESS</h5>
 								  	<?php
@@ -272,7 +272,7 @@
 								  	<?php } ?>
 								</a>  	
 							</div>  											
-							<div class="col-sm-5">  
+							<div class="col-sm-6">  
 								<a href="<?php echo $base_url_member; ?>/setup-done" style=" text-decoration:none">
 									<h5 style="color:white;">DONE</h5>
 								  	<?php
