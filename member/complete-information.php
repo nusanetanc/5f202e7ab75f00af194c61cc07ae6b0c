@@ -4,14 +4,14 @@ $(document).ready(function(){
     $('#editsukses').modal('hide');
     $('#editgagal').modal('hide');
 }); </script> 
-<?php
+<?php echo yudi;
 	$i = $_GET['i'];
-	$id_info = new mongoId($i);
+	$id_info = new mongoId($i);yudi1;
 	$res = $col_info->find(array("_id"=>$id_info));
 	foreach($res as $row)
 { 
 	$subject=$row['subject'];
-}
+}yudi2;
 ?>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
