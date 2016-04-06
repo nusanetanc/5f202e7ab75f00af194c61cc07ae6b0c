@@ -226,7 +226,7 @@ if(isset($_POST['terminasi'])){
 		$month_tutup = bulan($bln_tutup);
 	$termination=array("tanggal_berhenti"=>$termination_date, "alasan"=>$textalasanberhenti);
 	$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("tanggal_akhir"=>$termination_date, "status"=>"Tidak Aktif")));
-	$update_user0 = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$push'=>array("termination"=>$termination)));
+	$push_termiansi = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$push'=>array("termination"=>$termination)));
 				// mail for supevisior teknik
 				$subject0 = 'Request Ambil Perangkat';
 				$message0 = '
