@@ -49,7 +49,7 @@
 								foreach($res as $row)
 								{  
 									$support = str_replace('-',' ', $_GET['support']);
-									echo $support;
+									echo $_GET['support'];
 									if($row['field_engineer']==$support || $row['ass_field']==$support)
 										{
 										$thn_kerja = substr($row['tanggal_kerja'], 0,4);
