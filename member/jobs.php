@@ -48,7 +48,7 @@
 								$res = $col_history->find()->sort(array("tanggal_kerja"));
 								foreach($res as $row)
 								{  
-									$support = str_replace('-',' ', $_GET['support']);
+									$support = str_replace('_',' ', $_GET['support']);
 									echo $_GET['support'];
 									if($row['field_engineer']==$support || $row['ass_field']==$support)
 										{
