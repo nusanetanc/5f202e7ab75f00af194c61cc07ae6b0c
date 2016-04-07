@@ -55,9 +55,9 @@ if($level=="501"){
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar" style="color:black;"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        <span class="icon-bar" style="background-color:black;"></span>
+        <span class="icon-bar" style="background-color:black;"></span>
+        <span class="icon-bar" style="background-color:black;"></span>
       </button>
       <a href="<?php echo $base_url_member; ?>"><img height="60px" src="<?php echo $base_url; ?>/img/groovy-logo-colour.png"/></a>
     </div>
