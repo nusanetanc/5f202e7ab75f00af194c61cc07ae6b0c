@@ -5,6 +5,13 @@
     				<div class="panel-heading"><h4><b style="font-color:#e0e0e0;">INFORMATION</b></h4></div>
   				    <div class="panel-body">
 		    					<table class="table table-striped table-hover ">
+		    					<thead>
+									    <tr>
+									      <th width="15%">Date</th>
+									      <th width="65%">Subject</th>
+									      <th width="30%">Status</th>
+									    </tr>
+								</thead>
 								<?php
 									$res = $col_info->find()->sort(array("tanggal_update"=>-1))->limit(5);
 									foreach($res as $row)
