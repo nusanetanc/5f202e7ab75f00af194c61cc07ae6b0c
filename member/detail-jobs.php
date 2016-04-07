@@ -17,7 +17,7 @@
 									      <th width="20%">Jobs</th>
 									      <th width="20%">Customer</th>
 									      <th width="20%">Status</th>
-									      <th width="20">Alama</th>
+									      <th width="20">Alamat</th>
 									    </tr>
 									  </thead>
 									  <?php 
