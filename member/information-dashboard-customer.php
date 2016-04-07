@@ -17,7 +17,7 @@
 										$month = bulan($bln);
 								?>		    					
 									  <tbody>
- 										<td width="50%"><?php echo $tgl.' '.$month.' '.$thn; ?></td>
+ 										<td width="20%"><?php echo $tgl.' '.$month.' '.$thn; ?></td>
 									    <td width="50%">									    				
 									    				<?php switch ($row['status']) {
 									    						case 'on progress':
