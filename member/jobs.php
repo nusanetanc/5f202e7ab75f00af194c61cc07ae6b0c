@@ -48,8 +48,7 @@
 								$res = $col_history->find()->sort(array("tanggal_kerja"));
 								foreach($res as $row)
 								{  
-									$support = str_replace('_',' ', $_GET['support']);
-									echo $_GET['support'];
+									$support = str_replace('000',' ', $_GET['support']);
 									if($row['field_engineer']==$support || $row['ass_field']==$support)
 										{
 										$thn_kerja = substr($row['tanggal_kerja'], 0,4);

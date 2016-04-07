@@ -33,7 +33,7 @@
 									  		} elseif($row['level']=="302"){ 
 									  				echo "Ass Field Engineer"; } ?></td>
 									  	<td><?php echo $row['phone']; ?></td>
-									  	<?php $nama_support=str_replace(" ", "_", $row['nama'])?>
+									  	<?php $nama_support=str_replace(" ", "000", $row['nama'])?>
 									  	<td><a href="<?php echo $base_url_member; ?>/jobs/support/<?php echo $nama_support; ?>" class="btn btn-primary btn-xs">Show</a></td>
 									  </tbody>
 									  <?php } } ?>
