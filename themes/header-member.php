@@ -60,22 +60,6 @@ if($level=="501"){
         <span class="icon-bar" style="background-color:black;"></span>
       </button>
       <a href="<?php echo $base_url_member; ?>"><img height="40px" src="<?php echo $base_url; ?>/img/groovy-logo-colour.png"/></a>
-      <ul class="dropdown nav navbar-nav navbar-right navbar-primary">
-          <li class="dropdown-toggle" data-toggle="dropdown">    
-              <?php if ($foto=="" || $foto==null){ ?>
-                          <img style="width:45px;height:45px;margin-top:7px;margin-left:10px;cursor:pointer" class="profile-img-card profile-img-card-mdm" src="<?php echo $base_url; ?>/img/Avatar_member.png"/>
-       <?php } else { ?>
-                  <img style="width:45px;height:45px;margin-top:7px;margin-left:10px;cursor:pointer" class="profile-img-card profile-img-card-mdm" src="<?php echo $base_url_member; ?>/foto/<?php echo $foto; ?>"/>
-       <?php } ?>
-          </li>
-            <ul class="dropdown-menu">
-              <li><a href="<?php echo $base_url_member; ?>/edit-profile">Edit Profile</a></li>
-              <?php if ($level=="0"){ ?>
-              <li><a href="#" data-toggle="modal" data-target="#confrimtermination">Berhenti Berlanganan</a></li>
-              <?php } ?>
-              <li><a href="<?php echo $base_url_member; ?>/logout">Logout</a></li>
-            </ul>
-        </ul>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
