@@ -19,7 +19,7 @@
 									  <tbody>
  										<td width="20%"><?php echo $tgl.' '.$month.' '.$thn; ?></td>
 									    <td width="50%"><a href="<?php echo $base_url_member; ?>/complete-information/<?php echo $row['_id'] ?>" style=" text-decoration:none"> <?php echo $row['subject'];
-									     if($read==$id){ ?><p class="text-success">New</p><?php } ?></td>
+									     if($read<>$id){ ?><p class="text-success">New</p><?php } ?></td>
 									    <td width="30%"> 
 									    				<?php switch ($row['status']) {
 									    						case 'on progress':
