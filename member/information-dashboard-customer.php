@@ -5,13 +5,6 @@
     				<div class="panel-heading"><h4><b style="font-color:#e0e0e0;">INFORMATION</b></h4></div>
   				    <div class="panel-body">
 		    					<table class="table table-striped table-hover ">
-		    					<thead>
-									    <tr>
-									      <th width="15%">Date</th>
-									      <th width="40%">Subject</th>
-									      <th width="30%">Status</th>
-									    </tr>
-								</thead>
 								<?php
 									$res = $col_info->find()->sort(array("tanggal_update"=>-1))->limit(5);
 									foreach($res as $row)
@@ -25,7 +18,7 @@
 								?>		    					
 									  <tbody>
  										<td width="20%"><?php echo $tgl.' '.$month.' '.$thn; ?></td>
-									    <td width="50%"><a href="<?php echo $base_url_member; ?>/complete-information/<?php echo $row['_id'] ?>" style=" text-decoration:none"> <?php echo $row['subject'].' ';
+									    <td width="30%"><a href="<?php echo $base_url_member; ?>/complete-information/<?php echo $row['_id'] ?>" style=" text-decoration:none"> <?php echo $row['subject'].' ';
 									     if($read<>$id){ ?><label class="text-danger">New</label><?php } ?></td>
 									    <td width="30%"> 
 									    				<?php switch ($row['status']) {
