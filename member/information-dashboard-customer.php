@@ -8,7 +8,7 @@
 		    					<thead>
 									    <tr>
 									      <th width="15%">Date</th>
-									      <th width="65%">Subject</th>
+									      <th width="40%">Subject</th>
 									      <th width="30%">Status</th>
 									    </tr>
 								</thead>
