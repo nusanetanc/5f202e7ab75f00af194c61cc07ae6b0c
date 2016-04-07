@@ -37,8 +37,8 @@ RewriteRule ^sales-add$ ?hal=sales-add
 RewriteRule ^sales-list$ ?hal=sales-list
 RewriteRule ^send-invoice$ ?hal=send-invoice
 RewriteRule ^setup-done$ ?hal=setup-done
-RewriteRule ^jobs/status/([0-9A-Za-z]+)/? ?hal=jobs$status=$1
-RewriteRule ^jobs/support/([0-9A-Za-z]+)/? ?hal=jobs$support=$1
+RewriteRule ^jobs/status/([0-9A-Za-z]+)/? ?hal=jobs&status=$1
+RewriteRule ^jobs/support/([0-9A-Za-z]+)/? ?hal=jobs&support=$1
 RewriteRule ^support-add$ ?hal=support-add
 RewriteRule ^support-list$ ?hal=support-list
 RewriteRule ^customer/([0-9A-Za-z]+)/? ?hal=customer&status=$1
