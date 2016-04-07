@@ -18,9 +18,7 @@
 								?>		    					
 									  <tbody>
  										<td width="10%"><?php echo $tgl.' '.$month.' '.$thn; ?></td>
-									    <td width="20%"><a href="<?php echo $base_url_member; ?>/complete-information/<?php echo $row['_id'] ?>" style=" text-decoration:none"> <?php echo $row['subject'].' ';
-									     if($read<>$id){ ?><label class="text-danger">New</label><?php } ?></td>
-									    <td width="10%"> 
+									    <td width="20%">									    				
 									    				<?php switch ($row['status']) {
 									    						case 'on progress':
 									    				 ?> 
@@ -31,8 +29,8 @@
 									    				<span class="label label-success">	
 									    					<?php break; 
 									    					} ?>
-
-									    				<?php echo $row['status']; ?></span></td>
+									    				<?php echo $row['status']; ?></span><a href="<?php echo $base_url_member; ?>/complete-information/<?php echo $row['_id'] ?>" style=" text-decoration:none"> <?php echo $row['subject'].' ';
+									     if($read<>$id){ ?><label class="text-danger">New</label><?php } ?></td>
 									  </tbody>
 								<?php } } ?>	  
 								</table> 
