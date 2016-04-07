@@ -48,7 +48,8 @@
 								$res = $col_history->find()->sort(array("tanggal_kerja"));
 								foreach($res as $row)
 								{ 
-									if($row['field_engineer']==$_GET['support'] || $row['ass_field']==$_GET['support'])
+									$support=str_replace(" ", " ", $_GET['support']);
+									if($row['field_engineer']==$support || $row['ass_field']==$support)
 										{
 										$thn_kerja = substr($row['tanggal_kerja'], 0,4);
 										$bln_kerja = substr($row['tanggal_kerja'], 5,2);
