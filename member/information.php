@@ -16,8 +16,8 @@
 									  	if($row['tempat']==$tempat || $row['tempat']=="All" || $row['for']==$id) {
 										$tanggal = $row['tanggal_update'];
 										$thn = substr($tanggal, 0,4);
-										$bln = substr($tanggal, 5,2);
-										$tgl = substr($tanggal, 8,10);
+									    $bln = substr($tanggal, 5,2);
+										$tgl = substr($tanggal, 8,2);
 										$month = bulan($bln);
 								?>		    					
 									  <tbody>

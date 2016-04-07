@@ -12,13 +12,13 @@
 									  	if($row['tempat']==$tempat || $row['tempat']=="All" || $row['for']==$id) {
 										$tanggal = $row['tanggal_update'];
 										$thn = substr($tanggal, 0,4);
-										$bln = substr($tanggal, 5,2);
-										$tgl = substr($tanggal, 8,10);
+									    $bln = substr($tanggal, 5,2);
+										$tgl = substr($tanggal, 8,2);
 										$month = bulan($bln);
 								?>		    					
 									  <tbody>
- 										<td width="10%"><?php echo $tgl.' '.$month.' '.$thn; ?></td>
-									    <td width="20%">									    				
+ 										<td width="50%"><?php echo $tgl.' '.$month.' '.$thn; ?></td>
+									    <td width="50%">									    				
 									    				<?php switch ($row['status']) {
 									    						case 'on progress':
 									    				 ?> 

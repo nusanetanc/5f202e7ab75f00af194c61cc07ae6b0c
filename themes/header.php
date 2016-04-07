@@ -264,13 +264,13 @@
                                 <b><h5 style="margin-top:10px;float:right;color:#fff;font-size:14px;text-align:right">Please enter your password and photo id card!!</h5></b><br/>
                                 <br/>
                             <?php    } else if ($passwordBaru1==$passwordBaru2){   
-                                    $date = date("Y/m/d");
+                                    $date_time = date("Y/m/d H:i:s");
                                     $dirKtp = "./ktp/";
                                     $move = move_uploaded_file($lokasifilektp, "$dirKtp".$namaktp);
                                     $active_acount = $col_user->update(array("email"=>$email_aktif),
                                                                         array('$set'=>array("password"=>$passwordBaru1, "aktif"=>"1", "ktp"=>$namaktp)));
-                                    $detail_info=array("share_id"=>"00000000","description"=>"Selamat Bergabung dengan groovy tv, Selamat Menikmati Layanan Kami","date"=>$date);
-                                    $write_info = $col_info->insert(array("for"=>$id_aktif, "subject"=>"Selamat Bergabung Dengan groovy", "tanggal_update"=>$date, "informasi"=>array($detail_info)));
+                                    $detail_info=array("share_id"=>"00000000","description"=>"Selamat Bergabung dengan groovy tv, Selamat Menikmati Layanan Kami","date"=>$date_time);
+                                    $write_info = $col_info->insert(array("for"=>$id_aktif, "subject"=>"Selamat Bergabung Dengan groovy", "tanggal_update"=>$date_time, "informasi"=>array($detail_info)));
                                     if ($active_acount && $write_info){
                                                                                     ?>
                                                                                 <script >
