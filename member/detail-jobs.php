@@ -2,8 +2,8 @@
 	<div class="col-sm-9" style="font-family:Arial;">
 		<div class="list-group">
 			<div class="panel" style="border:0px;">
-  				<div class="panel-heading" style="background-color:#FF6D20">
-    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">List Support Groovy</h3>
+  				<div class="panel-heading" style="background-color:#FF3D23">
+    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">DATA KERJA</h3>
   				</div>
 	  					<br/>
 	  				    <div class="panel-body">
@@ -13,11 +13,11 @@
 		  				    	<table class="table table-striped table-hover ">
 									 <thead>
 									    <tr>
-									      <th width="20%">Nomor Id</th>
-									      <th width="20%">Nama</th>
-									      <th width="20%">Jabatan</th>
-									      <th width="20%">No Telepon</th>
-									      <th width="20">Detail Pekerjaan</th>
+									      <th width="20%">Tanggal</th>
+									      <th width="20%">Jobs</th>
+									      <th width="20%">Customer</th>
+									      <th width="20%">Status</th>
+									      <th width="20">Alama</th>
 									    </tr>
 									  </thead>
 									  <?php 
@@ -33,7 +33,7 @@
 									  		} elseif($row['level']=="302"){ 
 									  				echo "Ass Field Engineer"; } ?></td>
 									  	<td><?php echo $row['phone']; ?></td>
-									  	<td><a href="<?php echo $base_url_member; ?>/jobs/support/<?php echo $row['nama']; ?>" class="btn btn-primary btn-xs">Show</a></td>
+									  	<td><a href="<?php echo $base_url_member; ?>/detail-jobs/<?php echo $_id; ?>" class="btn btn-primary btn-xs">Show</a></td>
 									  </tbody>
 									  <?php } } ?>
 								</table>	  
