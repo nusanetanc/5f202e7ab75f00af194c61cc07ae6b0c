@@ -4,7 +4,7 @@ $(document).ready(function(){
     $('#editsukses').modal('hide');
     $('#editgagal').modal('hide');
 }); </script> 
-<?php echo yudi;
+<?php 
 	$i = $_GET['i'];
 	$id_info = new MongoId($i);
 	$res = $col_info->find(array("_id"=>$id_info));
