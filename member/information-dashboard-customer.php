@@ -17,10 +17,10 @@
 										$month = bulan($bln);
 								?>		    					
 									  <tbody>
- 										<td width="20%"><?php echo $tgl.' '.$month.' '.$thn; ?></td>
-									    <td width="30%"><a href="<?php echo $base_url_member; ?>/complete-information/<?php echo $row['_id'] ?>" style=" text-decoration:none"> <?php echo $row['subject'].' ';
+ 										<td width="10%"><?php echo $tgl.' '.$month.' '.$thn; ?></td>
+									    <td width="20%"><a href="<?php echo $base_url_member; ?>/complete-information/<?php echo $row['_id'] ?>" style=" text-decoration:none"> <?php echo $row['subject'].' ';
 									     if($read<>$id){ ?><label class="text-danger">New</label><?php } ?></td>
-									    <td width="30%"> 
+									    <td width="10%"> 
 									    				<?php switch ($row['status']) {
 									    						case 'on progress':
 									    				 ?> 
