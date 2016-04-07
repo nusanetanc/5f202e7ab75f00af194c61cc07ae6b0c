@@ -12,6 +12,7 @@ $(document).ready(function(){
 { 
 	$subject=$row['subject'];
 } 
+$update_readinfo=$col_info->update(array("_id"=>$id_info), array('$set'=>array("read"=>array($id))));
 ?>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
