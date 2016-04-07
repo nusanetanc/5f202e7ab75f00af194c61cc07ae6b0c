@@ -59,7 +59,7 @@ if($level=="501"){
         <span class="icon-bar" style="background-color:#FF3D23;"></span>
         <span class="icon-bar" style="background-color:#FF3D23;"></span>
       </button>
-      <a href="<?php echo $base_url_member; ?>"><img height="40px" src="<?php echo $base_url; ?>/img/groovy-logo-colour.png"/></a>
+      <a href="<?php echo $base_url_member; ?>"><img height="60px" src="<?php echo $base_url; ?>/img/groovy-logo-colour.png"/></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
