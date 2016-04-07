@@ -95,7 +95,7 @@
 									    					<?php break; 
 									    					} ?>
 
-									<?php echo $row['status']; ?></span><a href="<?php echo $base_url_member; ?>/complete-information/<?php echo $row['id_info']; ?>" style="text-decoration:none"><b><?php echo ' '.$row['subject']; ?></b></a></h5>
+									<?php echo $row['status']; ?></span><a href="<?php echo $base_url_member; ?>/complete-information/<?php echo $row['_id']; ?>" style="text-decoration:none"><b><?php echo ' '.$row['subject']; ?></b></a></h5>
 						      <h5><?php echo 'Tanggal Maintenance : '.$tgl.' '.$month.' '.$thn; ?></h5>
 						      </td>
 						    </tr>
