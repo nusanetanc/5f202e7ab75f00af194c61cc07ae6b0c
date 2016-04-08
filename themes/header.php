@@ -207,18 +207,24 @@
 
                                                                             $message = '
                                                                             <html>
-                                                                            <body>
-                                                                              <p>Hi '.$nama.'.<br/>
-                                                                              Jika anda lupa password akun groovy.id, Untuk proses penggantian kata sandi, silahkan link di bawah ini:.<br/>
-                                                                              <a href="groovy.id/?rp='.$user_id.'">Aktivasi</a><br/>
-                                                                              </p>
-                                                                              <br/>
-                                                                              <br/>
-                                                                              <p>Best Regards</p>
-                                                                              <p>Customer Service</p>
-                                                                              <p>groovy.id</p>
-                                                                            </body>
-                                                                            </html>
+                                                                                <body style="background-color:#f0f0f0;padding:50px 0 50px 0;font-family:arial;font-size:15px;">
+                                                                                    <div style="margin:0 auto;max-width:500px;background-color:#fff;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
+                                                                                        <div style="background: linear-gradient(to right, #FF3D23 , #fc742f);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
+                                                                                            <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
+                                                                                        </div>
+                                                                                        <div style="padding:20px;color:#333;">
+                                                                                            <p style="font-size:20px;font-weight:bold;line-height:1px">Hai '.$nama.',</p>
+                                                                                            <p>Kami mendengar Anda perlu reset password. Klik link di bawah ini dan Anda akan diarahkan ke situs yang aman dari mana Anda dapat mengatur sandi baru.</p>
+                                                                                            
+                                                                                            <div style="text-align:center;margin:30px 0 30px 0;">
+                                                                                                <a href="groovy.id/?rp='.$user_id.'" style="text-decoration:none;color:#fff;"><span style="background-color:#FF3D23;border:0;border-radius:5px;padding:10px 40px 10px 40px;color:#fff;font-size:17px;">Reset Password</span></a>
+                                                                                            </div>
+                                                                                            <p style="color:#888;">Jika Anda tidak pernah meminta untuk mereset password, harap abaikan email ini.</p>
+                                                                                        </div>
+                                                                                        </div>
+                                                                                    </div>        
+                                                                                </body>
+                                                                                </html>
                                                                             ';
 
                                                                             $headers  = 'MIME-Version: 1.0' . "\r\n";
