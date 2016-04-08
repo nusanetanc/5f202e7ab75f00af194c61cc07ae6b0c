@@ -47,43 +47,37 @@
 				  	<br/>
 					  	<div class="row">
 							<div class="col-sm-4">  
-								<a href="<?php echo $base_url_member; ?>/customer/registrasi" style=" text-decoration:none">
-									<h5 style="color:white;">REGISTRASI</h5>
-								  	<?php
-										$res = $col_user->find(array("status"=>"registrasi"));
-										$length = $res->count();
-														  { 
+								<h5 style="color:white;">REGISTRASI</h5>
+							  	<?php
+									$res = $col_user->find(array("status"=>"registrasi"));
+									$length = $res->count();
+													  { 
 
-								   ?>
-								  	<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
-								  	<?php } ?>
-								</a>  	
+							   ?>
+							  	<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
+							  	<?php } ?>  	
 							</div>  											
 							<div class="col-sm-4">  
-								<a href="<?php echo $base_url_member; ?>/customer/aktif" style=" text-decoration:none">
-									<h5 style="color:white;">AKTIF</h5>
-								  	<?php
-										$res = $col_user->find(array("status"=>"aktif"));
-										$length = $res->count();
-														  { 
+								<h5 style="color:white;">AKTIF</h5>
+							  	<?php
+									$res = $col_user->find(array("status"=>"aktif"));
+									$length = $res->count();
+													  { 
 
-								   ?>
-								  	<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
-								  	<?php } ?>
-								</a>  	
+							   ?>
+							  	<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
+							  	<?php } ?>	
 							</div>  
 							<div class="col-sm-4">  
-								<a href="<?php echo $base_url_member; ?>/customer/unaktif" style=" text-decoration:none">
-									<h5 style="color:white;">TIDAK AKTIF</h5>
-								  	<?php
-										$res = $col_user->find(array("status"=>"unaktif"));
-										$length = $res->count();
-														  { 
+								<h5 style="color:white;">TIDAK AKTIF</h5>
+							  	<?php
+									$res = $col_user->find(array("status"=>"unaktif"));
+									$length = $res->count();
+													  { 
 
-								   ?>
-								  	<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
-								  	<?php } ?>
-								</a>  	
+							   ?>
+							  	<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
+							  	<?php } ?>	
 							</div>  	
 					 	</div>
 					</div>
