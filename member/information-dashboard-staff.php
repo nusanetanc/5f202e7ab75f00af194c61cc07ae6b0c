@@ -35,6 +35,7 @@
 									  </tbody>
 								<?php } } ?>	  
 								</table> 
+								<a href="<?php echo $base_url_member; ?>/information" class="btn btn-link">View All</a>
 					</div>
  				</div>
 			</div>

@@ -10,6 +10,7 @@
 	  				    <form method="post">
 	  				    <div class="row">
 	  				    	<div class="col-sm-12">
+	  				    	<?php if($level=="3"){ ?>
 		  				    	<table class="table table-striped table-hover ">
 									 <thead>
 									    <tr>
@@ -37,7 +38,39 @@
 									  	<td><a href="<?php echo $base_url_member; ?>/jobs/support/<?php echo $nama_support; ?>" class="btn btn-primary btn-xs">Show</a></td>
 									  </tbody>
 									  <?php } } ?>
-								</table>	  
+								</table>
+								<?php } else if($level=="1"){ ?>
+								<table class="table table-striped table-hover ">
+									 <thead>
+									    <tr>
+									      <th width="10%">Nomor Id</th>
+									      <th width="20%">Nama</th>
+									      <th width="20%">Jabatan</th>
+									      <th width="10%">Pasang</th>
+									      <th width="10">Upddate</th>
+									      <th width="10">Bongkar</th>
+									    </tr>
+									  </thead>
+									  <?php 
+									  		$rslt = $col_user->find();
+									  		foreach ($rslt as $row) {
+									  			if($row['level']=="301" || $row['level']=="302"){
+									   ?>
+									  <tbody>
+									  	<td><?php echo $row['id_user']; ?></td>
+									  	<td><?php echo $row['nama']; ?></td>
+									  	<td><?php if($row['level']=="301"){
+									  				echo "Field Engineer";
+									  		} elseif($row['level']=="302"){ 
+									  				echo "Ass Field Engineer"; } ?></td>
+									  	<td></td>
+									  	<td></td>
+									  	<td></td>
+									  	
+									  </tbody>
+									  <?php } } ?>
+								</table>
+								<?php } ?>	  	  
 		  				    </div>
 		  				 </div>
 		  				 </form>
