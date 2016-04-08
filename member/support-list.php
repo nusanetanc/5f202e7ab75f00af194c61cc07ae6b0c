@@ -43,32 +43,39 @@
 								<table class="table table-striped table-hover ">
 									 <thead>
 									    <tr>
-									      <th width="10%">Nomor Id</th>
+									      <th width="15%">Nomor Id</th>
 									      <th width="20%">Nama</th>
 									      <th width="20%">Jabatan</th>
-									      <th width="10%">Pasang</th>
-									      <th width="10">Upddate</th>
-									      <th width="10">Bongkar</th>
+									      <th width="15%">Pasang</th>
+									      <th width="15">Update</th>
+									      <th width="15">Bongkar</th>
 									    </tr>
 									  </thead>
 									  <?php 
 									  		$rslt = $col_user->find();
 									  		foreach ($rslt as $row) {
 									  			if($row['level']=="301" || $row['level']=="302"){
-									  	$count_pasang=$col_user->find(array("nama"=>$row['nama'], "hal"=>"pasang"))->count();
-									  	$count_update=$col_user->find(array("nama"=>$row['nama'], "hal"=>"update"))->count();
-									  	$count_bongkar=$col_user->find(array("nama"=>$row['nama'], "hal"=>"bongkar"))->count();
+									  	$count_pasang=$col_history->find(array("fieldengineer"=>$row['nama'], "hal"=>"pasang"))->count();
+									  	$count_update=$col_history->find(array("fieldengineer"=>$row['nama'], "hal"=>"update"))->count();
+									  	$count_bongkar=$col_history->find(array("fieldengineer"=>$row['nama'], "hal"=>"bongkar"))->count();
+									  	$count_pasang0=$col_history->find(array("ass_field"=>$row['nama'], "hal"=>"pasang"))->count();
+									  	$count_update0=$col_history->find(array("ass_field"=>$row['nama'], "hal"=>"update"))->count();
+									  	$count_bongkar0=$col_history->find(array("ass_field"=>$row['nama'], "hal"=>"bongkar"))->count();
 									   ?>
 									  <tbody>
 									  	<td><?php echo $row['id_user']; ?></td>
 									  	<td><?php echo $row['nama']; ?></td>
-									  	<td><?php if($row['level']=="301"){
-									  				echo "Field Engineer";
-									  		} elseif($row['level']=="302"){ 
-									  				echo "Ass Field Engineer"; } ?></td>
-									  	<td><?php echo $count_pasang; ?></td>
-									  	<td><?php echo $count_update; ?></td>
-									  	<td><?php echo $count_bongkar; ?></td>
+									  	<?php if($row['level']=="301"){ ?>
+									  			<td><?php echo "Field Engineer"; ?></td>
+									  			<td><?php echo $count_pasang; ?></td>
+									  			<td><?php echo $count_update; ?></td>
+									  			<td><?php echo $count_bongkar; ?></td>
+									  	<?php } elseif($row['level']=="302"){ ?>
+									  			<td><?php echo "Ass Field Engineer"; ?></td>
+											  	<td><?php echo $count_pasang0; ?></td>
+											  	<td><?php echo $count_update0; ?></td>
+											  	<td><?php echo $count_bongkar0; ?></td>
+										<?php } ?>
 									  </tbody>
 									  <?php } } ?>
 								</table>
