@@ -46,7 +46,7 @@
 				  	<div class="text-center">
 				  	<br/>
 					  	<div class="row">
-							<div class="col-sm-4">  
+							<div class="col-sm-5">  
 								<h5 style="color:white;">REGISTRASI</h5>
 							  	<?php
 									$res = $col_user->find(array("status"=>"registrasi"));
@@ -85,7 +85,7 @@
 			</div>		
 			<div class="col-sm-3" >
 				<a href="<?php echo $base_url_member; ?>/pengaduan"  style=" text-decoration:none">
-					<div class="well well-lg" style="background-color:#d32f2f ;">
+					<div class="well well-lg background-btn-red">
 					  <h3 style="color:white;"><b>Total Pengaduan</b></h3>
 					  <br/>
 					  <div class="text-center">
@@ -104,7 +104,7 @@
 			</div>	
 			<div class="col-sm-3" >
 				<a href="<?php echo $base_url_member; ?>/information"  style=" text-decoration:none">
-					<div class="well well-lg" style="background-color:#546e7a;">
+					<div class="well well-lg background-btn-red">
 					<br/>
 					  <h4 style="color:white;"><b>Total Maintenance</b></h4>
 					  <br/>
