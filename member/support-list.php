@@ -55,6 +55,9 @@
 									  		$rslt = $col_user->find();
 									  		foreach ($rslt as $row) {
 									  			if($row['level']=="301" || $row['level']=="302"){
+									  	$count_pasang=$col_user->find(array("nama"=>$row['nama'], "hal"=>"pasang"))->count();
+									  	$count_update=$col_user->find(array("nama"=>$row['nama'], "hal"=>"update"))->count();
+									  	$count_bongkar=$col_user->find(array("nama"=>$row['nama'], "hal"=>"bongkar"))->count();
 									   ?>
 									  <tbody>
 									  	<td><?php echo $row['id_user']; ?></td>
@@ -63,10 +66,9 @@
 									  				echo "Field Engineer";
 									  		} elseif($row['level']=="302"){ 
 									  				echo "Ass Field Engineer"; } ?></td>
-									  	<td></td>
-									  	<td></td>
-									  	<td></td>
-									  	
+									  	<td><?php echo $count_pasang; ?></td>
+									  	<td><?php echo $count_update; ?></td>
+									  	<td><?php echo $count_bongkar; ?></td>
 									  </tbody>
 									  <?php } } ?>
 								</table>
