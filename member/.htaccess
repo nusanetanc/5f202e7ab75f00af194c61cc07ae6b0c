@@ -43,7 +43,7 @@ RewriteRule ^support-add$ ?hal=support-add
 RewriteRule ^support-list$ ?hal=support-list
 RewriteRule ^customer/([0-9A-Za-z]+)/? ?hal=customer&status=$1
 
-RewriteRule ^support$ ?hal=support
+RewriteRule ^support$ ?hal=support-list
 RewriteRule ^user-add$ ?hal=user-add
 RewriteRule ^user-list$ ?hal=user-list
 RewriteRule ^verification-payment/([0-9A-Za-z]+)/? ?hal=verification-payment&id_cust=$1
