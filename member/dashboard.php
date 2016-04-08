@@ -40,7 +40,7 @@
 <section>
 	<div class="col-sm-12 col-md-12 col-lg-9" style="font-family:Arial;">
 		<div class="row">
-						<div class="col-sm-5">
+			<div class="col-sm-6">
 				<div class="well well-lg background-btn-red">
 				  <h5 style="color:white;"><b>CUSTOMER</b></h5>
 				  	<div class="text-center">
@@ -83,44 +83,49 @@
 					</div>
 				</div>	
 			</div>		
-			<div class="col-sm-3" >
-				<a href="<?php echo $base_url_member; ?>/pengaduan"  style=" text-decoration:none">
-					<div class="well well-lg background-btn-red">
-					  <h3 style="color:white;"><b>Total Pengaduan</b></h3>
-					  <br/>
-					  <div class="text-center">
-					  					<?php
-											$res = $col_ticket->find();
-											$length = $res->count();
-															  { 
+			<div class="col-sm-6">
+				<div class="well well-lg background-btn-red">
+				  <h5 style="color:white;"><b>PENGADUAN</b></h5>
+				  	<div class="text-center">
+				  	<br/>
+					  	<div class="row">
+							<div class="col-sm-5">  
+								<h5 style="color:white;">ON PROGRESS</h5>
+							  	<?php
+									$res = $col_ticket->find(array("status"=>"open"));
+									$length = $res->count();
+													  { 
 
-									   ?>
-								  		<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
-								  		<?php } ?>
-					  </div>
-					  <br/>
+							   ?>
+							  	<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
+							  	<?php } ?>  	
+							</div>  											
+							<div class="col-sm-4">  
+								<h5 style="color:white;">SOLVED</h5>
+							  	<?php
+									$res = $col_ticket->find(array("status"=>"solved"));
+									$length = $res->count();
+													  { 
+
+							   ?>
+							  	<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
+							  	<?php } ?>	
+							</div>  
+							<div class="col-sm-4">  
+								<h5 style="color:white;">DONE</h5>
+							  	<?php
+									$res = $col_ticket->find(array("status"=>"close"));
+									$length = $res->count();
+													  { 
+
+							   ?>
+							  	<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
+							  	<?php } ?>	
+							</div>  	
+					 	</div>
 					</div>
-				</a>
+				</div>	
 			</div>	
-			<div class="col-sm-3" >
-				<a href="<?php echo $base_url_member; ?>/information"  style=" text-decoration:none">
-					<div class="well well-lg background-btn-red">
-					<br/>
-					  <h4 style="color:white;"><b>Total Maintenance</b></h4>
-					  <br/>
-					  <div class="text-center">
-					  	<?php
-						$res = $col_info->find(array("status"=>"on progrress"));
-						$length = $res->count();
-										  { 
-				   ?>
-			  		<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
-			  		<?php } ?>
-					  </div>
-					  <br/>
-					</div>
-				</a>
-			</div>
 		</div>
 	</div>
 </section>	
