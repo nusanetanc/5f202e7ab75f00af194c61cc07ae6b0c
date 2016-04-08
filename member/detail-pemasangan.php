@@ -92,19 +92,22 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 
 			$message1 = '
 			<html>
-			<body>
-			  <p>Terima kasih sudah menjadi customer groovy,<br/>
-			  kami akan melakukan pemasangan dan aktivasi pada tanggal : '.$tgl_psng.' '.$month_psng.' '.$thn_psng.',<br/>
-			  untuk info lebih lanjut bisa membuat pengaduan pada halaman member anda.<br>
-			  Selamat menikmati layanan tv dari groovy.
-			</p>
-			  <br/>
-			  <br/>
-			  <p>Best Regards</p>
-			  <p>Customer Service</p>
-			  <p>groovy.id</p>
-			</body>
-			</html>
+				<body style="background-color:#ddd;padding:50px 0 50px 0;font-family:arial;font-size:15px;">
+				    <div style="margin:0 auto;max-width:500px;background-color:#eee;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
+				        <div style="background: linear-gradient(to right, #FF3D23 , #fc742f);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
+				            <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
+				        </div>
+				        <div style="padding:20px;color:#333;">
+				            <p style="font-size:20px;font-weight:bold;line-height:1px">Terimakasih sudah menjadi pelanggan Groovy</p>
+				            <p>Kami akan melakukan pemasangan dan aktivasi pada tanggal : '.$tgl_psng.' '.$month_psng.' '.$thn_psng.'.<br/><br/>
+				            Jika ada pertanyaan lebih detail silahkan membuat pengaduan pada halaman member Anda. Selamat menikmati layanan Groovy</p>
+				            
+				            <p style="color:#888;">Terimakasih.</p>
+				        </div>
+				        </div>
+				    </div>        
+				</body>
+				</html>
 			';
 
 			$headers1  = 'MIME-Version: 1.0' . "\r\n";
