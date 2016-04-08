@@ -35,6 +35,7 @@ RewriteRule ^registration-add$ ?hal=registration-add
 RewriteRule ^report-jobs/([0-9A-Za-z]+)/? ?hal=report-jobs&id=$1
 RewriteRule ^sales-add$ ?hal=sales-add
 RewriteRule ^sales-list$ ?hal=sales-list
+RewriteRule ^sales$ ?hal=sales-list
 RewriteRule ^send-invoice$ ?hal=send-invoice
 RewriteRule ^setup-done$ ?hal=setup-done
 RewriteRule ^jobs/status/([0-9A-Za-z]+)/? ?hal=jobs&status=$1
