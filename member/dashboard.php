@@ -46,10 +46,10 @@
 				  	<div class="text-center">
 					  	<div class="row">
 					  		<div class="col-sm-4">
-								<h5 style="color:white;"><b>Total Registrasi</b></h5>
+								<h5 style="color:white;"><b>Registrasi</b></h5>
 				  					<div class="text-center">
 				  						<?php
-											$res = $col_user->find(array("tanggal_aktivasi"=>"","level"=>"0","status"=>"registrasi"));
+											$res = $col_user->find(array("level"=>"0","status"=>"registrasi"));
 											$length = $res->count();
 															  { 
 
@@ -57,25 +57,12 @@
 								  		<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
 								  		<?php } ?>
 								  	</div>
-							</div> 						
-					  		<div class="col-sm-4">
-								<h5 style="color:white;"><b>Total Close</b></h5>
+							</div> 	
+							<div class="col-sm-4">
+								<h5 style="color:white;"><b>Aktif</b></h5>
 				  					<div class="text-center">
 								  		<?php
-											$res = $col_user->find(array("level"=>"0","aktif"=>"1","status"=>"close"));
-											$length = $res->count();
-															  { 
-
-									   ?>
-								  		<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
-								  		<?php } ?>
-								  	</div>
-							</div> 						
-					  		<div class="col-sm-4">
-								<h5 style="color:white;"><b>Total Customer</b></h5>
-				  					<div class="text-center">
-								  		<?php
-											$res = $col_user->find(array("level"=>"0","aktif"=>"1","status"=>"aktif"));
+											$res = $col_user->find(array("level"=>"0","status"=>"aktif"));
 											$length = $res->count();
 															  { 
 
@@ -84,6 +71,19 @@
 								  		<?php } ?>
 								  	</div>
 							</div> 							
+					  		<div class="col-sm-4">
+								<h5 style="color:white;"><b>Close</b></h5>
+				  					<div class="text-center">
+								  		<?php
+											$res = $col_user->find(array("status"=>"unakif", "level"=>"0"));
+											$length = $res->count();
+															  { 
+
+									   ?>
+								  		<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
+								  		<?php } ?>
+								  	</div>
+							</div> 											
 					 	</div>
 					</div>
 				</div>	
