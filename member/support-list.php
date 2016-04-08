@@ -71,10 +71,10 @@
 									  			<td><?php echo $count_update; ?></td>
 									  			<td><?php echo $count_bongkar; ?></td>
 									  	<?php } elseif($row['level']=="302"){ ?>
-									  			<td><?php echo "Ass Field Engineer"; } ?></td>
-											  	<td><?php echo $count_pasang; ?></td>
-											  	<td><?php echo $count_update; ?></td>
-											  	<td><?php echo $count_bongkar; ?></td>
+									  			<td><?php echo "Ass Field Engineer"; ?></td>
+											  	<td><?php echo $count_pasang0; ?></td>
+											  	<td><?php echo $count_update0; ?></td>
+											  	<td><?php echo $count_bongkar0; ?></td>
 										<?php } ?>
 									  </tbody>
 									  <?php } } ?>
