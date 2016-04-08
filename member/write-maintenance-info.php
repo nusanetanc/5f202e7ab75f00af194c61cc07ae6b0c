@@ -43,18 +43,22 @@ $insert = $col_info->insert(array("id_info"=>$id_info, "tempat"=>$inputTempat, "
 
 			$message = '
 			<html>
-			<body>
-			  <p>Info untuk pengguna layanan groovy.id, <br/>
-			  	 Pada tanggal '.$tgl.' '.$month.' '.$thn.', Ada  '.$inputDescription.'<br/>
-			  	 Mohon Maaf Atas Ketidaknyamanan.
-			  </p>
-			  <br/>
-			  <br/>
-			  <p>Best Regards</p>
-			  <p>Helpdesk</p>
-			  <p>groovy.id</p>
-			</body>
-			</html>
+				<body style="background-color:#ddd;padding:50px 0 50px 0;font-family:arial;font-size:15px;">
+				    <div style="margin:0 auto;max-width:500px;background-color:#eee;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
+				        <div style="background: linear-gradient(to right, #FF3D23 , #fc742f);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
+				            <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
+				        </div>
+				        <div style="padding:20px;color:#333;"> 
+				            <p style="font-size:20px;font-weight:bold;line-height:1px">Info untuk pengguna layanan Groovy</p>
+				            <p>Pada tanggal '.$tgl.' '.$month.' '.$thn.', ada  '.$inputDescription.'<br/>
+				            Mohon maaf atas ketidaknyamananya.</p> 
+				            <p style="color:#888;">Terimakasih<br/>
+				            Helpdesk</p>
+				        </div>
+				        </div>
+				    </div>        
+				</body>
+				</html>
 			';
 
 			$headers  = 'MIME-Version: 1.0' . "\r\n";
