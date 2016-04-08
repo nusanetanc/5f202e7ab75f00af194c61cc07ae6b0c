@@ -43,7 +43,7 @@
 								<table class="table table-striped table-hover ">
 									 <thead>
 									    <tr>
-									      <th width="15%">Nomor Id</th>
+									      <th width="15%">Id</th>
 									      <th width="20%">Nama</th>
 									      <th width="20%">Jabatan</th>
 									      <th width="15%">Pasang</th>
