@@ -79,27 +79,59 @@
 
                                                                                 $message2 = '
                                                                                 <html>
-                                                                                <body>
-                                                                                  <p>Terimakasih telah registrasi di groovy.id berikut rincian data anda : </p>
-                                                                                  <br/>
-                                                                                  <p>ID Customer : '.$id_cust.'</p>
-                                                                                  <p>Nama : '.$nama_cust.'</p>
-                                                                                  <p>Paket : '.$paket_cust.'</p>
-                                                                                  <p>Email : '.$email_cust.'</p>
-                                                                                  <p>Phone : '.$phone_cust.'</p>
-                                                                                  <p>Tanggal Registrasi : '.$date_days.' '.$month1.' '.$date_years.'</p>
-                                                                                  <p>Registrasi : Sales</p>
-                                                                                  <p>Tempat : '.$tempat_cust.', '.$ket_cust.', '.$alamat_cust.', '.$kota_cust.'</p>
-                                                                                  <br/>
-                                                                                  <p>Untuk mengaktifkan akun anda silahkan klik atau copy link berikut ini</p>
-                                                                                  <p><a href="'.$base_url.'/?a='.$password_sales.'">Aktivasi</a></p>
-                                                                                  <p>'.$base_url.'/?a='.$password_sales.'</p>
-                                                                                  <br/>
-                                                                                  <p>Best Regards</p>
-                                                                                  <p>Customer Service</p>
-                                                                                  <p>groovy.id</p>
-                                                                                </body>
-                                                                                </html>
+                                                                                    <body style="background-color:#f0f0f0;padding:50px 0 50px 0;font-family:arial;font-size:15px;">
+                                                                                        <div style="margin:0 auto;max-width:500px;background-color:#fff;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
+                                                                                            <div style="background: linear-gradient(to right, #FF3D23 , #fc742f);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
+                                                                                                <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
+                                                                                            </div>
+                                                                                            <div style="padding:20px;color:#333;">
+                                                                                                <p style="font-size:20px;font-weight:bold;line-height:1px">Hai John Doe,</p>
+                                                                                                <p>Terimakasih telah mendaftarkan akun Groovy. Berikut adalah rincian akun yang anda daftarkan.</p>
+                                                                                                <table style="margin-top:20px;margin-bottom:20px;border:0px solid #ccc;color:#333;background-color:#fff;#ddd;width:100%;font-size:14px;">
+                                                                                                    <tr style="border:1px solid #bbb;">
+                                                                                                        <td style="border:1px solid #bbb;padding:5px;color:#777;">ID Customer</td>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px">'.$id_cust.'</td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px;color:#777">Nama</td>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px">'.$nama_cust.'</td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px;color:#777">Email</td>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px">'.$email_cust.'</td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px;color:#777">Telepon</td>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px">'.$phone_cust.'</td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px;color:#777">Paket</td>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px">'.$paket_cust.'</td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px;color:#777">Tanggal Registrasi</td>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px">'.$date_days.' '.$month1.' '.$date_years.'</td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px;color:#777">Tipe Akun</td>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px">Personal</td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px;color:#777">Tempat</td>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px">'.$tempat_cust.', '.$ket_cust.', '.$alamat_cust.', '.$kota_cust.'</td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                                <p>Untuk mengaktifkan akun silahkan klik tombol aktivasi ini.</p>
+                                                                                                <div style="text-align:center;margin:30px 0 30px 0;">
+                                                                                                    <a href="'.$base_url.'/?a='.$password_sales.'" style="text-decoration:none;color:#fff;"><span style="background-color:#FF3D23;border:0;border-radius:5px;padding:10px 40px 10px 40px;color:#fff;font-size:17px;">Aktivasi Akun</span></a>
+                                                                                                </div>
+                                                                                                <p>Jika tombol tidak berfungsi silahkan copy link berikut <a href="'.$base_url.'/?a='.$password_sales.'">'.$base_url.'/?a='.$password_sales.'</a></p>
+                                                                                            </div>
+                                                                                            </div>
+                                                                                        </div>        
+                                                                                    </body>
+                                                                                    </html>
+                                                                                   
                                                                                 ';
 
                                                                                 $headers2  = 'MIME-Version: 1.0' . "\r\n";
@@ -229,7 +261,8 @@
 						</div>
 	 				</div>
 				</div>
-			</div>
+			</div> 
+			
 		</div>	
 	</form>	
 </section>
