@@ -254,18 +254,23 @@ if(isset($_POST['terminasi'])){
 				$subject1 = 'Berhenti Berlangganan';
 				$message1 = '
 				<html>
-				<body>
-				  <p>Hi '.$nama_cust.', Terimakasih sudah berlangganan groovy</p>
-				  <p>Layanan anda akan berakhir pada tanggal '.$tgl_tutup.' '.$month_tutup.' '.$thn_tutup.'</p>
-				  <p>Kami akan memberi info lagi untuk pengambilan perangkat yang anda gunakan.</p>
-				  <p>Untuk Melakukan aktivasi kembali layanan kami bisa di halaman member anda.</p>
-				  <br/><br/><br/>
-				  <p>Best Regards</p>
-				  <p>Customer Service</p>
-				  <p>groovy.id</p>
-				  <br/>
-				</body>
-				</html>
+					<body style="background-color:#ddd;padding:50px 0 50px 0;font-family:arial;font-size:15px;">
+					    <div style="margin:0 auto;max-width:500px;background-color:#eee;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
+					        <div style="background: linear-gradient(to right, #FF3D23 , #fc742f);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
+					            <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
+					        </div>
+					        <div style="padding:20px;color:#333;">
+					            <p style="font-size:20px;font-weight:bold;line-height:1px">Hai '.$nama_cust.',</p>
+					            <p>Terimakasih sudah berlangganan Groovy.</p>
+					            <p>Layanan anda akan berakhir pada tanggal '.$tgl_tutup.' '.$month_tutup.' '.$thn_tutup.'<br/><br/>
+					            Kami akan segera memberikan informasi terkait pengambilan perangkat yang Anda gunakan. Untuk Melakukan aktivasi kembali layanan kami bisa di halaman member anda.</p> 
+					            <p style="color:#888;">Terimakasih.</p>
+					        </div>
+					        </div>
+					    </div>        
+					</body>
+					</html>
+				 
 				'; 
 				$headers1  = 'MIME-Version: 1.0' . "\r\n";
 				$headers1 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
