@@ -6,9 +6,10 @@
   				    <div class="panel-body">
 		    					<table class="table table-striped table-hover ">
 								<?php
-									$res = $col_info->find("for"=>"")->limit(5);
+									$res = $col_info->find()->limit(5);
 									foreach($res as $row)
 									  { 
+									if($row['tempat']<>""){
 										$tanggal = $row['tanggal_maintenance'];
 										$thn = substr($tanggal, 0,4);
 										$bln = substr($tanggal, 5,2);
@@ -32,7 +33,7 @@
 
 									    				<?php echo $row['status']; ?></span></td>
 									  </tbody>
-								<?php } ?>	  
+								<?php } } ?>	  
 								</table> 
 					</div>
  				</div>
