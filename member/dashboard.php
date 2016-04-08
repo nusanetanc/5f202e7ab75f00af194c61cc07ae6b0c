@@ -40,57 +40,52 @@
 <section>
 	<div class="col-sm-12 col-md-12 col-lg-9" style="font-family:Arial;">
 		<div class="row">
-			<div class="col-sm-6">
-				<div class="well well-lg" style="background-color:#FF5F21;">
-				  <h3 style="color:white;"><b>Customer</b></h3>
+						<div class="col-sm-5">
+				<div class="well well-lg background-btn-red">
+				  <h5 style="color:white;"><b>CUSTOMER</b></h5>
 				  	<div class="text-center">
+				  	<br/>
 					  	<div class="row">
-					  		<div class="col-sm-4">
-								<h5 style="color:white;"><b>Total Registrasi</b></h5>
-				  					<div class="text-center">
-				  						<?php
-											$res = $col_user->find(array("tanggal_aktivasi"=>"","level"=>"0","status"=>"registrasi"));
-											$length = $res->count();
-															  { 
+							<div class="col-sm-5">  
+								<h5 style="color:white;">REGISTRASI</h5>
+							  	<?php
+									$res = $col_user->find(array("status"=>"registrasi"));
+									$length = $res->count();
+													  { 
 
-									   ?>
-								  		<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
-								  		<?php } ?>
-								  	</div>
-							</div> 						
-					  		<div class="col-sm-4">
-								<h5 style="color:white;"><b>Total Close</b></h5>
-				  					<div class="text-center">
-								  		<?php
-											$res = $col_user->find(array("level"=>"0","aktif"=>"1","status"=>"close"));
-											$length = $res->count();
-															  { 
+							   ?>
+							  	<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
+							  	<?php } ?>  	
+							</div>  											
+							<div class="col-sm-4">  
+								<h5 style="color:white;">AKTIF</h5>
+							  	<?php
+									$res = $col_user->find(array("status"=>"aktif"));
+									$length = $res->count();
+													  { 
 
-									   ?>
-								  		<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
-								  		<?php } ?>
-								  	</div>
-							</div> 						
-					  		<div class="col-sm-4">
-								<h5 style="color:white;"><b>Total Customer</b></h5>
-				  					<div class="text-center">
-								  		<?php
-											$res = $col_user->find(array("level"=>"0","aktif"=>"1","status"=>"aktif"));
-											$length = $res->count();
-															  { 
+							   ?>
+							  	<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
+							  	<?php } ?>	
+							</div>  
+							<div class="col-sm-4">  
+								<h5 style="color:white;">TIDAK AKTIF</h5>
+							  	<?php
+									$res = $col_user->find(array("status"=>"unaktif"));
+									$length = $res->count();
+													  { 
 
-									   ?>
-								  		<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
-								  		<?php } ?>
-								  	</div>
-							</div> 							
+							   ?>
+							  	<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
+							  	<?php } ?>	
+							</div>  	
 					 	</div>
 					</div>
 				</div>	
-			</div>	
+			</div>		
 			<div class="col-sm-3" >
 				<a href="<?php echo $base_url_member; ?>/pengaduan"  style=" text-decoration:none">
-					<div class="well well-lg" style="background-color:#d32f2f ;">
+					<div class="well well-lg background-btn-red">
 					  <h3 style="color:white;"><b>Total Pengaduan</b></h3>
 					  <br/>
 					  <div class="text-center">
@@ -109,7 +104,7 @@
 			</div>	
 			<div class="col-sm-3" >
 				<a href="<?php echo $base_url_member; ?>/information"  style=" text-decoration:none">
-					<div class="well well-lg" style="background-color:#546e7a;">
+					<div class="well well-lg background-btn-red">
 					<br/>
 					  <h4 style="color:white;"><b>Total Maintenance</b></h4>
 					  <br/>
