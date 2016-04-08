@@ -77,17 +77,25 @@ $res3 = $col_user->find(array("nama"=>$support_Assfield, "level"=>"302"));
 
 		$message1 = '
 		<html>
-		<body>
-		  <p>Terima kasih sudah menjadi customer groovy,<br/>
-		  kami akan melakukan pengambilan perangkat pada tanggal : '.$tgl_akhir.' '.$month_akhir.' '.$thn_akhir.'.
-		</p>
-		  <br/>
-		  <br/>
-		  <p>Best Regards</p>
-		  <p>Customer Service</p>
-		  <p>groovy.id</p>
-		</body>
-		</html>
+			<body style="background-color:#ddd;padding:50px 0 50px 0;font-family:arial;font-size:15px;">
+			    <div style="margin:0 auto;max-width:500px;background-color:#eee;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
+			        <div style="background: linear-gradient(to right, #FF3D23 , #fc742f);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
+			            <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
+			        </div>
+			        <div style="padding:20px;color:#333;">
+			            <p style="font-size:20px;font-weight:bold;line-height:1px">Terimakasih sudah menjadi customer Groovy</p>
+			            <p>Kami akan melakukan pengambilan perangkat pada tanggal : '.$tgl_akhir.' '.$month_akhir.' '.$thn_akhir.'.</p>
+			            
+			            <div style="text-align:center;margin:30px 0 30px 0;">
+			                <a href="http://www.google.com" style="text-decoration:none;color:#fff;"><span style="background-color:#FF3D23;border:0;border-radius:5px;padding:10px 40px 10px 40px;color:#fff;font-size:17px;">Reset Password</span></a>
+			            </div>
+			            <p style="color:#888;">Terimakasih</p>
+			        </div>
+			        </div>
+			    </div>        
+			</body>
+			</html>
+		
 		';
 
 		$headers1  = 'MIME-Version: 1.0' . "\r\n";
