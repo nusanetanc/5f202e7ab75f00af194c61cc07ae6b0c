@@ -43,12 +43,12 @@
 								<table class="table table-striped table-hover ">
 									 <thead>
 									    <tr>
-									      <th width="10%">Nomor Id</th>
+									      <th width="15%">Nomor Id</th>
 									      <th width="20%">Nama</th>
 									      <th width="20%">Jabatan</th>
-									      <th width="10%">Pasang</th>
-									      <th width="10">Upddate</th>
-									      <th width="10">Bongkar</th>
+									      <th width="15%">Pasang</th>
+									      <th width="15">Update</th>
+									      <th width="15">Bongkar</th>
 									    </tr>
 									  </thead>
 									  <?php 
