@@ -217,7 +217,7 @@
                                                                                             <p>Kami mendengar Anda perlu reset password. Klik link di bawah ini dan Anda akan diarahkan ke situs yang aman dari mana Anda dapat mengatur sandi baru.</p>
                                                                                             
                                                                                             <div style="text-align:center;margin:30px 0 30px 0;">
-                                                                                                <a href="groovy.id/?rp='.$user_id.'" style="text-decoration:none;color:#fff;"><span style="background-color:#FF3D23;border:0;border-radius:5px;padding:10px 40px 10px 40px;color:#fff;font-size:17px;">Reset Password</span></a>
+                                                                                                <a href="<?php echo $base_url; ?>/?rp='.$user_id.'" style="text-decoration:none;color:#fff;"><span style="background-color:#FF3D23;border:0;border-radius:5px;padding:10px 40px 10px 40px;color:#fff;font-size:17px;">Reset Password</span></a>
                                                                                             </div>
                                                                                             <p style="color:#888;">Jika Anda tidak pernah meminta untuk mereset password, harap abaikan email ini.</p>
                                                                                         </div>
