@@ -6,7 +6,7 @@
   				    <div class="panel-body">
 		    					<table class="table table-striped table-hover ">
 								<?php
-									$res = $col_info->find()->limit(5);
+									$res = $col_info->find("for"=>"")->limit(5);
 									foreach($res as $row)
 									  { 
 										$tanggal = $row['tanggal_maintenance'];
