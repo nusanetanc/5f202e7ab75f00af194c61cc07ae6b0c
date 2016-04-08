@@ -46,7 +46,7 @@
 				  	<div class="text-center">
 				  	<br/>
 					  	<div class="row">
-							<div class="col-sm-5">  
+							<div class="col-sm-4">  
 								<h5 style="color:white;">REGISTRASI</h5>
 							  	<?php
 									$res = $col_user->find(array("status"=>"registrasi"));
@@ -89,7 +89,7 @@
 				  	<div class="text-center">
 				  	<br/>
 					  	<div class="row">
-							<div class="col-sm-5">  
+							<div class="col-sm-4">  
 								<h5 style="color:white;">ON PROGRESS</h5>
 							  	<?php
 									$res = $col_ticket->find(array("status"=>"open"));
