@@ -31,7 +31,7 @@
 									    					<?php break; 
 									    					} ?>
 									    				<?php echo $row['status']; ?></span><a href="<?php echo $base_url_member; ?>/complete-information/<?php echo $row['_id'] ?>" style=" text-decoration:none"> <?php echo $row['subject'].' ';
-									     if(array($row['read'])<>$id){ ?><label class="text-danger">New</label><?php } ?></td>
+									     if(array($row['read']=>$id)){ ?><label class="text-danger">New</label><?php } ?></td>
 									  </tbody>
 								<?php } } ?>	  
 								</table> 
