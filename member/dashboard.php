@@ -40,54 +40,55 @@
 <section>
 	<div class="col-sm-12 col-md-12 col-lg-9" style="font-family:Arial;">
 		<div class="row">
-			<div class="col-sm-6">
-				<div class="well well-lg" style="background-color:#FF5F21;">
-				  <h3 style="color:white;"><b>Customer</b></h3>
+						<div class="col-sm-5">
+				<div class="well well-lg background-btn-red">
+				  <h5 style="color:white;"><b>CUSTOMER</b></h5>
 				  	<div class="text-center">
+				  	<br/>
 					  	<div class="row">
-					  		<div class="col-sm-4">
-								<h5 style="color:white;"><b>Registrasi</b></h5>
-				  					<div class="text-center">
-				  						<?php
-											$res = $col_user->find(array("level"=>"0","status"=>"registrasi"));
-											$length = $res->count();
-															  { 
+							<div class="col-sm-4">  
+								<a href="<?php echo $base_url_member; ?>/customer/registrasi" style=" text-decoration:none">
+									<h5 style="color:white;">REGISTRASI</h5>
+								  	<?php
+										$res = $col_user->find(array("status"=>"registrasi"));
+										$length = $res->count();
+														  { 
 
-									   ?>
-								  		<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
-								  		<?php } ?>
-								  	</div>
-							</div> 	
-							<div class="col-sm-4">
-								<h5 style="color:white;"><b>Aktif</b></h5>
-				  					<div class="text-center">
-								  		<?php
-											$res = $col_user->find(array("level"=>"0","status"=>"aktif"));
-											$length = $res->count();
-															  { 
+								   ?>
+								  	<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
+								  	<?php } ?>
+								</a>  	
+							</div>  											
+							<div class="col-sm-4">  
+								<a href="<?php echo $base_url_member; ?>/customer/aktif" style=" text-decoration:none">
+									<h5 style="color:white;">AKTIF</h5>
+								  	<?php
+										$res = $col_user->find(array("status"=>"aktif"));
+										$length = $res->count();
+														  { 
 
-									   ?>
-								  		<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
-								  		<?php } ?>
-								  	</div>
-							</div> 							
-					  		<div class="col-sm-4">
-								<h5 style="color:white;"><b>Close</b></h5>
-				  					<div class="text-center">
-								  		<?php
-											$res = $col_user->find(array("status"=>"unakif", "level"=>"0"));
-											$length = $res->count();
-															  { 
+								   ?>
+								  	<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
+								  	<?php } ?>
+								</a>  	
+							</div>  
+							<div class="col-sm-4">  
+								<a href="<?php echo $base_url_member; ?>/customer/unaktif" style=" text-decoration:none">
+									<h5 style="color:white;">TIDAK AKTIF</h5>
+								  	<?php
+										$res = $col_user->find(array("status"=>"unaktif"));
+										$length = $res->count();
+														  { 
 
-									   ?>
-								  		<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
-								  		<?php } ?>
-								  	</div>
-							</div> 											
+								   ?>
+								  	<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
+								  	<?php } ?>
+								</a>  	
+							</div>  	
 					 	</div>
 					</div>
 				</div>	
-			</div>	
+			</div>		
 			<div class="col-sm-3" >
 				<a href="<?php echo $base_url_member; ?>/pengaduan"  style=" text-decoration:none">
 					<div class="well well-lg" style="background-color:#d32f2f ;">
