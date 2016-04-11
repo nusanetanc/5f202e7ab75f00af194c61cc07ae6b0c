@@ -43,7 +43,7 @@ if (isset($_POST['save'])){
 		$next_month="01";
 		$next_years=$date_years+1;
 	} else {
-		$next_month=$date_years+1;
+		$next_month=$date_month+1;
 		$next_years=$date_years;
 	} 
 	$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("tanggal_aktivasi"=>$date, "status"=>"aktif", "tanggal_akhir"=>$next_years.'/'.$next_month.'/01'))); 

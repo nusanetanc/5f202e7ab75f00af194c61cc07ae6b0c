@@ -53,10 +53,10 @@ $date_month = date("d");
 	                                        }  
 	if ($bln_akhir=="12"){
 		$next_month="01";
-		$next_years=$date_years+1;
+		$next_years=$thn_akhir+1;
 	} else {
-		$next_month=$date_years+1;
-		$next_years=$date_years;
+		$next_month=$bln_akhirs+1;
+		$next_years=$thn_akhir;
 	} 
 	
 	if($move_paket_cust<>""){
