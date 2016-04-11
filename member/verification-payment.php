@@ -413,7 +413,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 							  <div class="col-lg-9">
 								<h4><?php echo $tgl_registrasi.' '.$month_registrasi.' '.$thn_registrasi; ?></h4>
 							  </div>
-							</div>	<?php if($status_cust=="registrasi"){ ?>
+							</div>	<?php if($status_cust<>"registrasi"){ ?>
 							<div class="form-group">
 							  <label class="col-lg-3 control-label">Tanggal Akhir Pembayaran : </label>
 							  <div class="col-lg-9">
