@@ -312,7 +312,6 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				$pdf->Cell(0,7, 'John Doe', '0', 1, 'R'); 
 				$pdf->Cell(0,7, 'Customer Relation Officer', '0', 1, 'R'); 
 				$pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R'); 
-				/*
 				// Filename that will be used for the file as the attachment
 				$fileatt_name = $id_cust.$package_cust."update.pdf"; 
 				$dir='bukti/'; 
@@ -320,9 +319,9 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 
 				$data = $pdf->Output("", "S");
 
-				$email_from = "cs@groovy.id"; // Who the email is from
-				$email_subject = "[CHANGE SERVICE REQUEST] - Nusanet - ".$nama_cust; // The Subject of the email
-				$email_to = $email_dens; // Who the email is to
+				$email_from1 = "cs@groovy.id"; // Who the email is from
+				$email_subject1 = "[CHANGE SERVICE REQUEST] - Nusanet - ".$nama_cust; // The Subject of the email
+				$email_to1 = $email_dens; // Who the email is to
 
 
 				$semi_rand = md5(time());
@@ -332,18 +331,18 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				$mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";
 
 				// set header ........................
-				$headers = "From: ".$email_from;
-				$headers .= "\nMIME-Version: 1.0\n" .
+				$headers1 = "From: ".$email_from;
+				$headers1 .= "\nMIME-Version: 1.0\n" .
 				"Content-Type: multipart/mixed;\n" .
 				" boundary=\"{$mime_boundary}\"";
 
 				// set email message......................
-				$email_message .= "This is a multi-part message in MIME format.\n\n" .
+				$email_message1 .= "This is a multi-part message in MIME format.\n\n" .
 				"--{$mime_boundary}\n" .
 				"Content-Type:text/html; charset=\"iso-8859-1\"\n" .
 				"Content-Transfer-Encoding: 7bit\n\n" .
-				$email_message .= "\n\n";
-				$email_message .= "--{$mime_boundary}\n" .
+				$email_message1 .= "\n\n";
+				$email_message1 .= "--{$mime_boundary}\n" .
 				"Content-Type: {$fileatt_type};\n" .
 				" name=\"{$fileatt_name}\"\n" .
 				"Content-Disposition: attachment;\n" .
@@ -352,7 +351,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				$data .= "\n\n" .
 				"--{$mime_boundary}--\n";
 
-				$sent = mail($email_to, $email_subject, $email_message, $headers); */
+				$sent = mail($email_to1, $email_subject1, $email_message1, $headers1); 
 		}
 if ($update_user && $update_bayar && $emailinvoice && $sent){
 	?>
