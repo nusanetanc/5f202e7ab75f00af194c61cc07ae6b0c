@@ -58,7 +58,6 @@ $date_month = date("d");
 		$next_month=$bln_akhirs+1;
 		$next_years=$thn_akhir;
 	}
-	} 
 
 	if($move_paket_cust<>""){
 		$paket_bayar = $move_paket_cust;
