@@ -255,10 +255,7 @@ if ($total_revenue=="" || empty($total_revenue)){
 		}
 		$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("tanggal_akhir"=>$next_years.'/'.$next_month.'/01', "pembayaran"=>$last_pembayaran, "proraide"=>"0")));
 	} 
-		$pay = array("tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date, "paket"=>$paket_bayar, "harga"=>$harga_bayar, "no"=>$last_pembayaran);
-$update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("payment"=>$pay))); 
-	/*
-				//mail to bukti pembayaran
+//mail to bukti pembayaran
 				require('../content/srcpdf/fpdf.php');
 				$header = array(
 						array("label"=>"Paket : ".$paket_bayar, "length"=>130, "align"=>"C"),
@@ -305,12 +302,12 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				$pdf->Ln();
 				$pdf->Image('../img/denstv-logo.png','10','250','50');
 				$pdf->Image('../img/logo-nusanet.png','65','250','50');
-				$pdf->Image('../img/a.jpg','170','240','30');
+				$pdf->Image('../img/a.jpg','170','Paket240','30');
 				// Filename that will be used for the file as the attachment
-				$fileatt_name = $no_virtual.$last_pembayaran.'.pdf';
-				$dir='bukti/';
+				$fileatt_name1 = $no_virtual.$last_pembayaran.'.pdf';
+				$dir1='bukti/';
 				// save pdf in directory
-				$pdf ->Output($dir.$fileatt_name);
+				$pdf ->Output($dir1.$fileatt_name1);
 				//....................
 
 				$data = $pdf->Output("", "S");
@@ -328,7 +325,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				$mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";
 
 				// set header ........................
-				$headers1 = "From: groovy.id <no_reply@groovy.id>";
+				$headers1 = "From: groovy.id";
 				$headers1.= "\nMIME-Version: 1.0\n" .
 				"Content-Type: multipart/mixed;\n" .
 				" boundary=\"{$mime_boundary}\"";
@@ -353,7 +350,9 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				$data .= "\n\n" .
 				"--{$mime_boundary}--\n";
 
-				$emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1); */
+				$emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1); 
+		$pay = array("tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date, "paket"=>$paket_bayar, "harga"=>$harga_bayar, "no"=>$last_pembayaran);
+$update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("payment"=>$pay))); 
 if ($update_user && $update_bayar && $emailinvoice){
 	?>
 		<script type="" language="JavaScript">

@@ -13,7 +13,7 @@
       					      <div class="container">
                         <br/>
                         <?php if ($foto=="" || $foto==null){ ?>
-                         <img class="profile-img-card-lrg" src="<?php echo $base_url; ?>/img/Avatar_member.png" />
+                         <img class="profile-img-card-lrg" src="<?php echo $base_url; ?>/img/default-avatar-groovy.png" />
                          <?php } else { ?>
         			           <img class="profile-img-card-lrg" src="<?php echo $base_url_member; ?>/foto/<?php echo $foto; ?>" />
                          <?php } ?>

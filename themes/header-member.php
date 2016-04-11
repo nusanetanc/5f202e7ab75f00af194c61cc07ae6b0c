@@ -85,7 +85,7 @@ if($level=="501"){
       <ul class="dropdown nav navbar-nav navbar-right navbar-primary">
           <li class="dropdown-toggle" data-toggle="dropdown">    
               <?php if ($foto=="" || $foto==null){ ?>
-                          <img style="width:45px;height:45px;margin-top:7px;margin-left:10px;cursor:pointer" class="profile-img-card profile-img-card-mdm" src="<?php echo $base_url; ?>/img/Avatar_member.png"/>
+                          <img style="width:45px;height:45px;margin-top:7px;margin-left:10px;cursor:pointer" class="profile-img-card profile-img-card-mdm" src="<?php echo $base_url; ?>/img/default-avatar-groovy.png"/>
        <?php } else { ?>
                   <img style="width:45px;height:45px;margin-top:7px;margin-left:10px;cursor:pointer" class="profile-img-card profile-img-card-mdm" src="<?php echo $base_url_member; ?>/foto/<?php echo $foto; ?>"/>
        <?php } ?>
