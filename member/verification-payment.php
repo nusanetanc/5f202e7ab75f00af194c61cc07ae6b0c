@@ -145,7 +145,7 @@ if ($total_revenue=="" || empty($total_revenue)){
 											{ 	
 				$emailpasang=mail($row['email'], $subject, $message, $headers); 
 			}
-					// mail for supevisior teknik
+					// mail for customer
 				$subject = 'Pindah Paket';
 				$message = '
 				<html>
