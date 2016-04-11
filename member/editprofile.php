@@ -73,7 +73,7 @@ if ($update_user){
   					<form enctype="multipart/form-data" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
   					<div class="col-sm-3">
   						<?php if ($foto=="" || $foto==null){ ?>
-  						<img class="profile-img-card profile-img-card-xlrg" src="../img/Avatar_member.png"/>
+  						<img class="profile-img-card profile-img-card-xlrg" src="../img/default-avatar-groovy2"/>
   						<?php } else { ?>
   						<img class="profile-img-card profile-img-card-xlrg" src="./foto/<?php echo $foto ?>"/>
   						<?php } ?>
