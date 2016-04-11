@@ -147,10 +147,10 @@ if ($total_revenue=="" || empty($total_revenue)){
 				$pdf->Image('../img/logo-nusanet.png','65','250','50');
 				$pdf->Image('../img/a.jpg','170','240','30');
 				// Filename that will be used for the file as the attachment
-				$fileatt_name1 = $no_virtual.$last_pembayaran.'.pdf';
-				$dir1='bukti/';
+				$fileatt_name = $no_virtual.$last_pembayaran.'.pdf';
+				$dir='bukti/';
 				// save pdf in directory
-				$pdf ->Output($dir1.$fileatt_name1);
+				$pdf ->Output($dir.$fileatt_name);
 				//....................
 
 				$data = $pdf->Output("", "S");
