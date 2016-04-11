@@ -245,7 +245,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				  <br/>
 				</body>
 				</html>
-				';
+				'; 
 				$headers  = 'MIME-Version: 1.0' . "\r\n";
 				$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 				$headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
@@ -307,15 +307,13 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				$pdf->Ln();
 				$pdf->Image('../img/tanda_tangan.jpg','165','130','33','33');
 				$pdf->SetFont('Arial','','10');
-				$pdf->Cell(0,7, 'John Doe              ', '0', 1, 'R'); }
-				$pdf->SetFont('Arial','','10'); 
+				$pdf->Cell(0,7, 'John Doe              ', '0', 1, 'R'); 
 				$pdf->Cell(0,7, 'Customer Relation Officer', '0', 1, 'R'); 
-				$pdf->SetFont('Arial','','10');
 				$pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R'); 
 
 				// Filename that will be used for the file as the attachment
 				$fileatt_name = $id_cust.$date1."update.pdf"; 
-				$dir='bukti/';
+				$dir='bukti/'; 
 				$pdf ->Output($dir.$fileatt_name);
 
 				$data = $pdf->Output("", "S");
