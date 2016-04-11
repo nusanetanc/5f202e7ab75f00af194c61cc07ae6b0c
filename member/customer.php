@@ -33,7 +33,7 @@
 						      <?php if($status=="registrasi"){ ?>
 						      <td><b><a href="<?php echo $base_url_member; ?>/detail-pemasangan/<?php echo $row['id_user']; ?>" class="btn btn-warning btn-sm">Pasang</a></b></td>	
 						      <?php } elseif($status=="aktif"){ ?>					      
-						      <td><b><a href="<?php echo $base_url_member; ?>/detail-maintanance/<?php echo $row['id_user']; ?>" class="btn btn-warning btn-sm">Maintanance/Update</a></b></td>
+						      <td><b><a href="<?php echo $base_url_member; ?>/detail-maintenance/<?php echo $row['id_user']; ?>" class="btn btn-warning btn-sm">Maintanance/Update</a></b></td>
 						      <?php } elseif($status=="unaktif"){ ?>					      
 						      <td><b><a href="<?php echo $base_url_member; ?>/detail-bongkar/<?php echo $row['id_user']; ?>" class="btn btn-warning btn-sm">Bongkar</a></b></td>
 						      <?php } ?>
