@@ -51,6 +51,14 @@ $date_month = date("d");
 	                                            $move_paket_cust = $row['move_paket'];
 	                                            $move_harga_cust = $row['move_harga'];
 	                                        }  
+	if ($bln_akhir=="12"){
+		$next_month="01";
+		$next_years=$date_years+1;
+	} else {
+		$next_month=$date_years+1;
+		$next_years=$date_years;
+	} 
+	
 	if($move_paket_cust<>""){
 		$paket_bayar = $move_paket_cust;
 		$harga_bayar = $move_harga_cust;
@@ -150,7 +158,7 @@ if ($total_revenue=="" || empty($total_revenue)){
 				$headers .= 'Cc: cs@groovy.id' . "\r\n";
 				$emailpasang=mail($email_cust, $subject, $message, $headers); 
 		}
-		$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("tanggal_akhir"=>$last_aktif, "pembayaran"=>$last_pembayaran, "proraide"=>"0")));
+		$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("tanggal_akhir"=>$next_years.'/'.$next_month.'/01', "pembayaran"=>$last_pembayaran, "proraide"=>"0")));
 	}
 		$pay = array("tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date, "paket"=>$paket_bayar, "harga"=>$harga_bayar, "no"=>$last_pembayaran);
 $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("payment"=>$pay))); 
