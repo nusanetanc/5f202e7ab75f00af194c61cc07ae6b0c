@@ -319,7 +319,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 
 				$data = $pdf->Output("", "S");
 
-				//$email_from1 = "cs@groovy.id"; // Who the email is from
+				$email_from1 = "cs@groovy.id"; // Who the email is from
 				$email_subject1 = "[CHANGE SERVICE REQUEST] - Nusanet - ".$nama_cust; // The Subject of the email
 				$email_to1 = $email_dens; // Who the email is to
 
@@ -331,8 +331,8 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				$mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";
 
 				// set header ........................
-				$headers1 = "From: ".$email_from;
-				$headers1 .= "\nMIME-Version: 1.0\n" .
+				$email_headers1 = "From: ".$email_from;
+				$email_headers1 .= "\nMIME-Version: 1.0\n" .
 				"Content-Type: multipart/mixed;\n" .
 				" boundary=\"{$mime_boundary}\"";
 
@@ -351,7 +351,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				$data .= "\n\n" .
 				"--{$mime_boundary}--\n";
 
-				$sent = mail($email_to1, $email_subject1, $email_message1, $headers1); 
+			//	$sent = mail($email_to1, $email_subject1, $email_message1, $email_headers1); 
 		}
 if ($update_user && $update_bayar && $emailinvoice && $sent){
 	?>
