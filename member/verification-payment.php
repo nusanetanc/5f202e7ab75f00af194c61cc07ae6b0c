@@ -312,7 +312,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				$pdf->Cell(0,7, 'John Doe', '0', 1, 'R'); 
 				$pdf->Cell(0,7, 'Customer Relation Officer', '0', 1, 'R'); 
 				$pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R'); 
-
+					echo tes;
 				// Filename that will be used for the file as the attachment
 				$fileatt_name = $id_cust.$package_cust."update.pdf"; 
 				$dir='bukti/'; 
@@ -352,7 +352,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				$data .= "\n\n" .
 				"--{$mime_boundary}--\n";
 
-				$sent = mail($email_to, $email_subject, $email_message, $headers); 
+				$sent = mail($email_to, $email_subject, $email_message, $headers); echo tes0;
 		}
 if ($update_user && $update_bayar && $emailinvoice){
 	?>
