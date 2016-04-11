@@ -58,13 +58,7 @@ foreach($res as $row)
 	if ($update_user && $kirimemail){ ?>
 		<script type="" language="JavaScript">
 		document.location='<?php echo $base_url_member; ?>/package-upgrade'</script>
-<?php } } 
-	if(isset($_POST['batal'])){
-		$delete_upgrade=$col_user->update(array("id_user"=>$id, "level"=>"0"),array('$set'=>array("move_paket"=>"", "move_harga"=>"", "move_request"=>"")));	
-		if ($delete_upgrade){ ?>
-		<script type="" language="JavaScript">
-		document.location='<?php echo $base_url_member; ?>/change-package'</script>
-<?php }	} ?>
+<?php } } ?>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
 		<div class="list-group">
@@ -108,8 +102,6 @@ foreach($res as $row)
 						<li class="list-group-item">
 						  	Tanggal Permintaan : <?php echo $move_tgl.' '.$move_month.' '.$move_thn; ?> 
 						</li>
-						<br/>	
-						<input type="submit" class="btn btn-warning" name="batal" id="batal" value="batal">	
 						<br/>							
 					</div>	
 					<?php } ?>

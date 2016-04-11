@@ -15,7 +15,6 @@
 									    $bln = substr($tanggal, 5,2);
 										$tgl = substr($tanggal, 8,2);
 										$month = bulan($bln);
-										echo $row['read'];
 								?>		    					
 									  <tbody>
  										<td width="20%"><?php echo $tgl.' '.$month.' '.$thn; ?></td>
