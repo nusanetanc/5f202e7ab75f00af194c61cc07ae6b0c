@@ -75,12 +75,12 @@ $date_month = date("d");
 	$total_bayar = $harga_paket - $proraide;            
 	            $res_pack = $col_package->find(array("nama"=>$package_cust));
 	            foreach($res_pack as $row_pack) { $harga_hari = $row_pack['harga_hari']; }
-$res = $col_user->find(array("nama"=>$package_cust));
+$res = $col_package->find(array("nama"=>$package_cust));
 	foreach($res as $row)
 	{
 		$deskripsi_paket0=$row['deskripsi'];
 	}
-$res = $col_user->find(array("nama"=>$move_paket_cust));
+$res = $col_package->find(array("nama"=>$move_paket_cust));
 	foreach($res as $row)
 	{
 		$deskripsi_paket1=$row['deskripsi'];
@@ -185,7 +185,7 @@ if ($total_revenue=="" || empty($total_revenue)){
 				$pdf->SetFont('Arial','B','10');
 				$pdf->Cell(0,20, 'PT Media Andalan Nusa (Nusanet)', '0', 1, 'R');
 				$pdf->SetFont('Arial','B','14');
-				$pdf->Cell(0,10, 'FORMULIR PENUTUPAN LAYANAN', '0', 5, 'C');
+				$pdf->Cell(0,10, 'FORMULIR PERUBAHAN JENIS LAYANAN', '0', 5, 'C');
 				$pdf->Ln();
 				$pdf->SetFont('Arial','B','10');
 				$pdf->Cell(0,7, 'DATA PELANGGAN', '0', 1, 'L');
@@ -206,7 +206,7 @@ if ($total_revenue=="" || empty($total_revenue)){
 				$pdf->Ln();
 				$pdf->Ln();
 				$pdf->Ln();
-				$pdf->Image('../img/tanda_tangan.jpg','165','150','33','33');
+				$pdf->Image('../img/tanda_tangan.jpg','155','150','33','33');
 				$pdf->SetFont('Arial','','10');
 				$pdf->Cell(0,7, 'John Doe              ', '0', 1, 'R');
 				$pdf->Cell(0,7, 'Customer Relation Officer', '0', 1, 'R');
