@@ -413,13 +413,13 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 							  <div class="col-lg-9">
 								<h4><?php echo $tgl_registrasi.' '.$month_registrasi.' '.$thn_registrasi; ?></h4>
 							  </div>
-							</div>	
+							</div>	<?php if($status_cust=="registrasi"){ ?>
 							<div class="form-group">
 							  <label class="col-lg-3 control-label">Tanggal Akhir Pembayaran : </label>
 							  <div class="col-lg-9">
 								<h4><?php echo $tgl_akhir.' '.$month_akhir.' '.$thn_akhir; ?></h4>
 							  </div>
-							</div>							
+							</div> <?php } ?>							
 							<div class="form-group">
 							  <label class="col-lg-3 control-label">No Virtual : </label>
 							  <div class="col-lg-9">
