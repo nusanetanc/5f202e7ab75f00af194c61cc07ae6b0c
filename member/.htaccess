@@ -16,6 +16,7 @@ RewriteRule ^edit-profile$ ?hal=editprofile
 RewriteRule ^chat-pengaduan/([0-9A-Za-z]+)/? ?hal=chatpengaduan&c=$1
 RewriteRule ^detail-pemasangan/([0-9A-Za-z]+)/? ?hal=detail-pemasangan&id=$1
 RewriteRule ^detail-bongkar/([0-9A-Za-z]+)/? ?hal=detail-bongkar&id=$1
+RewriteRule ^detail-maintenance/([0-9A-Za-z]+)/? ?hal=detail-maintenance&id=$1
 RewriteRule ^customer-list/([0-9A-Za-z]+)/? ?hal=customer-list&sales=$1
 RewriteRule ^customer-list$ ?hal=customer-list
 RewriteRule ^customer-profile/([0-9A-Za-z]+)/? ?hal=customer-profile&id_cust=$1
