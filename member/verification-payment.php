@@ -154,11 +154,11 @@ if ($total_revenue=="" || empty($total_revenue)){
 			$res = $col_user->find(array("level"=>"3"));
 						foreach($res as $row)
 											{ 	
-				$emailpasang=mail($row['email'], $subject, $message, $headers); 
+				$emailpindah=mail($row['email'], $subject, $message, $headers); 
 			}
 					// mail for customer
-				$subject = 'Pemberitahuan Pindah Paket';
-				$message = '
+				$subject1 = 'Pemberitahuan Pindah Paket';
+				$message1 = '
 				<html>
 					<body style="background-color:#ddd;padding:50px 0 50px 0;font-family:arial;font-size:15px;">
 					    <div style="margin:0 auto;max-width:500px;background-color:#eee;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
@@ -174,11 +174,11 @@ if ($total_revenue=="" || empty($total_revenue)){
 					</body>
 					</html>
 				';
-				$headers  = 'MIME-Version: 1.0' . "\r\n";
-				$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-				$headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
-				$headers .= 'Cc: cs@groovy.id' . "\r\n";
-				$emailpasang=mail($email_cust, $subject, $message, $headers); 
+				$headers1  = 'MIME-Version: 1.0' . "\r\n";
+				$headers1 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+				$headers1 .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
+				$headers1 .= 'Cc: cs@groovy.id' . "\r\n";
+				$emailcust_pindah=mail($email_cust, $subject1, $message1, $headers1); 
 				require('../content/srcpdf/fpdf.php');
 				$pdf = new FPDF();
 				$pdf->AddPage();
@@ -206,7 +206,7 @@ if ($total_revenue=="" || empty($total_revenue)){
 				$pdf->Ln();
 				$pdf->Ln();
 				$pdf->Ln();
-				$pdf->Image('../img/tanda_tangan.jpg','155','150','33','33');
+				$pdf->Image('../img/tanda_tangan.jpg','165','130','33','33');
 				$pdf->SetFont('Arial','','10');
 				$pdf->Cell(0,7, 'John Doe              ', '0', 1, 'R');
 				$pdf->Cell(0,7, 'Customer Relation Officer', '0', 1, 'R');
@@ -254,9 +254,10 @@ if ($total_revenue=="" || empty($total_revenue)){
 				$sent = mail($email_to, $email_subject, $email_message, $headers); 
 		}
 		$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("tanggal_akhir"=>$next_years.'/'.$next_month.'/01', "pembayaran"=>$last_pembayaran, "proraide"=>"0")));
-	}
+	} 
 		$pay = array("tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date, "paket"=>$paket_bayar, "harga"=>$harga_bayar, "no"=>$last_pembayaran);
 $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("payment"=>$pay))); 
+	/*
 				//mail to bukti pembayaran
 				require('../content/srcpdf/fpdf.php');
 				$header = array(
@@ -352,12 +353,12 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				$data .= "\n\n" .
 				"--{$mime_boundary}--\n";
 
-				$emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1);
+				$emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1); */
 if ($update_user && $update_bayar && $emailinvoice){
 	?>
 		<script type="" language="JavaScript">
 		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>	
-<?php } }
+<?php } } 
 if(isset($_POST['terminasi'])){
 	$termination_date=$_POST['inputTerminationdate'];
 	$textalasanberhenti=$_POST['textalasanberhenti'];
