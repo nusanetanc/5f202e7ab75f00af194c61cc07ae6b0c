@@ -85,7 +85,7 @@ $res = $col_package->find(array("nama"=>$move_paket_cust));
 	{
 		$deskripsi_paket1=$row['deskripsi'];
 	}
-if(isset($_POST['verifikasi'])){  
+if(isset($_POST['verifikasi'])){   
 		$tanggal_bayar = $_POST['inputPaymentdate'];
 		$thn_bayar = substr($tanggal_bayar, 0,4);
 		$bln_bayar = substr($tanggal_bayar, 5,2);
@@ -279,7 +279,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				$headers1 .= 'From: cs@groovy.id' . "\r\n";
 				$headers1 .= 'Cc: cs@groovy.id' . "\r\n";
 				$emailcust_pindah=mail($email_cust, $subject1, $message1, $headers1); 
-} if($emailpindah && $emailcust_pindah){
+} /*
 				require('../content/srcpdf/fpdf.php');
 				$pdf = new FPDF(); 
 				$pdf->AddPage();
@@ -351,8 +351,8 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				$data .= "\n\n" .
 				"--{$mime_boundary}--\n";
 
-				$sent1 = mail($email_to1, $email_subject1, $email_message1, $email_headers1); }
-if ($update_user && $update_bayar && $emailinvoice && $sent1){
+				$sent1 = mail($email_to1, $email_subject1, $email_message1, $email_headers1); */
+if ($update_user && $update_bayar && $emailinvoice){
 	?>
 		<script type="" language="JavaScript">
 		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>	
