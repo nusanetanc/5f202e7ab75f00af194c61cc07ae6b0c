@@ -228,6 +228,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 			}
 	} else {
 		$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("tanggal_akhir"=>$next_years.'/'.$next_month.'/01', "pembayaran"=>$last_pembayaran, "proraide"=>"0")));
+	}
 		if($move_paket_cust<>""){ 
 			// mail for supevisior teknik
 				$subject = 'Pindah Paket';
@@ -275,9 +276,10 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				'; 
 				$headers1  = 'MIME-Version: 1.0' . "\r\n";
 				$headers1 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-				$headers1 .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
+				$headers1 .= 'From: cs@groovy.id' . "\r\n";
 				$headers1 .= 'Cc: cs@groovy.id' . "\r\n";
 				$emailcust_pindah=mail($email_cust, $subject1, $message1, $headers1); 
+
 				require('../content/srcpdf/fpdf.php');
 				$pdf = new FPDF(); 
 				$pdf->AddPage();
@@ -307,7 +309,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				$pdf->Ln();
 				$pdf->Image('../img/tanda_tangan.jpg','165','130','33','33');
 				$pdf->SetFont('Arial','','10');
-				$pdf->Cell(0,7, 'John Doe              ', '0', 1, 'R'); 
+				$pdf->Cell(0,7, 'John Doe', '0', 1, 'R'); 
 				$pdf->Cell(0,7, 'Customer Relation Officer', '0', 1, 'R'); 
 				$pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R'); 
 
@@ -352,7 +354,6 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 
 				$sent = mail($email_to, $email_subject, $email_message, $headers); 
 		}
-	} 
 if ($update_user && $update_bayar && $emailinvoice){
 	?>
 		<script type="" language="JavaScript">
