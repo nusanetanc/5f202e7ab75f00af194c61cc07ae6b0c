@@ -307,14 +307,14 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				$pdf->Ln();
 				$pdf->Image('../img/tanda_tangan.jpg','165','130','33','33');
 				$pdf->SetFont('Arial','','10');
-				$pdf->Cell(0,7, 'John Doe              ', '0', 1, 'R'); 
-/*				$pdf->SetFont('Arial','','10'); 
+				$pdf->Cell(0,7, 'John Doe              ', '0', 1, 'R'); }
+				$pdf->SetFont('Arial','','10'); 
 				$pdf->Cell(0,7, 'Customer Relation Officer', '0', 1, 'R'); 
 				$pdf->SetFont('Arial','','10');
-				$pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R'); */
+				$pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R'); 
 
 				// Filename that will be used for the file as the attachment
-				$fileatt_name = $id_cust.$date1."update.pdf";
+				$fileatt_name = $id_cust.$date1."update.pdf"; 
 				$dir='bukti/';
 				$pdf ->Output($dir.$fileatt_name);
 
