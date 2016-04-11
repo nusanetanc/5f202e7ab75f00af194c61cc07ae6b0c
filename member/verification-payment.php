@@ -75,11 +75,6 @@ if ($total_revenue=="" || empty($total_revenue)){
 } else {
 	$revenue=$total_revenue+$total_bayar;
 	$update_revenue = $col_revenue->update(array("date"=>$date), array('$set'=>array("total"=>$revenue.'.000')));
-}
-if($move_paket_cust<>""){
-		
-	}else if($move_paket_cust==""){
-
 } 
 	if ($status_cust=="registrasi"){
 		$sisa_hari = 30-$date_month;
@@ -112,6 +107,49 @@ if($move_paket_cust<>""){
 				$emailpasang=mail($row['email'], $subject, $message, $headers); 
 			}
 	} else {
+		if($move_paket_cust<>""){
+			// mail for supevisior teknik
+				$subject = 'Pindah Paket';
+				$message = '
+				<html>
+				<body>
+				  <p>Customer pindah paket : </p>
+				  <br/>
+				  <p>ID Customer : '.$id_cust.'</p>
+				  <p>Nama : '.$nama_cust.'</p>
+				  <p>Tempat : '.$tempat_cust.', '.$ket_cust.', '.$kota_cust.'</p>
+				  <p>Paket Aktif : '.$package_cust.'</p>
+				  <p>Pindah Paket : '.$move_paket_cust.'</p>
+				  <p>Tanggal Pindah Paket : '.$tgl_akhir.' '.$month_akhir.' '.$thn_akhir.'</p>
+				  <br/>
+				</body>
+				</html>
+				';
+				$headers  = 'MIME-Version: 1.0' . "\r\n";
+				$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+				$headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
+				$headers .= 'Cc: cs@groovy.id' . "\r\n";
+			$res = $col_user->find(array("level"=>"3"));
+						foreach($res as $row)
+											{ 	
+				$emailpasang=mail($row['email'], $subject, $message, $headers); 
+			}
+					// mail for supevisior teknik
+				$subject = 'Pindah Paket';
+				$message = '
+				<html>
+				<body>
+				  <p>Kami akan mengganti paket anda dari paket : '.$package_cust.', ke paket : '.$move_paket_cust.',pada tanggal : '.$tgl_akhir.' '.$month_akhir.' '.$thn_akhir.'.</p>
+				  <br/>
+				</body>
+				</html>
+				';
+				$headers  = 'MIME-Version: 1.0' . "\r\n";
+				$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+				$headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
+				$headers .= 'Cc: cs@groovy.id' . "\r\n";
+				$emailpasang=mail($email_cust, $subject, $message, $headers); 
+		}
 		$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("tanggal_akhir"=>$last_aktif, "pembayaran"=>$last_pembayaran, "proraide"=>"0")));
 	}
 		$pay = array("tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date, "paket"=>$paket_bayar, "harga"=>$harga_bayar, "no"=>$last_pembayaran);

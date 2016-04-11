@@ -57,7 +57,7 @@ foreach($res as $row)
 				$kirimemail=mail($to, $subject, $message, $headers);		
 	if ($update_user && $kirimemail){ ?>
 		<script type="" language="JavaScript">
-		document.location='<?php echo $base_url_member; ?>/package-upgrade'</script>
+		document.location='<?php echo $base_url_member; ?>/change-package'</script>
 <?php } } ?>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
@@ -109,7 +109,7 @@ foreach($res as $row)
 			</div>
 			<div class="panel" style="border:0px;" >
   				<div class="panel-heading" style="background-color:#FC9822">
-    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">PACKAGE - MOVE</h3>
+    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">PACKAGE - HISTORI</h3>
   				</div>
   				<div class="panel-body">
   					<br/>
