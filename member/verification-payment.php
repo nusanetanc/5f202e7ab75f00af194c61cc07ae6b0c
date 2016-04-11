@@ -302,12 +302,12 @@ if ($total_revenue=="" || empty($total_revenue)){
 				$pdf->Ln();
 				$pdf->Image('../img/denstv-logo.png','10','250','50');
 				$pdf->Image('../img/logo-nusanet.png','65','250','50');
-				$pdf->Image('../img/a.jpg','170','Paket','240','30');
+				$pdf->Image('../img/a.jpg','170','240','30');
 				// Filename that will be used for the file as the attachment
-				$fileatt_name = $no_virtual.$last_pembayaran.'.pdf';
-				$dir='bukti/';
+				$fileatt_name1 = $no_virtual.$last_pembayaran.'.pdf';
+				$dir1='bukti/';
 				// save pdf in directory
-				$pdf ->Output($dir.$fileatt_name);
+				$pdf ->Output($dir1.$fileatt_name1);
 				//....................
 
 				$data = $pdf->Output("", "S");
