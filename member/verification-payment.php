@@ -314,7 +314,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				$pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R'); 
 				// Filename that will be used for the file as the attachment
 				$fileatt_name = $id_cust.$package_cust."update.pdf"; 
-				$dir='bukti/'; 
+				$dir='invoice/'; 
 				$pdf ->Output($dir.$fileatt_name);
 
 				$data = $pdf->Output("", "S");
@@ -351,9 +351,9 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				$data .= "\n\n" .
 				"--{$mime_boundary}--\n";
 
-			//	$sent = mail($email_to1, $email_subject1, $email_message1, $email_headers1); 
+				$sent1 = mail($email_to1, $email_subject1, $email_message1, $email_headers1); 
 		}
-if ($update_user && $update_bayar && $emailinvoice && $sent){
+if ($update_user && $update_bayar && $emailinvoice && $sent1){
 	?>
 		<script type="" language="JavaScript">
 		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>	
