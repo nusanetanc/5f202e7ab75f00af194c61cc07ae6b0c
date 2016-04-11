@@ -57,8 +57,6 @@ $date_month = date("d");
 	} else {
 		$next_month=$bln_akhirs+1;
 		$next_years=$thn_akhir;
-	if ($next_month<10){
-		$next_month='0'.$next_month;
 	}
 	} 
 
