@@ -1,6 +1,7 @@
 <?php
 	$base_url="http://groovy.id/beta";
 	$base_url_member="http://groovy.id/beta/member"; 
+	$email_dens="yudi.nurhandi@nusa.net.id";
 /*	$base_url="http://localhost/groovy";
 	$base_url_member="http://localhost/groovy/member"; */
 session_start();

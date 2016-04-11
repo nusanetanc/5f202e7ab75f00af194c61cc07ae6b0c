@@ -171,7 +171,7 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 							//..................
 
 							$email_subject = "[REGISTRATION] - Nusanet - ".$nama_cust; // The Subject of the email
-							$email_to = "yudi.nurhandi@nusa.net.id"; // Who the email is to
+							$email_to = $email_dens; // Who the email is to
 
 
 							$semi_rand = md5(time());
