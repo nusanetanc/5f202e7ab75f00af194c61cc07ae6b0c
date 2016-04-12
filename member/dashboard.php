@@ -13,11 +13,11 @@
 				</a>	
 			</div>	
 			<div class="col-sm-12 col-md-4 col-lg-4" >
-				<?php if($no_virtual<>"" || $no_virtual<>null || $status=="registrasi"){ ?>
+				<?php if($no_virtual<>"" || $no_virtual<>null){ ?>
 				<a href="<?php echo $base_url_member; ?>/billing"  style=" text-decoration:none">
-				<?php } elseif($status<>"unaktif"){ ?>
+				<?php } elseif($status<>"unaktif" && $no_virtual<>""){ ?>
 				<a href="<?php echo $base_url_member; ?>/billing"  style=" text-decoration:none">
-				<?php } elseif($no_virtual=="" || $no_virtual==null || $status=="unaktif"){  ?>
+				<?php } elseif($no_virtual=="" || $no_virtual==null || $status=="unaktif" || $status=="registrasi"){  ?>
 				<a href="<?php echo $base_url_member; ?>"  style=" text-decoration:none">
 				<?php } ?>
 					<div class="well well-lg" style="background-color:#FF6D20;">
