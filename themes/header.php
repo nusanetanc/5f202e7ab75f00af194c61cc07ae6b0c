@@ -775,12 +775,12 @@
                 <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h5 style="color:white;"><b>Password successfully replaced</b></h5>
+                              <h5 style="color:white;"><b>Password successfully changed</b></h5>
                     </div>
                 </div>
             </div> 
         </div>
-        <!-- /Modal Location not Valid -->                          
+        <!-- /Modal Location not Valid -->
     <!-- /Header -->
     
     <!-- Content1 -->   
