@@ -65,6 +65,7 @@ $res3 = $col_user->find(array("nama"=>$inputAssfield, "level"=>"302"));
 	  <p>Paket : '.$package_cust.'</p>
 	  <p>Tempat : '.$tempat_cust.' '.$ket_cust.' '.$alamat_cust.' '.$kota_cust.'</p>
 	  <p>No STB : '.$no_box.'</p>
+	  <p>Support : '.$inputField.'-'.$inputAssfield.'</p>
 	  <p>Maintenance : '.$inputMaintenance.'</p>
 	  <p>Tanggal Maintenance : '.$tgl_maintenance.'-'.$month_maintenance.'-'.$thn_maintenance.'</p>
 	  <br/>
@@ -83,7 +84,7 @@ $res3 = $col_user->find(array("nama"=>$inputAssfield, "level"=>"302"));
 	// mail for customer to maintenance
 		$to1 = $email_cust;
 
-		$subject1 = 'Info Pengambilan perangkat';
+		$subject1 = 'Info Maintenance';
 
 		$message1 = '
 		<html>
@@ -97,9 +98,6 @@ $res3 = $col_user->find(array("nama"=>$inputAssfield, "level"=>"302"));
 			            <p>Kami akan melakukan perbaikan langsung pada tanggal : '.$tgl_maintenance.' '.$month_maintenance.' '.$thn_maintenance.'.</p>
 			            <p>Untuk Maintenance : '.$inputMaintenance.'.</p>
 			            
-			            <div style="text-align:center;margin:30px 0 30px 0;">
-			                <a href="http://www.google.com" style="text-decoration:none;color:#fff;"><span style="background-color:#FF3D23;border:0;border-radius:5px;padding:10px 40px 10px 40px;color:#fff;font-size:17px;">Reset Password</span></a>
-			            </div>
 			            <p style="color:#888;">Terimakasih</p>
 			        </div>
 			        </div>

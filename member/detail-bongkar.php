@@ -66,7 +66,7 @@ $res3 = $col_user->find(array("nama"=>$support_Assfield, "level"=>"302"));
 	$headers  = 'MIME-Version: 1.0' . "\r\n";
 	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
-	$headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
+	$headers .= 'From: support@groovy.id' . "\r\n";
 	$headers .= 'Cc: cs@groovy.id' . "\r\n";
 
 	$kirim_email=mail($to, $subject, $message, $headers);
@@ -86,9 +86,6 @@ $res3 = $col_user->find(array("nama"=>$support_Assfield, "level"=>"302"));
 			            <p style="font-size:20px;font-weight:bold;line-height:1px">Terimakasih sudah menjadi customer Groovy</p>
 			            <p>Kami akan melakukan pengambilan perangkat pada tanggal : '.$tgl_akhir.' '.$month_akhir.' '.$thn_akhir.'.</p>
 			            
-			            <div style="text-align:center;margin:30px 0 30px 0;">
-			                <a href="http://www.google.com" style="text-decoration:none;color:#fff;"><span style="background-color:#FF3D23;border:0;border-radius:5px;padding:10px 40px 10px 40px;color:#fff;font-size:17px;">Reset Password</span></a>
-			            </div>
 			            <p style="color:#888;">Terimakasih</p>
 			        </div>
 			        </div>
