@@ -31,8 +31,98 @@ $res = $col_user->find(array("id_user"=>$id_cust,"status"=>"aktif","level"=>"0")
 $res1 = $col_package->find(array("nama"=>$package_cust));	
 						foreach ($res1 as $row1) {
 							$deskripsi_paket=$row1['deskripsi'];
-						}    
-if (isset($_POST['btnupdate'])){
+						}  
+if (isset($_POST['btnmaintenance'])){
+	$inputTanggal=$_POST['inputTanggal'];
+	$inputMaintenance=$_POST['inputMaintenance'];
+	$inputField=$_POST['inputField'];
+	$inputAssfield=$_POST['inputAssfield'];
+		$thn_maintenance = substr($inputTanggal, 0,4);
+		$bln_maintenance = substr($inputTanggal, 5,2);
+		$tgl_maintenance = substr($inputTanggal, 8,10);
+		$month_maintenance = bulan($bln_maintenance);
+$res2 = $col_user->find(array("nama"=>$inputField, "level"=>"301"));	
+						foreach ($res2 as $row2) {
+							$email_field=$row2['email'];
+						} 	
+$res3 = $col_user->find(array("nama"=>$inputAssfield, "level"=>"302"));	
+						foreach ($res3 as $row3) {
+							$email_Assfield=$row3['email'];
+						} 
+	$histori=array("hal"=>"maintenance", "tanggal_maintenance"=>$inputTanggal, "maintenance"=>$inputMaintenance, "field_engineer"=>$inputField, "ass_filed"=>$inputAssfield);
+	$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>$histori)));
+	$insert_activty = $col_history->insert(array("hal"=>"maintenance","tanggal_kerja"=>$inputTanggal, "field_engineer"=>$inputField, "ass_field"=>$inputAssfield, "status"=>"progress", "id_cust"=>$id_cust, "nama_cust"=>$nama_cust, "tempat_customer"=>$tempat_cust, "alamat_customer"=>$alamat_cust, "kota_customer"=>$kota_cust ,"keterangan_customer"=>$ket_cust, "phone_customer"=>$phone_cust, "paket"=>$package_cust, "no_box"=>$no_box));
+	// mail for billing
+	$$to = $email_field.', '.$email_Assfield;
+	$subject = 'Jobs Maintenance';
+
+	$message = '
+	<html>
+	<body>
+	  <p>Maintenance Customer : </p>
+	  <br/>
+	  <p>Customer : '.$id_cust.' / '.$nama_cust.' / '.$phone_cust.' / '.$email_cust.'</p>
+	  <p>Paket : '.$package_cust.'</p>
+	  <p>Tempat : '.$tempat_cust.' '.$ket_cust.' '.$alamat_cust.' '.$kota_cust.'</p>
+	  <p>No STB : '.$no_box.'</p>
+	  <p>Maintenance : '.$inputMaintenance.'</p>
+	  <p>Tanggal Maintenance : '.$tgl_maintenance.'-'.$month_maintenance.'-'.$thn_maintenance.'</p>
+	  <br/>
+	</body>
+	</html>
+	';
+
+	$headers  = 'MIME-Version: 1.0' . "\r\n";
+	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+	$headers .= 'From: support@groovy.id' . "\r\n";
+	$headers .= 'Cc: cs@groovy.id' . "\r\n";
+
+	$kirim_email=mail($to, $subject, $message, $headers);
+
+	// mail for customer to maintenance
+		$to1 = $email_cust;
+
+		$subject1 = 'Info Pengambilan perangkat';
+
+		$message1 = '
+		<html>
+			<body style="background-color:#ddd;padding:50px 0 50px 0;font-family:arial;font-size:15px;">
+			    <div style="margin:0 auto;max-width:500px;background-color:#eee;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
+			        <div style="background: linear-gradient(to right, #FF3D23 , #fc742f);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
+			            <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
+			        </div>
+			        <div style="padding:20px;color:#333;">
+			            <p style="font-size:20px;font-weight:bold;line-height:1px">Terimakasih sudah menjadi customer Groovy</p>
+			            <p>Kami akan melakukan perbaikan langsung pada tanggal : '.$tgl_maintenance.' '.$month_maintenance.' '.$thn_maintenance.'.</p>
+			            <p>Untuk Maintenance : '.$inputMaintenance.'.</p>
+			            
+			            <div style="text-align:center;margin:30px 0 30px 0;">
+			                <a href="http://www.google.com" style="text-decoration:none;color:#fff;"><span style="background-color:#FF3D23;border:0;border-radius:5px;padding:10px 40px 10px 40px;color:#fff;font-size:17px;">Reset Password</span></a>
+			            </div>
+			            <p style="color:#888;">Terimakasih</p>
+			        </div>
+			        </div>
+			    </div>        
+			</body>
+			</html>
+		
+		';
+
+		$headers1  = 'MIME-Version: 1.0' . "\r\n";
+		$headers1 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+		$headers1 .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
+		$headers1 .= 'Cc: cs@groovy.id' . "\r\n";
+
+		$kirim_email1=mail($to1, $subject1, $message1, $headers1);
+
+if ($update_user && $update_user1 && $insert_activty && $kirim_email && $kirim_email1){ ?>
+	<script type="" language="JavaScript">
+	document.location='<?php echo $base_url_member; ?>/detail-maintenance/<?php echo $id_cust; ?>'</script>
+<?php } } ?>
+
+<?php if (isset($_POST['btnupdate'])){
 	$input_paket=$_POST['paket_update'];
 	$histori=array("hal"=>"update", "tanggal_update"=>$date, "paket_lama"=>$package_cust, "paket_baru"=>$input_paket);
 	$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>$histori)));
@@ -52,7 +142,7 @@ if (isset($_POST['btnupdate'])){
 	  <p>Paket Baru : '.$input_paket.'</p>
 	  <p>Tempat : '.$tempat_cust.' '.$ket_cust.' '.$alamat_cust.' '.$kota_cust.'</p>
 	  <p>No STB : '.$no_box.'</p>
-	  <p>Tanggal Update : '.$date_days.' '.$date_month.' '.$date_years.'</p>
+	  <p>Tanggal Update : '.$date_days.'-'.$date_month.'-'.$date_years.'</p>
 	  <br/>
 	</body>
 	</html>
