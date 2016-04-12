@@ -39,7 +39,7 @@ if (isset($_POST['btnupdate'])){
 	$insert_activty = $col_history->insert(array("hal"=>"update","tanggal_update"=>$date, "status"=>"done", "paket_lama"=>$package_cust, "paket_baru"=>$input_paket, "id_cust"=>$id_cust, "nama_cust"=>$nama_cust, "tempat_customer"=>$tempat_cust, "alamat_customer"=>$alamat_cust, "kota_customer"=>$kota_cust ,"keterangan_customer"=>$ket_cust, "phone_customer"=>$phone_cust,"no_box"=>$no_box));
 	$update_user1 = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("paket"=>$input_paket, "move_paket"=>"", "move_harga"=>"", "move_request"=>"")));
 	// mail for billing
-	$to = "yudi.nurhandi@nusa.net.id"
+	$to = "yudi.nurhandi@nusa.net.id";
 	$subject = 'Update Paket';
 
 	$message = '
