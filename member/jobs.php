@@ -24,10 +24,14 @@
 								$res = $col_history->find(array("status"=>$_GET['status']))->sort(array("tanggal_kerja"));
 								foreach($res as $row)
 								{ 
-
-									$thn_kerja = substr($row['tanggal_kerja'], 0,4);
-									$bln_kerja = substr($row['tanggal_kerja'], 5,2);
-									$tgl_kerja = substr($row['tanggal_kerja'], 8,10);
+									if ($row['hal']=="maintenance" || $row['hal']=="pasang"  || $row['hal']=="bongkar"){
+										$tanggal_history=$row['tanggal_kerja'];
+									} elseif($row['hal']=="update"){
+										$tanggal_history=$row['tanggal_update'];
+									}
+									$thn_kerja = substr($tanggal_history, 0,4);
+									$bln_kerja = substr($tanggal_history, 5,2);
+									$tgl_kerja = substr($tanggal_history, 8,10);
 									$month_kerja = bulan($bln_kerja);
 						?>
 						  <tbody>
