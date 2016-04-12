@@ -37,7 +37,7 @@
 						  <tbody>
 						    <tr>
 						      <td><?php echo $row['id_cust'].' / '.$row['nama_cust'].' / '.$row['phone_customer']; ?></td>
-						      <td><?php echo $tgl_kerja.' '.$bln_kerja.' '.$thn_kerja; ?></td>
+						      <td><?php echo $tgl_kerja.' '.$month_kerja.' '.$thn_kerja; ?></td>
 						      <td><?php echo $row['tempat_customer'].', '.$row['keterangan_customer'].', '.$row['kota_customer']; ?></td>
 						      <td><?php echo $row['hal']; ?></td>
 						      <td><?php echo $row['field_engineer'].', '.$row['ass_field']; ?></td>
@@ -63,7 +63,7 @@
 						  <tbody>
 						    <tr>
 						      <td><?php echo $row['id_cust'].' / '.$row['nama_cust'].' / '.$row['phone_customer']; ?></td>
-						      <td><?php echo $tgl_kerja.' '.$bln_kerja.' '.$thn_kerja; ?></td>
+						      <td><?php echo $tgl_kerja.' '.$month_kerja.' '.$thn_kerja; ?></td>
 						      <td><?php echo $row['tempat_customer'].', '.$row['keterangan_customer'].', '.$row['kota_customer']; ?></td>
 						      <td><?php echo $row['hal']; ?></td>
 						      <td><?php echo $row['field_engineer'].', '.$row['ass_field']; ?></td>
