@@ -93,6 +93,14 @@ if ($update_user){
 						        <br/>
 						      </div>
 						    </div>
+						    <div class="col-lg-6">
+							    <div class="input-group">
+							      <input type="text" class="form-control" placeholder="Search for...">
+							      <span class="input-group-btn">
+							        <button class="btn btn-default" type="button">Go!</button>
+							      </span>
+							    </div><!-- /input-group -->
+							  </div><!-- /.col-lg-6 -->
 						    <div class="form-group">
 						      <label class="col-lg-2 control-label">Ganti Password</label>
 						      <div class="col-lg-10">
