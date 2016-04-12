@@ -19,14 +19,13 @@ if(isset($_SESSION['groovy_message'])){
 	</script> <?php } ?>
 <?php
 	if(isset($_POST['save'])){
-								$editNama=$_POST['editNama'];
 								$editEmail=$_POST['editEmail'];
 								$editPhone=$_POST['editPhone'];
 								$editPasswordlama=$_POST['editPasswordlama'];
 								$editPasswordbaru1=$_POST['editPasswordbaru1'];
 								$editPasswordbaru2=$_POST['editPasswordbaru2'];
 								
-if($editNama=="" || $editEmail=="" || $editPhone=="" || $editPasswordlama=="" || $editPasswordbaru1=="" || $editPasswordbaru2=="" || $editPasswordbaru1<>$editPasswordbaru2 || $password<>$editPasswordlama){	
+if($editEmail=="" || $editPhone=="" || $editPasswordlama=="" || $editPasswordbaru1=="" || $editPasswordbaru2=="" || $editPasswordbaru1<>$editPasswordbaru2 || $password<>$editPasswordlama){	
 				$_SESSION['groovy_message_status']="danger";
 				$_SESSION['groovy_message']="Edit profile data failed";
  } 
@@ -37,22 +36,14 @@ if($editNama=="" || $editEmail=="" || $editPhone=="" || $editPasswordlama=="" ||
  	if ($editPasswordlama=="" || $editPasswordbaru1=="" || $editPasswordbaru2==""){
  		$editPasswordbaru1=$password;
  	}
-
-				$lokasifile= $_FILES['editKTP']['tmp_name'];
-				$fileName = $_FILES['editKTP']['name']; 
-				$dir = "./ktp/";
-				$move = move_uploaded_file($lokasifile, "$dir".$fileName);
 	$lokasifile1= $_FILES['editFoto']['tmp_name'];
 	$fileName1 = $_FILES['editFoto']['name']; 
 	$dir1 = "./foto/";
 	$move1 = move_uploaded_file($lokasifile1, "$dir1".$fileName1);
-	if ($fileName==""){
-	$fileName = $ktp;	
-	}
 if ($fileName1==""){
 $fileName1 = $foto;	
 }
-	$update_user=$col_user->update(array("id_user"=>$id),array('$set'=>array("nama"=>$editNama,"email"=>$editEmail, "password"=>$editPasswordbaru1,"phone"=>$editPhone,"ktp"=>$fileName, "foto"=>$fileName1)));
+	$update_user=$col_user->update(array("id_user"=>$id),array('$set'=>array("nama"=>$editNama,"email"=>$editEmail, "password"=>$editPasswordbaru1,"phone"=>$editPhone,"foto"=>$fileName1)));
 if ($update_user){ 
 					$_SESSION['groovy_message_status']="success";
 					$_SESSION['groovy_message']="Edit profile data success";
