@@ -40,7 +40,7 @@ $res3 = $col_user->find(array("nama"=>$support_Assfield, "level"=>"302"));
 						} 
 	$histori=array("hal"=>"bongkar", "tanggal_bongkar"=>$tanggal_bongkar, "field_engineer"=>$support_field, "ass_filed"=>$support_Assfield);
 	$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>$histori)));
-	$insert_activty = $col_history->insert(array("hal"=>"bongkar","tanggal_kerja"=>$tanggal_bongkar, "field_engineer"=>$support_field, "ass_field"=>$support_Assfield, "status"=>"progress", "id_cust"=>$id_cust, "nama_cust"=>$nama_cust, "tempat_customer"=>$tempat_cust, "alamat_customer"=>$alamat_cust, "kota_customer"=>$kota_cust ,"keterangan_customer"=>$ket_cust, "phone_customer"=>$phone_cust, "paket"=>$package_cust, "status"=>"progress", "no_box"=>$no_box));
+	$insert_activty = $col_history->insert(array("hal"=>"bongkar","tanggal_kerja"=>$tanggal_bongkar, "field_engineer"=>$support_field, "ass_field"=>$support_Assfield, "status"=>"progress", "id_cust"=>$id_cust, "nama_cust"=>$nama_cust, "tempat_customer"=>$tempat_cust, "alamat_customer"=>$alamat_cust, "kota_customer"=>$kota_cust ,"keterangan_customer"=>$ket_cust, "phone_customer"=>$phone_cust, "paket"=>$package_cust, "no_box"=>$no_box));
 	// mail for field engineer
 	$to = $email_field.', '.$email_Assfield;
 

@@ -31,7 +31,14 @@ $res = $col_user->find(array("id_user"=>$id_cust,"status"=>"aktif","level"=>"0")
 $res1 = $col_package->find(array("nama"=>$package_cust));	
 						foreach ($res1 as $row1) {
 							$deskripsi_paket=$row1['deskripsi'];
-						}                                       	                                                	
+						}    
+if (isset($_POST['btnupdate'])){
+	$input_paket=$_POST['paket_update'];
+	$histori=array("hal"=>"update", "tanggal_update"=>$date);
+	$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>$histori)));
+	$insert_activty = $col_history->insert(array("hal"=>"update","tanggal_update"=>$date, "status"=>"done", "paket_lama"=>$package_cust, "paket_baru"=>$input_paket, "id_cust"=>$id_cust, "nama_cust"=>$nama_cust, "tempat_customer"=>$tempat_cust, "alamat_customer"=>$alamat_cust, "kota_customer"=>$kota_cust ,"keterangan_customer"=>$ket_cust, "phone_customer"=>$phone_cust,"no_box"=>$no_box));
+	$update_user1 = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("paket"=>$input_paket, "move_paket"=>"", "move_harga"=>"", "move_request"=>"")));
+}
 ?>
 <style>
     .datepicker{z-index:1151;}
@@ -83,7 +90,7 @@ $res1 = $col_package->find(array("nama"=>$package_cust));
 						    <div class="form-group">
 						      <label class="col-lg-3 control-label">Paket</label>
 						      <div class="col-lg-9">
-						        <h4>:<?php echo $package_cust; ?></h4>
+						        <h4>:<?php echo $package_cust.' - '.$deskripsi_paket; ?></h4>
 						      </div>
 						    </div>
 						    <div class="form-group">
@@ -152,7 +159,7 @@ $res1 = $col_package->find(array("nama"=>$package_cust));
 				    <div class="col-lg-9">	
 				        <div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>
 				        <br/>
-				      	<button class="btn btn-primary btn-sm" type="submit" name="save" id="save"><b>MAINTENANCE</b></button>	
+				      	<button class="btn btn-primary btn-sm" type="submit" name="btnmaintenance" id="btnmaintenance"><b>MAINTENANCE</b></button>	
 				    </div>
  				</div>
 			</div>
@@ -163,14 +170,14 @@ $res1 = $col_package->find(array("nama"=>$package_cust));
   				<div class="panel-body">
   					<br/>
 					<div class="form-group">
-				      <label for="inputDate" class="col-lg-3 control-label">Paket</label>
+				      <label for="paket_update" class="col-lg-3 control-label">Paket</label>
 				      <div class="col-lg-9">
-				        <select class="form-control" id="select">
+				        <select class="form-control" id="paket_update" name="paket_update">
 				          <option disabled="true" selected="true">Selected Package</option>
 				          <?php
 					         $res = $col_package->find();	
 							foreach ($res as $row) { if($row['nama']<>$package_cust){ ?>  
-				          <option><?php echo $row['nama'].' / '.$row['deskripsi']; ?></option>
+				          <option><?php echo $row['nama'].' - '.$row['deskripsi']; ?></option>
 				          <?php } } ?>
 				        </select>
 				        <br/>
@@ -179,7 +186,7 @@ $res1 = $col_package->find(array("nama"=>$package_cust));
 				    <div class="col-lg-9">	
 				        <div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>
 				        <br/>
-				      	<button class="btn btn-primary btn-sm" type="submit" name="save" id="save"><b>Update</b></button>	
+				      	<button class="btn btn-primary btn-sm" type="submit" name="btnupdate" id="btnupdate"><b>UPDATE</b></button>	
 				    </div>
  				</div>
 			</div>
