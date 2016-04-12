@@ -26,9 +26,7 @@ $res = $col_user->find(array("id_user"=>$id_cust,"status"=>"aktif","level"=>"0")
 						                        $alamat_cust = $row['alamat'];
 						                        $ket_cust = $row['keterangan'];
 						                        $harga_paket = $row['harga'];
-	                                            $no_virtual = $row['no_virtual'];
-	                                            $pembayaran = $row['pembayaran'];
-	                                            $proraide = $row['proraide'];
+						                        $no_box = $row['no_box'];
 	                                        }
 $res1 = $col_package->find(array("nama"=>$package_cust));	
 						foreach ($res1 as $row1) {
@@ -50,7 +48,7 @@ $res1 = $col_package->find(array("nama"=>$package_cust));
 		<div class="list-group">
 			<div class="panel" style="border:0px;">
   				<div class="panel-heading" style="background-color:#F1453C">
-    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">MAINTENANCE - UPDATE PAKET</h3>
+    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">CUSTOMER</h3>
   				</div>
   				<div class="panel-body">
   					<br/>
@@ -91,13 +89,71 @@ $res1 = $col_package->find(array("nama"=>$package_cust));
 						    <div class="form-group">
 						      <label class="col-lg-3 control-label">Lokasi</label>
 						      <div class="col-lg-9">
-						        <h4>:<?php echo $tempat_cust.', '.$keterangan_cust.', '.$kota_cust; ?></h4>
+						        <h4>:<?php echo $tempat_cust.', '.$ket_cust.', '.$kota_cust; ?></h4>
 						      </div>
-						    </div>					    						    						    						    
+						    </div>	
+						    <div class="form-group">
+						      <label class="col-lg-3 control-label">No SN Box Tv</label>
+						      <div class="col-lg-9">
+						        <h4>:<?php echo $no_box; ?></h4>
+						      </div>
+						    </div>				    						    						    						    
 						  </fieldset>	
 						</form>    		
 					</div>	
 					<?php } ?>
+ 				</div>
+			</div>
+			<div class="panel" style="border:0px;">
+  				<div class="panel-heading" style="background-color:#F1453C">
+    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">MAINTENANCE</h3>
+  				</div>
+  				<div class="panel-body">
+  					<br/>
+					<div class="form-group">
+				      <label for="inputDate" class="col-lg-3 control-label">Tanggal Maintenance</label>
+				      <div class="col-lg-9">
+				        <input type="text" class="form-control" id="inputTanggal" name="inputTanggal" placeholder="Date" readonly>
+				        <br/>
+				      </div>
+				    </div>	
+				  	<div class="form-group">
+				      <label for="inputDate" class="col-lg-3 control-label">Maintenance</label>
+				      <div class="col-lg-9">
+				        <input type="text" class="form-control" id="inputMaintenance" name="inputMaintenance">
+				        <br/>
+				      </div>
+				    </div>
+				    <div class="form-group">
+				      <label for="inputField" class="col-lg-3 control-label">Support</label>
+				      <div class="col-lg-4">
+				            <select class="form-control" id="inputField" name="inputField">
+					          <option disabled selected>Select Field Engineer</option>
+					          <?php
+					          $res = $col_user->find(array("level"=>"301"));	
+								foreach ($res as $row) {  ?>  
+							  <option><?php echo $row['nama']; ?></option>	 
+							  <?php } ?>
+					        </select>
+					        <br/>
+				      </div>
+				      <div class="col-lg-4">
+				            <select class="form-control" id="inputAssfield" name="inputAssfield">
+					          <option disabled selected>Select Ass Field Engineer</option>
+					          <?php
+					          $res = $col_user->find(array("level"=>"302"));	
+								foreach ($res as $row) {  ?>  
+							  <option><?php echo $row['nama']; ?></option>	 
+							  <?php } ?>
+					        </select>
+					        <br/>
+				      </div>
+				    </div>	
+				    <div class="col-lg-9">	
+				        <div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>
+				        <br/>
+				      	<button class="btn btn-success" type="submit" name="save" id="save"><b>MAINTENANCE</b></button>	
+				    </div>
  				</div>
 			</div>
 		</div>
