@@ -13,9 +13,9 @@
 				</a>	
 			</div>	
 			<div class="col-sm-12 col-md-4 col-lg-4" >
-				<?php if($no_virtual=="" || $no_virtual==null){ ?>
+				<?php if($no_virtual<>"" || $no_virtual<>null){ ?>
 				<a href="<?php echo $base_url_member; ?>/billing"  style=" text-decoration:none">
-				<?php } elseif($no_virtual<>"" || $no_virtual<>null){  ?>
+				<?php } elseif($no_virtual=="" || $no_virtual==null){  ?>
 				<a href="<?php echo $base_url_member; ?>"  style=" text-decoration:none">
 				<?php } ?>
 					<div class="well well-lg" style="background-color:#FF6D20;">
