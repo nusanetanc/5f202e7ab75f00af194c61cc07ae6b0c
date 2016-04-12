@@ -88,26 +88,12 @@ if ($update_user){
 							</div>
 									  <fieldset>
 						    <div class="form-group">
-						      <label for="editNama" class="col-lg-2 control-label">Nama Lengkap</label>
-						      <div class="col-sm-10">
-						        <input type="text" class="form-control" id="editNama" name="editNama" value="<?php echo $nama; ?>">
-						      	<br/>
-						      </div>
-						    </div>
-						    <div class="form-group">
 						      <label for="editEmail" class="col-lg-2 control-label">Email</label>
 						      <div class="col-lg-10">
 						        <input type="email" class="form-control" id="editEmail" name="editEmail" value="<?php echo $email; ?>">
 						        <br/>
 						      </div>
 						    </div>	
-						    <div class="form-group">
-						      <label class="col-lg-2 control-label">Customer ID</label>
-						      <div class="col-lg-10">
-						        <h4><?php echo $id; ?></h4>
-						        <br/>
-						      </div>
-						    </div>
 						    <div class="form-group">
 						      <label for="editPhone" class="col-lg-2 control-label">Phone Number</label>
 						      <div class="col-lg-10">
@@ -116,7 +102,7 @@ if ($update_user){
 						      </div>
 						    </div>
 						    <div class="form-group">
-						      <label class="col-lg-2 control-label">Password</label>
+						      <label class="col-lg-2 control-label">Ganti Password</label>
 						      <div class="col-lg-10">
 						        <input type="password" class="form-control" id="editPasswordlama" name="editPasswordlama" placeholder="Masukan Password Lama Anda">
 						        <br/>
@@ -126,13 +112,6 @@ if ($update_user){
 						        <br/>
 						      </div>
 						    </div>							    
-						    <div class="form-group">
-						      <label for="editKTP" class="col-lg-2 control-label">KTP</label>
-						      <div class="col-lg-10">
-						        <input type="file" id="editKTP" name="editKTP">
-						        <br/>
-						      </div>
-						    </div>
 						    <br/>
 						    <div class="form-group">
 						      <label for="editTempat" class="col-lg-2 control-label">Tempat Pemasangan</label>
