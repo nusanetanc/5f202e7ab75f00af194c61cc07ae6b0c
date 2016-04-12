@@ -254,10 +254,11 @@
             <div class="modal-dialog">
                 <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
                     <div class="modal-body">
-                        <h4 class="modal-title" style="color:#fff;text-align:center;padding:8px 0 5px 0"><b>Activation</b></h4><br/>
+                        <h4 class="modal-title" style="color:#fff;text-align:center;padding:8px 0 5px 0"><b>Aktivasi Akun</b></h4><br/>
                         <form style="form-group" method="post">
                             <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Masukan Password Anda" type="password" class="form-control" name="activepassword1" id="activepassword1">
                             <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Masukan Lagi Password Anda" type="password" class="form-control" name="activepassword2" id="activepassword2">
+                            <span style="color:#fff;">Upload foto/scan KTP (Kartu Tanda Penduduk)</span>
                             <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" type="file" class="form-control" name="regisktp" id="regisktp">                             
                             <?php
                             if (isset($_POST['active'])){
@@ -293,7 +294,7 @@
                                 }
                             }
                             ?>  
-                            <center><input name="active" id="active" type="submit" style="background-color:#fff;border:0px;color:#333;height:40px;padding:0 40px 0 40px;margin-top:15px;border-radius:3px;font-weight:bold;" value="ACTIVE"/></center>                      
+                            <center><input name="active" id="active" type="submit" style="background-color:#fff;border:0px;color:#333;height:40px;padding:0 40px 0 40px;margin-top:15px;border-radius:3px;font-weight:bold;" value="AKTIFKAN"/></center>                      
                         </form>
                     </div>
                 </div>
