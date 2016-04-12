@@ -94,50 +94,6 @@ $res1 = $col_package->find(array("nama"=>$package_cust));
 						        <h4>:<?php echo $tempat_cust.', '.$keterangan_cust.', '.$kota_cust; ?></h4>
 						      </div>
 						    </div>					    						    						    						    
-						    <div class="form-group">
-						      <label for="inputDate" class="col-lg-3 control-label">Tanggal Pemasangan</label>
-						      <div class="col-lg-9">
-						        <input type="text" class="form-control" id="inputTanggal" name="inputTanggal" placeholder="Date" readonly>
-						        <br/>
-						      </div>
-						    </div>	
-						  	<div class="form-group">
-						      <label for="inputDate" class="col-lg-3 control-label">No Kode Box Tv</label>
-						      <div class="col-lg-9">
-						        <input type="text" class="form-control" id="inputKodebox" name="inputKodebox">
-						        <br/>
-						      </div>
-						    </div>
-						    <div class="form-group">
-						      <label for="inputField" class="col-lg-3 control-label">Support</label>
-						      <div class="col-lg-4">
-						            <select class="form-control" id="inputField" name="inputField">
-							          <option disabled selected>Select Field Engineer</option>
-							          <?php
-							          $res = $col_user->find(array("level"=>"301"));	
-										foreach ($res as $row) {  ?>  
-									  <option><?php echo $row['nama']; ?></option>	 
-									  <?php } ?>
-							        </select>
-							        <br/>
-						      </div>
-						      <div class="col-lg-4">
-						            <select class="form-control" id="inputAssfield" name="inputAssfield">
-							          <option disabled selected>Select Ass Field Engineer</option>
-							          <?php
-							          $res = $col_user->find(array("level"=>"302"));	
-										foreach ($res as $row) {  ?>  
-									  <option><?php echo $row['nama']; ?></option>	 
-									  <?php } ?>
-							        </select>
-							        <br/>
-						      </div>
-						    </div>	
-						    <div class="col-lg-9">	
-						        <div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>
-						        <br/>
-						      	<button class="btn btn-success" type="submit" name="save" id="save"><b>PASANG</b></button>	
-						    </div>
 						  </fieldset>	
 						</form>    		
 					</div>	
@@ -147,4 +103,4 @@ $res1 = $col_package->find(array("nama"=>$package_cust));
 		</div>
 	</div>	
 </section>
-</form>
+</form> 
