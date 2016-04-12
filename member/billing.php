@@ -41,7 +41,7 @@ if ($level=="0"){
  										<td><?php echo $harga; ?></td>
 									  </tbody>
 								</table> 
-						<p>Proraide : <strong><?php echo $proraide; ?></strong>.</p><br/>
+						<p>Proraide : <strong><?php echo $prorate; ?></strong>.</p><br/>
 						<?php 
 							$total_harga = $harga-$proraide;
 						?>

@@ -46,7 +46,12 @@ if (isset($_POST['save'])){
 		$next_month=$date_month+1;
 		$next_years=$date_years;
 	} 
+	if($next_month<10){
+		$next_month = '0'.$next_month;
+	}
+	if($nama_jobs=="pasang"){
 	$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("tanggal_aktivasi"=>$date, "status"=>"aktif", "tanggal_akhir"=>$next_years.'/'.$next_month.'/01'))); 
+}
 	$update_jobs = $col_history->update(array("id_cust"=>$id_cust, "status"=>$status_jobs, "hal"=>$nama_jobs),array('$set'=>array("catatan"=>$note, "status"=>"done", "tanggal_selesai"=>$date)));
 				// mail for supevisior teknik
 				$subject = 'Laporan Job Support - '.$nama_jobs.' - '.$nama.' - Coba Sistem';
