@@ -156,6 +156,33 @@ $res1 = $col_package->find(array("nama"=>$package_cust));
 				    </div>
  				</div>
 			</div>
+			<div class="panel" style="border:0px;">
+  				<div class="panel-heading" style="background-color:#F1453C">
+    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">UPDATE</h3>
+  				</div>
+  				<div class="panel-body">
+  					<br/>
+					<div class="form-group">
+				      <label for="inputDate" class="col-lg-3 control-label">Paket</label>
+				      <div class="col-lg-9">
+				        <select class="form-control" id="select">
+				          <option disabled="true" selected="true">Selected Package</option>
+				          <?php
+					         $res = $col_package->find();	
+							foreach ($res as $row) { if($row['nama']<>$package_cust){ ?>  
+				          <option><?php echo $row['nama'].' / '.$row['deskripsi']; ?></option>
+				          <?php } } ?>
+				        </select>
+				        <br/>
+				      </div>
+				    </div>	
+				    <div class="col-lg-9">	
+				        <div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>
+				        <br/>
+				      	<button class="btn btn-primary btn-sm" type="submit" name="save" id="save"><b>Update</b></button>	
+				    </div>
+ 				</div>
+			</div>
 		</div>
 	</div>	
 </section>
