@@ -38,8 +38,37 @@ if (isset($_POST['btnupdate'])){
 	$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>$histori)));
 	$insert_activty = $col_history->insert(array("hal"=>"update","tanggal_update"=>$date, "status"=>"done", "paket_lama"=>$package_cust, "paket_baru"=>$input_paket, "id_cust"=>$id_cust, "nama_cust"=>$nama_cust, "tempat_customer"=>$tempat_cust, "alamat_customer"=>$alamat_cust, "kota_customer"=>$kota_cust ,"keterangan_customer"=>$ket_cust, "phone_customer"=>$phone_cust,"no_box"=>$no_box));
 	$update_user1 = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("paket"=>$input_paket, "move_paket"=>"", "move_harga"=>"", "move_request"=>"")));
-}
-?>
+	// mail for billing
+	$to = "yudi.nurhandi@nusa.net.id"
+	$subject = 'Update Paket';
+
+	$message = '
+	<html>
+	<body>
+	  <p>Paket Telah Di Update : </p>
+	  <br/>
+	  <p>Customer : '.$id_cust.' / '.$nama_cust.' / '.$phone_cust.' / '.$email_cust.'</p>
+	  <p>Paket Lama : '.$package_cust.'</p>
+	  <p>Paket Baru : '.$input_paket.'</p>
+	  <p>Tempat : '.$tempat_cust.' '.$ket_cust.' '.$alamat_cust.' '.$kota_cust.'</p>
+	  <p>No STB : '.$no_box.'</p>
+	  <p>Tanggal Update : '.$date_days.' '.$date_month.' '.$date_years.'</p>
+	  <br/>
+	</body>
+	</html>
+	';
+
+	$headers  = 'MIME-Version: 1.0' . "\r\n";
+	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+	$headers .= 'From: support@groovy.id' . "\r\n";
+	$headers .= 'Cc: cs@groovy.id' . "\r\n";
+
+	$kirim_email=mail($to, $subject, $message, $headers);
+if ($update_user && $update_user1 && $insert_activty && $kirim_email){ ?>
+	<script type="" language="JavaScript">
+	document.location='<?php echo $base_url_member; ?>detail-maintenance/<?php echo $id_cust; ?>'</script>
+<?php } } ?>
 <style>
     .datepicker{z-index:1151;}
 </style>
