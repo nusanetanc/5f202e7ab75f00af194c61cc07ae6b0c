@@ -116,30 +116,20 @@ foreach($res as $row)
   					<div class="col-sm-12">
 						<?php
 						$res = $col_user->findOne(array("id_user"=>$id, "level"=>"0"));	
-						foreach ($res['upgrade_paket'] as $res_paket => $row_paket) {
-								$tanggal = $row_paket['tanggal_request'];
+						foreach ($res['histori'] as $res_paket => $row_paket) {
+							if($row_paket['hal']=="update"){
+								$tanggal = $row_paket['tanggal_update'];
 							  	$thn = substr($tanggal, 0,4);
 							    $bln = substr($tanggal, 5,2);
 								$tgl = substr($tanggal, 8,10);
 							    $month = bulan($bln);
-								    $tanggal1 = $row_paket['tanggal_aktif'];
-								  	$thn1 = substr($tanggal1, 0,4);
-								    $bln1 = substr($tanggal1, 5,2);
-									$tgl1 = substr($tanggal1, 8,10);
-								    $month1 = bulan($bln1);
-								$tanggal2 = $row_paket['tanggal_henti'];
-							  	$thn2 = substr($tanggal1, 0,4);
-							    $bln2 = substr($tanggal1, 5,2);
-								$tgl2 = substr($tanggal1, 8,10);
-							    $month2 = bulan($bln2);
 						?>
 							<li class="list-group-item" style="border:2;">
-								Tanggal Permintaan : <b><?php echo $tgl.' '.$month.' '.$thn; ?></b><br/>
-								Nama/Harga Paket : <b><?php echo $row_paket['paket']; ?></b><br/>
-						    	Tanggal Aktif : <b><?php echo $tgl1.' '.$month1.' '.$thn1; ?></b><br/>
-						    	Tanggal Berhenti : <b><?php echo $tgl2.' '.$month2.' '.$thn2; ?></b>
+								Tanggal Pindah Paket : <b><?php echo $tgl.' '.$month.' '.$thn; ?></b><br/>
+								Paket Lama : <b><?php echo $row_paket['paket_lama']; ?></b><br/>
+						    	Paket Baru : <b><?php echo $row_paket['paket_baru']; ?></b><br/>
 							</li>	
-						<?php } ?>					
+						<?php } } ?>					
 					</div>	
  				</div>
 			</div>
