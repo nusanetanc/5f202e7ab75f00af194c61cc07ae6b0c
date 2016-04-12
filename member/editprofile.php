@@ -101,14 +101,6 @@ if ($update_user){
 						        <br/>
 						        <input type="password" class="form-control" id="editPasswordbaru2" name="editPasswordbaru2" placeholder="Masukan Lagi Password Baru Anda">
 						        <br/>
-						      </div>
-						    </div>							    
-						    <br/>
-						    <div class="form-group">
-						      <label for="editTempat" class="col-lg-2 control-label">Tempat Pemasangan</label>
-						      <div class="col-lg-9">
-						      	<h5><?php echo $tempat.', '.$keterangan.', '.$kota; ?></h5>
-						       	<br/>
 						        <div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>	
 						        <br/>
 						        <button class="btn btn-default" type="submit" name="save" id="save">Save Change</button>
