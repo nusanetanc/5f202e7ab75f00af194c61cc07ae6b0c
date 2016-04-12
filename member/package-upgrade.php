@@ -1,9 +1,3 @@
-<?php
-//tes 
-	if($no_virtual=="" || $no_virtual==null){ ?>
-		<script type="" language="JavaScript">
-		document.location='<?php echo $base_url_member; ?>'</script>
-	<?php } ?>
 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 <?php
 	$date = date("Y/m/d"); 
