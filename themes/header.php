@@ -258,7 +258,7 @@
                         <form style="form-group" method="post">
                             <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Masukan Password Anda" type="password" class="form-control" name="activepassword1" id="activepassword1">
                             <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Masukan Lagi Password Anda" type="password" class="form-control" name="activepassword2" id="activepassword2">
-                            <span style="color:#fff;">Upload foto/scan KTP (Kartu Tanda Penduduk)</span>
+                            <span style="color:#fff;font-weight:bold">Upload foto/scan KTP (Kartu Tanda Penduduk)<br/></span>
                             <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" type="file" class="form-control" name="regisktp" id="regisktp">                             
                             <?php
                             if (isset($_POST['active'])){
