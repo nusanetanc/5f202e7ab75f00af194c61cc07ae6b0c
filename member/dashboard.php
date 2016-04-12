@@ -13,7 +13,7 @@
 				</a>	
 			</div>	
 			<div class="col-sm-12 col-md-4 col-lg-4" >
-				<?php if($no_virtual<>"" || $no_virtual<>null || $status<>"unaktif"){ ?>
+				<?php if($no_virtual<>"" || $no_virtual<>null || $status=="aktif" || $status=="registrasi"){ ?>
 				<a href="<?php echo $base_url_member; ?>/billing"  style=" text-decoration:none">
 				<?php } elseif($no_virtual=="" || $no_virtual==null || $status=="unaktif"){  ?>
 				<a href="<?php echo $base_url_member; ?>"  style=" text-decoration:none">
