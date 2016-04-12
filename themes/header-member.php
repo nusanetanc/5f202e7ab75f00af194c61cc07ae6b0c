@@ -156,21 +156,20 @@ if($level=="501"){
   <div class="modal-dialog">
     <div class="modal-content">
      <form style="form-group" method="post">
-        <?php /*
-        if (isset($_POST['terminationsend'])) { 
+        <?php
+        if (isset($_POST['activeback'])) { 
                     // mail for billing dan cs
-        $subject = 'Permintaan Berhenti Berlanganan';
+        $subject = 'Permintaan Berlanganan Kembali';
         $message = '
         <html>
         <body>
-          <p>Permintaan berhenti berlangganan, berikut data customernya : </p>
+          <p>Permintaan berlangganan Kembali, berikut data customernya : </p>
           <br/>
           <p>ID Customer : '.$id.'</p>
           <p>Nama : '.$nama.'</p>
           <p>Tempat : '.$tempat.', '.$ket.', '.$kota.'</p>
           <p>Tanggal Permintaan : '.date("d-m-Y").'</p>
-          <p>Paket : '.$paket.'</p>
-          <p>Alasan Penutupan : '.$_POST['selectalasantermination'].'</p>
+          <p>Paket : '.$_POST['selectpackageaktiv'].'</p>
           <br/>
         </body>
         </html>
@@ -182,16 +181,19 @@ if($level=="501"){
       $res = $col_user->find(array("level"=>"2"));
             foreach($res as $row)
                       {   
-        $emailpasang=mail($row['email'], $subject, $message, $headers); 
-      } } */
-          ?>
+        $emailaktivasi=mail($row['email'], $subject, $message, $headers); 
+      } $update_user = $col_user->update(array("id_user"=>$id, "level"=>"0"), array('$set'=>array("status"=>"registrasi")));
+if($emailaktivasi && $update_user){ ?>
+      <script type="" language="JavaScript">
+    document.location='<?php echo $base_url_member; ?>'</script>
+<?php } } ?>
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title">Permintaan Berlanganan Kembali</h4>
       </div>
       <div class="modal-body">
         <p>
-        <select class="form-control" name="selectalasantermination" id="selectalasantermination">
+        <select class="form-control" name="selectpackageaktiv" id="selectpackageaktiv">
           <option disabled="true" selected="true">Selected Package</option>
             <?php
                 $res = $col_package->find();
@@ -206,7 +208,7 @@ if($level=="501"){
       </div>
       <div class="modal-footer">
         <input type="submit" class="btn btn-default" data-dismiss="modal" value="Batal">
-        <input type="submit" class="btn btn-primary" value="Kirim" name="terminationsend" id="terminationsend">
+        <input type="submit" class="btn btn-primary" value="Kirim" name="activeback" id="terminationsend">
       </div>
     </div>
     </form>
