@@ -551,7 +551,8 @@
                                                                                                 <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
                                                                                             </div>
                                                                                             <div style="padding:20px;color:#333;">
-                                                                                                <p style="font-size:20px;font-weight:bold;line-height:1px">Hai John Doe,</p>
+                                                                                                <p style="font-size:20px;font-weight:bold;line-height:1px">Hai '.$name.',</p>
+                                                                                                
                                                                                                 <p>Terimakasih telah mendaftarkan akun Groovy. Berikut adalah rincian akun yang anda daftarkan.</p>
                                                                                                 <table style="margin-top:20px;margin-bottom:20px;border:0px solid #ccc;color:#333;background-color:#fff;#ddd;width:100%;font-size:14px;">
                                                                                                     <tr style="border:1px solid #bbb;">
