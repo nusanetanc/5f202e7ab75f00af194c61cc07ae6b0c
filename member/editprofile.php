@@ -82,6 +82,7 @@ if ($update_user){
 						      <label for="editEmail" class="col-lg-2 control-label">Email</label>
 						      <div class="col-lg-10">
 						        <input type="email" class="form-control" id="editEmail" name="editEmail" value="<?php echo $email; ?>">
+						        <input type="submit" class="btn btn-default" type="submit" name="save" id="save" value="Save Change">
 						        <br/>
 						      </div>
 						    </div>	
@@ -103,7 +104,7 @@ if ($update_user){
 						        <br/>
 						        <div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>	
 						        <br/>
-						        <button class="btn btn-default" type="submit" name="save" id="save">Save Change</button>
+						        <input type="submit" class="btn btn-default" type="submit" name="save" id="save" value="Save Change">
 						      </div>
 						    </div>			    						    						    						    						    						    
 						  </fieldset>	
