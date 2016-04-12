@@ -552,6 +552,7 @@
                                                                                             </div>
                                                                                             <div style="padding:20px;color:#333;">
                                                                                                 <p style="font-size:20px;font-weight:bold;line-height:1px">Hai '.$name.',</p>
+                                                                                                
                                                                                                 <p>Terimakasih telah mendaftarkan akun Groovy. Berikut adalah rincian akun yang anda daftarkan.</p>
                                                                                                 <table style="margin-top:20px;margin-bottom:20px;border:0px solid #ccc;color:#333;background-color:#fff;#ddd;width:100%;font-size:14px;">
                                                                                                     <tr style="border:1px solid #bbb;">
