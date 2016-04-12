@@ -152,7 +152,7 @@ $res1 = $col_package->find(array("nama"=>$package_cust));
 				    <div class="col-lg-9">	
 				        <div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>
 				        <br/>
-				      	<button class="btn btn-success" type="submit" name="save" id="save"><b>MAINTENANCE</b></button>	
+				      	<button class="btn btn-primary btn-sm" type="submit" name="save" id="save"><b>MAINTENANCE</b></button>	
 				    </div>
  				</div>
 			</div>
