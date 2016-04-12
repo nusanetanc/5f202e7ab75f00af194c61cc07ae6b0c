@@ -67,7 +67,7 @@ if (isset($_POST['btnupdate'])){
 	$kirim_email=mail($to, $subject, $message, $headers);
 if ($update_user && $update_user1 && $insert_activty && $kirim_email){ ?>
 	<script type="" language="JavaScript">
-	document.location='<?php echo $base_url_member; ?>detail-maintenance/<?php echo $id_cust; ?>'</script>
+	document.location='<?php echo $base_url_member; ?>/detail-maintenance/<?php echo $id_cust; ?>'</script>
 <?php } } ?>
 <style>
     .datepicker{z-index:1151;}
