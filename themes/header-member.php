@@ -182,7 +182,7 @@ if($level=="501"){
             foreach($res as $row)
                       {   
         $emailaktivasi=mail($row['email'], $subject, $message, $headers); 
-      } $update_user = $col_user->update(array("id_user"=>$id, "level"=>"0"), array('$set'=>array("status"=>"registrasi")));
+      } $update_user = $col_user->update(array("id_user"=>$id, "level"=>"0"), array('$set'=>array("status"=>"registrasi", "paket"=>$_POST['selectpackageaktiv'])));
 if($emailaktivasi && $update_user){ ?>
       <script type="" language="JavaScript">
     document.location='<?php echo $base_url_member; ?>'</script>
