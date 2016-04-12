@@ -278,11 +278,11 @@
 								  	<?php
 										$res = $col_history->find(array("status"=>"done"));
 										$length = $res->count();
-														  { if($res['hal']<>"update") {
+														  { 
 
 								   ?>
 								  	<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
-								  	<?php } } ?>
+								  	<?php } ?>
 								</a>  	
 							</div>  	
 					 	</div>
