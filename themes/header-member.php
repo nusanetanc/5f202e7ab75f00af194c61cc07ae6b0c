@@ -83,8 +83,10 @@ if($level=="501"){
           </li>
             <ul class="dropdown-menu">
               <li><a href="<?php echo $base_url_member; ?>/edit-profile">Edit Profile</a></li>
-              <?php if ($level=="0"){ ?>
+              <?php if ($level=="0" && $status=="aktif"){ ?>
               <li><a href="#" data-toggle="modal" data-target="#confrimtermination">Berhenti Berlanganan</a></li>
+              <?php } elseif($level=="0" && $status=="unaktif"){ ?>
+              <li><a href="#" data-toggle="modal" data-target="#confrimtermination">Berlangganan kembali</a></li>
               <?php } ?>
               <li><a href="<?php echo $base_url_member; ?>/logout">Logout</a></li>
             </ul>
