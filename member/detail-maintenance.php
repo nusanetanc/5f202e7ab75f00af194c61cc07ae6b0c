@@ -53,7 +53,7 @@ $res3 = $col_user->find(array("nama"=>$inputAssfield, "level"=>"302"));
 	$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>$histori)));
 	$insert_activty = $col_history->insert(array("hal"=>"maintenance","tanggal_kerja"=>$inputTanggal, "field_engineer"=>$inputField, "ass_field"=>$inputAssfield, "status"=>"progress", "id_cust"=>$id_cust, "nama_cust"=>$nama_cust, "tempat_customer"=>$tempat_cust, "alamat_customer"=>$alamat_cust, "kota_customer"=>$kota_cust ,"keterangan_customer"=>$ket_cust, "phone_customer"=>$phone_cust, "paket"=>$package_cust, "no_box"=>$no_box));
 	// mail for billing
-	$$to = $email_field.', '.$email_Assfield;
+	$to = $email_field.', '.$email_Assfield;
 	$subject = 'Jobs Maintenance';
 
 	$message = '
