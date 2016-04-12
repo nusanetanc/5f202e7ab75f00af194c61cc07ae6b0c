@@ -39,7 +39,7 @@
                     <a href="http://www.facebook.com/groovyplay" target="_blank"><i class="fa fa-facebook-square fa-3x footer-facebook"></i></a>&nbsp;
                     <a href="http://www.instagram.com/groovy_play" target="_blank"><i class="fa fa-instagram fa-3x footer-instagram"></i></a>&nbsp;
                     <a href="http://www.twitter.com/groovy_play" target="_blank"><i class="fa fa-twitter-square fa-3x footer-twitter"></i></a>&nbsp;
-                    <a href="http://www.youtube.com/groovy_play" target="_blank"><i class="fa fa-youtube-square fa-3x footer-youtube"></i></a>
+                    <a href="https://www.youtube.com/channel/UCHeXAn6Z0ynGxFakYVvQSLA" target="_blank"><i class="fa fa-youtube-square fa-3x footer-youtube"></i></a>
                 </p>
             </div>
         </div>
