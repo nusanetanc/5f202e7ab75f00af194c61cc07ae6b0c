@@ -202,11 +202,11 @@ if ($update_user && $update_user1 && $insert_activty && $kirim_email){ ?>
 				      <label for="paket_update" class="col-lg-3 control-label">Paket</label>
 				      <div class="col-lg-9">
 				        <select class="form-control" id="paket_update" name="paket_update">
-				          <option disabled="true" selected="true">Selected Package</option>
+				          <option disabled="true" selected="true" value="">Selected Package</option>
 				          <?php
 					         $res = $col_package->find();	
 							foreach ($res as $row) { if($row['nama']<>$package_cust){ ?>  
-				          <option><?php echo $row['nama'].' - '.$row['deskripsi']; ?></option>
+				          <option value="<?php echo $row['nama']; ?>"><?php echo $row['nama'].' - '.$row['deskripsi']; ?></option>
 				          <?php } } ?>
 				        </select>
 				        <br/>
