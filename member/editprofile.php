@@ -18,7 +18,7 @@
 								$_SESSION["fotoedit"]="Profile Photo Changed";
   							} if($_POST['editEmail']<>"" || $_POST['editEmail']<>$email){
   								$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("email"=>$_POST['editEmail'])));
-  								$_SESSION["emailedit"]="Email Changed";	
+  								//$_SESSION["emailedit"]="Email Changed";	
   							} if($_POST['editPhone']<>"" || $_POST['editPhone']<>$notelp){
   								$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("phone"=>$_POST['editPhone'])));	
   								$update_user=$col_history->update(array("id_cust"=>$id),array('$set'=>array("phone_customer"=>$_POST['editPhone'])));
@@ -26,8 +26,10 @@
   							} if($_POST['editPasswordlama']<>"" && $_POST['editPasswordbaru1']<>"" && $_POST['editPasswordbaru2']<>"" && $_POST['editPasswordbaru1']==$_POST['editPasswordbaru2'] && $_POST['editPasswordlama']==$password && $_POST['editPasswordlama']<>$_POST['editPasswordbaru1']){
   								$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("password"=>$_POST['editPasswordbaru1'])));
   								$_SESSION["passwordedit"]="Password Changed";
-  							}
   							} ?>
+  								<script type="" language="JavaScript">
+								document.location='<?php echo $base_url_member; ?>/edit-profile'</script>
+  						<?php } ?>
   					<div class="col-sm-3">
   						<?php if ($foto=="" || $foto==null){ ?>
   						<img class="profile-img-card profile-img-card-xlrg" src="../img/default-avatar-groovy2.png"/>
