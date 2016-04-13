@@ -15,7 +15,7 @@
 							if($fileName<>"" || $fileName<>null){
 								$move = move_uploaded_file($lokasifile, "$dir".$fileName);
 								$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("foto"=>$fileName)));
-  							} if(!(empty($_POST['editEmail'])) || $_POST['email']<>$email){
+  							} if(isset($_POST['editEmail']) || $_POST['email']<>$email){
   								$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("email"=>$_POST['editEmail'])));	
   							}
   							} ?>
