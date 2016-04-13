@@ -77,17 +77,14 @@ if ($update_user){
 							  	<button type="button" class="close" data-dismiss="alert">x</button>
 							  	<p><?php echo $groovy_message; ?></p>
 							</div>
-							<fieldset>
+									  <fieldset>
 						    <div class="form-group">
 						      <label for="editEmail" class="col-lg-2 control-label">Email</label>
 						      <div class="col-lg-10">
-							    <div class="input-group">
-							      <input name="editEmail" id="editEmail" type="text" class="form-control" value="<?php echo $email; ?>" placeholder="Masukan Email">
-							      <span class="input-group-btn">
-							        <button class="btn btn-default" type="button">Go!</button>
-							      </span>
-							    </div><!-- /input-group -->
-							  </div><!-- /.col-lg-6 -->
+						        <input type="email" class="form-control" id="editEmail" name="editEmail" value="<?php echo $email; ?>">
+						        <input type="submit" class="btn btn-default" type="submit" name="save" id="save" value="Save Change">
+						        <br/>
+						      </div>
 						    </div>	
 						    <div class="form-group">
 						      <label for="editPhone" class="col-lg-2 control-label">Phone Number</label>
