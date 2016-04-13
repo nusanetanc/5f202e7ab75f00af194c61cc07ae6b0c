@@ -45,7 +45,7 @@
 						      <div class="col-lg-10">
 						        <input type="email" class="form-control" id="editEmail" name="editEmail" value="<?php echo $email; ?>">
 						        <?php if(isset($_SESSION['emailedit'])){ ?>
-						        <h6 class="text-primary"><strong><?php echo $_SESSION['emailedit']; ?></strong></h6>
+						        	<h6 class="text-primary"><strong><?php echo $_SESSION['emailedit']; ?></strong></h6>
 						        <?php unset($_SESSION["emailedit"]); } ?>
 						        <br/>
 						      </div>
@@ -54,6 +54,9 @@
 						      <label for="editPhone" class="col-lg-2 control-label">Phone Number</label>
 						      <div class="col-lg-10">
 						        <input type="text" class="form-control" id="editPhone" name="editPhone" value="<?php echo $notelp; ?>">
+						        <?php if(isset($_SESSION['phoneedit'])){ ?>
+						        	<h6 class="text-primary"><strong><?php echo $_SESSION['phoneedit']; ?></strong></h6>
+						        <?php unset($_SESSION["phoneedit"]); } ?>
 						        <br/>
 						      </div>
 						    </div>
@@ -66,12 +69,14 @@
 						        <br/>
 						        <input type="password" class="form-control" id="editPasswordbaru2" name="editPasswordbaru2" placeholder="Masukan Lagi Password Baru Anda">
 						        <br/>
+						        <?php if(isset($_SESSION['passwordedit'])){ ?>
+						        	<h6 class="text-primary"><strong><?php echo $_SESSION['passwordedit']; ?></strong></h6>
+						        	<br/>
+						        <?php unset($_SESSION["passwordedit"]); } ?>
 						        <div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>	
 						        <br/>
 						        <input type="submit" class="btn btn-default" type="submit" name="save" id="save" value="Save Change">
 						        <br/>
-						        <h6 class="text-primary"><strong>email edited</strong></h6>
-						        <h6 class="text-primary"><strong>password edited</strong></h6>
 						      </div>
 						    </div>			    						    						    						    						    						    
 						  </fieldset>	
