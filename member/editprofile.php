@@ -12,11 +12,10 @@
   								$lokasifile= $_FILES['editFoto']['tmp_name'];
 								$fileName = $_FILES['editFoto']['name']; 
 								$dir = "foto/";
-								$editEmail=$_POST['editEmail'];
 							if($fileName<>"" || $fileName<>null){
 								$move = move_uploaded_file($lokasifile, "$dir".$fileName);
 								$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("foto"=>$fileName)));
-  							} if(!empty($editEmail) || $editEmail<>$email){
+  							} if(isset($_POST['editEmail'] && $_POST['editEmail']<>"")){
   								$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("email"=>$_POST['editEmail'])));	
   							}
   							} ?>
