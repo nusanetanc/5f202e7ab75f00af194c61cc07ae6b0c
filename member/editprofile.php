@@ -81,10 +81,13 @@ if ($update_user){
 						    <div class="form-group">
 						      <label for="editEmail" class="col-lg-2 control-label">Email</label>
 						      <div class="col-lg-10">
-						        <input type="email" class="form-control" id="editEmail" name="editEmail" value="<?php echo $email; ?>">
-						        <input type="submit" class="btn btn-default" type="submit" name="save" id="save" value="Save Change">
-						        <br/>
-						      </div>
+							    <div class="input-group">
+							      <input type="text" class="form-control" placeholder="Search for...">
+							      <span class="input-group-btn">
+							        <button class="btn btn-default" type="button">Go!</button>
+							      </span>
+							    </div><!-- /input-group -->
+							  </div><!-- /.col-lg-6 -->
 						    </div>	
 						    <div class="form-group">
 						      <label for="editPhone" class="col-lg-2 control-label">Phone Number</label>
@@ -93,14 +96,6 @@ if ($update_user){
 						        <br/>
 						      </div>
 						    </div>
-						    <div class="col-lg-6">
-							    <div class="input-group">
-							      <input type="text" class="form-control" placeholder="Search for...">
-							      <span class="input-group-btn">
-							        <button class="btn btn-default" type="button">Go!</button>
-							      </span>
-							    </div><!-- /input-group -->
-							  </div><!-- /.col-lg-6 -->
 						    <div class="form-group">
 						      <label class="col-lg-2 control-label">Ganti Password</label>
 						      <div class="col-lg-10">
