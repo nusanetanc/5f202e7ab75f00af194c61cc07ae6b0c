@@ -15,7 +15,10 @@
 							if($fileName<>"" || $fileName<>null){
 								$move = move_uploaded_file($lokasifile, "$dir".$fileName);
 								$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("foto"=>$fileName)));
-  							} } ?>
+  							} if($_POST['editEmail']<>"" || $_POST['editEmail']<> || $_POST['email']<>$email){
+  								$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("email"=>$_POST['editEmail'])));	
+  							}
+  							} ?>
   					<div class="col-sm-3">
   						<?php if ($foto=="" || $foto==null){ ?>
   						<img class="profile-img-card profile-img-card-xlrg" src="../img/default-avatar-groovy2.png"/>
