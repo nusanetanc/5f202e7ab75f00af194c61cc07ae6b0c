@@ -1,58 +1,5 @@
 <?php if ($level=="0"){  ?>
-<?php	 
-if(isset($_SESSION['groovy_message'])){ 
-	?>
-	<script>
-		$(document).ready(function(){
-		$("#validate").show();
-	});
-	</script> <?php 
-					$groovy_message_status=$_SESSION['groovy_message_status'];
-					$groovy_message=$_SESSION['groovy_message'];
-				unset($_SESSION["groovy_message"]); 
-				unset($_SESSION["groovy_message_status"]);
-		} else { ?>
-	<script>
-	 $(document).ready(function(){
-		$("#validate").hide();
-	});	
-	</script> <?php } ?>
-<?php
-	if(isset($_POST['save'])){
-								$editEmail=$_POST['editEmail'];
-								$editPhone=$_POST['editPhone'];
-								$editPasswordlama=$_POST['editPasswordlama'];
-								$editPasswordbaru1=$_POST['editPasswordbaru1'];
-								$editPasswordbaru2=$_POST['editPasswordbaru2'];
-								
-if($editEmail=="" || $editPhone=="" || $editPasswordlama=="" || $editPasswordbaru1=="" || $editPasswordbaru2=="" || $editPasswordbaru1<>$editPasswordbaru2 || $password<>$editPasswordlama){	
-				$_SESSION['groovy_message_status']="danger";
-				$_SESSION['groovy_message']="Edit profile data failed";
- } 
- else if ($editPasswordlama<>"" || $editPasswordbaru1<>"" || $editPasswordbaru2<>"") { 
-				$_SESSION['groovy_message_status']="danger";
-				$_SESSION['groovy_message']="Edit profile data failed";
- } else {
- 	if ($editPasswordlama=="" || $editPasswordbaru1=="" || $editPasswordbaru2==""){
- 		$editPasswordbaru1=$password;
- 	}
-	$lokasifile1= $_FILES['editFoto']['tmp_name'];
-	$fileName1 = $_FILES['editFoto']['name']; 
-	$dir1 = "./foto/";
-	$move1 = move_uploaded_file($lokasifile1, "$dir1".$fileName1);
-if ($fileName1==""){
-$fileName1 = $foto;	
-}
-	$update_user=$col_user->update(array("id_user"=>$id),array('$set'=>array("nama"=>$editNama,"email"=>$editEmail, "password"=>$editPasswordbaru1,"phone"=>$editPhone,"foto"=>$fileName1)));
-if ($update_user){ 
-					$_SESSION['groovy_message_status']="success";
-					$_SESSION['groovy_message']="Edit profile data success";
- } }
- 					?>
-						<script type="" language="JavaScript">
-						document.location='<?php echo $base_url_member; ?>/edit-profile'</script>
-					<?php }
-  ?>
+
 <section>
 	<div class="col-sm-12" style="font-family:Arial;">
 		<div class="list-group">
@@ -62,16 +9,6 @@ if ($update_user){
   				</div>
   				<div class="panel-body">
   					<form enctype="multipart/form-data" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
-  					<div class="col-sm-3">
-  						<?php if ($foto=="" || $foto==null){ ?>
-  						<img class="profile-img-card profile-img-card-xlrg" src="../img/default-avatar-groovy2.png"/>
-  						<?php } else { ?>
-  						<img class="profile-img-card profile-img-card-xlrg" src="./foto/<?php echo $foto ?>"/>
-  						<?php } ?>
-						<br/><br/><br/>
-						<h4>Change Profile Photo</h4>
-						<input type="file" id="editFoto" name="editFoto">								
-					</div>	
 					<div class="col-sm-9">	
 			  				<div name="validate" id="validate" class="alert alert-dismissible alert-<?php echo $groovy_message_status; ?>">
 							  	<button type="button" class="close" data-dismiss="alert">x</button>
@@ -82,7 +19,6 @@ if ($update_user){
 						      <label for="editEmail" class="col-lg-2 control-label">Email</label>
 						      <div class="col-lg-10">
 						        <input type="email" class="form-control" id="editEmail" name="editEmail" value="<?php echo $email; ?>">
-						        <input type="submit" class="btn btn-default" type="submit" name="save" id="save" value="Save Change">
 						        <br/>
 						      </div>
 						    </div>	
