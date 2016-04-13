@@ -44,7 +44,9 @@
 						      <label for="editEmail" class="col-lg-2 control-label">Email</label>
 						      <div class="col-lg-10">
 						        <input type="email" class="form-control" id="editEmail" name="editEmail" value="<?php echo $email; ?>">
-						        <p class="text-muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+						        <?php if(isset($_SESSION['editEmail'])){ ?>
+						        <p class="text-muted"><?php echo $_SESSION['editEmail']; ?></p>
+						        <?php } ?>
 						        <br/>
 						      </div>
 						    </div>	
