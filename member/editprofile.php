@@ -22,10 +22,10 @@
   							} if($_POST['editPhone']<>"" || $_POST['editPhone']==$notelp){
   								$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("phone"=>$_POST['editPhone'])));	
   								$update_user=$col_history->update(array("id_cust"=>$id),array('$set'=>array("phone_customer"=>$_POST['editPhone'])));
-  								$_SESSION["editPhone"]="Phone Number Changed";
+  								$_SESSION["phoneedit"]="Phone Number Changed";
   							} if($_POST['editPasswordlama']<>"" && $_POST['editPasswordbaru1']<>"" && $_POST['editPasswordbaru2']<>"" && $_POST['editPasswordbaru1']==$_POST['editPasswordbaru2'] && $_POST['editPasswordlama']==$password){
   								$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("password"=>$_POST['editPasswordbaru1'])));
-  								$_SESSION["editPassword"]="Password Changed";
+  								$_SESSION["passwordedit"]="Password Changed";
   							}
   							} ?>
   					<div class="col-sm-3">
@@ -44,8 +44,8 @@
 						      <label for="editEmail" class="col-lg-2 control-label">Email</label>
 						      <div class="col-lg-10">
 						        <input type="email" class="form-control" id="editEmail" name="editEmail" value="<?php echo $email; ?>">
-						        <?php if(isset($_SESSION['editEmail'])){ ?>
-						        <p class="text-muted"><?php echo $_SESSION['editEmail']; ?></p>
+						        <?php if(isset($_SESSION['emailedit'])){ ?>
+						        <p class="text-muted"><?php echo $_SESSION['emailedit']; ?></p>
 						        <?php } ?>
 						        <br/>
 						      </div>
