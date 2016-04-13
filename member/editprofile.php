@@ -70,8 +70,8 @@
 						        <br/>
 						        <input type="submit" class="btn btn-default" type="submit" name="save" id="save" value="Save Change">
 						        <br/>
-						        <h6 class="text-primary"><strong><?php echo $_SESSION['emailedit']; ?></strong></h6>
-						        <h6 class="text-primary"><strong><?php echo $_SESSION['emailedit']; ?></strong></h6>
+						        <h6 class="text-primary"><strong>email edited</strong></h6>
+						        <h6 class="text-primary"><strong>password edited</strong></h6>
 						      </div>
 						    </div>			    						    						    						    						    						    
 						  </fieldset>	
