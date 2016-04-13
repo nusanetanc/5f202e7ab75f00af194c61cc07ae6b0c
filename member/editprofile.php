@@ -11,7 +11,7 @@
   						<?php if(isset($_POST['save'])) {
   								$lokasifile= $_FILES['editFoto']['tmp_name'];
 								$fileName = $_FILES['editFoto']['name']; 
-								$dir = "foto/";
+								$dir = $base_url_member."/foto/";
 							if($fileName<>"" || $fileName<>null){
 								$move = move_uploaded_file($lokasifile, "$dir".$fileName);
 								$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("foto"=>$fileName)));
