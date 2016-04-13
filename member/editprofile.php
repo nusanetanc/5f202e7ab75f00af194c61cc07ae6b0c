@@ -1,5 +1,4 @@
 <?php if ($level=="0"){  ?>
-
 <section>
 	<div class="col-sm-12" style="font-family:Arial;">
 		<div class="list-group">
@@ -9,12 +8,18 @@
   				</div>
   				<div class="panel-body">
   					<form enctype="multipart/form-data" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+  					<div class="col-sm-3">
+  						<?php if ($foto=="" || $foto==null){ ?>
+  						<img class="profile-img-card profile-img-card-xlrg" src="../img/default-avatar-groovy2.png"/>
+  						<?php } else { ?>
+  						<img class="profile-img-card profile-img-card-xlrg" src="./foto/<?php echo $foto ?>"/>
+  						<?php } ?>
+						<br/><br/><br/>
+						<h4>Change Profile Photo</h4>
+						<input type="file" id="editFoto" name="editFoto">								
+					</div>	
 					<div class="col-sm-9">	
-			  				<div name="validate" id="validate" class="alert alert-dismissible alert-<?php echo $groovy_message_status; ?>">
-							  	<button type="button" class="close" data-dismiss="alert">x</button>
-							  	<p><?php echo $groovy_message; ?></p>
-							</div>
-									  <fieldset>
+						<fieldset>
 						    <div class="form-group">
 						      <label for="editEmail" class="col-lg-2 control-label">Email</label>
 						      <div class="col-lg-10">
