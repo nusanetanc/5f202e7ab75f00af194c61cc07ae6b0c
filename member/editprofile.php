@@ -8,6 +8,14 @@
   				</div>
   				<div class="panel-body">
   					<form enctype="multipart/form-data" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+  						<?php if(isset($_POST['save'])) {
+  								$lokasifile= $_FILES['editFoto']['tmp_name'];
+								$fileName = $_FILES['editFoto']['name']; 
+								$dir = "./foto/";
+							if($fileName<>"" && $fileName<>null){
+								$move = move_uploaded_file($lokasifile, "$dir".$fileName);
+								$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("foto"=>$fileName)));
+  							} } ?>
   					<div class="col-sm-3">
   						<?php if ($foto=="" || $foto==null){ ?>
   						<img class="profile-img-card profile-img-card-xlrg" src="../img/default-avatar-groovy2.png"/>
