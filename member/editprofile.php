@@ -77,12 +77,12 @@ if ($update_user){
 							  	<button type="button" class="close" data-dismiss="alert">x</button>
 							  	<p><?php echo $groovy_message; ?></p>
 							</div>
-									  <fieldset>
+							<fieldset>
 						    <div class="form-group">
 						      <label for="editEmail" class="col-lg-2 control-label">Email</label>
 						      <div class="col-lg-10">
 							    <div class="input-group">
-							      <input type="text" class="form-control" placeholder="Search for...">
+							      <input name="editEmail" id="editEmail" type="text" class="form-control" value="<?php echo $email; ?>" placeholder="Masukan Email">
 							      <span class="input-group-btn">
 							        <button class="btn btn-default" type="button">Go!</button>
 							      </span>
