@@ -15,14 +15,17 @@
 							if($fileName<>"" || $fileName<>null){
 								$move = move_uploaded_file($lokasifile, "$dir".$fileName);
 								$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("foto"=>$fileName)));
+								$_SESSION["fotoedit"]="Profile Photo Changed";
   							} if($_POST['editEmail']<>"" || $_POST['editEmail']==$email){
-  								$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("email"=>$_POST['editEmail'])));	
+  								$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("email"=>$_POST['editEmail'])));
+  								$_SESSION["emailedit"]="Email Changed";	
   							} if($_POST['editPhone']<>"" || $_POST['editPhone']==$notelp){
   								$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("phone"=>$_POST['editPhone'])));	
   								$update_user=$col_history->update(array("id_cust"=>$id),array('$set'=>array("phone_customer"=>$_POST['editPhone'])));
+  								$_SESSION["editPhone"]="Phone Number Changed";
   							} if($_POST['editPasswordlama']<>"" && $_POST['editPasswordbaru1']<>"" && $_POST['editPasswordbaru2']<>"" && $_POST['editPasswordbaru1']==$_POST['editPasswordbaru2'] && $_POST['editPasswordlama']==$password){
   								$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("password"=>$_POST['editPasswordbaru1'])));
-  								echo yudi;	
+  								$_SESSION["editPassword"]="Password Changed";
   							}
   							} ?>
   					<div class="col-sm-3">
@@ -41,6 +44,7 @@
 						      <label for="editEmail" class="col-lg-2 control-label">Email</label>
 						      <div class="col-lg-10">
 						        <input type="email" class="form-control" id="editEmail" name="editEmail" value="<?php echo $email; ?>">
+						        <p class="text-muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
 						        <br/>
 						      </div>
 						    </div>	
