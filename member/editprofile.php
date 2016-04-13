@@ -46,7 +46,7 @@
 						        <input type="email" class="form-control" id="editEmail" name="editEmail" value="<?php echo $email; ?>">
 						        <?php if(isset($_SESSION['emailedit'])){ ?>
 						        <p class="text-muted"><?php echo $_SESSION['emailedit']; ?></p>
-						        <?php } ?>
+						        <?php unset($_SESSION["emailedit"]); } ?>
 						        <br/>
 						      </div>
 						    </div>	
