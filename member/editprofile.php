@@ -14,7 +14,7 @@
 								$dir = $base_url_member."/foto/";
 							if($fileName<>"" || $fileName<>null){
 								$move = move_uploaded_file($lokasifile, "$dir".$fileName);
-								$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("foto"=>$dir)));
+								$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("foto"=>$fileName)));
   							} } ?>
   					<div class="col-sm-3">
   						<?php if ($foto=="" || $foto==null){ ?>
