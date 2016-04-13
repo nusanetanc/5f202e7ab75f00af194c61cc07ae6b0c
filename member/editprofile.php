@@ -45,7 +45,7 @@
 						      <div class="col-lg-10">
 						        <input type="email" class="form-control" id="editEmail" name="editEmail" value="<?php echo $email; ?>">
 						        <?php if(isset($_SESSION['emailedit'])){ ?>
-						        <h6 class="text-primary"><?php echo $_SESSION['emailedit']; ?></h6>
+						        <h6 class="text-primary"><strong><?php echo $_SESSION['emailedit']; ?></strong></h6>
 						        <?php unset($_SESSION["emailedit"]); } ?>
 						        <br/>
 						      </div>
@@ -69,6 +69,9 @@
 						        <div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>	
 						        <br/>
 						        <input type="submit" class="btn btn-default" type="submit" name="save" id="save" value="Save Change">
+						        <br/>
+						        <h6 class="text-primary"><strong><?php echo $_SESSION['emailedit']; ?></strong></h6>
+						        <h6 class="text-primary"><strong><?php echo $_SESSION['emailedit']; ?></strong></h6>
 						      </div>
 						    </div>			    						    						    						    						    						    
 						  </fieldset>	
