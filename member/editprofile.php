@@ -16,14 +16,14 @@
 								$move = move_uploaded_file($lokasifile, "$dir".$fileName);
 								$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("foto"=>$fileName)));
 								$_SESSION["fotoedit"]="Profile Photo Changed";
-  							} if($_POST['editEmail']<>"" || $_POST['editEmail']==$email){
+  							} if($_POST['editEmail']<>"" || $_POST['editEmail']<>$email){
   								$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("email"=>$_POST['editEmail'])));
   								$_SESSION["emailedit"]="Email Changed";	
-  							} if($_POST['editPhone']<>"" || $_POST['editPhone']==$notelp){
+  							} if($_POST['editPhone']<>"" || $_POST['editPhone']<>$notelp){
   								$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("phone"=>$_POST['editPhone'])));	
   								$update_user=$col_history->update(array("id_cust"=>$id),array('$set'=>array("phone_customer"=>$_POST['editPhone'])));
   								$_SESSION["phoneedit"]="Phone Number Changed";
-  							} if($_POST['editPasswordlama']<>"" && $_POST['editPasswordbaru1']<>"" && $_POST['editPasswordbaru2']<>"" && $_POST['editPasswordbaru1']==$_POST['editPasswordbaru2'] && $_POST['editPasswordlama']==$password){
+  							} if($_POST['editPasswordlama']<>"" && $_POST['editPasswordbaru1']<>"" && $_POST['editPasswordbaru2']<>"" && $_POST['editPasswordbaru1']==$_POST['editPasswordbaru2'] && $_POST['editPasswordlama']==$password && $_POST['editPasswordlama']<>$_POST['editPasswordbaru1']){
   								$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("password"=>$_POST['editPasswordbaru1'])));
   								$_SESSION["passwordedit"]="Password Changed";
   							}
@@ -35,8 +35,11 @@
   						<img class="profile-img-card profile-img-card-xlrg" src="./foto/<?php echo $foto ?>"/>
   						<?php } ?>
 						<br/><br/><br/>
-						<h4>Change Profile Photo</h4>
-						<input type="file" id="editFoto" name="editFoto">								
+						<h4>Profile Photo</h4>
+						<input type="file" id="editFoto" name="editFoto">
+						<?php if(isset($_SESSION['fotoedit'])){ ?>
+				        	<h6 class="text-primary"><strong><?php echo $_SESSION['fotoedit']; ?></strong></h6>
+				        <?php unset($_SESSION["fotoedit"]); } ?>							
 					</div>	
 					<div class="col-sm-9">	
 						<fieldset>
