@@ -38,41 +38,38 @@
   						<?php } ?>
 						<br/><br/><br/>
 						<h4>Profile Photo</h4>
-						<input type="file" id="editFoto" name="editFoto">
-						<?php if(isset($_SESSION['fotoedit'])){ ?>
-				        	<h6 class="text-primary"><strong><?php echo $_SESSION['fotoedit']; ?></strong></h6>
-				        <?php unset($_SESSION["fotoedit"]); } ?>							
+						<input type="file" id="editFoto" name="editFoto">							
 					</div>	
 					<div class="col-sm-9">	
 						<fieldset>
-						      <label for="editEmail" class="control-label">Email</label>
+						    <div class="form-group">
+						      <label for="editEmail" class="col-lg-2 control-label">Email</label>
+						      <div class="col-lg-10">
 						        <input type="email" class="form-control" id="editEmail" name="editEmail" value="<?php echo $email; ?>">
 						        <br/>
+						      </div>
 						    </div>	
 						    <div class="form-group">
-						      <label for="editPhone" class="control-label">Phone Number</label>
+						      <label for="editPhone" class="col-lg-2 control-label">Phone Number</label>
+						      <div class="col-lg-10">
 						        <input type="text" class="form-control" id="editPhone" name="editPhone" value="<?php echo $notelp; ?>">
-						        <?php if(isset($_SESSION['phoneedit'])){ ?>
-						        	<h6 class="text-primary"><strong><?php echo $_SESSION['phoneedit']; ?></strong></h6>
-						        <?php unset($_SESSION["phoneedit"]); } ?>
 						        <br/>
+						      </div>
 						    </div>
 						    <div class="form-group">
-						      <label class="control-label">Ganti Password</label>
+						      <label class="col-lg-2 control-label">Ganti Password</label>
+						      <div class="col-lg-10">
 						        <input type="password" class="form-control" id="editPasswordlama" name="editPasswordlama" placeholder="Masukan Password Lama Anda">
 						        <br/>
 						        <input type="password" class="form-control" id="editPasswordbaru1" name="editPasswordbaru1" placeholder="Masukan Password Baru Anda">
 						        <br/>
 						        <input type="password" class="form-control" id="editPasswordbaru2" name="editPasswordbaru2" placeholder="Masukan Lagi Password Baru Anda">
 						        <br/>
-						        <?php if(isset($_SESSION['passwordedit'])){ ?>
-						        	<h6 class="text-primary"><strong><?php echo $_SESSION['passwordedit']; ?></strong></h6>
-						        	<br/>
-						        <?php unset($_SESSION["passwordedit"]); } ?>
 						        <div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>	
 						        <br/>
 						        <input type="submit" class="btn btn-default" type="submit" name="save" id="save" value="Save Change">
 						        <br/>
+						      </div>
 						    </div>			    						    						    						    						    						    
 						  </fieldset>	
 						</form>    		
