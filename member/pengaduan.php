@@ -5,10 +5,6 @@ if ($level=="0"){
 								array("id_user"=>$id),
 								array('$set'=>array("status"=>"close"))); 
 							}
-							if ($update){ ?>
-											<script type="" language="JavaScript">
-											document.location=''</script>
-							<?php }
  $res = $col_ticket->findOne(array("id_user"=>$id));
 if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 						$idchat=$res['idchat'];
