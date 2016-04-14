@@ -44,7 +44,7 @@
 						<fieldset>
 						<?php if($_SESSION['emailedit']=="Yes"){ ?>
 						    <div class="form-group has-success">
-					    <?php $_SESSION['emailedit']="No" } elseif($_SESSION['emailedit']="No") { ?>
+					    <?php $_SESSION['emailedit']="No" } elseif($_SESSION['emailedit']=="No") { ?>
 						   	<div class="form-group">
 						    <?php } ?>
 						      <label for="editEmail" class="col-lg-2 control-label">Email</label>
