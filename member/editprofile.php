@@ -42,21 +42,21 @@
 					</div>	
 					<div class="col-sm-9">	
 						<fieldset>
-						    <div class="form-group has-success">
+						    <div class="form-group <?php if(isset($_SESSION['editEmail'])){ ?> has-success <?php unset($_SESSION['editEmail']) } ?>">
 						      <label for="editEmail" class="col-lg-2 control-label">Email</label>
 						      <div class="col-lg-10">
 						        <input type="email" class="form-control" id="editEmail" name="editEmail" value="<?php echo $email; ?>">
 						        <br/>
 						      </div>
 						    </div>	
-						    <div class="form-group">
+						    <div class="form-group has-success">
 						      <label for="editPhone" class="col-lg-2 control-label">Phone Number</label>
 						      <div class="col-lg-10">
 						        <input type="text" class="form-control" id="editPhone" name="editPhone" value="<?php echo $notelp; ?>">
 						        <br/>
 						      </div>
 						    </div>
-						    <div class="form-group">
+						    <div class="form-group has-success">
 						      <label class="col-lg-2 control-label">Ganti Password</label>
 						      <div class="col-lg-10">
 						        <input type="password" class="form-control" id="editPasswordlama" name="editPasswordlama" placeholder="Masukan Password Lama Anda">
