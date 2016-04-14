@@ -84,7 +84,7 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 								      						<br/>
 								       						<textarea class="form-control" rows="3" id="message" name="message" placeholder="Message"></textarea>
 								       						<br/>
-															<div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>
+															<div class="g-recaptcha" data-sitekey="6Ldx_BsTAAAAAOYrQegHLVhslSvd6z78zAr-4Knc"></div>
 															<br/>
 															<input type="submit" class="btn btn-default background-btn-red" type="submit" name="kirim" id="kirim" value="KIRIM">
 														</div>	
