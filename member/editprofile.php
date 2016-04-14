@@ -18,7 +18,7 @@
 								$_SESSION["fotoedit"]="Profile Photo Changed";
   							} if($_POST['editEmail']<>"" || $_POST['editEmail']<>$email){
   								$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("email"=>$_POST['editEmail'])));
-  								$_SESSION["emailedit"]="Email Changed";	
+  								$_SESSION["emailedit"]="Yes";	
   							} if($_POST['editPhone']<>"" || $_POST['editPhone']<>$notelp){
   								$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("phone"=>$_POST['editPhone'])));	
   								$update_user=$col_history->update(array("id_cust"=>$id),array('$set'=>array("phone_customer"=>$_POST['editPhone'])));
@@ -42,9 +42,9 @@
 					</div>	
 					<div class="col-sm-9">	
 						<fieldset>
-							<?php if(isset($_SESSION['emailedit'])){ ?>
+							<?php if($_SESSION['emailedit']=="Yes"){ ?>
 						    	<div class="form-group has-success">
-						    <?php  unset($_SESSION['emailedit']); } else { ?>
+						    <?php $_SESSION['emailedit']=="No" } else { ?>
 						    	<div class="form-group">
 						    <?php } ?>
 						      <label for="editEmail" class="col-lg-2 control-label">Email</label>
