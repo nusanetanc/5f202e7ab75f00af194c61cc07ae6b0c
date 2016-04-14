@@ -83,7 +83,13 @@
 						        <br/>
 						      </div>
 						    </div>			    						    						    						    						    						    
-						  </fieldset>	
+						  </fieldset>
+						  <?php
+						  		unset($_SESSION["fotoedit"]);
+						  		unset($_SESSION['emailedit']);
+						  		unset($_SESSION['phoneedit']);
+						  		unset($_SESSION['passwordedit']);
+						  ?>
 						</form>    		
 					</div>	
  				</div>
