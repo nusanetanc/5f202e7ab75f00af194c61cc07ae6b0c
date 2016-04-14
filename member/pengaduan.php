@@ -5,11 +5,6 @@ if ($level=="0"){
 								array("id_user"=>$id),
 								array('$set'=>array("status"=>"close"))); 
 							}
-	if ($_GET['a']=="open"){
-	$update = $col_ticket->update(
-								array("id_user"=>$id),
-								array('$set'=>array("status"=>"open"))); 
-							}
 							if ($update){ ?>
 											<script type="" language="JavaScript">
 											document.location='./pengaduan'</script>
@@ -60,7 +55,7 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 																 "status"=>"open", "message"=>(array($msg))));
 							if ($insert) { ?>
 											<script type="" language="JavaScript">
-											document.location='../member/pengaduan'</script>
+											document.location='./pengaduan'</script>
 							<?php } } } ?>
 								<div class="col-sm-12 col-md-12 col-lg-9">
 									<div class="list-group">
@@ -114,7 +109,7 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 			if (empty($subjectchat)){	?>
 
 					<script type="" language="JavaScript">
-					document.location='../member/pengaduan'</script>
+					document.location='./pengaduan'</script>
 
 			<?php }				
 			if(isset($_POST['kirim'])) {	
@@ -146,7 +141,7 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 			if ($insert){
 					  		?>
 							<script type="" language="JavaScript">
-							document.location='../member/pengaduan'</script>
+							document.location='./pengaduan'</script>
 				<?php 	} 						
 							}
 								}	
