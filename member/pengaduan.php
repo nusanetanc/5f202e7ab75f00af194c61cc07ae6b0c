@@ -1,10 +1,10 @@
 <?php
-if ($level=="0"){
-	if (isset($_GET['a'])){
+if ($level=="0"){ /*
+	if(isset($_GET['a'])){
 	$update = $col_ticket->update(
 								array("id_user"=>$id),
 								array('$set'=>array("status"=$_GET['a']))); 
-							}
+							} */
  $res = $col_ticket->findOne(array("id_user"=>$id));
 if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 						$idchat=$res['idchat'];
