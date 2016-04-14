@@ -86,7 +86,10 @@ if(isset($_POST['save0'])){
 			unset($_SESSION["id"]);
 			unset($_SESSION["level"]);
 			header('location:'.$base_url.'/signin');
-		} } ?>
+		} ?>
+	<script type="" language="JavaScript">
+		document.location='<?php echo $base_url_member; ?>/edit-profile'</script>
+	<?php } ?>
 <section>
 <div class="col-sm-12" style="font-family:Arial;">
 		<div class="list-group">
