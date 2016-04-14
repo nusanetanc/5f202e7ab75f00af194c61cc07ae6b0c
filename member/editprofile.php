@@ -48,10 +48,9 @@
 						    <div class="form-group">
 						      <label for="editEmail" class="col-lg-2 control-label">Email</label>
 						      <div class="col-lg-10">
-						        <input type="email" class="form-control" id="editEmail" name="editEmail" value="<?php echo $email; ?>">
+						        <input type="email" class="form-control inputSuccess" id="editEmail" name="editEmail" value="<?php echo $email; ?>">
 						        <?php if(isset($_SESSION['emailedit'])){ ?>
 						        	<h6 class="text-primary"><strong><?php echo $_SESSION['emailedit']; ?></strong></h6>
-						        	<span class="input-group-addon" id="basic-addon2">@example.com</span>
 						        <?php unset($_SESSION["emailedit"]); } ?>
 						        <br/>
 						      </div>
