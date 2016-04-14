@@ -6,7 +6,8 @@ RewriteBase  /beta/member
 RewriteRule ^pengaduan$ ?hal=pengaduan
 RewriteRule ^pengaduan/([0-9A-Za-z]+)/? ?hal=pengaduan&c=$1
 RewriteRule ^pengaduan/close/? ?hal=pengaduan&a=close
-RewriteRule ^pengaduan/open/? ?hal=pengaduan&a=open
+RewriteRule ^pengaduan/open/? ?hal=pengaduan
+RewriteRule ^pengaduan/close/? ?hal=pengaduan&a=close
 RewriteRule ^dashboard$ ?hal=dashboard
 RewriteRule ^billing$ ?hal=billing
 RewriteRule ^change-package$ ?hal=package-upgrade

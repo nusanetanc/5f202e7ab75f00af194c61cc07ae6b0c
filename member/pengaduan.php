@@ -6,7 +6,7 @@ if ($level=="0"){
 								array("id_user"=>$id),
 								array('$set'=>array("status"=>$a))); 
 							}
-							if ($update || $_GET['a']=="open"){ ?>
+							if ($update){ ?>
 											<script type="" language="JavaScript">
 											document.location='<?php echo $base_url_member; ?>/pengaduan'</script>
 							<?php }
