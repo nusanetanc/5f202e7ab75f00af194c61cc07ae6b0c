@@ -83,14 +83,16 @@
 if(isset($_POST['save0'])){  
 	if($_POST['editPasswordlama']<>"" && $_POST['editPasswordbaru1']<>"" && $_POST['editPasswordbaru2']<>"" && $_POST['editPasswordbaru1']==$_POST['editPasswordbaru2'] && $_POST['editPasswordlama']==$password && $_POST['editPasswordlama']<>$_POST['editPasswordbaru1']){
 			$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("password"=>$_POST['editPasswordbaru1'])));
-			$_SESSION["passwordedit"]="1";
+			unset($_SESSION["id"]);
+			unset($_SESSION["level"]);
+			header('location:'.$base_url.'/signin');
 		} } ?>
 <section>
 <div class="col-sm-12" style="font-family:Arial;">
 		<div class="list-group">
 			<div class="panel" style="border:0px;" >
   				<div class="panel-body" style="background-color:#FF5722;">
-    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">MEMBER - EDIT PROFILE</h3>
+    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">STAFF - EDIT PROFILE</h3>
   				</div>
   				<div class="panel-body">
   					<br/>
