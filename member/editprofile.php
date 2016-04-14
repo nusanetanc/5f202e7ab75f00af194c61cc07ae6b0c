@@ -51,6 +51,7 @@
 						        <input type="email" class="form-control" id="editEmail" name="editEmail" value="<?php echo $email; ?>">
 						        <?php if(isset($_SESSION['emailedit'])){ ?>
 						        	<h6 class="text-primary"><strong><?php echo $_SESSION['emailedit']; ?></strong></h6>
+						        	<span class="input-group-addon" id="basic-addon2">@example.com</span>
 						        <?php unset($_SESSION["emailedit"]); } ?>
 						        <br/>
 						      </div>
