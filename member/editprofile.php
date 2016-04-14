@@ -42,7 +42,7 @@
 					</div>	
 					<div class="col-sm-9">	
 						<fieldset>
-						    <div class="form-group">
+						    <div class="form-group has-success">
 						      <label for="editEmail" class="col-lg-2 control-label">Email</label>
 						      <div class="col-lg-10">
 						        <input type="email" class="form-control" id="editEmail" name="editEmail" value="<?php echo $email; ?>">
