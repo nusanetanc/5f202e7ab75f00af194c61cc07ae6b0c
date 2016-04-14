@@ -7,7 +7,7 @@ if ($level=="0"){
 							}
 							if ($update){ ?>
 											<script type="" language="JavaScript">
-											document.location='./pengaduan'</script>
+											document.location=''</script>
 							<?php }
  $res = $col_ticket->findOne(array("id_user"=>$id));
 if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
