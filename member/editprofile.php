@@ -42,10 +42,7 @@
 					</div>	
 					<div class="col-sm-9">	
 						<fieldset>
-								<?php if(isset($_SESSION["emailedit"])){ ?>
-						    <div class="form-group has-success">
-						    	<?php unset($_SESSION["emailedit"]) } else { ?>
-						    <div class="form-group"> <?php } ?>
+						    <div class="form-group has-success <?php unset($_SESSION["emailedit"]); } ?>">
 						      <label for="editEmail" class="col-lg-2 control-label">Email</label>
 						      <div class="col-lg-10">
 						        <input type="email" class="form-control" id="editEmail" name="editEmail" value="<?php echo $email; ?>">
