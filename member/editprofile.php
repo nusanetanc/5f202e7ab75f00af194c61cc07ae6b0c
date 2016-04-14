@@ -42,9 +42,9 @@
 					</div>	
 					<div class="col-sm-9">	
 						<fieldset>
-						<?php if($_SESSION['emailedit']=="Yes"){ ?>
+						<?php if($_SESSION['emailedit']=="Yes"){ $_SESSION['emailedit']="No"; ?>
 						    <div class="form-group has-success">
-					    <?php $_SESSION['emailedit']="No"; } elseif($_SESSION['emailedit']=="No") { ?>
+					    <?php } elseif($_SESSION['emailedit']=="No") { ?>
 						   	<div class="form-group">
 						    <?php } ?>
 						      <label for="editEmail" class="col-lg-2 control-label">Email</label>
