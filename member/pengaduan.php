@@ -8,7 +8,7 @@ if ($level=="0"){
 							}
 							if ($update){ ?>
 											<script type="" language="JavaScript">
-											document.location='<?php echo $base_url_member; ?>/pengaduan ?>'</script>
+											document.location='<?php echo $base_url_member; ?>/pengaduan'</script>
 							<?php }
  $res = $col_ticket->findOne(array("id_user"=>$id));
 if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
@@ -66,7 +66,7 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 							  				</div>
 							  						<div class="panel-body container">
 									  					<br/>
-									  						<a href="<?php echo $base_url_member; ?>/historipengaduan" class="btn btn-primary">Histori Pengaduan</a>	
+									  						<a href="<?php echo $base_url_member; ?>/histori-pengaduan" class="btn btn-primary">Histori Pengaduan</a>	
 									  					<br/>
 									  				</div>	
 								  					<div class="panel-body">		
