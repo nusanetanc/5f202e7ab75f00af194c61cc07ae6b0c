@@ -1,14 +1,18 @@
 <?php
 if ($level=="0"){
 	if ($_GET['a']=="close"){
-	$a = $_GET['a'];
 	$update = $col_ticket->update(
 								array("id_user"=>$id),
-								array('$set'=>array("status"=>$a))); 
+								array('$set'=>array("status"=>"close"))); 
+							}
+	if ($_GET['a']=="open"){
+	$update = $col_ticket->update(
+								array("id_user"=>$id),
+								array('$set'=>array("status"=>"open"))); 
 							}
 							if ($update){ ?>
 											<script type="" language="JavaScript">
-											document.location='<?php echo $base_url_member; ?>/pengaduan'</script>
+											document.location='./pengaduan'</script>
 							<?php }
  $res = $col_ticket->findOne(array("id_user"=>$id));
 if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
