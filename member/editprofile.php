@@ -15,17 +15,17 @@
 							if($fileName<>"" || $fileName<>null){
 								$move = move_uploaded_file($lokasifile, "$dir".$fileName);
 								$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("foto"=>$fileName)));
-								$_SESSION["fotoedit"]="Profile Photo Changed";
+								$_SESSION["fotoedit"]="1";
   							} if($_POST['editEmail']<>"" || $_POST['editEmail']<>$email){
-  								$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("email"=>$_POST['editEmail'])));
-  								$_SESSION["emailedit"]="Yes";	
+  								$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("email"=>$_POST['editEmail']))); 
+  								$_SESSION["emailedit"]="1";
   							} if($_POST['editPhone']<>"" || $_POST['editPhone']<>$notelp){
   								$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("phone"=>$_POST['editPhone'])));	
   								$update_user=$col_history->update(array("id_cust"=>$id),array('$set'=>array("phone_customer"=>$_POST['editPhone'])));
-  								$_SESSION["phoneedit"]="Phone Number Changed";
+  								$_SESSION["phoneedit"]="1";
   							} if($_POST['editPasswordlama']<>"" && $_POST['editPasswordbaru1']<>"" && $_POST['editPasswordbaru2']<>"" && $_POST['editPasswordbaru1']==$_POST['editPasswordbaru2'] && $_POST['editPasswordlama']==$password && $_POST['editPasswordlama']<>$_POST['editPasswordbaru1']){
   								$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("password"=>$_POST['editPasswordbaru1'])));
-  								$_SESSION["passwordedit"]="Password Changed";
+  								$_SESSION["passwordedit"]="1";
   							} ?>
   								<script type="" language="JavaScript">
 								document.location='<?php echo $base_url_member; ?>/edit-profile'</script>
@@ -42,9 +42,9 @@
 					</div>	
 					<div class="col-sm-9">	
 						<fieldset>
-						<?php if($_SESSION['emailedit']=="Yes"){ $_SESSION['emailedit']="No"; ?>
+						<?php if($_SESSION['emailedit']=="1"){ ?>
 						    <div class="form-group has-success">
-					    <?php } elseif($_SESSION['emailedit']=="No") { ?>
+					    <?php } else { ?>
 						   	<div class="form-group">
 						    <?php } ?>
 						      <label for="editEmail" class="col-lg-2 control-label">Email</label>
@@ -53,14 +53,22 @@
 						        <br/>
 						      </div>
 						    </div>	
+						<?php if($_SESSION['phoneedit']=="1"){ ?>
 						    <div class="form-group has-success">
+					    <?php } else { ?>
+						   	<div class="form-group">
+						    <?php } ?>
 						      <label for="editPhone" class="col-lg-2 control-label">Phone Number</label>
 						      <div class="col-lg-10">
 						        <input type="text" class="form-control" id="editPhone" name="editPhone" value="<?php echo $notelp; ?>">
 						        <br/>
 						      </div>
 						    </div>
+						<?php if($_SESSION['passwordedit']=="1"){ ?>
 						    <div class="form-group has-success">
+					    <?php } else { ?>
+						   	<div class="form-group">
+						    <?php } ?>
 						      <label class="col-lg-2 control-label">Ganti Password</label>
 						      <div class="col-lg-10">
 						        <input type="password" class="form-control" id="editPasswordlama" name="editPasswordlama" placeholder="Masukan Password Lama Anda">
