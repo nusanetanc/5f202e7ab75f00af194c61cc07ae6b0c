@@ -86,11 +86,11 @@ if(isset($_POST['save0'])){
 			$_SESSION["passwordedit"]="1";
 		} } ?>
 <section>
-	<div class="col-sm-12" style="font-family:Arial;">
+<div class="col-sm-12" style="font-family:Arial;">
 		<div class="list-group">
-			<div class="panel panel-success" >
-  				<div class="panel-heading">
-    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">STAFF - EDIT PROFILE</h3>
+			<div class="panel" style="border:0px;" >
+  				<div class="panel-body" style="background-color:#FF5722;">
+    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">MEMBER - EDIT PROFILE</h3>
   				</div>
   				<div class="panel-body">
   					<br/>
