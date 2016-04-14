@@ -45,33 +45,20 @@
 					</div>	
 					<div class="col-sm-9">	
 						<fieldset>
-						    <div class="form-group">
-						      <label for="editEmail" class="col-lg-2 control-label">Email</label>
-						      <div class="col-lg-10">
+						      <label for="editEmail" class="control-label">Email</label>
 						        <input type="email" class="form-control" id="editEmail" name="editEmail" value="<?php echo $email; ?>">
-						        <?php if(isset($_SESSION['emailedit'])){ ?>
-						        	<h6 class="text-primary"><strong><?php echo $_SESSION['emailedit']; ?></strong></h6>
-						        <?php unset($_SESSION["emailedit"]); } ?>
 						        <br/>
-						      </div>
 						    </div>	
 						    <div class="form-group">
-						      <label for="editPhone" class="col-lg-2 control-label">Phone Number</label>
-						      <div class="col-lg-10">
+						      <label for="editPhone" class="control-label">Phone Number</label>
 						        <input type="text" class="form-control" id="editPhone" name="editPhone" value="<?php echo $notelp; ?>">
 						        <?php if(isset($_SESSION['phoneedit'])){ ?>
 						        	<h6 class="text-primary"><strong><?php echo $_SESSION['phoneedit']; ?></strong></h6>
 						        <?php unset($_SESSION["phoneedit"]); } ?>
 						        <br/>
-						      </div>
 						    </div>
-						    <div class="form-group has-success">
-							  <label class="control-label" for="inputSuccess">Input success</label>
-							  <input type="text" class="form-control" id="inputSuccess">
-							</div>
 						    <div class="form-group">
-						      <label class="col-lg-2 control-label">Ganti Password</label>
-						      <div class="col-lg-10">
+						      <label class="control-label">Ganti Password</label>
 						        <input type="password" class="form-control" id="editPasswordlama" name="editPasswordlama" placeholder="Masukan Password Lama Anda">
 						        <br/>
 						        <input type="password" class="form-control" id="editPasswordbaru1" name="editPasswordbaru1" placeholder="Masukan Password Baru Anda">
@@ -86,7 +73,6 @@
 						        <br/>
 						        <input type="submit" class="btn btn-default" type="submit" name="save" id="save" value="Save Change">
 						        <br/>
-						      </div>
 						    </div>			    						    						    						    						    						    
 						  </fieldset>	
 						</form>    		
