@@ -178,7 +178,7 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 									<?php } else if ($statuschat=="solved") {
 									?>	
 										<div class="alert alert-dismissible alert-success">
-										  <strong>Our complaint has been solved !</strong> Do you want to <a href="<?php echo $base_url_member; ?>/pengaduan/close" class="alert-link">close</a> or still <a href="<?php echo $base_url_member; ?>/pengaduan/open" class="alert-link">open</a> this complaint.
+										  <strong>Our complaint has been solved !</strong> Do you want to <a href="<?php echo $base_url_member; ?>/pengaduan-close" class="alert-link">close</a> or still <a href="<?php echo $base_url_member; ?>/pengaduan-open" class="alert-link">open</a> this complaint.
 										</div>
 										<div class="panel panel-default container-full-center">
 									  	<ul class="list-group">
