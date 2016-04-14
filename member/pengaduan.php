@@ -1,6 +1,6 @@
 <?php
 if ($level=="0"){
-	if (isset($_GET['a']){
+	if (isset($_GET['a'])){
 	$update = $col_ticket->update(
 								array("id_user"=>$id),
 								array('$set'=>array("status"=$_GET['a']))); 
