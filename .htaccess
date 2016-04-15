@@ -13,5 +13,7 @@ RewriteRule ^forgot-password$ ?hal=forgote-password
 RewriteRule ^contact-us$ ?hal=contact
 RewriteRule ^career$ ?hal=career
 RewriteRule ^events$ ?hal=events
+RewriteRule ^privacy-policy ?hal=privacy-policy
+RewriteRule ^term-of-use ?hal=term-of-use
 
 </IfModule>
