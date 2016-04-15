@@ -1,6 +1,6 @@
 <?php
 if ($level=="0"){
-	if ($_GET['a']=="close"){
+/*	if ($_GET['a']=="close"){
 	$update = $col_ticket->update(
 								array("id_user"=>$id),
 								array('$set'=>array("status"=>"close"))); 
@@ -52,7 +52,7 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 							if ($insert) { ?>
 											<script type="" language="JavaScript">
 											document.location='./pengaduan'</script>
-							<?php } } } ?>
+							<?php } } } */ ?>
 								<div class="col-sm-12 col-md-12 col-lg-9">
 									<div class="list-group">
 										<div class="panel" style="border:0px;" >
