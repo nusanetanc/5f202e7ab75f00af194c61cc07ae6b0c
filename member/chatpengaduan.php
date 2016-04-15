@@ -67,7 +67,7 @@ foreach($res as $row)
         									<textarea class="form-control" rows="3" id="message" name="message" placeholder="Message"></textarea>
         								</div>
         								<br/>
-        								<div class="g-recaptcha" data-sitekey="6Lff-xsTAAAAAJdL8Bv14tF5_KLm_lP8Na2JlwB-"></div>	
+        								<div class="g-recaptcha" data-sitekey="6Lff-xsTAAAAAG3hGBuOPo4Ry4T7VSrypQng4KVr"></div>	
         								<br/>
         								<select class="form-control" id="inputStatus" name="inputStatus" required>
         								<?php if($status_pengaduan<>"close") { ?>
