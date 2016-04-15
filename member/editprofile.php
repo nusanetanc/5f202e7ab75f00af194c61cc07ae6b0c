@@ -26,6 +26,7 @@
   							} if($_POST['editPasswordlama']<>"" && $_POST['editPasswordbaru1']<>"" && $_POST['editPasswordbaru2']<>"" && $_POST['editPasswordbaru1']==$_POST['editPasswordbaru2'] && $_POST['editPasswordlama']==$password && $_POST['editPasswordlama']<>$_POST['editPasswordbaru1']){
   								$update_user=$col_user->update(array("id_user"=>$id, "level"=>$level),array('$set'=>array("password"=>$_POST['editPasswordbaru1'])));
   								$_SESSION["passwordedit"]="1";
+  								include('../con/logout.php');
   							} ?>
   								<script type="" language="JavaScript">
 								document.location='<?php echo $base_url_member; ?>/edit-profile'</script>
