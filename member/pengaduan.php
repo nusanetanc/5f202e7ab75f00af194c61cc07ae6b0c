@@ -96,7 +96,7 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 			<section>
 			<form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 			<?php 
-/*			$res = $col_ticket->find(array("idchat"=>$idchat));
+			$res = $col_ticket->find(array("idchat"=>$idchat));
 			foreach($res as $row)
 								{ 
 									$subjectchat=$row['subject'];
@@ -111,7 +111,7 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 			if(isset($_POST['kirim'])) {	
 										$message=$_POST['message'];
 										$date = date("Y/m/d H:i:s");
-				if (empty($message){
+				if (empty($message)){
 								?>
 								<div class="col-sm-9">
 									<p class="text-danger">Message Empty.</p>
@@ -136,7 +136,7 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 							document.location='./pengaduan'</script>
 				<?php 	} 						
 							}
-								} */	?>
+								} 	?>
 				<div class="col-sm-9">
 					<div class="list-group">
 						<div class="panel" style="border:0px;" >
