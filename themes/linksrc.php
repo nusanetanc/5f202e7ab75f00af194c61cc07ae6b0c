@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.10/css/dataTables.bootstrap.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
   <script src="<?php echo $base_url ?>/content/js/bootstrap.js"></script>
-  <script src='https://www.google.com/recaptcha/api.js'></script> 
+  <script src='https://www.google.com/recaptcha/api.js'></script>
   <script src="<?php echo $base_url ?>/content/js/bootstrap-datepicker.js"></script>
   <script src="https://www.google.com/jsapi" type="text/javascript"></script> 
     <script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js" type="text/javascript"></script>

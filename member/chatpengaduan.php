@@ -2,17 +2,13 @@
 <?php
 							$idchat=$_GET['c'];
 if(isset($_POST['kirim'])) {	
-							$captcha=$_POST['g-recaptcha-response'];
 							$inputStatus=$_POST['inputStatus'];
 							$message=$_POST['message'];
 							$date = date("Y/m/d H:i:s");
-	if (!$captcha || empty($message)){
+	if (empty($message)){
 										?>
 										<div class="col-sm-9">
-											<div class="alert alert-dismissible alert-warning">
-							  					<button type="button" class="close" data-dismiss="alert">x</button>
-							  					There is an error in processing your request.
-											</div>
+											<p class="text-danger">Message Empty.</p>
 										</div>	
 									<?php	} else {
 													$res = $col_user->find(array("id_user"=>$id));
@@ -66,8 +62,6 @@ foreach($res as $row)
 										<div class="col-lg-15">
         									<textarea class="form-control" rows="3" id="message" name="message" placeholder="Message"></textarea>
         								</div>
-        								<br/>
-        								<div class="g-recaptcha" data-sitekey="6Lff-xsTAAAAAG3hGBuOPo4Ry4T7VSrypQng4KVr"></div>	
         								<br/>
         								<select class="form-control" id="inputStatus" name="inputStatus" required>
         								<?php if($status_pengaduan<>"close") { ?>
