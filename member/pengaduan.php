@@ -9,7 +9,7 @@ if ($level=="0"){
 											<script type="" language="JavaScript">
 											document.location='./pengaduan'</script>
 							<?php }
- $res = $col_ticket->findOne(array("id_user"=>$id));
+ $res = $col_ticket->find(array("id_user"=>$id));
 if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 						$idchat=$res['idchat'];
 						if ($_GET['c']<>""){
