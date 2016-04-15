@@ -1,6 +1,6 @@
 <?php
 if ($level=="0"){
-/*	if ($_GET['a']=="close"){
+	if ($_GET['a']=="close"){
 	$update = $col_ticket->update(
 								array("id_user"=>$id),
 								array('$set'=>array("status"=>"close"))); 
@@ -52,7 +52,7 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 							if ($insert) { ?>
 											<script type="" language="JavaScript">
 											document.location='./pengaduan'</script>
-							<?php } } } */ ?>
+							<?php } } }  ?>
 								<div class="col-sm-12 col-md-12 col-lg-9">
 									<div class="list-group">
 										<div class="panel" style="border:0px;" >
@@ -96,7 +96,7 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 			<section>
 			<form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 			<?php 
-			$res = $col_ticket->find(array("idchat"=>$idchat));
+/*			$res = $col_ticket->find(array("idchat"=>$idchat));
 			foreach($res as $row)
 								{ 
 									$subjectchat=$row['subject'];
@@ -136,8 +136,7 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 							document.location='./pengaduan'</script>
 				<?php 	} 						
 							}
-								}	
-											?>
+								} */	?>
 				<div class="col-sm-9">
 					<div class="list-group">
 						<div class="panel" style="border:0px;" >
