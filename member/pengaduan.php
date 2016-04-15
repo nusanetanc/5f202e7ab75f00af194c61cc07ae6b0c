@@ -304,7 +304,7 @@ if ($chat<>'' || $_GET['c']<>''){
 											  	?>
  										<tr>
 									      <td><?php echo $tgl.' '.$month.' '.$thn; ?></td>
-									      <td><a style=" text-decoration:none" href="<?php echo $base_url_member; ?>/chat-pengaduan/<?php echo $row['idchat'] ?>"><?php echo $row['subject']; ?><a><h6 class="text-success">New.</h6></td>
+									      <td><a style=" text-decoration:none" href="<?php echo $base_url_member; ?>/chat-pengaduan/<?php echo $row['idchat'] ?>"><?php echo $row['subject']; ?><a><h6 style=" text-decoration:none" class="text-danger">New.</h6></td>
 									      <?php $action = $row['status'];
 										         switch ($action) { 
 										         	case close: ?>
