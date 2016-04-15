@@ -10,8 +10,17 @@ if ($level=="0"){
 											document.location='./pengaduan'</script>
 							<?php }
  $res = $col_ticket->find(array("id_user"=>$id));
-if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
-						$idchat=$res['idchat'];
+ foreach($res as $row)
+		{ 
+			if($row['status']=="solved"){
+				$chat=$row['idchat'];
+			}
+			if($row['status']=="open"){
+				$chat=$row['idchat'];
+			}
+		} 
+if ($chat<>'' || $_GET['c']<>''){
+						$idchat=$chat;
 						if ($_GET['c']<>""){
  							$idchat=$_GET['c'];
  						}
