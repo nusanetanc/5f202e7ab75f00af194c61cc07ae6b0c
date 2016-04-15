@@ -24,7 +24,6 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 														$subject=$_POST['subject'];
 														$kategori=$_POST['kategori'];
 														$message=$_POST['message'];
-														$captcha=$_POST['g-recaptcha-response'];
 														$to=$_POST['to'];
 														$date = date("Y/m/d H:i:s");
 														$dateopen = date("Y/m/d");
@@ -32,12 +31,9 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 														$panjang = 45;
 														$txtlen = strlen($text)-1;
 														$result = '';
-							if ($subject=="" || $kategori=="" || $message=="" || !$captcha){ ?>
+							if ($subject=="" || $kategori=="" || $message==""){ ?>
 										<div class="col-sm-9">
-											<div class="alert alert-dismissible alert-warning">
-							  					<button type="button" class="close" data-dismiss="alert">x</button>
-							  					Gagal Membuat Pengaduan, silahkan lengkapi pengaduan anda.
-											</div>
+											<p class="text-danger">Gagal Membuat Pengaduan, Silahkan lengkapi.</p>
 										</div>	
 									<?php	} else {
 							for($i=1; $i<=$panjang; $i++){
@@ -113,16 +109,12 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 
 			<?php }				
 			if(isset($_POST['kirim'])) {	
-										$captcha=$_POST['g-recaptcha-response'];
 										$message=$_POST['message'];
 										$date = date("Y/m/d H:i:s");
-				if (!$captcha || empty($message)){
+				if (empty($message){
 								?>
 								<div class="col-sm-9">
-									<div class="alert alert-dismissible alert-warning">
-					  					<button type="button" class="close" data-dismiss="alert">x</button>
-					  					There is an error in processing your request.
-									</div>
+									<p class="text-danger">Message Empty.</p>
 								</div>	
 							<?php	} else {
 			$res = $col_user->find(array("id_user"=>$id));
@@ -188,8 +180,6 @@ if ($res['status']=="solved" || $res['status']=="open" || $_GET['c']<>''){
 													<div class="col-lg-15">
 			        									<textarea class="form-control" rows="3" id="message" name="message" placeholder="Message" readonly="true"></textarea>
 			        								</div>
-			        								<br/>
-			        								<div class="g-recaptcha" data-sitekey="6Ldx_BsTAAAAAOYrQegHLVhslSvd6z78zAr-4Knc" disabled="true"></div>	
 			        								<br/>
 			        								<input type="submit" class="btn btn-default background-btn-red" type="submit" name="kirim" id="kirim" disabled="true" value="REPLY">
 												</div>

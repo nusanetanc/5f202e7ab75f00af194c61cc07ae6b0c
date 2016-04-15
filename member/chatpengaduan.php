@@ -32,7 +32,7 @@ if ($inputStatus<>""){
 						if ($insert || $update){
 								  		?>
 										<script type="" language="JavaScript">
-										document.location='<?php echo $base_url_member; ?>/chatpengaduan/<?php echo $idchat; ?>'</script>
+										document.location='<?php echo $base_url_member; ?>/chat-pengaduan/<?php echo $idchat; ?>'</script>
 							<?php 	} 						
 								}
 								}	
