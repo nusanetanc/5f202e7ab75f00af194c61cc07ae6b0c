@@ -262,17 +262,18 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
       $pdf->Cell(0,7, 'John Doe', '0', 1, 'R');
       $pdf->Cell(0,7, 'Customer Relation Officer', '0', 1, 'R');
       $pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R');
+echo tes0;
       // Filename that will be used for the file as the attachment
       $fileatt_name0 = $id_cust.$package_cust.'update.pdf';
       $dir0='invoice/';
       $pdf ->Output($dir0.$fileatt_name0);
-
+echo tes1;
       $data = $pdf->Output("", "S");
 
       $email_from0 = "cs@groovy.id"; // Who the email is from
       $email_subject0 = "[CHANGE SERVICE REQUEST] - Nusanet - ".$nama_cust; // The Subject of the email
       $email_to0 = $email_dens; // Who the email is to
-
+echo tes2;
 
       $semi_rand = md5(time());
       $data = chunk_split(base64_encode($data));
@@ -300,7 +301,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
       "Content-Transfer-Encoding: base64\n\n" .
       $data .= "\n\n" .
       "--{$mime_boundary}--\n";
-
+echo tes3;
       $sent0 = mail($email_to0, $email_subject0, $email_message0, $email_headers0);
 
 			// mail for supevisior teknik
