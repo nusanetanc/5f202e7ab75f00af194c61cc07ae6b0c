@@ -49,6 +49,8 @@ if($level=="501"){
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title><?php echo $hal; ?></title>
+<link rel="icon" href="<?php echo $base_url; ?>/img/groovy-favicon.png" type="image/png">
 <nav class="navbar navbar-primary">
 <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -70,8 +72,6 @@ if($level=="501"){
                       {
       ?>
       <ul class="nav navbar-nav">
-        <title><?php echo $hal; ?></title>
-        <link rel="icon" href="<?php echo $base_url; ?>/img/groovy-favicon.png" type="image/png">
         <li ><a href="<?php echo $base_url_member; ?>/<?php echo $row['file']; ?>"  style="font-size:14px;padding-top:20px;padding-bottom:19px;font-weight:500; color:gray;"><i style="padding-right:10px;" class="fa fa-<?php echo $row['image']; ?> fa-lg"></i><?php echo $row['title'].' '; ?></a></li>
       </ul>
       <?php } ?>
