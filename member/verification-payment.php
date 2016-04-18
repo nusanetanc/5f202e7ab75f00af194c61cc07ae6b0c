@@ -279,7 +279,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				$headers1 .= 'From: cs@groovy.id' . "\r\n";
 				$headers1 .= 'Cc: cs@groovy.id' . "\r\n";
 				$emailcust_pindah=mail($email_cust, $subject1, $message1, $headers1);
-} /*
+}
 				require('../content/srcpdf/fpdf.php');
 				$pdf = new FPDF();
 				$pdf->AddPage();
@@ -351,7 +351,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				$data .= "\n\n" .
 				"--{$mime_boundary}--\n";
 
-				$sent1 = mail($email_to1, $email_subject1, $email_message1, $email_headers1); */
+				$sent1 = mail($email_to1, $email_subject1, $email_message1, $email_headers1);
 if ($update_user && $update_bayar && $emailinvoice){
 	?>
 		<script type="" language="JavaScript">

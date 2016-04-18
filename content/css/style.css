@@ -78,9 +78,9 @@ a.thumbnail1.active {
     height: 250px;
 }
 .pic-container {
-    height: 10px;
+    height: 150px;
     overflow-y: scroll;
-    overflow-position:
+    overflow-position: 
 }
 .textBold{
   font-weight: 600;
