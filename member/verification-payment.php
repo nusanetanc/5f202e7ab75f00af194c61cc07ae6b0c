@@ -318,7 +318,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				$pdf ->Output($dir.$fileatt_name);
 
 				$data = $pdf->Output("", "S");
-*/
+
 				$email_from1 = "cs@groovy.id"; // Who the email is from
 				$email_subject1 = "[CHANGE SERVICE REQUEST] - Nusanet - ".$nama_cust; // The Subject of the email
 				$email_to1 = $email_dens; // Who the email is to
@@ -351,7 +351,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				$data .= "\n\n" .
 				"--{$mime_boundary}--\n";
 
-				$sent1 = mail($email_to1, $email_subject1, $email_message1, $email_headers1);
+				$sent1 = mail($email_to1, $email_subject1, $email_message1, $email_headers1); */
 if ($update_user && $update_bayar && $emailinvoice){
 	?>
 		<script type="" language="JavaScript">
