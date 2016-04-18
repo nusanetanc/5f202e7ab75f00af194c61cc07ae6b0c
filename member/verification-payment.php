@@ -280,39 +280,55 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				$headers1 .= 'Cc: cs@groovy.id' . "\r\n";
 				$emailcust_pindah=mail($email_cust, $subject1, $message1, $headers1);
 }
-				require('../content/srcpdf/fpdf.php');
-				$pdf = new FPDF();
-				$pdf->AddPage();
-				$pdf->SetFont('Arial','B','10');
-				$pdf->Cell(0,20, 'PT Media Andalan Nusa (Nusanet)', '0', 1, 'R');
-				$pdf->SetFont('Arial','B','14');
-				$pdf->Cell(0,10, 'FORMULIR PERUBAHAN JENIS LAYANAN', '0', 5, 'C');
-				$pdf->Ln();
-				$pdf->SetFont('Arial','B','10');
-				$pdf->Cell(0,7, 'DATA PELANGGAN', '0', 1, 'L');
-				$pdf->Ln();
-				$pdf->SetFont('Arial','','10');
-				$pdf->Cell(0,7, 'Nama Lengkap                     : '.$nama_cust, '0', 1, 'L');
-				$pdf->Cell(0,7, 'No ID Pelanggan                  : '.$id_cust, '0', 1, 'L');
-				$pdf->Cell(0,7, 'Nomor Telepon                    : '.$phone_cust, '0', 1, 'L');
-				$pdf->Cell(0,7, 'Alamat Email                        : '.$email_cust, '0', 1, 'L');
-				$pdf->Cell(0,7, 'Layanan yang Digunakan    : '.$package_cust.' ('.$deskripsi_paket0.')', '0', 1, 'L');
-				$pdf->Cell(0,7, 'Layanan Add-ons                 : No', '0', 1, 'L');
-				$pdf->Ln();
-				$pdf->SetFont('Arial','B','10');
-				$pdf->Cell(0,7, 'PERGANTIAN LAYANAN', '0', 1, 'L');
-				$pdf->SetFont('Arial','','10');
-				$pdf->Cell(0,7, 'Pergantian Layanan : '.$move_paket_cust.' ('.$deskripsi_paket1.')', '0', 1, 'L');
-				$pdf->Ln();
-				$pdf->Ln();
-				$pdf->Ln();
-				$pdf->Ln();
-				$pdf->Image('../img/tanda_tangan.jpg','165','130','33','33');
-				$pdf->SetFont('Arial','','10');
-				$pdf->Cell(0,7, 'John Doe', '0', 1, 'R');
-				$pdf->Cell(0,7, 'Customer Relation Officer', '0', 1, 'R');
-				$pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R');
-/*				// Filename that will be used for the file as the attachment
+//mail to bukti pembayaran
+require('../content/srcpdf/fpdf.php');
+$header = array(
+    array("label"=>"Paket : ".$paket_bayar, "length"=>130, "align"=>"C"),
+    array("label"=>"Harga : ".$harga_bayar, "length"=>55, "align"=>"C")
+  );
+$pdf = new FPDF();
+$pdf->AddPage();
+$pdf->Image('../img/groovy-logo-orange.png','140','15','60');
+$pdf->SetFont('Arial','B','20');
+$pdf->Cell(0,30, '', '0', 5, 'L');
+$pdf->Cell(0,10, 'BUKTI PEMBAYARAN', '0', 5, 'C');
+$pdf->Ln();
+$pdf->SetFont('Arial','B','10');
+$pdf->Cell(0,7, 'DATA PELANGGAN', '0', 1, 'L');
+$pdf->Ln();
+$pdf->SetFont('Arial','','10');
+$pdf->Cell(0,7, 'Nama Lengkap            : '.$nama_cust, '0', 1, 'L');
+$pdf->Cell(0,7, 'No ID Pelanggan         : '.$id_cust, '0', 1, 'L');
+$pdf->Cell(0,7, 'Alamat Pemasangan   : '.$tempat_cust.', '.$ket_cust.', '.$alamat_cust.', '.$kota_cust, '0', 1, 'L');
+$pdf->Cell(0,7, 'Nomor Telepon            : '.$phone_cust, '0', 1, 'L');
+$pdf->Cell(0,7, 'Alamat Email               : '.$email_cust, '0', 1, 'L');
+$pdf->Ln();
+$pdf->SetFont('Arial','B','10');
+$pdf->Cell(0,7, 'DATA PEMBAYARAN', '0', 1, 'L');
+$pdf->Ln();
+$pdf->SetFont('Arial','','10');
+$pdf->SetFillColor(255,255,255);
+$pdf->SetTextColor(0);
+$pdf->SetDrawColor(0,0,0);
+foreach ($header as $kolom) {
+  $pdf->Cell($kolom['length'], 10, $kolom['label'], 1, '0', $kolom['align'], true);
+}
+$pdf->Ln();
+$pdf->Ln();
+$pdf->Ln();
+$pdf->SetFont('Arial','B','10');
+$pdf->Cell(0,7, 'KONFIRMASI PEMBAYRAN - PAYMENT CONFIRMATION', '0', 1, 'L');
+$pdf->Ln();
+$pdf->SetFont('Arial','','10');
+$pdf->Cell(0,7, 'Tanggal Bayar               : '.$tgl_bayar.' '.$month_bayar.' '.$thn_bayar, '0', 1, 'L');
+$pdf->Cell(0,7, 'Kode Virtual                   : '.$no_virtual, '0', 1, 'L');
+$pdf->Cell(0,7, 'Jumlah Pembayaran      : '.$total_bayar.'.000', '0', 1, 'L');
+$pdf->Ln();
+$pdf->Ln();
+$pdf->Image('../img/denstv-logo.png','10','250','50');
+$pdf->Image('../img/logo-nusanet.png','65','250','50');
+$pdf->Image('../img/a.jpg','170','240','30');
+				// Filename that will be used for the file as the attachment
 				$fileatt_name = $id_cust.$package_cust."update.pdf";
 				$dir='invoice/';
 				$pdf ->Output($dir.$fileatt_name);
@@ -351,7 +367,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				$data .= "\n\n" .
 				"--{$mime_boundary}--\n";
 
-				$sent1 = mail($email_to1, $email_subject1, $email_message1, $email_headers1); */
+				$sent1 = mail($email_to1, $email_subject1, $email_message1, $email_headers1);
 if ($update_user && $update_bayar && $emailinvoice){
 	?>
 		<script type="" language="JavaScript">
