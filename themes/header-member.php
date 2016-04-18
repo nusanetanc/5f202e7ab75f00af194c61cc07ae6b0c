@@ -49,7 +49,7 @@ if($level=="501"){
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title><?php echo $hal; ?></title>
+<title>Groovy-Member</title>
 <link rel="icon" href="<?php echo $base_url; ?>/img/groovy-favicon.png" type="image/png">
 <nav class="navbar navbar-primary">
 <div class="container-fluid">

@@ -312,13 +312,13 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				$pdf->Cell(0,7, 'John Doe', '0', 1, 'R');
 				$pdf->Cell(0,7, 'Customer Relation Officer', '0', 1, 'R');
 				$pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R');
-				// Filename that will be used for the file as the attachment
+/*				// Filename that will be used for the file as the attachment
 				$fileatt_name = $id_cust.$package_cust."update.pdf";
 				$dir='invoice/';
 				$pdf ->Output($dir.$fileatt_name);
 
 				$data = $pdf->Output("", "S");
-
+*/
 				$email_from1 = "cs@groovy.id"; // Who the email is from
 				$email_subject1 = "[CHANGE SERVICE REQUEST] - Nusanet - ".$nama_cust; // The Subject of the email
 				$email_to1 = $email_dens; // Who the email is to
@@ -331,7 +331,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				$mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";
 
 				// set header ........................
-				$email_headers1 = "From: ".$email_from;
+				$email_headers1 = "From: cs@groovy.id";
 				$email_headers1 .= "\nMIME-Version: 1.0\n" .
 				"Content-Type: multipart/mixed;\n" .
 				" boundary=\"{$mime_boundary}\"";
