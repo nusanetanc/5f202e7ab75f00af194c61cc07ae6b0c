@@ -50,7 +50,7 @@ if($level=="501"){
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><?php echo $hal; ?></title>
-<link rel="icon" href="<?php echo $base_url; ?>/img/groovy-favicon.png" type="image/png">
+<link rel="icon" href="<?php echo $base_url; ?>/img/groovy-favicon2.png" type="image/png">
 <nav class="navbar navbar-primary">
 <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
