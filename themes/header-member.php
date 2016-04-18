@@ -71,6 +71,7 @@ if($level=="501"){
       ?>
       <ul class="nav navbar-nav">
         <title><?php echo $hal; ?></title>
+        <link rel="icon" href="<?php echo $base_url; ?>/img/groovy-favicon.png" type="image/x-icon">
         <li ><a href="<?php echo $base_url_member; ?>/<?php echo $row['file']; ?>"  style="font-size:14px;padding-top:20px;padding-bottom:19px;font-weight:500; color:gray;"><i style="padding-right:10px;" class="fa fa-<?php echo $row['image']; ?> fa-lg"></i><?php echo $row['title'].' '; ?></a></li>
       </ul>
       <?php } ?>
