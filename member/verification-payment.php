@@ -265,7 +265,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
       // Filename that will be used for the file as the attachment
       $fileatt_name2 = $id_cust.$package_cust."update.pdf";
       $dir2='invoice/';
-      $pdf->Output($dir2.$fileatt_name2);
+      $pdf ->Output($dir2.$fileatt_name2);
 
       $data = $pdf->Output("", "S");
 
