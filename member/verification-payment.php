@@ -19,7 +19,7 @@ $date_month = date("d");
 $date_month = date("y");
 						$res = $col_user->find(array("id_user"=>$id_cust, "level"=>"0"));
 						foreach($res as $row)
-											{ 
+											{
 												$tanggal_registrasi = $row['tanggal_registrasi'];
 												$thn_registrasi = substr($tanggal_registrasi, 0,4);
 												$bln_registrasi = substr($tanggal_registrasi, 5,2);
@@ -51,7 +51,7 @@ $date_month = date("y");
 	                                            $proraide = $row['proraide'];
 	                                            $move_paket_cust = $row['move_paket'];
 	                                            $move_harga_cust = $row['move_harga'];
-	                                        }  
+	                                        }
 	if ($bln_akhir=="12"){
 		$next_month="01";
 		$next_years=$thn_akhir+1;
@@ -69,10 +69,10 @@ $date_month = date("y");
 		$pindah_paket = "PINDAH PAKET";
 	}else if($move_paket_cust==""){
 		$paket_bayar = $package_cust;
-		$harga_bayar = $harga_paket;	
+		$harga_bayar = $harga_paket;
 		$pindah_paket = "PAKET AKTIF";
-	} 
-	$total_bayar = $harga_paket - $proraide;            
+	}
+	$total_bayar = $harga_paket - $proraide;
 	            $res_pack = $col_package->find(array("nama"=>$package_cust));
 	            foreach($res_pack as $row_pack) { $harga_hari = $row_pack['harga_hari']; }
 $res = $col_package->find(array("nama"=>$package_cust));
@@ -85,7 +85,7 @@ $res = $col_package->find(array("nama"=>$move_paket_cust));
 	{
 		$deskripsi_paket1=$row['deskripsi'];
 	}
-if(isset($_POST['verifikasi'])){   
+if(isset($_POST['verifikasi'])){
 		$tanggal_bayar = $_POST['inputPaymentdate'];
 		$thn_bayar = substr($tanggal_bayar, 0,4);
 		$bln_bayar = substr($tanggal_bayar, 5,2);
@@ -97,7 +97,7 @@ if ($total_revenue=="" || empty($total_revenue)){
 } else {
 	$revenue=$total_revenue+$total_bayar;
 	$update_revenue = $col_revenue->update(array("date"=>$date), array('$set'=>array("total"=>$revenue.'.000')));
-} 
+}
 				//mail to bukti pembayaran
 				require('../content/srcpdf/fpdf.php');
 				$header = array(
@@ -193,9 +193,9 @@ if ($total_revenue=="" || empty($total_revenue)){
 				$data .= "\n\n" .
 				"--{$mime_boundary}--\n";
 
-				$emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1); 
+				$emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1);
 $pay = array("tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date, "paket"=>$paket_bayar, "harga"=>$harga_bayar, "no"=>$last_pembayaran);
-$update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("payment"=>$pay))); 
+$update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("payment"=>$pay)));
 	if ($status_cust=="registrasi"){
 		$sisa_hari = 30-$date_month;
 		$last_proraide = $sisa_hari*$harga_hari;
@@ -223,13 +223,13 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				$headers .= 'Cc: cs@groovy.id' . "\r\n";
 			$res = $col_user->find(array("level"=>"3"));
 						foreach($res as $row)
-											{ 	
-				$emailpasang=mail($row['email'], $subject, $message, $headers); 
+											{
+				$emailpasang=mail($row['email'], $subject, $message, $headers);
 			}
 	} else {
 		$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("tanggal_akhir"=>$next_years.'/'.$next_month.'/01', "pembayaran"=>$last_pembayaran, "proraide"=>"0")));
 	}
-		if($move_paket_cust<>""){ 
+		if($move_paket_cust<>""){
 			// mail for supevisior teknik
 				$subject = 'Pindah Paket';
 				$message = '
@@ -246,16 +246,16 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				  <br/>
 				</body>
 				</html>
-				'; 
+				';
 				$headers  = 'MIME-Version: 1.0' . "\r\n";
 				$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 				$headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
 				$headers .= 'Cc: cs@groovy.id' . "\r\n";
 			$res = $col_user->find(array("level"=>"3"));
 						foreach($res as $row)
-											{ 	
-				$emailpindah=mail($row['email'], $subject, $message, $headers); 
-			} 
+											{
+				$emailpindah=mail($row['email'], $subject, $message, $headers);
+			}
 					// mail for customer
 				$subject1 = 'Pemberitahuan Pindah Paket';
 				$message1 = '
@@ -270,18 +270,18 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 					            <p>Kami akan mengganti paket anda dari paket : '.$package_cust.' ('.$deskripsi_paket0.'), ke paket : '.$move_paket_cust.' ('.$deskripsi_paket1.'),pada tanggal : '.$tgl_akhir.' '.$month_akhir.' '.$thn_akhir.'.</p>
 					        </div>
 					        </div>
-					    </div>        
+					    </div>
 					</body>
 					</html>
-				'; 
+				';
 				$headers1  = 'MIME-Version: 1.0' . "\r\n";
 				$headers1 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 				$headers1 .= 'From: cs@groovy.id' . "\r\n";
 				$headers1 .= 'Cc: cs@groovy.id' . "\r\n";
-				$emailcust_pindah=mail($email_cust, $subject1, $message1, $headers1); 
+				$emailcust_pindah=mail($email_cust, $subject1, $message1, $headers1);
 } /*
 				require('../content/srcpdf/fpdf.php');
-				$pdf = new FPDF(); 
+				$pdf = new FPDF();
 				$pdf->AddPage();
 				$pdf->SetFont('Arial','B','10');
 				$pdf->Cell(0,20, 'PT Media Andalan Nusa (Nusanet)', '0', 1, 'R');
@@ -309,12 +309,12 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				$pdf->Ln();
 				$pdf->Image('../img/tanda_tangan.jpg','165','130','33','33');
 				$pdf->SetFont('Arial','','10');
-				$pdf->Cell(0,7, 'John Doe', '0', 1, 'R'); 
-				$pdf->Cell(0,7, 'Customer Relation Officer', '0', 1, 'R'); 
-				$pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R'); 
+				$pdf->Cell(0,7, 'John Doe', '0', 1, 'R');
+				$pdf->Cell(0,7, 'Customer Relation Officer', '0', 1, 'R');
+				$pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R');
 				// Filename that will be used for the file as the attachment
-				$fileatt_name = $id_cust.$package_cust."update.pdf"; 
-				$dir='invoice/'; 
+				$fileatt_name = $id_cust.$package_cust."update.pdf";
+				$dir='invoice/';
 				$pdf ->Output($dir.$fileatt_name);
 
 				$data = $pdf->Output("", "S");
@@ -355,8 +355,8 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 if ($update_user && $update_bayar && $emailinvoice){
 	?>
 		<script type="" language="JavaScript">
-		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>	
-<?php } } 
+		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>
+<?php } }
 if(isset($_POST['terminasi'])){
 	$termination_date=$_POST['inputTerminationdate'];
 	$textalasanberhenti=$_POST['textalasanberhenti'];
@@ -387,9 +387,9 @@ if(isset($_POST['terminasi'])){
 				$headers0 .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
 				$headers0 .= 'Cc: cs@groovy.id' . "\r\n";
 				$res = $col_user->find(array("level"=>"3"));
-			foreach($res as $row) { 	
-				$emailbongkar=mail($row['email'], $subject0, $message0, $headers0); 
-			} 
+			foreach($res as $row) {
+				$emailbongkar=mail($row['email'], $subject0, $message0, $headers0);
+			}
 			// mail for customer
 				$subject1 = 'Berhenti Berlangganan';
 				$message1 = '
@@ -403,19 +403,19 @@ if(isset($_POST['terminasi'])){
 					            <p style="font-size:20px;font-weight:bold;line-height:1px">Hai '.$nama_cust.',</p>
 					            <p>Terimakasih sudah berlangganan Groovy.</p>
 					            <p>Layanan anda akan berakhir pada tanggal '.$tgl_tutup.' '.$month_tutup.' '.$thn_tutup.'<br/><br/>
-					            Kami akan segera memberikan informasi terkait pengambilan perangkat yang Anda gunakan. Untuk Melakukan aktivasi kembali layanan kami bisa di halaman member anda.</p> 
+					            Kami akan segera memberikan informasi terkait pengambilan perangkat yang Anda gunakan. Untuk Melakukan aktivasi kembali layanan kami bisa di halaman member anda.</p>
 					            <p style="color:#888;">Terimakasih.</p>
 					        </div>
 					        </div>
-					    </div>        
+					    </div>
 					</body>
 					</html>
-				 
-				'; 
+
+				';
 				$headers1  = 'MIME-Version: 1.0' . "\r\n";
 				$headers1 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 				$headers1 .= 'From: cs@groovy.id' . "\r\n";
-				$headers1 .= 'Cc: billing@groovy.id' . "\r\n";	
+				$headers1 .= 'Cc: billing@groovy.id' . "\r\n";
 				$emailnotice=mail($email_cust, $subject1, $message1, $headers1);
 
 				require('../content/srcpdf/fpdf.php');
@@ -494,11 +494,11 @@ if(isset($_POST['terminasi'])){
 				$data .= "\n\n" .
 				"--{$mime_boundary}--\n";
 
-				$sent = mail($email_to, $email_subject, $email_message, $headers); 
+				$sent = mail($email_to, $email_subject, $email_message, $headers);
 if ($update_user && $emailbongkar && $emailnotice && $sent){
 	?>
 		<script type="" language="JavaScript">
-		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>	
+		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>
 <?php }  } ?>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
@@ -509,7 +509,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 				</div>
 				<div class="panel-body">
 					<br/>
-					<div class="col-sm-12">	
+					<div class="col-sm-12">
 						<form class="form-horizontal">
 						  <fieldset>
 							<div class="form-group">
@@ -547,7 +547,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 							  <div class="col-lg-9">
 								<h4><?php echo $tempat_cust.', '.$ket_cust.', '.$kota_cust; ?></h4>
 							  </div>
-							</div>					    						    						    						    
+							</div>
 							<div class="form-group">
 							  <label class="col-lg-3 control-label">Tanggal Registrasi : </label>
 							  <div class="col-lg-9">
@@ -559,13 +559,13 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 							  <div class="col-lg-9">
 								<h4><?php echo $tgl_akhir.' '.$month_akhir.' '.$thn_akhir; ?></h4>
 							  </div>
-							</div> <?php } ?>							
+							</div> <?php } ?>
 							<div class="form-group">
 							  <label class="col-lg-3 control-label">No Virtual : </label>
 							  <div class="col-lg-9">
 								<h4><?php echo $no_virtual ?></h4>
 							  </div>
-							</div>	
+							</div>
 							<div class="form-group">
 							  <label class="col-lg-3 control-label">Status : </label>
 							  <div class="col-lg-9">
@@ -574,14 +574,14 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 							</div>
 								<input type="text" class="form-control" id="inputPaymentdate" name="inputPaymentdate" placeholder="Payment Date" required>
 								<br/>
-								<div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>	
+								<div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>
 								<br/>
 								<input type="submit" class="btn" style="background-color:#1B5E12; color:#FFFFFF" name="verifikasi" id="verifikasi" value="Vertifikasi">
 							  </div>
-							</div>	
-						  </fieldset>	
-						</form>    		
-					</div>	
+							</div>
+						  </fieldset>
+						</form>
+					</div>
 				</div>
 		<div class="col-sm-12">
 		<div class="list-group">
@@ -609,7 +609,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 									  	<td><?php echo $proraide; ?></td>
 									  	<td><?php echo $total_bayar.'.000'; ?></td>
 									  </tbody>
-								</table>	  
+								</table>
 		  				    </div>
 		  				 </div>
 		  				 </form>
@@ -638,8 +638,8 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 									      <th width="25%">Total Pembayaran</th>
 									    </tr>
 									  </thead>
-									  <?php 
-									  	$res = $col_user->findOne(array("id_user"=>$id_cust));	
+									  <?php
+									  	$res = $col_user->findOne(array("id_user"=>$id_cust));
 										foreach ($res['payment'] as $bayar => $byr) {
 											$thn_konfirmasi = substr($byr['tanggal_konfirmasi'], 0,4);
 											$bln_konfirmasi = substr($byr['tanggal_konfirmasi'], 5,2);
@@ -651,7 +651,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 											$tgl_bayar = substr($byr['tanggal_bayar'], 8,10);
 											$month_bayar = bulan($bln_bayar);
 									   ?>
-									  <tbody>
+									  <tbody class="list-group-item">
 									  	<td><?php echo $byr['no']; ?></td>
 									  	<td><?php echo $tgl_bayar.' '.$month_bayar.' '.$thn_bayar; ?></td>
 									  	<td><?php echo $tgl_konfirmasi.' '.$month_konfirmasi.' '.$thn_konfirmasi; ?></td>
@@ -659,7 +659,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 									  	<td><?php echo $byr['harga']; ?></td>
 									  </tbody>
 									  <?php } ?>
-								</table>	  
+								</table>
 		  				    </div>
 		  				 </div>
 		  				 </form>
@@ -682,7 +682,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 								<input type="text" class="form-control" name="textalasanberhenti" id="textalasanberhenti" placeholder="Alasan Penutupan"><br/>
 								<div style="margin-bottom:7px;" class="g-recaptcha" data-sitekey="6Ldx_BsTAAAAAOYrQegHLVhslSvd6z78zAr-4Knc"></div>
 									<br/>
-								<input type="submit" class="btn" style="background-color:#1B5E12; color:#FFFFFF" name="terminasi" id="terminasi" value="TUTUP">	  
+								<input type="submit" class="btn" style="background-color:#1B5E12; color:#FFFFFF" name="terminasi" id="terminasi" value="TUTUP">
 		  				    </div>
 		  				 </div>
 		  				 </form>
@@ -692,6 +692,6 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 				</div>
 			</div>
 		</div>
-	</div>	
+	</div>
 </section>
 </form>
