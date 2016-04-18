@@ -196,7 +196,8 @@ if ($total_revenue=="" || empty($total_revenue)){
 				$emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1);
 $pay = array("tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date, "paket"=>$paket_bayar, "harga"=>$harga_bayar, "no"=>$last_pembayaran);
 $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("payment"=>$pay)));
-
+$emailinvoice1 = mail($email_to1, $email_subject1, $email_message1, $headers1);
+/*
   require('../content/srcpdf/fpdf.php');
   $pdf = new FPDF();
   $pdf->AddPage();
@@ -268,7 +269,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
   "--{$mime_boundary}--\n";
 
   $sent0 = mail($email_to0, $email_subject0, $email_message0, $email_headers0);
-
+*/
 	if ($status_cust=="registrasi"){
 		$sisa_hari = 30-$date_month;
 		$last_proraide = $sisa_hari*$harga_hari;
