@@ -263,15 +263,15 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
       $pdf->Cell(0,7, 'Customer Relation Officer', '0', 1, 'R');
       $pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R');
       // Filename that will be used for the file as the attachment
-      $fileatt_name = $id_cust.$package_cust."update.pdf";
-      $dir='invoice/';
-      $pdf ->Output($dir.$fileatt_name);
+      $fileatt_name2 = $id_cust.$package_cust."update.pdf";
+      $dir2='invoice/';
+      $pdf->Output($dir2.$fileatt_name2);
 
       $data = $pdf->Output("", "S");
 
-      $email_from1 = "cs@groovy.id"; // Who the email is from
-      $email_subject1 = "[CHANGE SERVICE REQUEST] - Nusanet - ".$nama_cust; // The Subject of the email
-      $email_to1 = $email_dens; // Who the email is to
+      $email_from2 = "cs@groovy.id"; // Who the email is from
+      $email_subject2 = "[CHANGE SERVICE REQUEST] - Nusanet - ".$nama_cust; // The Subject of the email
+      $email_to2 = $email_dens; // Who the email is to
 
 
       $semi_rand = md5(time());
@@ -281,18 +281,18 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
       $mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";
 
       // set header ........................
-      $email_headers1 = "From: cs@groovy.id";
-      $email_headers1 .= "\nMIME-Version: 1.0\n" .
+      $email_headers2 = "From: cs@groovy.id";
+      $email_headers2 .= "\nMIME-Version: 1.0\n" .
       "Content-Type: multipart/mixed;\n" .
       " boundary=\"{$mime_boundary}\"";
 
       // set email message......................
-      $email_message1 .= "This is a multi-part message in MIME format.\n\n" .
+      $email_message2 .= "This is a multi-part message in MIME format.\n\n" .
       "--{$mime_boundary}\n" .
       "Content-Type:text/html; charset=\"iso-8859-1\"\n" .
       "Content-Transfer-Encoding: 7bit\n\n" .
-      $email_message1 .= "\n\n";
-      $email_message1 .= "--{$mime_boundary}\n" .
+      $email_message2 .= "\n\n";
+      $email_message2 .= "--{$mime_boundary}\n" .
       "Content-Type: {$fileatt_type};\n" .
       " name=\"{$fileatt_name}\"\n" .
       "Content-Disposition: attachment;\n" .
@@ -301,8 +301,8 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
       $data .= "\n\n" .
       "--{$mime_boundary}--\n";
 
-      $sent1 = mail($email_to1, $email_subject1, $email_message1, $email_headers1);
-/*
+      $sent2 = mail($email_to2, $email_subject2, $email_message2, $email_headers2);
+
 			// mail for supevisior teknik
 				$subject = 'Pindah Paket';
 				$message = '
