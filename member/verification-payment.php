@@ -651,7 +651,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 											$tgl_bayar = substr($byr['tanggal_bayar'], 8,10);
 											$month_bayar = bulan($bln_bayar);
 									   ?>
-									  <tbody class="list-group-item">
+									  <tbody class="pic-container down">
 									  	<td><?php echo $byr['no']; ?></td>
 									  	<td><?php echo $tgl_bayar.' '.$month_bayar.' '.$thn_bayar; ?></td>
 									  	<td><?php echo $tgl_konfirmasi.' '.$month_konfirmasi.' '.$thn_konfirmasi; ?></td>
