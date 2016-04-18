@@ -229,7 +229,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 	} else {
 		$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("tanggal_akhir"=>$next_years.'/'.$next_month.'/01', "pembayaran"=>$last_pembayaran, "proraide"=>"0")));
 	}
-		if($move_paket_cust<>""){
+		if($move_paket_cust<>""){ /*
       require('../content/srcpdf/fpdf.php');
       $pdf = new FPDF();
       $pdf->AddPage();
@@ -302,7 +302,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
       "--{$mime_boundary}--\n";
 
       $sent1 = mail($email_to1, $email_subject1, $email_message1, $email_headers1);
-
+*/
 			// mail for supevisior teknik
 				$subject = 'Pindah Paket';
 				$message = '
