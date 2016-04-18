@@ -4,7 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Groovy||<?php echo $hal; ?></title>
+    <?php if($hal<>"index"){ ?>
+      <title><?php echo $hal; ?></title>
+    <?php } else { ?>
+      <title>Groovy</title>
+    <?php } ?>
     <link rel="icon" href="<?php echo $base_url; ?>/img/groovy-favicon.png" type="image/png">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
