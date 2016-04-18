@@ -1,7 +1,7 @@
 <script>
  $(document).ready(function(){
-}); 
-</script>  
+});
+</script>
 <?php
 if (!isset($_SESSION["id"]))
 { ?>
@@ -9,16 +9,16 @@ if (!isset($_SESSION["id"]))
     document.location='<?php echo $base_url; ?>'</script>
 <?php }
         $id =$_SESSION["id"];
-        $level = $_SESSION["level"];     
+        $level = $_SESSION["level"];
   $res = $col_user->find(array("id_user"=>$id));
   foreach($res as $row)
-                      {  
-                        $email = $row['email']; 
+                      {
+                        $email = $row['email'];
                         $nama = $row['nama'];
                         $notelp = $row['phone'];
                         $password = $row['password'];
                         $foto = $row['foto'];
-if ($level=="0"){ 
+if ($level=="0"){
                         $tempat = $row['tempat'];
                         $kota = $row['kota'];
                         $alamat = $row['alamat'];
@@ -41,14 +41,14 @@ if ($level=="0"){
 if($level=="501"){
                       $sm=$row['sm'];
 }
-                    }                                            
+                    }
   ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <nav class="navbar navbar-primary">
 <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -67,14 +67,15 @@ if($level=="501"){
       <?php
              $res = $col_menu->find(array("hakakses"=>$level));
              foreach($res as $row)
-                      {  
+                      {
       ?>
-      <ul class="nav navbar-nav">  
+      <ul class="nav navbar-nav">
+        <title><?php echo $hal; ?></title>
         <li ><a href="<?php echo $base_url_member; ?>/<?php echo $row['file']; ?>"  style="font-size:14px;padding-top:20px;padding-bottom:19px;font-weight:500; color:gray;"><i style="padding-right:10px;" class="fa fa-<?php echo $row['image']; ?> fa-lg"></i><?php echo $row['title'].' '; ?></a></li>
-      </ul>    
+      </ul>
       <?php } ?>
       <ul class="dropdown nav navbar-nav navbar-right navbar-primary">
-          <li class="dropdown-toggle" data-toggle="dropdown">    
+          <li class="dropdown-toggle" data-toggle="dropdown">
               <?php if ($foto=="" || $foto==null){ ?>
                           <img style="width:45px;height:45px;margin-top:7px;margin-left:10px;cursor:pointer" class="profile-img-card profile-img-card-mdm" src="<?php echo $base_url; ?>/img/default-avatar-groovy.png"/>
        <?php } else { ?>
@@ -99,7 +100,7 @@ if($level=="501"){
     <div class="modal-content">
      <form style="form-group" method="post">
         <?php
-        if (isset($_POST['terminationsend'])) { 
+        if (isset($_POST['terminationsend'])) {
                     // mail for billing dan cs
         $subject = 'Permintaan Berhenti Berlanganan';
         $message = '
@@ -123,8 +124,8 @@ if($level=="501"){
         $headers .= 'Cc: cs@groovy.id' . "\r\n";
       $res = $col_user->find(array("level"=>"2"));
             foreach($res as $row)
-                      {   
-        $emailpasang=mail($row['email'], $subject, $message, $headers); 
+                      {
+        $emailpasang=mail($row['email'], $subject, $message, $headers);
       } }
           ?>
       <div class="modal-header">
@@ -157,7 +158,7 @@ if($level=="501"){
     <div class="modal-content">
      <form style="form-group" method="post">
         <?php
-        if (isset($_POST['activeback'])) { 
+        if (isset($_POST['activeback'])) {
                     // mail for billing dan cs
         $subject = 'Permintaan Berlanganan Kembali';
         $message = '
@@ -180,8 +181,8 @@ if($level=="501"){
         $headers .= 'Cc: cs@groovy.id' . "\r\n";
       $res = $col_user->find(array("level"=>"2"));
             foreach($res as $row)
-                      {   
-        $emailaktivasi=mail($row['email'], $subject, $message, $headers); 
+                      {
+        $emailaktivasi=mail($row['email'], $subject, $message, $headers);
       } $update_user = $col_user->update(array("id_user"=>$id, "level"=>"0"), array('$set'=>array("status"=>"registrasi", "paket"=>$_POST['selectpackageaktiv'])));
 if($emailaktivasi && $update_user){ ?>
       <script type="" language="JavaScript">
@@ -197,8 +198,8 @@ if($emailaktivasi && $update_user){ ?>
           <option disabled="true" selected="true">Selected Package</option>
             <?php
                 $res = $col_package->find();
-                foreach($res as $row) 
-                            {   
+                foreach($res as $row)
+                            {
                               ?>
             <option><?php echo $row['nama']; ?></option>
             <?php } ?>
