@@ -280,50 +280,50 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 				$headers1 .= 'Cc: cs@groovy.id' . "\r\n";
 				$emailcust_pindah=mail($email_cust, $subject1, $message1, $headers1);
           require('../content/srcpdf/fpdf.php');
-          $pdf1 = new FPDF();
-          $pdf1->AddPage();
-          $pdf1->SetFont('Arial','B','10');
-          $pdf1->Cell(0,20, 'PT Media Andalan Nusa (Nusanet)', '0', 1, 'R');
-          $pdf1->SetFont('Arial','B','14');
-          $pdf1->Cell(0,10, 'FORMULIR PERUBAHAN JENIS LAYANAN', '0', 5, 'C');
-          $pdf1->Ln();
-          $pdf1->SetFont('Arial','B','10');
-          $pdf1->Cell(0,7, 'DATA PELANGGAN', '0', 1, 'L');
-          $pdf1->Ln();
-          $pdf1->SetFont('Arial','','10');
-          $pdf1->Cell(0,7, 'Nama Lengkap                     : '.$nama_cust, '0', 1, 'L');
-          $pdf1->Cell(0,7, 'No ID Pelanggan                  : '.$id_cust, '0', 1, 'L');
-          $pdf1->Cell(0,7, 'Nomor Telepon                    : '.$phone_cust, '0', 1, 'L');
-          $pdf1->Cell(0,7, 'Alamat Email                        : '.$email_cust, '0', 1, 'L');
-          $pdf1->Cell(0,7, 'Layanan yang Digunakan    : '.$package_cust.' ('.$deskripsi_paket0.')', '0', 1, 'L');
-          $pdf1->Cell(0,7, 'Layanan Add-ons                 : No', '0', 1, 'L');
-          $pdf1->Ln();
-          $pdf1->SetFont('Arial','B','10');
-          $pdf1->Cell(0,7, 'PERGANTIAN LAYANAN', '0', 1, 'L');
-          $pdf1->SetFont('Arial','','10');
-          $pdf1->Cell(0,7, 'Pergantian Layanan : '.$move_paket_cust.' ('.$deskripsi_paket1.')', '0', 1, 'L');
-          $pdf1->Ln();
-          $pdf1->Ln();
-          $pdf1->Ln();
-          $pdf1->Ln();
-          $pdf1->Image('../img/tanda_tangan.jpg','165','130','33','33');
-          $pdf1->SetFont('Arial','','10');
-          $pdf1->Cell(0,7, 'John Doe', '0', 1, 'R');
-          $pdf1->Cell(0,7, 'Customer Relation Officer', '0', 1, 'R');
-          $pdf1->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R');
+          $pdf = new FPDF();
+          $pdf->AddPage();
+          $pdf->SetFont('Arial','B','10');
+          $pdf->Cell(0,20, 'PT Media Andalan Nusa (Nusanet)', '0', 1, 'R');
+          $pdf->SetFont('Arial','B','14');
+          $pdf->Cell(0,10, 'FORMULIR PERUBAHAN JENIS LAYANAN', '0', 5, 'C');
+          $pdf->Ln();
+          $pdf->SetFont('Arial','B','10');
+          $pdf->Cell(0,7, 'DATA PELANGGAN', '0', 1, 'L');
+          $pdf->Ln();
+          $pdf->SetFont('Arial','','10');
+          $pdf->Cell(0,7, 'Nama Lengkap                     : '.$nama_cust, '0', 1, 'L');
+          $pdf->Cell(0,7, 'No ID Pelanggan                  : '.$id_cust, '0', 1, 'L');
+          $pdf->Cell(0,7, 'Nomor Telepon                    : '.$phone_cust, '0', 1, 'L');
+          $pdf->Cell(0,7, 'Alamat Email                        : '.$email_cust, '0', 1, 'L');
+          $pdf->Cell(0,7, 'Layanan yang Digunakan    : '.$package_cust.' ('.$deskripsi_paket0.')', '0', 1, 'L');
+          $pdf->Cell(0,7, 'Layanan Add-ons                 : No', '0', 1, 'L');
+          $pdf->Ln();
+          $pdf->SetFont('Arial','B','10');
+          $pdf->Cell(0,7, 'PERGANTIAN LAYANAN', '0', 1, 'L');
+          $pdf->SetFont('Arial','','10');
+          $pdf->Cell(0,7, 'Pergantian Layanan : '.$move_paket_cust.' ('.$deskripsi_paket1.')', '0', 1, 'L');
+          $pdf->Ln();
+          $pdf->Ln();
+          $pdf->Ln();
+          $pdf->Ln();
+          $pdf->Image('../img/tanda_tangan.jpg','165','130','33','33');
+          $pdf->SetFont('Arial','','10');
+          $pdf->Cell(0,7, 'John Doe', '0', 1, 'R');
+          $pdf->Cell(0,7, 'Customer Relation Officer', '0', 1, 'R');
+          $pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R');
 
           // Filename that will be used for the file as the attachment
           $fileatt_name0 = $id_cust.$package_cust.'update.pdf';
           $dir0='invoice/';
-          $pdf1 ->Output($dir0.$fileatt_name0);
-          $data0 = $pdf1->Output("", "S");
+          $pdf ->Output($dir0.$fileatt_name0);
+          $data = $pdf->Output("", "S");
 
           $email_from0 = "cs@groovy.id"; // Who the email is from
           $email_subject0 = "[CHANGE SERVICE REQUEST] - Nusanet - ".$nama_cust; // The Subject of the email
           $email_to0 = $email_dens; // Who the email is to
 
           $semi_rand = md5(time());
-          $data = chunk_split(base64_encode($data0));
+          $data = chunk_split(base64_encode($data));
 
           $fileatt_type = "application/pdf"; // File Type
           $mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";
@@ -349,7 +349,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
           $data .= "\n\n" .
           "--{$mime_boundary}--\n";
 
-          $sent0 = mail($email_to0, $email_subject0, $email_message0, $email_headers0);
+      //    $sent0 = mail($email_to0, $email_subject0, $email_message0, $email_headers0);
 }
 if ($update_user && $update_bayar && $emailinvoice){
 	?>
