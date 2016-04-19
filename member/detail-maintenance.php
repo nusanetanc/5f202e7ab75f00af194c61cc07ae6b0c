@@ -398,9 +398,9 @@ if ($update_user && $update_user1 && $insert_activty && $kirim_email && $sent0){
 									<tr>
 										<th width="15%">Tanggal kerja</th>
 										<th width="20%">Maintenance</th>
-										<th width="15%">Tanggal Selesai</th>
-										<th width="10%">Status</th>
 										<th width="20%">Support</th>
+										<th width="10%">Status</th>
+										<th width="15%">Tanggal Selesai</th>
 										<th width="20%">Catatan</th>
 									</tr>
 								</thead>
@@ -413,10 +413,10 @@ if ($update_user && $update_user1 && $insert_activty && $kirim_email && $sent0){
 								<tbody>
 									<tr>
 										<td><?php echo $row['tanggal_kerja']; ?></td>
-										<td><?php echo $row['maintenance']; ?></td>
-										<td><?php echo $row['tanggal_selesai']; ?></td>
-										<td><?php echo $row['status']; ?></td>
+										<td><?php echo $row['maintenance']; ?></td>																				
 										<td><?php echo $row['field_engineer'].'-'.$row['ass_field']; ?></td>
+										<td><?php echo $row['status']; ?></td>
+										<td><?php echo $row['tanggal_selesai']; ?></td>
 										<td><?php echo $row['catatan']; ?></td>
 									</tr>
 								 </tbody>
