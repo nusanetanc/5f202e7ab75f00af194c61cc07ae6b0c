@@ -51,7 +51,7 @@ $res3 = $col_user->find(array("nama"=>$inputAssfield, "level"=>"302"));
 						}
 	$histori=array("hal"=>"maintenance", "tanggal_maintenance"=>$inputTanggal, "maintenance"=>$inputMaintenance, "field_engineer"=>$inputField, "ass_filed"=>$inputAssfield);
 	$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>$histori)));
-	$insert_activty = $col_history->insert(array("hal"=>"maintenance","tanggal_kerja"=>$inputTanggal, "field_engineer"=>$inputField, "ass_field"=>$inputAssfield, "status"=>"progress", "id_cust"=>$id_cust, "nama_cust"=>$nama_cust, "tempat_customer"=>$tempat_cust, "alamat_customer"=>$alamat_cust, "kota_customer"=>$kota_cust ,"keterangan_customer"=>$ket_cust, "phone_customer"=>$phone_cust, "paket"=>$package_cust, "no_box"=>$no_box));
+	$insert_activty = $col_history->insert(array("hal"=>"maintenance","tanggal_kerja"=>$inputTanggal, "field_engineer"=>$inputField, "ass_field"=>$inputAssfield, "status"=>"progress", "id_cust"=>$id_cust, "nama_cust"=>$nama_cust, "tempat_customer"=>$tempat_cust, "alamat_customer"=>$alamat_cust, "kota_customer"=>$kota_cust ,"keterangan_customer"=>$ket_cust, "phone_customer"=>$phone_cust, "paket"=>$paket, "no_box"=>$no_box, "maintenance"=>$inputMaintenance));
 	// mail for billing
 	$to = $email_field.', '.$email_Assfield;
 	$subject = 'Jobs Maintenance';
@@ -392,6 +392,39 @@ if ($update_user && $update_user1 && $insert_activty && $kirim_email && $sent0){
 					</div>
 					<div class="panel-body">
 						<br/>
+						<div class="col-sm-12">
+							<table class="table table-striped table-hover ">
+								<thead>
+									<tr>
+										<th width="15%">Tanggal kerja</th>
+										<th width="20%">Maintenance</th>
+										<th width="15%">Tanggal Selesai</th>
+										<th width="10%">Status</th>
+										<th width="20%">Support</th>
+										<th width="20%">Catatan</th>
+									</tr>
+								</thead>
+								<?php
+								$status=$_GET['status'];
+									$res = $col_history->find(array("hal"=>"maintenance"))->sort(array("tanggal_kerja"));
+									foreach($res as $row)
+									{
+							?>
+								<tbody>
+									<tr>
+										<td><?php echo $row['tanggal_kerja']; ?></td>
+										<td><?php echo $row['maintenance']; ?></td>
+										<td><?php echo $row['tanggal_selesai']; ?></td>
+										<td><?php echo $row['status']; ?></td>
+										<td><?php echo $row['field_engineer'].'-'.$row['ass_field']; ?></td>
+										<td><?php echo $row['catatan']; ?></td>
+									</tr>
+								 </tbody>
+							<?php
+								}
+							?>
+							</table>
+						</div>
 					</div>
 			</div>
 			<div class="panel" style="border:0px;">
