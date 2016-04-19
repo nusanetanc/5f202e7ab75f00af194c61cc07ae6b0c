@@ -292,7 +292,7 @@ $(document).ready(function(){
 								<a href="<?php echo $base_url_member; ?>/jobs/status/done" style=" text-decoration:none">
 									<h5 style="color:white;">DONE</h5>
 								  	<?php
-										$res = $col_history->find(array("status"=>"done"));
+										$res = $col_history->find(array("status"=>"done", "hal"=>"maintenance", "hal"=>"update"));
 										$length = $res->count();
 														  {
 
