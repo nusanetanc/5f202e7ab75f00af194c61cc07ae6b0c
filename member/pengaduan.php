@@ -3,7 +3,7 @@ if ($level=="0"){
 	if ($_GET['a']=="close"){
 	$update = $col_ticket->update(
 								array("id_user"=>$id),
-								array('$set'=>array("status"=>"close"))); 
+								array('$set'=>array("status"=>"close")));
 							}
 							if ($update){ ?>
 											<script type="" language="JavaScript">
@@ -11,20 +11,20 @@ if ($level=="0"){
 							<?php }
  $res = $col_ticket->find(array("id_user"=>$id));
  foreach($res as $row)
-		{ 
+		{
 			if($row['status']=="solved"){
 				$chat=$row['idchat'];
 			}
 			if($row['status']=="open"){
 				$chat=$row['idchat'];
 			}
-		} 
+		}
 if ($chat<>'' || $_GET['c']<>''){
 						$idchat=$chat;
 						if ($_GET['c']<>""){
  							$idchat=$_GET['c'];
  						}
-}						
+}
 	if (empty($idchat)){ ?>
 							<section>
 							<form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
@@ -43,7 +43,7 @@ if ($chat<>'' || $_GET['c']<>''){
 							if ($subject=="" || $kategori=="" || $message==""){ ?>
 										<div class="col-sm-9">
 											<p class="text-danger">Gagal Membuat Pengaduan, Silahkan lengkapi.</p>
-										</div>	
+										</div>
 									<?php	} else {
 							for($i=1; $i<=$panjang; $i++){
 															$result .= $text[rand(0, $txtlen)];
@@ -55,8 +55,8 @@ if ($chat<>'' || $_GET['c']<>''){
 										"read"=>array(
 												"$id"
 											)
-									  );	
-							$insert = $col_ticket->insert(array("idchat"=>$result, "id_user"=>$id, "subject"=>$subject, "kategori"=>$kategori, "dateopen"=>$dateopen, 
+									  );
+							$insert = $col_ticket->insert(array("idchat"=>$result, "id_user"=>$id, "subject"=>$subject, "kategori"=>$kategori, "dateopen"=>$dateopen,
 																 "status"=>"open", "message"=>(array($msg))));
 							if ($insert) { ?>
 											<script type="" language="JavaScript">
@@ -70,11 +70,11 @@ if ($chat<>'' || $_GET['c']<>''){
 							  				</div>
 							  						<div class="panel-body container">
 									  					<br/>
-									  						<a href="<?php echo $base_url_member; ?>/histori-pengaduan" class="btn btn-primary">Histori Pengaduan</a>	
+									  						<a href="<?php echo $base_url_member; ?>/histori-pengaduan" class="btn btn-primary">Histori Pengaduan</a>
 									  					<br/>
-									  				</div>	
-								  					<div class="panel-body">		
-							  							<div class="col-sm-4">	
+									  				</div>
+								  					<div class="panel-body">
+							  							<div class="col-sm-4">
 								       						<select class="form-control" id="kategori" name="kategori">
 														       <option disabled selected="selected" value="">Pilih Kategori</option>
 														       <option>Tv</option>
@@ -82,7 +82,7 @@ if ($chat<>'' || $_GET['c']<>''){
 														       <option>Billing</option>
 														     </select>
 								      					</div>
-								      					<div class="col-sm-8">	
+								      					<div class="col-sm-8">
 								       						 <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
 								      					</div>
 								      					<div class="col-sm-12">
@@ -92,50 +92,50 @@ if ($chat<>'' || $_GET['c']<>''){
 															<div class="g-recaptcha" data-sitekey="6Ldx_BsTAAAAAOYrQegHLVhslSvd6z78zAr-4Knc"></div>
 															<br/>
 															<input type="submit" class="btn btn-default background-btn-red" type="submit" name="kirim" id="kirim" value="KIRIM">
-														</div>	
-												</div>				
+														</div>
+												</div>
 										</div>
 									</div>
 								</div>
-							</form>		
+							</form>
 							</section>
 <?php
- } else { 
- 	?>				
+ } else {
+ 	?>
 			<section>
 			<form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
-			<?php 
+			<?php
 			$res = $col_ticket->find(array("idchat"=>$idchat));
 			foreach($res as $row)
-								{ 
+								{
 									$subjectchat=$row['subject'];
 									$statuschat=$row['status'];
-								} 
+								}
 			if (empty($subjectchat)){	?>
 
 					<script type="" language="JavaScript">
 					document.location='./pengaduan'</script>
 
-			<?php }				
-			if(isset($_POST['kirim'])) {	
+			<?php }
+			if(isset($_POST['kirim'])) {
 										$message=$_POST['message'];
 										$date = date("Y/m/d H:i:s");
 				if (empty($message)){
 								?>
 								<div class="col-sm-9">
 									<p class="text-danger">Message Empty.</p>
-								</div>	
+								</div>
 							<?php	} else {
 			$res = $col_user->find(array("id_user"=>$id));
 			foreach($res as $row)
-								{ 
+								{
 									$fromname=$row['nama'];
-								} 
+								}
 			$msg=array(
 						"reply_id"=>$id,
 						"message"=>$message,
 						"date"=>$date
-					);	
+					);
 			$insert = $col_ticket->update(
 											array("idchat"=>$idchat),
 								   			array('$push'=>array("message"=>$msg)));
@@ -143,7 +143,7 @@ if ($chat<>'' || $_GET['c']<>''){
 					  		?>
 							<script type="" language="JavaScript">
 							document.location='./pengaduan'</script>
-				<?php 	} 						
+				<?php 	}
 							}
 								} 	?>
 				<div class="col-sm-9">
@@ -154,9 +154,9 @@ if ($chat<>'' || $_GET['c']<>''){
 			  				</div>
 			  				<div class="panel-body container">
 			  					<br/>
-			  						<a href="<?php echo $base_url_member; ?>/histori-pengaduan" class="btn btn-primary">Histori Pengaduan</a>	
+			  						<a href="<?php echo $base_url_member; ?>/histori-pengaduan" class="btn btn-primary">Histori Pengaduan</a>
 			  					<br/>
-			  				</div>	
+			  				</div>
 			  					<div class="panel-body container-pull-center">
 			  				    	<?php if($statuschat=="open" || $_GET['a']=="open") { ?>
 			  				    		<div class="panel panel-default container-full-center">
@@ -168,15 +168,15 @@ if ($chat<>'' || $_GET['c']<>''){
 			        									<textarea class="form-control" rows="3" id="message" name="message" placeholder="Message"></textarea>
 			        								</div>
 			        								<br/>
-			        								<div class="g-recaptcha" data-sitekey="6LcmYR0TAAAAALsJ0wZfuaPxA294B0YBqvnl8jhg"></div>	
+			        								<div class="g-recaptcha" data-sitekey="6LcmYR0TAAAAALsJ0wZfuaPxA294B0YBqvnl8jhg"></div>
 			        								<br/>
 			        								<input type="submit" class="btn btn-default background-btn-red" type="submit" name="kirim" id="kirim" value="REPLY">
 												</div>
-											</div>	
+											</div>
 										</li>
 										</ul>
 									<?php } else if ($statuschat=="solved") {
-									?>	
+									?>
 										<div class="alert alert-dismissible alert-success">
 										  <strong>Our complaint has been solved !</strong> Do you want to <a href="<?php echo $base_url_member; ?>/pengaduan-close" class="alert-link">close</a> or still <a href="<?php echo $base_url_member; ?>/pengaduan-open" class="alert-link">open</a> this complaint.
 										</div>
@@ -191,14 +191,14 @@ if ($chat<>'' || $_GET['c']<>''){
 			        								<br/>
 			        								<input type="submit" class="btn btn-default background-btn-red" type="submit" name="kirim" id="kirim" disabled="true" value="REPLY">
 												</div>
-											</div>	
+											</div>
 										</li>
 										</ul>
-									<?php } ?>								
+									<?php } ?>
 			  				    	<div class="pic-container down">
 										<ul class="list-group">
 									<?php
-										$res = $col_ticket->findOne(array("idchat"=>$idchat));	
+										$res = $col_ticket->findOne(array("idchat"=>$idchat));
 										foreach ($res['message'] as $message => $msg) {
 																						$reply_id = $msg['reply_id'];
 																						$tanggal = $msg['date'];
@@ -209,10 +209,10 @@ if ($chat<>'' || $_GET['c']<>''){
 																						$month = bulan($bln);
 										$res0 = $col_user->find(array("id_user"=>$reply_id ));
 										foreach($res0 as $row0)
-													{ 
+													{
 														$name_user_chat=$row0['nama'];
 														$level_user_chat=$row0['level'];
-													} 
+													}
 														$lvl = lev($level_user_chat);
 											  					?>
 							<li class="list-group-item">
@@ -253,22 +253,22 @@ if ($chat<>'' || $_GET['c']<>''){
 											<h6><p class="list-group-item-text"><?php echo 'Dikirim '.$tgl.' '.$month.' '.$thn.', '.$jam.' WIB'.', Dilihat Oleh : '; ?></p></h6>
 										</div>
 
-								<?php } ?>		
-									  	
-									</blockquote>	
-								</div>	
+								<?php } ?>
+
+									</blockquote>
+								</div>
 							</li>
-							
+
 																				<?php
 																						}
 																				?>
 										</ul>
 									</div>
 									</div>
-								</div>		
+								</div>
 						</div>
 					</div>
-				</div>	
+				</div>
 				</form>
 			</section>
 <?php } } else if ($level=="3" || $level=="4" || $level=="401") { ?>
@@ -277,7 +277,7 @@ if ($chat<>'' || $_GET['c']<>''){
 		<div class="list-group">
 			<div class="panel" style="border:0px;">
   				<div class="panel-heading" style="background-color:#F1453C">
-    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">PENGADUAN</h3>
+    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">PENGADUAN - ON PROGRESS</h3>
   				</div>
   					<br/>
   				    <div class="panel-body">
@@ -292,9 +292,9 @@ if ($chat<>'' || $_GET['c']<>''){
 									  </thead>
 									  <tbody>
 									  		  <?php
-										  	  $res = $col_ticket->find()->sort(array("tanggal"));
+										  	  $res = $col_ticket->find(array("status"=>"open"))->sort(array("dateopen"));
 											  foreach($res as $row)
-											  { 
+											  {
 											  	if ($row['kategori']=="Internet" || $row['kategori']=="Tv") {
 											  	$tanggal = $row['dateopen'];
 											  	$thn = substr($tanggal, 0,4);
@@ -306,7 +306,7 @@ if ($chat<>'' || $_GET['c']<>''){
 									      <td><?php echo $tgl.' '.$month.' '.$thn; ?></td>
 									      <td><a style=" text-decoration:none" href="<?php echo $base_url_member; ?>/chat-pengaduan/<?php echo $row['idchat'] ?>"><?php echo $row['subject']; ?><a></td>
 									      <?php $action = $row['status'];
-										         switch ($action) { 
+										         switch ($action) {
 										         	case close: ?>
 										         <td><span class="label label-success">Terselesaikan</span></td>
 											<?php 	break;
@@ -314,21 +314,123 @@ if ($chat<>'' || $_GET['c']<>''){
 										         <td><span class="label label-warning">On Progrress</span></td>
 											<?php  	break;
 													case solved: ?>
-										         <td><span class="label label-primary">Solved</span></td>										         
+										         <td><span class="label label-primary">Solved</span></td>
 											<?php break;
 														 } ?>
 									    </tr>
 									    	  <?php
-									    		} } 
+									    		} }
 									    			?>
 									   </tbody>
-								</table> 
+								</table>
 						</div>
 					</div>
  				</div>
+				<div class="panel" style="border:0px;">
+						<div class="panel-heading" style="background-color:#F1453C">
+							<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">PENGADUAN - SOLVED</h3>
+						</div>
+							<br/>
+								<div class="panel-body">
+									<div class="panel panel-default">
+										<table class="table table-striped table-hover ">
+										 <thead>
+												<tr>
+													<th width="15%">Date</th>
+													<th width="65%">Subject</th>
+													<th width="30%">Status</th>
+												</tr>
+											</thead>
+											<tbody>
+														<?php
+														$res = $col_ticket->find()->sort(array("status"=>"solved"))->sort(array("dateopen"));
+													foreach($res as $row)
+													{
+														if ($row['kategori']=="Internet" || $row['kategori']=="Tv") {
+														$tanggal = $row['dateopen'];
+														$thn = substr($tanggal, 0,4);
+														$bln = substr($tanggal, 5,2);
+													$tgl = substr($tanggal, 8,10);
+														$month = bulan($bln);
+														?>
+											<tr>
+													<td><?php echo $tgl.' '.$month.' '.$thn; ?></td>
+													<td><a style=" text-decoration:none" href="<?php echo $base_url_member; ?>/chat-pengaduan/<?php echo $row['idchat'] ?>"><?php echo $row['subject']; ?><a></td>
+													<?php $action = $row['status'];
+															 switch ($action) {
+																case close: ?>
+															 <td><span class="label label-success">Terselesaikan</span></td>
+												<?php 	break;
+														case open: ?>
+															 <td><span class="label label-warning">On Progrress</span></td>
+												<?php  	break;
+														case solved: ?>
+															 <td><span class="label label-primary">Solved</span></td>
+												<?php break;
+															 } ?>
+												</tr>
+														<?php
+														} }
+															?>
+											 </tbody>
+									</table>
+							</div>
+						</div>
+					</div>
+					<div class="panel" style="border:0px;">
+							<div class="panel-heading" style="background-color:#F1453C">
+								<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">PENGADUAN - DONE</h3>
+							</div>
+								<br/>
+									<div class="panel-body">
+										<div class="panel panel-default">
+											<table class="table table-striped table-hover ">
+											 <thead>
+													<tr>
+														<th width="15%">Date</th>
+														<th width="65%">Subject</th>
+														<th width="30%">Status</th>
+													</tr>
+												</thead>
+												<tbody>
+															<?php
+															$res = $col_ticket->find(array("status"=>"close"))->sort(array("dateopen"));
+														foreach($res as $row)
+														{
+															if ($row['kategori']=="Internet" || $row['kategori']=="Tv") {
+															$tanggal = $row['dateopen'];
+															$thn = substr($tanggal, 0,4);
+															$bln = substr($tanggal, 5,2);
+														$tgl = substr($tanggal, 8,10);
+															$month = bulan($bln);
+															?>
+												<tr>
+														<td><?php echo $tgl.' '.$month.' '.$thn; ?></td>
+														<td><a style=" text-decoration:none" href="<?php echo $base_url_member; ?>/chat-pengaduan/<?php echo $row['idchat'] ?>"><?php echo $row['subject']; ?><a></td>
+														<?php $action = $row['status'];
+																 switch ($action) {
+																	case close: ?>
+																 <td><span class="label label-success">Terselesaikan</span></td>
+													<?php 	break;
+															case open: ?>
+																 <td><span class="label label-warning">On Progrress</span></td>
+													<?php  	break;
+															case solved: ?>
+																 <td><span class="label label-primary">Solved</span></td>
+													<?php break;
+																 } ?>
+													</tr>
+															<?php
+															} }
+																?>
+												 </tbody>
+										</table>
+								</div>
+							</div>
+						</div>
 			</div>
 		</div>
-	</div>	
+	</div>
 </section>
 <?php } else if ($level=="2") { ?>
 <section>
@@ -353,7 +455,7 @@ if ($chat<>'' || $_GET['c']<>''){
 									  		  <?php
 										  	  $res = $col_ticket->find(array("kategori"=>"Billing"))->sort(array("tanggal"));
 											  foreach($res as $row)
-											  { 
+											  {
 											  	$tanggal = $row['dateopen'];
 											  	$thn = substr($tanggal, 0,4);
 											    $bln = substr($tanggal, 5,2);
@@ -364,7 +466,7 @@ if ($chat<>'' || $_GET['c']<>''){
 									      <td><?php echo $tgl.' '.$month.' '.$thn; ?></td>
 									      <td><a style=" text-decoration:none" href="<?php echo $base_url_member; ?>/chat-pengaduan/<?php echo $row['idchat'] ?>"><?php echo $row['subject']; ?><a><h6 class="text-success">New.</h6></td>
  											<?php $action = $row['status'];
-										         switch ($action) { 
+										         switch ($action) {
 										         	case close: ?>
 										         <td><span class="label label-success">Terselesaikan</span></td>
 											<?php 	break;
@@ -372,20 +474,20 @@ if ($chat<>'' || $_GET['c']<>''){
 										         <td><span class="label label-warning">On Progrress</span></td>
 											<?php  	break;
 													case solved: ?>
-										         <td><span class="label label-primary">Solved</span></td>										         
+										         <td><span class="label label-primary">Solved</span></td>
 											<?php break;
 														 } ?>
 									    </tr>
 									    	  <?php
 									    		} ?>
 									   </tbody>
-								</table> 
+								</table>
 						</div>
 					</div>
  				</div>
 			</div>
 		</div>
-	</div>	
+	</div>
 </section>
 <?php } else if ($level=="1") { ?>
 <section>
@@ -463,8 +565,8 @@ if ($chat<>'' || $_GET['c']<>''){
 														      <th width="30%">Jumlah</th>
 														    </tr>
 														  </thead>
-														  <?php 
-														  	$jml_open = 0;												
+														  <?php
+														  	$jml_open = 0;
 																$res_open = $col_ticket->find(array("status"=>"open"));
 																foreach ($res_open as $row_open) {
 																	$monthopen = substr($row_open['dateopen'], 5,2);
@@ -473,7 +575,7 @@ if ($chat<>'' || $_GET['c']<>''){
 																		$jml_open = $jml_open + 1;
 																	}
 																}
-														  	$jml_solved = 0;												
+														  	$jml_solved = 0;
 																$res_solved = $col_ticket->find(array("status"=>"solved"));
 																foreach ($res_solved as $row_solved) {
 																	$monthsolved = substr($row_solved['dateopen'], 5,2);
@@ -482,7 +584,7 @@ if ($chat<>'' || $_GET['c']<>''){
 																		$jml_solved = $jml_solved + 1;
 																	}
 																}
-														  	$jml_close = 0;												
+														  	$jml_close = 0;
 																$res_close = $col_ticket->find(array("status"=>"close"));
 																foreach ($res_close as $row_close) {
 																	$monthclose = substr($row_close['dateopen'], 5,2);
@@ -504,20 +606,20 @@ if ($chat<>'' || $_GET['c']<>''){
 														  		<td>Close</td>
 														  		<td><?php echo $jml_close; ?></td>
 														  </tbody>
-													</table> 
+													</table>
 												</div>
-											</div>	
-										</form>	
-									</div>	
+											</div>
+										</form>
+									</div>
 									</div>
 									</div>
 									<div class="col-sm-6">
-										<div id="chart_div3" style="height: 300px; width: auto;"></div>	
-									</div>				
+										<div id="chart_div3" style="height: 300px; width: auto;"></div>
+									</div>
 								</div>
 			 				</div>
 						</div>
 					</div>
-				</div>	
+				</div>
 			</section>
 			<?php } ?>
