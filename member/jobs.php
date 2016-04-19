@@ -7,7 +7,7 @@
   				</div>
   				<div class="panel-body">
   					<br/>
-					<div class="col-sm-12">	
+					<div class="col-sm-12">
 						<table class="table table-striped table-hover ">
 						  <thead>
 						    <tr>
@@ -23,8 +23,8 @@
 						  	if(isset($_GET['status'])){
 								$res = $col_history->find(array("status"=>$_GET['status']))->sort(array("tanggal_kerja"));
 								foreach($res as $row)
-								{ 
-									if ($row['hal']=="maintenance" || $row['hal']=="pasang"  || $row['hal']=="bongkar"){
+								{
+									if ($row['hal']<>"update"){
 										$tanggal_history=$row['tanggal_kerja'];
 									} elseif($row['hal']=="update"){
 										$tanggal_history=$row['tanggal_update'];
@@ -41,17 +41,17 @@
 						      <td><?php echo $row['tempat_customer'].', '.$row['keterangan_customer'].', '.$row['kota_customer']; ?></td>
 						      <td><?php echo $row['hal']; ?></td>
 						      <td><?php echo $row['field_engineer'].', '.$row['ass_field']; ?></td>
-						      <td><b><a href="<?php echo $base_url_member; ?>/report-jobs/<?php echo $row['_id']?>/" class="btn btn-primary btn-sm">view</a></b></td>						      
+						      <td><b><a href="<?php echo $base_url_member; ?>/report-jobs/<?php echo $row['_id']?>/" class="btn btn-primary btn-sm">view</a></b></td>
 						    </tr>
 						   </tbody>
 						<?php
 							} }
-						?>  
+						?>
 						<?php
 						  	if(isset($_GET['support'])){
 								$res = $col_history->find()->sort(array("tanggal_kerja"));
 								foreach($res as $row)
-								{  
+								{
 									$support = str_replace('000',' ', $_GET['support']);
 									if($row['field_engineer']==$support || $row['ass_field']==$support)
 										{
@@ -67,16 +67,16 @@
 						      <td><?php echo $row['tempat_customer'].', '.$row['keterangan_customer'].', '.$row['kota_customer']; ?></td>
 						      <td><?php echo $row['hal']; ?></td>
 						      <td><?php echo $row['field_engineer'].', '.$row['ass_field']; ?></td>
-						      <td><b><a href="<?php echo $base_url_member; ?>/report-jobs/<?php echo $row['_id']?>/" class="btn btn-primary btn-sm">view</a></b></td>						      
+						      <td><b><a href="<?php echo $base_url_member; ?>/report-jobs/<?php echo $row['_id']?>/" class="btn btn-primary btn-sm">view</a></b></td>
 						    </tr>
 						   </tbody>
 						<?php
 							} } }
-						?> 
-						</table>    
-					</div>	
+						?>
+						</table>
+					</div>
  				</div>
 			</div>
 		</div>
-	</div>	
+	</div>
 </section>
