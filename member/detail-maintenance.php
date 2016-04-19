@@ -413,7 +413,7 @@ if ($update_user && $update_user1 && $insert_activty && $kirim_email && $sent0){
 								<tbody>
 									<tr>
 										<td><?php echo $row['tanggal_kerja']; ?></td>
-										<td><?php echo $row['maintenance']; ?></td>																				
+										<td><?php echo $row['maintenance']; ?></td>
 										<td><?php echo $row['field_engineer'].'-'.$row['ass_field']; ?></td>
 										<td><?php echo $row['status']; ?></td>
 										<td><?php echo $row['tanggal_selesai']; ?></td>
@@ -460,6 +460,33 @@ if ($update_user && $update_user1 && $insert_activty && $kirim_email && $sent0){
 					</div>
 					<div class="panel-body">
 						<br/>
+						<div class="col-sm-12">
+							<table class="table table-striped table-hover ">
+								<thead>
+									<tr>
+										<th width="15%">Tanggal Update</th>
+										<th width="20%">Paket Lama</th>
+										<th width="20%">Paket Baru</th>
+									</tr>
+								</thead>
+								<?php
+								$status=$_GET['status'];
+									$res = $col_history->find(array("hal"=>"update"))->sort(array("tanggal_update"));
+									foreach($res as $row)
+									{
+							?>
+								<tbody>
+									<tr>
+										<td><?php echo $row['tanggal_update']; ?></td>
+										<td><?php echo $row['paket_lama']; ?></td>
+										<td><?php echo $row['paket_baru']; ?></td>
+									</tr>
+								 </tbody>
+							<?php
+								}
+							?>
+							</table>
+						</div>
 					</div>
 			</div>
 		</div>
