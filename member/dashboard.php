@@ -292,7 +292,7 @@ $(document).ready(function(){
 								<a href="<?php echo $base_url_member; ?>/jobs/status/done" style=" text-decoration:none">
 									<h5 style="color:white;">DONE</h5>
 								  	<?php
-										$res = $col_history->find(array("status"=>"done", "hal"=>"maintenance", "hal"=>"update"));
+										$res = $col_history->find(array("status"=>"done"));
 										$length = $res->count();
 														  {
 
@@ -392,15 +392,48 @@ $(document).ready(function(){
 <section>
 	<div class="col-sm-12 col-md-12 col-lg-9" style="font-family:Arial;">
 		<div class="row">
-			<div class="col-sm-12 col-md-6 col-lg-6">
-				<a href="<?php echo $base_url_member; ?>/pengaduan" style=" text-decoration:none">
-					<div class="well well-lg" style="background-color:#FF3224;">
-					  <h4 style="color:white;"><b>PENGADUAN</b></h4>
-					  <div class="text-center">
-					  	<b style="color:white; font-size:2em;"><i class="fa fa-flag fa-5x"></i></b>
-					  </div>
+			<div class="col-sm-6">
+				<div class="well well-lg background-btn-red">
+				  <h5 style="color:white;"><b>PENGADUAN</b></h5>
+				  	<div class="text-center">
+				  	<br/>
+					  	<div class="row">
+							<div class="col-sm-4">
+								<h5 style="color:white;">ON PROGRESS</h5>
+							  	<?php
+									$res = $col_ticket->find(array("status"=>"open"));
+									$length = $res->count();
+													  {
+
+							   ?>
+							  	<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
+							  	<?php } ?>
+							</div>
+							<div class="col-sm-4">
+								<h5 style="color:white;">SOLVED</h5>
+							  	<?php
+									$res = $col_ticket->find(array("status"=>"solved"));
+									$length = $res->count();
+													  {
+
+							   ?>
+							  	<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
+							  	<?php } ?>
+							</div>
+							<div class="col-sm-4">
+								<h5 style="color:white;">DONE</h5>
+							  	<?php
+									$res = $col_ticket->find(array("status"=>"close"));
+									$length = $res->count();
+													  {
+
+							   ?>
+							  	<b style="color:white; font-size:3em;"><?php echo $length; ?></b>
+							  	<?php } ?>
+							</div>
+					 	</div>
 					</div>
-				</a>
+				</div>
 			</div>
 			<div class="col-sm-12 col-md-6 col-lg-6" >
 				<a href="<?php echo $base_url_member; ?>/information"  style=" text-decoration:none">
