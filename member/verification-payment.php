@@ -98,7 +98,170 @@ if ($total_revenue=="" || empty($total_revenue)){
 	$revenue=$total_revenue+$total_bayar;
 	$update_revenue = $col_revenue->update(array("date"=>$date), array('$set'=>array("total"=>$revenue.'.000')));
 }
-				//mail to bukti pembayaran
+$pay = array("tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date, "paket"=>$paket_bayar, "harga"=>$harga_bayar, "no"=>$last_pembayaran);
+$update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("payment"=>$pay)));
+if($move_paket_cust<>""){
+  require('../content/srcpdf/fpdf.php');
+  $pdf = new FPDF();
+  $pdf->AddPage();
+  $pdf->SetFont('Arial','B','10');
+  $pdf->Cell(0,20, 'PT Media Andalan Nusa (Nusanet)', '0', 1, 'R');
+  $pdf->SetFont('Arial','B','14');
+  $pdf->Cell(0,10, 'FORMULIR PERUBAHAN JENIS LAYANAN', '0', 5, 'C');
+  $pdf->Ln();
+  $pdf->SetFont('Arial','B','10');
+  $pdf->Cell(0,7, 'DATA PELANGGAN', '0', 1, 'L');
+  $pdf->Ln();
+  $pdf->SetFont('Arial','','10');
+  $pdf->Cell(0,7, 'Nama Lengkap                     : '.$nama_cust, '0', 1, 'L');
+  $pdf->Cell(0,7, 'No ID Pelanggan                  : '.$id_cust, '0', 1, 'L');
+  $pdf->Cell(0,7, 'Nomor Telepon                    : '.$phone_cust, '0', 1, 'L');
+  $pdf->Cell(0,7, 'Alamat Email                        : '.$email_cust, '0', 1, 'L');
+  $pdf->Cell(0,7, 'Layanan yang Digunakan    : '.$package_cust.' ('.$deskripsi_paket0.')', '0', 1, 'L');
+  $pdf->Cell(0,7, 'Layanan Add-ons                 : No', '0', 1, 'L');
+  $pdf->Ln();
+  $pdf->SetFont('Arial','B','10');
+  $pdf->Cell(0,7, 'PERGANTIAN LAYANAN', '0', 1, 'L');
+  $pdf->SetFont('Arial','','10');
+  $pdf->Cell(0,7, 'Pergantian Layanan : '.$move_paket_cust.' ('.$deskripsi_paket1.')', '0', 1, 'L');
+  $pdf->Ln();
+  $pdf->Ln();
+  $pdf->Ln();
+  $pdf->Ln();
+  $pdf->Image('../img/tanda_tangan.jpg','165','130','33','33');
+  $pdf->SetFont('Arial','','10');
+  $pdf->Cell(0,7, 'John Doe', '0', 1, 'R');
+  $pdf->Cell(0,7, 'Customer Relation Officer', '0', 1, 'R');
+  $pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R');
+
+  // Filename that will be used for the file as the attachment
+  $fileatt_name0 = $id_cust.$package_cust.'update.pdf';
+  $dir0='invoice/';
+  $pdf ->Output($dir0.$fileatt_name0);
+  $data = $pdf->Output("", "S");
+
+  $email_from0 = "cs@groovy.id"; // Who the email is from
+  $email_subject0 = "[CHANGE SERVICE REQUEST] - Nusanet - ".$nama_cust; // The Subject of the email
+  $email_to0 = $email_dens; // Who the email is to
+
+  $semi_rand = md5(time());
+  $data = chunk_split(base64_encode($data));
+
+  $fileatt_type = "application/pdf"; // File Type
+  $mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";
+
+  // set header ........................
+  $email_headers0 = "From: cs@groovy.id";
+  $email_headers0 .= "\nMIME-Version: 1.0\n" .
+  "Content-Type: multipart/mixed;\n" .
+  " boundary=\"{$mime_boundary}\"";
+
+  // set email message......................
+  $email_message0 .= "This is a multi-part message in MIME format.\n\n" .
+  "--{$mime_boundary}\n" .
+  "Content-Type:text/html; charset=\"iso-8859-1\"\n" .
+  "Content-Transfer-Encoding: 7bit\n\n" .
+  $email_message0 .= "\n\n";
+  $email_message0 .= "--{$mime_boundary}\n" .
+  "Content-Type: {$fileatt_type};\n" .
+  " name=\"{$fileatt_name}\"\n" .
+  "Content-Disposition: attachment;\n" .
+  " filename=\"{$fileatt_name}\"\n" .
+  "Content-Transfer-Encoding: base64\n\n" .
+  $data .= "\n\n" .
+  "--{$mime_boundary}--\n";
+
+  $sent0 = mail($email_to0, $email_subject0, $email_message0, $email_headers0);
+}
+	if ($status_cust=="registrasi"){
+		$sisa_hari = 30-$date_month;
+		$last_proraide = $sisa_hari*$harga_hari;
+		$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("pembayaran"=>$last_pembayaran, "proraide"=>$last_proraide.'.000')));
+				// mail for supevisior teknik
+				$subject = 'Atur Jadwal Pemasangan';
+				$message = '
+				<html>
+				<body>
+				  <p>Mohon segera diatur jadwal pemasangan untuk customer berikut : </p>
+				  <br/>
+				  <p>ID Customer : '.$id_cust.'</p>
+				  <p>Nama : '.$nama_cust.'</p>
+				  <p>Tempat : '.$tempat_cust.', '.$ket_cust.', '.$kota_cust.'</p>
+				  <p>Tanggal Registrasi : '.$tgl_registrasi.' '.$month_registrasi.' '.$thn_registrasi.'</p>
+				  <p>Registrasi : '.$registrasi_cust.' '.$sales.'</p>
+				  <p>Paket : '.$package_cust.'('.$deskripsi_paket0.')</p>
+				  <br/>
+				</body>
+				</html>
+				';
+				$headers  = 'MIME-Version: 1.0' . "\r\n";
+				$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+				$headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
+				$headers .= 'Cc: cs@groovy.id' . "\r\n";
+			$res = $col_user->find(array("level"=>"3"));
+						foreach($res as $row)
+											{
+				$emailpasang=mail($row['email'], $subject, $message, $headers);
+			}
+	} else {
+		$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("tanggal_akhir"=>$next_years.'/'.$next_month.'/01', "pembayaran"=>$last_pembayaran, "proraide"=>"0")));
+	}
+		if($move_paket_cust<>""){
+			// mail for supevisior teknik
+				$subject = 'Pindah Paket';
+				$message = '
+				<html>
+				<body>
+				  <p>Customer pindah paket : </p>
+				  <br/>
+				  <p>ID Customer : '.$id_cust.'</p>
+				  <p>Nama : '.$nama_cust.'</p>
+				  <p>Tempat : '.$tempat_cust.', '.$ket_cust.', '.$kota_cust.'</p>
+				  <p>Paket Aktif : '.$package_cust.'('.$deskripsi_paket0.')</p>
+				  <p>Pindah Paket : '.$move_paket_cust.'('.$deskripsi_paket1.')</p>
+				  <p>Tanggal Pindah Paket : '.$tgl_akhir.' '.$month_akhir.' '.$thn_akhir.'</p>
+				  <br/>
+				</body>
+				</html>
+				';
+				$headers  = 'MIME-Version: 1.0' . "\r\n";
+				$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+				$headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
+				$headers .= 'Cc: cs@groovy.id' . "\r\n";
+			$res = $col_user->find(array("level"=>"3"));
+						foreach($res as $row)
+											{
+				$emailpindah=mail($row['email'], $subject, $message, $headers);
+			}
+					// mail for customer
+				$subject1 = 'Pemberitahuan Pindah Paket';
+				$message1 = '
+				<html>
+					<body style="background-color:#ddd;padding:50px 0 50px 0;font-family:arial;font-size:15px;">
+					    <div style="margin:0 auto;max-width:500px;background-color:#eee;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
+					        <div style="background: linear-gradient(to right, #FF3D23 , #fc742f);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
+					            <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
+					        </div>
+					        <div style="padding:20px;color:#333;">
+					            <p style="font-size:20px;font-weight:bold;line-height:1px">Pemberitahuan Pindah Paket</p>
+					            <p>Kami akan mengganti paket anda dari paket : '.$package_cust.' ('.$deskripsi_paket0.'), ke paket : '.$move_paket_cust.' ('.$deskripsi_paket1.'),pada tanggal : '.$tgl_akhir.' '.$month_akhir.' '.$thn_akhir.'.</p>
+					        </div>
+					        </div>
+					    </div>
+					</body>
+					</html>
+				';
+				$headers1  = 'MIME-Version: 1.0' . "\r\n";
+				$headers1 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+				$headers1 .= 'From: cs@groovy.id' . "\r\n";
+				$headers1 .= 'Cc: cs@groovy.id' . "\r\n";
+				$emailcust_pindah=mail($email_cust, $subject1, $message1, $headers1);
+}
+if ($update_user && $update_bayar && $emailinvoice){
+	?>
+		<script type="" language="JavaScript">
+		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>
+<?php } 				//mail to bukti pembayaran
 				require('../content/srcpdf/fpdf.php');
 				$header = array(
 						array("label"=>"Paket : ".$paket_bayar, "length"=>130, "align"=>"C"),
@@ -193,248 +356,7 @@ if ($total_revenue=="" || empty($total_revenue)){
 				$data .= "\n\n" .
 				"--{$mime_boundary}--\n";
 
-				$emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1);
-$pay = array("tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date, "paket"=>$paket_bayar, "harga"=>$harga_bayar, "no"=>$last_pembayaran);
-$update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("payment"=>$pay)));
-/*
-  require('../content/srcpdf/fpdf.php');
-  $pdf = new FPDF();
-  $pdf->AddPage();
-  $pdf->SetFont('Arial','B','10');
-  $pdf->Cell(0,20, 'PT Media Andalan Nusa (Nusanet)', '0', 1, 'R');
-  $pdf->SetFont('Arial','B','14');
-  $pdf->Cell(0,10, 'FORMULIR PERUBAHAN JENIS LAYANAN', '0', 5, 'C');
-  $pdf->Ln();
-  $pdf->SetFont('Arial','B','10');
-  $pdf->Cell(0,7, 'DATA PELANGGAN', '0', 1, 'L');
-  $pdf->Ln();
-  $pdf->SetFont('Arial','','10');
-  $pdf->Cell(0,7, 'Nama Lengkap                     : '.$nama_cust, '0', 1, 'L');
-  $pdf->Cell(0,7, 'No ID Pelanggan                  : '.$id_cust, '0', 1, 'L');
-  $pdf->Cell(0,7, 'Nomor Telepon                    : '.$phone_cust, '0', 1, 'L');
-  $pdf->Cell(0,7, 'Alamat Email                        : '.$email_cust, '0', 1, 'L');
-  $pdf->Cell(0,7, 'Layanan yang Digunakan    : '.$package_cust.' ('.$deskripsi_paket0.')', '0', 1, 'L');
-  $pdf->Cell(0,7, 'Layanan Add-ons                 : No', '0', 1, 'L');
-  $pdf->Ln();
-  $pdf->SetFont('Arial','B','10');
-  $pdf->Cell(0,7, 'PERGANTIAN LAYANAN', '0', 1, 'L');
-  $pdf->SetFont('Arial','','10');
-  $pdf->Cell(0,7, 'Pergantian Layanan : '.$move_paket_cust.' ('.$deskripsi_paket1.')', '0', 1, 'L');
-  $pdf->Ln();
-  $pdf->Ln();
-  $pdf->Ln();
-  $pdf->Ln();
-  $pdf->Image('../img/tanda_tangan.jpg','165','130','33','33');
-  $pdf->SetFont('Arial','','10');
-  $pdf->Cell(0,7, 'John Doe', '0', 1, 'R');
-  $pdf->Cell(0,7, 'Customer Relation Officer', '0', 1, 'R');
-  $pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R');
-
-  // Filename that will be used for the file as the attachment
-  $fileatt_name0 = $id_cust.$package_cust.'update.pdf';
-  $dir0='invoice/';
-  $pdf ->Output($dir0.$fileatt_name0);
-  $data = $pdf->Output("", "S");
-
-  $email_from0 = "cs@groovy.id"; // Who the email is from
-  $email_subject0 = "[CHANGE SERVICE REQUEST] - Nusanet - ".$nama_cust; // The Subject of the email
-  $email_to0 = $email_dens; // Who the email is to
-
-  $semi_rand = md5(time());
-  $data = chunk_split(base64_encode($data));
-
-  $fileatt_type = "application/pdf"; // File Type
-  $mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";
-
-  // set header ........................
-  $email_headers0 = "From: cs@groovy.id";
-  $email_headers0 .= "\nMIME-Version: 1.0\n" .
-  "Content-Type: multipart/mixed;\n" .
-  " boundary=\"{$mime_boundary}\"";
-
-  // set email message......................
-  $email_message0 .= "This is a multi-part message in MIME format.\n\n" .
-  "--{$mime_boundary}\n" .
-  "Content-Type:text/html; charset=\"iso-8859-1\"\n" .
-  "Content-Transfer-Encoding: 7bit\n\n" .
-  $email_message0 .= "\n\n";
-  $email_message0 .= "--{$mime_boundary}\n" .
-  "Content-Type: {$fileatt_type};\n" .
-  " name=\"{$fileatt_name}\"\n" .
-  "Content-Disposition: attachment;\n" .
-  " filename=\"{$fileatt_name}\"\n" .
-  "Content-Transfer-Encoding: base64\n\n" .
-  $data .= "\n\n" .
-  "--{$mime_boundary}--\n";
-
-  $sent0 = mail($email_to0, $email_subject0, $email_message0, $email_headers0);
-*/
-require('../content/srcpdf/fpdf.php');
-$pdf = new FPDF();
-$pdf->AddPage();
-$pdf->SetFont('Arial','B','10');
-$pdf->Cell(0,20, 'PT Media Andalan Nusa (Nusanet)', '0', 1, 'R');
-$pdf->SetFont('Arial','B','14');
-$pdf->Cell(0,10, 'FORMULIR PENUTUPAN LAYANAN', '0', 5, 'C');
-$pdf->Ln();
-$pdf->SetFont('Arial','B','10');
-$pdf->Cell(0,7, 'DATA PELANGGAN', '0', 1, 'L');
-$pdf->Ln();
-$pdf->SetFont('Arial','','10');
-$pdf->Cell(0,7, 'Nama Lengkap                     : '.$nama_cust, '0', 1, 'L');
-$pdf->Cell(0,7, 'No ID Pelanggan                  : '.$id_cust, '0', 1, 'L');
-$pdf->Cell(0,7, 'Nomor Telepon                    : '.$phone_cust, '0', 1, 'L');
-$pdf->Cell(0,7, 'Alamat Email                        : '.$email_cust, '0', 1, 'L');
-$pdf->Cell(0,7, 'Layanan yang Digunakan    : '.$package_cust.' ('.$deskripsi_paket0.')', '0', 1, 'L');
-$pdf->Cell(0,7, 'Layanan Add-ons                 : No', '0', 1, 'L');
-$pdf->Ln();
-$pdf->SetFont('Arial','B','10');
-$pdf->Cell(0,7, 'PENUTUPAN / TERMINASI', '0', 1, 'L');
-$pdf->SetFont('Arial','','10');
-$pdf->Cell(0,7, 'Tanggal Penutupan : '.$tgl_tutup.' '.$month_tutup.' '.$thn_tutup, '0', 1, 'L');
-$pdf->Cell(0,7, 'Alasan Penutupan   : '.$textalasanberhenti, '0', 1, 'L');
-$pdf->Ln();
-$pdf->SetFont('Arial','B','10');
-$pdf->Cell(0,7, 'Tanggal : '.$tgl_tutup.' '.$month_tutup.' '.$thn_tutup, '0', 1, 'R');
-$pdf->Ln();
-$pdf->Ln();
-$pdf->Ln();
-$pdf->Ln();
-$pdf->Image('../img/tanda_tangan.jpg','165','150','33','33');
-$pdf->SetFont('Arial','','10');
-$pdf->Cell(0,7, 'John Doe              ', '0', 1, 'R');
-$pdf->Cell(0,7, 'Customer Relation Officer', '0', 1, 'R');
-$pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R');
-
-// Filename that will be used for the file as the attachment
-$fileatt_name = $tgl_tutup.$month_tutup.$thn_tutup.$id_cust."termination.pdf";
-$dir='bukti/';
-$pdf ->Output($dir.$fileatt_name);
-
-$data = $pdf->Output("", "S");
-
-$email_from = "cs@groovy.id"; // Who the email is from
-$email_subject = "[SERVICE TERMINATION REQUEST] - Nusanet - ".$nama_cust; // The Subject of the email
-$email_to = $email_dens; // Who the email is to
-
-
-$semi_rand = md5(time());
-$data = chunk_split(base64_encode($data));
-
-$fileatt_type = "application/pdf"; // File Type
-$mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";
-
-// set header ........................
-$headers = "From: ".$email_from;
-$headers .= "\nMIME-Version: 1.0\n" .
-"Content-Type: multipart/mixed;\n" .
-" boundary=\"{$mime_boundary}\"";
-
-// set email message......................
-$email_message .= "This is a multi-part message in MIME format.\n\n" .
-"--{$mime_boundary}\n" .
-"Content-Type:text/html; charset=\"iso-8859-1\"\n" .
-"Content-Transfer-Encoding: 7bit\n\n" .
-$email_message .= "\n\n";
-$email_message .= "--{$mime_boundary}\n" .
-"Content-Type: {$fileatt_type};\n" .
-" name=\"{$fileatt_name}\"\n" .
-"Content-Disposition: attachment;\n" .
-" filename=\"{$fileatt_name}\"\n" .
-"Content-Transfer-Encoding: base64\n\n" .
-$data .= "\n\n" .
-"--{$mime_boundary}--\n";
-
-$sent = mail($email_to, $email_subject, $email_message, $headers);
-	if ($status_cust=="registrasi"){
-		$sisa_hari = 30-$date_month;
-		$last_proraide = $sisa_hari*$harga_hari;
-		$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("pembayaran"=>$last_pembayaran, "proraide"=>$last_proraide.'.000')));
-				// mail for supevisior teknik
-				$subject = 'Atur Jadwal Pemasangan';
-				$message = '
-				<html>
-				<body>
-				  <p>Mohon segera diatur jadwal pemasangan untuk customer berikut : </p>
-				  <br/>
-				  <p>ID Customer : '.$id_cust.'</p>
-				  <p>Nama : '.$nama_cust.'</p>
-				  <p>Tempat : '.$tempat_cust.', '.$ket_cust.', '.$kota_cust.'</p>
-				  <p>Tanggal Registrasi : '.$tgl_registrasi.' '.$month_registrasi.' '.$thn_registrasi.'</p>
-				  <p>Registrasi : '.$registrasi_cust.' '.$sales.'</p>
-				  <p>Paket : '.$package_cust.'('.$deskripsi_paket0.')</p>
-				  <br/>
-				</body>
-				</html>
-				';
-				$headers  = 'MIME-Version: 1.0' . "\r\n";
-				$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-				$headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
-				$headers .= 'Cc: cs@groovy.id' . "\r\n";
-			$res = $col_user->find(array("level"=>"3"));
-						foreach($res as $row)
-											{
-				$emailpasang=mail($row['email'], $subject, $message, $headers);
-			}
-	} else {
-		$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("tanggal_akhir"=>$next_years.'/'.$next_month.'/01', "pembayaran"=>$last_pembayaran, "proraide"=>"0")));
-	}
-		if($move_paket_cust<>""){
-			// mail for supevisior teknik
-				$subject = 'Pindah Paket';
-				$message = '
-				<html>
-				<body>
-				  <p>Customer pindah paket : </p>
-				  <br/>
-				  <p>ID Customer : '.$id_cust.'</p>
-				  <p>Nama : '.$nama_cust.'</p>
-				  <p>Tempat : '.$tempat_cust.', '.$ket_cust.', '.$kota_cust.'</p>
-				  <p>Paket Aktif : '.$package_cust.'('.$deskripsi_paket0.')</p>
-				  <p>Pindah Paket : '.$move_paket_cust.'('.$deskripsi_paket1.')</p>
-				  <p>Tanggal Pindah Paket : '.$tgl_akhir.' '.$month_akhir.' '.$thn_akhir.'</p>
-				  <br/>
-				</body>
-				</html>
-				';
-				$headers  = 'MIME-Version: 1.0' . "\r\n";
-				$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-				$headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
-				$headers .= 'Cc: cs@groovy.id' . "\r\n";
-			$res = $col_user->find(array("level"=>"3"));
-						foreach($res as $row)
-											{
-				$emailpindah=mail($row['email'], $subject, $message, $headers);
-			}
-					// mail for customer
-				$subject1 = 'Pemberitahuan Pindah Paket';
-				$message1 = '
-				<html>
-					<body style="background-color:#ddd;padding:50px 0 50px 0;font-family:arial;font-size:15px;">
-					    <div style="margin:0 auto;max-width:500px;background-color:#eee;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
-					        <div style="background: linear-gradient(to right, #FF3D23 , #fc742f);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
-					            <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
-					        </div>
-					        <div style="padding:20px;color:#333;">
-					            <p style="font-size:20px;font-weight:bold;line-height:1px">Pemberitahuan Pindah Paket</p>
-					            <p>Kami akan mengganti paket anda dari paket : '.$package_cust.' ('.$deskripsi_paket0.'), ke paket : '.$move_paket_cust.' ('.$deskripsi_paket1.'),pada tanggal : '.$tgl_akhir.' '.$month_akhir.' '.$thn_akhir.'.</p>
-					        </div>
-					        </div>
-					    </div>
-					</body>
-					</html>
-				';
-				$headers1  = 'MIME-Version: 1.0' . "\r\n";
-				$headers1 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-				$headers1 .= 'From: cs@groovy.id' . "\r\n";
-				$headers1 .= 'Cc: cs@groovy.id' . "\r\n";
-				$emailcust_pindah=mail($email_cust, $subject1, $message1, $headers1);
-}
-if ($update_user && $update_bayar && $emailinvoice){
-	?>
-		<script type="" language="JavaScript">
-		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>
-<?php } }
+				$emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1); }
 if(isset($_POST['terminasi'])){
 	$termination_date=$_POST['inputTerminationdate'];
 	$textalasanberhenti=$_POST['textalasanberhenti'];
