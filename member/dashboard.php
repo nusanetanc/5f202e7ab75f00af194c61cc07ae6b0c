@@ -441,7 +441,7 @@ $(document).ready(function(){
 					  <h4 style="color:white;"><b>INFORMATION</b></h4>
 						<br/>
 					  <div class="text-center">
-					  	<b style="color:white; font-size:2em;"><i class="fa fa-list fa-5x"></i></b>
+					  	<b style="color:white; font-size:2em;"><i class="fa fa-list fa-3x"></i></b>
 					  </div>
 					</div>
 				</a>
@@ -452,7 +452,7 @@ $(document).ready(function(){
 					  <h4 style="color:white;"><b>CUSTOMER</b></h4>
 						<br/>
 					  <div class="text-center">
-					  	<b style="color:white; font-size:2em;"><i class="fa fa-list fa-5x"></i></b>
+					  	<b style="color:white; font-size:2em;"><i class="fa fa-list fa-3x"></i></b>
 					  </div>
 					</div>
 				</a>
