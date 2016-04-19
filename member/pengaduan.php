@@ -343,7 +343,7 @@ if ($chat<>'' || $_GET['c']<>''){
 											</thead>
 											<tbody>
 														<?php
-														$res = $col_ticket->find()->sort(array("status"=>"solved"))->sort(array("dateopen"));
+														$res = $col_ticket->find(array("status"=>"solved"))->sort(array("dateopen"));
 													foreach($res as $row)
 													{
 														if ($row['kategori']=="Internet" || $row['kategori']=="Tv") {
