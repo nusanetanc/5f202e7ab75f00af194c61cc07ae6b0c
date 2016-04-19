@@ -136,8 +136,30 @@ $res = $col_package->find(array("nama"=>$input_paket));
 	{
 		$deskripsi_paket1=$row['deskripsi'];
 	}
+	// mail for customer
+$subject1 = 'Pemberitahuan Pindah Paket';
+$message1 = '
+<html>
+	<body style="background-color:#ddd;padding:50px 0 50px 0;font-family:arial;font-size:15px;">
+			<div style="margin:0 auto;max-width:500px;background-color:#eee;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
+					<div style="background: linear-gradient(to right, #FF3D23 , #fc742f);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
+							<a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
+					</div>
+					<div style="padding:20px;color:#333;">
+							<p style="font-size:20px;font-weight:bold;line-height:1px">Pemberitahuan Pindah Paket</p>
+							<p>Kami sudah mengganti paket anda dari paket : '.$package_cust.' ('.$deskripsi_paket0.'), ke paket : '.$input_paket.' ('.$deskripsi_paket1.').</p>
+					</div>
+					</div>
+			</div>
+	</body>
+	</html>
+';
+$headers1  = 'MIME-Version: 1.0' . "\r\n";
+$headers1 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+$headers1 .= 'From: cs@groovy.id' . "\r\n";
+$headers1 .= 'Cc: cs@groovy.id' . "\r\n";
+$emailcust_pindah=mail($email_cust, $subject1, $message1, $headers1);
 	// mail for billing
-	$to = $email_billing;
 	$subject = 'Update Paket';
 
 	$message = '
@@ -161,9 +183,10 @@ $res = $col_package->find(array("nama"=>$input_paket));
 
 	$headers .= 'From: support@groovy.id' . "\r\n";
 	$headers .= 'Cc: cs@groovy.id' . "\r\n";
-
-	$kirim_email=mail($to, $subject, $message, $headers);
-
+	$res_bill = $col_user->find(array("level"=>"2"));
+							foreach ($res_bill as $row_bill) {
+								$kirim_email=mail($row_bill, $subject, $message, $headers);
+							}
 	  require('../content/srcpdf/fpdf.php');
 	  $pdf = new FPDF();
 	  $pdf->AddPage();
