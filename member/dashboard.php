@@ -392,7 +392,7 @@ $(document).ready(function(){
 <section>
 	<div class="col-sm-12 col-md-12 col-lg-9" style="font-family:Arial;">
 		<div class="row">
-			<div class="col-sm-6">
+			<div class="col-sm-4">
 				<div class="well well-lg background-btn-red">
 				  <h5 style="color:white;"><b>PENGADUAN</b></h5>
 				  	<div class="text-center">
@@ -435,22 +435,22 @@ $(document).ready(function(){
 					</div>
 				</div>
 			</div>
-			<div class="col-md-3" >
+			<div class="col-md-4" >
 				<a href="<?php echo $base_url_member; ?>/information"  style=" text-decoration:none">
 					<div class="well well-lg" style="background-color:1F4E79;">
 					  <h4 style="color:white;"><b>INFORMATION</b></h4>
 					  <div class="text-center">
-					  	<b style="color:white; font-size:2em;"><i class="fa fa-list fa-3x"></i></b>
+					  	<b style="color:white; font-size:1em;"><i class="fa fa-list fa-4x"></i></b>
 					  </div>
 					</div>
 				</a>
 			</div>
-			<div class="col-md-3" >
+			<div class="col-md-4" >
 				<a href="<?php echo $base_url_member; ?>/information"  style=" text-decoration:none">
 					<div class="well well-lg" style="background-color:#6FA8DC;">
 					  <h4 style="color:white;"><b>CUSTOMER</b></h4>
 					  <div class="text-center">
-					  	<b style="color:white; font-size:2em;"><i class="fa fa-list fa-3x"></i></b>
+					  	<b style="color:white; font-size:1em;"><i class="fa fa-list fa-4x"></i></b>
 					  </div>
 					</div>
 				</a>
