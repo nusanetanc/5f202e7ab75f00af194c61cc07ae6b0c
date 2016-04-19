@@ -437,10 +437,20 @@ $(document).ready(function(){
 			</div>
 			<div class="col-md-3" >
 				<a href="<?php echo $base_url_member; ?>/information"  style=" text-decoration:none">
-					<div class="well well-lg" style="background-color:#9E9E9E;">
+					<div class="well well-lg" style="background-color:1F4E79;">
 					  <h4 style="color:white;"><b>INFORMATION</b></h4>
 					  <div class="text-center">
-					  	<b style="color:white; font-size:2em;"><i class="fa fa-list fa-5x"></i></b>
+					  	<b style="color:white; font-size:2em;"><i class="fa fa-list fa-3x"></i></b>
+					  </div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-3" >
+				<a href="<?php echo $base_url_member; ?>/information"  style=" text-decoration:none">
+					<div class="well well-lg" style="background-color:#6FA8DC;">
+					  <h4 style="color:white;"><b>CUSTOMER</b></h4>
+					  <div class="text-center">
+					  	<b style="color:white; font-size:2em;"><i class="fa fa-list fa-3x"></i></b>
 					  </div>
 					</div>
 				</a>
