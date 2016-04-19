@@ -399,7 +399,7 @@ $(document).ready(function(){
 				  	<br/>
 					  	<div class="row">
 							<div class="col-sm-4">
-								<h5 style="color:white;">ON PROGRESS</h5>
+								<h5 style="color:white;">PROGRESS</h5>
 							  	<?php
 									$res = $col_ticket->find(array("status"=>"open"));
 									$length = $res->count();
@@ -440,7 +440,7 @@ $(document).ready(function(){
 					<div class="well well-lg" style="background-color:1F4E79;">
 					  <h4 style="color:white;"><b>INFORMATION</b></h4>
 					  <div class="text-center">
-					  	<b style="color:white; font-size:1em;"><i class="fa fa-list fa-4x"></i></b>
+					  	<b style="color:white; font-size:1em;"><i class="fa fa-list fa-5x"></i></b>
 					  </div>
 					</div>
 				</a>
@@ -450,7 +450,7 @@ $(document).ready(function(){
 					<div class="well well-lg" style="background-color:#6FA8DC;">
 					  <h4 style="color:white;"><b>CUSTOMER</b></h4>
 					  <div class="text-center">
-					  	<b style="color:white; font-size:1em;"><i class="fa fa-list fa-4x"></i></b>
+					  	<b style="color:white; font-size:1em;"><i class="fa fa-list fa-5x"></i></b>
 					  </div>
 					</div>
 				</a>
