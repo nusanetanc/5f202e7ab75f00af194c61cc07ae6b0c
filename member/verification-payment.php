@@ -261,7 +261,7 @@ if ($update_user && $update_bayar && $emailinvoice){
 	?>
 		<script type="" language="JavaScript">
 		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>
-<?php } 				//mail to bukti pembayaran
+<?php } /*				//mail to bukti pembayaran
 				require('../content/srcpdf/fpdf.php');
 				$header = array(
 						array("label"=>"Paket : ".$paket_bayar, "length"=>130, "align"=>"C"),
@@ -356,7 +356,7 @@ if ($update_user && $update_bayar && $emailinvoice){
 				$data .= "\n\n" .
 				"--{$mime_boundary}--\n";
 
-				$emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1); }
+      $emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1);*/ }
 if(isset($_POST['terminasi'])){
 	$termination_date=$_POST['inputTerminationdate'];
 	$textalasanberhenti=$_POST['textalasanberhenti'];
