@@ -6,7 +6,7 @@ $date_days = date("d");
 $date_years = date("Y");
 $date_month = date("m");
 $date_month1 = bulan($date_month);
-$res = $col_user->find(array("id_user"=>$id_cust,"status"=>"aktif","level"=>"0"));	
+$res = $col_user->find(array("id_user"=>$id_cust,"status"=>"aktif","level"=>"0"));
 						foreach ($res as $row) {
 												$tanggal_registrasi = $row['tanggal_registrasi'];
 												$thn_registrasi = substr($tanggal_registrasi, 0,4);
@@ -28,10 +28,10 @@ $res = $col_user->find(array("id_user"=>$id_cust,"status"=>"aktif","level"=>"0")
 						                        $harga_paket = $row['harga'];
 						                        $no_box = $row['no_box'];
 	                                        }
-$res1 = $col_package->find(array("nama"=>$package_cust));	
+$res1 = $col_package->find(array("nama"=>$package_cust));
 						foreach ($res1 as $row1) {
 							$deskripsi_paket=$row1['deskripsi'];
-						}  
+						}
 if (isset($_POST['btnmaintenance'])){
 	$inputTanggal=$_POST['inputTanggal'];
 	$inputMaintenance=$_POST['inputMaintenance'];
@@ -41,14 +41,14 @@ if (isset($_POST['btnmaintenance'])){
 		$bln_maintenance = substr($inputTanggal, 5,2);
 		$tgl_maintenance = substr($inputTanggal, 8,10);
 		$month_maintenance = bulan($bln_maintenance);
-$res2 = $col_user->find(array("nama"=>$inputField, "level"=>"301"));	
+$res2 = $col_user->find(array("nama"=>$inputField, "level"=>"301"));
 						foreach ($res2 as $row2) {
 							$email_field=$row2['email'];
-						} 	
-$res3 = $col_user->find(array("nama"=>$inputAssfield, "level"=>"302"));	
+						}
+$res3 = $col_user->find(array("nama"=>$inputAssfield, "level"=>"302"));
 						foreach ($res3 as $row3) {
 							$email_Assfield=$row3['email'];
-						} 
+						}
 	$histori=array("hal"=>"maintenance", "tanggal_maintenance"=>$inputTanggal, "maintenance"=>$inputMaintenance, "field_engineer"=>$inputField, "ass_filed"=>$inputAssfield);
 	$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>$histori)));
 	$insert_activty = $col_history->insert(array("hal"=>"maintenance","tanggal_kerja"=>$inputTanggal, "field_engineer"=>$inputField, "ass_field"=>$inputAssfield, "status"=>"progress", "id_cust"=>$id_cust, "nama_cust"=>$nama_cust, "tempat_customer"=>$tempat_cust, "alamat_customer"=>$alamat_cust, "kota_customer"=>$kota_cust ,"keterangan_customer"=>$ket_cust, "phone_customer"=>$phone_cust, "paket"=>$package_cust, "no_box"=>$no_box));
@@ -97,14 +97,14 @@ $res3 = $col_user->find(array("nama"=>$inputAssfield, "level"=>"302"));
 			            <p style="font-size:20px;font-weight:bold;line-height:1px">Terimakasih sudah menjadi customer Groovy</p>
 			            <p>Kami akan melakukan perbaikan langsung pada tanggal : '.$tgl_maintenance.' '.$month_maintenance.' '.$thn_maintenance.'.</p>
 			            <p>Untuk Maintenance : '.$inputMaintenance.'.</p>
-			            
+
 			            <p style="color:#888;">Terimakasih</p>
 			        </div>
 			        </div>
-			    </div>        
+			    </div>
 			</body>
 			</html>
-		
+
 		';
 
 		$headers1  = 'MIME-Version: 1.0' . "\r\n";
@@ -126,8 +126,18 @@ if ($update_user && $update_user1 && $insert_activty && $kirim_email && $kirim_e
 	$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>$histori)));
 	$insert_activty = $col_history->insert(array("hal"=>"update","tanggal_update"=>$date, "status"=>"done", "paket_lama"=>$package_cust, "paket_baru"=>$input_paket, "id_cust"=>$id_cust, "nama_cust"=>$nama_cust, "tempat_customer"=>$tempat_cust, "alamat_customer"=>$alamat_cust, "kota_customer"=>$kota_cust ,"keterangan_customer"=>$ket_cust, "phone_customer"=>$phone_cust,"no_box"=>$no_box));
 	$update_user1 = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("paket"=>$input_paket, "move_paket"=>"", "move_harga"=>"", "move_request"=>"")));
+$res = $col_package->find(array("nama"=>$package_cust));
+	foreach($res as $row)
+	{
+		$deskripsi_paket0=$row['deskripsi'];
+	}
+$res = $col_package->find(array("nama"=>$input_paket));
+	foreach($res as $row)
+	{
+		$deskripsi_paket1=$row['deskripsi'];
+	}
 	// mail for billing
-	$to = "yudi.nurhandi@nusa.net.id";
+	$to = $email_billing;
 	$subject = 'Update Paket';
 
 	$message = '
@@ -153,7 +163,80 @@ if ($update_user && $update_user1 && $insert_activty && $kirim_email && $kirim_e
 	$headers .= 'Cc: cs@groovy.id' . "\r\n";
 
 	$kirim_email=mail($to, $subject, $message, $headers);
-if ($update_user && $update_user1 && $insert_activty && $kirim_email){ ?>
+
+	  require('../content/srcpdf/fpdf.php');
+	  $pdf = new FPDF();
+	  $pdf->AddPage();
+	  $pdf->SetFont('Arial','B','10');
+	  $pdf->Cell(0,20, 'PT Media Andalan Nusa (Nusanet)', '0', 1, 'R');
+	  $pdf->SetFont('Arial','B','14');
+	  $pdf->Cell(0,10, 'FORMULIR PERUBAHAN JENIS LAYANAN', '0', 5, 'C');
+	  $pdf->Ln();
+	  $pdf->SetFont('Arial','B','10');
+	  $pdf->Cell(0,7, 'DATA PELANGGAN', '0', 1, 'L');
+	  $pdf->Ln();
+	  $pdf->SetFont('Arial','','10');
+	  $pdf->Cell(0,7, 'Nama Lengkap                     : '.$nama_cust, '0', 1, 'L');
+	  $pdf->Cell(0,7, 'No ID Pelanggan                  : '.$id_cust, '0', 1, 'L');
+	  $pdf->Cell(0,7, 'Nomor Telepon                    : '.$phone_cust, '0', 1, 'L');
+	  $pdf->Cell(0,7, 'Alamat Email                        : '.$email_cust, '0', 1, 'L');
+	  $pdf->Cell(0,7, 'Layanan yang Digunakan    : '.$package_cust.' ('.$deskripsi_paket0.')', '0', 1, 'L');
+	  $pdf->Cell(0,7, 'Layanan Add-ons                 : No', '0', 1, 'L');
+	  $pdf->Ln();
+	  $pdf->SetFont('Arial','B','10');
+	  $pdf->Cell(0,7, 'PERGANTIAN LAYANAN', '0', 1, 'L');
+	  $pdf->SetFont('Arial','','10');
+	  $pdf->Cell(0,7, 'Pergantian Layanan : '.$input_paket.' ('.$deskripsi_paket1.')', '0', 1, 'L');
+	  $pdf->Ln();
+	  $pdf->Ln();
+	  $pdf->Ln();
+	  $pdf->Ln();
+	  $pdf->Image('../img/tanda_tangan.jpg','165','130','33','33');
+	  $pdf->SetFont('Arial','','10');
+	  $pdf->Cell(0,7, 'John Doe', '0', 1, 'R');
+	  $pdf->Cell(0,7, 'Customer Relation Officer', '0', 1, 'R');
+	  $pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R');
+
+	  // Filename that will be used for the file as the attachment
+	  $fileatt_name0 = $id_cust.$package_cust.'update.pdf';
+	  $dir0='invoice/';
+	  $pdf ->Output($dir0.$fileatt_name0);
+	  $data = $pdf->Output("", "S");
+
+	  $email_from0 = "cs@groovy.id"; // Who the email is from
+	  $email_subject0 = "[CHANGE SERVICE REQUEST] - Nusanet - ".$nama_cust; // The Subject of the email
+	  $email_to0 = $email_dens; // Who the email is to
+
+	  $semi_rand = md5(time());
+	  $data = chunk_split(base64_encode($data));
+
+	  $fileatt_type = "application/pdf"; // File Type
+	  $mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";
+
+	  // set header ........................
+	  $email_headers0 = "From: cs@groovy.id";
+	  $email_headers0 .= "\nMIME-Version: 1.0\n" .
+	  "Content-Type: multipart/mixed;\n" .
+	  " boundary=\"{$mime_boundary}\"";
+
+	  // set email message......................
+	  $email_message0 .= "This is a multi-part message in MIME format.\n\n" .
+	  "--{$mime_boundary}\n" .
+	  "Content-Type:text/html; charset=\"iso-8859-1\"\n" .
+	  "Content-Transfer-Encoding: 7bit\n\n" .
+	  $email_message0 .= "\n\n";
+	  $email_message0 .= "--{$mime_boundary}\n" .
+	  "Content-Type: {$fileatt_type};\n" .
+	  " name=\"{$fileatt_name}\"\n" .
+	  "Content-Disposition: attachment;\n" .
+	  " filename=\"{$fileatt_name}\"\n" .
+	  "Content-Transfer-Encoding: base64\n\n" .
+	  $data .= "\n\n" .
+	  "--{$mime_boundary}--\n";
+
+	 $sent0 = mail($email_to0, $email_subject0, $email_message0, $email_headers0);
+
+if ($update_user && $update_user1 && $insert_activty && $kirim_email && $sent0){ ?>
 	<script type="" language="JavaScript">
 	document.location='<?php echo $base_url_member; ?>/detail-maintenance/<?php echo $id_cust; ?>'</script>
 <?php } } ?>
@@ -177,7 +260,7 @@ if ($update_user && $update_user1 && $insert_activty && $kirim_email){ ?>
   				<div class="panel-body">
   					<br/>
   					<?php if ($nama_cust<>"") { ?>
-					<div class="col-sm-12">	
+					<div class="col-sm-12">
 						<form class="form-horizontal">
 						  <fieldset>
 						    <div class="form-group">
@@ -215,16 +298,16 @@ if ($update_user && $update_user1 && $insert_activty && $kirim_email){ ?>
 						      <div class="col-lg-9">
 						        <h4>:<?php echo $tempat_cust.', '.$ket_cust.', '.$kota_cust; ?></h4>
 						      </div>
-						    </div>	
+						    </div>
 						    <div class="form-group">
 						      <label class="col-lg-3 control-label">No SN Box Tv</label>
 						      <div class="col-lg-9">
 						        <h4>:<?php echo $no_box; ?></h4>
 						      </div>
-						    </div>				    						    						    						    
-						  </fieldset>	
-						</form>    		
-					</div>	
+						    </div>
+						  </fieldset>
+						</form>
+					</div>
 					<?php } ?>
  				</div>
 			</div>
@@ -240,7 +323,7 @@ if ($update_user && $update_user1 && $insert_activty && $kirim_email){ ?>
 				        <input type="text" class="form-control" id="inputTanggal" name="inputTanggal" placeholder="Date" readonly>
 				        <br/>
 				      </div>
-				    </div>	
+				    </div>
 				  	<div class="form-group">
 				      <label for="inputDate" class="col-lg-3 control-label">Maintenance</label>
 				      <div class="col-lg-9">
@@ -254,9 +337,9 @@ if ($update_user && $update_user1 && $insert_activty && $kirim_email){ ?>
 				            <select class="form-control" id="inputField" name="inputField">
 					          <option disabled selected>Select Field Engineer</option>
 					          <?php
-					          $res = $col_user->find(array("level"=>"301"));	
-								foreach ($res as $row) {  ?>  
-							  <option><?php echo $row['nama']; ?></option>	 
+					          $res = $col_user->find(array("level"=>"301"));
+								foreach ($res as $row) {  ?>
+							  <option><?php echo $row['nama']; ?></option>
 							  <?php } ?>
 					        </select>
 					        <br/>
@@ -265,18 +348,18 @@ if ($update_user && $update_user1 && $insert_activty && $kirim_email){ ?>
 				            <select class="form-control" id="inputAssfield" name="inputAssfield">
 					          <option disabled selected>Select Ass Field Engineer</option>
 					          <?php
-					          $res = $col_user->find(array("level"=>"302"));	
-								foreach ($res as $row) {  ?>  
-							  <option><?php echo $row['nama']; ?></option>	 
+					          $res = $col_user->find(array("level"=>"302"));
+								foreach ($res as $row) {  ?>
+							  <option><?php echo $row['nama']; ?></option>
 							  <?php } ?>
 					        </select>
 					        <br/>
 				      </div>
-				    </div>	
-				    <div class="col-lg-9">	
+				    </div>
+				    <div class="col-lg-9">
 				        <div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>
 				        <br/>
-				      	<button class="btn btn-primary btn-sm" type="submit" name="btnmaintenance" id="btnmaintenance"><b>MAINTENANCE</b></button>	
+				      	<button class="btn btn-primary btn-sm" type="submit" name="btnmaintenance" id="btnmaintenance"><b>MAINTENANCE</b></button>
 				    </div>
  				</div>
 			</div>
@@ -292,22 +375,22 @@ if ($update_user && $update_user1 && $insert_activty && $kirim_email){ ?>
 				        <select class="form-control" id="paket_update" name="paket_update">
 				          <option disabled="true" selected="true" value="">Selected Package</option>
 				          <?php
-					         $res = $col_package->find();	
-							foreach ($res as $row) { if($row['nama']<>$package_cust){ ?>  
+					         $res = $col_package->find();
+							foreach ($res as $row) { if($row['nama']<>$package_cust){ ?>
 				          <option value="<?php echo $row['nama']; ?>"><?php echo $row['nama'].' - '.$row['deskripsi']; ?></option>
 				          <?php } } ?>
 				        </select>
 				        <br/>
 				      </div>
-				    </div>	
-				    <div class="col-lg-9">	
+				    </div>
+				    <div class="col-lg-9">
 				        <div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>
 				        <br/>
-				      	<button class="btn btn-primary btn-sm" type="submit" name="btnupdate" id="btnupdate"><b>UPDATE</b></button>	
+				      	<button class="btn btn-primary btn-sm" type="submit" name="btnupdate" id="btnupdate"><b>UPDATE</b></button>
 				    </div>
  				</div>
 			</div>
 		</div>
-	</div>	
+	</div>
 </section>
-</form> 
+</form>
