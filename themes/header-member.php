@@ -132,7 +132,7 @@ if($level=="501"){
             foreach($res as $row)
                       {
         $emailpasang=mail($row['email'], $subject, $message, $headers);
-      } /*
+      }
       // mail for customer to berhenti berlangganan
 
       $subject1 = 'Permintaan Berhenti Berlangganan';
@@ -146,7 +146,7 @@ if($level=="501"){
                 </div>
                 <div style="padding:20px;color:#333;">
                     <p style="font-size:20px;font-weight:bold;line-height:1px">Terimakasih sudah menjadi customer Groovy</p>
-                    <p>Anda melakukan permintaan berhenti berlangganan pada tanggal : '.date("d").' '.bulan(date("m");.' '.date("Y").'.</p>
+                    <p>Anda melakukan permintaan berhenti berlangganan pada tanggal : '.date("d").' '.bulan(date("m").' '.date("Y").'.</p>
                     <p style="color:#888;">Kami akan segera memproses permintaan anda</p>
                 </div>
                 </div>
@@ -162,7 +162,7 @@ if($level=="501"){
       $headers1 .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
       $headers1 .= 'Cc: cs@groovy.id' . "\r\n";
 
-      $kirim_email1=mail($email, $subject1, $message1, $headers1); */
+      $kirim_email1=mail($email, $subject1, $message1, $headers1);
     } }  ?>
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -193,7 +193,7 @@ if($level=="501"){
   <div class="modal-dialog">
     <div class="modal-content">
      <form style="form-group" method="post">
-        <?php /*
+        <?php
         if (isset($_POST['activeback'])) {
           if($_POST['selectpackageaktiv']=="Selected Package"){ ?>
             <p class="text-danger">Tolong isi paket.</p>
@@ -236,7 +236,7 @@ if($level=="501"){
                 </div>
                 <div style="padding:20px;color:#333;">
                     <p style="font-size:20px;font-weight:bold;line-height:1px">Terimakasih sudah menjadi customer Groovy</p>
-                    <p>Anda melakukan permintaan berlangganan kembali pada tanggal : '.date("d").' '.bulan(date("m");.' '.date("Y").'.</p>
+                    <p>Anda melakukan permintaan berlangganan kembali pada tanggal : '.date("d").' '.bulan(date("m").' '.date("Y").'.</p>
                     <p style="color:#888;">Kami akan segera memproses permintaan anda</p>
                 </div>
                 </div>
@@ -257,7 +257,7 @@ $update_user = $col_user->update(array("id_user"=>$id, "level"=>"0"), array('$se
 if($emailaktivasi && $update_user){ ?>
       <script type="" language="JavaScript">
     document.location='<?php echo $base_url_member; ?>'</script>
-<?php } } } */ ?>
+<?php } } }  ?>
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title">Permintaan Berlanganan Kembali</h4>
