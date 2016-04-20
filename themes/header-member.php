@@ -100,14 +100,14 @@ if($level=="501"){
   <div class="modal-dialog">
     <div class="modal-content">
      <form style="form-group" method="post">
-        <?php /*
+        <?php
         if (isset($_POST['terminationsend'])) {
     if($_POST['selectalasantermination']=="Alasan Penutupan"){ ?>
       <p class="text-danger">Tolong isi alasan anda berhenti berlangganan.</p>
 <?php  } elseif ($_POST['selectalasantermination']=="Other" && $_POST['textalasantermination']=="" ) { ?>
       <p class="text-danger">Tolong isi alasan anda berhenti berlangganan.</p>
 <?php  } else {
-                    // mail for billing dan cs
+        // mail for billing dan cs
         $subject = 'Permintaan Berhenti Berlanganan';
         $message = '
         <html>
@@ -163,8 +163,7 @@ if($level=="501"){
       $headers1 .= 'Cc: cs@groovy.id' . "\r\n";
 
       $kirim_email1=mail($email, $subject1, $message1, $headers1);
-    } }
-*/          ?>
+    } }  ?>
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title">Permintaan Berhenti Berlanganan</h4>
