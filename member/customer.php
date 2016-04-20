@@ -21,7 +21,7 @@
 						  </thead>
 						  <?php
 						  $status=$_GET['status'];
-								$res = $col_user->find(array("status"=>$status))->sort(array("tanggal_registrasi"));
+								$res = $col_user->find(array("status"=>$status, "level"=>"0"))->sort(array("tanggal_registrasi"));
 								foreach($res as $row)
 								{
 						?>
@@ -72,7 +72,7 @@
 							    </tr>
 							  </thead>
 							  <?php
-									$res = $col_user->find()->sort(array("status"));
+									$res = $col_user->find()->sort(array("level"=>"0"));
 									foreach($res as $row)
 									{
 							?>
