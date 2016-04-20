@@ -72,7 +72,7 @@
 							    </tr>
 							  </thead>
 							  <?php
-									$res = $col_user->find()->sort(array("level"=>"0"));
+									$res = $col_user->find(array("level"=>"0"))->sort(array("status"));
 									foreach($res as $row)
 									{
 							?>
