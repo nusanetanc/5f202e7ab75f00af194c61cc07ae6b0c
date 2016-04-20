@@ -194,7 +194,7 @@ if($level=="501"){
   <div class="modal-dialog">
     <div class="modal-content">
      <form style="form-group" method="post">
-        <?php
+        <?php /*
         if (isset($_POST['activeback'])) {
           if($_POST['selectpackageaktiv']=="Selected Package"){ ?>
             <p class="text-danger">Tolong isi paket.</p>
@@ -258,7 +258,7 @@ $update_user = $col_user->update(array("id_user"=>$id, "level"=>"0"), array('$se
 if($emailaktivasi && $update_user){ ?>
       <script type="" language="JavaScript">
     document.location='<?php echo $base_url_member; ?>'</script>
-<?php } } } ?>
+<?php } } } */ ?>
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title">Permintaan Berlanganan Kembali</h4>
