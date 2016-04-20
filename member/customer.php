@@ -75,7 +75,7 @@
 									foreach($res as $row)
 									{
 							?>
-							  <tbody style="height: 10px;
+							  <tbody style="height: 20px;
 													    display: inline-block;
 													    width: 100%;
 													    overflow: auto;">
