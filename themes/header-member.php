@@ -102,9 +102,7 @@ if($level=="501"){
      <form style="form-group" method="post">
         <?php
         if (isset($_POST['terminationsend'])) {
-    if($_POST['selectalasantermination']=="Alasan Penutupan"){ ?>
-      <p class="text-danger">Tolong isi alasan anda berhenti berlangganan.</p>
-<?php  } elseif ($_POST['selectalasantermination']=="Other" && $_POST['textalasantermination']=="" ) { ?>
+          if ($_POST['selectalasantermination']=="Other" && $_POST['textalasantermination']=="" ) { ?>
       <p class="text-danger">Tolong isi alasan anda berhenti berlangganan.</p>
 <?php  } else {
         // mail for billing dan cs
@@ -169,9 +167,9 @@ if($level=="501"){
         <h4 class="modal-title">Permintaan Berhenti Berlanganan</h4>
       </div>
       <div class="modal-body">
+        <p>Alasan Berhenti Berlangganan</p>
         <p>
         <select class="form-control" name="selectalasantermination" id="selectalasantermination">
-          <option disabled="true" selected="true">Alasan Penutupan</option>
           <option>Harga Mahal</option>
           <option>Jaringan Internet Tidak Stabil</option>
           <option>Chanel Tv Bermasalah</option>
@@ -264,7 +262,7 @@ if($emailaktivasi && $update_user){ ?>
       </div>
       <div class="modal-body">
         <p>
-        <select class="form-control" name="selectpackageaktiv" id="selectpackageaktiv">
+        <select class="form-control" id="selectpackageaktiv" name="selectpackageaktiv">
           <option disabled="true" selected="true">Selected Package</option>
             <?php
                 $res = $col_package->find();
