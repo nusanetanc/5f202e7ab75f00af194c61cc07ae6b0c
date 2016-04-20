@@ -447,7 +447,7 @@ $(document).ready(function(){
 				</a>
 			</div>
 			<div class="col-md-4" >
-				<a href="<?php echo $base_url_member; ?>/information"  style=" text-decoration:none">
+				<a href="<?php echo $base_url_member; ?>/customer"  style=" text-decoration:none">
 					<div class="well well-lg" style="background-color:#6FA8DC;">
 					  <h4 style="color:white;"><b>CUSTOMER</b></h4>
 						<br/>
