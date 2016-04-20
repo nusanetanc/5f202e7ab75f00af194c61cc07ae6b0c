@@ -146,7 +146,7 @@ if($level=="501"){
                 </div>
                 <div style="padding:20px;color:#333;">
                     <p style="font-size:20px;font-weight:bold;line-height:1px">Terimakasih sudah menjadi customer Groovy</p>
-                    <p>Anda melakukan permintaan berhenti berlangganan pada tanggal : '.date("d").' '.bulan(date("m").' '.date("Y").'.</p>
+                    <p>Anda melakukan permintaan berhenti berlangganan pada tanggal : '.date("d").' '.bulan(date("m")).' '.date("Y").'.</p>
                     <p style="color:#888;">Kami akan segera memproses permintaan anda</p>
                 </div>
                 </div>
@@ -236,7 +236,7 @@ if($level=="501"){
                 </div>
                 <div style="padding:20px;color:#333;">
                     <p style="font-size:20px;font-weight:bold;line-height:1px">Terimakasih sudah menjadi customer Groovy</p>
-                    <p>Anda melakukan permintaan berlangganan kembali pada tanggal : '.date("d").' '.bulan(date("m").' '.date("Y").'.</p>
+                    <p>Anda melakukan permintaan berlangganan kembali pada tanggal : '.date("d").' '.bulan(date("m")).' '.date("Y").'.</p>
                     <p style="color:#888;">Kami akan segera memproses permintaan anda</p>
                 </div>
                 </div>
