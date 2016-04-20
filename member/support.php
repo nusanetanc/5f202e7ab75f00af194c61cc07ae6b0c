@@ -2,7 +2,7 @@
 	<div class="col-sm-9" style="font-family:Arial;">
 		<div class="list-group">
 			<div class="panel" style="border:0px;">
-  				<div class="panel-heading" style="background-color:#757575">
+  				<div class="panel-heading" style="background-color:#FF3E23">
     				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">Pemasangan/Maintenance</h3>
   				</div>
 	  					<br/>
@@ -16,7 +16,7 @@
 							          <option>Pasang</option>
 							          <option>Maintenance</option>
 							        </select>
-							    </div>      
+							    </div>
 					    		<div class="col-sm-4">
 			  				      <select name="month" id="month" class="form-control" id="select">
 								  <option value="" selected="true" disabled="true">Select Month</option>
@@ -52,10 +52,10 @@
 							    </div>
 							   	<div class="col-sm-1">
 							   		<input name="search" id="search" type="submit" class="btn btn-primary" value="Search">
-							   	</div> 
+							   	</div>
 							</div>
-						</div>	
-						</form>   	
+						</div>
+						</form>
 						<?php
 				    	$month=$_POST['month'];
 				    	$year=$_POST['year'];
@@ -67,7 +67,7 @@
 				    	}
 				    	$bln= bulan($month);
 				    	?>
-					    <div class="col-sm-12">      				    		
+					    <div class="col-sm-12">
   				    		<br/>
 		    					<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
 									 <thead>
@@ -80,7 +80,7 @@
 										<?php
 										$res = $col_user->find(array("status"=>"aktif","level"=>"0"));
 										foreach($res as $row)
-										  { 
+										  {
 										  	$month_pasang = substr($row['tanggal_pasang'], 5,2);
 											$year_pasang = substr($row['tanggal_pasang'], 0,4);
 												if ($month_pasang==$month){
@@ -88,18 +88,18 @@
 												    $bln = substr($tanggal, 5,2);
 													$tgl = substr($tanggal, 8,10);
 												    $month = bulan($bln);
-											?>	
+											?>
 									  <tbody>
 									  	<td><?php echo $row['id_user'].' - '.$row['nama'].' - '.$row['email'].' - '.$row['phone']; ?></td>
 									  	<td><?php echo $row['tempat'].' - '.$row['alamat'].' - '.$row['kota'].' - '.$row['keterangan']; ?></td>
 									  	<td><?php echo $row['support'].' - '.$row['tanggal_pasang']; ?></td>
 									  </tbody>
 									  <?php } } ?>
-								</table> 							
-						</div>	
+								</table>
+						</div>
 					</div>
  				</div>
 			</div>
 		</div>
-	</div>	
+	</div>
 </section>
