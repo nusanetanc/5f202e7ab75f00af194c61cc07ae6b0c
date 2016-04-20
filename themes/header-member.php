@@ -132,9 +132,8 @@ if($level=="501"){
             foreach($res as $row)
                       {
         $emailpasang=mail($row['email'], $subject, $message, $headers);
-      }
+      } /*
       // mail for customer to berhenti berlangganan
-      $to1 = $email;
 
       $subject1 = 'Permintaan Berhenti Berlangganan';
 
@@ -163,7 +162,7 @@ if($level=="501"){
       $headers1 .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
       $headers1 .= 'Cc: cs@groovy.id' . "\r\n";
 
-      $kirim_email1=mail($to1, $subject1, $message1, $headers1);
+      $kirim_email1=mail($email, $subject1, $message1, $headers1); */
     } }
           ?>
       <div class="modal-header">
@@ -224,9 +223,8 @@ if($level=="501"){
             foreach($res as $row)
                       {
         $emailaktivasi=mail($row['email'], $subject, $message, $headers);
-      }
+      } /*
       // mail for customer to berhenti berlangganan
-      $to1 = $email;
 
       $subject1 = 'Permintaan Berlangganan Kembali';
 
@@ -255,8 +253,8 @@ if($level=="501"){
       $headers1 .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
       $headers1 .= 'Cc: cs@groovy.id' . "\r\n";
 
-      $kirim_email1=mail($to1, $subject1, $message1, $headers1);
-$update_user = $col_user->update(array("id_user"=>$id, "level"=>"0"), array('$set'=>array("status"=>"registrasi", "paket"=>$_POST['selectpackageaktiv'])));
+      $kirim_email1=mail($email, $subject1, $message1, $headers1);
+$update_user = $col_user->update(array("id_user"=>$id, "level"=>"0"), array('$set'=>array("status"=>"registrasi", "paket"=>$_POST['selectpackageaktiv']))); */
 if($emailaktivasi && $update_user){ ?>
       <script type="" language="JavaScript">
     document.location='<?php echo $base_url_member; ?>'</script>
