@@ -103,9 +103,9 @@ if($level=="501"){
         <?php
         if (isset($_POST['terminationsend'])) {
     if($_POST['selectalasantermination']=="Alasan Penutupan"){
-      '<p class="text-danger">Tolong isi alasan anda berhenti berlangganan.</p>'
-    }elseif ($_POST['selectalasantermination']=="Other" && $_POST['selectalasantermination']=="" ) {
-      '<p class="text-danger">Tolong isi alasan anda berhenti berlangganan.</p>'
+      '<p class="text-danger">Tolong isi alasan anda berhenti berlangganan.</p>';
+    } elseif ($_POST['selectalasantermination']=="Other" && $_POST['textalasantermination']=="" ) {
+      '<p class="text-danger">Tolong isi alasan anda berhenti berlangganan.</p>';
     } else {
                     // mail for billing dan cs
         $subject = 'Permintaan Berhenti Berlanganan';
@@ -180,7 +180,7 @@ if($level=="501"){
           <option value="Other">Other</option>
         </select>
         </p>
-        <p><input type="text" class="form-control" name="textalasantermination" id="textalasantermination" placeholder="Alasan Penutupan"></p>
+        <p><input type="text" class="form-control" id="textalasantermination" name="textalasantermination" placeholder="Alasan Penutupan"></p>
         <p><div style="margin-bottom:7px;" class="g-recaptcha" data-sitekey="6Ldx_BsTAAAAAOYrQegHLVhslSvd6z78zAr-4Knc"></div></p>
       </div>
       <div class="modal-footer">
