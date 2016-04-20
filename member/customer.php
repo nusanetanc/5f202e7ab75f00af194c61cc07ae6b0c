@@ -1,3 +1,4 @@
+
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
 		<div class="list-group">
@@ -7,7 +8,7 @@
   				</div>
   				<div class="panel-body">
   					<br/>
-					<div class="col-sm-12">	
+					<div class="col-sm-12">
 						<table class="table table-striped table-hover ">
 						  <thead>
 						    <tr>
@@ -22,7 +23,7 @@
 						  $status=$_GET['status'];
 								$res = $col_user->find(array("status"=>$status))->sort(array("tanggal_registrasi"));
 								foreach($res as $row)
-								{ 
+								{
 						?>
 						  <tbody>
 						    <tr>
@@ -31,21 +32,21 @@
 						      <td><?php echo $row['paket']; ?></td>
 						      <td><?php echo $row['tempat'].', '.$row['keterangan'].', '.$row['kota']; ?></td>
 						      <?php if($status=="registrasi"){ ?>
-						      <td><b><a href="<?php echo $base_url_member; ?>/detail-pemasangan/<?php echo $row['id_user']; ?>" class="btn btn-warning btn-sm">Pasang</a></b></td>	
-						      <?php } elseif($status=="aktif"){ ?>					      
+						      <td><b><a href="<?php echo $base_url_member; ?>/detail-pemasangan/<?php echo $row['id_user']; ?>" class="btn btn-warning btn-sm">Pasang</a></b></td>
+						      <?php } elseif($status=="aktif"){ ?>
 						      <td><b><a href="<?php echo $base_url_member; ?>/detail-maintenance/<?php echo $row['id_user']; ?>" class="btn btn-warning btn-sm">Maintanance/Update</a></b></td>
-						      <?php } elseif($status=="unaktif"){ ?>					      
+						      <?php } elseif($status=="unaktif"){ ?>
 						      <td><b><a href="<?php echo $base_url_member; ?>/detail-bongkar/<?php echo $row['id_user']; ?>" class="btn btn-warning btn-sm">Bongkar</a></b></td>
 						      <?php } ?>
 						    </tr>
 						   </tbody>
 						<?php
 							}
-						?>   
-						</table>    
-					</div>	
+						?>
+						</table>
+					</div>
  				</div>
 			</div>
 		</div>
-	</div>	
+	</div>
 </section>

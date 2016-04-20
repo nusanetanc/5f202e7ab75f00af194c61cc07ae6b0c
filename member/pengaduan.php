@@ -285,9 +285,8 @@ if ($chat<>'' || $_GET['c']<>''){
 		    					<table class="table table-striped table-hover ">
 									 <thead>
 									    <tr>
-									      <th width="15%">Date</th>
-									      <th width="65%">Subject</th>
-									      <th width="30%">Status</th>
+									      <th width="25%">Date</th>
+									      <th width="75%">Subject</th>
 									    </tr>
 									  </thead>
 									  <tbody>
@@ -305,18 +304,6 @@ if ($chat<>'' || $_GET['c']<>''){
  										<tr>
 									      <td><?php echo $tgl.' '.$month.' '.$thn; ?></td>
 									      <td><a style=" text-decoration:none" href="<?php echo $base_url_member; ?>/chat-pengaduan/<?php echo $row['idchat'] ?>"><?php echo $row['subject']; ?><a></td>
-									      <?php $action = $row['status'];
-										         switch ($action) {
-										         	case close: ?>
-										         <td><span class="label label-success">Terselesaikan</span></td>
-											<?php 	break;
-												 	case open: ?>
-										         <td><span class="label label-warning">On Progrress</span></td>
-											<?php  	break;
-													case solved: ?>
-										         <td><span class="label label-primary">Solved</span></td>
-											<?php break;
-														 } ?>
 									    </tr>
 									    	  <?php
 									    		} }
@@ -327,7 +314,7 @@ if ($chat<>'' || $_GET['c']<>''){
 					</div>
  				</div>
 				<div class="panel" style="border:0px;">
-						<div class="panel-heading" style="background-color:#F1453C">
+						<div class="panel-heading" style="background-color:#2780E6">
 							<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">PENGADUAN - SOLVED</h3>
 						</div>
 							<br/>
@@ -336,9 +323,8 @@ if ($chat<>'' || $_GET['c']<>''){
 										<table class="table table-striped table-hover ">
 										 <thead>
 												<tr>
-													<th width="15%">Date</th>
-													<th width="65%">Subject</th>
-													<th width="30%">Status</th>
+													<th width="25%">Date</th>
+													<th width="75%">Subject</th>
 												</tr>
 											</thead>
 											<tbody>
@@ -356,18 +342,6 @@ if ($chat<>'' || $_GET['c']<>''){
 											<tr>
 													<td><?php echo $tgl.' '.$month.' '.$thn; ?></td>
 													<td><a style=" text-decoration:none" href="<?php echo $base_url_member; ?>/chat-pengaduan/<?php echo $row['idchat'] ?>"><?php echo $row['subject']; ?><a></td>
-													<?php $action = $row['status'];
-															 switch ($action) {
-																case close: ?>
-															 <td><span class="label label-success">Terselesaikan</span></td>
-												<?php 	break;
-														case open: ?>
-															 <td><span class="label label-warning">On Progrress</span></td>
-												<?php  	break;
-														case solved: ?>
-															 <td><span class="label label-primary">Solved</span></td>
-												<?php break;
-															 } ?>
 												</tr>
 														<?php
 														} }
@@ -378,7 +352,7 @@ if ($chat<>'' || $_GET['c']<>''){
 						</div>
 					</div>
 					<div class="panel" style="border:0px;">
-							<div class="panel-heading" style="background-color:#F1453C">
+							<div class="panel-heading" style="background-color:#3FB618">
 								<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">PENGADUAN - DONE</h3>
 							</div>
 								<br/>
@@ -387,9 +361,8 @@ if ($chat<>'' || $_GET['c']<>''){
 											<table class="table table-striped table-hover ">
 											 <thead>
 													<tr>
-														<th width="15%">Date</th>
-														<th width="65%">Subject</th>
-														<th width="30%">Status</th>
+														<th width="25%">Date</th>
+														<th width="75%">Subject</th>
 													</tr>
 												</thead>
 												<tbody>
@@ -407,18 +380,6 @@ if ($chat<>'' || $_GET['c']<>''){
 												<tr>
 														<td><?php echo $tgl.' '.$month.' '.$thn; ?></td>
 														<td><a style=" text-decoration:none" href="<?php echo $base_url_member; ?>/chat-pengaduan/<?php echo $row['idchat'] ?>"><?php echo $row['subject']; ?><a></td>
-														<?php $action = $row['status'];
-																 switch ($action) {
-																	case close: ?>
-																 <td><span class="label label-success">Terselesaikan</span></td>
-													<?php 	break;
-															case open: ?>
-																 <td><span class="label label-warning">On Progrress</span></td>
-													<?php  	break;
-															case solved: ?>
-																 <td><span class="label label-primary">Solved</span></td>
-													<?php break;
-																 } ?>
 													</tr>
 															<?php
 															} }
