@@ -79,7 +79,15 @@
 							    <tr>
 							      <td><?php echo $row['id_user']; ?></td>
 							      <td><?php echo $row['nama'].' / '.$row['phone'].' / '.$row['email']; ?></td>
-							      <td><?php echo $row['status']; ?></td>
+							      <td>
+											<?php if($row['status']=="aktif"){ ?>
+										<span class="label label-default"><?php echo $row['status']; ?></span>
+											<?php } elseif($row['status']=="registrasi"){ ?>
+										<span class="label label-primary"><?php echo $row['status']; ?></span>
+											<?php } elseif($row['status']=="unaktif"){ ?>
+										<span class="label label-success"><?php echo $row['status']; ?></span>
+											<?php } ?>
+										</td>
 							      <td><b><a href="<?php echo $base_url_member; ?>/detail-customer/<?php echo $row['id_user']; ?>" class="btn btn-warning btn-sm">Detail</a></b></td>
 							    </tr>
 							   </tbody>
