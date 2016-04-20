@@ -273,7 +273,7 @@ if($emailaktivasi && $update_user){ ?>
             <?php } ?>
         </select>
         </p>
-        <p><div style="margin-bottom:7px;" class="g-recaptcha" data-sitekey="6Ldx_BsTAAAAAOYrQegHLVhslSvd6z78zAr-4Knc"></div></p>
+        <p><div style="margin-bottom:7px;" class="g-recaptcha" data-sitekey="6Lfq2x0TAAAAADMdzR1xsz8qqzC1iBqlR6iG4LI_"></div></p>
       </div>
       <div class="modal-footer">
         <input type="submit" class="btn btn-default" data-dismiss="modal" value="Batal">
