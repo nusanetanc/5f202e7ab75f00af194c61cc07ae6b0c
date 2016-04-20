@@ -102,6 +102,11 @@ if($level=="501"){
      <form style="form-group" method="post">
         <?php
         if (isset($_POST['terminationsend'])) {
+    if($_POST['selectalasantermination']=="Alasan Penutupan"){
+      '<p class="text-danger">Tolong isi alasan anda berhenti berlangganan.</p>'
+    }elseif ($_POST['selectalasantermination']=="Other" && $_POST['selectalasantermination']=="" ) {
+      '<p class="text-danger">Tolong isi alasan anda berhenti berlangganan.</p>'
+    } else {
                     // mail for billing dan cs
         $subject = 'Permintaan Berhenti Berlanganan';
         $message = '
@@ -127,7 +132,39 @@ if($level=="501"){
             foreach($res as $row)
                       {
         $emailpasang=mail($row['email'], $subject, $message, $headers);
-      } }
+      }
+      // mail for customer to berhenti berlangganan
+      $to1 = $email;
+
+      $subject1 = 'Permintaan Berhenti Berlangganan';
+
+      $message1 = '
+      <html>
+        <body style="background-color:#ddd;padding:50px 0 50px 0;font-family:arial;font-size:15px;">
+            <div style="margin:0 auto;max-width:500px;background-color:#eee;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
+                <div style="background: linear-gradient(to right, #FF3D23 , #fc742f);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
+                    <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
+                </div>
+                <div style="padding:20px;color:#333;">
+                    <p style="font-size:20px;font-weight:bold;line-height:1px">Terimakasih sudah menjadi customer Groovy</p>
+                    <p>Anda melakukan permintaan berhenti berlangganan pada tanggal : '.date("d").' '.bulan(date("m");.' '.date("Y").'.</p>
+                    <p style="color:#888;">Kami akan segera memproses permintaan anda</p>
+                </div>
+                </div>
+            </div>
+        </body>
+        </html>
+
+      ';
+
+      $headers1  = 'MIME-Version: 1.0' . "\r\n";
+      $headers1 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+      $headers1 .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
+      $headers1 .= 'Cc: cs@groovy.id' . "\r\n";
+
+      $kirim_email1=mail($to1, $subject1, $message1, $headers1);
+    } }
           ?>
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -160,6 +197,9 @@ if($level=="501"){
      <form style="form-group" method="post">
         <?php
         if (isset($_POST['activeback'])) {
+          if($_POST['selectpackageaktiv']=="Selected Package"){
+            '<p class="text-danger">Tolong isi paket.</p>'
+          } else {
                     // mail for billing dan cs
         $subject = 'Permintaan Berlanganan Kembali';
         $message = '
@@ -184,11 +224,43 @@ if($level=="501"){
             foreach($res as $row)
                       {
         $emailaktivasi=mail($row['email'], $subject, $message, $headers);
-      } $update_user = $col_user->update(array("id_user"=>$id, "level"=>"0"), array('$set'=>array("status"=>"registrasi", "paket"=>$_POST['selectpackageaktiv'])));
+      }
+      // mail for customer to berhenti berlangganan
+      $to1 = $email;
+
+      $subject1 = 'Permintaan Berlangganan Kembali';
+
+      $message1 = '
+      <html>
+        <body style="background-color:#ddd;padding:50px 0 50px 0;font-family:arial;font-size:15px;">
+            <div style="margin:0 auto;max-width:500px;background-color:#eee;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
+                <div style="background: linear-gradient(to right, #FF3D23 , #fc742f);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
+                    <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
+                </div>
+                <div style="padding:20px;color:#333;">
+                    <p style="font-size:20px;font-weight:bold;line-height:1px">Terimakasih sudah menjadi customer Groovy</p>
+                    <p>Anda melakukan permintaan berlangganan kembali pada tanggal : '.date("d").' '.bulan(date("m");.' '.date("Y").'.</p>
+                    <p style="color:#888;">Kami akan segera memproses permintaan anda</p>
+                </div>
+                </div>
+            </div>
+        </body>
+        </html>
+
+      ';
+
+      $headers1  = 'MIME-Version: 1.0' . "\r\n";
+      $headers1 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+      $headers1 .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
+      $headers1 .= 'Cc: cs@groovy.id' . "\r\n";
+
+      $kirim_email1=mail($to1, $subject1, $message1, $headers1);
+$update_user = $col_user->update(array("id_user"=>$id, "level"=>"0"), array('$set'=>array("status"=>"registrasi", "paket"=>$_POST['selectpackageaktiv'])));
 if($emailaktivasi && $update_user){ ?>
       <script type="" language="JavaScript">
     document.location='<?php echo $base_url_member; ?>'</script>
-<?php } } ?>
+<?php } } } ?>
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title">Permintaan Berlanganan Kembali</h4>

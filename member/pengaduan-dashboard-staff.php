@@ -39,7 +39,7 @@
 									   </tbody>
 								<?php } ?>
 								</table>
-								<a  href="<?php echo $base_url_member; ?>/pengaduan ?>">view all</a>
+								<a  href="<?php echo $base_url_member; ?>/pengaduan">view all</a>
 					</div>
  				</div>
 			</div>
