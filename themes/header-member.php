@@ -100,7 +100,7 @@ if($level=="501"){
   <div class="modal-dialog">
     <div class="modal-content">
      <form style="form-group" method="post">
-        <?php
+        <?php /*
         if (isset($_POST['terminationsend'])) {
     if($_POST['selectalasantermination']=="Alasan Penutupan"){ ?>
       <p class="text-danger">Tolong isi alasan anda berhenti berlangganan.</p>
@@ -132,7 +132,7 @@ if($level=="501"){
             foreach($res as $row)
                       {
         $emailpasang=mail($row['email'], $subject, $message, $headers);
-      } /*
+      }
       // mail for customer to berhenti berlangganan
 
       $subject1 = 'Permintaan Berhenti Berlangganan';
@@ -162,9 +162,9 @@ if($level=="501"){
       $headers1 .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
       $headers1 .= 'Cc: cs@groovy.id' . "\r\n";
 
-      $kirim_email1=mail($email, $subject1, $message1, $headers1); */
+      $kirim_email1=mail($email, $subject1, $message1, $headers1);
     } }
-          ?>
+        */  ?>
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title">Permintaan Berhenti Berlanganan</h4>
@@ -223,7 +223,7 @@ if($level=="501"){
             foreach($res as $row)
                       {
         $emailaktivasi=mail($row['email'], $subject, $message, $headers);
-      } /*
+      }
       // mail for customer to berhenti berlangganan
 
       $subject1 = 'Permintaan Berlangganan Kembali';
@@ -254,7 +254,7 @@ if($level=="501"){
       $headers1 .= 'Cc: cs@groovy.id' . "\r\n";
 
       $kirim_email1=mail($email, $subject1, $message1, $headers1);
-$update_user = $col_user->update(array("id_user"=>$id, "level"=>"0"), array('$set'=>array("status"=>"registrasi", "paket"=>$_POST['selectpackageaktiv']))); */
+$update_user = $col_user->update(array("id_user"=>$id, "level"=>"0"), array('$set'=>array("status"=>"registrasi", "paket"=>$_POST['selectpackageaktiv'])));
 if($emailaktivasi && $update_user){ ?>
       <script type="" language="JavaScript">
     document.location='<?php echo $base_url_member; ?>'</script>
