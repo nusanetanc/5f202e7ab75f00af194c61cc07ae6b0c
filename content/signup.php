@@ -11,29 +11,29 @@
                                                                   $date = date("Y/m/d");
                                                                   $add_date_2days = date('Y/m/d', strtotime("+2 days"));
                                                                   $date_month = date("m");
-                                                                  $date_years = date("y");   
+                                                                  $date_years = date("y");
 
                                             if ($name=="" || $email=="" || $phone=="" || $package=="-- Select Package --" || $location=="-- Location --"){
                                                                                        ?>
                                                                                           <script >
                                                                                                 $(document).ready(function(){
                                                                                                     $('#registerfailedModal').modal('show');
-                                                                                            });</script> 
+                                                                                            });</script>
                                                                                         <?php  }
                                         else if ($location=="0" && $city=="" && $place==""){
                                                                                        ?>
                                                                                           <script >
                                                                                                 $(document).ready(function(){
                                                                                                     $('#registerfailedModal').modal('show');
-                                                                                            });</script> 
+                                                                                            });</script>
                                                                                         <?php  }
                                          else if ($location<>"0" && $decription==""){
                                                                                        ?>
                                                                                           <script >
                                                                                                 $(document).ready(function(){
                                                                                                     $('#registerfailedModal').modal('show');
-                                                                                            });</script> 
-                                                                                        <?php   }   else {                       
+                                                                                            });</script>
+                                                                                        <?php   }   else {
                                     //$userid=new userId();
                                     //$id=$userid->baru();
 
@@ -48,36 +48,36 @@
 
                                             $res = $col_package->find(array("nama"=>$package));
                                             foreach($res as $row)
-                                            { 
+                                            {
                                                 $harga=$row['harga'];
-                                            } 
+                                            }
                                               if($location<>"0"){
                                                     $res = $col_location->find(array("name"=>$location));
                                                     foreach($res as $row)
-                                                    { 
+                                                    {
                                                         $city=$row['city'];
                                                         $place=$row['place'];
                                                     }
-                                                 }   
+                                                 }
 
                                     $res = $col_user->find(array("email"=>$email, "level"=>"0"));
                                     foreach($res as $row)
-                                    { 
+                                    {
                                         $email1=$row['email'];
-                                    } 
+                                    }
 
                                               if ($email1==$email){
                                                             ?>
                                                                   <script >
                                                                         $(document).ready(function(){
                                                                             $('#registeremailfailedModal').modal('show');
-                                                                    });</script> 
+                                                                    });</script>
                                                             <?php
                                                                   } else {
                                                                     if($location<>"0"){
                                                                           $insert_customer=$col_user->insert(array("id_user"=>"9384758","nama"=>$name,"email"=>$email, "phone"=>$phone, "foto"=>"","level"=>"0","password"=>$result, "aktif"=>"0", "registrasi"=>"personal",
                                                                                                                 "tanggal_registrasi"=>$date, "paket"=>$package, "harga"=>$harga, "tanggal_akhir"=>$add_date_2days,"tanggal_aktivasi"=>"",
-                                                                                                                "tempat"=>$location, "kota"=>$city, "keterangan"=>$decription, "alamat"=>$place, "pembayaran"=>"0", "invoice"=>$date_month.$date_years.'001',"status"=>"registrasi")); 
+                                                                                                                "tempat"=>$location, "kota"=>$city, "keterangan"=>$decription, "alamat"=>$place, "pembayaran"=>"0", "invoice"=>$date_month.$date_years.'001',"status"=>"registrasi"));
                                                                               $to=$email;
                                                                               $subject = "Activation Order groovy";
                                                                               $message = '
@@ -107,15 +107,15 @@
                                                                                           </div>
 
                                                                                           </body>
-                                                                                          </html> 
+                                                                                          </html>
                                                                                           ';
                                                                         $headers = "MIME-Version: 1.0" . "\r\n";
                                                                         $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
                                                                         $headers .= 'From: <www-data@anc.jkt.nusa.net.id (www-data)>' . "\r\n";
                                                                         $headers .= 'Cc: nurhandiy@gmail.com' . "\r\n";
-                                                                        mail($to,$subject,$message,$headers); 
+                                                                        mail($to,$subject,$message,$headers);
 
-                                                                         ?> 
+                                                                         ?>
                                                                             <script >
                                                                                 $(document).ready(function(){
                                                                                     $('#registersuccsesModal').modal('show');
@@ -149,14 +149,14 @@
                                                                                           </div>
 
                                                                                           </body>
-                                                                                          </html> 
+                                                                                          </html>
                                                                                           ';
                                                                         $headers = "MIME-Version: 1.0" . "\r\n";
                                                                         $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
                                                                         $headers .= 'From: <www-data@anc.jkt.nusa.net.id (www-data)>' . "\r\n";
                                                                         $headers .= 'Cc: nurhandiy@gmail.com' . "\r\n";
                                                                         mail($to,$subject,$message,$headers);
-                                                                        ?> 
+                                                                        ?>
                                                                             <script >
                                                                                 $(document).ready(function(){
                                                                                     $('#LocationnotvalidModal').modal('show');
@@ -175,8 +175,8 @@
                                 <option disabled="disabled" selected="true">-- Select Package --</option>
                                 <?php
                                     $res = $col_package->find();
-                                    foreach($res as $row) 
-                                                {   
+                                    foreach($res as $row)
+                                                {
                                                   ?>
                                 <option><?php echo $row['nama']; ?></option>
                                 <?php } ?>
@@ -185,8 +185,8 @@
                                 <option disabled="disabled" selected="true">-- Location --</option>
                                 <?php
                                     $res = $col_location->find();
-                                    foreach($res as $row) 
-                                                {   
+                                    foreach($res as $row)
+                                                {
                                                   ?>
                                 <option><?php echo $row['name']; ?></option>
                                 <?php } ?>
@@ -203,6 +203,7 @@
                                 <option>Jakarta Utara</option>
                                 <option>Bandung</option>
                             </select>
+                             <div style="margin-bottom:7px;" class="g-recaptcha" data-sitekey="6Ldx_BsTAAAAAOYrQegHLVhslSvd6z78zAr-4Knc"></div>
                             <input id="register" name="register" type="submit" style="float:left;margin-top:5px;;text-align:center;background-color:#ff1d25;border:0px;color:#fff;height:40px;padding:0 40px 0 40px;border-radius:3px;font-weight:bold;" value="SIGN UP"/>
                             <a href="<?php echo $base_url; ?>/?hal=signin" style="margin-top:10px;float:right;color:#ff1d25;font-size:14px;text-decoration:underline;text-align:right">Sign In</a>
                         </form>
