@@ -261,9 +261,9 @@ if($emailaktivasi && $update_user){ ?>
         <h4 class="modal-title">Permintaan Berlanganan Kembali</h4>
       </div>
       <div class="modal-body">
+        <p>Pilih Paket</p>
         <p>
         <select class="form-control" id="selectpackageaktiv" name="selectpackageaktiv">
-          <option disabled="true" selected="true">Selected Package</option>
             <?php
                 $res = $col_package->find();
                 foreach($res as $row)
