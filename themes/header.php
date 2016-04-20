@@ -12,7 +12,7 @@
             <i class="fa fa-bars fa-lg"></i>
             </button>
             -->
-            
+
             <a href="<?php echo $base_url; ?>"><img src="<?php echo $base_url; ?>/img/groovy-logo.png" width="200px" height="50px"/></a>
         </div>
         <div style="float:right;margin-left:15px;margin-top:14px;">
@@ -32,7 +32,7 @@
             </div>
         </div>
     </div>
-<?php } else { ?>    
+<?php } else { ?>
 <body>
     <!-- Header -->
     <div class="container-fluid" style="position:fixed;width:100%;background: linear-gradient(to right, #FF3D23 , #FF931E);height:50px;
@@ -41,7 +41,7 @@
     box-shadow:         0px 2px 5px rgba(0, 0, 0, 0.5);
     z-index:1000;
     ">
-        <div class="logoWrapper">              
+        <div class="logoWrapper">
             <a href="<?php echo $base_url; ?>"><img src="<?php echo $base_url; ?>/img/groovy-logo-white.png"  height="50px"/></a>
         </div>
         <div style="float:right;margin-left:15px;margin-top:14px;">
@@ -60,52 +60,52 @@
                     <li><hr style="margin:5px 0 5px 0;"/></li>
                     <li><a href="#" data-toggle="modal" data-target="#signinModal">Sign In</a></li>
                 </ul>
-            </div>            
+            </div>
         </div>
     </div>
-<?php 
+<?php
     if (isset($_GET['a'])) {
                             $a = $_GET['a'];
         $res = $col_user->find(array("password"=>$a, "level"=>"0", "aktif"=>"0"));
                                             foreach($res as $row)
-                                            { 
+                                            {
                                                 $email_aktif=$row['email'];
                                                 $id_aktif=$row['id_user'];
-                                            } 
+                                            }
     if(empty($email_aktif)){
 ?>
     <script type="" language="JavaScript">
     document.location='<?php echo $base_url; ?>'</script>
-            <?php 
+            <?php
     } else {
 ?>
     <script >
     $(document).ready(function(){
         $('#activationacountModal').modal('show');
-    }); </script> 
-            <?php  
+    }); </script>
+            <?php
                     } }
     if (isset($_GET['rp'])) {
                             $change_id = new MongoId($_GET['rp']);
         $res = $col_user->find(array("_id"=>$change_id, "aktif"=>"1"));
                                             foreach($res as $row)
-                                            { 
+                                            {
                                                 $change_email=$row['email'];
-                                            } 
+                                            }
     if(empty($change_email)){
 ?>
     <script type="" language="JavaScript">
     document.location='<?php echo $base_url; ?>'</script>
-            <?php 
+            <?php
     } else {
 ?>
     <script >
     $(document).ready(function(){
         $('#replacepasswordModal').modal('show');
-    }); </script> 
-            <?php  
+    }); </script>
+            <?php
                     } }
-            ?> 
+            ?>
         <!-- /Modal Sign In-->
         <div class="modal fade" id="signinModal" role="dialog" data-toggle="modal" data-backdrop="static" data-keyboard="false">
             <div class="modal-dialog">
@@ -131,42 +131,42 @@
                                                             <script >
                                                             $(document).ready(function(){
                                                                 $('#loginemailandpasswordfailedModal').modal('show');
-                                                            }); </script> 
-                                                                    <?php    
+                                                            }); </script>
+                                                                    <?php
                                    }
                                    else if ($email==""){
                                                         ?>
                                                             <script >
                                                             $(document).ready(function(){
                                                                 $('#loginemailfailedModal').modal('show');
-                                                         }); </script> 
+                                                         }); </script>
                                                             <?php
                                     }  else if ($password==""){
                                                                 ?>
                                                             <script >
                                                             $(document).ready(function(){
                                                                 $('#loginpasswordfailedModal').modal('show');
-                                                        }); </script> 
+                                                        }); </script>
                                                             <?php
-                                    } else {                 
-                            $res = $col_user->findOne(array("email"=>$email, "password"=>$password, "aktif"=>"1"));                                                   
+                                    } else {
+                            $res = $col_user->findOne(array("email"=>$email, "password"=>$password, "aktif"=>"1"));
                             if (!empty($res['email'])) {
-                                                    $_SESSION["id"] = $res['id_user'];                  
+                                                    $_SESSION["id"] = $res['id_user'];
                                                     $_SESSION["level"]=$res['level'];
                                                                                 ?>
-                            <script type="" language="JavaScript"> 
+                            <script type="" language="JavaScript">
                             document.location='<?php echo $base_url; ?>/member'</script>
                             <?php } else { ?>
                                                 <script >
                                                 $(document).ready(function(){
                                                     $('#loginfailedModal').modal('show');
-                                            });</script> 
+                                            });</script>
                             <?php } } } ?>
                         </form>
                     </div>
                 </div>
             </div>
-        </div>  
+        </div>
         <!-- /Modal Sign In-->
         <!-- Modal Forgot Password-->
         <div class="modal fade" id="forgotPasswordModal" role="dialog" data-toggle="modal" data-backdrop="static" data-keyboard="false">
@@ -187,18 +187,18 @@
                                                                                 <script >
                                                                                 $(document).ready(function(){
                                                                                     $('#loginemailfailedModal').modal('show');
-                                                                            });</script> 
+                                                                            });</script>
                                                             <?php
-                                                            }   else {  
-                                                                        $res = $col_user->findOne(array("email"=>$email)); 
+                                                            }   else {
+                                                                        $res = $col_user->findOne(array("email"=>$email));
                                                                         $user_id=$res['_id'];
                                                                         if (empty($res['email'])) { ?>
                                                                                 <script >
                                                                                 $(document).ready(function(){
                                                                                     $('#emailnotfoundModal').modal('show');
-                                                                            });</script> 
+                                                                            });</script>
                                                             <?php
-                                                                        } else { 
+                                                                        } else {
                                                                         // mail for customer to forgote password
 
                                                                             $to=$email;
@@ -215,14 +215,14 @@
                                                                                         <div style="padding:20px;color:#333;">
                                                                                             <p style="font-size:20px;font-weight:bold;line-height:1px">Hai '.$nama.',</p>
                                                                                             <p>Kami mendengar Anda perlu reset password. Klik link di bawah ini dan Anda akan diarahkan ke situs yang aman dari mana Anda dapat mengatur sandi baru.</p>
-                                                                                            
+
                                                                                             <div style="text-align:center;margin:30px 0 30px 0;">
                                                                                                 <a href="'.$base_url.'/?rp='.$user_id.'" style="text-decoration:none;color:#fff;"><span style="background-color:#FF3D23;border:0;border-radius:5px;padding:10px 40px 10px 40px;color:#fff;font-size:17px;">Reset Password</span></a>
                                                                                             </div>
                                                                                             <p style="color:#888;">Jika Anda tidak pernah meminta untuk mereset password, harap abaikan email ini.</p>
                                                                                         </div>
                                                                                         </div>
-                                                                                    </div>        
+                                                                                    </div>
                                                                                 </body>
                                                                                 </html>
                                                                             ';
@@ -238,11 +238,11 @@
                                                                                 <script >
                                                                                 $(document).ready(function(){
                                                                                     $('#emailforgetModal').modal('show');
-                                                                            });</script> 
+                                                                            });</script>
                                                             <?php
                                                          }   }
-                                                     } 
-                            ?>                        
+                                                     }
+                            ?>
                         </form>
                     </div>
                 </div>
@@ -259,18 +259,18 @@
                             <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Masukan Password Anda" type="password" class="form-control" name="activepassword1" id="activepassword1">
                             <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Masukan Lagi Password Anda" type="password" class="form-control" name="activepassword2" id="activepassword2">
                             <span style="color:#fff;font-weight:bold">Upload foto/scan KTP (Kartu Tanda Penduduk)<br/></span>
-                            <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" type="file" class="form-control" name="regisktp" id="regisktp">                             
+                            <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" type="file" class="form-control" name="regisktp" id="regisktp">
                             <?php
                             if (isset($_POST['active'])){
                                 $passwordBaru1 = $_POST['activepassword1'];
                                 $passwordBaru2 = $_POST['activepassword2'];
                                 $lokasifilektp= $_FILES['regisktp']['tmp_name'];
-                                $namaktp = $_FILES['regisktp']['name']; 
+                                $namaktp = $_FILES['regisktp']['name'];
                                 echo $namaktp;
                                 if ($passwordBaru1=="" || $passwordBaru2==""){ ?>
                                 <b><h5 style="margin-top:10px;float:right;color:#fff;font-size:14px;text-align:right">Please enter your password and photo id card!!</h5></b><br/>
                                 <br/>
-                            <?php    } else if ($passwordBaru1==$passwordBaru2){   
+                            <?php    } else if ($passwordBaru1==$passwordBaru2){
                                     $date_time = date("Y/m/d H:i:s");
                                     $dirKtp = "./ktp/";
                                     $move = move_uploaded_file($lokasifilektp, "$dirKtp".$namaktp);
@@ -293,8 +293,8 @@
                                                                                 <?php
                                 }
                             }
-                            ?>  
-                            <center><input name="active" id="active" type="submit" style="background-color:#fff;border:0px;color:#333;height:40px;padding:0 40px 0 40px;margin-top:15px;border-radius:3px;font-weight:bold;" value="AKTIFKAN"/></center>                      
+                            ?>
+                            <center><input name="active" id="active" type="submit" style="background-color:#fff;border:0px;color:#333;height:40px;padding:0 40px 0 40px;margin-top:15px;border-radius:3px;font-weight:bold;" value="AKTIFKAN"/></center>
                         </form>
                     </div>
                 </div>
@@ -309,7 +309,7 @@
                         <h4 class="modal-title" style="color:#fff;text-align:center;padding:8px 0 5px 0"><b>Change Password</b></h4><br/>
                         <form style="form-group" method="post">
                             <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Masukan Password Anda" type="password" class="form-control" name="changepassword3" id="changepassword3">
-                            <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Masukan Lagi Password Anda" type="password" class="form-control" name="changepassword4" id="changepassword4">                         
+                            <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Masukan Lagi Password Anda" type="password" class="form-control" name="changepassword4" id="changepassword4">
                             <?php
                             if (isset($_POST['change'])){
                                 $passwordBaru3 = $_POST['changepassword3'];
@@ -318,7 +318,7 @@
                                 if (empty($passwordBaru3) || empty($passwordBaru4)){ ?>
                                 <b><h5 style="margin-top:10px;float:right;color:#fff;font-size:14px;text-align:right">Please enter your password!</h5></b><br/>
                                 <br/>
-                            <?php    } else if ($passwordBaru3==$passwordBaru4){   
+                            <?php    } else if ($passwordBaru3==$passwordBaru4){
                                     $change_password = $col_user->update(array("email"=>$change_email),
                                                                         array('$set'=>array("password"=>$passwordBaru3)));
                                     if ($change_password){
@@ -336,8 +336,8 @@
                                                                                 <?php
                                 }
                             }
-                            ?>  
-                            <center><input name="change" id="change" type="submit" style="background-color:#fff;border:0px;color:#333;height:40px;padding:0 40px 0 40px;margin-top:15px;border-radius:3px;font-weight:bold;" value="CHANGE"/></center>                      
+                            ?>
+                            <center><input name="change" id="change" type="submit" style="background-color:#fff;border:0px;color:#333;height:40px;padding:0 40px 0 40px;margin-top:15px;border-radius:3px;font-weight:bold;" value="CHANGE"/></center>
                         </form>
                     </div>
                 </div>
@@ -359,8 +359,8 @@
                                 <option disabled="true" selected="true">-- Select Package --</option>
                                 <?php
                                     $res = $col_package->find();
-                                    foreach($res as $row) 
-                                                {   
+                                    foreach($res as $row)
+                                                {
                                                   ?>
                                 <option><?php echo $row['nama']; ?></option>
                                 <?php } ?>
@@ -369,8 +369,8 @@
                                 <option disabled="true" selected="true">-- Location --</option>
                                 <?php
                                     $res = $col_location->find();
-                                    foreach($res as $row) 
-                                                {   
+                                    foreach($res as $row)
+                                                {
                                                   ?>
                                 <option><?php echo $row['name']; ?></option>
                                 <?php } ?>
@@ -401,49 +401,49 @@
                                                                   //$add_date_2days = date('Y/m/d', strtotime("+2 days"));
                                                                   $date_days = date("d");
                                                                   $date_month = date("m");
-                                                                  $date_years = date("y");  
+                                                                  $date_years = date("y");
                                                                   $month1 = bulan($date_month);
 
-                                            if ($name=="" || $email=="" || $phone=="" || $package=="-- Select Package --" || $location=="-- Location --"){
+                                            if ($name=="" || $email=="" || $phone=="" || $package=="-- Select Package --" || $location=="-- Location --" || empty($_POST['g-recaptcha-response'])){
                                                                                        ?>
                                                                                           <script >
                                                                                                 $(document).ready(function(){
                                                                                                     $('#registerfailedModal').modal('show');
-                                                                                            });</script> 
+                                                                                            });</script>
                                                                                         <?php  }
                                         else if ($location=="0" && $city=="" && $place==""){
                                                                                        ?>
                                                                                           <script >
                                                                                                 $(document).ready(function(){
                                                                                                     $('#registerfailedModal').modal('show');
-                                                                                            });</script> 
+                                                                                            });</script>
                                                                                         <?php  }
                                          else if ($location<>"0" && $decription==""){
                                                                                        ?>
                                                                                           <script >
                                                                                                 $(document).ready(function(){
                                                                                                     $('#registerfailedModal').modal('show');
-                                                                                            });</script> 
-                                                                                        <?php   }   else {                       
+                                                                                            });</script>
+                                                                                        <?php   }   else {
 
 
                                     $res = $col_user->find(array("email"=>$email, "level"=>"0"));
                                     foreach($res as $row)
-                                    { 
+                                    {
                                         $email1=$row['email'];
-                                    } 
+                                    }
 
                                               if ($email1==$email){
                                                             ?>
                                                                   <script >
                                                                         $(document).ready(function(){
                                                                             $('#registeremailfailedModal').modal('show');
-                                                                    });</script> 
+                                                                    });</script>
                                                             <?php
 
                                                                   } elseif ($location=="0"){
                                                                         $insert_customer=$col_demand->insert(array("nama"=>$name, "phone"=>$phone, "email"=>$email, "tanggal_registrasi"=>$date, "paket"=>$package, "alamat"=>$place, "kota"=>$city));
-                                                                        ?> 
+                                                                        ?>
                                                                             <script >
                                                                                 $(document).ready(function(){
                                                                                     $('#LocationnotvalidModal').modal('show');
@@ -526,19 +526,19 @@
 
                                                                                 $res = $col_package->find(array("nama"=>$package));
                                                                                 foreach($res as $row)
-                                                                                { 
+                                                                                {
                                                                                     $harga=$row['harga'];
-                                                                                } 
+                                                                                }
                                                                                         $res = $col_location->find(array("name"=>$location));
                                                                                         foreach($res as $row)
-                                                                                        { 
+                                                                                        {
                                                                                             $city=$row['city'];
                                                                                             $place=$row['place'];
                                                                                         }
 
                                                                           $insert_customer=$col_user->insert(array("id_user"=>$newid,"nama"=>$name,"email"=>$email, "phone"=>$phone, "foto"=>"","level"=>"0","password"=>$result, "aktif"=>"0", "registrasi"=>"personal",
                                                                                                                 "tanggal_registrasi"=>$date, "paket"=>$package, "harga"=>$harga, "tanggal_akhir"=>"","tanggal_aktivasi"=>"",
-                                                                                                                "tempat"=>$location, "kota"=>$city, "keterangan"=>$decription, "alamat"=>$place, "pembayaran"=>"0", "no_virtual"=>"","status"=>"registrasi")); 
+                                                                                                                "tempat"=>$location, "kota"=>$city, "keterangan"=>$decription, "alamat"=>$place, "pembayaran"=>"0", "no_virtual"=>"","status"=>"registrasi"));
                                                                               // mail for customer to registrasi
                                                                                 $to = $email;
 
@@ -553,7 +553,7 @@
                                                                                             </div>
                                                                                             <div style="padding:20px;color:#333;">
                                                                                                 <p style="font-size:20px;font-weight:bold;line-height:1px">Hai '.$name.',</p>
-                                                                                                
+
                                                                                                 <p>Terimakasih telah mendaftarkan akun Groovy. Berikut adalah rincian akun yang anda daftarkan.</p>
                                                                                                 <table style="margin-top:20px;margin-bottom:20px;border:0px solid #ccc;color:#333;background-color:#fff;#ddd;width:100%;font-size:14px;">
                                                                                                     <tr style="border:1px solid #bbb;">
@@ -596,7 +596,7 @@
                                                                                                 <p>Jika tombol tidak berfungsi silahkan copy link berikut <a href="'.$base_url.'/?a='.$result.'">'.$base_url.'/?a='.$result.'</a></p>
                                                                                             </div>
                                                                                             </div>
-                                                                                        </div>        
+                                                                                        </div>
                                                                                     </body>
                                                                                     </html>
                                                                                 ';
@@ -609,15 +609,15 @@
 
                                                                                 mail($to, $subject, $message, $headers);
 
-                                                                         ?> 
+                                                                         ?>
                                                                             <script >
                                                                                 $(document).ready(function(){
                                                                                     $('#registersuccsesModal').modal('show');
                                                                          }); </script>  <?php
                                                                       } } } ?>
-                             <div style="margin-bottom:7px;" class="g-recaptcha" data-sitekey="6Ldx_BsTAAAAAOYrQegHLVhslSvd6z78zAr-4Knc"></div>                
+                             <div style="margin-bottom:7px;" class="g-recaptcha" data-sitekey="6Ldx_BsTAAAAAOYrQegHLVhslSvd6z78zAr-4Knc"></div>
                             <input id="register" name="register" type="submit" style=";text-align:center;background-color:#fff;border:0px;color:#333;height:40px;padding:0 40px 0 40px;border-radius:3px;font-weight:bold;" value="SIGN UP"/>
-                            <a href="" style="margin-top:10px;float:right;color:#fff;font-size:14px;text-decoration:underline;text-align:right" data-toggle="modal" data-target="#signinModal" data-dismiss="modal">Sign In</a> 
+                            <a href="" style="margin-top:10px;float:right;color:#fff;font-size:14px;text-decoration:underline;text-align:right" data-toggle="modal" data-target="#signinModal" data-dismiss="modal">Sign In</a>
                         </form>
                     </div>
                 </div>
@@ -626,7 +626,7 @@
         <?php } ?>
         <!-- /Modal Sign Up-->
         <!-- Modal Sign In Failed-->
-        <div class="modal fade" id="loginfailedModal" role="dialog" > 
+        <div class="modal fade" id="loginfailedModal" role="dialog" >
             <div class="modal-dialog">
                 <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
                     <div class="modal-body">
@@ -634,11 +634,11 @@
                               <h5 style="color:white;"><b>The email and password you entered don't match !</b></h5>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
-        <!-- /Modal Sign In Failed-->   
+        <!-- /Modal Sign In Failed-->
         <!-- Modal Login Email & Password Failed -->
-        <div class="modal fade" id="loginemailandpasswordfailedModal" role="dialog"> 
+        <div class="modal fade" id="loginemailandpasswordfailedModal" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
                     <div class="modal-body">
@@ -646,11 +646,11 @@
                               <h5 style="color:white;"><b>Please enter your email & password!</b></h5>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
-        <!-- Modal Login Email & Password Failed --> 
+        <!-- Modal Login Email & Password Failed -->
                 <!-- Modal Login Email Failed-->
-        <div class="modal fade" id="loginemailfailedModal" role="dialog"> 
+        <div class="modal fade" id="loginemailfailedModal" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
                     <div class="modal-body">
@@ -658,11 +658,11 @@
                               <h5 style="color:white;"><b>Please enter your email!</b></h5>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
-        <!-- Modal Login Email Failed-->     
+        <!-- Modal Login Email Failed-->
         <!-- Modal Login Password Failed-->
-        <div class="modal fade" id="loginpasswordfailedModal" role="dialog"> 
+        <div class="modal fade" id="loginpasswordfailedModal" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
                     <div class="modal-body">
@@ -670,11 +670,11 @@
                               <h5 style="color:white;"><b>Please enter your password!</b></h5>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
-        <!-- Modal Login Password Failed-->   
+        <!-- Modal Login Password Failed-->
         <!-- Modal Register Failed-->
-        <div class="modal fade" id="registerfailedModal" role="dialog"> 
+        <div class="modal fade" id="registerfailedModal" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
                     <div class="modal-body">
@@ -682,11 +682,11 @@
                               <h5 style="color:white;"><b>Registration failed, please try again!</b></h5>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
-        <!-- /Modal Register Failed-->    
+        <!-- /Modal Register Failed-->
         <!-- Modal Register Succses-->
-        <div class="modal fade" id="registersuccsesModal" role="dialog"> 
+        <div class="modal fade" id="registersuccsesModal" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
                     <div class="modal-body">
@@ -694,11 +694,11 @@
                               <h5 style="color:white;"><b>Registration succeed, please check your email!</b></h5>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
-        <!-- /Modal Register Succses-->         
+        <!-- /Modal Register Succses-->
         <!-- Modal Register Email Exsist -->
-        <div class="modal fade" id="registeremailfailedModal" role="dialog"> 
+        <div class="modal fade" id="registeremailfailedModal" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
                     <div class="modal-body">
@@ -706,11 +706,11 @@
                               <h5 style="color:white;"><b>Email already exist! Please register with other email</b></h5>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
-        <!-- /Modal Email Exsist -->   
+        <!-- /Modal Email Exsist -->
                 <!-- Modal Account Exsist -->
-        <div class="modal fade" id="acountfailedModal" role="dialog"> 
+        <div class="modal fade" id="acountfailedModal" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
                     <div class="modal-body">
@@ -718,11 +718,11 @@
                               <h5 style="color:white;"><b>Acount already exist!</b></h5>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
-        <!-- /Modal Account Exsist -->   
+        <!-- /Modal Account Exsist -->
         <!-- Modal Email Not Found -->
-        <div class="modal fade" id="emailnotfoundModal" role="dialog"> 
+        <div class="modal fade" id="emailnotfoundModal" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
                     <div class="modal-body">
@@ -730,11 +730,11 @@
                               <h5 style="color:white;"><b>Email was not found in the list costumer</b></h5>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
-        <!-- /Modal Email Not Found -->    
+        <!-- /Modal Email Not Found -->
         <!-- Modal Forget Email -->
-        <div class="modal fade" id="emailforgetModal" role="dialog"> 
+        <div class="modal fade" id="emailforgetModal" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
                     <div class="modal-body">
@@ -742,11 +742,11 @@
                               <h5 style="color:white;"><b>Please check your email for reset password</b></h5>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
-        <!-- /Modal Forget Email -->   
+        <!-- /Modal Forget Email -->
         <!-- Modal Passsword Baru sukses -->
-        <div class="modal fade" id="activationsuccsesModal" role="dialog"> 
+        <div class="modal fade" id="activationsuccsesModal" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
                     <div class="modal-body">
@@ -754,11 +754,11 @@
                               <h5 style="color:white;"><b>Account has been active, please login</b></h5>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
-        <!-- /Modal Forget Email --> 
+        <!-- /Modal Forget Email -->
         <!-- Modal Location not Valid -->
-        <div class="modal fade" id="LocationnotvalidModal" role="dialog"> 
+        <div class="modal fade" id="LocationnotvalidModal" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
                     <div class="modal-body">
@@ -766,11 +766,11 @@
                               <h5 style="color:white;"><b>Registration failed, because our services have not reached your</b></h5>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
-        <!-- /Location not Valid --> 
+        <!-- /Location not Valid -->
         <!-- Modal Location not Valid -->
-        <div class="modal fade" id="changepasswordvalidModal" role="dialog"> 
+        <div class="modal fade" id="changepasswordvalidModal" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
                     <div class="modal-body">
@@ -778,9 +778,9 @@
                               <h5 style="color:white;"><b>Password successfully changed</b></h5>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
         <!-- /Modal Location not Valid -->
     <!-- /Header -->
-    
-    <!-- Content1 -->   
+
+    <!-- Content1 -->
