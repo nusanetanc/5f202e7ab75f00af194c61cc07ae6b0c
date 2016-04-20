@@ -75,7 +75,7 @@
 									foreach($res as $row)
 									{
 							?>
-							  <tbody class="pic-container"/>
+						</tbody>
 							    <tr>
 							      <td><?php echo $row['id_user']; ?></td>
 							      <td><?php echo $row['nama'].' / '.$row['phone'].' / '.$row['email']; ?></td>
