@@ -64,10 +64,9 @@
 							<table class="table table-striped table-hover ">
 							  <thead>
 							    <tr>
-							      <th width="15%">ID Cust</th>
-							      <th width="30%">Customer</th>
-							      <th width="20%">Paket Aktif</th>
-							      <th width="35%">Location</th>
+							      <th width="20%">ID Cust</th>
+							      <th width="50%">Customer</th>
+							      <th width="20%">Status</th>
 							      <th width="10%">Action</th>
 							    </tr>
 							  </thead>
@@ -80,8 +79,7 @@
 							    <tr>
 							      <td><?php echo $row['id_user']; ?></td>
 							      <td><?php echo $row['nama'].' / '.$row['phone'].' / '.$row['email']; ?></td>
-							      <td><?php echo $row['paket']; ?></td>
-							      <td><?php echo $row['tempat'].', '.$row['keterangan'].', '.$row['kota']; ?></td>
+							      <td><?php echo $row['status']; ?></td>
 							      <td><b><a href="<?php echo $base_url_member; ?>/detail-customer/<?php echo $row['id_user']; ?>" class="btn btn-warning btn-sm">Detail</a></b></td>
 							    </tr>
 							   </tbody>
