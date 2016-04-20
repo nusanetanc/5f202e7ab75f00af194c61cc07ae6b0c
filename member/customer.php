@@ -75,9 +75,7 @@
 									foreach($res as $row)
 									{
 							?>
-							  <tbody style="height: 50px; 
-													    overflow-y: auto;
-													    overflow-x: hidden;"/>
+							  <tbody style="height:10em; overflow:scroll;"/>
 							    <tr>
 							      <td><?php echo $row['id_user']; ?></td>
 							      <td><?php echo $row['nama'].' / '.$row['phone'].' / '.$row['email']; ?></td>
