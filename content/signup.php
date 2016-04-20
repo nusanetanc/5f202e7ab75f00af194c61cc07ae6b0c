@@ -13,7 +13,7 @@
                                                                   $date_month = date("m");
                                                                   $date_years = date("y");
 
-                                            if ($name=="" || $email=="" || $phone=="" || $package=="-- Select Package --" || $location=="-- Location --"){
+                                            if ($name=="" || $email=="" || $phone=="" || $package=="-- Select Package --" || $location=="-- Location --" || empty($_POST['g-recaptcha-response'])){
                                                                                        ?>
                                                                                           <script >
                                                                                                 $(document).ready(function(){
@@ -34,134 +34,194 @@
                                                                                                     $('#registerfailedModal').modal('show');
                                                                                             });</script>
                                                                                         <?php   }   else {
-                                    //$userid=new userId();
-                                    //$id=$userid->baru();
+                                                                          $res = $col_user->find(array("email"=>$email, "level"=>"0"));
+                                                                          foreach($res as $row)
+                                                                          {
+                                                                          $email1=$row['email'];
+                                                                          }
 
+                                                                          if ($email1==$email){
+                                                                          ?>
+                                                                          <script >
+                                                                          $(document).ready(function(){
+                                                                          $('#registeremailfailedModal').modal('show');
+                                                                          });</script>
+                                                                          <?php
 
-                                            $text = 'abcdefghijklmnopqrstuvwxyz123457890';
-                                            $panjang = 40;
-                                            $txtlen = strlen($text)-1;
-                                            $result = '';
-                                            for($i=1; $i<=$panjang; $i++){
-                                                                            $result .= $text[rand(0, $txtlen)];
-                                                                            }
+                                                                          } elseif ($location=="0"){
+                                                                          $insert_customer=$col_demand->insert(array("nama"=>$name, "phone"=>$phone, "email"=>$email, "tanggal_registrasi"=>$date, "paket"=>$package, "alamat"=>$place, "kota"=>$city));
+                                                                          ?>
+                                                                          <script >
+                                                                          $(document).ready(function(){
+                                                                          $('#LocationnotvalidModal').modal('show');
+                                                                          }); </script>  <?php
+                                                                          } elseif($location<>"0"){
+                                                                          //membuat id user
+                                                                          /**
+                                                                          * Luhn algorithm
+                                                                          *
+                                                                          * The Luhn algorithm or Luhn formula, also known as the "modulus 10" or
+                                                                          * "mod 10" algorithm, is a simple checksum formula used to validate a
+                                                                          * variety of identification numbers, such as credit card numbers,
+                                                                          * IMEI numbers, National Provider Identifier numbers in the US, and
+                                                                          * Canadian Social Insurance Numbers. It was created by IBM scientist
+                                                                          * Hans Peter Luhn and described in U.S. Patent No. 2,950,048, filed
+                                                                          * on January 6, 1954, and granted on August 23, 1960.
+                                                                          *
+                                                                          * @author odan
+                                                                          * @copyright 2015-2016 odan
+                                                                          * @license http://opensource.org/licenses/MIT The MIT License (MIT)
+                                                                          * @link https://github.com/odan/luhn
+                                                                          */
+                                                                          class userId
+                                                                          {
+                                                                          /**
+                                                                          * Returns the luhn check digit
+                                                                          *
+                                                                          * @param string $s numbers as string
+                                                                          * @return int checksum digit
+                                                                          */
+                                                                          public function baru(){
+                                                                          $six_digit_random_number = mt_rand(000001, 999999);
+                                                                          $s=new userId;
+                                                                          $userid = $s->create($six_digit_random_number);
+                                                                          return $six_digit_random_number.$userid;
+                                                                          }
+                                                                          public function create($s)
+                                                                          {
+                                                                          // Add a zero check digit
+                                                                          $s = $s . '0';
+                                                                          $sum = 0;
+                                                                          // Find the last character
+                                                                          $i = strlen($s);
+                                                                          $odd_length = $i % 2;
+                                                                          // Iterate all digits backwards
+                                                                          while ($i-- > 0) {
+                                                                          // Add the current digit
+                                                                          $sum+=$s[$i];
+                                                                          // If the digit is even, add it again. Adjust for digits 10+ by subtracting 9.
+                                                                          ($odd_length == ($i % 2)) ? ($s[$i] > 4) ? ($sum+=($s[$i] - 9)) : ($sum+=$s[$i]) : false;
+                                                                          }
+                                                                          return (10 - ($sum % 10)) % 10;
+                                                                          }
+                                                                          public function validate($number)
+                                                                          {
+                                                                          $sum = 0;
+                                                                          $numDigits = strlen($number) - 1;
+                                                                          $parity = $numDigits % 2;
+                                                                          for ($i = $numDigits; $i >= 0; $i--) {
+                                                                          $digit = substr($number, $i, 1);
+                                                                          if (!$parity == ($i % 2)) {
+                                                                          $digit <<= 1;
+                                                                          }
+                                                                          $digit = ($digit > 9) ? ($digit - 9) : $digit;
+                                                                          $sum += $digit;
+                                                                          }
+                                                                          return (0 == ($sum % 10));
+                                                                          }
+                                                                          }
+                                                                          $userid=new userId();
+                                                                          $newid=$userid->baru();
+                                                                          //generate password and code activation
+                                                                          $text = 'abcdefghijklmnopqrstuvwxyz123457890';
+                                                                          $panjang = 40;
+                                                                          $txtlen = strlen($text)-1;
+                                                                          $result = '';
+                                                                          for($i=1; $i<=$panjang; $i++){
+                                                                                        $result .= $text[rand(0, $txtlen)];
+                                                                                        }
 
-                                            $res = $col_package->find(array("nama"=>$package));
-                                            foreach($res as $row)
-                                            {
-                                                $harga=$row['harga'];
-                                            }
-                                              if($location<>"0"){
-                                                    $res = $col_location->find(array("name"=>$location));
-                                                    foreach($res as $row)
-                                                    {
-                                                        $city=$row['city'];
-                                                        $place=$row['place'];
-                                                    }
-                                                 }
+                                                                          $res = $col_package->find(array("nama"=>$package));
+                                                                          foreach($res as $row)
+                                                                          {
+                                                                          $harga=$row['harga'];
+                                                                          }
+                                                                          $res = $col_location->find(array("name"=>$location));
+                                                                          foreach($res as $row)
+                                                                          {
+                                                                          $city=$row['city'];
+                                                                          $place=$row['place'];
+                                                                          }
 
-                                    $res = $col_user->find(array("email"=>$email, "level"=>"0"));
-                                    foreach($res as $row)
-                                    {
-                                        $email1=$row['email'];
-                                    }
+                                                                          $insert_customer=$col_user->insert(array("id_user"=>$newid,"nama"=>$name,"email"=>$email, "phone"=>$phone, "foto"=>"","level"=>"0","password"=>$result, "aktif"=>"0", "registrasi"=>"personal",
+                                                                                        "tanggal_registrasi"=>$date, "paket"=>$package, "harga"=>$harga, "tanggal_akhir"=>"","tanggal_aktivasi"=>"",
+                                                                                        "tempat"=>$location, "kota"=>$city, "keterangan"=>$decription, "alamat"=>$place, "pembayaran"=>"0", "no_virtual"=>"","status"=>"registrasi"));
+                                                                          // mail for customer to registrasi
+                                                                          $to = $email;
 
-                                              if ($email1==$email){
-                                                            ?>
-                                                                  <script >
-                                                                        $(document).ready(function(){
-                                                                            $('#registeremailfailedModal').modal('show');
-                                                                    });</script>
-                                                            <?php
-                                                                  } else {
-                                                                    if($location<>"0"){
-                                                                          $insert_customer=$col_user->insert(array("id_user"=>"9384758","nama"=>$name,"email"=>$email, "phone"=>$phone, "foto"=>"","level"=>"0","password"=>$result, "aktif"=>"0", "registrasi"=>"personal",
-                                                                                                                "tanggal_registrasi"=>$date, "paket"=>$package, "harga"=>$harga, "tanggal_akhir"=>$add_date_2days,"tanggal_aktivasi"=>"",
-                                                                                                                "tempat"=>$location, "kota"=>$city, "keterangan"=>$decription, "alamat"=>$place, "pembayaran"=>"0", "invoice"=>$date_month.$date_years.'001',"status"=>"registrasi"));
-                                                                              $to=$email;
-                                                                              $subject = "Activation Order groovy";
-                                                                              $message = '
-                                                                                          <!DOCTYPE html>
-                                                                                          <html>
-                                                                                          <title>Activation Order groovy.id</title>
-                                                                                          <meta name="viewport" content="width=device-width, initial-scale=1">
-                                                                                          <style>
-                                                                                          div {
-                                                                                            width: 200px;
-                                                                                            height: 200px;
-                                                                                            margin: 5px;
-                                                                                            padding: 5px
-                                                                                          }
-                                                                                          </style>
-                                                                                          <body>
-                                                                                          <div class="container">
-                                                                                          <div class="w3-card"><h4>Welcome '.$nama.' </h4>
-                                                                                          <br/>
-                                                                                          <p>You can verify your email address, Click the button below:</p>
-                                                                                          <p><a class="w3-btn w3-blue" href="http://jkt.nusa.net.id/groovy/member/?a='.$result.' ">verification</a></p>
-                                                                                          <p>You have to pay this order at the latest on January 11th 2016 , otherwise we will close your account groovy</p>
-                                                                                          <br/><br/><br/>
-                                                                                          <p>Thank You</p>
-                                                                                          <p>Best Regards</p>
-                                                                                          <p>groovy.id</p></div>
-                                                                                          </div>
+                                                                          $subject = 'Pendaftaran Akun Groovy';
 
-                                                                                          </body>
-                                                                                          </html>
-                                                                                          ';
-                                                                        $headers = "MIME-Version: 1.0" . "\r\n";
-                                                                        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                                                                        $headers .= 'From: <www-data@anc.jkt.nusa.net.id (www-data)>' . "\r\n";
-                                                                        $headers .= 'Cc: nurhandiy@gmail.com' . "\r\n";
-                                                                        mail($to,$subject,$message,$headers);
+                                                                          $message = '
+                                                                          <html>
+                                                                          <body style="background-color:#ddd;padding:50px 0 50px 0;font-family:arial;font-size:15px;">
+                                                                          <div style="margin:0 auto;max-width:500px;background-color:#eee;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
+                                                                          <div style="background: linear-gradient(to right, #FF3D23 , #fc742f);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
+                                                                          <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
+                                                                          </div>
+                                                                          <div style="padding:20px;color:#333;">
+                                                                          <p style="font-size:20px;font-weight:bold;line-height:1px">Hai '.$name.',</p>
 
-                                                                         ?>
-                                                                            <script >
-                                                                                $(document).ready(function(){
-                                                                                    $('#registersuccsesModal').modal('show');
-                                                                         }); </script>  <?php
-                                                                      } elseif ($location=="0"){
-                                                                        $insert_customer=$col_demand->insert(array("nama"=>$name, "phone"=>$phone, "email"=>$email, "tanggal_registrasi"=>$date, "paket"=>$package, "alamat"=>$place, "kota"=>$city));
-                                                                            $to=$email;
-                                                                              $subject = "Activation Order groovy";
-                                                                              $message = '
-                                                                                          <!DOCTYPE html>
-                                                                                          <html>
-                                                                                          <title>Order groovy.id</title>
-                                                                                          <meta name="viewport" content="width=device-width, initial-scale=1">
-                                                                                          <style>
-                                                                                          div {
-                                                                                            width: 200px;
-                                                                                            height: 200px;
-                                                                                            margin: 5px;
-                                                                                            padding: 5px
-                                                                                          }
-                                                                                          </style>
-                                                                                          <body>
-                                                                                          <div class="container">
-                                                                                          <div class="w3-card"><h4>Hi '.$nama.' </h4>
-                                                                                          <br/>
-                                                                                          <p>sorry we did not get in because our service has not come to your address</p>
-                                                                                          <br/><br/><br/>
-                                                                                          <p>Thank You</p>
-                                                                                          <p>Best Regards</p>
-                                                                                          <p>groovy.id</p></div>
-                                                                                          </div>
+                                                                          <p>Terimakasih telah mendaftarkan akun Groovy. Berikut adalah rincian akun yang anda daftarkan.</p>
+                                                                          <table style="margin-top:20px;margin-bottom:20px;border:0px solid #ccc;color:#333;background-color:#fff;#ddd;width:100%;font-size:14px;">
+                                                                            <tr style="border:1px solid #bbb;">
+                                                                                <td style="border:1px solid #bbb;padding:5px;color:#777;">ID Customer</td>
+                                                                                <td style="border:1px solid #bbb;padding:5px">'.$newid.'</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td style="border:1px solid #bbb;padding:5px;color:#777">Nama</td>
+                                                                                <td style="border:1px solid #bbb;padding:5px">'.$name.'</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td style="border:1px solid #bbb;padding:5px;color:#777">Email</td>
+                                                                                <td style="border:1px solid #bbb;padding:5px">'.$email.'</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td style="border:1px solid #bbb;padding:5px;color:#777">Telepon</td>
+                                                                                <td style="border:1px solid #bbb;padding:5px">'.$phone.'</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td style="border:1px solid #bbb;padding:5px;color:#777">Paket</td>
+                                                                                <td style="border:1px solid #bbb;padding:5px">'.$package.'</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td style="border:1px solid #bbb;padding:5px;color:#777">Tanggal Registrasi</td>
+                                                                                <td style="border:1px solid #bbb;padding:5px">'.$date_days.' '.$month1.' '.$date_years.'</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td style="border:1px solid #bbb;padding:5px;color:#777">Tipe Akun</td>
+                                                                                <td style="border:1px solid #bbb;padding:5px">Personal</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td style="border:1px solid #bbb;padding:5px;color:#777">Tempat</td>
+                                                                                <td style="border:1px solid #bbb;padding:5px">'.$location.', '.$decription.', '.$place.', '.$city.'</td>
+                                                                            </tr>
+                                                                          </table>
+                                                                          <p>Untuk mengaktifkan akun silahkan klik tombol aktivasi ini.</p>
+                                                                          <div style="text-align:center;margin:30px 0 30px 0;">
+                                                                            <a href="'.$base_url.'/?a='.$result.'" style="text-decoration:none;color:#fff;"><span style="background-color:#FF3D23;border:0;border-radius:5px;padding:10px 40px 10px 40px;color:#fff;font-size:17px;">Aktivasi Akun</span></a>
+                                                                          </div>
+                                                                          <p>Jika tombol tidak berfungsi silahkan copy link berikut <a href="'.$base_url.'/?a='.$result.'">'.$base_url.'/?a='.$result.'</a></p>
+                                                                          </div>
+                                                                          </div>
+                                                                          </div>
+                                                                          </body>
+                                                                          </html>
+                                                                          ';
 
-                                                                                          </body>
-                                                                                          </html>
-                                                                                          ';
-                                                                        $headers = "MIME-Version: 1.0" . "\r\n";
-                                                                        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                                                                        $headers .= 'From: <www-data@anc.jkt.nusa.net.id (www-data)>' . "\r\n";
-                                                                        $headers .= 'Cc: nurhandiy@gmail.com' . "\r\n";
-                                                                        mail($to,$subject,$message,$headers);
-                                                                        ?>
-                                                                            <script >
-                                                                                $(document).ready(function(){
-                                                                                    $('#LocationnotvalidModal').modal('show');
-                                                                         }); </script>  <?php
-                                                                      } } } } ?>
+                                                                          $headers  = 'MIME-Version: 1.0' . "\r\n";
+                                                                          $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+                                                                          $headers .= 'From: Groovy <no-reply@groovy.id>' . "\r\n";
+                                                                          $headers .= 'Cc: cs@groovy.id, billing@groovy.id' . "\r\n";
+
+                                                                          mail($to, $subject, $message, $headers);
+
+                                                                          ?>
+                                                                          <script >
+                                                                          $(document).ready(function(){
+                                                                          $('#registersuccsesModal').modal('show');
+                                                                          }); </script>  <?php
+                                                                          } } } ?>
     <!-- Content1 -->
     <div class="container">
       <div class="row" style="margin-top:90px">
