@@ -132,7 +132,7 @@ if($level=="501"){
             foreach($res as $row)
                       {
         $emailpasang=mail($row['email'], $subject, $message, $headers);
-      }
+      } /*
       // mail for customer to berhenti berlangganan
 
       $subject1 = 'Permintaan Berhenti Berlangganan';
@@ -162,7 +162,7 @@ if($level=="501"){
       $headers1 .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
       $headers1 .= 'Cc: cs@groovy.id' . "\r\n";
 
-      $kirim_email1=mail($email, $subject1, $message1, $headers1);
+      $kirim_email1=mail($email, $subject1, $message1, $headers1); */
     } }  ?>
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
