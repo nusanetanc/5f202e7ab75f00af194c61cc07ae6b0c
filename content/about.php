@@ -1,6 +1,6 @@
    
 <!-- Privacy Policy -->
-<div  style="background:url(<?php echo $base_url;?>/img/background-contact-us.jpg);background-position:center;margin-top:50px;padding-top:80px;">
+<div  style="background:url(<?php echo $base_url;?>/img/background-contact-us.jpg);background-position:center;">
 <div class="container">
     <div class="row">
         <div class="col-sm-12 supportContentWrapper">
