@@ -40,70 +40,81 @@
 									  <?php } } ?>
 								</table>
 								<?php } else if($level=="1"){ ?>
-									<form method="post">
-									<div class="row">
-										<div class="col-sm-12">
-											<div class="col-sm-4">
-												<select class="form-control" id="select">
-													<option>All</option>
-													<option>Pasang</option>
-													<option>Maintenance</option>
-												</select>
+									<br/>
+				  				    <div class="panel-body">
+						    			<form method="post">
+						    			<?php
+								    	$month=$_POST['month'];
+								    	$year=$_POST['year'];
+								    	if (empty($month)){
+								    		$month=date(m);
+								    	}
+								    	if (empty($year)){
+								    		$year=date(Y);
+								    	}
+								    	$bln= bulan($month);
+								    	?>
+										<div class="col-lg-6">
+					  				    	<select name="month" id="month" class="form-control" id="select">
+					  				    	  <option value="" selected="true" disabled="true">Select Month</option>
+									          <option value="01">Januari</option>
+									          <option value="02">Februari</option>
+									          <option value="03">Maret</option>
+									          <option value="04">April</option>
+									          <option value="05">Mei</option>
+									          <option value="06">Juni</option>
+									          <option value="07">Juli</option>
+									          <option value="08">Agustus</option>
+									          <option value="09">September</option>
+									          <option value="10">Oktober</option>
+									          <option value="11">November</option>
+									          <option value="12">Desember</option>
+									        </select>
+									        <br/>
+									        <select name="year" id="year" class="form-control" id="select">
+									          <option value="" selected="true" disabled="true">Select Years</option>
+									          <option>2016</option>
+									          <option>2017</option>
+									          <option>2018</option>
+									          <option>2019</option>
+									          <option>2020</option>
+									          <option>2021</option>
+									          <option>2022</option>
+									          <option>2022</option>
+									          <option>2023</option>
+									          <option>2024</option>
+									          <option>2025</option>
+									        </select>
+									        <br/>
+									        <input name="search" id="search" type="submit" class="btn btn-primary" value="Search">
+									        <br/>
+									    </div>
+										</form>
+			  				    		<div class="col-sm-6">
+				  				    		<table class="table table-striped table-hover ">
+												  <?php
+
+												   ?>
+												   <tbody>
+												  		<td>Data Bulan</td>
+												  		<td><?php echo $bln.' '.$year; ?></td>
+												  </tbody>
+												  <tbody>
+												  		<td>Total Pasang - Maintenance - Bongkar : </td>
+												  		<td><?php ?></td>
+												  </tbody>
+											</table>
 										</div>
-										<div class="col-sm-4">
-												<select name="month" id="month" class="form-control" id="select">
-										<option value="" selected="true" disabled="true">Select Month</option>
-												<option value="01">Januari</option>
-												<option value="02">Februari</option>
-												<option value="03">Maret</option>
-												<option value="04">April</option>
-												<option value="05">Mei</option>
-												<option value="06">Juni</option>
-												<option value="07">Juli</option>
-												<option value="08">Agustus</option>
-												<option value="09">September</option>
-												<option value="10">Oktober</option>
-												<option value="11">November</option>
-												<option value="12">Desember</option>
-												</select>
-											</div>
-											<div class="col-sm-3">
-												<select name="year" id="year" class="form-control" id="select">
-													<option value="" selected="true" disabled="true">Select Years</option>
-													<option>2016</option>
-													<option>2017</option>
-													<option>2018</option>
-													<option>2019</option>
-													<option>2020</option>
-													<option>2021</option>
-													<option>2022</option>
-													<option>2022</option>
-													<option>2023</option>
-													<option>2024</option>
-													<option>2025</option>
-												</select>
-										</div>
-										<div class="col-sm-1">
-											<input name="search" id="search" type="submit" class="btn btn-primary" value="Search">
-										</div>
-								</div>
-							</div>
-							</form>
-							<table  class="table table-striped table-hover ">
-								<tbody>
-									<td>Data Bulan : </td>
-									<td>Total Pasang : </td>
-									<td>Total Bongkar : </td>
-							</tbody>
-							</table>
+									</div>
 									<br/>
 								<table class="table table-striped table-hover ">
 									 <thead>
 									    <tr>
-									      <th width="20%">Id</th>
+									      <th width="10%">Id</th>
 									      <th width="25%">Nama</th>
-									      <th width="25%">Jabatan</th>
+									      <th width="20%">Jabatan</th>
 									      <th width="15%">Pasang</th>
+												<th width="15%">Maintenance</th>
 									      <th width="15">Bongkar</th>
 									    </tr>
 									  </thead>
@@ -112,8 +123,10 @@
 									  		foreach ($rslt as $row) {
 									  			if($row['level']=="301" || $row['level']=="302"){
 									  	$count_pasang=$col_history->find(array("fieldengineer"=>$row['nama'], "hal"=>"pasang"))->count();
+											$count_maintenance=$col_history->find(array("fieldengineer"=>$row['nama'], "hal"=>"maintenance"))->count();
 									  	$count_bongkar=$col_history->find(array("fieldengineer"=>$row['nama'], "hal"=>"bongkar"))->count();
 									  	$count_pasang0=$col_history->find(array("ass_field"=>$row['nama'], "hal"=>"pasang"))->count();
+											$count_maintenance0=$col_history->find(array("fieldengineer"=>$row['nama'], "hal"=>"maintenance"))->count();
 									  	$count_bongkar0=$col_history->find(array("ass_field"=>$row['nama'], "hal"=>"bongkar"))->count();
 									   ?>
 									  <tbody>
@@ -122,10 +135,12 @@
 									  	<?php if($row['level']=="301"){ ?>
 									  			<td><?php echo "Field Engineer"; ?></td>
 									  			<td><?php echo $count_pasang; ?></td>
+													<td><?php echo $count_maintenance; ?></td>
 									  			<td><?php echo $count_bongkar; ?></td>
 									  	<?php } elseif($row['level']=="302"){ ?>
 									  			<td><?php echo "Ass Field Engineer"; ?></td>
 											  	<td><?php echo $count_pasang0; ?></td>
+													<td><?php echo $count_maintenance0; ?></td>
 											  	<td><?php echo $count_bongkar0; ?></td>
 										<?php } ?>
 									  </tbody>
