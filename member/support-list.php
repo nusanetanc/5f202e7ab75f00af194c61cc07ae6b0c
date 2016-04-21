@@ -100,7 +100,7 @@
 												  		<td><?php echo $bln.' '.$year; ?></td>
 												  </tbody>
 												  <tbody>
-												  		<td>Total Pasang - Maintenance - Bongkar : </td>
+												  		<td>Update </td>
 												  		<td><?php ?></td>
 												  </tbody>
 											</table>

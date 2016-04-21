@@ -1,5 +1,5 @@
 <?php
-if ($level=="0"){ 
+if ($level=="0"){
 												$thn_akhir = substr($tanggal_akhir, 0,4);
 												$bln_akhir = substr($tanggal_akhir, 5,2);
 												$tgl_akhir = substr($tanggal_akhir, 8,10);
@@ -23,7 +23,7 @@ if ($level=="0"){
 				</div>
 				<div class="panel-body">
 					<br/>
-					<div class="col-sm-12">	
+					<div class="col-sm-12">
 						  <fieldset>
 						<p>No Virtual Pembayaran : <strong><?php echo $no_virtual; ?></strong>.</p><br/>
 						<p>Tanggal Mulai Aktif : <strong><?php echo $tgl_aktif.' '.$month_aktif.' '.$thn_aktif; ?></strong>.</p><br/>
@@ -40,15 +40,15 @@ if ($level=="0"){
  										<td>Paket <?php echo $paket; ?></td>
  										<td><?php echo $harga; ?></td>
 									  </tbody>
-								</table> 
+								</table>
 						<p>Proraide : <strong><?php echo $prorate; ?></strong>.</p><br/>
-						<?php 
+						<?php
 							$total_harga = $harga-$proraide;
 						?>
-						<p>Total Harga : <strong><?php echo $total_harga.'.000,-'; ?></strong>.</p><br/>	
+						<p>Total Harga : <strong><?php echo $total_harga.'.000,-'; ?></strong>.</p><br/>
 						</fieldset>
 				</div>
-			</div>				
+			</div>
 			<div class="panel" style="border:0px;" >
 				<div class="panel-body" style="background-color:#FF6D20;">
 					<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">BILLING - DATA</h3>
@@ -56,7 +56,7 @@ if ($level=="0"){
   				    <div class="panel-body">
   				    	<ul class="list-group">
 									  <?php
-										$res = $col_user->findOne(array("id_user"=>$id, "level"=>$level));	
+										$res = $col_user->findOne(array("id_user"=>$id, "level"=>$level));
 										foreach ($res['payment'] as $byr => $payment) {
 												$tanggal = $payment['tanggal_bayar'];
 											  	$thn = substr($tanggal, 0,4);
@@ -69,7 +69,7 @@ if ($level=="0"){
 													$tgl1 = substr($tanggal1, 8,10);
 												    $month1 = bulan($bln1);
 										?>
-									  
+
   									<li class="list-group-item" style="border:2;">
 										Tanggal Pembayaran : <b><?php echo $tgl.' '.$month.' '.$thn; ?></b><br/>
 										Tanggal Konfirmasi Billing : <b><?php echo $tgl1.' '.$month1.' '.$thn1; ?></b><br/>
@@ -77,12 +77,12 @@ if ($level=="0"){
 								    	Total Harga : <b><?php echo $payment['harga'].',-'; ?></b>
 									</li>
 									  <?php } ?>
-						</ul> 
+						</ul>
 					</div>
  				</div>
 			</div>
 		</div>
-	</div>	
+	</div>
 </section>
 <?php } else if ($level=="1") { ?>
 <section>
@@ -140,20 +140,20 @@ if ($level=="0"){
 						        <br/>
 						        <input name="search" id="search" type="submit" class="btn btn-primary" value="Search">
 						        <br/>
-						    </div>    
+						    </div>
 							</form>
   				    		<div class="col-sm-6">
 	  				    		<table class="table table-striped table-hover ">
-									  <?php 
+									  <?php
 									  		$revenue=0;
 											$res_revenue = $col_revenue->find();
 												foreach ($res_revenue as $row_revenue) {
 																	$month_revenue = substr($row_revenue['date'], 5,2);
 																	$year_revenue = substr($row_revenue['date'], 0,4);
-																	if ($month_revenue==$month){
+																	if ($month_revenue==$month && $year_revenue==$year){
 																		$revenue=$revenue+$row_revenue['total'];
 																	}
-																}							
+																}
 
 									   ?>
 									   <tbody>
@@ -164,9 +164,9 @@ if ($level=="0"){
 									  		<td>Total Pendapatan</td>
 									  		<td><?php echo $revenue.'.000,-'; ?></td>
 									  </tbody>
-								</table>  
-							</div>	
-						</div>	  
+								</table>
+							</div>
+						</div>
 			</div>
 		</div>
  	</div>
