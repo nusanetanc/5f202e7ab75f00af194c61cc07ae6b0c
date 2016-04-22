@@ -170,4 +170,5 @@ if ($level=="0"){
 			</div>
 		</div>
  	</div>
+</section>
  <?php } ?>

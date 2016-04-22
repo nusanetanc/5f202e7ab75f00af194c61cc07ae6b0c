@@ -2,24 +2,26 @@
 	<div class="col-sm-9" style="font-family:Arial;">
 		<div class="list-group">
 			<div class="panel" style="border:0px;">
-  				<div class="panel-heading" style="background-color:#FF3E23">
-    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">Pemasangan/Maintenance</h3>
+  				<div class="panel-heading" style="background-color:#FF6D20">
+    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">Support</h3>
   				</div>
-	  					<br/>
+  					<br/>
 	  				    <div class="panel-body">
-	  				    <form method="post">
-	  				    <div class="row">
-	  				    	<div class="col-sm-12">
-		  				    	<div class="col-sm-4">
-			  				    	<select class="form-control" id="select">
-							          <option>All</option>
-							          <option>Pasang</option>
-							          <option>Maintenance</option>
-							        </select>
-							    </div>
-					    		<div class="col-sm-4">
-			  				      <select name="month" id="month" class="form-control" id="select">
-								  <option value="" selected="true" disabled="true">Select Month</option>
+			    			<form method="post">
+			    			<?php
+					    	$month=$_POST['month'];
+					    	$year=$_POST['year'];
+					    	if (empty($month)){
+					    		$month=date(m);
+					    	}
+					    	if (empty($year)){
+					    		$year=date(Y);
+					    	}
+					    	$bln= bulan($month);
+					    	?>
+							<div class="col-lg-6">
+		  				    	<select name="month" id="month" class="form-control" id="select">
+		  				    	  <option value="" selected="true" disabled="true">Select Month</option>
 						          <option value="01">Januari</option>
 						          <option value="02">Februari</option>
 						          <option value="03">Maret</option>
@@ -32,74 +34,79 @@
 						          <option value="10">Oktober</option>
 						          <option value="11">November</option>
 						          <option value="12">Desember</option>
-							        </select>
-						        </div>
-						       	<div class="col-sm-3">
-							        <select name="year" id="year" class="form-control" id="select">
-							          <option value="" selected="true" disabled="true">Select Years</option>
-							          <option>2016</option>
-							          <option>2017</option>
-							          <option>2018</option>
-							          <option>2019</option>
-							          <option>2020</option>
-							          <option>2021</option>
-							          <option>2022</option>
-							          <option>2022</option>
-							          <option>2023</option>
-							          <option>2024</option>
-							          <option>2025</option>
-							        </select>
-							    </div>
-							   	<div class="col-sm-1">
-							   		<input name="search" id="search" type="submit" class="btn btn-primary" value="Search">
-							   	</div>
+						        </select>
+						        <br/>
+						        <select name="year" id="year" class="form-control" id="select">
+						          <option value="" selected="true" disabled="true">Select Years</option>
+						          <option>2016</option>
+						          <option>2017</option>
+						          <option>2018</option>
+						          <option>2019</option>
+						          <option>2020</option>
+						          <option>2021</option>
+						          <option>2022</option>
+						          <option>2022</option>
+						          <option>2023</option>
+						          <option>2024</option>
+						          <option>2025</option>
+						        </select>
+						        <br/>
+						        <input name="search" id="search" type="submit" class="btn btn-primary" value="Search">
+						        <br/>
+						    </div>
+							</form>
+  				    		<div class="col-sm-6">
+	  				    		<table class="table table-striped table-hover ">
+									  <?php
+									  		$jml_pasang=0;
+												$jml_maintenance=0;
+												$jml_update=0;
+												$jml_bongakar=0;
+											$res_history = $col_histrory->find();
+												foreach ($res_history as $row_history) {
+																	$month_kerja = substr($row_history['tanggal_kerja'], 5,2);
+																	$year_kerja = substr($row_history['tanggal_kerja'], 0,4);
+																	$month_update = substr($row_history['tanggal_update'], 5,2);
+																	$year_update = substr($row_history['tanggal_update'], 0,4);
+																	if ($month_kerja==$month && $year_kerja==$year && $row_history['hal']=="pasang"){
+																		$jml_pasang=$jml_pasang+1;
+																	}
+																	if ($month_kerja==$month && $year_kerja==$year && $row_history['hal']=="maintenance"){
+																		$jml_pasang=$jml_pasang+1;
+																	}
+																	if ($month_update==$month && $year_update==$year && $row_history['hal']=="update"){
+																		$jml_pasang=$jml_pasang+1;
+																	}
+																	if ($month_kerja==$month && $year_kerja==$year && $row_history['hal']=="bongkar"){
+																		$jml_pasang=$jml_pasang+1;
+																	}
+																}
+
+									   ?>
+									   <tbody>
+									  		<td>Data Bulan</td>
+									  		<td><?php echo $bln.' '.$year; ?></td>
+									  </tbody>
+									  <tbody>
+									  		<td>Total Pasang</td>
+									  		<td><?php echo $revenue; ?></td>
+									  </tbody>
+										<tbody>
+									  		<td>Total Update</td>
+									  		<td><?php echo $revenue; ?></td>
+									  </tbody>
+										<tbody>
+									  		<td>Total Maintenance</td>
+									  		<td><?php echo $revenue; ?></td>
+									  </tbody>
+										<tbody>
+									  		<td>Total Bongkar</td>
+									  		<td><?php echo $revenue; ?></td>
+									  </tbody>
+								</table>
 							</div>
 						</div>
-						</form>
-						<?php
-				    	$month=$_POST['month'];
-				    	$year=$_POST['year'];
-				    	if (empty($month)){
-				    		$month=date(m);
-				    	}
-				    	if (empty($year)){
-				    		$year=date(Y);
-				    	}
-				    	$bln= bulan($month);
-				    	?>
-					    <div class="col-sm-12">
-  				    		<br/>
-		    					<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-									 <thead>
-									    <tr>
-									      <th width="40%">Customer</th>
-									      <th width="40%">Tempat</th>
-									      <th width="20%">Support/Tanggal</th>
-									    </tr>
-									  </thead>
-										<?php
-										$res = $col_user->find(array("status"=>"aktif","level"=>"0"));
-										foreach($res as $row)
-										  {
-										  	$month_pasang = substr($row['tanggal_pasang'], 5,2);
-											$year_pasang = substr($row['tanggal_pasang'], 0,4);
-												if ($month_pasang==$month){
-													$thn = substr($tanggal, 0,4);
-												    $bln = substr($tanggal, 5,2);
-													$tgl = substr($tanggal, 8,10);
-												    $month = bulan($bln);
-											?>
-									  <tbody>
-									  	<td><?php echo $row['id_user'].' - '.$row['nama'].' - '.$row['email'].' - '.$row['phone']; ?></td>
-									  	<td><?php echo $row['tempat'].' - '.$row['alamat'].' - '.$row['kota'].' - '.$row['keterangan']; ?></td>
-									  	<td><?php echo $row['support'].' - '.$row['tanggal_pasang']; ?></td>
-									  </tbody>
-									  <?php } } ?>
-								</table>
-						</div>
-					</div>
- 				</div>
 			</div>
 		</div>
-	</div>
-</section>
+ 	</div>
+<section>
