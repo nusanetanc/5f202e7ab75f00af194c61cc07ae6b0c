@@ -131,5 +131,7 @@ foreach($res as $row)
 		</div>
 	</div>
 </section>
-<?php } elseif($status=="unaktif" || $status=="registrasi"){
-	header('location:'.$base_url_member); } ?>
+<?php } elseif($status=="unaktif" || $status=="registrasi"){ ?>
+	<script type="" language="JavaScript">
+	document.location='<?php echo $base_url; ?>/member'</script>
+	<?php } ?>
