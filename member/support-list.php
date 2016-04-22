@@ -3,7 +3,7 @@
 		<div class="list-group">
 			<div class="panel" style="border:0px;">
   				<div class="panel-heading" style="background-color:#FF6D20">
-    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">List Support Groovy</h3>
+    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">Support</h3>
   				</div>
 	  					<br/>
 	  				    <div class="panel-body">
