@@ -29,7 +29,7 @@
                             if (!empty($res['email'])) {
                                                     $_SESSION["id"] = $res['id_user'];
                                                     $_SESSION["level"]=$res['level'];
-                            header('location:'$base_url_member);                                                    
+                            header('location:'.$base_url_member);                                                    
                              } else { ?>
                                                 <script >
                                                 $(document).ready(function(){
