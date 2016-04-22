@@ -1,41 +1,44 @@
-  <?php
-                            if(isset($_POST['login'])) {
-                                                        $email = $_POST['loginemail'];
-                                                        $password = $_POST['loginpassword'];
-                                   if ($email=="" && $password==""){
-                                                                    ?>
-                                                            <script >
-                                                            $(document).ready(function(){
-                                                                $('#loginemailandpasswordfailedModal').modal('show');
-                                                            }); </script>
-                                                                    <?php
-                                   }
-                                   else if ($email==""){
-                                                        ?>
-                                                            <script >
-                                                            $(document).ready(function(){
-                                                                $('#loginemailfailedModal').modal('show');
-                                                         }); </script>
-                                                            <?php
-                                    }  else if ($password==""){
-                                                                ?>
-                                                            <script >
-                                                            $(document).ready(function(){
-                                                                $('#loginpasswordfailedModal').modal('show');
-                                                        }); </script>
-                                                            <?php
-                                    } else {
-                            $res = $col_user->findOne(array("email"=>$email, "password"=>$password, "aktif"=>"1"));
-                            if (!empty($res['email'])) {
-                                                    $_SESSION["id"] = $res['id_user'];
-                                                    $_SESSION["level"]=$res['level'];
-                            header('location:'.$base_url_member);                                                    
-                             } else { ?>
-                                                <script >
-                                                $(document).ready(function(){
-                                                    $('#loginfailedModal').modal('show');
-                                            });</script>
-                            <?php } } } ?>
+<?php
+if(isset($_POST['login'])) {
+                            session_start();
+                            $email = $_POST['loginemail'];
+                            $password = $_POST['loginpassword'];
+       if ($email=="" && $password==""){
+                                        ?>
+                                <script >
+                                $(document).ready(function(){
+                                    $('#loginemailandpasswordfailedModal').modal('show');
+                                }); </script>
+                                        <?php
+       }
+       else if ($email==""){
+                            ?>
+                                <script >
+                                $(document).ready(function(){
+                                    $('#loginemailfailedModal').modal('show');
+                             }); </script>
+                                <?php
+        }  else if ($password==""){
+                                    ?>
+                                <script >
+                                $(document).ready(function(){
+                                    $('#loginpasswordfailedModal').modal('show');
+                            }); </script>
+                                <?php
+        } else {
+$res = $col_user->findOne(array("email"=>$email, "password"=>$password, "aktif"=>"1"));
+if (!empty($res['email'])) {
+                        $_SESSION["id"] = $res['id_user'];
+                        $_SESSION["level"]=$res['level'];
+                                                    ?>
+<script type="" language="JavaScript">
+document.location='<?php echo $base_url; ?>/member'</script>
+<?php } else { ?>
+                    <script >
+                    $(document).ready(function(){
+                        $('#loginfailedModal').modal('show');
+                });</script>
+<?php } } } ?>
  <section>
      <!-- Content1 -->
     <div class="container">
