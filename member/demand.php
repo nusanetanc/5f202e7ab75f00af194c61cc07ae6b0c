@@ -24,14 +24,14 @@
 							<tbody>
 								<?php
 									$k = str_replace('00',' ', $_GET['k']);
-									$res = $col_demand->find(array("kota"=>"Jakarta Barat"));
+									$res = $col_demand->find(array("kota"=>$k));
 									foreach($res as $row)
 									{
 								?>
 								<tr>
-									<td><?php $row['nama']; ?></td>
-									<td><?php $row['paket']; ?></td>
-									<td><?php $row['alamat']; ?></td>
+									<td><?php echo  $row['nama']; ?></td>
+									<td><?php echo $row['paket']; ?></td>
+									<td><?php echo $row['alamat']; ?></td>
 								</tr>
 								<?php } ?>
 							</tbody>
