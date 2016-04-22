@@ -2,7 +2,7 @@
 	<div class="col-sm-9" style="font-family:Arial;">
 		<div class="list-group">
 			<div class="panel" style="border:0px;">
-  				<div class="panel-heading" style="background-color:#FF6D20">
+  				<div class="panel-heading" style="background-color:#FF5F20">
     				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">List Sales Groovy</h3>
   				</div>
 	  					<br/>
@@ -21,7 +21,7 @@
 									      <th width="20%">Customer</th>
 									    </tr>
 									  </thead>
-									  <?php 
+									  <?php
 
 									  		$rslt = $col_user->find(array("level"=>"501", "sm"=>$id));
 									  		foreach ($rslt as $row) {
@@ -34,7 +34,7 @@
 									  	<td><a href="<?php echo $base_url_member; ?>/customer-list/<?php echo $row['id_user']; ?>" class="btn btn-primary btn-xs">View</a></td>
 									  </tbody>
 									  <?php } ?>
-								</table>	  
+								</table>
 		  				    	<?php } elseif($level=="1"){ ?>
 		  				    	<table class="table table-striped table-hover ">
 									 <thead>
@@ -44,7 +44,7 @@
 									      <th width="40%">Customer</th>
 									    </tr>
 									  </thead>
-									  <?php 
+									  <?php
 
 									  		$rslt = $col_user->find(array("level"=>"501"));
 									  		foreach ($rslt as $row) {
@@ -56,7 +56,7 @@
 									  	<td><?php echo $count_customer; ?></td>
 									  </tbody>
 									  <?php } ?>
-								</table>	  
+								</table>
 		  				    	<?php } ?>
 		  				    </div>
 		  				 </div>
@@ -65,4 +65,4 @@
 		  	</div>
 		</div>
 	</div>
-</section>		  				    	
+</section>
