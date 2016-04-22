@@ -1,5 +1,5 @@
     <!-- Content1 -->
-    <div  style="background-image:url(<?php echo $base_url; ?>/img/background-groovy.jpg);background-size:cover;margin-top:50px;">
+    <div  style="background-image:url(<?php echo $base_url; ?>/img/background-groovy2.jpg);background-size:cover;margin-top:50px;">
         <div class="row container" style="margin:0 auto;">
             <div class=" col-sm-6 primaryContent" style="background-color:rgba(255, 255, 255, 0)">
                 <h2 style="font-size:27px;line-height:35px;color:#fff;">Bring a Complete Entertainment<br/>To Your Home Now!</h2>
