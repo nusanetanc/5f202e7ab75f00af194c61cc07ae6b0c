@@ -11,29 +11,44 @@
 						<table class="table table-striped table-hover ">
 						  <thead>
 						    <tr>
-						      <th width="20%">Nama</th>
-                  <th width="10%">Paket</th>
-						      <th width="50%">Tempat</th>
-						      <th width="20%">Kota</th>
+						      <th width="30%">Kota</th>
+									<th width="30%">Jumlah</th>
 						    </tr>
 						  </thead>
 						  <?php
-						  $status=$_GET['status'];
-								$res = $col_demand->find()->sort(array("kota"));
-								foreach($res as $row)
-								{
+								$res_jakut = $col_demand->find(array("kota_customer"=>"Jakarta Utara"))->count();
+								$res_jaksel = $col_demand->find(array("kota_customer"=>"Jakarta Selatan"))->count();
+								$res_jakbar = $col_demand->find(array("kota_customer"=>"Jakarta Barat"))->count();
+								$res_jaktim = $col_demand->find(array("kota_customer"=>"Jakarta Timur"))->count();
+								$res_jakpus = $col_demand->find(array("kota_customer"=>"Jakarta Pusat"))->count();
+								$res_bdg = $col_demand->find(array("kota_customer"=>"Bandung"))->count();
 						?>
 						  <tbody>
 						    <tr>
-						      <td><?php echo $row['nama']; ?></td>
-						      <td><?php echo $row['paket']; ?></td>
-                  <td><?php echo $row['alamat']; ?></td>
-						      <td><?php echo $row['kota']; ?></td>
+						      <td>Jakarta Utara</td>
+									<td><?php echo $res_jakut; ?></td>
+						    </tr>
+								<tr>
+						      <td>Jakarta Selatan</td>
+									<td><?php echo $res_jaksel; ?></td>
+						    </tr>
+								<tr>
+						      <td>Jakarta Barat</td>
+									<td><?php echo $res_jakbar; ?></td>
+						    </tr>
+								<tr>
+						      <td>Jakarta Timur</td>
+									<td><?php echo $res_jaktim; ?></td>
+						    </tr>
+								<tr>
+						      <td>Jakarta Pusat</td>
+									<td><?php echo $res_jakpus; ?></td>
+						    </tr>
+								<tr>
+						      <td>Jakarta Bandung</td>
+									<td><?php echo $res_bdg; ?></td>
 						    </tr>
 						   </tbody>
-						<?php
-							}
-						?>
 						</table>
 					</div>
  				</div>
