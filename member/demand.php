@@ -24,7 +24,7 @@
 							<tbody>
 								<?php
 									$k = str_replace('00',' ', $_GET['k']);
-									$res = $col_demand->find(array("kota"=>$k));
+									$res = $col_demand->find(array("kota"=>"Jakarta Barat"));
 									foreach($res as $row)
 									{
 								?>
