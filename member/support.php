@@ -61,8 +61,8 @@
 									  		$jml_pasang=0;
 												$jml_maintenance=0;
 												$jml_update=0;
-												$jml_bongakar=0;
-											$res_history = $col_histrory->find();
+												$jml_bongkar=0;
+											$res_history = $col_history->find();
 												foreach ($res_history as $row_history) {
 																	$month_kerja = substr($row_history['tanggal_kerja'], 5,2);
 																	$year_kerja = substr($row_history['tanggal_kerja'], 0,4);
@@ -72,13 +72,13 @@
 																		$jml_pasang=$jml_pasang+1;
 																	}
 																	if ($month_kerja==$month && $year_kerja==$year && $row_history['hal']=="maintenance"){
-																		$jml_pasang=$jml_pasang+1;
+																		$jml_maintenance=$jml_maintenance+1;
 																	}
 																	if ($month_update==$month && $year_update==$year && $row_history['hal']=="update"){
-																		$jml_pasang=$jml_pasang+1;
+																		$jml_update=$jml_update+1;
 																	}
 																	if ($month_kerja==$month && $year_kerja==$year && $row_history['hal']=="bongkar"){
-																		$jml_pasang=$jml_pasang+1;
+																		$jml_bongkar=$jml_bongkar+1;
 																	}
 																}
 
@@ -89,19 +89,19 @@
 									  </tbody>
 									  <tbody>
 									  		<td>Total Pasang</td>
-									  		<td><?php echo $revenue; ?></td>
+									  		<td><?php echo $jml_pasang; ?></td>
 									  </tbody>
 										<tbody>
 									  		<td>Total Update</td>
-									  		<td><?php echo $revenue; ?></td>
+									  		<td><?php echo $jml_update; ?></td>
 									  </tbody>
 										<tbody>
 									  		<td>Total Maintenance</td>
-									  		<td><?php echo $revenue; ?></td>
+									  		<td><?php echo $jml_maintenance; ?></td>
 									  </tbody>
 										<tbody>
 									  		<td>Total Bongkar</td>
-									  		<td><?php echo $revenue; ?></td>
+									  		<td><?php echo $jml_bongkar; ?></td>
 									  </tbody>
 								</table>
 							</div>
