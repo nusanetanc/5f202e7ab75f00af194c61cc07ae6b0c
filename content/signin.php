@@ -7,34 +7,34 @@
                                                             <script >
                                                             $(document).ready(function(){
                                                                 $('#loginemailandpasswordfailedModal').modal('show');
-                                                            }); </script> 
-                                                                    <?php    
+                                                            }); </script>
+                                                                    <?php
                                    }
                                    else if ($email==""){
                                                         ?>
                                                             <script >
                                                             $(document).ready(function(){
                                                                 $('#loginemailfailedModal').modal('show');
-                                                         }); </script> 
+                                                         }); </script>
                                                             <?php
                                     }  else if ($password==""){
                                                                 ?>
                                                             <script >
                                                             $(document).ready(function(){
                                                                 $('#loginpasswordfailedModal').modal('show');
-                                                        }); </script> 
+                                                        }); </script>
                                                             <?php
-                                    } else {                 
-                            $res = $col_user->findOne(array("email"=>$email, "password"=>$password, "aktif"=>"1"));                                                   
+                                    } else {
+                            $res = $col_user->findOne(array("email"=>$email, "password"=>$password, "aktif"=>"1"));
                             if (!empty($res['email'])) {
-                                                    $_SESSION["id"] = $res['id_user'];                  
+                                                    $_SESSION["id"] = $res['id_user'];
                                                     $_SESSION["level"]=$res['level'];
-                            header('location:/groovy/member/');                                                    
+                            header('location:'$base_url_member);                                                    
                              } else { ?>
                                                 <script >
                                                 $(document).ready(function(){
                                                     $('#loginfailedModal').modal('show');
-                                            });</script> 
+                                            });</script>
                             <?php } } } ?>
  <section>
      <!-- Content1 -->
