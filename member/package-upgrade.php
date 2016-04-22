@@ -1,17 +1,18 @@
+<?php if($status=="aktif"){ ?>
 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 <?php
-	$date = date("Y/m/d"); 
+	$date = date("Y/m/d");
   	$thn0 = substr($date, 0,4);
     $bln0 = substr($date, 5,2);
 	$tgl0 = substr($date, 8,10);
     $month0 = bulan($bln0);
 		if (isset($_POST['upgrade'])){
-$upgrade_paket=$_POST['upgrade_paket']; 
+$upgrade_paket=$_POST['upgrade_paket'];
 $res = $col_package->find(array("nama"=>$upgrade_paket));
 foreach($res as $row)
-{ 
+{
     $upgrade_harga=$row['harga'];
-} 
+}
 	$update_user=$col_user->update(array("id_user"=>$id, "level"=>"0"),array('$set'=>array("move_paket"=>$upgrade_paket, "move_harga"=>$upgrade_harga, "move_request"=>$date)));
 			// mail for customer to update paket
 				$to = $email;
@@ -48,7 +49,7 @@ foreach($res as $row)
 				$headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
 				$headers .= 'Cc: cs@groovy.id, billing@groovy.id' . "\r\n";
 
-				$kirimemail=mail($to, $subject, $message, $headers);		
+				$kirimemail=mail($to, $subject, $message, $headers);
 	if ($update_user && $kirimemail){ ?>
 		<script type="" language="JavaScript">
 		document.location='<?php echo $base_url_member; ?>/change-package'</script>
@@ -65,12 +66,12 @@ foreach($res as $row)
   					<?php if($move_paket=="") { ?>
   					<div class="col-sm-12">
 						<li class="list-group-item">
-						  	Upgrade Paket : 
+						  	Upgrade Paket :
 						  	<select class="form-control" id="upgrade_paket" name="upgrade_paket">
 						  	<option disabled="true" selected="true">Selected Package</option>
 						  	<?php
 					$res = $col_package->find();
-					foreach($res as $row) 
+					foreach($res as $row)
                       {  if($row['nama']<>$paket) {
                       	?>
 					          <option><?php echo $row['nama']; ?></option>
@@ -78,26 +79,26 @@ foreach($res as $row)
 					        </select>
 						</li>
 						<li class="list-group-item">
-							<div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>	
-						</li>	
-						<br/>	
-						<input type="submit" class="btn btn-warning" name="upgrade" id="upgrade" value="Konfirmasi">	
-						<br/>							
-					</div>	
-					<?php } elseif($move_paket<>"") { 
+							<div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>
+						</li>
+						<br/>
+						<input type="submit" class="btn btn-warning" name="upgrade" id="upgrade" value="Konfirmasi">
+						<br/>
+					</div>
+					<?php } elseif($move_paket<>"") {
 					  	$move_thn = substr($move_request, 0,4);
 					    $move_bln = substr($move_request, 5,2);
 						$move_tgl = substr($move_request, 8,10);
 					    $move_month = bulan($move_bln); ?>
 					<div class="col-sm-12">
 						<li class="list-group-item">
-						  	Upgrade Paket/Harga : <?php echo $move_paket.' / '.$move_harga; ?> 
+						  	Upgrade Paket/Harga : <?php echo $move_paket.' / '.$move_harga; ?>
 						</li>
 						<li class="list-group-item">
-						  	Tanggal Permintaan : <?php echo $move_tgl.' '.$move_month.' '.$move_thn; ?> 
+						  	Tanggal Permintaan : <?php echo $move_tgl.' '.$move_month.' '.$move_thn; ?>
 						</li>
-						<br/>							
-					</div>	
+						<br/>
+					</div>
 					<?php } ?>
  				</div>
 			</div>
@@ -109,7 +110,7 @@ foreach($res as $row)
   					<br/>
   					<div class="col-sm-12">
 						<?php
-						$res = $col_user->findOne(array("id_user"=>$id, "level"=>"0"));	
+						$res = $col_user->findOne(array("id_user"=>$id, "level"=>"0"));
 						foreach ($res['histori'] as $res_paket => $row_paket) {
 							if($row_paket['hal']=="update"){
 								$tanggal = $row_paket['tanggal_update'];
@@ -122,11 +123,13 @@ foreach($res as $row)
 								Tanggal Pindah Paket : <b><?php echo $tgl.' '.$month.' '.$thn; ?></b><br/>
 								Paket Lama : <b><?php echo $row_paket['paket_lama']; ?></b><br/>
 						    	Paket Baru : <b><?php echo $row_paket['paket_baru']; ?></b><br/>
-							</li>	
-						<?php } } ?>					
-					</div>	
+							</li>
+						<?php } } ?>
+					</div>
  				</div>
 			</div>
 		</div>
-	</div>	
+	</div>
 </section>
+<?php } elseif($status=="unaktif" || $status=="registrasi"){
+	header('location:'.$base_url_member); } ?>
