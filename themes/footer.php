@@ -27,6 +27,7 @@
             <div class="col-xs-6 col-sm-6 col-md-3 text-left">
                 <h5 style="font-size:17px;margin-top:40px;margin-bottom:15px;">ABOUT</h5>
                 <p style="line-height:25px;">
+                    <a href="<?php echo $base_url; ?>/about">About</a><br/>
                     <a href="<?php echo $base_url; ?>/career">Career</a><br/>
                     <a href="<?php echo $base_url; ?>/events">Events</a><br/>
                     <a href="<?php echo $base_url; ?>/contact-us">Contact Us</a><br/>
