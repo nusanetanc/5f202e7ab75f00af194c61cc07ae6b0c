@@ -13,40 +13,47 @@
 						    <tr>
 						      <th width="30%">Kota</th>
 									<th width="30%">Jumlah</th>
+									<th width="30%">Detail</th>
 						    </tr>
 						  </thead>
 						  <?php
-								$res_jakut = $col_demand->find(array("kota_customer"=>"Jakarta Utara"))->count();
-								$res_jaksel = $col_demand->find(array("kota_customer"=>"Jakarta Selatan"))->count();
-								$res_jakbar = $col_demand->find(array("kota_customer"=>"Jakarta Barat"))->count();
-								$res_jaktim = $col_demand->find(array("kota_customer"=>"Jakarta Timur"))->count();
-								$res_jakpus = $col_demand->find(array("kota_customer"=>"Jakarta Pusat"))->count();
-								$res_bdg = $col_demand->find(array("kota_customer"=>"Bandung"))->count();
+								$res_jakut = $col_demand->find(array("kota"=>"Jakarta Utara"))->count();
+								$res_jaksel = $col_demand->find(array("kota"=>"Jakarta Selatan"))->count();
+								$res_jakbar = $col_demand->find(array("kota"=>"Jakarta Barat"))->count();
+								$res_jaktim = $col_demand->find(array("kota"=>"Jakarta Timur"))->count();
+								$res_jakpus = $col_demand->find(array("kota"=>"Jakarta Pusat"))->count();
+								$res_bdg = $col_demand->find(array("kota"=>"Bandung"))->count();
 						?>
 						  <tbody>
 						    <tr>
 						      <td>Jakarta Utara</td>
 									<td><?php echo $res_jakut; ?></td>
+									<td><a href="<?php echo $base_url_member; ?>/demand/jakut" class="btn btn-primary btn-xs">Lihat</a></td>
 						    </tr>
 								<tr>
 						      <td>Jakarta Selatan</td>
 									<td><?php echo $res_jaksel; ?></td>
+									<td><a href="<?php echo $base_url_member; ?>/demand/jaksel" class="btn btn-primary btn-xs">Lihat</a></td>
 						    </tr>
 								<tr>
 						      <td>Jakarta Barat</td>
 									<td><?php echo $res_jakbar; ?></td>
+									<td><a href="<?php echo $base_url_member; ?>/demand/jakbar" class="btn btn-primary btn-xs">Lihat</a></td>
 						    </tr>
 								<tr>
 						      <td>Jakarta Timur</td>
 									<td><?php echo $res_jaktim; ?></td>
+									<td><a href="<?php echo $base_url_member; ?>/demand/jaktim" class="btn btn-primary btn-xs">Lihat</a></td>
 						    </tr>
 								<tr>
 						      <td>Jakarta Pusat</td>
 									<td><?php echo $res_jakpus; ?></td>
+									<td><a href="<?php echo $base_url_member; ?>/demand/jakpus" class="btn btn-primary btn-xs">Lihat</a></td>
 						    </tr>
 								<tr>
 						      <td>Jakarta Bandung</td>
 									<td><?php echo $res_bdg; ?></td>
+									<td><a href="<?php echo $base_url_member; ?>/demand/bdg" class="btn btn-primary btn-xs">Lihat</a></td>
 						    </tr>
 						   </tbody>
 						</table>
