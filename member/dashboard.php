@@ -452,7 +452,7 @@ $(document).ready(function(){
 					  <h4 style="color:white;"><b>CUSTOMER</b></h4>
 						<br/>
 					  <div class="text-center">
-					  	<b style="color:white; font-size:2em;"><i class="fa fa-weixin fa-3x"></i></b>
+					  	<b style="color:white; font-size:2em;"><i class="fa fa-users fa-3x"></i></b>
 					  </div>
 					</div>
 				</a>
