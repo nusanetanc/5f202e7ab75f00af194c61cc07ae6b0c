@@ -6,17 +6,18 @@
     				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">Jobs List Pending</h3>
   				</div>
   				<div class="panel-body">
-  					<br/>'
+  					<br/>
   						<form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
   							<?php
   							if($level=="301"){
-  							$res = $col_history->find(array("field_engineer"=>$nama)); 
+  							$res = $col_history->find(array("field_engineer"=>$nama));
   						} elseif($level=="302"){
-  							$res = $col_history->find(array("ass_field"=>$nama)); 
+  							$res = $col_history->find(array("ass_field"=>$nama));
   						}
   								if(isset($_POST['view'])){
   									$jobs=$_POST['jobs'];
   									$status=$_POST['status'];
+										header('Location:'.$base_url_member.'/report-jobs/'.$jobs.'/'.$status);
   								}
   							?>
 	  						<div class="col-sm-4">
@@ -25,7 +26,7 @@
 						          <option>pasang</option>
 						          <option>maintenance</option>
 						        </select>
-	  						</div>	
+	  						</div>
 	  						<div class="col-sm-4">
 	  							<select class="form-control" id="status" name="status">
 						          <option selected="true" disabled="true" value="">Status</option>
@@ -36,9 +37,9 @@
 	  						<div class="col-sm-4">
 	  							<input name="view" id="view" type="submit" class="btn btn-default" value="View">
 	  						</div>
-	  					</form>	
+	  					</form>
   					<br/>
-					<div class="col-sm-12">	
+					<div class="col-sm-12">
 						<table class="table table-striped table-hover ">
 						  <thead>
 						    <tr>
@@ -54,7 +55,7 @@
 						  <tbody>
 						  <?php
 									foreach($res as $row)
-								{ 
+								{
 								$tanggal = $row['tanggal_kerja'];
 								$thn = substr($tanggal, 0,4);
 								$bln = substr($tanggal, 5,2);
@@ -68,14 +69,14 @@
 						      <td class="desktop-only" ><?php echo $row['status']; ?></td>
 						      <td class="desktop-only" ><?php echo $tgl.' '.$month.' '.$thn; ?></td>
 						      <td class="desktop-only" ><?php echo $row['field_engineer'].' / '.$row['ass_field']; ?></td>
-						      <td><b><a href="<?php echo $base_url_member; ?>/report-jobs/<?php echo $row['_id']; ?>" class="btn btn-default btn-sm">Report</a></b></td>						      
+						      <td><b><a href="<?php echo $base_url_member; ?>/report-jobs/<?php echo $row['_id']; ?>" class="btn btn-default btn-sm">Report</a></b></td>
 						    </tr>
 						<?php } ?>
-						   </tbody>  
-						</table>    
-					</div>	
+						   </tbody>
+						</table>
+					</div>
  				</div>
 			</div>
 		</div>
-	</div>	
+	</div>
 </section>
