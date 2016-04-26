@@ -1,7 +1,7 @@
  <?php if ($_GET['hal']=="signin" || $_GET['hal']=="forgot-password" || $_GET['hal']=="signup"){ ?>
 <body data-spy="scroll" data-target=".supportMenuWrapper" data-offset="50" style="position:relative;background-color:#e0e0e0;">
     <!-- Header -->
-    <div class="container-fluid" style="position:fixed;width:100%;background: linear-gradient(to right, #f9a825 , #fbc02d);height:50px;box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);-webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    <div class="container-fluid" style="position:fixed;width:100%;background: linear-gradient(to right, #f00 , #fbc02d);height:50px;box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);-webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
      -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
     -moz-box-shadow:    0px 2px 5px rgba(0, 0, 0, 0.5);
     box-shadow:         0px 2px 5px rgba(0, 0, 0, 0.5);
@@ -109,7 +109,7 @@
         <!-- /Modal Sign In-->
         <div class="modal fade" id="signinModal" role="dialog" data-toggle="modal" data-backdrop="static" data-keyboard="false">
             <div class="modal-dialog">
-                <div class="modal-content" style="background: linear-gradient(to right, #f00 , #fbc02d);">
+                <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title" style="color:#000;text-align:center;padding:8px 0 5px 0"><b>WELCOME!</b> SIGN IN</h4><br/>
