@@ -48,7 +48,7 @@
             <a href="<?php echo $base_url; ?>/features" class="navMenu" style="color:#000;">FEATURES</a>
             <a href="<?php echo $base_url; ?>/packages" class="navMenu" style="color:#000;">PACKAGES</a>
             <a href="<?php echo $base_url; ?>/support" class="navMenu" style="color:#000;">SUPPORT</a>
-            <a href="" data-toggle="modal" data-target="#signinModal" class="navMenu navButton">SIGN IN</a>
+            <a href="" data-toggle="modal" data-target="#signinModal" class="navMenu navButton"><span style="color:#fff;">SIGN IN</span></a>
             <div class="dropdown">
                 <button class="dropdown-toggle navButtonMobile" data-toggle="dropdown"><i class="fa fa-ellipsis-v fa-lg"></i></button>
                 <ul class="dropdown-menu pull-right">
@@ -112,15 +112,15 @@
                 <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title" style="color:#fff;text-align:center;padding:8px 0 5px 0"><b>WELCOME!</b> SIGN IN</h4><br/>
+                        <h4 class="modal-title" style="color:#000;text-align:center;padding:8px 0 5px 0"><b>WELCOME!</b> SIGN IN</h4><br/>
                         <center><img src="<?php echo $base_url; ?>/img/default-avatar-groovy.png" width="80px" height="80px"/></center><br/>
                         <form method="post" style="form-group">
                             <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Email" type="email" class="form-control" name="loginemail" id="loginemail">
                             <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Password" type="password" class="form-control" name="loginpassword" id="loginpassword">
                             <!--<label style="float:left;color:#fff;" class="checkbox-inline"><input type="checkbox" value="">Remember Password</label> -->
-                            <a href="" style="float:right;color:#fff;font-size:14px;text-decoration:underline;text-align:right" data-toggle="modal" data-target="#forgotPasswordModal" data-dismiss="modal">Forgot Password?</a><br/>
-                            <center><input id="login" name="login" type="submit" style="background-color:#fff;border:0px;color:#333;height:40px;padding:0 40px 0 40px;margin-top:15px;border-radius:3px;font-weight:bold;" value="SIGN IN"/><br/><br/>
-                            <a href="" style="color:#fff;font-size:14px;text-decoration:underline;text-align:right" data-toggle="modal" data-target="#signupModal" data-dismiss="modal">Create Account</a><br/><br/></center>
+                            <a href="" style="float:right;color:#000;font-size:14px;text-decoration:underline;text-align:right" data-toggle="modal" data-target="#forgotPasswordModal" data-dismiss="modal">Forgot Password?</a><br/>
+                            <center><input id="login" name="login" type="submit" style="background-color:#ff6d00;border:0px;color:#fff;height:40px;padding:0 40px 0 40px;margin-top:15px;border-radius:3px;font-weight:bold;" value="SIGN IN"/><br/><br/>
+                            <a href="" style="color:#000;font-size:14px;text-decoration:underline;text-align:right" data-toggle="modal" data-target="#signupModal" data-dismiss="modal">Create Account</a><br/><br/></center>
                              <?php
                             if(isset($_POST['login'])) {
                                                         session_start();
@@ -174,12 +174,12 @@
                 <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title" style="color:#fff;text-align:center;padding:8px 0 5px 0"><b>FORGOT PASSWORD</b></h4><br/>
+                        <h4 class="modal-title" style="color:#000;text-align:center;padding:8px 0 5px 0"><b>FORGOT PASSWORD</b></h4><br/>
                         <form style="form-group" method="post">
                             <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Email" type="email" class="form-control" name="forgetemail" id="forgetemail">
-                            <a href="" style="float:left;color:#fff;font-size:14px;text-decoration:underline;text-align:left" data-toggle="modal" data-target="#signupModal" data-dismiss="modal">Create Account</a>
-                            <a href="" style="float:right;color:#fff;font-size:14px;text-decoration:underline;text-align:right" data-toggle="modal" data-target="#signinModal" data-dismiss="modal">Sign In</a><br/>
-                            <center><input name="send" id="send" type="submit" style="background-color:#fff;border:0px;color:#333;height:40px;padding:0 40px 0 40px;margin-top:15px;border-radius:3px;font-weight:bold;" value="SEND"/></center>
+                            <a href="" style="float:left;color:#000;font-size:14px;text-decoration:underline;text-align:left" data-toggle="modal" data-target="#signupModal" data-dismiss="modal">Create Account</a>
+                            <a href="" style="float:right;color:#000;font-size:14px;text-decoration:underline;text-align:right" data-toggle="modal" data-target="#signinModal" data-dismiss="modal">Sign In</a><br/>
+                            <center><input name="send" id="send" type="submit" style="background-color:#ff6d00;border:0px;color:#fff;height:40px;padding:0 40px 0 40px;margin-top:15px;border-radius:3px;font-weight:bold;" value="SEND"/></center>
                              <?php
                                     if(isset($_POST['send'])) {
                                                                 $email = $_POST['forgetemail'];
@@ -254,7 +254,7 @@
             <div class="modal-dialog">
                 <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
-                        <h4 class="modal-title" style="color:#fff;text-align:center;padding:8px 0 5px 0"><b>Aktivasi Akun</b></h4><br/>
+                        <h4 class="modal-title" style="color:#000;text-align:center;padding:8px 0 5px 0"><b>Aktivasi Akun</b></h4><br/>
                         <form style="form-group" method="post">
                             <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Masukan Password Anda" type="password" class="form-control" name="activepassword1" id="activepassword1">
                             <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Masukan Lagi Password Anda" type="password" class="form-control" name="activepassword2" id="activepassword2">
@@ -268,7 +268,7 @@
                                 $namaktp = $_FILES['regisktp']['name'];
                                 echo $namaktp;
                                 if ($passwordBaru1=="" || $passwordBaru2==""){ ?>
-                                <b><h5 style="margin-top:10px;float:right;color:#fff;font-size:14px;text-align:right">Please enter your password and photo id card!!</h5></b><br/>
+                                <b><h5 style="margin-top:10px;float:right;color:#000;font-size:14px;text-align:right">Please enter your password and photo id card!!</h5></b><br/>
                                 <br/>
                             <?php    } else if ($passwordBaru1==$passwordBaru2){
                                     $date_time = date("Y/m/d H:i:s");
@@ -294,7 +294,7 @@
                                 }
                             }
                             ?>
-                            <center><input name="active" id="active" type="submit" style="background-color:#fff;border:0px;color:#333;height:40px;padding:0 40px 0 40px;margin-top:15px;border-radius:3px;font-weight:bold;" value="AKTIFKAN"/></center>
+                            <center><input name="active" id="active" type="submit" style="background-color:#ff6d00;border:0px;color:#fff;height:40px;padding:0 40px 0 40px;margin-top:15px;border-radius:3px;font-weight:bold;" value="AKTIFKAN"/></center>
                         </form>
                     </div>
                 </div>
@@ -306,7 +306,7 @@
             <div class="modal-dialog">
                 <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
-                        <h4 class="modal-title" style="color:#fff;text-align:center;padding:8px 0 5px 0"><b>Change Password</b></h4><br/>
+                        <h4 class="modal-title" style="color:#000;text-align:center;padding:8px 0 5px 0"><b>Change Password</b></h4><br/>
                         <form style="form-group" method="post">
                             <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Masukan Password Anda" type="password" class="form-control" name="changepassword3" id="changepassword3">
                             <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Masukan Lagi Password Anda" type="password" class="form-control" name="changepassword4" id="changepassword4">
@@ -316,7 +316,7 @@
                                 $passwordBaru4 = $_POST['changepassword4'];
 
                                 if (empty($passwordBaru3) || empty($passwordBaru4)){ ?>
-                                <b><h5 style="margin-top:10px;float:right;color:#fff;font-size:14px;text-align:right">Please enter your password!</h5></b><br/>
+                                <b><h5 style="margin-top:10px;float:right;color:#000;font-size:14px;text-align:right">Please enter your password!</h5></b><br/>
                                 <br/>
                             <?php    } else if ($passwordBaru3==$passwordBaru4){
                                     $change_password = $col_user->update(array("email"=>$change_email),
@@ -331,13 +331,13 @@
                                                                                 <?php }
                                 }  else  if ($passwordBaru3<>$passwordBaru4){
                                                                                 ?>
-                                                                           <b><h5 style="margin-top:10px;float:right;color:#fff;font-size:14px;text-align:right">Password don't macth !</h5></b><br/>
+                                                                           <b><h5 style="margin-top:10px;float:right;color:#000;font-size:14px;text-align:right">Password not match !</h5></b><br/>
                                                                            <br/>
                                                                                 <?php
                                 }
                             }
                             ?>
-                            <center><input name="change" id="change" type="submit" style="background-color:#fff;border:0px;color:#333;height:40px;padding:0 40px 0 40px;margin-top:15px;border-radius:3px;font-weight:bold;" value="CHANGE"/></center>
+                            <center><input name="change" id="change" type="submit" style="background-color:#ff6d00;border:0px;color:#fff;height:40px;padding:0 40px 0 40px;margin-top:15px;border-radius:3px;font-weight:bold;" value="CHANGE"/></center>
                         </form>
                     </div>
                 </div>
@@ -350,7 +350,7 @@
                 <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title" style="color:#fff;text-align:center;padding:7px 0 5px 0"><b>GET STARTED!</b> SIGN UP</h4><br/>
+                        <h4 class="modal-title" style="color:#000;text-align:center;padding:7px 0 5px 0"><b>GET STARTED!</b> SIGN UP</h4><br/>
                         <form style="form-group" method="post" id = "register_form">
                             <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Full Name" type="text" class="form-control" name="regisname" id="regisname">
                             <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Email" type="email" class="form-control" name="regisemail" id="regisremail">
@@ -616,8 +616,8 @@
                                                                          }); </script>  <?php
                                                                       } } } ?>
                              <div style="margin-bottom:7px;" class="g-recaptcha" data-sitekey="6Ldx_BsTAAAAAOYrQegHLVhslSvd6z78zAr-4Knc"></div>
-                            <input id="register" name="register" type="submit" style=";text-align:center;background-color:#fff;border:0px;color:#333;height:40px;padding:0 40px 0 40px;border-radius:3px;font-weight:bold;" value="SIGN UP"/>
-                            <a href="" style="margin-top:10px;float:right;color:#fff;font-size:14px;text-decoration:underline;text-align:right" data-toggle="modal" data-target="#signinModal" data-dismiss="modal">Sign In</a>
+                            <input id="register" name="register" type="submit" style=";text-align:center;background-color:#ff6d00;border:0px;color:#fff;height:40px;padding:0 40px 0 40px;border-radius:3px;font-weight:bold;" value="SIGN UP"/>
+                            <a href="" style="margin-top:10px;float:right;color:#000;font-size:14px;text-decoration:underline;text-align:right" data-toggle="modal" data-target="#signinModal" data-dismiss="modal">Sign In</a>
                         </form>
                     </div>
                 </div>
@@ -631,7 +631,7 @@
                 <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h5 style="color:white;"><b>The email and password you entered don't match !</b></h5>
+                              <h5 style="color:black;"><b>The email and password you entered don't match !</b></h5>
                     </div>
                 </div>
             </div>
@@ -643,7 +643,7 @@
                 <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h5 style="color:white;"><b>Please enter your email & password!</b></h5>
+                              <h5 style="color:black;"><b>Please enter your email & password!</b></h5>
                     </div>
                 </div>
             </div>
@@ -655,7 +655,7 @@
                 <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h5 style="color:white;"><b>Please enter your email!</b></h5>
+                              <h5 style="color:black;"><b>Please enter your email!</b></h5>
                     </div>
                 </div>
             </div>
@@ -667,7 +667,7 @@
                 <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h5 style="color:white;"><b>Please enter your password!</b></h5>
+                              <h5 style="color:black;"><b>Please enter your password!</b></h5>
                     </div>
                 </div>
             </div>
@@ -679,7 +679,7 @@
                 <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h5 style="color:white;"><b>Registration failed, please try again!</b></h5>
+                              <h5 style="color:black;"><b>Registration failed, please try again!</b></h5>
                     </div>
                 </div>
             </div>
@@ -691,7 +691,7 @@
                 <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h5 style="color:white;"><b>Registration succeed, please check your email!</b></h5>
+                              <h5 style="color:black;"><b>Registration succeed, please check your email!</b></h5>
                     </div>
                 </div>
             </div>
@@ -703,7 +703,7 @@
                 <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h5 style="color:white;"><b>Email already exist! Please register with other email</b></h5>
+                              <h5 style="color:black;"><b>Email already exist! Please register with other email</b></h5>
                     </div>
                 </div>
             </div>
@@ -715,7 +715,7 @@
                 <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h5 style="color:white;"><b>Acount already exist!</b></h5>
+                              <h5 style="color:black;"><b>Acount already exist!</b></h5>
                     </div>
                 </div>
             </div>
@@ -727,7 +727,7 @@
                 <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h5 style="color:white;"><b>Email was not found in the list costumer</b></h5>
+                              <h5 style="color:black;"><b>Email was not found in the list costumer</b></h5>
                     </div>
                 </div>
             </div>
@@ -739,7 +739,7 @@
                 <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h5 style="color:white;"><b>Please check your email for reset password</b></h5>
+                              <h5 style="color:black;"><b>Please check your email for reset password</b></h5>
                     </div>
                 </div>
             </div>
@@ -751,7 +751,7 @@
                 <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h5 style="color:white;"><b>Account has been active, please login</b></h5>
+                              <h5 style="color:black;"><b>Account has been active, please login</b></h5>
                     </div>
                 </div>
             </div>
@@ -763,7 +763,7 @@
                 <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h5 style="color:white;"><b>Registration failed, because our services have not reached your</b></h5>
+                              <h5 style="color:black;"><b>Registration failed, because our services have not reached your</b></h5>
                     </div>
                 </div>
             </div>
@@ -775,7 +775,7 @@
                 <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h5 style="color:white;"><b>Password successfully changed</b></h5>
+                              <h5 style="color:black;"><b>Password successfully changed</b></h5>
                     </div>
                 </div>
             </div>
