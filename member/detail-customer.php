@@ -7,7 +7,11 @@ $res = $col_user->find(array("id_user"=>$id_cust, "level"=>"0"));
 												$bln_registrasi = substr($tanggal_registrasi, 5,2);
 												$tgl_registrasi = substr($tanggal_registrasi, 8,10);
 												$month_registrasi = bulan($bln_registrasi);
-
+				$tanggal_akhir = $row['tanggal_akhir'];
+				$thn_akhir = substr($tanggal_akhir, 0,4);
+				$bln_akhir = substr($tanggal_akhir, 5,2);
+				$tgl_akhir = substr($tanggal_akhir, 8,10);
+				$month_akhir = bulan($bln_akhir);
 												$registrasi_cust = $row['registrasi'];
 												$sales =$row['sales'];
 												$nama_cust = $row['nama'];
@@ -77,9 +81,21 @@ $res1 = $col_package->find(array("nama"=>$package_cust));
 								<div class="form-group">
 									<label class="col-lg-3 control-label">Status</label>
 									<div class="col-lg-9">
-										<h4>:<?php echo $status_cust; ?></h4>
+										<h4>:<?php echo $status_cust; if ($status_cust=="aktif"){ echo $tgl_akhir.' '.$month_akhir.' '.$thn_akhir; }?></h4>
 									</div>
 								</div>
+								<div class="form-group">
+						      <label class="col-lg-3 control-label">Registrasi : </label>
+						      <div class="col-lg-9"><h4>
+							  <?php
+							  	if ($regis_cust=="personal") {
+							  		echo $row['registrasi'];
+							  	} elseif ($regis_cust=="sales") {
+							  		echo $regis_cust.' / '.$sales_cust;
+							  	}
+							  ?></h4></label>
+						      </div>
+						   </div>
 						    <div class="form-group">
 						      <label class="col-lg-3 control-label">No SN Box Tv</label>
 						      <div class="col-lg-9">
@@ -93,7 +109,37 @@ $res1 = $col_package->find(array("nama"=>$package_cust));
 			</div>
 			<div class="panel" style="border:0px;">
 					<div class="panel-heading" style="background-color:#F1453C">
-						<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">DATA MAINTENANCE</h3>
+						<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">PASANG</h3>
+					</div>
+					<div class="panel-body">
+						<br/>
+						<div class="col-sm-12">
+							<table class="table table-striped table-hover ">
+								<?php
+								$status=$_GET['status'];
+									$res = $col_history->find(array("hal"=>"pasang", "id_cust"=>$id_cust))->sort(array("tanggal_kerja"));
+									foreach($res as $row)
+									{
+							?>
+								<tbody>
+									<tr>
+										<td><?php echo $row['tanggal_kerja']; ?></td>
+										<td><?php echo $row['field_engineer'].'-'.$row['ass_field']; ?></td>
+										<td><?php echo $row['status']; ?></td>
+										<td><?php echo $row['tanggal_selesai']; ?></td>
+										<td><?php echo $row['catatan']; ?></td>
+									</tr>
+								 </tbody>
+							<?php
+								}
+							?>
+							</table>
+						</div>
+					</div>
+			</div>
+			<div class="panel" style="border:0px;">
+					<div class="panel-heading" style="background-color:#F1453C">
+						<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">MAINTENANCE</h3>
 					</div>
 					<div class="panel-body">
 						<br/>
@@ -124,7 +170,7 @@ $res1 = $col_package->find(array("nama"=>$package_cust));
 			</div>
 			<div class="panel" style="border:0px;">
 					<div class="panel-heading" style="background-color:#F1453C">
-						<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">DATA UPDATE</h3>
+						<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">UPDATE PAKET</h3>
 					</div>
 					<div class="panel-body">
 						<br/>
@@ -148,6 +194,36 @@ $res1 = $col_package->find(array("nama"=>$package_cust));
 										<td><?php echo $row['tanggal_update']; ?></td>
 										<td><?php echo $row['paket_lama']; ?></td>
 										<td><?php echo $row['paket_baru']; ?></td>
+									</tr>
+								 </tbody>
+							<?php
+								}
+							?>
+							</table>
+						</div>
+					</div>
+			</div>
+			<div class="panel" style="border:0px;">
+					<div class="panel-heading" style="background-color:#F1453C">
+						<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">AMBIL PERANGKAT</h3>
+					</div>
+					<div class="panel-body">
+						<br/>
+						<div class="col-sm-12">
+							<table class="table table-striped table-hover ">
+								<?php
+								$status=$_GET['status'];
+									$res = $col_history->find(array("hal"=>"bongkar", "id_cust"=>$id_cust))->sort(array("tanggal_kerja"));
+									foreach($res as $row)
+									{
+							?>
+								<tbody>
+									<tr>
+										<td><?php echo $row['tanggal_kerja']; ?></td>
+										<td><?php echo $row['field_engineer'].'-'.$row['ass_field']; ?></td>
+										<td><?php echo $row['status']; ?></td>
+										<td><?php echo $row['tanggal_selesai']; ?></td>
+										<td><?php echo $row['catatan']; ?></td>
 									</tr>
 								 </tbody>
 							<?php

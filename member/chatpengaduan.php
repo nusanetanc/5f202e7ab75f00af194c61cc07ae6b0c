@@ -1,7 +1,7 @@
 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 <?php
 							$idchat=$_GET['c'];
-if(isset($_POST['kirim'])) {	
+if(isset($_POST['kirim'])) {
 							$inputStatus=$_POST['inputStatus'];
 							$message=$_POST['message'];
 							$date = date("Y/m/d H:i:s");
@@ -9,18 +9,18 @@ if(isset($_POST['kirim'])) {
 										?>
 										<div class="col-sm-9">
 											<p class="text-danger">Message Empty.</p>
-										</div>	
+										</div>
 									<?php	} else {
 													$res = $col_user->find(array("id_user"=>$id));
 													foreach($res as $row)
-																		{ 
+																		{
 																			$fromname=$row['nama'];
-																		} 
+																		}
 $msg=array(
 			"reply_id"=>$id,
 			"message"=>$message,
 			"date"=>$date
-		);	
+		);
 $insert = $col_ticket->update(
 								array("idchat"=>$idchat),
 					   			array('$push'=>array("message"=>$msg)));
@@ -33,17 +33,17 @@ if ($inputStatus<>""){
 								  		?>
 										<script type="" language="JavaScript">
 										document.location='<?php echo $base_url_member; ?>/chat-pengaduan/<?php echo $idchat; ?>'</script>
-							<?php 	} 						
+							<?php 	}
 								}
-								}	
+								}
 $res = $col_ticket->find(array("idchat"=>$idchat));
 foreach($res as $row)
-					{ 
+					{
 						$subject=$row['subject'];
 						$kategori=$row['kategori'];
 						$status_pengaduan=$row['status'];
-					} 
-								?>					
+					}
+								?>
 <section>
 	<div class="col-sm-9">
 		<div class="list-group">
@@ -69,18 +69,18 @@ foreach($res as $row)
 									        <option>solved</option>
 									        <?php } ?>
 									        <option value="close">terselesaikan</option>
-									    </select> 
+									    </select>
         								<br/>
         								<button class="btn btn-default background-btn-red" type="submit" name="kirim" id="kirim">REPLY</button>
 									</div>
-								</div>	
+								</div>
 								<?php } ?>
 							</li>
 							</ul>
   				    	<div class="pic-container down">
 							<ul class="list-group">
 									<?php
-										$res = $col_ticket->findOne(array("idchat"=>$idchat));	
+										$res = $col_ticket->findOne(array("idchat"=>$idchat));
 										foreach ($res['message'] as $message => $msg) {
 																						$reply_id = $msg['reply_id'];
 																						$tanggal = $msg['date'];
@@ -91,10 +91,10 @@ foreach($res as $row)
 																						$month = bulan($bln);
 										$res0 = $col_user->find(array("id_user"=>$reply_id ));
 										foreach($res0 as $row0)
-													{ 
+													{
 														$name_user_chat=$row0['nama'];
 														$level_user_chat=$row0['level'];
-													} 
+													}
 														$lvl = lev($level_user_chat);
 											  					?>
 							<li class="list-group-item">
@@ -105,7 +105,7 @@ foreach($res as $row)
 										<div class="col-sm-12">
 											<h5 class="list-group-item-heading"><b>
 											<?php if ($level_user_chat=="0" && $level<>"0") { ?>
-												<a style="text-decoration:none;" href="<?php echo $base_url_member; ?>/customer-profile/<?php echo $reply_id; ?>"><?php echo $name_user_chat.' ('.$lvl.')'?></a>
+												<a style="text-decoration:none;" href="<?php echo $base_url_member; ?>/detail-customer/<?php echo $reply_id; ?>"><?php echo $name_user_chat.' ('.$lvl.')'?></a>
 
 											<?php } else if ($level_user_chat=="2" || $level_user_chat=="3" || $level_user_chat=="4" ||$level_user_chat=="401" || $level=="0")  { ?>
 
@@ -123,7 +123,7 @@ foreach($res as $row)
 											<h5 class="list-group-item-heading"><b>
 											<?php if ($level_user_chat=="0"  && $level<>"0") { ?>
 
-												<a style="text-decoration:none;" href="<?php echo $base_url_member; ?>/customer-profile/<?php echo $reply_id; ?>"><?php echo $name_user_chat.' ('.$lvl.')'?></a>
+												<a style="text-decoration:none;" href="<?php echo $base_url_member; ?>/detail-customer/<?php echo $reply_id; ?>"><?php echo $name_user_chat.' ('.$lvl.')'?></a>
 
 											<?php } else if ($level_user_chat=="2" || $level_user_chat=="3" || $level_user_chat=="4" ||$level_user_chat=="401" || $level=="0")  { ?>
 
@@ -135,21 +135,20 @@ foreach($res as $row)
 											<h6><p class="list-group-item-text"><?php echo 'Dikirim '.$tgl.' '.$month.' '.$thn.', '.$jam.' WIB'; ?></p></h6>
 										</div>
 
-								<?php } ?>		
-									  	
-									</blockquote>	
-								</div>	
+								<?php } ?>
+
+									</blockquote>
+								</div>
 							</li>
-							
+
 																				<?php
 																						}
 																				?>
 							</ul>
 						</div>
 						</div>
-					</div>		
+					</div>
 			</div>
 		</div>
-	</div>	
+	</div>
 </section>
-
