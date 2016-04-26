@@ -57,7 +57,7 @@
                 <div class="supportContent">
                     <button class="supportButtonFaq" data-toggle="collapse" data-target="#supportContent9">Bagaimana cara saya membayar tagihan ?<span style="float:right;margin-right:20px;"><i class="fa fa-plus"></i></span></button>
                     <div id="supportContent9" class="collapse">
-                        <p class="supportParagraphFaq">Anda bisa membayar tagihan dengan melakukan transfer ke rekening bank yang tertera pada invoice Anda. Besarnya pembayaran juga bisa Anda lihat di dalam invoice.<br/><br/>Setelah Anda melakukan pembayaran diharapkan untuk melakukan konfirmasi pembayaran dihalaman Billing pada Dashboard Anda. <a href="http://www.groovy.id/member/billing/konfirmasi">http://www.groovy.id/member/billing/konfirmasi</a></p>
+                        <p class="supportParagraphFaq">..<a href="http://www.groovy.id/member/billing/konfirmasi">http://www.groovy.id/member/billing/konfirmasi</a></p>
                     </div>
                 </div>
                 

@@ -30,10 +30,10 @@ html, body{
             text-decoration:none;
         }
         .buttonOrange{
-            background-color:#FF3D23;border:0px;color:#fff;height:40px;padding:12px 25px 32px 25px;border-radius:3px;font-weight:bold;
+            background-color:#f9a825;border:0px;color:#000;height:40px;padding:12px 25px 32px 25px;border-radius:3px;font-weight:bold;
         }
         .buttonOrange:hover{
-            background-color:#FF2D23;
+            background-color:#f9a825;
         }
         .primaryContent{
             background-color:#fff;height:335px;padding-top:60px;

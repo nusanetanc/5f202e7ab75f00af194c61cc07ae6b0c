@@ -1,7 +1,7 @@
  <?php if ($_GET['hal']=="signin" || $_GET['hal']=="forgot-password" || $_GET['hal']=="signup"){ ?>
 <body data-spy="scroll" data-target=".supportMenuWrapper" data-offset="50" style="position:relative;background-color:#e0e0e0;">
     <!-- Header -->
-    <div class="container-fluid" style="position:fixed;width:100%;background: linear-gradient(to right, #f00 , #fbc02d);height:50px;box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);-webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    <div class="container-fluid" style="position:fixed;width:100%;background: linear-gradient(to right, #f57f17 , #fbc02d);height:50px;box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);-webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
      -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
     -moz-box-shadow:    0px 2px 5px rgba(0, 0, 0, 0.5);
     box-shadow:         0px 2px 5px rgba(0, 0, 0, 0.5);
@@ -35,7 +35,7 @@
 <?php } else { ?>
 <body>
     <!-- Header -->
-    <div class="container-fluid" style="position:fixed;width:100%;background: linear-gradient(to right, #f9a825 , #fbc02d);height:50px;
+    <div class="container-fluid" style="position:fixed;width:100%;background: linear-gradient(to right, #f9a825 , #fdd835);height:50px;
     -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
     -moz-box-shadow:    0px 2px 5px rgba(0, 0, 0, 0.5);
     box-shadow:         0px 2px 5px rgba(0, 0, 0, 0.5);
@@ -119,7 +119,7 @@
                             <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Password" type="password" class="form-control" name="loginpassword" id="loginpassword">
                             <!--<label style="float:left;color:#fff;" class="checkbox-inline"><input type="checkbox" value="">Remember Password</label> -->
                             <a href="" style="float:right;color:#000;font-size:14px;text-decoration:underline;text-align:right" data-toggle="modal" data-target="#forgotPasswordModal" data-dismiss="modal">Forgot Password?</a><br/>
-                            <center><input id="login" name="login" type="submit" style="background-color:#ff6d00;border:0px;color:#fff;height:40px;padding:0 40px 0 40px;margin-top:15px;border-radius:3px;font-weight:bold;" value="SIGN IN"/><br/><br/>
+                            <center><input id="login" name="login" type="submit" style="background-color:#ff5722;border:0px;color:#fff;height:40px;padding:0 40px 0 40px;margin-top:15px;border-radius:3px;font-weight:bold;" value="SIGN IN"/><br/><br/>
                             <a href="" style="color:#000;font-size:14px;text-decoration:underline;text-align:right" data-toggle="modal" data-target="#signupModal" data-dismiss="modal">Create Account</a><br/><br/></center>
                              <?php
                             if(isset($_POST['login'])) {
@@ -179,7 +179,7 @@
                             <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Email" type="email" class="form-control" name="forgetemail" id="forgetemail">
                             <a href="" style="float:left;color:#000;font-size:14px;text-decoration:underline;text-align:left" data-toggle="modal" data-target="#signupModal" data-dismiss="modal">Create Account</a>
                             <a href="" style="float:right;color:#000;font-size:14px;text-decoration:underline;text-align:right" data-toggle="modal" data-target="#signinModal" data-dismiss="modal">Sign In</a><br/>
-                            <center><input name="send" id="send" type="submit" style="background-color:#ff6d00;border:0px;color:#fff;height:40px;padding:0 40px 0 40px;margin-top:15px;border-radius:3px;font-weight:bold;" value="SEND"/></center>
+                            <center><input name="send" id="send" type="submit" style="background-color:#ff5722;border:0px;color:#fff;height:40px;padding:0 40px 0 40px;margin-top:15px;border-radius:3px;font-weight:bold;" value="SEND"/></center>
                              <?php
                                     if(isset($_POST['send'])) {
                                                                 $email = $_POST['forgetemail'];
@@ -294,7 +294,7 @@
                                 }
                             }
                             ?>
-                            <center><input name="active" id="active" type="submit" style="background-color:#ff6d00;border:0px;color:#fff;height:40px;padding:0 40px 0 40px;margin-top:15px;border-radius:3px;font-weight:bold;" value="AKTIFKAN"/></center>
+                            <center><input name="active" id="active" type="submit" style="background-color:#ff5722;border:0px;color:#fff;height:40px;padding:0 40px 0 40px;margin-top:15px;border-radius:3px;font-weight:bold;" value="AKTIFKAN"/></center>
                         </form>
                     </div>
                 </div>
@@ -337,7 +337,7 @@
                                 }
                             }
                             ?>
-                            <center><input name="change" id="change" type="submit" style="background-color:#ff6d00;border:0px;color:#fff;height:40px;padding:0 40px 0 40px;margin-top:15px;border-radius:3px;font-weight:bold;" value="CHANGE"/></center>
+                            <center><input name="change" id="change" type="submit" style="background-color:#ff5722;border:0px;color:#fff;height:40px;padding:0 40px 0 40px;margin-top:15px;border-radius:3px;font-weight:bold;" value="CHANGE"/></center>
                         </form>
                     </div>
                 </div>
@@ -616,7 +616,7 @@
                                                                          }); </script>  <?php
                                                                       } } } ?>
                              <div style="margin-bottom:7px;" class="g-recaptcha" data-sitekey="6Ldx_BsTAAAAAOYrQegHLVhslSvd6z78zAr-4Knc"></div>
-                            <input id="register" name="register" type="submit" style=";text-align:center;background-color:#ff6d00;border:0px;color:#fff;height:40px;padding:0 40px 0 40px;border-radius:3px;font-weight:bold;" value="SIGN UP"/>
+                            <input id="register" name="register" type="submit" style=";text-align:center;background-color:#ff5722;border:0px;color:#fff;height:40px;padding:0 40px 0 40px;border-radius:3px;font-weight:bold;" value="SIGN UP"/>
                             <a href="" style="margin-top:10px;float:right;color:#000;font-size:14px;text-decoration:underline;text-align:right" data-toggle="modal" data-target="#signinModal" data-dismiss="modal">Sign In</a>
                         </form>
                     </div>
