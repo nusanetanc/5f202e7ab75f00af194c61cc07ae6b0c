@@ -35,7 +35,6 @@ $res1 = $col_package->find(array("nama"=>$package_cust));
   				</div>
   				<div class="panel-body">
   					<br/>
-  					<?php if ($nama_cust<>"") { ?>
 					<div class="col-sm-12">
 						<form class="form-horizontal">
 						  <fieldset>
@@ -84,7 +83,6 @@ $res1 = $col_package->find(array("nama"=>$package_cust));
 						  </fieldset>
 						</form>
 					</div>
-					<?php } ?>
  				</div>
 			</div>
 			<div class="panel" style="border:0px;">
@@ -107,7 +105,7 @@ $res1 = $col_package->find(array("nama"=>$package_cust));
 								</thead>
 								<?php
 								$status=$_GET['status'];
-									$res = $col_history->find(array("hal"=>"maintenance"))->sort(array("tanggal_kerja"));
+									$res = $col_history->find(array("hal"=>"maintenance", "id_cust"=>$id_cust))->sort(array("tanggal_kerja"));
 									foreach($res as $row)
 									{
 							?>
@@ -145,7 +143,7 @@ $res1 = $col_package->find(array("nama"=>$package_cust));
 								</thead>
 								<?php
 								$status=$_GET['status'];
-									$res = $col_history->find(array("hal"=>"update"))->sort(array("tanggal_update"));
+									$res = $col_history->find(array("hal"=>"update", "id_cust"=>$id_cust))->sort(array("tanggal_update"));
 									foreach($res as $row)
 									{
 							?>
