@@ -41,7 +41,8 @@
 									      <form  action="<?php $_SERVER['PHP_SELF'] ?>"  method="post">
 									      	<?php
 									      		if(isset($_POST['deleteuser'])){
-									      			$delete_user = $col_user->remove(array("id_user"=>$row['id_user']));
+															echo yudi;
+									      			//$delete_user = $col_user->remove(array("id_user"=>$row['id_user']));
 									      		}
 									      	?>
 										  	<div class="modal" name="confirmdelete<?php echo $row['id_user']; ?>" id="confirmdelete<?php echo $row['id_user']; ?>">
