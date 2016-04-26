@@ -13,7 +13,7 @@
             </button>
             -->
 
-            <a href="<?php echo $base_url; ?>"><img src="<?php echo $base_url; ?>/img/groovy-logo.png" width="200px" height="50px"/></a>
+            <a href="<?php echo $base_url; ?>"><img src="<?php echo $base_url; ?>/img/groovy-logo2.png" width="200px" height="50px"/></a>
         </div>
         <div style="float:right;margin-left:15px;margin-top:14px;">
             <a href="<?php echo $base_url; ?>/features" class="navMenu" style="color:#fff;">FEATURES</a>
