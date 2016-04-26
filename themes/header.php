@@ -1,7 +1,7 @@
  <?php if ($_GET['hal']=="signin" || $_GET['hal']=="forgot-password" || $_GET['hal']=="signup"){ ?>
 <body data-spy="scroll" data-target=".supportMenuWrapper" data-offset="50" style="position:relative;background-color:#e0e0e0;">
     <!-- Header -->
-    <div class="container-fluid" style="position:fixed;width:100%;background: linear-gradient(to right, #f9a825 , #fbc02d);height:50px;box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);-webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    <div class="container-fluid" style="position:fixed;width:100%;background: linear-gradient(to right, #f00 , #fbc02d);height:50px;box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);-webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
      -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
     -moz-box-shadow:    0px 2px 5px rgba(0, 0, 0, 0.5);
     box-shadow:         0px 2px 5px rgba(0, 0, 0, 0.5);
@@ -48,7 +48,7 @@
             <a href="<?php echo $base_url; ?>/features" class="navMenu" style="color:#000;">FEATURES</a>
             <a href="<?php echo $base_url; ?>/packages" class="navMenu" style="color:#000;">PACKAGES</a>
             <a href="<?php echo $base_url; ?>/support" class="navMenu" style="color:#000;">SUPPORT</a>
-            <a href="" data-toggle="modal" data-target="#signinModal" class="navMenu navButton"><span style="color:#fff;">SIGN IN</span></a>
+            <a href="" data-toggle="modal" data-target="#signinModal" class="navMenu navButton"><span style="color:#fff;text-decoration:none;">SIGN IN</span></a>
             <div class="dropdown">
                 <button class="dropdown-toggle navButtonMobile" data-toggle="dropdown"><i class="fa fa-ellipsis-v fa-lg"></i></button>
                 <ul class="dropdown-menu pull-right">
