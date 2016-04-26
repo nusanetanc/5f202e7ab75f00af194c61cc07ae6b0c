@@ -35,7 +35,7 @@
 <?php } else { ?>
 <body>
     <!-- Header -->
-    <div class="container-fluid" style="position:fixed;width:100%;background: linear-gradient(to right, #f57f17 , #fbc02d);height:50px;
+    <div class="container-fluid" style="position:fixed;width:100%;background: linear-gradient(to right, #f9a825 , #fdd835);height:50px;
     -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
     -moz-box-shadow:    0px 2px 5px rgba(0, 0, 0, 0.5);
     box-shadow:         0px 2px 5px rgba(0, 0, 0, 0.5);
