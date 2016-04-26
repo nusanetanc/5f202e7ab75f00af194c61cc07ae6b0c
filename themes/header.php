@@ -1,7 +1,7 @@
  <?php if ($_GET['hal']=="signin" || $_GET['hal']=="forgot-password" || $_GET['hal']=="signup"){ ?>
 <body data-spy="scroll" data-target=".supportMenuWrapper" data-offset="50" style="position:relative;background-color:#e0e0e0;">
     <!-- Header -->
-    <div class="container-fluid" style="position:fixed;width:100%;background: linear-gradient(to right, #FF3D23 , #FF931E);height:50px;box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);-webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    <div class="container-fluid" style="position:fixed;width:100%;background: linear-gradient(to right, #f9a825 , #fbc02d);height:50px;box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);-webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
      -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
     -moz-box-shadow:    0px 2px 5px rgba(0, 0, 0, 0.5);
     box-shadow:         0px 2px 5px rgba(0, 0, 0, 0.5);
@@ -35,7 +35,7 @@
 <?php } else { ?>
 <body>
     <!-- Header -->
-    <div class="container-fluid" style="position:fixed;width:100%;background: linear-gradient(to right, #FF3D23 , #FF931E);height:50px;
+    <div class="container-fluid" style="position:fixed;width:100%;background: linear-gradient(to right, #f9a825 , #fbc02d);height:50px;
     -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
     -moz-box-shadow:    0px 2px 5px rgba(0, 0, 0, 0.5);
     box-shadow:         0px 2px 5px rgba(0, 0, 0, 0.5);
@@ -109,7 +109,7 @@
         <!-- /Modal Sign In-->
         <div class="modal fade" id="signinModal" role="dialog" data-toggle="modal" data-backdrop="static" data-keyboard="false">
             <div class="modal-dialog">
-                <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
+                <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title" style="color:#fff;text-align:center;padding:8px 0 5px 0"><b>WELCOME!</b> SIGN IN</h4><br/>
@@ -171,7 +171,7 @@
         <!-- Modal Forgot Password-->
         <div class="modal fade" id="forgotPasswordModal" role="dialog" data-toggle="modal" data-backdrop="static" data-keyboard="false">
             <div class="modal-dialog">
-                <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
+                <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title" style="color:#fff;text-align:center;padding:8px 0 5px 0"><b>FORGOT PASSWORD</b></h4><br/>
@@ -209,7 +209,7 @@
                                                                             <html>
                                                                                 <body style="background-color:#ddd;padding:50px 0 50px 0;font-family:arial;font-size:15px;">
                                                                                     <div style="margin:0 auto;max-width:500px;background-color:#eee;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
-                                                                                        <div style="background: linear-gradient(to right, #FF3D23 , #fc742f);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
+                                                                                        <div style="background: linear-gradient(to right, #f9a825 , #fbc02d);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
                                                                                             <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
                                                                                         </div>
                                                                                         <div style="padding:20px;color:#333;">
@@ -252,7 +252,7 @@
         <!-- Modal Activation Acount Password-->
         <div class="modal fade" id="activationacountModal" role="dialog" data-toggle="modal" data-backdrop="static" data-keyboard="false">
             <div class="modal-dialog">
-                <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
+                <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <h4 class="modal-title" style="color:#fff;text-align:center;padding:8px 0 5px 0"><b>Aktivasi Akun</b></h4><br/>
                         <form style="form-group" method="post">
@@ -304,7 +304,7 @@
          <!-- Modal Replace Password-->
         <div class="modal fade" id="replacepasswordModal" role="dialog" data-toggle="modal" data-backdrop="static" data-keyboard="false">
             <div class="modal-dialog">
-                <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
+                <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <h4 class="modal-title" style="color:#fff;text-align:center;padding:8px 0 5px 0"><b>Change Password</b></h4><br/>
                         <form style="form-group" method="post">
@@ -347,7 +347,7 @@
         <!-- Modal Sign Up-->
         <div class="modal fade" id="signupModal" role="dialog" data-toggle="modal" data-backdrop="static" data-keyboard="false">
             <div class="modal-dialog">
-                <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
+                <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title" style="color:#fff;text-align:center;padding:7px 0 5px 0"><b>GET STARTED!</b> SIGN UP</h4><br/>
@@ -628,7 +628,7 @@
         <!-- Modal Sign In Failed-->
         <div class="modal fade" id="loginfailedModal" role="dialog" >
             <div class="modal-dialog">
-                <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
+                <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                               <h5 style="color:white;"><b>The email and password you entered don't match !</b></h5>
@@ -640,7 +640,7 @@
         <!-- Modal Login Email & Password Failed -->
         <div class="modal fade" id="loginemailandpasswordfailedModal" role="dialog">
             <div class="modal-dialog">
-                <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
+                <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                               <h5 style="color:white;"><b>Please enter your email & password!</b></h5>
@@ -652,7 +652,7 @@
                 <!-- Modal Login Email Failed-->
         <div class="modal fade" id="loginemailfailedModal" role="dialog">
             <div class="modal-dialog">
-                <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
+                <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                               <h5 style="color:white;"><b>Please enter your email!</b></h5>
@@ -664,7 +664,7 @@
         <!-- Modal Login Password Failed-->
         <div class="modal fade" id="loginpasswordfailedModal" role="dialog">
             <div class="modal-dialog">
-                <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
+                <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                               <h5 style="color:white;"><b>Please enter your password!</b></h5>
@@ -676,7 +676,7 @@
         <!-- Modal Register Failed-->
         <div class="modal fade" id="registerfailedModal" role="dialog">
             <div class="modal-dialog">
-                <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
+                <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                               <h5 style="color:white;"><b>Registration failed, please try again!</b></h5>
@@ -688,7 +688,7 @@
         <!-- Modal Register Succses-->
         <div class="modal fade" id="registersuccsesModal" role="dialog">
             <div class="modal-dialog">
-                <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
+                <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                               <h5 style="color:white;"><b>Registration succeed, please check your email!</b></h5>
@@ -700,7 +700,7 @@
         <!-- Modal Register Email Exsist -->
         <div class="modal fade" id="registeremailfailedModal" role="dialog">
             <div class="modal-dialog">
-                <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
+                <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                               <h5 style="color:white;"><b>Email already exist! Please register with other email</b></h5>
@@ -712,7 +712,7 @@
                 <!-- Modal Account Exsist -->
         <div class="modal fade" id="acountfailedModal" role="dialog">
             <div class="modal-dialog">
-                <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
+                <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                               <h5 style="color:white;"><b>Acount already exist!</b></h5>
@@ -724,7 +724,7 @@
         <!-- Modal Email Not Found -->
         <div class="modal fade" id="emailnotfoundModal" role="dialog">
             <div class="modal-dialog">
-                <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
+                <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                               <h5 style="color:white;"><b>Email was not found in the list costumer</b></h5>
@@ -736,7 +736,7 @@
         <!-- Modal Forget Email -->
         <div class="modal fade" id="emailforgetModal" role="dialog">
             <div class="modal-dialog">
-                <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
+                <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                               <h5 style="color:white;"><b>Please check your email for reset password</b></h5>
@@ -748,7 +748,7 @@
         <!-- Modal Passsword Baru sukses -->
         <div class="modal fade" id="activationsuccsesModal" role="dialog">
             <div class="modal-dialog">
-                <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
+                <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                               <h5 style="color:white;"><b>Account has been active, please login</b></h5>
@@ -760,7 +760,7 @@
         <!-- Modal Location not Valid -->
         <div class="modal fade" id="LocationnotvalidModal" role="dialog">
             <div class="modal-dialog">
-                <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
+                <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                               <h5 style="color:white;"><b>Registration failed, because our services have not reached your</b></h5>
@@ -772,7 +772,7 @@
         <!-- Modal Location not Valid -->
         <div class="modal fade" id="changepasswordvalidModal" role="dialog">
             <div class="modal-dialog">
-                <div class="modal-content" style="background: linear-gradient(to right, #FF3D23 , #FF931E);">
+                <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                               <h5 style="color:white;"><b>Password successfully changed</b></h5>
