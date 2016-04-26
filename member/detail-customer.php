@@ -1,6 +1,6 @@
 <?php
 $id_cust = $_GET['id'];
-$res = $col_user->find(array("id_user"=>$id_cust,"status"=>"aktif","level"=>"0"));
+$res = $col_user->find(array("id_user"=>$id_cust, "level"=>"0"));
 						foreach ($res as $row) {
 												$tanggal_registrasi = $row['tanggal_registrasi'];
 												$thn_registrasi = substr($tanggal_registrasi, 0,4);
@@ -74,6 +74,12 @@ $res1 = $col_package->find(array("nama"=>$package_cust));
 						        <h4>:<?php echo $tempat_cust.', '.$ket_cust.', '.$kota_cust; ?></h4>
 						      </div>
 						    </div>
+								<div class="form-group">
+									<label class="col-lg-3 control-label">Status</label>
+									<div class="col-lg-9">
+										<h4>:<?php echo $status_cust; ?></h4>
+									</div>
+								</div>
 						    <div class="form-group">
 						      <label class="col-lg-3 control-label">No SN Box Tv</label>
 						      <div class="col-lg-9">
@@ -92,18 +98,7 @@ $res1 = $col_package->find(array("nama"=>$package_cust));
 					<div class="panel-body">
 						<br/>
 						<div class="col-sm-12">
-							<table class="table table-striped table-hover ">
-								<thead>
-									<tr>
-										<th width="15%">Tanggal kerja</th>
-										<th width="20%">Maintenance</th>
-										<th width="20%">Support</th>
-										<th width="10%">Status</th>
-										<th width="15%">Tanggal Selesai</th>
-										<th width="20%">Catatan</th>
-									</tr>
-								</thead>
-								<?php
+							<table class="table table-striped table-hover ">flores612191@nusanet
 								$status=$_GET['status'];
 									$res = $col_history->find(array("hal"=>"maintenance", "id_cust"=>$id_cust))->sort(array("tanggal_kerja"));
 									foreach($res as $row)
