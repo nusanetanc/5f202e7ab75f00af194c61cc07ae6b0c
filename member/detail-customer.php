@@ -98,7 +98,8 @@ $res1 = $col_package->find(array("nama"=>$package_cust));
 					<div class="panel-body">
 						<br/>
 						<div class="col-sm-12">
-							<table class="table table-striped table-hover ">flores612191@nusanet
+							<table class="table table-striped table-hover ">
+								<?php
 								$status=$_GET['status'];
 									$res = $col_history->find(array("hal"=>"maintenance", "id_cust"=>$id_cust))->sort(array("tanggal_kerja"));
 									foreach($res as $row)
