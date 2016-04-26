@@ -10,7 +10,7 @@
 	  				    <form method="post">
 	  				    <div class="row">
 	  				    	<div class="col-sm-12">
-		  				    	<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+		  				    	<table class="table table-striped table-hover ">
 									 <thead>
 									    <tr>
 									      <th width="20%">Nomor Id</th>
@@ -18,7 +18,7 @@
 									      <th width="30%">No Telepon</th>
 									    </tr>
 									  </thead>
-									  <?php 
+									  <?php
 									  		$rslt = $col_user->find(array("level"=>"401"));
 									  		foreach ($rslt as $row) {
 									   ?>
@@ -28,7 +28,7 @@
 									  	<td><?php echo $row['phone']; ?></td>
 									  </tbody>
 									  <?php } ?>
-								</table>	  
+								</table>
 		  				    </div>
 		  				 </div>
 		  				 </form>
@@ -36,4 +36,4 @@
 		  	</div>
 		</div>
 	</div>
-</section>		  				    	
+</section>

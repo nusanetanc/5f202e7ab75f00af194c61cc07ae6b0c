@@ -21,7 +21,7 @@
 									      <th width="10%"></th>
 									    </tr>
 									  </thead>
-									  <?php 
+									  <?php
 
 									  		$rslt = $col_user->find()->sort(array("level"));
 									  		foreach ($rslt as $row) {
@@ -32,15 +32,15 @@
 									  	<td><?php echo $row['nama']; ?></td>
 									  	<td><?php echo $row['phone']; ?></td>
 									  	<td><?php echo $row['email']; ?></td>
-									  	<td><?php 
+									  	<td><?php
 									  			$level_share=$row['level'];
 												$lvl = lev($level_share);
 									  	echo $lvl; ?></td>
 									  	<td><a href="" data-toggle="modal" data-target="#confirmdelete<?php echo $row['id_user']; ?>"><i class="fa fa-trash-o"></i></a></td>
 									  </tbody>
-									      <form method="post">
-									      	<?php 
-									      		if(isset($_POST['delete'.$row['id_user']])){
+									      <form  action="<?php $_SERVER['PHP_SELF'] ?>"  method="post">
+									      	<?php
+									      		if(isset($_POST['deleteuser'])){
 									      			$delete_user = $col_user->remove(array("id_user"=>$row['id_user']));
 									      		}
 									      	?>
@@ -51,15 +51,15 @@
 											        <h4 class="modal-title">Delete User <?php echo $row['id_user'].' '.$row['nama'].' '.$lvl; ?></h4>
 											      </div>
 											      <div class="modal-footer">
-											        <input name="delete<?php echo $row['id_user']; ?>" id="delete<?php echo $row['id_user']; ?>" type="submit" class="btn btn-default" data-dismiss="modal" value="Delete"/>
+											        <input name="deleteuser" id="deleteuser" type="submit" class="btn btn-default" data-dismiss="modal" value="Delete"/>
 											        <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Cancel</button>
 											      </div>
 											    </div>
 											  </div>
 											</div>
-										   </form>	
+										   </form>
 									  <?php } } ?>
-								</table>	  
+								</table>
 		  				    </div>
 		  				 </div>
 		  				 </form>
@@ -67,4 +67,4 @@
 		  	</div>
 		</div>
 	</div>
-</section>		  				    	
+</section>
