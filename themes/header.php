@@ -45,9 +45,9 @@
             <a href="<?php echo $base_url; ?>"><img src="<?php echo $base_url; ?>/img/groovy-logo-white.png"  height="50px"/></a>
         </div>
         <div style="float:right;margin-left:15px;margin-top:14px;">
-            <a href="<?php echo $base_url; ?>/features" class="navMenu" style="color:#fff;">FEATURES</a>
-            <a href="<?php echo $base_url; ?>/packages" class="navMenu" style="color:#fff;">PACKAGES</a>
-            <a href="<?php echo $base_url; ?>/support" class="navMenu" style="color:#fff;">SUPPORT</a>
+            <a href="<?php echo $base_url; ?>/features" class="navMenu" style="color:#000;">FEATURES</a>
+            <a href="<?php echo $base_url; ?>/packages" class="navMenu" style="color:#000;">PACKAGES</a>
+            <a href="<?php echo $base_url; ?>/support" class="navMenu" style="color:#000;">SUPPORT</a>
             <a href="" data-toggle="modal" data-target="#signinModal" class="navMenu navButton">SIGN IN</a>
             <div class="dropdown">
                 <button class="dropdown-toggle navButtonMobile" data-toggle="dropdown"><i class="fa fa-ellipsis-v fa-lg"></i></button>
