@@ -20,7 +20,7 @@ html, body{
             background-color:rgba(0, 0, 0, 0.2);padding:8px 16px 9px 17px;border-radius:40px;margin:-6px -3px 0 0;
         }
         .navButton{
-            border:2px solid #ff6d00;background-color:#ff5722;border-radius:3px;padding:5px 20px 5px 20px;
+            border:2px solid #ff5722;background-color:#ff5722;border-radius:3px;padding:5px 20px 5px 20px;
         }
         .navButton:hover{
             text-decoration:none;
