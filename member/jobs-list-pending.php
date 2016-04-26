@@ -18,6 +18,10 @@
   									$jobs=$_POST['jobs'];
   									$status=$_POST['status'];
 										header('Location:'.$base_url_member.'/report-jobs/'.$jobs.'/'.$status);
+										?>
+											<script type="" language="JavaScript">
+											document.location='<?php echo $base_url_member; ?>/report-jobs/<?php echo $jobs; ?>/<?php echo $status; ?>'</script>
+									<?php
   								}
   							?>
 	  						<div class="col-sm-4">
