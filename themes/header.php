@@ -1,7 +1,7 @@
  <?php if ($_GET['hal']=="signin" || $_GET['hal']=="forgot-password" || $_GET['hal']=="signup"){ ?>
 <body data-spy="scroll" data-target=".supportMenuWrapper" data-offset="50" style="position:relative;background-color:#e0e0e0;">
     <!-- Header -->
-    <div class="container-fluid" style="position:fixed;width:100%;background: linear-gradient(to right, #f00 , #fbc02d);height:50px;box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);-webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    <div class="container-fluid" style="position:fixed;width:100%;background: linear-gradient(to right, #f57f17 , #fbc02d);height:50px;box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);-webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
      -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
     -moz-box-shadow:    0px 2px 5px rgba(0, 0, 0, 0.5);
     box-shadow:         0px 2px 5px rgba(0, 0, 0, 0.5);
@@ -35,7 +35,7 @@
 <?php } else { ?>
 <body>
     <!-- Header -->
-    <div class="container-fluid" style="position:fixed;width:100%;background: linear-gradient(to right, #f9a825 , #fbc02d);height:50px;
+    <div class="container-fluid" style="position:fixed;width:100%;background: linear-gradient(to right, #f57f17 , #fbc02d);height:50px;
     -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
     -moz-box-shadow:    0px 2px 5px rgba(0, 0, 0, 0.5);
     box-shadow:         0px 2px 5px rgba(0, 0, 0, 0.5);
