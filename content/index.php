@@ -5,7 +5,7 @@
                 <h2 style="font-size:27px;line-height:35px;color:#fff;">Bring a Complete Entertainment<br/>To Your Home Now!</h2>
                 <h6 style="font-size:17px;color:#555;font-weight:400;color:#fff;">Combine high speed Internet and TV to get more fast and fun.</h6><br/>
                 <button data-toggle="modal" data-target="#signupModal" class="buttonOrange">Get Started</button>&nbsp;
-                <a href="<?php echo $base_url; ?>/?hal=features" style="background-color:rgba(255, 255, 255, 0);border:2px solid #FF3D23;color:#FF3D23;height:40px;padding:12px 25px 12px 25px;border-radius:3px;font-weight:bold;">Learn More</a>&nbsp;&nbsp;
+                <a href="<?php echo $base_url; ?>/?hal=features" style="background-color:rgba(255, 255, 255, 0);border:2px solid #f9a825;color:#f9a825;height:40px;padding:12px 25px 12px 25px;border-radius:3px;font-weight:bold;">Learn More</a>&nbsp;&nbsp;
             </div>
             <div class="col-sm-6 hidden-xs">
                 <img class="hidden-xs" src="<?php echo $base_url; ?>/img/groovy-multi-device.png" style="width:90%;margin-top:50px;"/>
