@@ -54,7 +54,7 @@ if($level=="501"){
 <nav class="navbar navbar-primary">
 <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
+    <div class="navbar-header navbar-right">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar" style="background-color:#FF3D23;"></span>
