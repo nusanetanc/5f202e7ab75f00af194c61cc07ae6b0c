@@ -12,7 +12,7 @@ $res = $col_user->find(array("id_user"=>$id_cust, "level"=>"0"));
 				$bln_akhir = substr($tanggal_akhir, 5,2);
 				$tgl_akhir = substr($tanggal_akhir, 8,10);
 				$month_akhir = bulan($bln_akhir);
-												$registrasi_cust = $row['registrasi'];
+												$regis_cust = $row['registrasi'];
 												$sales =$row['sales'];
 												$nama_cust = $row['nama'];
 												$email_cust = $row['email'];
