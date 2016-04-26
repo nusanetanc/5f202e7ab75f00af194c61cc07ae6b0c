@@ -109,7 +109,7 @@
         <!-- /Modal Sign In-->
         <div class="modal fade" id="signinModal" role="dialog" data-toggle="modal" data-backdrop="static" data-keyboard="false">
             <div class="modal-dialog">
-                <div class="modal-content" style="background: linear-gradient(to right, #f9a825 , #fbc02d);">
+                <div class="modal-content" style="background: linear-gradient(to right, #f00 , #fbc02d);">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title" style="color:#000;text-align:center;padding:8px 0 5px 0"><b>WELCOME!</b> SIGN IN</h4><br/>
