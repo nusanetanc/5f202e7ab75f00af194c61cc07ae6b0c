@@ -18,11 +18,10 @@
 					      </select>
 						</li>
 						<li class="list-group-item" style="border:2;">
-							Life time<br/>
-							Rp. 65.000,-<br/> <br/>
-							- Fox Sports 1<br/>
-							- Fox Sports 2<br/>
-							- Fox Sports 3<br/>
+							<p><strong>Life Time</strong></p>
+							<p class="text-primary">Rp. 65.000,-</p>
+							<p>- Fox Sports 1</p>
+							<p>- Fox Sports 1</p>
 						</li>
 						<br/>
 						<input type="submit" class="btn btn-warning" name="upgrade" id="upgrade" value="Konfirmasi">
