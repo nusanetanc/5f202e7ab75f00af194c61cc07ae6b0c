@@ -26,15 +26,13 @@ if (isset($_GET['hal'])){
 			       					$page=$row['page'];
 			}
 	if (empty($file) && empty($page)) {
-				header("location:".$base_url_member."/303");
+						include('../member/not-found.php');
 	} else {
 
 			if($hal<>"editprofile"){
 										include('../member/sidebar.php');
 						}
-if(!file_exists('../member/'.$hal.'.php')){
-	header("location:".$base_url_member."/303");
-}
+
 					include('../member/'.$hal.'.php');
 			}
 				}
