@@ -8,7 +8,6 @@ RewriteRule ^support$ ?hal=support
 RewriteRule ^features$ ?hal=features
 RewriteRule ^signin$ ?hal=signin
 RewriteRule ^signup$ ?hal=signup
-RewriteRule ^404$ ?hal=not-found
 RewriteRule ^forgot-password$ ?hal=forgote-password
 RewriteRule ^contact-us$ ?hal=contact
 RewriteRule ^career$ ?hal=career
@@ -16,5 +15,4 @@ RewriteRule ^events$ ?hal=events
 RewriteRule ^privacy-policy$ ?hal=privacy-policy
 RewriteRule ^about$ ?hal=about
 RewriteRule ^303$ ?hal=not-found
-RewriteRule ^([0-9A-Za-z]+)/? ?hal=$1
 </IfModule>
