@@ -14,7 +14,7 @@ if (!isset($_SESSION["id"])) {
 		$hal = "index";
 	}
 	if(!file_exists('../member/'.$hal.'.php')){
-		header("location:".$base_url."/303");
+		$hal="303";
 	}
 
 			include('con/koneksi.php');
