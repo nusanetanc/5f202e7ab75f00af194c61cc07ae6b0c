@@ -7,75 +7,149 @@
                     <p style="font-size:17px;color:#000;font-weight:300;text-align:center;">Paket yang mengkombinasikan antara layanan internet berkecepatan tinggi, dengan layanan TV yang memiliki kualitas gambar High Definition (HD TV) terlengkap di Indonesia dengan harga sangat terjangkau.</p>
                     <p class="text-center"><a href="<?php echo $base_url; ?>/?hal=features" style="color:#000;text-decoration:underline;font-size:16px;font-weight:300;">Pelajari fitur lebih lanjut</a></p>
                 </div>
-                <div class="col-sm-4">
-                    <div class="text-center" style="background-color:#FF3D23;color:#fff;padding:45px 0 45px 0;border-radius:10px;margin-bottom:20px;">
-                        <h5 style="font-size:26px;font-weight:200;">Silver</h5>
-                        <span style="font-size:45px;font-weight:600">499</span><br/>
-                        <span style="font-size:35px;line-height:20px;font-weight:200">RIBU</span><br/><br/>
-                        <p style="font-size:13px;">10/20 Mbps + Elementrary Tv Package</p><br/>
-                        <button style="background-image:url(<?php echo $base_url; ?>/img/silver-button.png);background-size:cover;border:0px;border-radius:5px;padding:10px 0px 10px 0px;font-weight:500;color:#000;" data-toggle="modal" data-target="#signupModal" data-dismiss="modal"><span class="buttonPackage">SUBSCRIBE</span></button>
-                    </div>
-                    <div style="padding-left:5px;">
-                        <h4 style="font-size:28px;font-weight:bold;color:#FF3D23;">Silver</h4>
-                        <!--<h6 style="color:#FF3D23;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
-                        <div style="border-top:1px solid #FF3D23;padding:20px 0 0 0;margin-top:20px;">
-                            <ul class="packageList">
-                                <li>Internet up to 20 Mbps</li>
-                                <li>94 + Local & International Channel with 24 HD Channel Quality.</li>
-                                <li>Social TV</li>
-                                <li>Video on Demand</li>
-                                <li>Catch-up TV Channel</li>
-                                <li>Radio Streaming</li>
-                                <li>24/7 Live Support</li>
-                            </ul>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="text-center" style="background-color:#FF3D23;color:#fff;padding:45px 0 45px 0;border-radius:10px;margin-bottom:20px;">
+                            <h5 style="font-size:26px;font-weight:200;">Silver</h5>
+                            <span style="font-size:45px;font-weight:600">499</span><br/>
+                            <span style="font-size:35px;line-height:20px;font-weight:200">RIBU</span><br/><br/>
+                            <p style="font-size:13px;">10/20 Mbps + Elementrary Tv Package</p><br/>
+                            <button style="background-image:url(<?php echo $base_url; ?>/img/silver-button.png);background-size:cover;border:0px;border-radius:5px;padding:10px 0px 10px 0px;font-weight:500;color:#000;" data-toggle="modal" data-target="#signupModal" data-dismiss="modal"><span class="buttonPackage">SUBSCRIBE</span></button>
+                        </div>
+                        <div style="padding-left:5px;">
+                            <h4 style="font-size:28px;font-weight:bold;color:#FF3D23;">Silver</h4>
+                            <!--<h6 style="color:#FF3D23;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
+                            <div style="border-top:1px solid #FF3D23;padding:20px 0 0 0;margin-top:20px;">
+                                <ul class="packageList">
+                                    <li>Internet up to 20 Mbps</li>
+                                    <li>94 + Local & International Channel with 24 HD Channel Quality.</li>
+                                    <li>Social TV</li>
+                                    <li>Video on Demand</li>
+                                    <li>Catch-up TV Channel</li>
+                                    <li>Radio Streaming</li>
+                                    <li>24/7 Live Support</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="text-center" style="background-color:#ff6520;color:#fff;padding:45px 0 45px 0;border-radius:10px;margin-bottom:20px;">
-                        <h5 style="font-size:26px;font-weight:200;">Gold</h5>
-                        <span style="font-size:45px;font-weight:600">800</span><br/>
-                        <span style="font-size:35px;line-height:20px;font-weight:200">RIBU</span><br/><br/>
-                        <p style="font-size:13px;">30/50 Mbps + Basic Tv Package</p><br/>
-                        <button style="background-image:url(<?php echo $base_url; ?>/img/gold-button.png);background-size:cover;border:0px;border-radius:5px;padding:10px 0 10px 0;font-weight:500;color:#000;" data-toggle="modal" data-target="#signupModal" data-dismiss="modal"><span class="buttonPackage">SUBSCRIBE</span></button>
-                    </div>
-                    <div style="padding-left:5px;">
-                        <h4 style="font-size:28px;font-weight:bold;color:#ff6520;">Gold</h4>
-                        <!--<h6 style="color:#ff6520;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
-                        <div style="border-top:1px solid #ff6520;padding:20px 0 0 0;margin-top:20px;">
-                            <ul class="packageList">
-                                <li>Internet up to 50 Mbps</li>
-                                <li>94 + Local & International Channel with 24 HD Channel Quality.</li>
-                                <li>Social TV</li>
-                                <li>Video on Demand</li>
-                                <li>Catch-up TV Channel</li>
-                                <li>Radio Streaming</li>
-                                <li>24/7 Live Support</li>
-                            </ul>
+                    <div class="col-sm-2">
+                        <div class="text-center" style="background-color:#ff6520;color:#fff;padding:45px 0 45px 0;border-radius:10px;margin-bottom:20px;">
+                            <h5 style="font-size:26px;font-weight:200;">Gold</h5>
+                            <span style="font-size:45px;font-weight:600">800</span><br/>
+                            <span style="font-size:35px;line-height:20px;font-weight:200">RIBU</span><br/><br/>
+                            <p style="font-size:13px;">30/50 Mbps + Basic Tv Package</p><br/>
+                            <button style="background-image:url(<?php echo $base_url; ?>/img/gold-button.png);background-size:cover;border:0px;border-radius:5px;padding:10px 0 10px 0;font-weight:500;color:#000;" data-toggle="modal" data-target="#signupModal" data-dismiss="modal"><span class="buttonPackage">SUBSCRIBE</span></button>
+                        </div>
+                        <div style="padding-left:5px;">
+                            <h4 style="font-size:28px;font-weight:bold;color:#ff6520;">Gold</h4>
+                            <!--<h6 style="color:#ff6520;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
+                            <div style="border-top:1px solid #ff6520;padding:20px 0 0 0;margin-top:20px;">
+                                <ul class="packageList">
+                                    <li>Internet up to 50 Mbps</li>
+                                    <li>94 + Local & International Channel with 24 HD Channel Quality.</li>
+                                    <li>Social TV</li>
+                                    <li>Video on Demand</li>
+                                    <li>Catch-up TV Channel</li>
+                                    <li>Radio Streaming</li>
+                                    <li>24/7 Live Support</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="text-center" style="background-color:#FF931E;color:#fff;padding:45px 0 45px 0;border-radius:10px;margin-bottom:20px;">
-                        <h5 style="font-size:26px;font-weight:200;">Platinum</h5>
-                        <span style="font-size:45px;font-weight:600">945</span><br/>
-                        <span style="font-size:35px;line-height:20px;font-weight:200">RIBU</span><br/><br/>
-                        <p style="font-size:13px;">100 Mbps + Basic Plus SVOD Tv Package</p><br/>
-                        <button style="background-image:url(<?php echo $base_url; ?>/img/platinum-button.png);background-size:cover;border:0px;border-radius:5px;padding:10px 0 10px 0;font-weight:500;color:#000;" data-toggle="modal" data-target="#signupModal" data-dismiss="modal"><span class="buttonPackage">SUBSCRIBE</span></button>
+                    <div class="col-sm-2">
+                        <div class="text-center" style="background-color:#FF931E;color:#fff;padding:45px 0 45px 0;border-radius:10px;margin-bottom:20px;">
+                            <h5 style="font-size:26px;font-weight:200;">Platinum</h5>
+                            <span style="font-size:45px;font-weight:600">945</span><br/>
+                            <span style="font-size:35px;line-height:20px;font-weight:200">RIBU</span><br/><br/>
+                            <p style="font-size:13px;">100 Mbps + Basic Plus SVOD Tv Package</p><br/>
+                            <button style="background-image:url(<?php echo $base_url; ?>/img/platinum-button.png);background-size:cover;border:0px;border-radius:5px;padding:10px 0 10px 0;font-weight:500;color:#000;" data-toggle="modal" data-target="#signupModal" data-dismiss="modal"><span class="buttonPackage">SUBSCRIBE</span></button>
+                        </div>
+                        <div style="padding-left:5px;">
+                            <h4 style="font-size:28px;font-weight:bold;color:#FF931E;">Platinum</h4>
+                            <!--<h6 style="color:#FF931E;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
+                            <div style="border-top:1px solid #FF931E;padding:20px 0 0 0;margin-top:20px;">
+                                <ul class="packageList">
+                                    <li>Internet up to 100 Mbps</li>
+                                    <li>94 + Local & International Channel with 24 HD Channel Quality.</li>
+                                    <li>Social TV</li>
+                                    <li>Video on Demand</li>
+                                    <li>Catch-up TV Channel</li>
+                                    <li>Radio Streaming</li>
+                                    <li>24/7 Live Support</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div style="padding-left:5px;">
-                        <h4 style="font-size:28px;font-weight:bold;color:#FF931E;">Platinum</h4>
-                        <!--<h6 style="color:#FF931E;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
-                        <div style="border-top:1px solid #FF931E;padding:20px 0 0 0;margin-top:20px;">
-                            <ul class="packageList">
-                                <li>Internet up to 100 Mbps</li>
-                                <li>94 + Local & International Channel with 24 HD Channel Quality.</li>
-                                <li>Social TV</li>
-                                <li>Video on Demand</li>
-                                <li>Catch-up TV Channel</li>
-                                <li>Radio Streaming</li>
-                                <li>24/7 Live Support</li>
-                            </ul>
+                    <div class="col-sm-2">
+                        <div class="text-center" style="background-color:#FF931E;color:#fff;padding:45px 0 45px 0;border-radius:10px;margin-bottom:20px;">
+                            <h5 style="font-size:26px;font-weight:200;">Platinum</h5>
+                            <span style="font-size:45px;font-weight:600">945</span><br/>
+                            <span style="font-size:35px;line-height:20px;font-weight:200">RIBU</span><br/><br/>
+                            <p style="font-size:13px;">100 Mbps + Basic Plus SVOD Tv Package</p><br/>
+                            <button style="background-image:url(<?php echo $base_url; ?>/img/platinum-button.png);background-size:cover;border:0px;border-radius:5px;padding:10px 0 10px 0;font-weight:500;color:#000;" data-toggle="modal" data-target="#signupModal" data-dismiss="modal"><span class="buttonPackage">SUBSCRIBE</span></button>
+                        </div>
+                        <div style="padding-left:5px;">
+                            <h4 style="font-size:28px;font-weight:bold;color:#FF931E;">Platinum</h4>
+                            <!--<h6 style="color:#FF931E;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
+                            <div style="border-top:1px solid #FF931E;padding:20px 0 0 0;margin-top:20px;">
+                                <ul class="packageList">
+                                    <li>Internet up to 100 Mbps</li>
+                                    <li>94 + Local & International Channel with 24 HD Channel Quality.</li>
+                                    <li>Social TV</li>
+                                    <li>Video on Demand</li>
+                                    <li>Catch-up TV Channel</li>
+                                    <li>Radio Streaming</li>
+                                    <li>24/7 Live Support</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="text-center" style="background-color:#FF931E;color:#fff;padding:45px 0 45px 0;border-radius:10px;margin-bottom:20px;">
+                            <h5 style="font-size:26px;font-weight:200;">Platinum</h5>
+                            <span style="font-size:45px;font-weight:600">945</span><br/>
+                            <span style="font-size:35px;line-height:20px;font-weight:200">RIBU</span><br/><br/>
+                            <p style="font-size:13px;">100 Mbps + Basic Plus SVOD Tv Package</p><br/>
+                            <button style="background-image:url(<?php echo $base_url; ?>/img/platinum-button.png);background-size:cover;border:0px;border-radius:5px;padding:10px 0 10px 0;font-weight:500;color:#000;" data-toggle="modal" data-target="#signupModal" data-dismiss="modal"><span class="buttonPackage">SUBSCRIBE</span></button>
+                        </div>
+                        <div style="padding-left:5px;">
+                            <h4 style="font-size:28px;font-weight:bold;color:#FF931E;">Platinum</h4>
+                            <!--<h6 style="color:#FF931E;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
+                            <div style="border-top:1px solid #FF931E;padding:20px 0 0 0;margin-top:20px;">
+                                <ul class="packageList">
+                                    <li>Internet up to 100 Mbps</li>
+                                    <li>94 + Local & International Channel with 24 HD Channel Quality.</li>
+                                    <li>Social TV</li>
+                                    <li>Video on Demand</li>
+                                    <li>Catch-up TV Channel</li>
+                                    <li>Radio Streaming</li>
+                                    <li>24/7 Live Support</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="text-center" style="background-color:#FF931E;color:#fff;padding:45px 0 45px 0;border-radius:10px;margin-bottom:20px;">
+                            <h5 style="font-size:26px;font-weight:200;">Platinum</h5>
+                            <span style="font-size:45px;font-weight:600">945</span><br/>
+                            <span style="font-size:35px;line-height:20px;font-weight:200">RIBU</span><br/><br/>
+                            <p style="font-size:13px;">100 Mbps + Basic Plus SVOD Tv Package</p><br/>
+                            <button style="background-image:url(<?php echo $base_url; ?>/img/platinum-button.png);background-size:cover;border:0px;border-radius:5px;padding:10px 0 10px 0;font-weight:500;color:#000;" data-toggle="modal" data-target="#signupModal" data-dismiss="modal"><span class="buttonPackage">SUBSCRIBE</span></button>
+                        </div>
+                        <div style="padding-left:5px;">
+                            <h4 style="font-size:28px;font-weight:bold;color:#FF931E;">Platinum</h4>
+                            <!--<h6 style="color:#FF931E;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
+                            <div style="border-top:1px solid #FF931E;padding:20px 0 0 0;margin-top:20px;">
+                                <ul class="packageList">
+                                    <li>Internet up to 100 Mbps</li>
+                                    <li>94 + Local & International Channel with 24 HD Channel Quality.</li>
+                                    <li>Social TV</li>
+                                    <li>Video on Demand</li>
+                                    <li>Catch-up TV Channel</li>
+                                    <li>Radio Streaming</li>
+                                    <li>24/7 Live Support</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
