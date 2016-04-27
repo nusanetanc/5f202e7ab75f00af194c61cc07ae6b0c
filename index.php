@@ -1,11 +1,11 @@
 <?php
 	$base_url="http://groovy.id/beta";
-	$base_url_member="http://groovy.id/beta/member"; 
+	$base_url_member="http://groovy.id/beta/member";
 /*	$base_url="http://localhost/groovy";
 	$base_url_member="http://localhost/groovy/member"; */
 session_start();
-if (!isset($_SESSION["id"])) { 
-	if (isset($_GET['hal'])){	
+if (!isset($_SESSION["id"])) {
+	if (isset($_GET['hal'])){
 		$hal=$_GET['hal'];
 	} else if (isset($_GET['a'])) {
 		$user = $_GET['a'];
@@ -13,17 +13,17 @@ if (!isset($_SESSION["id"])) {
 	} else {
 		$hal = "index";
 	}
+	if(!file_exists('../member/'.$hal.'.php')){
+		header("location:".$base_url."/303");
+	}
 
 			include('con/koneksi.php');
 			include('con/function.php');
-			include('themes/srclink.php');		
+			include('themes/srclink.php');
 			include('themes/header.php');
 			include('content/'.$hal.'.php');
-			if (empty($hal)){
-				include('content/not-found.php');
-			}
-			include('themes/footer.php');	
-} else {			
+			include('themes/footer.php');
+} else {
 ?>
 	<script type="" language="JavaScript">
 	document.location='./member/'</script>

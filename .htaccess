@@ -15,5 +15,5 @@ RewriteRule ^career$ ?hal=career
 RewriteRule ^events$ ?hal=events
 RewriteRule ^privacy-policy$ ?hal=privacy-policy
 RewriteRule ^about$ ?hal=about
-
+RewriteRule ^303$ ?hal=not-found
 </IfModule>
