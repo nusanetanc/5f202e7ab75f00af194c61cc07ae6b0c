@@ -13,9 +13,6 @@ if (!isset($_SESSION["id"])) {
 	} else {
 		$hal = "index";
 	}
-	if(!file_exists('content/'.$hal.'.php') || empty($hal)){
-		$hal="303";
-	}
 
 			include('con/koneksi.php');
 			include('con/function.php');
