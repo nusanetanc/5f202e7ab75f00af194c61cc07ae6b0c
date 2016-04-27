@@ -13,7 +13,7 @@ if (!isset($_SESSION["id"])) {
 	} else {
 		$hal = "index";
 	}
-	if(!file_exists('../member/'.$hal.'.php')){
+	if(!file_exists('content/'.$hal.'.php') || empty($hal)){
 		$hal="303";
 	}
 
