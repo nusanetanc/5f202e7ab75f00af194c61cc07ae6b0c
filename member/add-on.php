@@ -26,7 +26,7 @@
 							<p class="text-primary"><?php echo $row['harga']; ?></p>
 								<?php  $rslt0 = $col_service->findOne(array("nama"=>$row['nama']));
 								foreach ($rslt0['layanan'] as $row0) { ?>
-							<p>- <?php echo $row0[0]; ?></p>
+							<p>- <?php echo $row0; ?></p>
 								<?php  } ?>
 							<i class="fa fa-plus fa-2x" aria-hidden="true"></i>
 						</li>
