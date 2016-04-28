@@ -52,7 +52,7 @@
 	  $(document).ready(function() {
     $("#select_addon").change(function(){
 			var addon =  $("#select_addon").val();
-			alert(addon);
+			window.location.href = "<?php echo $base_url_member; ?>/add-on/" + addon;
 	})
 		});
 </script>
