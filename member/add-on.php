@@ -28,7 +28,7 @@
 								foreach ($rslt0['layanan'] as $row0) { ?>
 							<p>- <?php echo $row0; ?></p>
 								<?php  } ?>
-							<i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+							<i class="fa fa-plus fa-lg" aria-hidden="true"></i>
 						</li>
 						<?php } ?>
 						<br/>
