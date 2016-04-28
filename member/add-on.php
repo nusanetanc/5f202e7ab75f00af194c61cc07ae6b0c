@@ -53,7 +53,6 @@
 	  $(document).ready(function() {
     $("#select_addon").change(function(){
 			var addon =  $("#select_addon").val();
-			<?php $addon= ?>addon;
 	})
 		});
 </script>
