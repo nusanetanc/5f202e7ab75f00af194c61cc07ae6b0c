@@ -5,7 +5,6 @@
   				<div class="panel-heading" style="background-color:#FC9822">
     				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">Add On Service</h3>
   				</div>
-					<form name="form_addon" id="form_addon" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
   				<div class="panel-body">
   					<br/>
   					<div class="col-sm-12">
@@ -19,7 +18,7 @@
 					      </select>
 						</li>
 						<?php
-						$addon=$_POST['addon'];
+						$addon=$_POST['add_on'];
 						$rslt = $col_service->find(array("group"=>$addon))->sort(array("nama"));
 						foreach ($rslt as $row) {
 						?>
@@ -36,7 +35,6 @@
 						<br/>
 					</div>
  				</div>
-			</form>
 			</div>
 			<div class="panel" style="border:0px;" >
   				<div class="panel-heading" style="background-color:#FC9822">
@@ -55,7 +53,7 @@
 	  $(document).ready(function() {
     $("#select_addon").change(function(){
 			var addon =  $("#select_addon").val();
-			document.form_addon.addon.value = addon;
+			<?php $addon= ?>addon;
 	})
 		});
 </script>
