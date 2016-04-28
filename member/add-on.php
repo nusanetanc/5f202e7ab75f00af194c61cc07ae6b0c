@@ -10,7 +10,7 @@
   					<div class="col-sm-12">
 						<li class="list-group-item">
 						  	Add On :
-						  	<select class="form-control" id="upgrade_paket" name="upgrade_paket">
+						  	<select class="form-control" id="select_addon" name="select_addon">
 						  			<option disabled="true" selected="true">Selected Service</option>
 					          <option>TV Chanel</option>
 										<option>Video on Demand</option>
@@ -18,7 +18,7 @@
 					      </select>
 						</li>
 						<?php
-						$rslt = $col_service->find()->sort(array("nama"));
+						$rslt = $col_service->find(array("group"=>$group))->sort(array("nama"));
 						foreach ($rslt as $row) {
 						?>
 						<li class="list-group-item" style="border:2;">
@@ -48,3 +48,11 @@
 		</div>
 	</div>
 </section>
+<script type="text/javascript">
+	  $(document).ready(function() {
+    $("#select_addon").change(function(){
+			var addon =  $("#select_addon").val();	
+	});
+		});
+		    $('.timer').countTo();
+</script>
