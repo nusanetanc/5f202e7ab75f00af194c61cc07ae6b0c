@@ -52,7 +52,7 @@
 	  $(document).ready(function() {
     $("#select_addon").change(function(){
 			var addon =  $("#select_addon").val();
-	});
+			$("#select_addon").hide();
+	})
 		});
-		    $('.timer').countTo();
 </script>
