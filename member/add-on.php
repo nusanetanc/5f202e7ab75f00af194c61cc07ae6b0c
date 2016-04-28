@@ -18,7 +18,7 @@
 					      </select>
 						</li>
 						<?php
-						$rslt = $col_service->find(array("group"=>$group))->sort(array("nama"));
+						$rslt = $col_service->find(array("group"=>$addon))->sort(array("nama"));
 						foreach ($rslt as $row) {
 						?>
 						<li class="list-group-item" style="border:2;">
@@ -51,7 +51,7 @@
 <script type="text/javascript">
 	  $(document).ready(function() {
     $("#select_addon").change(function(){
-			var addon =  $("#select_addon").val();	
+			var addon =  $("#select_addon").val();
 	});
 		});
 		    $('.timer').countTo();
