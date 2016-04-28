@@ -22,7 +22,14 @@
 							<p class="text-primary">Rp. 65.000,-</p>
 							<p>- Fox Sports 1</p>
 							<p>- Fox Sports 1</p>
-							<i class="fa fa-plus" aria-hidden="true"></i>
+							<i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+						</li>
+						<li class="list-group-item" style="border:2;">
+							<p><strong>Life Time</strong></p>
+							<p class="text-primary">Rp. 65.000,-</p>
+							<p>- Fox Sports 1</p>
+							<p>- Fox Sports 1</p>
+							<i class="fa fa-plus fa-2x" aria-hidden="true"></i>
 						</li>
 						<br/>
 					</div>
