@@ -22,7 +22,7 @@
 							<p class="text-primary">Rp. 65.000,-</p>
 							<p>- Fox Sports 1</p>
 							<p>- Fox Sports 1</p>
-							<input type="submit" class="btn btn-warning btn-xs" name="upgrade" id="upgrade" value="Konfirmasi">
+							<i class="fa fa-plus" aria-hidden="true"></i>
 						</li>
 						<br/>
 					</div>
