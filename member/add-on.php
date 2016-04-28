@@ -17,6 +17,10 @@
 										<option>Cinema Box HD</option>
 					      </select>
 						</li>
+						<?php
+						$rslt = $col_package->find()->sort(array("nama"));
+						foreach ($rslt as $row) {
+						?>
 						<li class="list-group-item" style="border:2;">
 							<p><strong>Life Time</strong></p>
 							<p class="text-primary">Rp. 65.000,-</p>
@@ -24,13 +28,7 @@
 							<p>- Fox Sports 1</p>
 							<i class="fa fa-plus fa-2x" aria-hidden="true"></i>
 						</li>
-						<li class="list-group-item" style="border:2;">
-							<p><strong>Life Time</strong></p>
-							<p class="text-primary">Rp. 65.000,-</p>
-							<p>- Fox Sports 1</p>
-							<p>- Fox Sports 1</p>
-							<i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-						</li>
+						<?php } ?>
 						<br/>
 					</div>
  				</div>
