@@ -18,7 +18,6 @@
 					      </select>
 						</li>
 						<?php
-						$addon=$_POST['add_on'];
 						$rslt = $col_service->find(array("group"=>$addon))->sort(array("nama"));
 						foreach ($rslt as $row) {
 						?>
@@ -53,6 +52,7 @@
 	  $(document).ready(function() {
     $("#select_addon").change(function(){
 			var addon =  $("#select_addon").val();
+			alert(addon);
 	})
 		});
 </script>
