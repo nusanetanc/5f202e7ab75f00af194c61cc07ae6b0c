@@ -39,13 +39,11 @@
 								foreach ($rslt0['layanan'] as $row0) { ?>
 							<p>- <?php echo $row0; ?></p>
 								<?php  } ?>
-								<p><input type="checkbox" name="select_service" id="select_service" value="<?php echo $row['_id']; ?>"> Select</p>
+								<p><input type="checkbox" name="select_service" id="select_service" value="<?php echo $row['_id']; ?>"></p>
+								<p><input type="submit" name="add" id="add" value="Submit" class="btn btn-primary btn-xs"></p>
 						</li>
 						<?php } ?>
 						<br/>
-						<li class="list-group-item" style="border:2;">
-							<input type="submit" name="add" id="add" value="Submit" class="btn btn-primary btn-xs">
-						</li>
 					</div>
  				</div>
 			</div>
@@ -63,16 +61,3 @@
 	</div>
 </form>
 </section>
-<script type="" language="JavaScript">
-$(document).ready(function(){
-$("#add").hide();
-$("#select_service").change(function(){
-		var service =  $("#select_service").val();
-				if(service==""){
-					$("#add").hide();
-				} else {
-					$("#add").show();
-				}
-	})
-});
-</script>
