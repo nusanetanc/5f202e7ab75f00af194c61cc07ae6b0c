@@ -5,6 +5,7 @@
 				if(isset($_POST['search_addon'])){
 					$addon=$_POST['select_addon'];
 				}
+
 		?>
 	<div class="col-sm-9" style="font-family:Arial;">
 		<div class="list-group">
@@ -16,7 +17,6 @@
   					<br/>
   					<div class="col-sm-12">
 						<li class="list-group-item">
-						  	Add On :
 						  	<select class="form-control" id="select_addon" name="select_addon">
 						  			<option disabled="true" selected="true">Selected Service</option>
 										<?php
@@ -39,16 +39,16 @@
 								foreach ($rslt0['layanan'] as $row0) { ?>
 							<p>- <?php echo $row0; ?></p>
 								<?php  } ?>
-							<a href="#" data-toggle="modal" data-target="#addon"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></a>
-							<div class="modal" name="addon" id="addon">
+							<a href="#" data-toggle="modal" data-target="#addon<?php echo $row['nama']; ?>"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></a>
+							<div class="modal" name="addon<?php echo $row['nama']; ?>" id="addon<?php echo $row['nama']; ?>">
 							  <div class="modal-dialog">
 							    <div class="modal-content">
 							      <div class="modal-header">
 							        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-							        <h4 class="modal-title">Add On <?php echo $row['nama']; ?></h4>
+							        <h4 class="modal-title"><?php echo $row['nama']; ?></h4>
 							      </div>
 							      <div class="modal-footer">
-							        <button type="button" class="btn btn-default">Save changes</button>
+							        <input type="submit" name="add" id="add" class="btn btn-default" value="Add On">
 							      </div>
 							    </div>
 							  </div>
