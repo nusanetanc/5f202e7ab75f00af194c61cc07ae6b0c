@@ -39,8 +39,8 @@
 								foreach ($rslt0['layanan'] as $row0) { ?>
 							<p>- <?php echo $row0; ?></p>
 								<?php  } ?>
-								<p><input type="checkbox" name="select_service" id="select_service" value="<?php echo $row['_id']; ?>"></p>
-								<p><input type="submit" name="add" id="add" value="Submit" class="btn btn-primary btn-xs"></p>
+								<p><input type="checkbox" name="select_service" id="select_service" value="<?php echo $row['_id']; ?>">
+								<input type="submit" name="add" id="add" value="ADD" class="btn btn-primary btn-xs"></p>
 						</li>
 						<?php } ?>
 						<br/>
