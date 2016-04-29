@@ -5,6 +5,10 @@
 				if(isset($_POST['search_addon'])){
 					$addon=$_POST['select_addon'];
 				}
+				if(isset($_POST['add'])){
+					$addon=$_POST['addon'];
+					echo $addon;
+				}
 
 		?>
 	<div class="col-sm-9" style="font-family:Arial;">
@@ -42,7 +46,7 @@
 						<?php } $count_result = $rslt->count();
 						if ($count_result<>"0") { ?>
 						<li class="list-group-item" style="border:2;">
-							<select class="form-control" id="select_addon" name="select_addon">
+							<select class="form-control" id="addon" name="addon">
 									<?php
 									$rslt0 = $col_service->find(array("group"=>$addon))->sort(array("nama"));
 									foreach ($rslt0 as $row0) {
