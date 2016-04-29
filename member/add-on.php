@@ -39,7 +39,7 @@
 								foreach ($rslt0['layanan'] as $row0) { ?>
 							<p>- <?php echo $row0; ?></p>
 								<?php  } ?>
-								<p><input type="checkbox" value="<?php echo $row['nama']; ?>"> Select</p>
+								<p><input type="checkbox" name="select_service" id="select_service" value="<?php echo $row['_id']; ?>"> Select</p>
 						</li>
 						<?php } ?>
 						<br/>
@@ -63,3 +63,8 @@
 	</div>
 </form>
 </section>
+<script type="" language="JavaScript">
+$(document).ready(function(){
+$("#add").hide(); 
+});
+</script>
