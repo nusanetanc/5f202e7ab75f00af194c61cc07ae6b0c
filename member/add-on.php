@@ -18,7 +18,6 @@
   					<div class="col-sm-12">
 						<li class="list-group-item">
 						  	<select class="form-control" id="select_addon" name="select_addon">
-						  			<option disabled="true" selected="true">Selected Service</option>
 										<?php
 										$rslt0 = $col_service->find(array("paket"=>$paket))->sort(array("nama_group"));
 										foreach ($rslt0 as $row0) {
@@ -40,18 +39,20 @@
 							<p>- <?php echo $row0; ?></p>
 								<?php  } ?>
 						</li>
-						<?php } ?>
+						<?php } $count_result = $rslt->count();
+						if ($count_result<>"0") { ?>
 						<li class="list-group-item" style="border:2;">
 							<select class="form-control" id="select_addon" name="select_addon">
-									<option disabled="true" selected="true">Selected Service</option>
 									<?php
 									$rslt0 = $col_service->find(array("group"=>$addon))->sort(array("nama"));
 									foreach ($rslt0 as $row0) {
 									?>
 									<option><?php echo $row0['nama']; ?></option>
 									<?php } ?>
-							</select>
+							</select><br/>
+							<input type="submit" name="add" id="add" value="Add On" class="btn btn-warning btn-sm">
 						</li>
+						<?php } ?>
 						<br/>
 					</div>
  				</div>
