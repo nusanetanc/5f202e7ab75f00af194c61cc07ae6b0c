@@ -18,9 +18,12 @@
 						  	Add On :
 						  	<select class="form-control" id="select_addon" name="select_addon">
 						  			<option disabled="true" selected="true">Selected Service</option>
-					          <option>TV Chanel</option>
-										<option>Video on Demand</option>
-										<option>Cinema Box HD</option>
+										<?php
+										$rslt0 = $col_service->find(array("paket"=>$paket))->sort(array("nama_group"));
+										foreach ($rslt0 as $row0) {
+										?>
+					          <option><?php echo $row0['nama_group']; ?></option>
+										<?php } ?>
 					      </select><br/>
 								<input type="submit" name="search_addon" id="search_addon" value="Submit" class="btn btn-warning btn-sm">
 						</li>
