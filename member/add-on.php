@@ -1,4 +1,10 @@
 <section>
+	<form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+		<?php
+				if(isset($_POST['search_addon'])){
+					$addon=$_POST['select_addon'];
+				}
+		?>
 	<div class="col-sm-9" style="font-family:Arial;">
 		<div class="list-group">
 			<div class="panel" style="border:0px;" >
@@ -48,4 +54,5 @@
 			</div>
 		</div>
 	</div>
+</form>
 </section>
