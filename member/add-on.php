@@ -39,20 +39,20 @@
 								foreach ($rslt0['layanan'] as $row0) { ?>
 							<p>- <?php echo $row0; ?></p>
 								<?php  } ?>
+								<div class="modal" name="addon<?php echo $row['nama']; ?>" id="addon<?php echo $row['nama']; ?>">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+												<h4 class="modal-title"><?php echo $row['nama']; ?></h4>
+											</div>
+											<div class="modal-footer">
+												<input type="submit" name="add" id="add" class="btn btn-default" value="Add On">
+											</div>
+										</div>
+									</div>
+								</div>
 							<a href="#" data-toggle="modal" data-target="#addon<?php echo $row['nama']; ?>"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></a>
-							<div class="modal" name="addon<?php echo $row['nama']; ?>" id="addon<?php echo $row['nama']; ?>">
-							  <div class="modal-dialog">
-							    <div class="modal-content">
-							      <div class="modal-header">
-							        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-							        <h4 class="modal-title"><?php echo $row['nama']; ?></h4>
-							      </div>
-							      <div class="modal-footer">
-							        <input type="submit" name="add" id="add" class="btn btn-default" value="Add On">
-							      </div>
-							    </div>
-							  </div>
-							</div>
 						</li>
 						<?php } ?>
 						<br/>
