@@ -42,7 +42,7 @@
     z-index:1000;
     ">
         <div class="logoWrapper">
-            <a href="<?php echo $base_url; ?>"><img src="<?php echo $base_url; ?>/img/groovy-logo-white.png"  height="50px"/></a>
+            <a href="<?php echo $base_url; ?>"><img src="<?php echo $base_url; ?>/img/groovy-logo-white-drop-shadow.png"  height="50px"/></a>
         </div>
         <div style="float:right;margin-left:15px;margin-top:14px;">
             <a href="<?php echo $base_url; ?>/features" class="navMenu" style="color:#000;">FEATURES</a>
