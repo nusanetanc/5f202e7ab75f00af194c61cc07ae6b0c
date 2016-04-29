@@ -39,7 +39,7 @@
 								foreach ($rslt0['layanan'] as $row0) { ?>
 							<p>- <?php echo $row0; ?></p>
 								<?php  } ?>
-							<i class="fa fa-plus fa-lg" aria-hidden="true"></i>
+							<a href="#" data-toggle="modal" data-target="#addon"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></a>
 						</li>
 						<?php } ?>
 						<br/>
@@ -59,4 +59,21 @@
 		</div>
 	</div>
 </form>
+<div class="modal" name="addon" id="addon">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">ADD ON</h4>
+      </div>
+      <div class="modal-body">
+        <p><?php echo $service_name; ?></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 </section>
