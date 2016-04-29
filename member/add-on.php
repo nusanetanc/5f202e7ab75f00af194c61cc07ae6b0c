@@ -65,6 +65,9 @@
 </section>
 <script type="" language="JavaScript">
 $(document).ready(function(){
-$("#add").hide(); 
+$("#add").hide();
+$("#select_service").change(function(){
+		$("#add").show();
+	})
 });
 </script>
