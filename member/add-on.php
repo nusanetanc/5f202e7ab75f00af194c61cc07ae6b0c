@@ -41,6 +41,17 @@
 								<?php  } ?>
 						</li>
 						<?php } ?>
+						<li class="list-group-item" style="border:2;">
+							<select class="form-control" id="select_addon" name="select_addon">
+									<option disabled="true" selected="true">Selected Service</option>
+									<?php
+									$rslt0 = $col_service->find(array("group"=>$addon))->sort(array("nama"));
+									foreach ($rslt0 as $row0) {
+									?>
+									<option><?php echo $row0['nama']; ?></option>
+									<?php } ?>
+							</select>
+						</li>
 						<br/>
 					</div>
  				</div>
