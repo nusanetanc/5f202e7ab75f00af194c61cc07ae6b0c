@@ -68,7 +68,9 @@ $(document).ready(function(){
 $("#add").hide();
 $("#select_service").change(function(){
 		var service =  $("#select_service").val();
-				if(service<>""){
+				if(service==""){
+					$("#add").hide();
+				} else {
 					$("#add").show();
 				}
 	})
