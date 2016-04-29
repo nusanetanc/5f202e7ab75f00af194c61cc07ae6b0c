@@ -1,6 +1,7 @@
 <section>
 	<form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 		<?php
+			$addon="";
 				if(isset($_POST['search_addon'])){
 					$addon=$_POST['select_addon'];
 				}
