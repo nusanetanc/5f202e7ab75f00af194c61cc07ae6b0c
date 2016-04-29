@@ -67,7 +67,10 @@
 $(document).ready(function(){
 $("#add").hide();
 $("#select_service").change(function(){
-		$("#add").show();
+		var service =  $("#select_service").val();
+				if(service<>""){
+					$("#add").show();
+				}
 	})
 });
 </script>
