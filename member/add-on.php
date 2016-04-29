@@ -15,7 +15,7 @@
 					          <option>TV Chanel</option>
 										<option>Video on Demand</option>
 										<option>Cinema Box HD</option>
-					      </select>
+					      </select><br/>
 								<input type="submit" name="search_addon" id="search_addon" value="Submit" class="btn btn-warning btn-sm">
 						</li>
 						<?php
@@ -49,11 +49,3 @@
 		</div>
 	</div>
 </section>
-<script type="text/javascript">
-	  $(document).ready(function() {
-    $("#select_addon").change(function(){
-			var addon =  $("#select_addon").val();
-			window.location.href = "<?php echo $base_url_member; ?>/add-on/" + addon;
-	})
-		});
-</script>
