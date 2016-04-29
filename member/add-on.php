@@ -16,7 +16,7 @@
 										<option>Video on Demand</option>
 										<option>Cinema Box HD</option>
 					      </select>
-								<input type="submit" name="search_addon" id="search_addon" value="Submit" class="btn btn-warningit g btn-sm">
+								<input type="submit" name="search_addon" id="search_addon" value="Submit" class="btn btn-warning btn-sm">
 						</li>
 						<?php
 						$rslt = $col_service->find(array("group"=>$addon))->sort(array("nama"));
