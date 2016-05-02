@@ -28,12 +28,7 @@ if ($level=="0"){
 						<p>No Virtual Pembayaran : <strong><?php echo $no_virtual; ?></strong>.</p><br/>
 						<p>Tanggal Mulai Aktif : <strong><?php echo $tgl_aktif.' '.$month_aktif.' '.$thn_aktif; ?></strong>.</p><br/>
 						<p>Tanggal Akhir Pembayaran : <strong><?php echo $tgl_akhir.' '.$month_akhir.' '.$thn_akhir; ?></strong>.</p><br/>
-						</div>
-						<ul class="list-group">
-						  <li class="list-group-item">
-						    Cras justo odio
-						  </li>
-						</ul>
+					</div>
 							<table class="table table-striped table-hover ">
 									 <thead>
 									    <tr>
@@ -51,6 +46,11 @@ if ($level=="0"){
 											<td><?php echo $total_harga.'.000'; ?></td>
 									  </tbody>
 								</table>
+								<ul class="list-group">
+								  <li class="list-group-item">
+								    Cras justo odio
+								  </li>
+								</ul>
 						</fieldset>
 				</div>
 			</div>
