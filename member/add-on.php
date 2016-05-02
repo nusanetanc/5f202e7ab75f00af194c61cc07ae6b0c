@@ -2,6 +2,10 @@
 	<form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 		<?php
 		$date=date("Y/m/d");
+		$date_days=date("d");
+		$date_month=date("m");
+		$date_years=date("Y");
+		$month_date = bulan($date_month);
 			$addon="";
 				if(isset($_POST['search_addon'])){
 					$addon=$_POST['select_addon'];
@@ -41,7 +45,7 @@
 
 		    $email_sup=mail($to, $subject, $message, $headers);
 
-				// mail for customer to update paket
+				// mail for customer to addon
 					$to1 = $email;
 
 					$subject1 = 'Add On Service';
@@ -62,7 +66,7 @@
 												Phone : '.$notelp.'<br/>
 												Tempat : '.$tempat.' '.$keterangan.' '.$alamat.' '.$kota.'<br/>
 												Permitaan penambahan layanan : '.$addon.'<br/>
-												Tanggal permintaan : '.$tgl1.' '.$month1.' '.$thn1.'</p>
+												Tanggal permintaan : '.$date_days.' '.$month_date.' '.$date_years.'</p>
 												<br/>
 												<p>Silahkan untuk melakukan pembayaran agar kami bisa memproses untuk penambahan layanan, info pembayaran terdapat pada billing di halaman member anda.</p>
 												<p>Paket baru akan aktif, setelah masa waktu paket lama habis.</p>
