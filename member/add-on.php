@@ -58,7 +58,7 @@
 												<a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
 										</div>
 										<div style="padding:20px;color:#333;">
-												<p style="font-size:20px;font-weight:bold;line-height:1px">Permintaan Pindah Paket</p>
+												<p style="font-size:20px;font-weight:bold;line-height:1px">Permintaan Penambahan Layanan</p>
 												<p>ID Customer : '.$id.'<br/>
 												Nama : '.$nama.'<br/>
 												Paket Aktif : '.$paket.'<br/>

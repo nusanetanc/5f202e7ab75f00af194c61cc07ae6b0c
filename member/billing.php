@@ -34,11 +34,16 @@ if ($level=="0"){
 									    <tr>
 									      <th width="50%">Deskripsi Pembayaran</th>
 									      <th width="50%">Harga</th>
+												<th width="50%">Prorate/Diskon</th>
+												<th width="50%">Total Pembayaran</th>
 									    </tr>
 									  </thead>
 									  <tbody>
- 										<td>Paket <?php echo $paket; ?></td>
- 										<td><?php echo $harga; ?></td>
+	 										<td><?php echo $paket; ?></td>
+	 										<td><?php echo $harga; ?></td>
+											<td><?php echo $prorate; ?></td>
+											<?php $total_harga = $harga-$proraide; ?>
+											<td><?php echo $total_harga; ?></td>
 									  </tbody>
 								</table>
 						<p>Proraide : <strong><?php echo $prorate; ?></strong>.</p><br/>
