@@ -1,6 +1,7 @@
 <section>
 	<form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 		<?php
+		$date=date("Y/m/d");
 			$addon="";
 				if(isset($_POST['search_addon'])){
 					$addon=$_POST['select_addon'];
@@ -105,9 +106,9 @@
 								$res = $col_user->findOne(array("id_user"=>$id));
 								foreach ($res['addon'] as $rin_addon => $rao) { ?>
 							  <li class="list-group-item">
-									Tanggal : <?php echo $rao['tanggal']; ?>
-									Add On Service : <?php echo $rao['add_on']; ?>
-									Status : <?php echo $rao['status']; ?>
+									Tanggal : <strong><?php echo $rao['tanggal']; ?></strong><br/>
+									Add On Service : <strong><?php echo $rao['add_on']; ?></strong><br/>
+									Status : <strong><?php echo $rao['status']; ?></strong>
 							  </li>
 								<?php } ?>
 							</ul>
