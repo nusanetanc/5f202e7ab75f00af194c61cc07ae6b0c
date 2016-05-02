@@ -40,7 +40,47 @@
 		    $headers .= 'Cc: cs@groovy.id' . "\r\n";
 
 		    $email_sup=mail($to, $subject, $message, $headers);
-				if($pushaddon && $email_sup){ ?>
+
+				// mail for customer to update paket
+					$to1 = $email;
+
+					$subject1 = 'Add On Service';
+
+					$message1 = '
+					<html>
+						<body style="background-color:#ddd;padding:50px 0 50px 0;font-family:arial;font-size:15px;">
+								<div style="margin:0 auto;max-width:500px;background-color:#eee;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
+										<div style="background: linear-gradient(to right, #FF3D23 , #fc742f);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
+												<a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
+										</div>
+										<div style="padding:20px;color:#333;">
+												<p style="font-size:20px;font-weight:bold;line-height:1px">Permintaan Pindah Paket</p>
+												<p>ID Customer : '.$id.'<br/>
+												Nama : '.$nama.'<br/>
+												Paket Aktif : '.$paket.'<br/>
+												Email : '.$email.'<br/>
+												Phone : '.$notelp.'<br/>
+												Tempat : '.$tempat.' '.$keterangan.' '.$alamat.' '.$kota.'<br/>
+												Permitaan penambahan layanan : '.$addon.'<br/>
+												Tanggal permintaan : '.$tgl1.' '.$month1.' '.$thn1.'</p>
+												<br/>
+												<p>Silahkan untuk melakukan pembayaran agar kami bisa memproses untuk penambahan layanan, info pembayaran terdapat pada billing di halaman member anda.</p>
+												<p>Paket baru akan aktif, setelah masa waktu paket lama habis.</p>
+												<br/>
+										</div>
+										</div>
+								</div>
+						</body>
+						</html>
+					';
+					$headers1  = 'MIME-Version: 1.0' . "\r\n";
+					$headers1 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+					$headers1 .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
+					$headers1 .= 'Cc: cs@groovy.id, billing@groovy.id' . "\r\n";
+
+					$kirimemail=mail($to1, $subject1, $message1, $headers1);
+				if($pushaddon && $email_sup && $kirimemail){ ?>
 		<script type="" language="JavaScript">
 		document.location='<?php echo $base_url_member; ?>/add-on'</script>
 			<?php	} } ?>
