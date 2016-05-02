@@ -104,9 +104,13 @@
 							<ul class="list-group">
 								<?php
 								$res = $col_user->findOne(array("id_user"=>$id));
-								foreach ($res['addon'] as $rin_addon => $rao) { ?>
+								foreach ($res['addon'] as $rin_addon => $rao) {
+									$thn1 = substr($rao['tanggal'], 0,4);
+									$bln1 = substr($rao['tanggal'], 5,2);
+									$tgl1 = substr($rao['tanggal'], 8,10);
+									$month1 = bulan($bln1); ?>
 							  <li class="list-group-item">
-									Tanggal : <strong><?php echo $rao['tanggal']; ?></strong><br/>
+									Tanggal : <strong><?php echo $tgl1.' '.$month1.' '.$thn1; ?></strong><br/>
 									Add On Service : <strong><?php echo $rao['add_on']; ?></strong><br/>
 									Status : <strong><?php echo $rao['status']; ?></strong>
 							  </li>
