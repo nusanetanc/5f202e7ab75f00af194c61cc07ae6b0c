@@ -7,10 +7,42 @@
 				}
 				if(isset($_POST['add'])){
 					$addon=$_POST['addon'];
-					echo $addon;
-				}
+					$msg=array(
+								"tanggal"=>$date,
+								"add_on"=>$addon,
+								"status"=>"permintaan"
+							);
+					$pushaddon = $col_user->update(
+													array("id_user"=>$id),
+										   		array('$push'=>array("addon"=>$msg)));
+			  $to="yudi.nurhandi@nusa.net.id";
+		    $subject = 'Request Add On';
 
-		?>
+		    $message = '
+		    <html>
+		    <body>
+		      <p>Customer : '.$id.'/'.$nama.'<br/>
+						 Paket:'.$paket.'<br/>
+		      	 Add On : '.$addon.'<br/>
+		      </p>
+		      <br/>
+		      <br/>
+		      <p>groovy.id</p>
+		    </body>
+		    </html>
+		    ';
+
+		    $headers  = 'MIME-Version: 1.0' . "\r\n";
+		    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+		    $headers .= 'From: '.$email . "\r\n";
+		    $headers .= 'Cc: cs@groovy.id' . "\r\n";
+
+		    $email_sup=mail($to, $subject, $message, $headers);
+				if($pushaddon && $email_sup){ ?>
+		<script type="" language="JavaScript">
+		document.location='<?php echo $base_url_member; ?>/add-on'</script>
+			</php	} } ?>
 	<div class="col-sm-9" style="font-family:Arial;">
 		<div class="list-group">
 			<div class="panel" style="border:0px;" >
@@ -68,7 +100,18 @@
   				<div class="panel-body">
   					<br/>
   					<div class="col-sm-12">
-					</div>
+							<ul class="list-group">
+								<?php
+								$res = $col_user->findOne(array("id_user"=>$id));
+								foreach ($res['addon'] as $rin_addon => $rao) { ?>
+							  <li class="list-group-item">
+									Tanggal : <?php echo $rao['tanggal']; ?>
+									Add On Service : <?php echo $rao['add_on']; ?>
+									Status : <?php echo $rao['status']; ?>
+							  </li>
+								<?php } ?>
+							</ul>
+						</div>
  				</div>
 			</div>
 		</div>
