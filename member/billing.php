@@ -37,7 +37,7 @@ if ($level=="0"){
 									    </tr>
 									  </thead>
 									  <tbody>
-	 										<td><?php echo $paket; ?> / <?php echo $harga; ?> / <?php echo $proraide.'.00'.; ?></td>
+	 										<td><?php echo $paket; ?> / <?php echo $harga; ?> / <?php echo $proraide.'.00'; ?></td>
 											<?php $total_harga = $harga-$proraide; ?>
 											<td><?php echo $total_harga.'.000'; ?></td>
 									  </tbody>
