@@ -32,12 +32,12 @@ if ($level=="0"){
 							<table class="table table-striped table-hover ">
 									 <thead>
 									    <tr>
-									      <th width="50%">Deskripsi Pembayaran</th>
+									      <th width="50%">Deskripsi Pembayaran (Paket / Harga / Proraide)</th>
 												<th width="50%">Total Pembayaran</th>
 									    </tr>
 									  </thead>
 									  <tbody>
-	 										<td>Paket / Harga / Prorate : <?php echo $paket; ?> / <?php echo $harga; ?> / <?php echo $prorate; ?></td>
+	 										<td><?php echo $paket; ?> / <?php echo $harga; ?> / <?php echo $proraide.'.00'.; ?></td>
 											<?php $total_harga = $harga-$proraide; ?>
 											<td><?php echo $total_harga.'.000'; ?></td>
 									  </tbody>
