@@ -38,12 +38,12 @@ if ($level=="0"){
 										<p>Total Pembayaran : <strong><?php echo $total_harga.'.000'; ?></strong></p>
 								  </li>
 									<?php $res = $col_addon->find(array("id_user"=>$id));
-												foreach ($res as $addon) { ?>
+												foreach ($res as $add) { ?>
 									<li class="list-group-item">
-										<h4 class="list-group-item-heading"><strong>#<?php echo $addon; ?></strong></h4>
-										<p>Tanggal Mulai Aktif : <strong><?php echo $tgl_aktif.' '.$month_aktif.' '.$thn_aktif; ?></strong>.</p>
-										<p>Tanggal Akhir Pembayaran : <strong><?php echo $tgl_akhir.' '.$month_akhir.' '.$thn_akhir; ?></strong>.</p>
-										<p>Harga : <strong><?php echo $harga; ?></strong></p>
+										<h4 class="list-group-item-heading"><strong>#<?php echo $add['layanan']; ?></strong></h4>
+										<p>Tanggal Mulai Aktif : <strong><?php echo $tgl_aktif1.' '.$month_aktif1.' '.$thn_aktif1; ?></strong>.</p>
+										<p>Tanggal Akhir Pembayaran : <strong><?php echo $tgl_akhir1.' '.$month_akhir1.' '.$thn_akhir1; ?></strong>.</p>
+										<p>Harga : <strong><?php echo $add['harga']; ?></strong></p>
 										<p>Prorate : <strong><?php echo $proraide.'.00'; ?></strong></p>
 										<?php $total_harga = $harga-$proraide; ?>
 										<p>Total Pembayaran : <strong><?php echo $total_harga.'.000'; ?></strong></p>
