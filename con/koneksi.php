@@ -15,4 +15,5 @@
 	$col_history = $db->history;
 	$col_contactus = $db->contactus;
 	$col_service = $db->service;
+	$col_addon = $db->addon;
 ?>

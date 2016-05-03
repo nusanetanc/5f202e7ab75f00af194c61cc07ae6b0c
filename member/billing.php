@@ -19,7 +19,7 @@ if ($level=="0"){
 		<div class="list-group">
 			<div class="panel" style="border:0px;" >
 				<div class="panel-body" style="background-color:#FF6D20;">
-					<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">BILLING - TAGIHAN PAKET</h3>
+					<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">BILLING - TAGIHAN</h3>
 				</div>
 				<div class="panel-body">
 						<div class="col-sm-12">
@@ -37,6 +37,18 @@ if ($level=="0"){
 										<?php $total_harga = $harga-$proraide; ?>
 										<p>Total Pembayaran : <strong><?php echo $total_harga.'.000'; ?></strong></p>
 								  </li>
+									<?php $res = $col_addon->find(array("id_user"=>$id));
+												foreach ($res as $addon) { ?>
+									<li class="list-group-item">
+										<h4 class="list-group-item-heading"><strong>#<?php echo $addon; ?></strong></h4>
+										<p>Tanggal Mulai Aktif : <strong><?php echo $tgl_aktif.' '.$month_aktif.' '.$thn_aktif; ?></strong>.</p>
+										<p>Tanggal Akhir Pembayaran : <strong><?php echo $tgl_akhir.' '.$month_akhir.' '.$thn_akhir; ?></strong>.</p>
+										<p>Harga : <strong><?php echo $harga; ?></strong></p>
+										<p>Prorate : <strong><?php echo $proraide.'.00'; ?></strong></p>
+										<?php $total_harga = $harga-$proraide; ?>
+										<p>Total Pembayaran : <strong><?php echo $total_harga.'.000'; ?></strong></p>
+									</li>
+								</php } ?>
 								</div>
 						</fieldset>
 					</div>
