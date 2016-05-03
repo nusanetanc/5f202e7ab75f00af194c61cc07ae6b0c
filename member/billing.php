@@ -40,7 +40,7 @@ if ($level=="0"){
 									<?php $res = $col_addon->find(array("id_user"=>$id));
 												foreach ($res as $add) { ?>
 									<li class="list-group-item">
-										<h4 class="list-group-item-heading"><strong>#<?php echo $add['layanan']; ?></strong></h4>
+										<h4 class="list-group-item-heading"><strong class="text-primary">#<?php echo $add['layanan']; ?></strong></h4>
 										<p>Tanggal Mulai Aktif : <strong><?php echo $tgl_aktif1.' '.$month_aktif1.' '.$thn_aktif1; ?></strong>.</p>
 										<p>Tanggal Akhir Pembayaran : <strong><?php echo $tgl_akhir1.' '.$month_akhir1.' '.$thn_akhir1; ?></strong>.</p>
 										<p>Harga : <strong><?php echo $add['harga']; ?></strong></p>
