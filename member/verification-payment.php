@@ -500,12 +500,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 								<h4><?php echo $status_cust; ?></h4>
 							  </div>
 							</div>
-              <select class="form-control" id="select_bayar" name="select_bayar">
-                <option value="0" disabled="true" selected="true">Pembayaran</option>
-                <option value="1">Paket</option>
-                <option value="2">Add On Layanan</option>
-              </select><br/>
-              <input type="checkbox"> <?php echo $paket; ?><br/>
+              <input type="checkbox"> <?php echo $package_cust; ?><br/>
 								<input type="text" class="form-control" id="inputPaymentdate" name="inputPaymentdate" placeholder="Payment Date" required>
 								<br/>
 								<div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>
