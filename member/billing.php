@@ -48,7 +48,7 @@ if ($level=="0"){
 										<?php $total_harga = $harga-$proraide; ?>
 										<p>Total Pembayaran : <strong><?php echo $total_harga.'.000'; ?></strong></p>
 									</li>
-								</php } ?>
+								<?php } ?>
 								</div>
 						</fieldset>
 					</div>
