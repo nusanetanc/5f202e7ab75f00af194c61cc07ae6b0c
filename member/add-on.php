@@ -12,6 +12,8 @@
 				}
 				if(isset($_POST['add'])){
 					$addon=$_POST['addon'];
+					$rslt = $col_service->find(array("nama"=>$addon));
+					$hargaadd = $rslt['harga'];
 					$msg=array(
 								"tanggal"=>$date,
 								"add_on"=>$addon,
@@ -20,7 +22,7 @@
 					$pushaddon = $col_user->update(
 													array("id_user"=>$id),
 										   		array('$push'=>array("addon"=>$msg)));
-					$insertaddon = $col_addon->insert(array("layanan"=>$addon, "tanggal_permintaan"=>$date, "tanggal_aktif"=>"", "id_user"=>$id, "status"=>"unaktif", "tanggal_akhir"=>""));
+					$insertaddon = $col_addon->insert(array("layanan"=>$addon, "harga"=>$hargaadd, "tanggal_permintaan"=>$date, "tanggal_aktif"=>"", "id_user"=>$id, "status"=>"unaktif", "tanggal_akhir"=>""));
 			  $to="yudi.nurhandi@nusa.net.id";
 		    $subject = 'Request Add On';
 
