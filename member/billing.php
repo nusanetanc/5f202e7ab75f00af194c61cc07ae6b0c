@@ -38,16 +38,26 @@ if ($level=="0"){
 										<p>Total Pembayaran : <strong><?php echo $total_harga.'.000'; ?></strong></p>
 								  </li>
 									<?php $res = $col_addon->find(array("id_user"=>$id));
-												foreach ($res as $add) { ?>
+												foreach ($res as $add) {
+													$thn_aktif0 = substr($add['tanggal_aktif'], 0,4);
+													$bln_aktif0 = substr($add['tanggal_aktif'], 5,2);
+													$tgl_aktif0 = substr($add['tanggal_aktif'], 8,10);
+													$month_aktif0 = bulan($bln_aktif0);
+
+													$thn_akhir0 = substr($add['tanggal_aktif'], 0,4);
+													$bln_akhir0 = substr($add['tanggal_akhir'], 5,2);
+													$tgl_akhir0 = substr($add['tanggal_akhir'], 8,10);
+													$month_akhir0 = bulan($bln_akhir0);
+													 ?>
 									<li class="list-group-item">
 										<h4 class="list-group-item-heading"><strong class="text-primary">#<?php echo $add['layanan']; ?></strong></h4>
 										<?php if($add['status']=="unaktif"){ ?>
 										<span class="label label-warning"><?php echo $add['status']; ?></span>
 									<?php } elseif($add['status']=="aktif"){ ?>
 										<span class="label label-primary"><?php echo $add['status']; ?></span>
-										<p>Tanggal Mulai Aktif : <strong><?php echo $tgl_aktif1.' '.$month_aktif1.' '.$thn_aktif1; ?></strong>.</p>
+										<p>Tanggal Mulai Aktif : <strong><?php echo $tgl_aktif0.' '.$month_aktif0.' '.$thn_aktif0; ?></strong>.</p>
 										<?php } ?>
-										<p>Tanggal Akhir Pembayaran : <strong><?php echo $tgl_akhir1.' '.$month_akhir1.' '.$thn_akhir1; ?></strong>.</p>
+										<p>Tanggal Akhir Aktif : <strong><?php echo $tgl_akhir0.' '.$month_akhir0.' '.$thn_akhir0; ?></strong>.</p>
 										<p>Harga : <strong><?php echo $add['harga']; ?></strong></p>
 										<p>Prorate : <strong><?php echo $add['proraide'].'.00'; ?></strong></p>
 										<?php $total_harga = $add['harga']-$add['proraide']; ?>
