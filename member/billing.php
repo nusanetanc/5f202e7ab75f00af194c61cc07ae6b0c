@@ -44,8 +44,8 @@ if ($level=="0"){
 										<p>Tanggal Mulai Aktif : <strong><?php echo $tgl_aktif1.' '.$month_aktif1.' '.$thn_aktif1; ?></strong>.</p>
 										<p>Tanggal Akhir Pembayaran : <strong><?php echo $tgl_akhir1.' '.$month_akhir1.' '.$thn_akhir1; ?></strong>.</p>
 										<p>Harga : <strong><?php echo $add['harga']; ?></strong></p>
-										<p>Prorate : <strong><?php echo $proraide.'.00'; ?></strong></p>
-										<?php $total_harga = $harga-$proraide; ?>
+										<p>Prorate : <strong><?php echo $add['proraide'].'.00'; ?></strong></p>
+										<?php $total_harga = $add['harga']-$add['proraide']; ?>
 										<p>Total Pembayaran : <strong><?php echo $total_harga.'.000'; ?></strong></p>
 									</li>
 								<?php } ?>
