@@ -358,7 +358,7 @@
                             <select style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" class="form-control" name="regispackage" id="regispackage">
                                 <option disabled="true" selected="true">-- Select Package --</option>
                                 <?php
-                                    $res = $col_package->find();
+                                    $res = $col_package->find()->sort("nama");
                                     foreach($res as $row)
                                                 {
                                                   ?>
@@ -368,7 +368,7 @@
                             <select style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" class="form-control" name="regislocation" id="regislocation" disabled="true">
                                 <option disabled="true" selected="true">-- Location --</option>
                                 <?php
-                                    $res = $col_location->find();
+                                    $res = $col_location->find()->sort("name");
                                     foreach($res as $row)
                                                 {
                                                   ?>
