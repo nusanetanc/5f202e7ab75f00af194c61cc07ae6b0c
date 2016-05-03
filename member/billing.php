@@ -56,8 +56,8 @@ if ($level=="0"){
 									<?php } elseif($add['status']=="aktif"){ ?>
 										<span class="label label-primary"><?php echo $add['status']; ?></span>
 										<p>Tanggal Mulai Aktif : <strong><?php echo $tgl_aktif0.' '.$month_aktif0.' '.$thn_aktif0; ?></strong>.</p>
-										<?php } ?>
 										<p>Tanggal Akhir Aktif : <strong><?php echo $tgl_akhir0.' '.$month_akhir0.' '.$thn_akhir0; ?></strong>.</p>
+										<?php } ?>
 										<p>Harga : <strong><?php echo $add['harga']; ?></strong></p>
 										<p>Prorate : <strong><?php echo $add['proraide'].'.00'; ?></strong></p>
 										<?php $total_harga = $add['harga']-$add['proraide']; ?>

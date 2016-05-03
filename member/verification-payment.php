@@ -433,7 +433,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 		<div class="list-group">
 			<div class="panel" style="border:0px;" >
 				<div class="panel-body" style="background-color:#1B5E12;">
-					<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">PAYMENT CUSTOMER</h3>
+					<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">CUSTOMER</h3>
 				</div>
 				<div class="panel-body">
 					<br/>
@@ -500,6 +500,11 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 								<h4><?php echo $status_cust; ?></h4>
 							  </div>
 							</div>
+              <select class="form-control" id="select_bayar" name="select_bayar">
+                <option value="0" disabled="true" selected="true">Pembayaran</option>
+                <option value="1">Paket</option>
+                <option value="2">Add On Layanan</option>
+              </select>
 								<input type="text" class="form-control" id="inputPaymentdate" name="inputPaymentdate" placeholder="Payment Date" required>
 								<br/>
 								<div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>
