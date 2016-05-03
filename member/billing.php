@@ -41,7 +41,7 @@ if ($level=="0"){
 												foreach ($res as $add) { ?>
 									<li class="list-group-item">
 										<h4 class="list-group-item-heading"><strong class="text-primary">#<?php echo $add['layanan']; ?></strong></h4>
-										<?php if($add['status']=="aktif"){ ?>
+										<?php if($add['status']=="unaktif"){ ?>
 										<span class="label label-warning"><?php echo $add['status']; ?></span>
 									<?php } elseif($add['status']=="aktif"){ ?>
 										<span class="label label-primary"><?php echo $add['status']; ?></span>
