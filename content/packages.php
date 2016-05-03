@@ -76,12 +76,13 @@
                                     <li>Catch-up TV Channel</li>
                                     <li>Radio Streaming</li>
                                     <li>24/7 Live Support</li>
+                                    
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-2">
-                        <div class="text-center" style="background-color:#f1532a;color:#000;padding:45px 0 45px 0;border-radius:0;margin-bottom:20px;">
+                        <div class="text-center" style="background-color:#f1532a;color:#000;padding:45px 10px 45px 10px;border-radius:0;margin-bottom:20px;">
                             <h5 style="font-size:21px;font-weight:200;">Groovy Home <br/>500</h5>
                             <span style="font-size:40px;font-weight:600">499</span><br/>
                             <span style="font-size:30px;line-height:20px;font-weight:200">RIBU</span><br/><br/>
@@ -105,7 +106,7 @@
                         </div>
                     </div>
                     <div class="col-sm-2">
-                        <div class="text-center" style="background-color:#fc592e;color:#000;padding:45px 0 45px 0;border-radius:0;margin-bottom:20px;">
+                        <div class="text-center" style="background-color:#fc592e;color:#000;padding:45px 10px 45px 10px;border-radius:0;margin-bottom:20px;">
                             <h5 style="font-size:21px;font-weight:200;">Groovy Home <br/>800</h5>
                             <span style="font-size:40px;font-weight:600">799</span><br/>
                             <span style="font-size:30px;line-height:20px;font-weight:200">RIBU</span><br/><br/>
