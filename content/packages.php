@@ -82,14 +82,14 @@
                     </div>
                     <div class="col-sm-2">
                         <div class="text-center" style="background-color:#f1532a;color:#000;padding:45px 0 45px 0;border-radius:0;margin-bottom:20px;">
-                            <h5 style="font-size:21px;font-weight:200;">Groovy Home <br/>750</h5>
-                            <span style="font-size:40px;font-weight:600">749</span><br/>
+                            <h5 style="font-size:21px;font-weight:200;">Groovy Home <br/>500</h5>
+                            <span style="font-size:40px;font-weight:600">499</span><br/>
                             <span style="font-size:30px;line-height:20px;font-weight:200">RIBU</span><br/><br/>
-                            <p style="font-size:13px;">100 Mbps + Basic Plus SVOD Tv Package</p><br/>
+                            <p style="font-size:13px;">10 Mbps + Local TV Channel + International TV Channel + Premium TV Channel + Video Box (VOD) + Social TV + Live Radio Streaming</p><br/>
                             <button style="background-image:url(<?php echo $base_url; ?>/img/platinum-button.png);background-size:cover;border:0px;border-radius:5px;padding:10px 0 10px 0;font-weight:500;color:#000;" data-toggle="modal" data-target="#signupModal" data-dismiss="modal"><span class="buttonPackage">SUBSCRIBE</span></button>
                         </div>
                         <div style="padding-left:5px;">
-                            <h4 style="font-size:23px;font-weight:bold;color:#f1532a;">Groovy Home </h4>
+                            <h4 style="font-size:23px;font-weight:bold;color:#f1532a;">Groovy Home 500</h4>
                             <!--<h6 style="color:#FF931E;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
                             <div style="border-top:1px solid #f1532a;padding:20px 0 0 0;margin-top:20px;">
                                 <ul class="packageList">
@@ -109,7 +109,7 @@
                             <h5 style="font-size:21px;font-weight:200;">Groovy Home <br/>800</h5>
                             <span style="font-size:40px;font-weight:600">799</span><br/>
                             <span style="font-size:30px;line-height:20px;font-weight:200">RIBU</span><br/><br/>
-                            <p style="font-size:13px;">100 Mbps + Basic Plus SVOD Tv Package</p><br/>
+                            <p style="font-size:13px;">20 Mbps + Local TV Channel + International TV Channel + Premium TV Channel + Video Box (VOD) + Social TV + Live Radio Streaming</p><br/>
                             <button style="background-image:url(<?php echo $base_url; ?>/img/platinum-button.png);background-size:cover;border:0px;border-radius:5px;padding:10px 0 10px 0;font-weight:500;color:#000;" data-toggle="modal" data-target="#signupModal" data-dismiss="modal"><span class="buttonPackage">SUBSCRIBE</span></button>
                         </div>
                         <div style="padding-left:5px;">
@@ -133,7 +133,7 @@
                             <h5 style="font-size:21px;font-weight:200;">Groovy Home <br/>1700</h5>
                             <span style="font-size:40px;font-weight:600">1699</span><br/>
                             <span style="font-size:30px;line-height:20px;font-weight:200">RIBU</span><br/><br/>
-                            <p style="font-size:13px;">100 Mbps + Basic Plus SVOD Tv Package</p><br/>
+                            <p style="font-size:13px;">50 Mbps + Local TV Channel + International TV Channel + Premium TV Channel + Video Box (VOD) + Social TV + Live Radio Streaming</p><br/>
                             <button style="background-image:url(<?php echo $base_url; ?>/img/platinum-button.png);background-size:cover;border:0px;border-radius:5px;padding:10px 0 10px 0;font-weight:500;color:#000;" data-toggle="modal" data-target="#signupModal" data-dismiss="modal"><span class="buttonPackage">SUBSCRIBE</span></button>
                         </div>
                         <div style="padding-left:5px;">
