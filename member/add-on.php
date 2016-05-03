@@ -12,8 +12,11 @@
 				}
 				if(isset($_POST['add'])){
 					$addon=$_POST['addon'];
-					$rslt = $col_service->find(array("nama"=>$addon));
-					$hargaadd = $rslt['harga'];
+					$res = $col_service->find(array("nama"=>$addon));
+					foreach($res as $row)
+					{
+					    $hargaadd=$row['harga'];
+					}
 					$msg=array(
 								"tanggal"=>$date,
 								"add_on"=>$addon,
