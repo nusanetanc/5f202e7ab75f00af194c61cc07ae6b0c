@@ -31,10 +31,11 @@ if ($level=="0"){
 					</div>
 								<div class="panel panel-default">
 								  <div class="panel-body">
-								  	<h4 class="list-group-item-heading">#<?php echo $paket; ?></h4>
-										<p class="list-group-item-text">Harga : <?php echo $harga; ?></p>
-										<p class="list-group-item-text">Prorate : <?php echo $proraide.'.00'; ?></p>
-										<p class="list-group-item-text">Total Pembayaran : <?php echo $total_harga.'.000'; ?></p>
+								  	<h4 class="list-group-item-heading"><strong>#<?php echo $paket; ?></strong></h4>
+										<p class="list-group-item-text">Harga : <strong><?php echo $harga; ?></strong></p>
+										<p class="list-group-item-text">Prorate : <strong><?php echo $proraide.'.00'; ?></strong></p>
+										<?php $total_harga = $harga-$proraide; ?>
+										<p class="list-group-item-text">Total Pembayaran : <strong><?php echo $total_harga.'.000'; ?></strong></p>
 								  </div>
 								</div>
 						</fieldset>
