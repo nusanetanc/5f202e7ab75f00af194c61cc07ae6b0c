@@ -41,8 +41,11 @@ if ($level=="0"){
 												foreach ($res as $add) { ?>
 									<li class="list-group-item">
 										<h4 class="list-group-item-heading"><strong class="text-primary">#<?php echo $add['layanan']; ?></strong></h4>
+										<span class="label label-warning"><?php $add['status']; ?></span>
+										<?php if($add['status']=="aktif"){ ?>
 										<p>Tanggal Mulai Aktif : <strong><?php echo $tgl_aktif1.' '.$month_aktif1.' '.$thn_aktif1; ?></strong>.</p>
 										<p>Tanggal Akhir Pembayaran : <strong><?php echo $tgl_akhir1.' '.$month_akhir1.' '.$thn_akhir1; ?></strong>.</p>
+										<?php } ?>
 										<p>Harga : <strong><?php echo $add['harga']; ?></strong></p>
 										<p>Prorate : <strong><?php echo $add['proraide'].'.00'; ?></strong></p>
 										<?php $total_harga = $add['harga']-$add['proraide']; ?>
