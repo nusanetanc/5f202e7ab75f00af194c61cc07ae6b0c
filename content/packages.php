@@ -21,8 +21,8 @@
                             <!--<h6 style="color:#FF3D23;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
                             <div style="border-top:1px solid #f6a835;padding:20px 0 0 0;margin-top:20px;">
                                 <ul class="packageList">
-                                    <li>Internet 5 Mbps</li>
-                                    <li>24/7 Live Support</li>
+                                    <li><b>Internet 5 Mbps</b></li>
+                                    <li><b>24/7 Live Support</b></li>
                                 </ul>
                             </div>
                         </div>
@@ -40,8 +40,8 @@
                             <!--<h6 style="color:#ff6520;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
                             <div style="border-top:1px solid #f8c03c;padding:20px 0 0 0;margin-top:20px;">
                                 <ul class="packageList">
-                                    <li>Internet 10 Mbps</li>
-                                    <li>24/7 Live Support</li>
+                                    <li><b>Internet 10 Mbps</b></li>
+                                    <li><b>24/7 Live Support</b></li>
                                 </ul>
                             </div>
                         </div>
@@ -59,8 +59,8 @@
                             <!--<h6 style="color:#FF931E;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
                             <div style="border-top:1px solid #fbd744;padding:20px 0 0 0;margin-top:20px;">
                                 <ul class="packageList">
-                                    <li>Internet 30 Mbps</li>
-                                    <li>24/7 Live Support</li>
+                                    <li><b>Internet 30 Mbps</b></li>
+                                    <li><b>24/7 Live Support</b></li>
                                     
                                 </ul>
                             </div>
@@ -79,16 +79,20 @@
                             <!--<h6 style="color:#FF931E;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
                             <div style="border-top:1px solid #f1532a;padding:20px 0 0 0;margin-top:20px;">
                                 <ul class="packageList">
-                                    <li>Internet 10 Mbps</li>
-                                    <li>Local TV Channel (Metro TV, TV One, SCTV,  Indosiar, Trans TV
+                                    <li><b>Internet 10 Mbps</b></li>
+                                    <li><b>Local TV Channel</b> (Metro TV, TV One, SCTV,  Indosiar, Trans TV
 Trans 7, ANTV
 Net.TV, Kompas TV
 Berita Satu, TVRI
 Jak TV, Rajawali TV, Da Ai TV Indonesia)</li>
-                                    <li>International TV Channel (NHK World, DW
+                                    <li><b>International TV Channel</b> (NHK World, DW
 France 24, Russia Today, RTP Int’l Asia, TV5 Monde Asia, Channel News Asia, Al Jazeera (Arabic), Al Jazeera (English), CCTV 4, CCTV 9 Documentary
 Phoenix Info News, Sunna TV, Quran TV)</li>
-                                    <li>24/7 Live Support</li>
+                                    <li><b>Premium Channel</b> (Disney Jr HD, DaVinci HD, Duck TV, Fox HD, Starworld HD, Nat Geo HD, Kix HD)</li>
+                                    <li><b>Video Box / VOD</b> (Fast & Fun Box, Docu Box)</li>
+                                    <li><b>Social TV</b> (Music, Entertainment, News, Funny Clips, Sports, Education, Lifestyle, Kids)</li>
+                                    <li><b>Live Radio Streaming</b> (Local, International)</li>
+                                    <li><b>24/7 Live Support</b></li>
                                 </ul>
                             </div>
                         </div>
@@ -106,13 +110,20 @@ Phoenix Info News, Sunna TV, Quran TV)</li>
                             <!--<h6 style="color:#FF931E;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
                             <div style="border-top:1px solid #fc592e;padding:20px 0 0 0;margin-top:20px;">
                                 <ul class="packageList">
-                                    <li>Internet 20 Mbps</li>
-                                    <li>94 + Local & International Channel with 24 HD Channel Quality.</li>
-                                    <li>Social TV</li>
-                                    <li>Video on Demand</li>
-                                    <li>Catch-up TV Channel</li>
-                                    <li>Radio Streaming</li>
-                                    <li>24/7 Live Support</li>
+                                    <li><b>Internet 20 Mbps</b></li>
+                                    <li><b>Local TV Channel</b> (Metro TV, TV One, SCTV,  Indosiar, Trans TV
+Trans 7, ANTV
+Net.TV, Kompas TV
+Berita Satu, TVRI
+Jak TV, Rajawali TV, Da Ai TV Indonesia)</li>
+                                    <li><b>International TV Channel</b> (NHK World, DW
+France 24, Russia Today, RTP Int’l Asia, TV5 Monde Asia, Channel News Asia, Al Jazeera (Arabic), Al Jazeera (English), CCTV 4, CCTV 9 Documentary
+Phoenix Info News, Sunna TV, Quran TV)</li>
+                                    <li><b>Premium Channel</b> (Disney Channel HD, Disney Jr HD, DaVinci HD, Duck TV, Fox HD, Fox Crime HD, Starworld HD, Nat Geo HD, Kix HD, FX HD, NGC, Trace Urban HD, Channel M HD, KMTV, Aniplus HD, Pelangi)</li>
+                                    <li><b>Video Box / VOD</b> (Fast & Fun Box, Docu Box, Fashion Box, Film Arthouse Box)</li>
+                                    <li><b>Social TV</b> (Music, Entertainment, News, Funny Clips, Sports, Education, Lifestyle, Kids)</li>
+                                    <li><b>Live Radio Streaming</b> (Local, International)</li>
+                                    <li><b>24/7 Live Support</b></li>
                                 </ul>
                             </div>
                         </div>
@@ -130,13 +141,22 @@ Phoenix Info News, Sunna TV, Quran TV)</li>
                             <!--<h6 style="color:#FF931E;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
                             <div style="border-top:1px solid #fc7149;padding:20px 0 0 0;margin-top:20px;">
                                 <ul class="packageList">
-                                    <li>Internet 50 Mbps</li>
-                                    <li>94 + Local & International Channel with 24 HD Channel Quality.</li>
-                                    <li>Social TV</li>
-                                    <li>Video on Demand</li>
-                                    <li>Catch-up TV Channel</li>
-                                    <li>Radio Streaming</li>
-                                    <li>24/7 Live Support</li>
+                                    <li><b>Internet 50 Mbps</b></li>
+                                    <li><b>Local TV Channel</b> (Metro TV, TV One, SCTV,  Indosiar, Trans TV
+Trans 7, ANTV
+Net.TV, Kompas TV
+Berita Satu, TVRI
+Jak TV, Rajawali TV, Da Ai TV Indonesia)</li>
+                                    <li><b>International TV Channel</b> (NHK World, DW
+France 24, Russia Today, RTP Int’l Asia, TV5 Monde Asia, Channel News Asia, Al Jazeera (Arabic), Al Jazeera (English), CCTV 4, CCTV 9 Documentary
+Phoenix Info News, Sunna TV, Quran TV)</li>
+                                    <li><b>Premium Channel</b> (Disney Channel HD, Disney Jr HD, DaVinci HD, Duck TV, Fox HD, Fox Crime HD, Starworld HD, Nat Geo HD, Kix HD, FX HD, NGC, Trace Urban HD, Channel M HD, KMTV, Aniplus HD, Pelangi)</li>
+                                    <li><b>Video Box / VOD</b> (Fast & Fun Box, Docu Box, Fashion Box, Film Arthouse Box)</li>
+                                    <li><b>Disney Movies on Demand</b>  (Various Disney library live action, Disney and Pixar animated features)</li>
+                                    <li><b>ABC Studios on Demand</b> (Various current and library live action series from ABC Studios)</li>
+                                    <li><b>Social TV</b> (Music, Entertainment, News, Funny Clips, Sports, Education, Lifestyle, Kids)</li>
+                                    <li><b>Live Radio Streaming</b> (Local, International)</li>
+                                    <li><b>24/7 Live Support</b></li>
                                 </ul>
                             </div>
                         </div>
