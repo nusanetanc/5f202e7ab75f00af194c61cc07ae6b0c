@@ -2,7 +2,7 @@
 <?php
   $res = $col_user->find(array("id_user"=>$sm));
   foreach($res as $row)
-                      { 
+                      {
                           $email_sm = $row['email'];
                         }
 if (isset($_POST['register'])){
@@ -15,31 +15,31 @@ if (isset($_POST['register'])){
                               $date = date("Y/m/d");
                               $date_month = date("m");
                               $date_years = date("y");
-                              $date_days = date("d");  
+                              $date_days = date("d");
                               $bulan1 = bulan($date_month);
         if ($regisname=="" || $regisemail=="" || $regisphone=="" || $package=="-- Select Package --" || $location=="-- Location --" || $decription==""){
                                                    echo '<p class="text-danger">Registration Failed, Please Try Again!</p>';
-                                                    } else {     
+                                                    } else {
         $lokasifile = $_FILES['regisktp']['tmp_name'];
-				$fileName = $_FILES['regisktp']['name']; 
+				$fileName = $_FILES['regisktp']['name'];
 				$dir = "./ktp/";
-				$move = move_uploaded_file($lokasifile, "$dir".$fileName);                  
+				$move = move_uploaded_file($lokasifile, "$dir".$fileName);
 $res = $col_location->find(array("name"=>$location));
         foreach($res as $row)
-        { 
+        {
             $city=$row['city'];
             $place=$row['place'];
-        }                                 
+        }
 	    $res = $col_package->find(array("nama"=>$package));
 	    foreach($res as $row)
-		    { 
+		    {
 		        $harga=$row['harga'];
-		    }   
+		    }
 $res = $col_user->find(array("email"=>$email, "level"=>"0"));
 foreach($res as $row)
-{ 
+{
     $email1=$row['email'];
-} 
+}
                       //generate password and code activation
                     $text = 'abcdefghijklmnopqrstuvwxyz123457890';
                     $panjang = 10;
@@ -119,7 +119,7 @@ foreach($res as $row)
                 $newid=$userid->baru();
                                       $insert_customer=$col_user->insert(array("id_user"=>$newid,"nama"=>$regisname,"email"=>$regisemail, "phone"=>$regisphone, "foto"=>"","level"=>"0","password"=>$result, "aktif"=>"0", "ktp"=>$fileName, "registrasi"=>"sales", "id_sales"=>$id, "nama_sales"=>$nama,
                                                                             "email_sales"=>$email, "tanggal_registrasi"=>$date, "paket"=>$package, "harga"=>$harga, "tanggal_akhir"=>"","tanggal_aktivasi"=>"",
-                                                                             "tempat"=>$location, "kota"=>$city, "keterangan"=>$decription, "alamat"=>$place, "pembayaran"=>"0", "no_virtual"=>"","status"=>"permintaan registrasi")); 
+                                                                             "tempat"=>$location, "kota"=>$city, "keterangan"=>$decription, "alamat"=>$place, "pembayaran"=>"0", "no_virtual"=>"","status"=>"permintaan registrasi"));
                                           //mail for sales manager
                                           // multiple recipients
                                           $to1 = $email_sm;
@@ -154,7 +154,7 @@ foreach($res as $row)
 
                                           // Mail it
                                           $kirimemail1 = mail($to1, $subject1, $message1, $headers1);
-if($insert_customer && $kirimemail1){                                     
+if($insert_customer && $kirimemail1){
     echo '<p class="text-primary">Registration succeed, please wait for confirmation from the sales manager!</p>';
      } } } } ?>
 <section>
@@ -174,9 +174,9 @@ if($insert_customer && $kirimemail1){
                             <select id="regispackage" name="regispackage" style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" class="form-control">
                                 <option disabled="disabled" selected="true">-- Select Package --</option>
                                 <?php
-                                    $res = $col_package->find();
-                                    foreach($res as $row) 
-                                                {   
+                                    $res = $col_package->find()->sort("nama");
+                                    foreach($res as $row)
+                                                {
                                                   ?>
                                 <option><?php echo $row['nama']; ?></option>
                                 <?php } ?>
@@ -184,15 +184,15 @@ if($insert_customer && $kirimemail1){
                             <select id="regislocation" name="regislocation" style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" class="form-control">
                                 <option disabled="disabled" selected="true">-- Location --</option>
                                 <?php
-                                    $res = $col_location->find();
-                                    foreach($res as $row) 
-                                                {   
+                                    $res = $col_location->find()->sort("name");
+                                    foreach($res as $row)
+                                                {
                                                   ?>
                                 <option><?php echo $row['name']; ?></option>
                                 <?php } ?>
                             </select>
                             <input name="regisdescription" id="regisdescription" style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" name ="ket" id = "ket" type="text" class="form-control form-group-lg" placeholder="Specific Location (Block/Tower/Floor)">
-                            <div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>	
+                            <div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>
                             <input id="register" name="register" type="submit" style="float:left;margin-top:5px;;text-align:center;background-color:#ff1d25;border:0px;color:#fff;height:40px;padding:0 40px 0 40px;border-radius:3px;font-weight:bold;" value="SIGN UP"/>
                         </form>
         </div>
@@ -201,4 +201,4 @@ if($insert_customer && $kirimemail1){
 		  	</div>
 		</div>
 	</div>
-</section>		  				    	
+</section>
