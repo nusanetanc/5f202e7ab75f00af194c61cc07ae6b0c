@@ -36,10 +36,10 @@ if ($level=="0"){
 								  	<h4 class="list-group-item-heading"><strong>#<?php echo $paket; ?></strong></h4>
 										<p>Tanggal Mulai Aktif : <strong><?php echo $tgl_aktif.' '.$month_aktif.' '.$thn_aktif; ?></strong>.</p>
 										<p>Tanggal Akhir Pembayaran : <strong><?php echo $tgl_akhir.' '.$month_akhir.' '.$thn_akhir; ?></strong>.</p>
-										<p class="list-group-item-text">Harga : <strong><?php echo $harga; ?></strong></p>
-										<p class="list-group-item-text">Prorate : <strong><?php echo $proraide.'.00'; ?></strong></p>
+										<p>Harga : <strong><?php echo $harga; ?></strong></p>
+										<p>Prorate : <strong><?php echo $proraide.'.00'; ?></strong></p><br/>
 										<?php $total_harga = $harga-$proraide; ?>
-										<p class="list-group-item-text">Total Pembayaran : <strong><?php echo $total_harga.'.000'; ?></strong></p>
+										<p>Total Pembayaran : <strong><?php echo $total_harga.'.000'; ?></strong></p>
 								  </div>
 								</div>
 						</fieldset>
