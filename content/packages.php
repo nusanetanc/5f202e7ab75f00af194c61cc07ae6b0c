@@ -198,7 +198,7 @@ Phoenix Info News, Sunna TV, Quran TV)</li>
             <div class="row">
                 <div class="col-sm-12">
                     <span style="color:#000;font-size:18px;line-height:45px;">Butuh bantuan lebih lanjut tentang layanan Groovy ?</span>
-                    <a href="<?php echo $base_url; ?>/?hal=support" style="float:right;border-radius:5px;border:2px solid white;background-color:rgba(0, 0, 0, 0);padding:10px 40px 10px 40px;color:#fff;font-size:18px;">Pusat Bantuan</a>
+                    <a href="<?php echo $base_url; ?>/?hal=support" style="float:right;border-radius:5px;border:2px solid black;background-color:rgba(0, 0, 0, 0);padding:10px 40px 10px 40px;color:#000;font-size:18px;">Pusat Bantuan</a>
                 </div>
             </div>
         </div>
