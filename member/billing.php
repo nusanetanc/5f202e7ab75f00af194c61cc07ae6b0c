@@ -19,24 +19,54 @@ if ($level=="0"){
 		<div class="list-group">
 			<div class="panel" style="border:0px;" >
 				<div class="panel-body" style="background-color:#FF6D20;">
-					<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">BILLING - TAGIHAN</h3>
+					<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">BILLING - TAGIHAN PAKET</h3>
 				</div>
 				<div class="panel-body">
 					<br/>
+						<div class="col-sm-12">
+							  <fieldset>
+							<p>No Virtual Pembayaran : <strong><?php echo $no_virtual; ?></strong>.</p><br/>
+							<fieldset>
+						</div>
+				</div>
+				<div class="panel-body">
 					<div class="col-sm-12">
-						  <fieldset>
-						<p>No Virtual Pembayaran : <strong><?php echo $no_virtual; ?></strong>.</p><br/>
-						<p>Tanggal Mulai Aktif : <strong><?php echo $tgl_aktif.' '.$month_aktif.' '.$thn_aktif; ?></strong>.</p><br/>
-						<p>Tanggal Akhir Pembayaran : <strong><?php echo $tgl_akhir.' '.$month_akhir.' '.$thn_akhir; ?></strong>.</p><br/>
-					</div>
+							<fieldset>
 								<div class="panel panel-default">
 								  <div class="panel-body">
 								  	<h4 class="list-group-item-heading"><strong>#<?php echo $paket; ?></strong></h4>
+										<p>Tanggal Mulai Aktif : <strong><?php echo $tgl_aktif.' '.$month_aktif.' '.$thn_aktif; ?></strong>.</p>
+										<p>Tanggal Akhir Pembayaran : <strong><?php echo $tgl_akhir.' '.$month_akhir.' '.$thn_akhir; ?></strong>.</p>
 										<p class="list-group-item-text">Harga : <strong><?php echo $harga; ?></strong></p>
 										<p class="list-group-item-text">Prorate : <strong><?php echo $proraide.'.00'; ?></strong></p>
 										<?php $total_harga = $harga-$proraide; ?>
 										<p class="list-group-item-text">Total Pembayaran : <strong><?php echo $total_harga.'.000'; ?></strong></p>
 								  </div>
+								</div>
+						</fieldset>
+					</div>
+				</div>
+			</div>
+			<div class="panel" style="border:0px;" >
+				<div class="panel-body" style="background-color:#FF6D20;">
+					<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">BILLING - TAMBAHAN LAYANAN</h3>
+				</div>
+				<div class="panel-body">
+					<br/>
+					<div class="col-sm-12">
+							<fieldset>
+						<p>No Virtual Pembayaran : <strong><?php echo $no_virtual; ?></strong>.</p><br/>
+						<p>Tanggal Mulai Aktif : <strong><?php echo $tgl_aktif.' '.$month_aktif.' '.$thn_aktif; ?></strong>.</p><br/>
+						<p>Tanggal Akhir Pembayaran : <strong><?php echo $tgl_akhir.' '.$month_akhir.' '.$thn_akhir; ?></strong>.</p><br/>
+					</div>
+								<div class="panel panel-default">
+									<div class="panel-body">
+										<h4 class="list-group-item-heading"><strong>#<?php echo $paket; ?></strong></h4>
+										<p class="list-group-item-text">Harga : <strong><?php echo $harga; ?></strong></p>
+										<p class="list-group-item-text">Prorate : <strong><?php echo $proraide.'.00'; ?></strong></p>
+										<?php $total_harga = $harga-$proraide; ?>
+										<p class="list-group-item-text">Total Pembayaran : <strong><?php echo $total_harga.'.000'; ?></strong></p>
+									</div>
 								</div>
 						</fieldset>
 				</div>
