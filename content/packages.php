@@ -21,12 +21,7 @@
                             <!--<h6 style="color:#FF3D23;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
                             <div style="border-top:1px solid #f6a835;padding:20px 0 0 0;margin-top:20px;">
                                 <ul class="packageList">
-                                    <li>Internet up to 20 Mbps</li>
-                                    <li>94 + Local & International Channel with 24 HD Channel Quality.</li>
-                                    <li>Social TV</li>
-                                    <li>Video on Demand</li>
-                                    <li>Catch-up TV Channel</li>
-                                    <li>Radio Streaming</li>
+                                    <li>Internet 5 Mbps</li>
                                     <li>24/7 Live Support</li>
                                 </ul>
                             </div>
@@ -45,12 +40,7 @@
                             <!--<h6 style="color:#ff6520;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
                             <div style="border-top:1px solid #f8c03c;padding:20px 0 0 0;margin-top:20px;">
                                 <ul class="packageList">
-                                    <li>Internet up to 50 Mbps</li>
-                                    <li>94 + Local & International Channel with 24 HD Channel Quality.</li>
-                                    <li>Social TV</li>
-                                    <li>Video on Demand</li>
-                                    <li>Catch-up TV Channel</li>
-                                    <li>Radio Streaming</li>
+                                    <li>Internet 10 Mbps</li>
                                     <li>24/7 Live Support</li>
                                 </ul>
                             </div>
@@ -61,7 +51,7 @@
                             <h5 style="font-size:21px;font-weight:200;">Groovy Home <br/>750</h5>
                             <span style="font-size:40px;font-weight:600">749</span><br/>
                             <span style="font-size:30px;line-height:20px;font-weight:200">RIBU</span><br/><br/>
-                            <p style="font-size:13px;">10 Mbps Internet</p><br/>
+                            <p style="font-size:13px;">30 Mbps Internet</p><br/>
                             <button style="background-image:url(<?php echo $base_url; ?>/img/platinum-button.png);background-size:cover;border:0px;border-radius:5px;padding:10px 0 10px 0;font-weight:500;color:#000;" data-toggle="modal" data-target="#signupModal" data-dismiss="modal"><span class="buttonPackage">SUBSCRIBE</span></button>
                         </div>
                         <div style="padding-left:5px;">
@@ -69,12 +59,7 @@
                             <!--<h6 style="color:#FF931E;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
                             <div style="border-top:1px solid #fbd744;padding:20px 0 0 0;margin-top:20px;">
                                 <ul class="packageList">
-                                    <li>Internet up to 100 Mbps</li>
-                                    <li>94 + Local & International Channel with 24 HD Channel Quality.</li>
-                                    <li>Social TV</li>
-                                    <li>Video on Demand</li>
-                                    <li>Catch-up TV Channel</li>
-                                    <li>Radio Streaming</li>
+                                    <li>Internet 30 Mbps</li>
                                     <li>24/7 Live Support</li>
                                     
                                 </ul>
@@ -94,12 +79,15 @@
                             <!--<h6 style="color:#FF931E;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
                             <div style="border-top:1px solid #f1532a;padding:20px 0 0 0;margin-top:20px;">
                                 <ul class="packageList">
-                                    <li>Internet up to 100 Mbps</li>
-                                    <li>94 + Local & International Channel with 24 HD Channel Quality.</li>
-                                    <li>Social TV</li>
-                                    <li>Video on Demand</li>
-                                    <li>Catch-up TV Channel</li>
-                                    <li>Radio Streaming</li>
+                                    <li>Internet 10 Mbps</li>
+                                    <li>Local TV Channel (Metro TV, TV One, SCTV,  Indosiar, Trans TV
+Trans 7, ANTV
+Net.TV, Kompas TV
+Berita Satu, TVRI
+Jak TV, Rajawali TV, Da Ai TV Indonesia)</li>
+                                    <li>International TV Channel (NHK World, DW
+France 24, Russia Today, RTP Int’l Asia, TV5 Monde Asia, Channel News Asia, Al Jazeera (Arabic), Al Jazeera (English), CCTV 4, CCTV 9 Documentary
+Phoenix Info News, Sunna TV, Quran TV)</li>
                                     <li>24/7 Live Support</li>
                                 </ul>
                             </div>
@@ -118,7 +106,7 @@
                             <!--<h6 style="color:#FF931E;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
                             <div style="border-top:1px solid #fc592e;padding:20px 0 0 0;margin-top:20px;">
                                 <ul class="packageList">
-                                    <li>Internet up to 100 Mbps</li>
+                                    <li>Internet 20 Mbps</li>
                                     <li>94 + Local & International Channel with 24 HD Channel Quality.</li>
                                     <li>Social TV</li>
                                     <li>Video on Demand</li>
@@ -142,7 +130,7 @@
                             <!--<h6 style="color:#FF931E;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
                             <div style="border-top:1px solid #fc7149;padding:20px 0 0 0;margin-top:20px;">
                                 <ul class="packageList">
-                                    <li>Internet up to 100 Mbps</li>
+                                    <li>Internet 50 Mbps</li>
                                     <li>94 + Local & International Channel with 24 HD Channel Quality.</li>
                                     <li>Social TV</li>
                                     <li>Video on Demand</li>
