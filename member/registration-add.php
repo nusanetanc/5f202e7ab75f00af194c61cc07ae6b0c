@@ -174,9 +174,9 @@ if($insert_customer && $kirimemail1){
                             <select id="regispackage" name="regispackage" style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" class="form-control">
                                 <option disabled="disabled" selected="true">-- Select Package --</option>
                                 <?php
-                                $res = $col_package->find()->sort("nama");
-                                foreach($res as $row)
-                                            {
+                                    $res = $col_package->find();
+                                    foreach($res as $row)
+                                                {
                                                   ?>
                                 <option><?php echo $row['nama']; ?></option>
                                 <?php } ?>
@@ -184,9 +184,9 @@ if($insert_customer && $kirimemail1){
                             <select id="regislocation" name="regislocation" style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" class="form-control">
                                 <option disabled="disabled" selected="true">-- Location --</option>
                                 <?php
-                                $res = $col_location->find()->sort("name");
-                                foreach($res as $row)
-                                            {
+                                    $res = $col_location->find();
+                                    foreach($res as $row)
+                                                {
                                                   ?>
                                 <option><?php echo $row['name']; ?></option>
                                 <?php } ?>
