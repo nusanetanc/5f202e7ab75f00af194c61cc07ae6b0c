@@ -10,14 +10,14 @@
                 <div class="row">
                     <div class="col-sm-2">
                         <div class="text-center" style="background-color:#f4db60;color:#000;padding:45px 0 45px 0;border-radius:10px;margin-bottom:20px;">
-                            <h5 style="font-size:26px;font-weight:200;">Groovy Home 300</h5>
-                            <span style="font-size:45px;font-weight:600">299</span><br/>
-                            <span style="font-size:35px;line-height:20px;font-weight:200">RIBU</span><br/><br/>
+                            <h5 style="font-size:21px;font-weight:200;">Groovy Home 300</h5>
+                            <span style="font-size:40px;font-weight:600">299</span><br/>
+                            <span style="font-size:30px;line-height:20px;font-weight:200">RIBU</span><br/><br/>
                             <p style="font-size:13px;">5 Mbps Internet</p><br/>
                             <button style="background-image:url(<?php echo $base_url; ?>/img/silver-button.png);background-size:cover;border:0px;border-radius:5px;padding:10px 0px 10px 0px;font-weight:500;color:#000;" data-toggle="modal" data-target="#signupModal" data-dismiss="modal"><span class="buttonPackage">SUBSCRIBE</span></button>
                         </div>
                         <div style="padding-left:5px;">
-                            <h4 style="font-size:28px;font-weight:bold;color:#f4db60;">Groovy Home 300</h4>
+                            <h4 style="font-size:23px;font-weight:bold;color:#f4db60;">Groovy Home 300</h4>
                             <!--<h6 style="color:#FF3D23;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
                             <div style="border-top:1px solid #f4db60;padding:20px 0 0 0;margin-top:20px;">
                                 <ul class="packageList">
@@ -34,14 +34,14 @@
                     </div>
                     <div class="col-sm-2">
                         <div class="text-center" style="background-color:#fad142;color:#000;padding:45px 0 45px 0;border-radius:10px;margin-bottom:20px;">
-                            <h5 style="font-size:26px;font-weight:200;">Groovy Home 350</h5>
-                            <span style="font-size:45px;font-weight:600">349</span><br/>
-                            <span style="font-size:35px;line-height:20px;font-weight:200">RIBU</span><br/><br/>
+                            <h5 style="font-size:21px;font-weight:200;">Groovy Home 350</h5>
+                            <span style="font-size:40px;font-weight:600">349</span><br/>
+                            <span style="font-size:30px;line-height:20px;font-weight:200">RIBU</span><br/><br/>
                             <p style="font-size:13px;">10 Mbps Internet</p><br/>
                             <button style="background-image:url(<?php echo $base_url; ?>/img/gold-button.png);background-size:cover;border:0px;border-radius:5px;padding:10px 0 10px 0;font-weight:500;color:#000;" data-toggle="modal" data-target="#signupModal" data-dismiss="modal"><span class="buttonPackage">SUBSCRIBE</span></button>
                         </div>
                         <div style="padding-left:5px;">
-                            <h4 style="font-size:28px;font-weight:bold;color:#fad142;">Groovy Home 350</h4>
+                            <h4 style="font-size:23px;font-weight:bold;color:#fad142;">Groovy Home 350</h4>
                             <!--<h6 style="color:#ff6520;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
                             <div style="border-top:1px solid #fad142;padding:20px 0 0 0;margin-top:20px;">
                                 <ul class="packageList">
@@ -58,14 +58,14 @@
                     </div>
                     <div class="col-sm-2">
                         <div class="text-center" style="background-color:#eab91f;color:#000;padding:45px 0 45px 0;border-radius:10px;margin-bottom:20px;">
-                            <h5 style="font-size:26px;font-weight:200;">Groovy Home 750</h5>
-                            <span style="font-size:45px;font-weight:600">749</span><br/>
-                            <span style="font-size:35px;line-height:20px;font-weight:200">RIBU</span><br/><br/>
+                            <h5 style="font-size:21px;font-weight:200;">Groovy Home 750</h5>
+                            <span style="font-size:40px;font-weight:600">749</span><br/>
+                            <span style="font-size:30px;line-height:20px;font-weight:200">RIBU</span><br/><br/>
                             <p style="font-size:13px;">10 Mbps Internet</p><br/>
                             <button style="background-image:url(<?php echo $base_url; ?>/img/platinum-button.png);background-size:cover;border:0px;border-radius:5px;padding:10px 0 10px 0;font-weight:500;color:#000;" data-toggle="modal" data-target="#signupModal" data-dismiss="modal"><span class="buttonPackage">SUBSCRIBE</span></button>
                         </div>
                         <div style="padding-left:5px;">
-                            <h4 style="font-size:28px;font-weight:bold;color:#eab91f;">Groovy Home 750</h4>
+                            <h4 style="font-size:23px;font-weight:bold;color:#eab91f;">Groovy Home 750</h4>
                             <!--<h6 style="color:#FF931E;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
                             <div style="border-top:1px solid #eab91f;padding:20px 0 0 0;margin-top:20px;">
                                 <ul class="packageList">
@@ -82,14 +82,14 @@
                     </div>
                     <div class="col-sm-2">
                         <div class="text-center" style="background-color:#f76f4b;color:#000;padding:45px 0 45px 0;border-radius:10px;margin-bottom:20px;">
-                            <h5 style="font-size:26px;font-weight:200;">Groovy Home 750</h5>
-                            <span style="font-size:45px;font-weight:600">749</span><br/>
-                            <span style="font-size:35px;line-height:20px;font-weight:200">RIBU</span><br/><br/>
+                            <h5 style="font-size:21px;font-weight:200;">Groovy Home 750</h5>
+                            <span style="font-size:40px;font-weight:600">749</span><br/>
+                            <span style="font-size:30px;line-height:20px;font-weight:200">RIBU</span><br/><br/>
                             <p style="font-size:13px;">100 Mbps + Basic Plus SVOD Tv Package</p><br/>
                             <button style="background-image:url(<?php echo $base_url; ?>/img/platinum-button.png);background-size:cover;border:0px;border-radius:5px;padding:10px 0 10px 0;font-weight:500;color:#000;" data-toggle="modal" data-target="#signupModal" data-dismiss="modal"><span class="buttonPackage">SUBSCRIBE</span></button>
                         </div>
                         <div style="padding-left:5px;">
-                            <h4 style="font-size:28px;font-weight:bold;color:#f76f4b;">Groovy Home </h4>
+                            <h4 style="font-size:23px;font-weight:bold;color:#f76f4b;">Groovy Home </h4>
                             <!--<h6 style="color:#FF931E;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
                             <div style="border-top:1px solid #f76f4b;padding:20px 0 0 0;margin-top:20px;">
                                 <ul class="packageList">
@@ -106,14 +106,14 @@
                     </div>
                     <div class="col-sm-2">
                         <div class="text-center" style="background-color:#fc592e;color:#000;padding:45px 0 45px 0;border-radius:10px;margin-bottom:20px;">
-                            <h5 style="font-size:26px;font-weight:200;">Groovy Home 800</h5>
-                            <span style="font-size:45px;font-weight:600">799</span><br/>
-                            <span style="font-size:35px;line-height:20px;font-weight:200">RIBU</span><br/><br/>
+                            <h5 style="font-size:21px;font-weight:200;">Groovy Home 800</h5>
+                            <span style="font-size:40px;font-weight:600">799</span><br/>
+                            <span style="font-size:30px;line-height:20px;font-weight:200">RIBU</span><br/><br/>
                             <p style="font-size:13px;">100 Mbps + Basic Plus SVOD Tv Package</p><br/>
                             <button style="background-image:url(<?php echo $base_url; ?>/img/platinum-button.png);background-size:cover;border:0px;border-radius:5px;padding:10px 0 10px 0;font-weight:500;color:#000;" data-toggle="modal" data-target="#signupModal" data-dismiss="modal"><span class="buttonPackage">SUBSCRIBE</span></button>
                         </div>
                         <div style="padding-left:5px;">
-                            <h4 style="font-size:28px;font-weight:bold;color:#fc592e;">Groovy Home 800</h4>
+                            <h4 style="font-size:23px;font-weight:bold;color:#fc592e;">Groovy Home 800</h4>
                             <!--<h6 style="color:#FF931E;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
                             <div style="border-top:1px solid #fc592e;padding:20px 0 0 0;margin-top:20px;">
                                 <ul class="packageList">
@@ -130,14 +130,14 @@
                     </div>
                     <div class="col-sm-2">
                         <div class="text-center" style="background-color:#e84c28;color:#000;padding:45px 0 45px 0;border-radius:10px;margin-bottom:20px;">
-                            <h5 style="font-size:26px;font-weight:200;">Groovy Home 1700</h5>
-                            <span style="font-size:45px;font-weight:600">1699</span><br/>
-                            <span style="font-size:35px;line-height:20px;font-weight:200">RIBU</span><br/><br/>
+                            <h5 style="font-size:21px;font-weight:200;">Groovy Home 1700</h5>
+                            <span style="font-size:40px;font-weight:600">1699</span><br/>
+                            <span style="font-size:30px;line-height:20px;font-weight:200">RIBU</span><br/><br/>
                             <p style="font-size:13px;">100 Mbps + Basic Plus SVOD Tv Package</p><br/>
                             <button style="background-image:url(<?php echo $base_url; ?>/img/platinum-button.png);background-size:cover;border:0px;border-radius:5px;padding:10px 0 10px 0;font-weight:500;color:#000;" data-toggle="modal" data-target="#signupModal" data-dismiss="modal"><span class="buttonPackage">SUBSCRIBE</span></button>
                         </div>
                         <div style="padding-left:5px;">
-                            <h4 style="font-size:28px;font-weight:bold;color:#e84c28;">Groovy Home 1700</h4>
+                            <h4 style="font-size:23px;font-weight:bold;color:#e84c28;">Groovy Home 1700</h4>
                             <!--<h6 style="color:#FF931E;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
                             <div style="border-top:1px solid #e84c28;padding:20px 0 0 0;margin-top:20px;">
                                 <ul class="packageList">
