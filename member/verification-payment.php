@@ -546,6 +546,16 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 									  	<td><?php echo $proraide; ?></td>
 									  	<td><?php echo $total_bayar.'.000'; ?></td>
 									  </tbody>
+                    <?php	$res = $col_addon->find(array("id_user"=>"$id_cust"));
+                          foreach($res as $row) { ?>
+                    <tbody>
+									  	<td><?php echo $row['layanan']; ?></td>
+									  	<td><?php echo $row['harga']; ?></td>
+									  	<td><?php echo $row['proraide']; ?></td>
+                      <?php $total_bayar0=$row['harga']-$row['proraide']; ?>
+									  	<td><?php echo $total_bayar0.'.000'; ?></td>
+									  </tbody>
+                    <?php } ?>
 								</table>
 		  				    </div>
 		  				 </div>
