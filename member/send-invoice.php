@@ -7,12 +7,19 @@
   				</div>
   			  <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
   			  	<?php
+						$res1 = $col_package->find(array("nama"=>"Groovy Home 1700"));
+						foreach($res1 as $row1)
+									{
+										$ppn = $row['ppn'];
+									}
+							$harga_bersih = $harga_paket-$ppn;
+							echo $harga_bersih;
 	if(isset($_POST['send'])){
-		
+
 		$id_cust = $_POST['id_cust'];
 		$res0 = $col_user->find(array("id_user"=>$id_cust,"level"=>"0"));
 		foreach($res0 as $row0)
-					{ 
+					{
 
 						$registrasi_cust = $row0['registrasi'];
 						$sales =$row0['sales'];
@@ -34,7 +41,8 @@
 	require('../content/srcpdf/fpdf.php');
 	$header = array(
 		array("label"=>"Paket : ".$package_cust, "length"=>130, "align"=>"L"),
-		array("label"=>"Harga : ".$harga_paket, "length"=>55, "align"=>"L")
+		array("label"=>"Harga : ".$harga_paket, "length"=>55, "align"=>"L"),
+		array("label"=>"PPN 10% : ".$harga_paket, "length"=>55, "align"=>"L")
 	);
 		$pdf = new FPDF();
 		$pdf->AddPage();
@@ -135,7 +143,7 @@ $update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$
 <?php } ?>
   				<div class="panel-body">
   					<br/>
-					<div class="col-sm-12">	
+					<div class="col-sm-12">
 						<table class="table table-striped table-hover">
 						  <thead>
 						    <tr>
@@ -150,8 +158,8 @@ $update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$
 						  </thead>
 						  <?php
 					$res = $col_user->find(array("level"=>"0"));
-					foreach($res as $row) 
-                      { 
+					foreach($res as $row)
+                      {
                       	if($row['no_virtual']==""){
                       	?>
 						  <tbody>
@@ -162,15 +170,15 @@ $update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$
 						      <td><?php echo $row['paket']; ?></td>
 						      <td><?php echo $row['tanggal_registrasi']; ?></td>
 						      <td><?php echo $row['registrasi']; ?></td>
-						      <td><input type="submit" name="send" id="send" class="btn btn-primary btn-xs" value="Invoice"></td>						      
+						      <td><input type="submit" name="send" id="send" class="btn btn-primary btn-xs" value="Invoice"></td>
 						    </tr>
 						   </tbody>
-					<?php } } ?>	   
-						</table>    
-					</div>	
+					<?php } } ?>
+						</table>
+					</div>
  				</div>
- 			  </form>	
+ 			  </form>
 			</div>
 		</div>
-	</div>	
+	</div>
 </section>

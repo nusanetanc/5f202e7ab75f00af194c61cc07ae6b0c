@@ -1,8 +1,9 @@
 <?php
 	$base_url="http://groovy.id/beta";
 	$base_url_member="http://groovy.id/beta/member";
-/*	$base_url="http://localhost/groovy";
-	$base_url_member="http://localhost/groovy/member"; */
+	$biaya_instal="500.000";
+	$biaya_kabel="10.000";
+	$biaya_router="45.000";
 session_start();
 if (!isset($_SESSION["id"])) {
 	if (isset($_GET['hal'])){
