@@ -7,7 +7,7 @@
   				</div>
   			  <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
   			  	<?php
-						$res1 = $col_package->find(array("nama"=>"Groovy Home 500"));
+						$res1 = $col_package->find(array("nama"=>"Groovy Home 1700"));
 						foreach($res1 as $row1)
 									{
 										$ppn = $row1['ppn'];
