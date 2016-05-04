@@ -12,7 +12,7 @@
 									{
 										$ppn = $row1['ppn'];
 									}
-							$harga_paket="499.000";
+							$harga_paket="1.111.000";
 							$harga_bersih = $harga_paket+$ppn;
 							echo $harga_bersih;
 	if(isset($_POST['send'])){
