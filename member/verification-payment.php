@@ -500,13 +500,9 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 								<h4><?php echo $status_cust; ?></h4>
 							  </div>
 							</div>
-              <input type="checkbox"> <?php echo $package_cust; ?>
-              <?php	$res = $col_addon->find(array("id_user"=>"$id_cust"));
-        						foreach($res as $row) { ?>
-              <input type="checkbox"> <?php echo $row['layanan'];  } ?>
               <select class="form-control" id="select">
                 <option>Select Payment</option>
-                <option><?php echo $status_cust; ?></option>
+                <option><?php echo $package_cust; ?></option>
                 <?php	$res = $col_addon->find(array("id_user"=>"$id_cust"));
                       foreach($res as $row) { ?>
                 <option><?php echo $row['layanan']; ?></option>
