@@ -500,7 +500,10 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 								<h4><?php echo $status_cust; ?></h4>
 							  </div>
 							</div>
-              <input type="checkbox"> <?php echo $package_cust; ?><br/>
+              <input type="checkbox"> <?php echo $package_cust; ?>
+              <?php	$res = $col_addon->find(array("id_user"=>"$id_cust"));
+        						foreach($res as $row) { ?>
+              <input type="checkbox"> <?php echo $row['layanan'];  } ?>
 								<input type="text" class="form-control" id="inputPaymentdate" name="inputPaymentdate" placeholder="Payment Date" required>
 								<br/>
 								<div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>
