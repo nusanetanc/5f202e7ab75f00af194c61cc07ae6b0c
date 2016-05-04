@@ -501,14 +501,14 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 							  </div>
 							</div>
               <select class="form-control" id="select">
-                <option>Select Payment</option>
+                <option disabled selected>Select Payment</option>
                 <option><?php echo $package_cust; ?></option>
                 <?php	$res = $col_addon->find(array("id_user"=>"$id_cust"));
                       foreach($res as $row) { ?>
                 <option><?php echo $row['layanan']; ?></option>
                 <?php } ?>
                 <option>All</option>
-              </select>
+              </select><br/>
 								<input type="text" class="form-control" id="inputPaymentdate" name="inputPaymentdate" placeholder="Payment Date" required>
 								<br/>
 								<div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>
