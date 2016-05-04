@@ -7,12 +7,12 @@
   				</div>
   			  <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
   			  	<?php
-						$res1 = $col_package->find(array("nama"=>"Groovy Home 1700"));
+						$res1 = $col_package->find(array("nama"=>"Groovy Home 500"));
 						foreach($res1 as $row1)
 									{
 										$ppn = $row1['ppn'];
 									}
-							$harga_paket="1.177.000";
+							$harga_paket="499.000";
 							$harga_bersih = $harga_paket+$ppn;
 							echo $harga_bersih;
 	if(isset($_POST['send'])){
