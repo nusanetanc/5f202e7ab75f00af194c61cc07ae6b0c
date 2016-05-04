@@ -10,7 +10,7 @@
 						$res1 = $col_package->find(array("nama"=>"Groovy Home 1700"));
 						foreach($res1 as $row1)
 									{
-										$ppn = $row['ppn'];
+										$ppn = $row1['ppn'];
 									}
 							$harga_paket="2.177.000";
 							$harga_bersih = $harga_paket-$ppn;
