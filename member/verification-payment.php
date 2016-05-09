@@ -102,9 +102,10 @@ if ($total_revenue=="" || empty($total_revenue)){
 //mail to bukti pembayaran
 require('../content/srcpdf/fpdf.php');
 $header = array(
-    array("label"=>"Paket : ".$paket_bayar, "length"=>70, "align"=>"C"),
+    array("label"=>"Paket : ".$paket_bayar, "length"=>50, "align"=>"C"),
     array("label"=>"Harga : ".rupiah($harga_bayar), "length"=>30, "align"=>"C"),
-    array("label"=>"Harga : ".rupiah($ppn), "length"=>30, "align"=>"C"),
+    array("label"=>"PPN : ".rupiah($ppn), "length"=>30, "align"=>"C"),
+        array("label"=>"Prorate : ".rupiah($proraide), "length"=>30, "align"=>"C"),
     array("label"=>"Harga : ".rupiah($total_bayar), "length"=>50, "align"=>"C")
   );
 $pdf = new FPDF();
