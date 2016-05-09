@@ -594,7 +594,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 									  	<td><?php echo $tgl_konfirmasi.' '.$month_konfirmasi.' '.$thn_konfirmasi; ?></td>
 									  	<td><?php echo $byr['paket']; ?></td>
                       <td><?php echo rupiah($byr['harga']).'/'.rupiah($byr['proraide']).'/'.rupiah($byr['ppn']); ?></td>
-                      <td><?php echo rupiah($byr['total_bayar']); ?></td>
+                      <td><?php echo rupiah($byr['total']); ?></td>
 									  </tbody>
 									  <?php } ?>
 								</table>
