@@ -14,8 +14,8 @@
 									}
 							$harga_paket="1.111.000";
 							$harga_bersih = $harga_paket+$ppn;
-							$ppn1=$harga_paket*0.05;
-							echo $ppn1;
+							function rupiah($nilai, $pecahan = 0) { return number_format($nilai, $pecahan, ',', '.'); }
+							echo rupiah($harga_bersih);
 	if(isset($_POST['send'])){
 
 		$id_cust = $_POST['id_cust'];
