@@ -537,21 +537,22 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 									      <th width="20%">Deskripsi Pembayaran</th>
 									      <th width="20%">Harga</th>
 									      <th width="20%">Prorate</th>
+                        <th width="20%">PPN</th>
 									      <th width="20%">Total Bayar</th>
 									    </tr>
 									  </thead>
 									  <tbody>
 									  	<td><?php echo $paket_bayar; ?></td>
-									  	<td><?php echo $harga_bayar; ?></td>
-									  	<td><?php echo $proraide; ?></td>
-									  	<td><?php echo $total_bayar.'.000'; ?></td>
+									  	<td><?php echo rupiah($harga_bayar); ?></td>
+									  	<td><?php echo rupiah($proraide); ?></td>
+									  	<td><?php echo rupiah($total_bayar); ?></td>
 									  </tbody>
                     <?php	$res = $col_addon->find(array("id_user"=>"$id_cust"));
                           foreach($res as $row) { ?>
                     <tbody>
 									  	<td><?php echo $row['layanan']; ?></td>
 									  	<td><?php echo rupiah($row['harga']); ?></td>
-									  	<td><?php echo $row['proraide']; ?></td>
+									  	<td><?php echo rupiah($row['proraide']); ?></td>
                       <?php $total_bayar0=$row['harga']-$row['proraide']; ?>
 									  	<td><?php echo rupiah($total_bayar0); ?></td>
 									  </tbody>
