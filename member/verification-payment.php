@@ -94,10 +94,10 @@ if(isset($_POST['verifikasi'])){
 		$month_bayar = bulan($bln_bayar);
 		$last_pembayaran = $pembayaran + 1;
 if ($total_revenue=="" || empty($total_revenue)){
-	$update_revenue = $col_revenue->insert(array("date"=>$date, "total"=>$total_bayar.'.000'));
+	$update_revenue = $col_revenue->insert(array("date"=>$date, "total"=>$total_bayar));
 } else {
 	$revenue=$total_revenue+$total_bayar;
-	$update_revenue = $col_revenue->update(array("date"=>$date), array('$set'=>array("total"=>$revenue.'.000')));
+	$update_revenue = $col_revenue->update(array("date"=>$date), array('$set'=>array("total"=>$revenue)));
 }
 //mail to bukti pembayaran
 require('../content/srcpdf/fpdf.php');
