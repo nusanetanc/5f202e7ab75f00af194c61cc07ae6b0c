@@ -558,11 +558,11 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                       <td></td>
                       <td><?php echo rupiah($biaya_instalasi); ?></td>
                     </tbody>
-                    <tbody><strong>
-                      <td>Total Pembayaran</td>
+                    <tbody>
+                      <td><strong>Total Pembayaran</strong></td>
                       <td></td>
                       <td></td>
-                      <td><?php echo rupiah($biaya_instalasi); ?></td>
+                      <td><strong><?php echo rupiah($biaya_instalasi); ?></strong></td>
                     </strong></tbody>
 								</table>
 		  				    </div>
