@@ -100,9 +100,9 @@ if ($level=="0"){
 										Tanggal Pembayaran : <b><?php echo $tgl.' '.$month.' '.$thn; ?></b><br/>
 										Tanggal Konfirmasi Billing : <b><?php echo $tgl1.' '.$month1.' '.$thn1; ?></b><br/>
 								    	Pembayaran : <b><?php echo $payment['paket']; ?></b><br/>
-											Pembayaran : <b><?php echo $payment['harga']; ?></b><br/>
-											Prorate : <b><?php echo $payment['proraide']; ?></b><br/>
-											Ppn : <b><?php echo $payment['ppn']; ?></b><br/>
+											Pembayaran : <b><?php echo rupiah($payment['harga']); ?></b><br/>
+											Prorate : <b><?php echo rupiah($payment['proraide']); ?></b><br/>
+											Ppn : <b><?php echo rupiah($payment['ppn']); ?></b><br/>
 								    	Total Harga : <b><?php echo rupiah($payment['total']).',-'; ?></b>
 									</li>
 									  <?php } ?>
