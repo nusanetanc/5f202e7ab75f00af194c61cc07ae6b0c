@@ -31,13 +31,10 @@ if ($level=="0"){
 										<p>Tanggal Akhir Pembayaran : <strong><?php echo $tgl_akhir.' '.$month_akhir.' '.$thn_akhir; ?></strong>.</p>
 										<p>Harga : <strong><?php echo rupiah($harga); ?></strong></p>
 										<p>Prorate : <strong><?php echo rupiah($proraide); ?></strong></p>
-										<?php $total_harga = $harga-$proraide;
-													$ppn = $total_harga*0.1;
+										<?php $total_harga_paket = $harga-$proraide;
 													$total_harga_addon=0;
-													$total_harga_paket=$total_harga+$ppn;
 										 ?>
-										 <p>Ppn : <strong><?php echo rupiah($ppn); ?></strong></p>
-										<p>Total Pembayaran : <strong><?php echo rupiah($total_harga+$ppn); ?></strong></p>
+										<p>subtotal : <strong><?php echo rupiah($total_harga_paket); ?></strong></p>
 								  </li>
 									<?php $res = $col_addon->find(array("id_user"=>$id));
 												foreach ($res as $add) {
@@ -63,14 +60,11 @@ if ($level=="0"){
 										<p>Harga : <strong><?php echo rupiah($add['harga']); ?></strong></p>
 										<p>Prorate : <strong><?php echo rupiah($add['proraide']); ?></strong></p>
 										<?php $total_harga = $add['harga']-$add['proraide'];
-													$ppn = $total_harga*0.1;
 										 ?>
-										 <p>Ppn : <strong><?php echo rupiah($ppn); ?></strong></p>
-										<p>Subtotal : <strong><?php echo rupiah($total_harga+$ppn); ?></strong></p>
+										<p>Subtotal : <strong><?php echo rupiah($total_harga); ?></strong></p>
 									</li>
 									<?php
-									$addon_total=$total_harga+$ppn;
-									$total_harga_addon=$total_harga_addon+$addon_total;
+									$total_harga_addon=$total_harga_addon+$total_harga;
 									} ?>
 								<li class="list-group-item">
 									<p>No Virtual Pembayaran : <strong><?php echo $no_virtual; ?></strong>.</p>
@@ -78,8 +72,14 @@ if ($level=="0"){
 									<p>Biaya Sewa Router : <strong><?php echo rupiah($biaya_router); ?></strong>.</p>
 									<?php if($status=="registrasi"){ ?>
 									<p>Biaya instalasi : <strong><?php echo rupiah($biaya_instalasi); ?></strong>.</p>
+									<p>Total Harga : <strong><?php echo rupiah($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router+$biaya_instalasi); ?></strong>.</p>
+									<?php $ppn = ($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router+$biaya_instalasi)*0.1; ?>
+									<p>PPN 10% : <strong><?php echo rupiah($ppn); ?></strong>.</p>
 									<p>Total Pembayaran : <strong><?php echo rupiah($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router+$biaya_instalasi); ?></strong>.</p>
 									<?php } elseif ($status=="unaktif" || $status=="aktif") { ?>
+									<p>Total Harga : <strong><?php echo rupiah($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router); ?></strong>.</p>
+									<?php $ppn = ($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router)*0.1; ?>
+									<p>PPN 10% : <strong><?php echo rupiah($ppn); ?></strong>.</p>
 									<p>Total Pembayaran : <strong><?php echo rupiah($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router); ?></strong>.</p>
 									<?php	} ?>
 								</li>
