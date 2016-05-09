@@ -72,7 +72,8 @@ $date_month = date("y");
 		$harga_bayar = $harga_paket;
 		$pindah_paket = "PAKET AKTIF";
 	}
-	$total_bayar = $harga_paket - $proraide;
+  $ppn=$harga_paket*0.1;
+	$total_bayar = ($harga_paket - $proraide)+$ppn;
 	            $res_pack = $col_package->find(array("nama"=>$package_cust));
 	            foreach($res_pack as $row_pack) { $harga_hari = $row_pack['harga_hari']; }
 $res = $col_package->find(array("nama"=>$package_cust));
@@ -486,26 +487,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 							  <label class="col-lg-3 control-label">Tanggal Akhir Pembayaran : </label>
 							  <div class="col-lg-9">
 								<h4><?php echo $tgl_akhir.' '.$month_akhir.' '.$thn_akhir; ?></h4>
-							  </div>
-							</div> <?php } ?>
-							<div class="form-group">
-							  <label class="col-lg-3 control-label">No Virtual : </label>
-							  <div class="col-lg-9">
-								<h4><?php echo $no_virtual ?></h4>
-							  </div>
-							</div>
-							<div class="form-group">
-							  <label class="col-lg-3 control-label">Status : </label>
-							  <div class="col-lg-9">
-								<h4><?php echo $status_cust; ?></h4>
-							  </div>
-							</div>
-              <select class="form-control" id="select">
-                <option disabled selected>Select Payment</option>
-                <option><?php echo $package_cust; ?></option>
-                <?php	$res = $col_addon->find(array("id_user"=>"$id_cust"));
-                      foreach($res as $row) { ?>
-                <option><?php echo $row['layanan']; ?></option>
+              </div>$ppn0=$total_bayar0*0.1; ?></option>
                 <?php } ?>
                 <option>All</option>
               </select><br/>
@@ -554,9 +536,10 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 									  	<td><?php echo $row['layanan']; ?></td>
 									  	<td><?php echo rupiah($row['harga']); ?></td>
 									  	<td><?php echo rupiah($row['proraide']); ?></td>
-                      <?php $total_bayar0=$row['harga']-$row['proraide']; ?>
-                      <td><?php echo rupiah($total_bayar0*0.1); ?></td>
-									  	<td><?php echo rupiah($total_bayar0); ?></td>
+                      <?php $total_bayar0=$row['harga']-$row['proraide'];
+                            $ppn0=$total_bayar0*0.1; ?>
+                      <td><?php echo rupiah($ppn0); ?></td>
+									  	<td><?php echo rupiah($total_bayar0+$ppn0); ?></td>
 									  </tbody>
                     <?php } ?>
 								</table>
