@@ -20,7 +20,7 @@
   				</div>
   					<br/>
   				    <div class="panel-body">
-  				    <?php if (isset($_POST['submitdate'])) { 
+  				    <?php if (isset($_POST['submitdate'])) {
   				    	$inputStartdate = $_POST['inputStartdate'];
   				    	$inputEnddate = $_POST['inputEnddate'];
   				    	?>
@@ -38,7 +38,7 @@
 									    </tr>
 									  </thead>
 									  <?php
-										$res = $col_user->findOne(array("level"=>"0", "payment"=>array('$elemMatch'=>array("tanggal_bayar"=>array('$lte'=>$inputEnddate, '$gt'=>$inputStartdate)))));	
+										$res = $col_user->findOne(array("level"=>"0", "payment"=>array('$elemMatch'=>array("tanggal_bayar"=>array('$lte'=>$inputEnddate, '$gt'=>$inputStartdate)))));
 										foreach ($res['payment'] as $byr => $bayar) {
 											if ($bayar['tanggal_konfirmasi']<>""){
 												$tanggal = $bayar['tanggal_bayar'];
@@ -56,11 +56,11 @@
 									  	<td></td>
  										<td><?php echo $tgl.' '.$month.' '.$thn; ?></td>
  										<td><?php echo $tgl1.' '.$month1.' '.$thn1; ?></td>
-									    <td><?php echo $bayar['invoice']; ?>/<?php echo $bayar['paket']; ?>/<?php echo $bayar['harga']; ?>/<?php echo $bayar['bank']; ?></td>
+									    <td><?php echo $bayar['invoice']; ?>/<?php echo $bayar['paket']; ?>/<?php echo rupiah($bayar['harga']); ?>/<?php echo $bayar['bank']; ?></td>
 									  </tbody>
 									  <?php } }?>
-								</table> 
-					<?php } else { ?>	
+								</table>
+					<?php } else { ?>
   				    	<form method="post">
 				    		<div class="form-group">
 							      <div class="col-lg-5">
@@ -73,8 +73,8 @@
 						        <input name="submitdate" id="submitdate" type="submit" class="btn btn-primary" value"Submit">
 						      </div>
 					   		</div>
-					   	</form>	 
-					<?php } ?>   	
+					   	</form>
+					<?php } ?>
 					</div>
 					<br/>
  				</div>

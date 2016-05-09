@@ -199,7 +199,7 @@ $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array
 	if ($status_cust=="registrasi"){
 		$sisa_hari = 30-$date_month;
 		$last_proraide = $sisa_hari*$harga_hari;
-		$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("pembayaran"=>$last_pembayaran, "proraide"=>$last_proraide.'.000')));
+		$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("pembayaran"=>$last_pembayaran, "proraide"=>$last_proraide)));
 				// mail for supevisior teknik
 				$subject = 'Atur Jadwal Pemasangan';
 				$message = '
@@ -467,7 +467,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 							<div class="form-group">
 							  <label class="col-lg-3 control-label">Paket Aktif/Harga : </label>
 							  <div class="col-lg-9">
-								<h4><?php echo $package_cust.'/'.$harga_paket; ?></h4>
+								<h4><?php echo $package_cust.'/'.rupiah($harga_paket); ?></h4>
 							  </div>
 							</div>
 							<div class="form-group">
@@ -550,10 +550,10 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                           foreach($res as $row) { ?>
                     <tbody>
 									  	<td><?php echo $row['layanan']; ?></td>
-									  	<td><?php echo $row['harga']; ?></td>
+									  	<td><?php echo rupiah($row['harga']); ?></td>
 									  	<td><?php echo $row['proraide']; ?></td>
                       <?php $total_bayar0=$row['harga']-$row['proraide']; ?>
-									  	<td><?php echo $total_bayar0.'.000'; ?></td>
+									  	<td><?php echo rupiah($total_bayar0); ?></td>
 									  </tbody>
                     <?php } ?>
 								</table>
@@ -603,7 +603,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 									  	<td><?php echo $tgl_bayar.' '.$month_bayar.' '.$thn_bayar; ?></td>
 									  	<td><?php echo $tgl_konfirmasi.' '.$month_konfirmasi.' '.$thn_konfirmasi; ?></td>
 									  	<td><?php echo $byr['paket']; ?></td>
-									  	<td><?php echo $byr['harga']; ?></td>
+									  	<td><?php echo rupiah($byr['harga']); ?></td>
 									  </tbody>
 									  <?php } ?>
 								</table>

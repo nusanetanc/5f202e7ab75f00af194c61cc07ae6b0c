@@ -19,20 +19,20 @@
 									      <th width="15%"></th>
 									    </tr>
 									  </thead>
-									  <?php 
+									  <?php
 
 									  		$rslt = $col_package->find()->sort(array("nama"));
 									  		foreach ($rslt as $row) {
 									   ?>
 									  <tbody>
 									  	<td><?php echo $row['nama']; ?></td>
-									  	<td><?php echo $row['harga']; ?></td>
+									  	<td><?php echo rupiah($row['harga']); ?></td>
 									  	<td><?php echo $row['deskripsi']; ?></td>
 									  	<td><a href="" data-toggle="modal" data-target="#editdata"><i class="fa fa-pencil-square-o"></i></a>
 									  	<a href="" data-toggle="modal" data-target="#confirmdelete"><i class="fa fa-trash-o"></i></a></td>
 									  </tbody>
 									  <?php } ?>
-								</table>	  
+								</table>
 		  				    </div>
 		  				 </div>
 		  				 </form>
@@ -53,4 +53,4 @@
     </div>
   </div>
 </div>
-</section>		  				    	
+</section>

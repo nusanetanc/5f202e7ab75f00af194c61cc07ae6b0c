@@ -32,10 +32,10 @@ if ($level=="0"){
 								  	<h4 class="list-group-item-heading"><strong>#<?php echo $paket; ?></strong></h4>
 										<p>Tanggal Mulai Aktif : <strong><?php echo $tgl_aktif.' '.$month_aktif.' '.$thn_aktif; ?></strong>.</p>
 										<p>Tanggal Akhir Pembayaran : <strong><?php echo $tgl_akhir.' '.$month_akhir.' '.$thn_akhir; ?></strong>.</p>
-										<p>Harga : <strong><?php echo $harga; ?></strong></p>
+										<p>Harga : <strong><?php echo rupiah($harga); ?></strong></p>
 										<p>Prorate : <strong><?php echo $proraide.'.00'; ?></strong></p>
 										<?php $total_harga = $harga-$proraide; ?>
-										<p>Total Pembayaran : <strong><?php echo $total_harga.'.000'; ?></strong></p>
+										<p>Total Pembayaran : <strong><?php echo rupiah($total_harga).'.000'; ?></strong></p>
 								  </li>
 									<?php $res = $col_addon->find(array("id_user"=>$id));
 												foreach ($res as $add) {
@@ -58,10 +58,10 @@ if ($level=="0"){
 										<p>Tanggal Mulai Aktif : <strong><?php echo $tgl_aktif0.' '.$month_aktif0.' '.$thn_aktif0; ?></strong>.</p>
 										<p>Tanggal Akhir Aktif : <strong><?php echo $tgl_akhir0.' '.$month_akhir0.' '.$thn_akhir0; ?></strong>.</p>
 										<?php } ?>
-										<p>Harga : <strong><?php echo $add['harga']; ?></strong></p>
-										<p>Prorate : <strong><?php echo $add['proraide'].'.00'; ?></strong></p>
+										<p>Harga : <strong><?php echo rupiah($add['harga']); ?></strong></p>
+										<p>Prorate : <strong><?php echo rupiah($add['proraide']); ?></strong></p>
 										<?php $total_harga = $add['harga']-$add['proraide']; ?>
-										<p>Total Pembayaran : <strong><?php echo $total_harga.'.000'; ?></strong></p>
+										<p>Total Pembayaran : <strong><?php echo rupiah($total_harga); ?></strong></p>
 									</li>
 								<?php } ?>
 								</div>
@@ -94,7 +94,7 @@ if ($level=="0"){
 										Tanggal Pembayaran : <b><?php echo $tgl.' '.$month.' '.$thn; ?></b><br/>
 										Tanggal Konfirmasi Billing : <b><?php echo $tgl1.' '.$month1.' '.$thn1; ?></b><br/>
 								    	Pembayaran Paket : <b><?php echo $payment['paket']; ?></b><br/>
-								    	Total Harga : <b><?php echo $payment['harga'].',-'; ?></b>
+								    	Total Harga : <b><?php echo rupiah($payment['harga']).',-'; ?></b>
 									</li>
 									  <?php } ?>
 						</ul>

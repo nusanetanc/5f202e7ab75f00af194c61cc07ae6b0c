@@ -7,15 +7,6 @@
   				</div>
   			  <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
   			  	<?php
-						$res1 = $col_package->find(array("nama"=>"Groovy Home 1700"));
-						foreach($res1 as $row1)
-									{
-										$ppn = $row1['ppn'];
-									}
-							$harga_paket="1111000";
-							$harga_bersih = $harga_paket+$ppn;
-							function rupiah($nilai, $pecahan = 0) { return number_format($nilai, $pecahan, ',', '.'); }
-							echo rupiah($harga_paket);
 	if(isset($_POST['send'])){
 
 		$id_cust = $_POST['id_cust'];
@@ -40,11 +31,13 @@
                         $no_virtual = $row0['no_virtual'];
                         $pembayaran = $row0['pembayaran'];
                     }
+			$ppn_paket=$harga_paket*0.1;
+			$total_harga_paket=$harga_paket+$ppn_paket;
 	require('../content/srcpdf/fpdf.php');
 	$header = array(
 		array("label"=>"Paket : ".$package_cust, "length"=>130, "align"=>"L"),
-		array("label"=>"Harga : ".$harga_paket, "length"=>55, "align"=>"L"),
-		array("label"=>"PPN 10% : ".$harga_paket, "length"=>55, "align"=>"L")
+		array("label"=>"Harga : ".rupiah($harga_paket), "length"=>55, "align"=>"L"),
+		array("label"=>"PPN 10% : ".rupiah($ppn_paket), "length"=>55, "align"=>"L")
 	);
 		$pdf = new FPDF();
 		$pdf->AddPage();
@@ -77,7 +70,7 @@
 		$pdf->Ln();
 		$pdf->SetFont('Arial','','10');
 		$pdf->Cell(0,7, 'Kode Virtual     : '.$kode_perusahaan.$id_cust, '0', 1, 'L');
-		$pdf->Cell(0,7, 'Total Harga      : '.$harga_paket, '0', 1, 'L');
+		$pdf->Cell(0,7, 'Total Harga      : '.$total_harga_paket, '0', 1, 'L');
 		$pdf->Ln();
 		$pdf->Ln();
 		$pdf->Ln();

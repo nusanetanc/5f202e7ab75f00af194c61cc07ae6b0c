@@ -95,7 +95,7 @@ foreach($res as $row)
 					    $move_month = bulan($move_bln); ?>
 					<div class="col-sm-12">
 						<li class="list-group-item">
-						  	Upgrade Paket/Harga : <?php echo $move_paket.' / '.$move_harga; ?>
+						  	Upgrade Paket/Harga : <?php echo $move_paket.' / '.rupiah($move_harga); ?>
 						</li>
 						<li class="list-group-item">
 						  	Tanggal Permintaan : <?php echo $move_tgl.' '.$move_month.' '.$move_thn; ?>

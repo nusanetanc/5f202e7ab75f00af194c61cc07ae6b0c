@@ -40,7 +40,7 @@ switch ($bln) {
 					break;
 			}
 				return $bln;
-				}	
+				}
 function lev($level) {
 switch ($level) {
 				case 0:
@@ -77,8 +77,9 @@ switch ($level) {
 						break;
 				case 7:
 						$level="Web Admin";
-						break;					
+						break;
 			}
 				return $level;
-				}							
+				}
+function rupiah($nilai, $pecahan = 0) { return number_format($nilai, $pecahan, ',', '.'); }				
 ?>
