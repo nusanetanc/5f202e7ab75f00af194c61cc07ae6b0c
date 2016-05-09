@@ -553,6 +553,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                       <td></td>
                       <td><?php echo rupiah($biaya_stb); ?></td>
                     </tbody>
+                    <?php if($status_cust=="unaktif" || $status_cust=="registrasi"){ ?>
                     <tbody>
                       <td>Instalasi</td>
                       <td></td>
@@ -560,11 +561,45 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                       <td><?php echo rupiah($biaya_instalasi); ?></td>
                     </tbody>
                     <tbody>
-                      <td><strong>Total Pembayaran</strong></td>
+                      <td><strong>Total Tagihan</strong></td>
                       <td></td>
                       <td></td>
                       <td><strong><?php echo rupiah($biaya_instalasi+$biaya_router+$biaya_stb+$total_bayar+$total_harga_addon); ?></strong></td>
+                    </tbody>
+                    <?php $ppn=($biaya_instalasi+$biaya_router+$biaya_stb+$total_bayar+$total_harga_addon)*0.1; ?>
+                    <tbody>
+                      <td>PPN 10%</td>
+                      <td></td>
+                      <td></td>
+                      <td><?php echo rupiah($ppn); ?></td>
+                    </tbody>
+                    <tbody>
+                      <td><strong>Total Pembayaran</strong></td>
+                      <td></td>
+                      <td></td>
+                      <td><strong><?php echo rupiah($biaya_instalasi+$biaya_router+$biaya_stb+$total_bayar+$total_harga_addon+$ppn); ?></strong></td>
                     </strong></tbody>
+                    <?php } elseif($status_cust=="aktif"){ ?>
+                      <tbody>
+                        <td><strong>Total Tagihan</strong></td>
+                        <td></td>
+                        <td></td>
+                        <td><strong><?php echo rupiah($biaya_router+$biaya_stb+$total_bayar+$total_harga_addon); ?></strong></td>
+                      </tbody>
+                      <?php $ppn=($biaya_router+$biaya_stb+$total_bayar+$total_harga_addon)*0.1; ?>
+                      <tbody>
+                        <td>PPN 10%</td>
+                        <td></td>
+                        <td></td>
+                        <td><?php echo rupiah($ppn); ?></td>
+                      </tbody>
+                      <tbody>
+                        <td><strong>Total Pembayaran</strong></td>
+                        <td></td>
+                        <td></td>
+                        <td><strong><?php echo rupiah($biaya_router+$biaya_stb+$total_bayar+$total_harga_addon+$ppn); ?></strong></td>
+                      </strong></tbody>
+                    <?php } ?>
 								</table>
 		  				    </div>
 		  				 </div>
