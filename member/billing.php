@@ -74,7 +74,6 @@ if ($level=="0"){
 									} ?>
 								<li class="list-group-item">
 									<p>No Virtual Pembayaran : <strong><?php echo $no_virtual; ?></strong>.</p>
-									<?php echo rupiah($total_harga_paket).'/'.rupiah($total_harga_addon); ?>
 									<p>Total Pembayaran : <strong><?php echo rupiah($total_harga_paket+$total_harga_addon); ?></strong>.</p>
 								</li>
 							</ul>
