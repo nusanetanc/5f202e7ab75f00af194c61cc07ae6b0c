@@ -74,10 +74,10 @@ if ($level=="0"){
 									} ?>
 								<li class="list-group-item">
 									<p>No Virtual Pembayaran : <strong><?php echo $no_virtual; ?></strong>.</p>
-									<p>Biaya Sewa STB : <strong><?php echo $biaya_stb; ?></strong>.</p>
-									<p>Biaya Sewa Router : <strong><?php echo $biaya_router; ?></strong>.</p>
+									<p>Biaya Sewa STB : <strong><?php echo rupiah($biaya_stb); ?></strong>.</p>
+									<p>Biaya Sewa Router : <strong><?php echo rupiah($biaya_router); ?></strong>.</p>
 									<?php if($status=="registrasi"){ ?>
-									<p>Biaya instalasi : <strong><?php echo $biaya_instalasi; ?></strong>.</p>
+									<p>Biaya instalasi : <strong><?php echo rupiah($biaya_instalasi); ?></strong>.</p>
 									<p>Total Pembayaran : <strong><?php echo rupiah($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router+$biaya_instalasi); ?></strong>.</p>
 									<?php } elseif ($status=="unaktif" || $status=="aktif") { ?>
 									<p>Total Pembayaran : <strong><?php echo rupiah($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router); ?></strong>.</p>
