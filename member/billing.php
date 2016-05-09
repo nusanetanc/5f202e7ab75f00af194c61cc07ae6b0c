@@ -25,9 +25,6 @@ if ($level=="0"){
 						<div class="col-sm-12">
 							<fieldset>
 								<ul class="list-group">
-  								<li class="list-group-item">
-										<p>No Virtual Pembayaran : <strong><?php echo $no_virtual; ?></strong>.</p>
-									</li>
 								  <li class="list-group-item">
 								  	<h4 class="list-group-item-heading"><strong>#<?php echo $paket; ?></strong></h4>
 										<p>Tanggal Mulai Aktif : <strong><?php echo $tgl_aktif.' '.$month_aktif.' '.$thn_aktif; ?></strong>.</p>
@@ -36,6 +33,8 @@ if ($level=="0"){
 										<p>Prorate : <strong><?php echo rupiah($proraide); ?></strong></p>
 										<?php $total_harga = $harga-$proraide;
 													$ppn = $total_harga*0.1;
+													$total_harga_addon=0;
+													$total_harga_paket=$total_harga+$ppn;
 										 ?>
 										 <p>Ppn : <strong><?php echo rupiah($ppn); ?></strong></p>
 										<p>Total Pembayaran : <strong><?php echo rupiah($total_harga+$ppn); ?></strong></p>
@@ -67,11 +66,18 @@ if ($level=="0"){
 													$ppn = $total_harga*0.1;
 										 ?>
 										 <p>Ppn : <strong><?php echo rupiah($ppn); ?></strong></p>
-										<p>Total Pembayaran : <strong><?php echo rupiah($total_harga+$ppn); ?></strong></p>
+										<p>Subtotal : <strong><?php echo rupiah($total_harga+$ppn); ?></strong></p>
 									</li>
-								<?php } ?>
-								</div>
-						</fieldset>
+									<?php
+									$total_harga_addon=$total_harga_addon+$total_harga;
+									} ?>
+								<li class="list-group-item">
+									<p>No Virtual Pembayaran : <strong><?php echo $no_virtual; ?></strong>.</p>
+									<p>Total Pembayaran : <strong><?php echo rupiah($total_harga_paket+$total_harga_addon); ?></strong>.</p>
+								</li>
+							</ul>
+						</div>
+					</fieldset>
 					</div>
 				</div>
 			</div>
@@ -103,7 +109,7 @@ if ($level=="0"){
 											Pembayaran : <b><?php echo rupiah($payment['harga']); ?></b><br/>
 											Prorate : <b><?php echo rupiah($payment['proraide']); ?></b><br/>
 											Ppn : <b><?php echo rupiah($payment['ppn']); ?></b><br/>
-								    	Total Harga : <b><?php echo rupiah($payment['total']).',-'; ?></b>
+								    	Subtotal : <b><?php echo rupiah($payment['total']).',-'; ?></b>
 									</li>
 									  <?php } ?>
 						</ul>
