@@ -67,20 +67,20 @@ if ($level=="0"){
 									$total_harga_addon=$total_harga_addon+$total_harga;
 									} ?>
 								<li class="list-group-item">
-									<p>No Virtual Pembayaran : <strong><?php echo $no_virtual; ?></strong>.</p>
-									<p>Biaya Sewa STB : <strong><?php echo rupiah($biaya_stb); ?></strong>.</p>
-									<p>Biaya Sewa Router : <strong><?php echo rupiah($biaya_router); ?></strong>.</p>
+									<p>No Virtual Pembayaran : <strong><?php echo $no_virtual; ?></strong></p>
+									<p>Biaya Sewa STB : <strong><?php echo rupiah($biaya_stb); ?></strong></p>
+									<p>Biaya Sewa Router : <strong><?php echo rupiah($biaya_router); ?></strong></p>
 									<?php if($status=="registrasi"){ ?>
 									<p>Biaya instalasi : <strong><?php echo rupiah($biaya_instalasi); ?></strong>.</p>
-									<p>Total Harga : <strong><?php echo rupiah($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router+$biaya_instalasi); ?></strong>.</p>
+									<p>Total Harga : <strong><?php echo rupiah($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router+$biaya_instalasi); ?></strong></p>
 									<?php $ppn = ($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router+$biaya_instalasi)*0.1; ?>
 									<p>PPN 10% : <strong><?php echo rupiah($ppn); ?></strong>.</p>
-									<p>Total Pembayaran : <strong><?php echo rupiah($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router+$biaya_instalasi); ?></strong>.</p>
+									<p>Total Pembayaran : <strong><?php echo rupiah($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router+$biaya_instalasi); ?></strong></p>
 									<?php } elseif ($status=="unaktif" || $status=="aktif") { ?>
-									<p>Total Harga : <strong><?php echo rupiah($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router); ?></strong>.</p>
+									<p>Total Harga : <strong><?php echo rupiah($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router); ?></strong></p>
 									<?php $ppn = ($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router)*0.1; ?>
-									<p>PPN 10% : <strong><?php echo rupiah($ppn); ?></strong>.</p>
-									<p>Total Pembayaran : <strong><?php echo rupiah($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router); ?></strong>.</p>
+									<p>PPN 10% : <strong><?php echo rupiah($ppn); ?></strong></p>
+									<p>Total Pembayaran : <strong><?php echo rupiah($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router); ?></strong></p>
 									<?php	} ?>
 								</li>
 							</ul>

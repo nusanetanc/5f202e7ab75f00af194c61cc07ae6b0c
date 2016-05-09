@@ -72,8 +72,7 @@ $date_month = date("y");
 		$harga_bayar = $harga_paket;
 		$pindah_paket = "PAKET AKTIF";
 	}
-  $ppn=$harga_paket*0.1;
-	$total_bayar = ($harga_paket - $proraide)+$ppn;
+	$total_bayar =$harga_paket - $proraide;
 	            $res_pack = $col_package->find(array("nama"=>$package_cust));
 	            foreach($res_pack as $row_pack) { $harga_hari = $row_pack['harga_hari']; }
 $res = $col_package->find(array("nama"=>$package_cust));
@@ -519,10 +518,9 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 		  				    	<table class="table table-striped table-hover ">
 									 <thead>
 									    <tr>
-									      <th width="20%">Deskripsi Pembayaran</th>
+									      <th width="40%">Deskripsi Pembayaran</th>
 									      <th width="20%">Harga</th>
 									      <th width="20%">Prorate</th>
-                        <th width="20%">PPN</th>
 									      <th width="20%">Total Bayar</th>
 									    </tr>
 									  </thead>
@@ -530,7 +528,6 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 									  	<td><?php echo $paket_bayar; ?></td>
 									  	<td><?php echo rupiah($harga_bayar); ?></td>
 									  	<td><?php echo rupiah($proraide); ?></td>
-                      <td><?php echo rupiah($ppn); ?></td>
 									  	<td><?php echo rupiah($total_bayar); ?></td>
 									  </tbody>
                     <?php	$res = $col_addon->find(array("id_user"=>"$id_cust"));
@@ -539,10 +536,8 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 									  	<td><?php echo $row['layanan']; ?></td>
 									  	<td><?php echo rupiah($row['harga']); ?></td>
 									  	<td><?php echo rupiah($row['proraide']); ?></td>
-                      <?php $total_bayar0=$row['harga']-$row['proraide'];
-                            $ppn0=$total_bayar0*0.1; ?>
-                      <td><?php echo rupiah($ppn0); ?></td>
-									  	<td><?php echo rupiah($total_bayar0+$ppn0); ?></td>
+                      <?php $total_bayar0=$row['harga']-$row['proraide']; ?>
+									  	<td><?php echo rupiah($total_bayar0); ?></td>
 									  </tbody>
                     <?php } ?>
 								</table>
