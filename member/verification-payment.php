@@ -552,7 +552,58 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 					  	</div>
 					</div>
 				</div>
+		<div class="col-sm-12">
+		<div class="list-group">
+			<div class="panel" style="border:0px;">
+  				<div class="panel-heading" style="background-color:#1B5E12">
+    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">DATA PEMBAYARAN - <?php echo $pembayaran; ?></h3>
+  				</div>
+	  					<br/>
+	  				    <div class="panel-body">
+	  				    <form method="post">
+	  				    <div class="row">
+	  				    	<div class="col-sm-12">
+		  				    	<table class="table table-striped table-hover ">
+									 <thead>
+									    <tr>
+									      <th width="5%">No</th>
+									      <th width="15%">Pembayaran</th>
+									      <th width="15%">Konfirmasi</th>
+									      <th width="20%">Deskripsi Pembayaran</th>
+                        <th width="20%">Harga/PPN</th>
+									      <th width="20%">Total Pembayaran</th>
+									    </tr>
+									  </thead>
+									  <?php
+									  	$res = $col_user->findOne(array("id_user"=>$id_cust));
+										foreach ($res['payment'] as $bayar => $byr) {
+											$thn_konfirmasi = substr($byr['tanggal_konfirmasi'], 0,4);
+											$bln_konfirmasi = substr($byr['tanggal_konfirmasi'], 5,2);
+											$tgl_konfirmasi = substr($byr['tanggal_konfirmasi'], 8,10);
+											$month_konfirmasi = bulan($bln_konfirmasi);
 
+											$thn_bayar = substr($byr['tanggal_bayar'], 0,4);
+											$bln_bayar = substr($byr['tanggal_bayar'], 5,2);
+											$tgl_bayar = substr($byr['tanggal_bayar'], 8,10);
+											$month_bayar = bulan($bln_bayar);
+									   ?>
+									  <tbody class="pic-container down">
+									  	<td><?php echo $byr['no']; ?></td>
+									  	<td><?php echo $tgl_bayar.' '.$month_bayar.' '.$thn_bayar; ?></td>
+									  	<td><?php echo $tgl_konfirmasi.' '.$month_konfirmasi.' '.$thn_konfirmasi; ?></td>
+									  	<td><?php echo $byr['paket']; ?></td>
+                      <td><?php echo rupiah($byr['harga']).'/'.rupiah($byr['ppn']); ?></td>
+                      <td><?php echo rupiah($byr['total_bayar']); ?></td>
+									  </tbody>
+									  <?php } ?>
+								</table>
+		  				    </div>
+		  				 </div>
+		  				 </form>
+		  				 </div>
+					  	</div>
+					</div>
+				</div>
 		<div class="col-sm-12">
 		<div class="list-group">
 			<div class="panel" style="border:0px;">
