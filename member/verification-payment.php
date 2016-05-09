@@ -545,7 +545,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 									  	<td><?php echo $paket_bayar; ?></td>
 									  	<td><?php echo rupiah($harga_bayar); ?></td>
 									  	<td><?php echo rupiah($proraide); ?></td>
-                      <td><?php echo rupiah($harga_bayar-$proraide*0.1); ?></td>
+                      <td><?php echo rupiah($total_bayar*0.1); ?></td>
 									  	<td><?php echo rupiah($total_bayar); ?></td>
 									  </tbody>
                     <?php	$res = $col_addon->find(array("id_user"=>"$id_cust"));
@@ -555,6 +555,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 									  	<td><?php echo rupiah($row['harga']); ?></td>
 									  	<td><?php echo rupiah($row['proraide']); ?></td>
                       <?php $total_bayar0=$row['harga']-$row['proraide']; ?>
+                      <td><?php echo rupiah($total_bayar0*0.1); ?></td>
 									  	<td><?php echo rupiah($total_bayar0); ?></td>
 									  </tbody>
                     <?php } ?>
