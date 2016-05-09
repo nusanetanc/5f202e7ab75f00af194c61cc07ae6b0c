@@ -102,8 +102,10 @@ if ($total_revenue=="" || empty($total_revenue)){
 //mail to bukti pembayaran
 require('../content/srcpdf/fpdf.php');
 $header = array(
-    array("label"=>"Paket : ".$paket_bayar, "length"=>130, "align"=>"C"),
-    array("label"=>"Harga : ".$harga_bayar, "length"=>55, "align"=>"C")
+    array("label"=>"Paket : ".$paket_bayar, "length"=>70, "align"=>"C"),
+    array("label"=>"Harga : ".$harga_bayar, "length"=>30, "align"=>"C"),
+    array("label"=>"Harga : ".$ppn, "length"=>30, "align"=>"C"),
+    array("label"=>"Harga : ".$total_bayar, "length"=>50, "align"=>"C")
   );
 $pdf = new FPDF();
 $pdf->AddPage();
@@ -141,7 +143,7 @@ $pdf->Ln();
 $pdf->SetFont('Arial','','10');
 $pdf->Cell(0,7, 'Tanggal Bayar               : '.$tgl_bayar.' '.$month_bayar.' '.$thn_bayar, '0', 1, 'L');
 $pdf->Cell(0,7, 'Kode Virtual                   : '.$no_virtual, '0', 1, 'L');
-$pdf->Cell(0,7, 'Jumlah Pembayaran      : '.$total_bayar.'.000', '0', 1, 'L');
+$pdf->Cell(0,7, 'Jumlah Pembayaran      : '.rupiah($total_bayar), '0', 1, 'L');
 $pdf->Ln();
 $pdf->Ln();
 $pdf->Image('../img/denstv-logo.png','10','250','50');
@@ -195,7 +197,7 @@ $data .= "\n\n" .
 "--{$mime_boundary}--\n";
 
 $emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1);
-$pay = array("tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date, "paket"=>$paket_bayar, "harga"=>$harga_bayar, "no"=>$last_pembayaran);
+$pay = array("tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date, "paket"=>$paket_bayar, "harga"=>$harga_bayar, "total_bayar"=>$total_bayar, "ppn"=>$ppn, "no"=>$last_pembayaran);
 $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("payment"=>$pay)));
 	if ($status_cust=="registrasi"){
 		$sisa_hari = 30-$date_month;
@@ -564,11 +566,12 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 		  				    	<table class="table table-striped table-hover ">
 									 <thead>
 									    <tr>
-									      <th width="10%">No</th>
-									      <th width="20%">Tanggal Pembayaran</th>
-									      <th width="20%">Tanggal Konfirmasi</th>
-									      <th width="25%">Deskripsi Pembayaran</th>
-									      <th width="25%">Total Pembayaran</th>
+									      <th width="5%">No</th>
+									      <th width="15%">Pembayaran</th>
+									      <th width="15%">Konfirmasi</th>
+									      <th width="20%">Deskripsi Pembayaran</th>
+                        <th width="20%">Harga/PPN</th>
+									      <th width="20%">Total Pembayaran</th>
 									    </tr>
 									  </thead>
 									  <?php
@@ -589,7 +592,8 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 									  	<td><?php echo $tgl_bayar.' '.$month_bayar.' '.$thn_bayar; ?></td>
 									  	<td><?php echo $tgl_konfirmasi.' '.$month_konfirmasi.' '.$thn_konfirmasi; ?></td>
 									  	<td><?php echo $byr['paket']; ?></td>
-									  	<td><?php echo rupiah($byr['harga']); ?></td>
+                      <td><?php echo rupiah($byr['harga'])./.rupiah($byr['ppn']); ?></td>
+                      <td><?php echo rupiah($byr['total_harga']); ?></td>
 									  </tbody>
 									  <?php } ?>
 								</table>
