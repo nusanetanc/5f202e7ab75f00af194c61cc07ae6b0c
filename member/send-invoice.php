@@ -14,7 +14,8 @@
 									}
 							$harga_paket="1.111.000";
 							$harga_bersih = $harga_paket+$ppn;
-							echo $harga_bersih;
+							$ppn1=$harga_paket*0.05;
+							echo $ppn1;
 	if(isset($_POST['send'])){
 
 		$id_cust = $_POST['id_cust'];
