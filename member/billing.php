@@ -69,7 +69,8 @@ if ($level=="0"){
 										<p>Subtotal : <strong><?php echo rupiah($total_harga+$ppn); ?></strong></p>
 									</li>
 									<?php
-									$total_harga_addon=$total_harga_addon+$total_harga;
+									$addon_total=$total_harga+$ppn;
+									$total_harga_addon=$total_harga_addon+$addon_total;
 									} ?>
 								<li class="list-group-item">
 									<p>No Virtual Pembayaran : <strong><?php echo $no_virtual; ?></strong>.</p>
