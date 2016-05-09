@@ -536,7 +536,8 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 									  	<td><?php echo $row['layanan']; ?></td>
 									  	<td><?php echo rupiah($row['harga']); ?></td>
 									  	<td><?php echo rupiah($row['proraide']); ?></td>
-                      <?php $total_bayar0=$row['harga']-$row['proraide']; ?>
+                      <?php $total_bayar0=$row['harga']-$row['proraide'];
+                            $total_harga_addon=$total_harga_addon+$total_bayar0;  ?>
 									  	<td><?php echo rupiah($total_bayar0); ?></td>
 									  </tbody>
                     <?php } ?>
@@ -562,7 +563,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                       <td><strong>Total Pembayaran</strong></td>
                       <td></td>
                       <td></td>
-                      <td><strong><?php echo rupiah($biaya_instalasi+$biaya_router+$biaya_stb); ?></strong></td>
+                      <td><strong><?php echo rupiah($biaya_instalasi+$biaya_router+$biaya_stb+$total_bayar+$total_harga_addon); ?></strong></td>
                     </strong></tbody>
 								</table>
 		  				    </div>
