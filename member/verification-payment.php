@@ -540,6 +540,24 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 									  	<td><?php echo rupiah($total_bayar0); ?></td>
 									  </tbody>
                     <?php } ?>
+                    <tbody>
+                      <td>Sewa Router</td>
+                      <td></td>
+                      <td></td>
+                      <td><?php echo rupiah($biaya_router); ?></td>
+                    </tbody>
+                    <tbody>
+                      <td>Sewa STB</td>
+                      <td></td>
+                      <td></td>
+                      <td><?php echo rupiah($biaya_stb); ?></td>
+                    </tbody>
+                    <tbody>
+                      <td>Instalasi</td>
+                      <td></td>
+                      <td></td>
+                      <td><?php echo rupiah($biaya_instalasi); ?></td>
+                    </tbody>
 								</table>
 		  				    </div>
 		  				 </div>
