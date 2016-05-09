@@ -197,7 +197,7 @@ $data .= "\n\n" .
 "--{$mime_boundary}--\n";
 
 $emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1);
-$pay = array("tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date, "paket"=>$paket_bayar, "harga"=>$harga_bayar, "total"=>$total_bayar, "ppn"=>$ppn, "no"=>$last_pembayaran);
+$pay = array("tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date, "paket"=>$paket_bayar, "harga"=>$harga_bayar, "proraide"=>$proraide, "total"=>$total_bayar, "ppn"=>$ppn, "no"=>$last_pembayaran);
 $update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("payment"=>$pay)));
 	if ($status_cust=="registrasi"){
 		$sisa_hari = 30-$date_month;
@@ -489,7 +489,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 							  <label class="col-lg-3 control-label">Tanggal Akhir Pembayaran : </label>
 							  <div class="col-lg-9">
 								<h4><?php echo $tgl_akhir.' '.$month_akhir.' '.$thn_akhir; ?></h4>
-              </div>$ppn0=$total_bayar0*0.1; ?></option>
+              </div></option>
                 <?php } ?>
                 <option>All</option>
               </select><br/>
@@ -570,7 +570,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 									      <th width="15%">Pembayaran</th>
 									      <th width="15%">Konfirmasi</th>
 									      <th width="20%">Deskripsi Pembayaran</th>
-                        <th width="20%">Harga/PPN</th>
+                        <th width="20%">Harga/Prorate/PPN</th>
 									      <th width="20%">Total Pembayaran</th>
 									    </tr>
 									  </thead>
@@ -592,7 +592,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 									  	<td><?php echo $tgl_bayar.' '.$month_bayar.' '.$thn_bayar; ?></td>
 									  	<td><?php echo $tgl_konfirmasi.' '.$month_konfirmasi.' '.$thn_konfirmasi; ?></td>
 									  	<td><?php echo $byr['paket']; ?></td>
-                      <td><?php echo rupiah($byr['harga']).'/'.rupiah($byr['ppn']); ?></td>
+                      <td><?php echo rupiah($byr['harga']).'/'.rupiah($byr['proraide']).'/'.rupiah($byr['ppn']); ?></td>
                       <td><?php echo rupiah($byr['total_bayar']); ?></td>
 									  </tbody>
 									  <?php } ?>
