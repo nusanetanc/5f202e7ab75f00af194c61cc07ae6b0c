@@ -562,7 +562,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                       <td><strong>Total Pembayaran</strong></td>
                       <td></td>
                       <td></td>
-                      <td><strong><?php echo rupiah($biaya_instalasi); ?></strong></td>
+                      <td><strong><?php echo rupiah($biaya_instalasi+$biaya_router+$biaya_stb); ?></strong></td>
                     </strong></tbody>
 								</table>
 		  				    </div>
