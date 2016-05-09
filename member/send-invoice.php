@@ -12,10 +12,10 @@
 									{
 										$ppn = $row1['ppn'];
 									}
-							$harga_paket="1.111.000";
+							$harga_paket="1111000";
 							$harga_bersih = $harga_paket+$ppn;
 							function rupiah($nilai, $pecahan = 0) { return number_format($nilai, $pecahan, ',', '.'); }
-							echo rupiah($harga_bersih);
+							echo rupiah($harga_paket);
 	if(isset($_POST['send'])){
 
 		$id_cust = $_POST['id_cust'];
