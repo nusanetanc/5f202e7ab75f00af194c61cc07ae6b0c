@@ -126,7 +126,6 @@ $pdf->SetFont('Arial','B','10');
 $pdf->Cell(0,7, 'DATA PELANGGAN', '0', 1, 'L');
 $pdf->Ln();
 $pdf->SetFont('Arial','','10');
-$pdf->WriteHTML("Start of the HTML table.<br/>End of the table.");
 $pdf->Cell(0,7, 'Nama Lengkap            : '.$nama_cust, '0', 1, 'L');
 $pdf->Cell(0,7, 'No ID Pelanggan         : '.$id_cust, '0', 1, 'L');
 $pdf->Cell(0,7, 'Alamat Pemasangan   : '.$tempat_cust.', '.$ket_cust.', '.$alamat_cust.', '.$kota_cust, '0', 1, 'L');
@@ -158,6 +157,9 @@ $pdf->Ln();
 $pdf->Image('../img/denstv-logo.png','10','250','50');
 $pdf->Image('../img/logo-nusanet.png','65','250','50');
 $pdf->Image('../img/a.jpg','170','240','30');
+$pdf=new PDF_HTML();
+$pdf->AddPage();
+$pdf->WriteHTML("Start of the HTML table.<br/>End of the table.");
 // Filename that will be used for the file as the attachment
 $fileatt_name = $no_virtual.$last_pembayaran.'.pdf';
 $dir='bukti/';
