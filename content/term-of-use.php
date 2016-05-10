@@ -14,23 +14,23 @@
     margin-left: 0;
     margin-right: 0;
     padding-left: 40px;">
-                <li>Groovy adalah paket layanan internet, live TV, video on demand, social TV, catch-up TV dan radio streaming untuk personal di kompleks perumahan atau apartemen yang disediakan oleh PT Media Andalan Nusa bagi para pelangganya baik sendiri maupun bekerjasama dengan pihak ketiga lainya.</li>
-                <li>Rental Set Top Box adalah penyewaan Set Top Box (“STB”) untuk menikmati layanan live TV, video on demand, social TV, catch-up TV dan radio streaming.</li>
-                <li>Rental Router adalah penyewaan perangkat Router untuk menikmati layanan internet.</li>
-                <li>Perangkat yang disewakan kepada pelanggan adalah sepenuhnya milik PT Media Andalan Nusa.</li>
-                <li>Untuk keperluan instalasi dan perawatan layanan Groovy, pelanggan wajib memperkenankan teknisi untuk dapat dan memeriksa perangkat pada pelanggan.</li>
-                <li>Pelanggan wajib menjaga dan merawat perangkat yang disewakan. Apabila terjadi kerusakan/kehilangan perangkat, maka segala biaya penggantian/perbaikan akan dibebankan kepada pelanggan.</li>
-                <li>Layanan Groovy dapat dinikmati oleh pelanggan yang telah memenuhi kewajibannya selama 24jam/7hari, kecuali apabila terjadi peristiwa Force Majeure dan/atau peristiwa lain di luar kendali.</li>
-                <li>Pelanggan tidak diperbolehkan untuk menghubungkan layanan Groovy dengan perangkat lain apapun yang bertujuan untuk tindakan atau kegiatan komersialisasi dalam bentuk apapun.</li>
-                <li>Pelanggan tidak diperbolehkan melakukan perubahan apapun terhadap konfigurasi layanan Groovy ataupun perangkat yang disewakan.</li>
-                <li>Apabila terjadi gangguan pada layanan Groovy, pelanggan dapat membuat pengaduan di halaman member.</li>
-                <li>Pelanggan akan dikenakan biaya instalasi sebesar Rp. 500.000,- pada awal pemasangan.</li>
-                <li>Proses instalasi akan dilakukan dengan diberikan kabel sampai dengan 25 meter, bila lebih dari itu pelanggan akan dibebankan biaya kabel tambahan sebesar Rp. 10.000,- / meter</li>
-                <li>Pelanggan akan dibebankan biaya sewa perangkat Router Wifi sebesar Rp. 40.000,- / bulan</li>
-                <li>Pelanggan akan dibebankan biaya sewa Set Top Box (STB) Rp. 45.000,- / bulan untuk paket GH500, GH800 dan GH1700</li>
-                <li>Sat akun (account) hanya dapat menggunakan satu Router Wifi dan satu STB</li>
-                <li>Layanan Groovy akan menggunakan IP local dynamic</li>
-                <li>Layanan Groovy hanya untuk pemakaian rumah dan tidak untuk dijual kembali.</li>
+                <li>Groovy adalah paket layanan internet, live TV, video on demand, social TV, catch-up TV dan radio streaming untuk personal di kompleks perumahan atau apartemen yang disediakan oleh PT Media Andalan Nusa bagi para pelangganya baik sendiri maupun bekerjasama dengan pihak ketiga lainya.</li><br/>
+                <li>Rental Set Top Box adalah penyewaan Set Top Box (“STB”) untuk menikmati layanan live TV, video on demand, social TV, catch-up TV dan radio streaming.</li><br/>
+                <li>Rental Router adalah penyewaan perangkat Router untuk menikmati layanan internet.</li><br/>
+                <li>Perangkat yang disewakan kepada pelanggan adalah sepenuhnya milik PT Media Andalan Nusa.</li><br/>
+                <li>Untuk keperluan instalasi dan perawatan layanan Groovy, pelanggan wajib memperkenankan teknisi untuk dapat dan memeriksa perangkat pada pelanggan.</li><br/>
+                <li>Pelanggan wajib menjaga dan merawat perangkat yang disewakan. Apabila terjadi kerusakan/kehilangan perangkat, maka segala biaya penggantian/perbaikan akan dibebankan kepada pelanggan.</li><br/>
+                <li>Layanan Groovy dapat dinikmati oleh pelanggan yang telah memenuhi kewajibannya selama 24jam/7hari, kecuali apabila terjadi peristiwa Force Majeure dan/atau peristiwa lain di luar kendali.</li><br/>
+                <li>Pelanggan tidak diperbolehkan untuk menghubungkan layanan Groovy dengan perangkat lain apapun yang bertujuan untuk tindakan atau kegiatan komersialisasi dalam bentuk apapun.</li><br/>
+                <li>Pelanggan tidak diperbolehkan melakukan perubahan apapun terhadap konfigurasi layanan Groovy ataupun perangkat yang disewakan.</li><br/>
+                <li>Apabila terjadi gangguan pada layanan Groovy, pelanggan dapat membuat pengaduan di halaman member.</li><br/>
+                <li>Pelanggan akan dikenakan biaya instalasi sebesar Rp. 500.000,- pada awal pemasangan.</li><br/>
+                <li>Proses instalasi akan dilakukan dengan diberikan kabel sampai dengan 25 meter, bila lebih dari itu pelanggan akan dibebankan biaya kabel tambahan sebesar Rp. 10.000,- / meter</li><br/>
+                <li>Pelanggan akan dibebankan biaya sewa perangkat Router Wifi sebesar Rp. 40.000,- / bulan</li><br/>
+                <li>Pelanggan akan dibebankan biaya sewa Set Top Box (STB) Rp. 45.000,- / bulan untuk paket GH500, GH800 dan GH1700</li><br/>
+                <li>Sat akun (account) hanya dapat menggunakan satu Router Wifi dan satu STB</li><br/>
+                <li>Layanan Groovy akan menggunakan IP local dynamic</li><br/>
+                <li>Layanan Groovy hanya untuk pemakaian rumah dan tidak untuk dijual kembali.</li><br/>
             </ol>
             </p>
                 
