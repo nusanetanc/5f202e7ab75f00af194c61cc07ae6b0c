@@ -119,11 +119,17 @@ $kol_router = array(
     array("label"=>rupiah($biaya_router+$proraide_router), "length"=>30, "align"=>"C")
   );
 $kol_stb = array(
-    array("label"=>"Sewa Router", "length"=>80, "align"=>"C"),
+    array("label"=>"Sewa STB", "length"=>80, "align"=>"C"),
     array("label"=>rupiah($biaya_stb), "length"=>30, "align"=>"C"),
     array("label"=>rupiah($proraide_stb), "length"=>30, "align"=>"C"),
     array("label"=>rupiah($biaya_stb+$proraide_stb), "length"=>30, "align"=>"C")
   );
+  $kol_instalasi = array(
+      array("label"=>"Sewa Router", "length"=>80, "align"=>"C"),
+      array("label"=>rupiah($biaya_instalasi), "length"=>30, "align"=>"C"),
+      array("label"=>rupiah($proraide_instalasi), "length"=>30, "align"=>"C"),
+      array("label"=>rupiah($biaya_instalasi+$proraide_instalasi), "length"=>30, "align"=>"C")
+    );
 $pdf = new FPDF();
 $pdf->AddPage();
 $pdf->Image('../img/groovy-logo-orange.png','140','15','60');
@@ -167,6 +173,10 @@ foreach ($kol_router as $kolom_router) {
 $pdf->Ln();
 foreach ($kol_stb as $kolom_stb) {
   $pdf->Cell($kolom_stb['length'], 10, $kolom_stb['label'], 1, '0', $kolom_stb['align'], true);
+}
+$pdf->Ln();
+foreach ($kol_instalasi as $kolom_instalasi) {
+  $pdf->Cell($kolom_instalasi['length'], 10, $kolom_instalasi['label'], 1, '0', $kolom_instalasi['align'], true);
 }
 $pdf->Ln();
 $pdf->Ln();
