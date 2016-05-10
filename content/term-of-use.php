@@ -15,6 +15,10 @@
     margin-right: 0;
     padding-left: 40px;">
                 <li>Groovy adalah paket layanan internet, live TV, video on demand, social TV, catch-up TV dan radio streaming untuk personal di kompleks perumahan atau apartemen yang disediakan oleh PT Media Andalan Nusa bagi para pelangganya baik sendiri maupun bekerjasama dengan pihak ketiga lainya.</ol>
+                <li>Groovy adalah paket layanan internet, live TV, video on demand, social TV, catch-up TV dan radio streaming untuk personal di kompleks perumahan atau apartemen yang disediakan oleh PT Media Andalan Nusa bagi para pelangganya baik sendiri maupun bekerjasama dengan pihak ketiga lainya.</ol>
+                <li>Groovy adalah paket layanan internet, live TV, video on demand, social TV, catch-up TV dan radio streaming untuk personal di kompleks perumahan atau apartemen yang disediakan oleh PT Media Andalan Nusa bagi para pelangganya baik sendiri maupun bekerjasama dengan pihak ketiga lainya.</ol>
+                <li>Groovy adalah paket layanan internet, live TV, video on demand, social TV, catch-up TV dan radio streaming untuk personal di kompleks perumahan atau apartemen yang disediakan oleh PT Media Andalan Nusa bagi para pelangganya baik sendiri maupun bekerjasama dengan pihak ketiga lainya.</ol>
+                <li>Groovy adalah paket layanan internet, live TV, video on demand, social TV, catch-up TV dan radio streaming untuk personal di kompleks perumahan atau apartemen yang disediakan oleh PT Media Andalan Nusa bagi para pelangganya baik sendiri maupun bekerjasama dengan pihak ketiga lainya.</ol>
                 <li>Rental Set Top Box adalah penyewaan Set Top Box (“STB”) untuk menikmati layanan live TV, video on demand, social TV, catch-up TV dan radio streaming.</ol>
                 <li>Rental Router adalah penyewaan perangkat Router untuk menikmati layanan internet.</ol>
                 <li>Perangkat yang disewakan kepada pelanggan adalah sepenuhnya milik PT Media Andalan Nusa.</ol>
