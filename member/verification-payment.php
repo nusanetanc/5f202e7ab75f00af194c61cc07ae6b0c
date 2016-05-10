@@ -99,7 +99,7 @@ if ($total_revenue=="" || empty($total_revenue)){
 	$update_revenue = $col_revenue->update(array("date"=>$date), array('$set'=>array("total"=>$revenue)));
 }
 //mail to bukti pembayaran
-require('../content/srcpdf/fpdf.php');
+require('../content/srcpdf/fpdf.php'); /*
 $htmlTable=
 '<TABLE>
  <tr>
@@ -108,7 +108,7 @@ $htmlTable=
  <tr>
   <td>1</td><td>Dida Nurwanda</td><td>Makan, Maen PES, Ngoding, Maen Gundu, Jalan jalan sore</td>
  </tr>
-</TABLE>';
+</TABLE>'; */
 $header = array(
     array("label"=>"Paket : ".$paket_bayar, "length"=>50, "align"=>"C"),
     array("label"=>"Harga : ".rupiah($harga_bayar), "length"=>30, "align"=>"C"),
@@ -132,7 +132,7 @@ $pdf->Cell(0,7, 'Alamat Pemasangan   : '.$tempat_cust.', '.$ket_cust.', '.$alama
 $pdf->Cell(0,7, 'Nomor Telepon            : '.$phone_cust, '0', 1, 'L');
 $pdf->Cell(0,7, 'Alamat Email               : '.$email_cust, '0', 1, 'L');
 $pdf->Ln();
-$pdf->WriteHTML("Start of the HTML table.<BR>$htmlTable<BR>End of the table.");
+//$pdf->WriteHTML("Start of the HTML table.<BR>$htmlTable<BR>End of the table.");
 $pdf->Ln();
 $pdf->SetFont('Arial','B','10');
 $pdf->Cell(0,7, 'DATA PEMBAYARAN', '0', 1, 'L');
