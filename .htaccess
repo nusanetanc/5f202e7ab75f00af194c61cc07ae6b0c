@@ -13,6 +13,7 @@ RewriteRule ^contact-us$ ?hal=contact
 RewriteRule ^career$ ?hal=career
 RewriteRule ^events$ ?hal=events
 RewriteRule ^privacy-policy$ ?hal=privacy-policy
+RewriteRule ^term-of-use$ ?hal=term-of-use
 RewriteRule ^about$ ?hal=about
 RewriteRule ^404$ ?hal=not-found
 </IfModule>
