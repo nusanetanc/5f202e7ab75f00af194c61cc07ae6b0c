@@ -101,10 +101,10 @@ if ($total_revenue=="" || empty($total_revenue)){
 //mail to bukti pembayaran
 require('../content/srcpdf/fpdf.php');
 $header = array(
-    array("label"=>"Pembayaran", "length"=>60, "align"=>"C"),
+    array("label"=>"Pembayaran", "length"=>50, "align"=>"C"),
     array("label"=>"Harga", "length"=>30, "align"=>"C"),
-    array("label"=>"Prorate "), "length"=>30, "align"=>"C"),
-    array("label"=>"Sub Total ", "length"=>30, "align"=>"C")
+    array("label"=>"Prorate", "length"=>30, "align"=>"C"),
+    array("label"=>"Sub Total", "length"=>50, "align"=>"C")
   );
 $pdf = new FPDF();
 $pdf->AddPage();
