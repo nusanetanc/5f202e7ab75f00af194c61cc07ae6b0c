@@ -99,7 +99,7 @@ if ($total_revenue=="" || empty($total_revenue)){
 	$update_revenue = $col_revenue->update(array("date"=>$date), array('$set'=>array("total"=>$revenue)));
 }
 //mail to bukti pembayaran
-require('../content/srcpdf/fpdf.php'); /*
+require('../content/srcpdf/fpdf.php');
 $htmlTable=
 '<TABLE>
  <tr>
@@ -108,7 +108,7 @@ $htmlTable=
  <tr>
   <td>1</td><td>Dida Nurwanda</td><td>Makan, Maen PES, Ngoding, Maen Gundu, Jalan jalan sore</td>
  </tr>
-</TABLE>'; */
+</TABLE>';
 $header = array(
     array("label"=>"Paket : ".$paket_bayar, "length"=>50, "align"=>"C"),
     array("label"=>"Harga : ".rupiah($harga_bayar), "length"=>30, "align"=>"C"),
