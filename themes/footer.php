@@ -33,7 +33,7 @@
                     <a href="<?php echo $base_url; ?>/contact-us">Contact Us</a><br/>
                     <a href="<?php echo $base_url; ?>/support">Help Center</a><br/>
                     <a href="<?php echo $base_url; ?>/privacy-policy">Privacy Policy</a><br/>
-                    <a href="<?php echo $base_url; ?>/privacy-policy">Term of Use</a><br/>
+                    <a href="<?php echo $base_url; ?>/term-of-use">Term of Use</a><br/>
                 </p>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-3 text-left">
