@@ -106,6 +106,12 @@ $header = array(
     array("label"=>"Prorate", "length"=>30, "align"=>"C"),
     array("label"=>"Sub Total", "length"=>30, "align"=>"C")
   );
+$kol_paket = array(
+    array("label"=>$paket_bayar, "length"=>80, "align"=>"C"),
+    array("label"=>rupiah($harga_bayar), "length"=>30, "align"=>"C"),
+    array("label"=>rupiah($proraide), "length"=>30, "align"=>"C"),
+    array("label"=>rupiah($total_bayar), "length"=>30, "align"=>"C")
+  );
 $pdf = new FPDF();
 $pdf->AddPage();
 $pdf->Image('../img/groovy-logo-orange.png','140','15','60');
@@ -135,8 +141,8 @@ foreach ($header as $kolom) {
   $pdf->Cell($kolom['length'], 10, $kolom['label'], 1, '0', $kolom['align'], true);
 }
 $pdf->Ln();
-foreach ($header as $kolom) {
-  $pdf->Cell($kolom['length'], 10, $kolom['label'], 1, '0', $kolom['align'], true);
+foreach ($kol_paket as $kolom_paket) {
+  $pdf->Cell($kolom_paket['length'], 10, $kolom_paket['label'], 1, '0', $kolom_paket['align'], true);
 }
 $pdf->Ln();
 $pdf->Ln();
