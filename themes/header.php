@@ -376,7 +376,7 @@
                                 <?php } ?>
                                 <option value= "0">Other</option>
                             </select>
-                            <p style="margin-top:10px;color:#000;font-size:14px;text-decoration:none;text-align:left">By clicking Sign Up, you agree to our <a href="<?php echo $base_url; ?>/term-of-use" style="text-decoration:underline;">Terms of Use</a> and <a href="<?php echo $base_url; ?>/privacy-policy" style="text-decoration:underline;">Privacy Policy</a></p>
+                            <p style="margin-top:10px;color:#000;font-size:14px;text-decoration:none;text-align:left">By clicking Sign Up, you agree to our <a href="<?php echo $base_url; ?>/term-of-use" style="text-decoration:underline;color:#000;">Terms of Use</a> and <a href="<?php echo $base_url; ?>/privacy-policy" style="text-decoration:underline;color:#000;">Privacy Policy</a></p>
                             <input style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" name ="regisdescription" id = "regisdescription" type="text" class="form-control form-group-lg" placeholder="Specific Location (Block/Tower/Floor)">
                             <textarea name ="regisplace" id = "regisplace" rows="5" class="form-control" style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:100px;width:100%;" placeholder="Complete Address"></textarea>
                             <select style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" name = "regiscity" id="regiscity" class="form-control form-group-lg">
