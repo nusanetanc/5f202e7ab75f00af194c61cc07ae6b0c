@@ -100,12 +100,20 @@ if ($total_revenue=="" || empty($total_revenue)){
 }
 //mail to bukti pembayaran
 require('../content/srcpdf/fpdf.php');
+$htmlTable=
+'<TABLE>
+ <tr>
+  <td>No.</td><td>Nama</td><td>Hobi</td>
+ </tr>
+ <tr>
+  <td>1</td><td>Dida Nurwanda</td><td>Makan, Maen PES, Ngoding, Maen Gundu, Jalan jalan sore</td>
+ </tr>
+</TABLE>';
 $header = array(
     array("label"=>"Paket : ".$paket_bayar, "length"=>50, "align"=>"C"),
     array("label"=>"Harga : ".rupiah($harga_bayar), "length"=>30, "align"=>"C"),
-    array("label"=>"PPN : ".rupiah($ppn), "length"=>30, "align"=>"C"),
-        array("label"=>"Prorate : ".rupiah($proraide), "length"=>30, "align"=>"C"),
-    array("label"=>"Harga : ".rupiah($total_bayar), "length"=>50, "align"=>"C")
+    array("label"=>"Prorate : ".rupiah($proraide), "length"=>30, "align"=>"C"),
+    array("label"=>"Total Harga : ".rupiah($total_bayar), "length"=>50, "align"=>"C")
   );
 $pdf = new FPDF();
 $pdf->AddPage();
@@ -123,6 +131,8 @@ $pdf->Cell(0,7, 'No ID Pelanggan         : '.$id_cust, '0', 1, 'L');
 $pdf->Cell(0,7, 'Alamat Pemasangan   : '.$tempat_cust.', '.$ket_cust.', '.$alamat_cust.', '.$kota_cust, '0', 1, 'L');
 $pdf->Cell(0,7, 'Nomor Telepon            : '.$phone_cust, '0', 1, 'L');
 $pdf->Cell(0,7, 'Alamat Email               : '.$email_cust, '0', 1, 'L');
+$pdf->Ln();
+$pdf->WriteHTML("Start of the HTML table.<BR>$htmlTable<BR>End of the table.");
 $pdf->Ln();
 $pdf->SetFont('Arial','B','10');
 $pdf->Cell(0,7, 'DATA PEMBAYARAN', '0', 1, 'L');
