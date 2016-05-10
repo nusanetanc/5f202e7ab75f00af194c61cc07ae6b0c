@@ -134,6 +134,7 @@ $pdf->SetDrawColor(0,0,0);
 foreach ($header as $kolom) {
   $pdf->Cell($kolom['length'], 10, $kolom['label'], 1, '0', $kolom['align'], true);
 }
+$pdf->Ln();
 foreach ($header as $kolom) {
   $pdf->Cell($kolom['length'], 10, $kolom['label'], 1, '0', $kolom['align'], true);
 }
