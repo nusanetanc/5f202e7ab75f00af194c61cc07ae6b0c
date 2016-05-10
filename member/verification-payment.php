@@ -112,6 +112,18 @@ $kol_paket = array(
     array("label"=>rupiah($proraide), "length"=>30, "align"=>"C"),
     array("label"=>rupiah($total_bayar), "length"=>30, "align"=>"C")
   );
+$kol_router = array(
+    array("label"=>"Sewa Router", "length"=>80, "align"=>"C"),
+    array("label"=>rupiah($biaya_router), "length"=>30, "align"=>"C"),
+    array("label"=>rupiah($proraide_router), "length"=>30, "align"=>"C"),
+    array("label"=>rupiah($biaya_router+$proraide_router), "length"=>30, "align"=>"C")
+  );
+$kol_stb = array(
+    array("label"=>"Sewa Router", "length"=>80, "align"=>"C"),
+    array("label"=>rupiah($biaya_stb), "length"=>30, "align"=>"C"),
+    array("label"=>rupiah($proraide_stb), "length"=>30, "align"=>"C"),
+    array("label"=>rupiah($biaya_stb+$proraide_stb), "length"=>30, "align"=>"C")
+  );
 $pdf = new FPDF();
 $pdf->AddPage();
 $pdf->Image('../img/groovy-logo-orange.png','140','15','60');
@@ -147,6 +159,14 @@ $pdf->SetTextColor(0);
 $pdf->SetDrawColor(0,0,0);
 foreach ($kol_paket as $kolom_paket) {
   $pdf->Cell($kolom_paket['length'], 10, $kolom_paket['label'], 1, '0', $kolom_paket['align'], true);
+}
+$pdf->Ln();
+foreach ($kol_router as $kolom_router) {
+  $pdf->Cell($kolom_router['length'], 10, $kolom_router['label'], 1, '0', $kolom_router['align'], true);
+}
+$pdf->Ln();
+foreach ($kol_stb as $kolom_stb) {
+  $pdf->Cell($kolom_stb['length'], 10, $kolom_stb['label'], 1, '0', $kolom_stb['align'], true);
 }
 $pdf->Ln();
 $pdf->Ln();
