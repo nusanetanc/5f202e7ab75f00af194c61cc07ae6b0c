@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12 supportContentWrapper">
-            <h3 style="margin:0;font-size:33px;font-weight:bold;">Groovy Privacy Policy</h3>
+            <h3 style="margin:0;font-size:33px;font-weight:bold;">Groovy Term of Use</h3>
             <div style="background: linear-gradient(to right, #FF3D23 , #FF931E);height:2px;margin-top:30px;margin-bottom:5px;"></div>
             <!--<h6 style="font-size:21px;font-weight:600;line-height:24px;margin:25px 0 0 0;color:#444">Melindungi data pribadi dan menghargai privasi Anda</h6><br/>-->
             <p style="line-height:1.5;font-size:15px;color:#444;">
