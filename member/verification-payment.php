@@ -98,6 +98,9 @@ if ($total_revenue=="" || empty($total_revenue)){
 	$revenue=$total_revenue+$total_bayar;
 	$update_revenue = $col_revenue->update(array("date"=>$date), array('$set'=>array("total"=>$revenue)));
 }
+if ($status_cust=="aktif"){
+  $biaya_instalasi=0;
+}
 //mail to bukti pembayaran
 require('../content/srcpdf/fpdf.php');
 $header = array(
