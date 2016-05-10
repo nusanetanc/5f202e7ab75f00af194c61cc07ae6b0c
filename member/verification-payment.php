@@ -101,7 +101,7 @@ if ($total_revenue=="" || empty($total_revenue)){
 //mail to bukti pembayaran
 require('../content/srcpdf/fpdf.php');
 $header = array(
-    array("label"=>"Pembayaran", "length"=>70, "align"=>"C"),
+    array("label"=>"Pembayaran", "length"=>80, "align"=>"C"),
     array("label"=>"Harga", "length"=>30, "align"=>"C"),
     array("label"=>"Prorate", "length"=>30, "align"=>"C"),
     array("label"=>"Sub Total", "length"=>30, "align"=>"C")
@@ -125,11 +125,15 @@ $pdf->Cell(0,7, 'Alamat Email               : '.$email_cust, '0', 1, 'L');
 $pdf->Ln();
 $pdf->SetFont('Arial','B','10');
 $pdf->Cell(0,7, 'DATA PEMBAYARAN', '0', 1, 'L');
+
 $pdf->Ln();
-$pdf->SetFont('Arial','','10');
+$pdf->SetFont('Arial','B','10');
 $pdf->SetFillColor(255,255,255);
 $pdf->SetTextColor(0);
 $pdf->SetDrawColor(0,0,0);
+foreach ($header as $kolom) {
+  $pdf->Cell($kolom['length'], 10, $kolom['label'], 1, '0', $kolom['align'], true);
+}
 foreach ($header as $kolom) {
   $pdf->Cell($kolom['length'], 10, $kolom['label'], 1, '0', $kolom['align'], true);
 }
