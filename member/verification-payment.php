@@ -100,20 +100,11 @@ if ($total_revenue=="" || empty($total_revenue)){
 }
 //mail to bukti pembayaran
 require('../content/srcpdf/fpdf.php');
-$htmlTable=
-'<TABLE>
- <tr>
-  <td>No.</td><td>Nama</td><td>Hobi</td>
- </tr>
- <tr>
-  <td>1</td><td>Dida Nurwanda</td><td>Makan, Maen PES, Ngoding, Maen Gundu, Jalan jalan sore</td>
- </tr>
-</TABLE>';
 $header = array(
-    array("label"=>"Paket : ".$paket_bayar, "length"=>50, "align"=>"C"),
-    array("label"=>"Harga : ".rupiah($harga_bayar), "length"=>30, "align"=>"C"),
-    array("label"=>"Prorate : ".rupiah($proraide), "length"=>30, "align"=>"C"),
-    array("label"=>"Total Harga : ".rupiah($total_bayar), "length"=>50, "align"=>"C")
+    array("label"=>"Pembayaran", "length"=>60, "align"=>"C"),
+    array("label"=>"Harga", "length"=>30, "align"=>"C"),
+    array("label"=>"Prorate "), "length"=>30, "align"=>"C"),
+    array("label"=>"Sub Total ", "length"=>30, "align"=>"C")
   );
 $pdf = new FPDF();
 $pdf->AddPage();
@@ -157,9 +148,6 @@ $pdf->Ln();
 $pdf->Image('../img/denstv-logo.png','10','250','50');
 $pdf->Image('../img/logo-nusanet.png','65','250','50');
 $pdf->Image('../img/a.jpg','170','240','30');
-$pdf=new PDF_HTML();
-$pdf->AddPage();
-$pdf->WriteHTML("Start of the HTML table.<br/>End of the table.");
 // Filename that will be used for the file as the attachment
 $fileatt_name = $no_virtual.$last_pembayaran.'.pdf';
 $dir='bukti/';
