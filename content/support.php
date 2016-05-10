@@ -54,12 +54,12 @@
                         <p class="supportParagraphFaq">Groovy menggunakan metode perhitungan pembayaran "Prorate". Artinya di masa awal pendaftaran Anda akan diminta untuk membayar paket 1 bulan full tidak perduli tanggal berapa Anda mendaftar. Baru di bulan berikutnya Anda tidak membayar tahihan 1 bulan full, tetapi hanya dibebankan tagihan di awal bulan yang sebelumnya.<br/><br/>Besarnya pembayaran di awal pendaftaran berbeda-beda tergantung dari masing-masing paket (<a  href="http://www.groovy.id/packages">lihat harga paket</a>)</p>
                     </div>
                 </div>
-                <div class="supportContent">
+                <!--<div class="supportContent">
                     <button class="supportButtonFaq" data-toggle="collapse" data-target="#supportContent9">Bagaimana cara saya membayar tagihan ?<span style="float:right;margin-right:20px;"><i class="fa fa-plus"></i></span></button>
                     <div id="supportContent9" class="collapse">
                         <p class="supportParagraphFaq">..<a href="http://www.groovy.id/member/billing/konfirmasi">http://www.groovy.id/member/billing/konfirmasi</a></p>
                     </div>
-                </div>
+                </div>-->
                 
             </div>   
         </div>
