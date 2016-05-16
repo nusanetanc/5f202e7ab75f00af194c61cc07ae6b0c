@@ -177,7 +177,6 @@ $pdf->Ln();
 foreach ($kol_stb as $kolom_stb) {
   $pdf->Cell($kolom_stb['length'], 8, $kolom_stb['label'], 1, '0', $kolom_stb['align'], true);
 }
-
 $pdf->Ln();
 foreach ($kol_instalasi as $kolom_instalasi) {
   $pdf->Cell($kolom_instalasi['length'], 8, $kolom_instalasi['label'], 1, '0', $kolom_instalasi['align'], true);
