@@ -133,7 +133,7 @@ $kol_stb = array(
       array("label"=>rupiah($biaya_instalasi), "length"=>30, "align"=>"C"),
       array("label"=>rupiah($proraide_instalasi), "length"=>30, "align"=>"C"),
       array("label"=>rupiah($biaya_instalasi+$proraide_instalasi), "length"=>30, "align"=>"C")
-    );
+    );  */
 $pdf = new FPDF();
 $pdf->AddPage();
 $pdf->Image('../img/groovy-logo-orange.png','140','15','60');
@@ -196,7 +196,7 @@ $pdf->Ln();
 $pdf->Ln();
 $pdf->Image('../img/denstv-logo.png','10','250','50');
 $pdf->Image('../img/logo-nusanet.png','65','250','50');
-$pdf->Image('../img/a.jpg','170','240','30'); */
+$pdf->Image('../img/a.jpg','170','240','30');
 // Filename that will be used for the file as the attachment
 $fileatt_name = $no_virtual.$last_pembayaran.'.pdf';
 $dir='bukti/';
