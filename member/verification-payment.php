@@ -102,7 +102,7 @@ if ($status_cust=="aktif"){
   $biaya_instalasi=0;
 }
 //mail to bukti pembayaran
-/*
+
 require('../content/srcpdf/fpdf.php');
 $header = array(
     array("label"=>"Pembayaran", "length"=>80, "align"=>"C"),
@@ -133,7 +133,7 @@ $kol_stb = array(
       array("label"=>rupiah($biaya_instalasi), "length"=>30, "align"=>"C"),
       array("label"=>rupiah($proraide_instalasi), "length"=>30, "align"=>"C"),
       array("label"=>rupiah($biaya_instalasi+$proraide_instalasi), "length"=>30, "align"=>"C")
-    );  */
+    ); /*
 $pdf = new FPDF();
 $pdf->AddPage();
 $pdf->Image('../img/groovy-logo-orange.png','140','15','60');
@@ -153,7 +153,7 @@ $pdf->Cell(0,7, 'Alamat Email               : '.$email_cust, '0', 1, 'L');
 $pdf->Ln();
 $pdf->SetFont('Arial','B','10');
 $pdf->Cell(0,7, 'DATA PEMBAYARAN', '0', 1, 'L');
-
+*/
 $pdf->Ln();
 $pdf->SetFont('Arial','B','10');
 $pdf->SetFillColor(255,255,255);
