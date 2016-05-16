@@ -133,7 +133,7 @@ $kol_stb = array(
       array("label"=>rupiah($biaya_instalasi), "length"=>30, "align"=>"C"),
       array("label"=>rupiah($proraide_instalasi), "length"=>30, "align"=>"C"),
       array("label"=>rupiah($biaya_instalasi+$proraide_instalasi), "length"=>30, "align"=>"C")
-    ); /*
+    );
 $pdf = new FPDF();
 $pdf->AddPage();
 $pdf->Image('../img/groovy-logo-orange.png','140','15','60');
@@ -153,7 +153,7 @@ $pdf->Cell(0,7, 'Alamat Email               : '.$email_cust, '0', 1, 'L');
 $pdf->Ln();
 $pdf->SetFont('Arial','B','10');
 $pdf->Cell(0,7, 'DATA PEMBAYARAN', '0', 1, 'L');
-*/
+/*
 $pdf->Ln();
 $pdf->SetFont('Arial','B','10');
 $pdf->SetFillColor(255,255,255);
@@ -181,7 +181,7 @@ foreach ($kol_stb as $kolom_stb) {
 $pdf->Ln();
 foreach ($kol_instalasi as $kolom_instalasi) {
   $pdf->Cell($kolom_instalasi['length'], 8, $kolom_instalasi['label'], 1, '0', $kolom_instalasi['align'], true);
-}
+} */
 $pdf->Ln();
 $pdf->Ln();
 $pdf->Ln();1.522.400
