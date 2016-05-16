@@ -180,10 +180,10 @@ foreach ($kol_stb as $kolom_stb) {
 $pdf->Ln();
 foreach ($kol_instalasi as $kolom_instalasi) {
   $pdf->Cell($kolom_instalasi['length'], 8, $kolom_instalasi['label'], 1, '0', $kolom_instalasi['align'], true);
-} /*
+}
 $pdf->Ln();
 $pdf->Ln();
-$pdf->Ln();1.522.400
+$pdf->Ln();
 $pdf->SetFont('Arial','B','10');
 $pdf->Cell(0,7, 'KONFIRMASI PEMBAYRAN - PAYMENT CONFIRMATION', '0', 1, 'L');
 $pdf->Ln();
@@ -195,7 +195,7 @@ $pdf->Ln();
 $pdf->Ln();
 $pdf->Image('../img/denstv-logo.png','10','250','50');
 $pdf->Image('../img/logo-nusanet.png','65','250','50');
-$pdf->Image('../img/a.jpg','170','240','30'); */
+$pdf->Image('../img/a.jpg','170','240','30'); 
 // Filename that will be used for the file as the attachment
 $fileatt_name = $no_virtual.$last_pembayaran.'.pdf';
 $dir='bukti/';
