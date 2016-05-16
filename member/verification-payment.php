@@ -102,7 +102,7 @@ if ($status_cust=="aktif"){
   $biaya_instalasi=0;
 }
 //mail to bukti pembayaran
-
+/*
 require('../content/srcpdf/fpdf.php');
 $header = array(
     array("label"=>"Pembayaran", "length"=>80, "align"=>"C"),
@@ -196,7 +196,7 @@ $pdf->Ln();
 $pdf->Ln();
 $pdf->Image('../img/denstv-logo.png','10','250','50');
 $pdf->Image('../img/logo-nusanet.png','65','250','50');
-$pdf->Image('../img/a.jpg','170','240','30'); /*
+$pdf->Image('../img/a.jpg','170','240','30'); */
 // Filename that will be used for the file as the attachment
 $fileatt_name = $no_virtual.$last_pembayaran.'.pdf';
 $dir='bukti/';
@@ -244,7 +244,7 @@ $email_message1 .= "--{$mime_boundary}\n" .
 $data .= "\n\n" .
 "--{$mime_boundary}--\n";
 
-$emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1); */
+$emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1);
 $pay = array("deskripsi"=>$package_cust, "harga"=>$harga_bayar, "prorate"=>$prorate, "total_harga"=>$harga_bayar);
 //$update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("payment"=>$pay)));
 $insert_bayar = $col_payment->insert(array("id_user"=>$id_cust, "tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date,"pembayaran"=>$pay, "total_tagihan"=>$total_bayar, "ppn"=>$ppn, "no"=>$last_pembayaran, "total_pembayaran"=>$total_pembayaran));
