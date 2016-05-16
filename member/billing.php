@@ -28,7 +28,7 @@ if ($level=="0"){
 								  <li class="list-group-item">
 								  	<h4 class="list-group-item-heading"><strong>#<?php echo $paket; ?></strong></h4>
 										<?php if($add['status']=="unaktif"){ ?>
-											<span class="label label-warning"><?php echo $add['status']; ?></span>
+											<span class="label label-warning">unaktif</span>
 										<?php } elseif($add['status']=="aktif"){ ?>
 											<p>Tanggal Mulai Aktif : <strong><?php echo $tgl_aktif.' '.$month_aktif.' '.$thn_aktif; ?></strong>.</p>
 											<p>Tanggal Akhir Pembayaran : <strong><?php echo $tgl_akhir.' '.$month_akhir.' '.$thn_akhir; ?></strong>.</p>
