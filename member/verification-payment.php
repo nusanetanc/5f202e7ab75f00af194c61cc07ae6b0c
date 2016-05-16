@@ -84,7 +84,7 @@ $res = $col_package->find(array("nama"=>$move_paket_cust));
 	foreach($res as $row)
 	{
 		$deskripsi_paket1=$row['deskripsi'];
-	} /*
+	}
 if(isset($_POST['verifikasi'])){
 		$tanggal_bayar = $_POST['inputPaymentdate'];
 		$thn_bayar = substr($tanggal_bayar, 0,4);
@@ -102,6 +102,7 @@ if ($status_cust=="aktif"){
   $biaya_instalasi=0;
 }
 //mail to bukti pembayaran
+/*
 require('../content/srcpdf/fpdf.php');
 $header = array(
     array("label"=>"Pembayaran", "length"=>80, "align"=>"C"),
@@ -243,7 +244,7 @@ $email_message1 .= "--{$mime_boundary}\n" .
 $data .= "\n\n" .
 "--{$mime_boundary}--\n";
 
-$emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1);
+$emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1); */
 $pay = array("deskripsi"=>$package_cust, "harga"=>$harga_bayar, "prorate"=>$prorate, "total_harga"=>$harga_bayar);
 //$update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("payment"=>$pay)));
 $insert_bayar = $col_payment->insert(array("id_user"=>$id_cust, "tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date,"pembayaran"=>$pay, "total_tagihan"=>$total_bayar, "ppn"=>$ppn, "no"=>$last_pembayaran, "total_pembayaran"=>$total_pembayaran));
@@ -335,7 +336,7 @@ if ($update_user && $update_bayar && $emailinvoice){
 	?>
 		<script type="" language="JavaScript">
 		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>
-<?php } } */
+<?php } }
 if(isset($_POST['terminasi'])){
 	$termination_date=$_POST['inputTerminationdate'];
 	$textalasanberhenti=$_POST['textalasanberhenti'];
