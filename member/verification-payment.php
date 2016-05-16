@@ -127,13 +127,13 @@ $kol_stb = array(
     array("label"=>rupiah($biaya_stb), "length"=>30, "align"=>"C"),
     array("label"=>rupiah($proraide_stb), "length"=>30, "align"=>"C"),
     array("label"=>rupiah($biaya_stb+$proraide_stb), "length"=>30, "align"=>"C")
-  ); /*
+  );
   $kol_instalasi = array(
       array("label"=>"Biaya Instalasi", "length"=>80, "align"=>"C"),
       array("label"=>rupiah($biaya_instalasi), "length"=>30, "align"=>"C"),
       array("label"=>rupiah($proraide_instalasi), "length"=>30, "align"=>"C"),
       array("label"=>rupiah($biaya_instalasi+$proraide_instalasi), "length"=>30, "align"=>"C")
-    ); */
+    );
 $pdf = new FPDF();
 $pdf->AddPage();
 $pdf->Image('../img/groovy-logo-orange.png','140','15','60');
@@ -177,11 +177,11 @@ foreach ($kol_router as $kolom_router) {
 $pdf->Ln();
 foreach ($kol_stb as $kolom_stb) {
   $pdf->Cell($kolom_stb['length'], 8, $kolom_stb['label'], 1, '0', $kolom_stb['align'], true);
-} /*
+}
 $pdf->Ln();
 foreach ($kol_instalasi as $kolom_instalasi) {
   $pdf->Cell($kolom_instalasi['length'], 8, $kolom_instalasi['label'], 1, '0', $kolom_instalasi['align'], true);
-} */
+}
 $pdf->Ln();
 $pdf->Ln();
 $pdf->Ln();1.522.400
@@ -196,7 +196,7 @@ $pdf->Ln();
 $pdf->Ln();
 $pdf->Image('../img/denstv-logo.png','10','250','50');
 $pdf->Image('../img/logo-nusanet.png','65','250','50');
-$pdf->Image('../img/a.jpg','170','240','30');
+$pdf->Image('../img/a.jpg','170','240','30'); /*
 // Filename that will be used for the file as the attachment
 $fileatt_name = $no_virtual.$last_pembayaran.'.pdf';
 $dir='bukti/';
@@ -244,7 +244,7 @@ $email_message1 .= "--{$mime_boundary}\n" .
 $data .= "\n\n" .
 "--{$mime_boundary}--\n";
 
-$emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1);
+$emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1); */
 $pay = array("deskripsi"=>$package_cust, "harga"=>$harga_bayar, "prorate"=>$prorate, "total_harga"=>$harga_bayar);
 //$update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("payment"=>$pay)));
 $insert_bayar = $col_payment->insert(array("id_user"=>$id_cust, "tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date,"pembayaran"=>$pay, "total_tagihan"=>$total_bayar, "ppn"=>$ppn, "no"=>$last_pembayaran, "total_pembayaran"=>$total_pembayaran));
