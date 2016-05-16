@@ -84,7 +84,7 @@ $res = $col_package->find(array("nama"=>$move_paket_cust));
 	foreach($res as $row)
 	{
 		$deskripsi_paket1=$row['deskripsi'];
-	}
+	} /*
 if(isset($_POST['verifikasi'])){
 		$tanggal_bayar = $_POST['inputPaymentdate'];
 		$thn_bayar = substr($tanggal_bayar, 0,4);
@@ -335,7 +335,7 @@ if ($update_user && $update_bayar && $emailinvoice){
 	?>
 		<script type="" language="JavaScript">
 		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>
-<?php } }
+<?php } } */
 if(isset($_POST['terminasi'])){
 	$termination_date=$_POST['inputTerminationdate'];
 	$textalasanberhenti=$_POST['textalasanberhenti'];
