@@ -136,13 +136,12 @@ $kol_stb = array(
     ); }
   $res = $col_addon->find(array("id_user"=>"$id_cust"));
           foreach($res as $row) {
-    $row['_id'] = array(
+    $liston = array(
         array("label"=>$row['layanan'], "length"=>80, "align"=>"C"),
         array("label"=>rupiah($row['harga']), "length"=>30, "align"=>"C"),
         array("label"=>rupiah($row['proraide']), "length"=>30, "align"=>"C"),
         array("label"=>rupiah($row['harga']+$row['proraide']), "length"=>30, "align"=>"C")
-      );
-          }
+      );  }
 $pdf = new FPDF();
 $pdf->AddPage();
 $pdf->Image('../img/groovy-logo-orange.png','140','15','60');
@@ -182,12 +181,10 @@ $pdf->Ln();
 foreach ($kol_router as $kolom_router) {
   $pdf->Cell($kolom_router['length'], 8, $kolom_router['label'], 1, '0', $kolom_router['align'], true);
 }
-$res = $col_addon->find(array("id_user"=>"$id_cust"));
-        foreach($res as $row) {
 $pdf->Ln();
-foreach ($row['_id'] as $kolom_addon) {
+foreach ($liston as $kolom_addon) {
   $pdf->Cell($kolom_addon['length'], 8, $kolom_addon['label'], 1, '0', $kolom_addon['align'], true);
-} }
+}
 $pdf->Ln();
 foreach ($kol_stb as $kolom_stb) {
   $pdf->Cell($kolom_stb['length'], 8, $kolom_stb['label'], 1, '0', $kolom_stb['align'], true);
