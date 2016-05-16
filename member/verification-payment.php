@@ -537,9 +537,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 							  <div class="col-lg-9">
 								<h4><?php echo $tgl_akhir.' '.$month_akhir.' '.$thn_akhir; ?></h4>
               </div></option>
-                <?php } ?>
-                <option>All</option>
-              </select><br/>
+                <?php } ?><br/>
 								<input type="text" class="form-control" id="inputPaymentdate" name="inputPaymentdate" placeholder="Payment Date" required>
 								<br/>
 								<div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>
