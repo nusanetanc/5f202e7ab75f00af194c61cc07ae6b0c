@@ -134,8 +134,10 @@ $kol_stb = array(
       array("label"=>rupiah($proraide_instalasi), "length"=>30, "align"=>"C"),
       array("label"=>rupiah($biaya_instalasi+$proraide_instalasi), "length"=>30, "align"=>"C")
     ); }
+    $jmlon=0;
   $res = $col_addon->find(array("id_user"=>"$id_cust"));
           foreach($res as $row) {
+            $jmlon=$jmlon+1;
     $liston = array(
         array("label"=>$row['layanan'], "length"=>80, "align"=>"C"),
         array("label"=>rupiah($row['harga']), "length"=>30, "align"=>"C"),
@@ -177,13 +179,14 @@ $pdf->SetDrawColor(0,0,0);
 foreach ($kol_paket as $kolom_paket) {
   $pdf->Cell($kolom_paket['length'], 8, $kolom_paket['label'], 1, '0', $kolom_paket['align'], true);
 }
-$pdf->Ln();
-foreach ($kol_router as $kolom_router) {
-  $pdf->Cell($kolom_router['length'], 8, $kolom_router['label'], 1, '0', $kolom_router['align'], true);
-}
+if($jmlon<>"0"){
 $pdf->Ln();
 foreach ($liston as $kolom_addon) {
   $pdf->Cell($kolom_addon['length'], 8, $kolom_addon['label'], 1, '0', $kolom_addon['align'], true);
+} }
+$pdf->Ln();
+foreach ($kol_router as $kolom_router) {
+  $pdf->Cell($kolom_router['length'], 8, $kolom_router['label'], 1, '0', $kolom_router['align'], true);
 }
 $pdf->Ln();
 foreach ($kol_stb as $kolom_stb) {
