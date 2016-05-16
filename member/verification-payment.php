@@ -162,24 +162,24 @@ foreach ($header as $kolom) {
   $pdf->Cell($kolom['length'], 10, $kolom['label'], 1, '0', $kolom['align'], true);
 }
 $pdf->Ln();
-$pdf->SetFont('Arial','','7');
+$pdf->SetFont('Arial','B','7');
 $pdf->SetFillColor(255,255,255);
 $pdf->SetTextColor(0);
 $pdf->SetDrawColor(0,0,0);
 foreach ($kol_paket as $kolom_paket) {
-  $pdf->Cell($kolom_paket['length'], 10, $kolom_paket['label'], 1, '0', $kolom_paket['align'], true);
+  $pdf->Cell($kolom_paket['length'], 8, $kolom_paket['label'], 1, '0', $kolom_paket['align'], true);
 }
 $pdf->Ln();
 foreach ($kol_router as $kolom_router) {
-  $pdf->Cell($kolom_router['length'], 10, $kolom_router['label'], 1, '0', $kolom_router['align'], true);
+  $pdf->Cell($kolom_router['length'], 8, $kolom_router['label'], 1, '0', $kolom_router['align'], true);
 }
 $pdf->Ln();
 foreach ($kol_stb as $kolom_stb) {
-  $pdf->Cell($kolom_stb['length'], 10, $kolom_stb['label'], 1, '0', $kolom_stb['align'], true);
+  $pdf->Cell($kolom_stb['length'], 8, $kolom_stb['label'], 1, '0', $kolom_stb['align'], true);
 }
 $pdf->Ln();
 foreach ($kol_instalasi as $kolom_instalasi) {
-  $pdf->Cell($kolom_instalasi['length'], 10, $kolom_instalasi['label'], 1, '0', $kolom_instalasi['align'], true);
+  $pdf->Cell($kolom_instalasi['length'], 8, $kolom_instalasi['label'], 1, '0', $kolom_instalasi['align'], true);
 }
 $pdf->Ln();
 $pdf->Ln();
