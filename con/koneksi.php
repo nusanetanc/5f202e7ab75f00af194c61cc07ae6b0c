@@ -16,4 +16,5 @@
 	$col_contactus = $db->contactus;
 	$col_service = $db->service;
 	$col_addon = $db->addon;
+	$col_payment = $db->payment;
 ?>
