@@ -127,12 +127,13 @@ $kol_stb = array(
     array("label"=>rupiah($proraide_stb), "length"=>30, "align"=>"C"),
     array("label"=>rupiah($biaya_stb+$proraide_stb), "length"=>30, "align"=>"C")
   );
+  if($status_cust=="registrasi"){
   $kol_instalasi = array(
-      array("label"=>"Sewa Router", "length"=>80, "align"=>"C"),
+      array("label"=>"Biaya Instalasi", "length"=>80, "align"=>"C"),
       array("label"=>rupiah($biaya_instalasi), "length"=>30, "align"=>"C"),
       array("label"=>rupiah($proraide_instalasi), "length"=>30, "align"=>"C"),
       array("label"=>rupiah($biaya_instalasi+$proraide_instalasi), "length"=>30, "align"=>"C")
-    );
+    ); }
 $pdf = new FPDF();
 $pdf->AddPage();
 $pdf->Image('../img/groovy-logo-orange.png','140','15','60');
@@ -177,13 +178,14 @@ $pdf->Ln();
 foreach ($kol_stb as $kolom_stb) {
   $pdf->Cell($kolom_stb['length'], 8, $kolom_stb['label'], 1, '0', $kolom_stb['align'], true);
 }
+if($status_cust=="registrasi"){
 $pdf->Ln();
 foreach ($kol_instalasi as $kolom_instalasi) {
   $pdf->Cell($kolom_instalasi['length'], 8, $kolom_instalasi['label'], 1, '0', $kolom_instalasi['align'], true);
-}
+} }
 $pdf->Ln();
 $pdf->Ln();
-$pdf->Ln();
+$pdf->Ln();1.522.400
 $pdf->SetFont('Arial','B','10');
 $pdf->Cell(0,7, 'KONFIRMASI PEMBAYRAN - PAYMENT CONFIRMATION', '0', 1, 'L');
 $pdf->Ln();
