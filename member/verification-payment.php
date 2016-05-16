@@ -102,7 +102,7 @@ if ($status_cust=="aktif"){
   $biaya_instalasi=0;
 }
 //mail to bukti pembayaran
-/*
+
 require('../content/srcpdf/fpdf.php');
 $header = array(
     array("label"=>"Pembayaran", "length"=>80, "align"=>"C"),
@@ -127,13 +127,13 @@ $kol_stb = array(
     array("label"=>rupiah($biaya_stb), "length"=>30, "align"=>"C"),
     array("label"=>rupiah($proraide_stb), "length"=>30, "align"=>"C"),
     array("label"=>rupiah($biaya_stb+$proraide_stb), "length"=>30, "align"=>"C")
-  );
+  ); /*
   $kol_instalasi = array(
       array("label"=>"Biaya Instalasi", "length"=>80, "align"=>"C"),
       array("label"=>rupiah($biaya_instalasi), "length"=>30, "align"=>"C"),
       array("label"=>rupiah($proraide_instalasi), "length"=>30, "align"=>"C"),
       array("label"=>rupiah($biaya_instalasi+$proraide_instalasi), "length"=>30, "align"=>"C")
-    );
+    ); */
 $pdf = new FPDF();
 $pdf->AddPage();
 $pdf->Image('../img/groovy-logo-orange.png','140','15','60');
@@ -244,7 +244,7 @@ $email_message1 .= "--{$mime_boundary}\n" .
 $data .= "\n\n" .
 "--{$mime_boundary}--\n";
 
-$emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1); */
+$emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1); 
 $pay = array("deskripsi"=>$package_cust, "harga"=>$harga_bayar, "prorate"=>$prorate, "total_harga"=>$harga_bayar);
 //$update_bayar = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("payment"=>$pay)));
 $insert_bayar = $col_payment->insert(array("id_user"=>$id_cust, "tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date,"pembayaran"=>$pay, "total_tagihan"=>$total_bayar, "ppn"=>$ppn, "no"=>$last_pembayaran, "total_pembayaran"=>$total_pembayaran));
