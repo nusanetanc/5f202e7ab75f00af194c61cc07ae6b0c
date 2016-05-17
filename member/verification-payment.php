@@ -730,10 +730,15 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                         <div class="modal-content">
                           <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title">Pembayaran</h4>
+                            <h4 class="modal-title">Data Pembayaran</h4>
                           </div>
                           <div class="modal-body">
                             <p><?php echo $byr['no']; ?></p>
+                          </div>
+                          <div class="modal-footer">
+                            <p>Total Tagihan : <?php echo $byr['total_tagihan']; ?></p>
+                            <p>PPN 10% : <?php echo $byr['ppn']; ?></p>
+                            <p>Total Pembayaran : <?php echo $byr['total_pembayaran']; ?></p>
                           </div>
                         </div>
                       </div>
