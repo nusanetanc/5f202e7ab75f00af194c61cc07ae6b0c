@@ -75,7 +75,7 @@ if ($level=="0"){
 									<p>Biaya Sewa Router : <strong><?php echo rupiah($biaya_router); ?></strong></p>
 									<?php $rslt = $col_package->find(array("nama"=>$paket));
 									foreach ($rslt as $row) {
-										$isi_paket = $rslt['isi'];
+										$isi_paket = $row['isi'];
 									}
 									if($isi_paket=="intenet+tv"){ ?>
 									<p>Biaya Sewa STB : <strong><?php echo rupiah($biaya_stb); ?></strong></p>
