@@ -734,7 +734,6 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                           </div>
                           <div class="modal-body">
                             <?php
-                            $res = $col_payment->findOne(array("no"=>$byr['no']));
                             foreach ($res['pembayaran'] as $desbyr => $dby) { ?>
                             <p>Deskripsi : <?php echo $dby['deskripsi']; ?></p>
                             <p>Harga : <?php echo $dby['harga']; ?></p>
