@@ -608,12 +608,18 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                       <td></td>
                       <td><?php echo rupiah($biaya_router); ?></td>
                     </tbody>
+                    <?php $rslt = $col_package->find(array("nama"=>$paket));
+                    foreach ($rslt as $row) {
+                      $isi_paket = $row['isi'];
+                    }
+                    if($isi_paket=="internet+tv"){ ?>
                     <tbody>
                       <td>Sewa STB</td>
                       <td></td>
                       <td></td>
                       <td><?php echo rupiah($biaya_stb); ?></td>
                     </tbody>
+                    <?php } ?>
                     <?php if($status_cust=="unaktif" || $status_cust=="registrasi"){ ?>
                     <tbody>
                       <td>Instalasi</td>
@@ -624,10 +630,15 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                     <tbody>
                       <td><strong>Total Tagihan</strong></td>
                       <td></td>
-                      <td></td>
-                      <td><strong><?php echo rupiah($biaya_instalasi+$biaya_router+$biaya_stb+$total_bayar+$total_harga_addon); ?></strong></td>
+                      <td></td> <?php if($isi_paket=="internet+tv"){
+                          $harga_total = $biaya_instalasi+$biaya_router+$biaya_stb+$total_bayar+$total_harga_addon;
+                        } elseif($isi_paket=="internet"){
+                          $harga_total = $biaya_instalasi+$biaya_router+$total_bayar+$total_harga_addon;
+                        }
+                        $ppn=$harga_total*0.1;
+                        ?>
+                      <td><strong><?php echo rupiah($harga_total); ?></strong></td>
                     </tbody>
-                    <?php $ppn=($biaya_instalasi+$biaya_router+$biaya_stb+$total_bayar+$total_harga_addon)*0.1; ?>
                     <tbody>
                       <td>PPN 10%</td>
                       <td></td>
@@ -638,16 +649,22 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                       <td><strong>Total Pembayaran</strong></td>
                       <td></td>
                       <td></td>
-                      <td><strong><?php echo rupiah($biaya_instalasi+$biaya_router+$biaya_stb+$total_bayar+$total_harga_addon+$ppn); ?></strong></td>
+                      <td><strong><?php echo rupiah($harga_total+$ppn); ?></strong></td>
                     </strong></tbody>
                     <?php } elseif($status_cust=="aktif"){ ?>
                       <tbody>
                         <td><strong>Total Tagihan</strong></td>
                         <td></td>
                         <td></td>
-                        <td><strong><?php echo rupiah($biaya_router+$biaya_stb+$total_bayar+$total_harga_addon); ?></strong></td>
+                        <?php if($isi_paket=="internet+tv"){
+                            $harga_total = $biaya_router+$biaya_stb+$total_bayar+$total_harga_addon;
+                          } elseif($isi_paket=="internet"){
+                            $harga_total = $biaya_router+$total_bayar+$total_harga_addon;
+                          }
+                          $ppn=$harga_total*0.1;
+                          ?>
+                        <td><strong><?php echo rupiah($harga_total); ?></strong></td>
                       </tbody>
-                      <?php $ppn=($biaya_router+$biaya_stb+$total_bayar+$total_harga_addon)*0.1; ?>
                       <tbody>
                         <td>PPN 10%</td>
                         <td></td>
@@ -658,7 +675,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                         <td><strong>Total Pembayaran</strong></td>
                         <td></td>
                         <td></td>
-                        <td><strong><?php echo rupiah($biaya_router+$biaya_stb+$total_bayar+$total_harga_addon+$ppn); ?></strong></td>
+                        <td><strong><?php echo rupiah($harga_total+$ppn); ?></strong></td>
                       </strong></tbody>
                     <?php } ?>
 								</table>
