@@ -80,18 +80,30 @@ if ($level=="0"){
 									if($isi_paket=="internet+tv"){ ?>
 									<p>Biaya Sewa STB : <strong><?php echo rupiah($biaya_stb); ?></strong></p>
 									<?php } ?>
-									<?php if($status=="registrasi"){ ?>
+									<?php if($status=="registrasi" && $isi_paket=="internet+tv"){ ?>
 									<p>Biaya instalasi : <strong><?php echo rupiah($biaya_instalasi); ?></strong></p>
 									<p>Total Harga : <strong><?php echo rupiah($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router+$biaya_instalasi); ?></strong></p>
 									<?php $ppn = ($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router+$biaya_instalasi)*0.1; ?>
 									<p>PPN 10% : <strong><?php echo rupiah($ppn); ?></strong></p>
 									<p>Total Pembayaran : <strong><?php echo rupiah($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router+$biaya_instalasi+$ppn); ?></strong></p>
-									<?php } elseif ($status=="unaktif" || $status=="aktif") { ?>
+									<?php } elseif($status=="registrasi" && $isi_paket=="internet"){ ?>
+									<p>Biaya instalasi : <strong><?php echo rupiah($biaya_instalasi); ?></strong></p>
+									<p>Total Harga : <strong><?php echo rupiah($total_harga_paket+$total_harga_addon+$biaya_router+$biaya_instalasi); ?></strong></p>
+									<?php $ppn = ($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_instalasi)*0.1; ?>
+									<p>PPN 10% : <strong><?php echo rupiah($ppn); ?></strong></p>
+									<p>Total Pembayaran : <strong><?php echo rupiah($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router+$biaya_instalasi+$ppn); ?></strong></p>
+									<?php } elseif ($status=="unaktif" || $status=="aktif") { 
+										if($isi_paket=="internet"){ ?>
 									<p>Total Harga : <strong><?php echo rupiah($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router); ?></strong></p>
 									<?php $ppn = ($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router)*0.1; ?>
 									<p>PPN 10% : <strong><?php echo rupiah($ppn); ?></strong></p>
 									<p>Total Pembayaran : <strong><?php echo rupiah($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router+$ppn); ?></strong></p>
-									<?php	} ?>
+									<?php	} if($isi_paket=="internet+tv"){  ?>
+										<p>Total Harga : <strong><?php echo rupiah($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router); ?></strong></p>
+										<?php $ppn = ($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router)*0.1; ?>
+										<p>PPN 10% : <strong><?php echo rupiah($ppn); ?></strong></p>
+										<p>Total Pembayaran : <strong><?php echo rupiah($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router+$ppn); ?></strong></p>
+									<?php } } ?>
 								</li>
 							</ul>
 						</div>
