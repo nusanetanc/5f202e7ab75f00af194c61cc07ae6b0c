@@ -703,7 +703,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 									      <th width="10%">No</th>
 									      <th width="30%">Pembayaran</th>
 									      <th width="30%">Konfirmasi</th>
-									      <th width="30%">Deskripsi Pembayaran</th>
+									      <th width="30%"></th>
 									    </tr>
 									  </thead>
 									  <?php
@@ -723,7 +723,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 									  	<td><?php echo $byr['no']; ?></td>
 									  	<td><?php echo $tgl_bayar.' '.$month_bayar.' '.$thn_bayar; ?></td>
 									  	<td><?php echo $tgl_konfirmasi.' '.$month_konfirmasi.' '.$thn_konfirmasi; ?></td>
-									  	<td><?php echo $byr['paket']; ?></td>
+									  	<td><a href="#" data-toggle="tooltip" data-placement="right" title="Hooray!">Deskripsi</a></td>
 									  </tbody>
 									  <?php } ?>
 								</table>
@@ -762,3 +762,8 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 	</div>
 </section>
 </form>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
