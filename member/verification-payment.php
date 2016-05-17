@@ -723,9 +723,9 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 									  	<td><?php echo $byr['no']; ?></td>
 									  	<td><?php echo $tgl_bayar.' '.$month_bayar.' '.$thn_bayar; ?></td>
 									  	<td><?php echo $tgl_konfirmasi.' '.$month_konfirmasi.' '.$thn_konfirmasi; ?></td>
-									  	<td><a href="#" data-toggle="modal" data-target="#deskripsipembayaran">Deskripsi</a></td>
+									  	<td><a href="#" data-toggle="modal" data-target="#<?php echo $byr['no']; ?>">Deskripsi</a></td>
 									  </tbody>
-                    <div class="modal" name="deskripsipembayaran" id="deskripsipembayaran">
+                    <div class="modal" name=<?php echo $byr['no']; ?> id=<?php echo $byr['no']; ?>>
                       <div class="modal-dialog">
                         <div class="modal-content">
                           <div class="modal-header">
