@@ -73,8 +73,11 @@ if ($level=="0"){
 								<li class="list-group-item">
 									<p>No Virtual Pembayaran : <strong><?php echo $no_virtual; ?></strong></p>
 									<p>Biaya Sewa Router : <strong><?php echo rupiah($biaya_router); ?></strong></p>
-									<?php $rslt = $col_package->findOne(array("nama"=>$paket));
-									if($rslt['isi']=="intenet+tv"){ ?>
+									<?php $rslt = $col_package->find(array("nama"=>$paket));
+									foreach ($rslt as $row) {
+										$isi_paket = $rslt['isi'];
+									}
+									if($isi_paket=="intenet+tv"){ ?>
 									<p>Biaya Sewa STB : <strong><?php echo rupiah($biaya_stb); ?></strong></p>
 									<?php } ?>
 									<?php if($status=="registrasi"){ ?>
