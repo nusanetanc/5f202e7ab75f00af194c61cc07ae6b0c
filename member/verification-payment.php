@@ -39,18 +39,18 @@ $date_month = date("y");
 												$phone_cust = $row['phone'];
 												$package_cust = $row['paket'];
 												$tempat_cust = $row['tempat'];
-						                        $kota_cust = $row['kota'];
-						                        $status_cust = $row['status'];
-						                        $alamat_cust = $row['alamat'];
-						                        $ket_cust = $row['keterangan'];
-						                        $tanggal_akhir = $row['tanggal_akhir'];
-						                        $tanggal_aktif = $row['tanggal_aktif'];
-						                        $harga_paket = $row['harga'];
-	                                            $no_virtual = $row['no_virtual'];
-	                                            $pembayaran = $row['pembayaran'];
-	                                            $proraide = $row['proraide'];
-	                                            $move_paket_cust = $row['move_paket'];
-	                                            $move_harga_cust = $row['move_harga'];
+                        $kota_cust = $row['kota'];
+                        $status_cust = $row['status'];
+                        $alamat_cust = $row['alamat'];
+                        $ket_cust = $row['keterangan'];
+                        $tanggal_akhir = $row['tanggal_akhir'];
+                        $tanggal_aktif = $row['tanggal_aktif'];
+                        $harga_paket = $row['harga'];
+                        $no_virtual = $row['no_virtual'];
+                        $pembayaran = $row['pembayaran'];
+                        $proraide = $row['proraide'];
+                        $move_paket_cust = $row['move_paket'];
+                        $move_harga_cust = $row['move_harga'];
 	                                        }
 	if ($bln_akhir=="12"){
 		$next_month="01";
@@ -736,10 +736,16 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                             <?php
                             $res = $col_payment->findOne(array("no"=>$byr['no']));
                             foreach ($res['pembayaran'] as $desbyr => $dby) { ?>
-                            <p>Deskripsi : <?php echo $dby['deskripsi']; ?></p>
-                            <p>Harga : <?php echo $dby['harga']; ?></p>
-                            <p>Prorate : <?php echo $dby['prorate']; ?></p>
-                            <p>Sub Total : <?php echo $dby['total_harga']; ?></p>
+                              <table class="table table-striped table-hover ">
+              									 <thead>
+              									    <tr>
+              									      <th width="10%">Deskripsi</th>
+              									      <th width="30%">Harga</th>
+              									      <th width="30%">Prorate</th>
+              									      <th width="30%">Sub Total</th>
+              									    </tr>
+              									  </thead>
+                                </table>
                             <?php } ?>
                           </div>
                           <div class="modal-footer">
