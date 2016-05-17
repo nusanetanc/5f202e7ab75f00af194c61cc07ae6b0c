@@ -608,7 +608,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                       <td></td>
                       <td><?php echo rupiah($biaya_router); ?></td>
                     </tbody>
-                    <?php $rslt = $col_package->find(array("nama"=>$paket));
+                    <?php $rslt = $col_package->find(array("nama"=>$package_cust));
                     foreach ($rslt as $row) {
                       $isi_paket = $row['isi'];
                     }
