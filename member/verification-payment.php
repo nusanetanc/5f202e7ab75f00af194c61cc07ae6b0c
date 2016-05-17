@@ -165,17 +165,17 @@ $pdf->SetFont('Arial','B','10');
 $pdf->Cell(0,7, 'DATA PEMBAYARAN', '0', 1, 'L');
 $pdf->Ln();
 $pdf->SetFont('Arial','B','10');
-$pdf->SetFillColor(255,255,255);
+$pdf->SetFillColor(125, 152, 179);
 $pdf->SetTextColor(0);
-$pdf->SetDrawColor(0,0,0);
+$pdf->SetDrawColor(125, 152, 179);
 foreach ($header as $kolom) {
   $pdf->Cell($kolom['length'], 10, $kolom['label'], 1, '0', $kolom['align'], true);
 }
 $pdf->Ln();
 $pdf->SetFont('Arial','B','7');
-$pdf->SetFillColor(255,255,255);
+$pdf->SetFillColor(143, 173, 204);
 $pdf->SetTextColor(0);
-$pdf->SetDrawColor(0,0,0);
+$pdf->SetDrawColor(0143, 173, 204);
 foreach ($kol_paket as $kolom_paket) {
   $pdf->Cell($kolom_paket['length'], 8, $kolom_paket['label'], 1, '0', $kolom_paket['align'], true);
 }
