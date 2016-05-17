@@ -725,6 +725,19 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 									  	<td><?php echo $tgl_konfirmasi.' '.$month_konfirmasi.' '.$thn_konfirmasi; ?></td>
 									  	<td><a href="#" data-toggle="modal" data-target="#deskripsipembayaran">Deskripsi</a></td>
 									  </tbody>
+                    <div class="modal" name="deskripsipembayaran" id="deskripsipembayaran">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">Pembayaran</h4>
+                          </div>
+                          <div class="modal-body">
+                            <p><?php echo $byr['no']; ?></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 									  <?php } ?>
 								</table>
 		  				    </div>
@@ -762,16 +775,3 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 	</div>
 </section>
 </form>
-<div class="modal" name="deskripsipembayaran" id="deskripsipembayaran">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Pembayaran</h4>
-      </div>
-      <div class="modal-body">
-        <p>One fine body…</p>
-      </div>
-    </div>
-  </div>
-</div>
