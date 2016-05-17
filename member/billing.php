@@ -77,6 +77,7 @@ if ($level=="0"){
 									foreach ($rslt as $row) {
 										$isi_paket = $row['isi'];
 									}
+									echo $isi_paket;
 									if($isi_paket=="intenet+tv"){ ?>
 									<p>Biaya Sewa STB : <strong><?php echo rupiah($biaya_stb); ?></strong></p>
 									<?php } ?>
