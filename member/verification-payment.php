@@ -736,16 +736,11 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                             <?php
                             $res = $col_payment->findOne(array("no"=>$byr['no']));
                             foreach ($res['pembayaran'] as $desbyr => $dby) { ?>
-                              <table class="table table-striped table-hover ">
-              									 <thead>
-              									    <tr>
-              									      <th width="10%">Deskripsi</th>
-              									      <th width="30%">Harga</th>
-              									      <th width="30%">Prorate</th>
-              									      <th width="30%">Sub Total</th>
-              									    </tr>
-              									  </thead>
-                                </table>
+                              <div class="panel panel-default">
+                                  <div class="panel-body">
+                                    <?php echo $dby['deskripsi']; ?>
+                                  </div>
+                                </div>
                             <?php } ?>
                           </div>
                           <div class="modal-footer">
