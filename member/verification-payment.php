@@ -735,7 +735,8 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                           <div class="modal-body">
                             <?php
                             $bil=0;
-                            foreach ($res['pembayaran'] as $desbyr => $dby) {
+                            $res_pay = $col_payment->findOne(array("_id"=>$byr['_id']));
+                            foreach ($res_pay['pembayaran'] as $desbyr => $dby) {
                               $bil = $bil+1;
                               ?>
                               <div class="panel panel-default">
