@@ -736,7 +736,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                               <div class="panel panel-default">
                                 <?php foreach ($byr['pembayaran'] as $pmbyr) { ?>
                                   <div class="panel-body">
-                                    <strong><?php print_r($pmbyr['deskripsi']); ?></strong>=>Harga(<?php rupiah(print_r($pmbyr['harga'])); ?>) - Prorate(<?php print_r($pmbyr['prorate']); ?>) = Subtotal(<?php print_r($pmbyr['total_harga']); ?>)
+                                    <strong><?php print_r($pmbyr['deskripsi']); ?></strong>=>Harga(<?php print_r(rupiah($pmbyr['harga'])); ?>) - Prorate(<?php print_r($pmbyr['prorate']); ?>) = Subtotal(<?php print_r($pmbyr['total_harga']); ?>)
                                   </div>
                                   <?php } ?>
                                 </div>
