@@ -741,7 +741,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                               ?>
                               <div class="panel panel-default">
                                   <div class="panel-body">
-                                    <?php $bil; ?>
+                                    <?php echo $bil; ?>
                                   </div>
                                 </div>
                             <?php } ?>
