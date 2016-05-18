@@ -742,9 +742,9 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                                 </div>
                           </div>
                           <div class="modal-footer">
-                            <p>Total Tagihan : <b><?php echo $byr['total_tagihan']; ?></b></p>
-                            <p>PPN 10% : <b><?php echo $byr['ppn']; ?></b></p>
-                            <p>Total Pembayaran : <b><?php echo $byr['total_pembayaran']; ?></b></p>
+                            <p>Total Tagihan : <b><?php echo rupiah($byr['total_tagihan']); ?></b></p>
+                            <p>PPN 10% : <b><?php echo rupiah($byr['ppn']); ?></b></p>
+                            <p>Total Pembayaran : <b><?php echo rupiah($byr['total_pembayaran']); ?></b></p>
                           </div>
                         </div>
                       </div>
