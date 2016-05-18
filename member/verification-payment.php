@@ -733,14 +733,16 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                             <h4 class="modal-title">Data Pembayaran</h4>
                           </div>
                           <div class="modal-body">
-                            <div class="panel panel-default">
-                              <div class="panel-heading">Groovy Home 500</div>
-                              <div class="panel-body">
-                                Harga : <br/>
-                                Prorate : <br/>
-                                Sub Total : <br/>
-                              </div>
-                            </div>
+                            <table>
+            									 <thead>
+            									    <tr>
+            									      <th width="10%">Deskripsi</th>
+            									      <th width="30%">Harga</th>
+            									      <th width="30%">Prorate</th>
+            									      <th width="30%">Sub Total</th>
+            									    </tr>
+            									  </thead>
+                              </table>
                           </div>
                           <div class="modal-footer">
                             <p>Total Tagihan : <?php echo $byr['total_tagihan']; ?></p>
