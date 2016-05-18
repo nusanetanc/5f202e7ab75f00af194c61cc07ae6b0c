@@ -735,7 +735,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                           <div class="modal-body">
                               <div class="panel panel-default">
                                   <div class="panel-body">
-                                    <?php echo $byr['pembayaran']; ?>
+                                    <?php echo $byr['pembayaran'].['deskripsi']; ?>
                                   </div>
                                 </div>
                           </div>
