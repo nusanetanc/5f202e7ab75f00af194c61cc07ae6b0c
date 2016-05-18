@@ -734,9 +734,11 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                           </div>
                           <div class="modal-body">
                             <div class="panel panel-default">
-                              <div class="panel-heading">Panel heading</div>
+                              <div class="panel-heading">Groovy Home 500</div>
                               <div class="panel-body">
-                                Panel content
+                                Harga : <br/>
+                                Prorate : <br/>
+                                Sub Total : <br/>
                               </div>
                             </div>
                           </div>
