@@ -733,18 +733,11 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                             <h4 class="modal-title">Data Pembayaran</h4>
                           </div>
                           <div class="modal-body">
-                            <?php
-                            $bil=0;
-                            $res_pay = $col_payment->findOne(array("id_user"=>$byr['id_user']));
-                            foreach ($res_pay['pembayaran'] as $desbyr => $dby) {
-                              $bil = $bil+1;
-                              ?>
                               <div class="panel panel-default">
                                   <div class="panel-body">
-                                    <?php echo $bil; ?>
+                                    <?php echo $byr['pembayaran']; ?>
                                   </div>
                                 </div>
-                            <?php } ?>
                           </div>
                           <div class="modal-footer">
                             <p>Total Tagihan : <?php echo $byr['total_tagihan']; ?></p>
