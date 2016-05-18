@@ -733,9 +733,6 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                             <h4 class="modal-title">Data Pembayaran</h4>
                           </div>
                           <div class="modal-body">
-                            <?php
-                            $res = $col_payment->findOne(array("no"=>$byr['no']));
-                            foreach ($res['pembayaran'] as $desbyr => $dby) { ?>
                               <table class="table table-striped table-hover ">
               									 <thead>
               									    <tr>
@@ -746,7 +743,6 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
               									    </tr>
               									  </thead>
                                 </table>
-                            <?php } ?>
                           </div>
                           <div class="modal-footer">
                             <p>Total Tagihan : <?php echo $byr['total_tagihan']; ?></p>
