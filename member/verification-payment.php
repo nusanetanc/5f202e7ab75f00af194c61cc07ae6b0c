@@ -733,11 +733,13 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                             <h4 class="modal-title">Data Pembayaran</h4>
                           </div>
                           <div class="modal-body">
+                            <?php foreach ($byr['pembayaran'] as $pmbyr) { ?>
                               <div class="panel panel-default">
                                   <div class="panel-body">
-                                    <?php echo $byr['pembayaran'].['deskripsi']; ?>
+                                    <?php echo $pmbyr['deskripsi']; ?>
                                   </div>
                                 </div>
+                              <?php } ?>
                           </div>
                           <div class="modal-footer">
                             <p>Total Tagihan : <?php echo $byr['total_tagihan']; ?></p>
