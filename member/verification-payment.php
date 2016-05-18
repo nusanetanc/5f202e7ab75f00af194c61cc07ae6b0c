@@ -738,7 +738,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                             foreach ($res['pembayaran'] as $desbyr => $dby) { ?>
                               <div class="panel panel-default">
                                   <div class="panel-body">
-                                    <?php echo $dby['deskripsi']; ?>
+                                    a
                                   </div>
                                 </div>
                             <?php } ?>
