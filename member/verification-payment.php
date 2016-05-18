@@ -739,6 +739,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                                     <?php print_r($pmbyr);
                                           $current_name = $pmbyr[0]['pembayaran']['deskripsi']; ?>
                                   </div>
+                                  <?php } ?>
                                 </div>
                           </div>
                           <div class="modal-footer">
