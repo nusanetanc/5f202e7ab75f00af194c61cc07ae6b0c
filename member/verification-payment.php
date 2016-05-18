@@ -736,9 +736,9 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                               <div class="panel panel-default">
                                 <?php foreach ($byr['pembayaran'] as $pmbyr) { ?>
                                   <div class="panel-body">
-                                    <?php
+                                    <?php print_r($pmbyr);
                                           $current_name = $pmbyr[0]['pembayaran']['deskripsi'];
-                                          print_r($current_name); ?>
+                                          echo $current_name; ?>
                                   </div>
                                   <?php } ?>
                                 </div>
