@@ -734,15 +734,19 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                           </div>
                           <div class="modal-body">
                             <table>
-            									 <thead>
-            									    <tr>
-            									      <th width="10%">Deskripsi</th>
-            									      <th width="30%">Harga</th>
-            									      <th width="30%">Prorate</th>
-            									      <th width="30%">Sub Total</th>
-            									    </tr>
-            									  </thead>
-                              </table>
+                                <thead>
+                                </thead>
+                                <tbody class="table">
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>4</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                           </div>
                           <div class="modal-footer">
                             <p>Total Tagihan : <?php echo $byr['total_tagihan']; ?></p>
