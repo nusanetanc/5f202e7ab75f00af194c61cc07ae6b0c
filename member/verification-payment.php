@@ -735,7 +735,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                           <div class="modal-body">
                             <?php
                             $bil=0;
-                            $res_pay = $col_payment->findOne(array("_id"=>"4534543"));
+                            $res_pay = $col_payment->find(array("_id"=>$byr['_id']));
                             foreach ($res_pay['pembayaran'] as $desbyr => $dby) {
                               $bil = $bil+1;
                               ?>
