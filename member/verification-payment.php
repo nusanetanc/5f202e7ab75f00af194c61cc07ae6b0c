@@ -135,7 +135,7 @@ $kol_stb = array(
       array("label"=>rupiah($biaya_instalasi+$proraide_instalasi), "length"=>30, "align"=>"C")
     ); }
     $jmlon=0;
-  $res = $col_addon->find(array("id_user"=>"$id_cust"));
+  $res = $col_addon->find(array("id_user"=>$id_cust));
           foreach($res as $row) {
             $jmlon=$jmlon+1;
     $liston = array(
