@@ -134,12 +134,14 @@ $kol_stb = array(
       array("label"=>rupiah($proraide_instalasi), "length"=>30, "align"=>"C"),
       array("label"=>rupiah($biaya_instalasi+$proraide_instalasi), "length"=>30, "align"=>"C")
     ); }
+  $res = $col_addon->find(array("id_user"=>"$id_cust"));
+          foreach($res as $row) {
     $liston = array(
         array("label"=>$row['layanan'], "length"=>80, "align"=>"C"),
         array("label"=>rupiah($row['harga']), "length"=>30, "align"=>"C"),
         array("label"=>rupiah($row['proraide']), "length"=>30, "align"=>"C"),
         array("label"=>rupiah($row['harga']+$row['proraide']), "length"=>30, "align"=>"C")
-      ), array(
+      ),  array(
           array("label"=>$row['layanan'], "length"=>80, "align"=>"C"),
           array("label"=>rupiah($row['harga']), "length"=>30, "align"=>"C"),
           array("label"=>rupiah($row['proraide']), "length"=>30, "align"=>"C"),
