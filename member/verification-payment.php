@@ -259,7 +259,7 @@ $update_bayar = $col_payment->update(array("id_user"=>$id_cust, "no"=>$last_pemb
 	if ($status_cust=="registrasi"){
 		$sisa_hari = 30-$date_month;
 		$last_proraide = $sisa_hari*$harga_hari;
-		$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("pembayaran"=>$last_pembayaran, "proraide"=>$last_proraide)));
+		$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$push'=>array("pembayaran"=>$last_pembayaran, "proraide"=>$last_proraide)));
 				// mail for supevisior teknik
 				$subject = 'Atur Jadwal Pemasangan';
 				$message = '
