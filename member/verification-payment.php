@@ -180,12 +180,12 @@ foreach ($kol_paket as $kolom_paket) {
   $pdf->Cell($kolom_paket['length'], 8, $kolom_paket['label'], 1, '0', $kolom_paket['align'], true);
 }
 if($jmlon<>"0"){
-  $res = $col_addon->find(array("id_user"=>"$id_cust"));
-          foreach($res as $row) {
+//  $res = $col_addon->find(array("id_user"=>"$id_cust"));
+//          foreach($res as $row) {
 $pdf->Ln();
 foreach ($liston.$row['_id'] as $kolom_addon) {
   $pdf->Cell($kolom_addon['length'], 8, $kolom_addon['label'], 1, '0', $kolom_addon['align'], true);
-} }
+} //}
 $pdf->Ln();
 foreach ($kol_router as $kolom_router) {
   $pdf->Cell($kolom_router['length'], 8, $kolom_router['label'], 1, '0', $kolom_router['align'], true);
