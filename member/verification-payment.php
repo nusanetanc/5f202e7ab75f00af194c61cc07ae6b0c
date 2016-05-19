@@ -177,8 +177,8 @@ if($jmlon<>"0"){
   $res = $col_addon->find(array("id_user"=>$id_cust));
            foreach($res as $row) {
   $pdf->Ln();
-  $pdf->Cell($kolom['length'], 8, $row['layanan'], 1, '0', $kolom['align'], true);
-  $pdf->Cell($kolom['length'], 8, $row['layanan'], 1, '0', $kolom['align'], true);
+  $pdf->Cell($kolom['length'], "length"=>80, "align"=>"C");
+  $pdf->Cell($kolom['length'], "length"=>30, "align"=>"C");
  } }
 $pdf->Ln();
 foreach ($kol_router as $kolom_router) {
