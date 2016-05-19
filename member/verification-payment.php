@@ -204,8 +204,6 @@ $pdf->Cell(0,7, 'Kode Virtual                   : '.$no_virtual, '0', 1, 'L');
 $pdf->Cell(0,7, 'Jumlah Pembayaran      : '.rupiah($total_bayar), '0', 1, 'L');
 $pdf->Ln();
 $pdf->Ln();
-$pdf->Image('../img/denstv-logo.png','10','250','50');
-$pdf->Image('../img/logo-nusanet.png','65','250','50');
 $pdf->Image('../img/a.jpg','170','240','30');
 // Filename that will be used for the file as the attachment
 $fileatt_name = $no_virtual.$last_pembayaran.'.pdf';
