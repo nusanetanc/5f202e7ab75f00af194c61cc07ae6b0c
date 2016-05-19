@@ -183,7 +183,7 @@ if($jmlon<>"0"){
 //  $res = $col_addon->find(array("id_user"=>"$id_cust"));
 //          foreach($res as $row) {
 $pdf->Ln();
-foreach ($liston.$row['_id'] as $kolom_addon) {
+foreach ($liston as $kolom_addon) {
   $pdf->Cell($kolom_addon['length'], 8, $kolom_addon['label'], 1, '0', $kolom_addon['align'], true);
 } //}
 $pdf->Ln();
