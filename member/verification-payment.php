@@ -255,7 +255,7 @@ $data .= "\n\n" .
 $emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1);
 $pay = array("deskripsi"=>$package_cust, "harga"=>$harga_bayar, "prorate"=>$prorate, "total_harga"=>$harga_bayar);
 $insert_bayar = $col_payment->insert(array("id_user"=>$id_cust, "tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date,"pembayaran"=>"", "total_tagihan"=>$total_bayar, "ppn"=>$ppn, "no"=>$last_pembayaran, "total_pembayaran"=>$total_pembayaran));
-$update_bayar = $col_user->update(array("id_user"=>$id_cust, "no"=>$last_pembayaran),array('$push'=>array("payment"=>$pay)));
+$update_bayar = $col_paymentr->update(array("id_user"=>$id_cust, "no"=>$last_pembayaran),array('$push'=>array("payment"=>$pay)));
 	if ($status_cust=="registrasi"){
 		$sisa_hari = 30-$date_month;
 		$last_proraide = $sisa_hari*$harga_hari;
