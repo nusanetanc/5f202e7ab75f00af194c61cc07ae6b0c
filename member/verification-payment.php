@@ -174,12 +174,12 @@ foreach ($kol_paket as $kolom_paket) {
   $pdf->Cell($kolom_paket['length'], 8, $kolom_paket['label'], 1, '0', $kolom_paket['align'], true);
 }
 $w = array(80, 30, 40, 45);
+$fill = false;
 if($jmlon<>"0"){
   $res = $col_addon->find(array("id_user"=>$id_cust));
            foreach($res as $row) {
   $pdf->Ln();
-  $this->Cell($w[0],6,$row[0],'LR',0,'C');
-  $this->Cell($w[1],6,$row[1],'LR',0,'C');
+  $this->Cell($w[0],6,$row[0],'LR',0,'C',$fill);
  } }
 $pdf->Ln();
 foreach ($kol_router as $kolom_router) {
