@@ -138,7 +138,7 @@ $kol_stb = array(
   $res = $col_addon->find(array("id_user"=>"$id_cust"));
           foreach($res as $row) {
             $jmlon=$jmlon+1;
-    $liston.$row['_id'] = array(
+    $liston = array(
         array("label"=>$row['layanan'], "length"=>80, "align"=>"C"),
         array("label"=>rupiah($row['harga']), "length"=>30, "align"=>"C"),
         array("label"=>rupiah($row['proraide']), "length"=>30, "align"=>"C"),
