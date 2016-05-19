@@ -176,6 +176,8 @@ foreach ($kol_paket as $kolom_paket) {
 if($jmlon<>"0"){
   $res = $col_addon->find(array("id_user"=>$id_cust));
            foreach($res as $row) {
+  $pdf->Ln();
+  $pdf->Cell($kolom['length'], 8, $row['layanan'], 1, '0', $kolom['align'], true);
   $pdf->Cell($kolom['length'], 8, $row['layanan'], 1, '0', $kolom['align'], true);
  } }
 $pdf->Ln();
