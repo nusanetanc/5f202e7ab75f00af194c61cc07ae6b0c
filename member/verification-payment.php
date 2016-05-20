@@ -120,19 +120,19 @@ $kol_router = array(
     array("label"=>"Sewa Router", "length"=>80, "align"=>"C"),
     array("label"=>rupiah($biaya_router), "length"=>30, "align"=>"C"),
     array("label"=>rupiah($proraide_router), "length"=>30, "align"=>"C"),
-    array("label"=>rupiah($biaya_router+$proraide_router), "length"=>30, "align"=>"C")
+    array("label"=>rupiah($biaya_router-$proraide_router), "length"=>30, "align"=>"C")
   );
 $kol_stb = array(
     array("label"=>"Sewa STB", "length"=>80, "align"=>"C"),
     array("label"=>rupiah($biaya_stb), "length"=>30, "align"=>"C"),
     array("label"=>rupiah($proraide_stb), "length"=>30, "align"=>"C"),
-    array("label"=>rupiah($biaya_stb+$proraide_stb), "length"=>30, "align"=>"C")
+    array("label"=>rupiah($biaya_stb-$proraide_stb), "length"=>30, "align"=>"C")
   ); if($status_cust=="registrasi"){
   $kol_instalasi = array(
       array("label"=>"Instalasi", "length"=>80, "align"=>"C"),
       array("label"=>rupiah($biaya_instalasi), "length"=>30, "align"=>"C"),
-      array("label"=>rupiah($proraide_instalasi), "length"=>30, "align"=>"C"),
-      array("label"=>rupiah($biaya_instalasi+$proraide_instalasi), "length"=>30, "align"=>"C")
+      array("label"=>rupiah(), "length"=>30, "align"=>"C"),
+      array("label"=>rupiah($biaya_instalasi), "length"=>30, "align"=>"C")
     ); }
     $jmlon=0;
  $res = $col_addon->find(array("id_user"=>$id_cust));
@@ -253,8 +253,11 @@ $data .= "\n\n" .
 "--{$mime_boundary}--\n";
 
 $emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1);
-$pay = array("deskripsi"=>$package_cust, "harga"=>$harga_bayar, "prorate"=>$prorate, "total_harga"=>$harga_bayar);
-$insert_bayar = $col_payment->insert(array("id_user"=>$id_cust, "tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date,"pembayaran"=>(array($pay,$pay)), "total_tagihan"=>$total_bayar, "ppn"=>$ppn, "no"=>$last_pembayaran, "total_pembayaran"=>$total_pembayaran));
+$pay = array("deskripsi"=>$package_cust, "harga"=>$harga_bayar, "prorate"=>$prorate, "total_harga"=>$harga_bayar-$prorate);
+$pay1 = array("deskripsi"=>"Sewa STB", "harga"=>$biaya_stb, "prorate"=>$proraide_stb, "total_harga"=>$biaya_stb-$proraide_stb);
+$pay2 = array("deskripsi"=>"Sewa Router", "harga"=>$biaya_router, "prorate"=>$proraide_router, "total_harga"=>$biaya_router-$proraide_router);
+$pay3 = array("deskripsi"=>"Biaya Instalasi", "harga"=>$biaya_instalasi);
+$insert_bayar = $col_payment->insert(array("id_user"=>$id_cust, "tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date,"pembayaran"=>(array($pay,$pay1,$pay2,$pay3)), "total_tagihan"=>$total_bayar, "ppn"=>$ppn, "no"=>$last_pembayaran, "total_pembayaran"=>$total_pembayaran));
 	if ($status_cust=="registrasi"){
 		$sisa_hari = 30-$date_month;
 		$last_proraide = $sisa_hari*$harga_hari;
