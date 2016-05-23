@@ -365,7 +365,7 @@
                                 <option><?php echo $row['nama']; ?></option>
                                 <?php } ?>
                             </select>
-                            <ul style="background-color:#FDE9BF;" class="list-group"  name="costdetail" id="costdetail" disabled>
+                            <ul style="color:rgba(255, 255, 255, 0.7);" class="list-group"  name="costdetail" id="costdetail" disabled>
                               <li class="list-group-item" name="costpackage" id="costpackage">
                                 <span class="badge">Rp 500.000</span>
                                 Package
