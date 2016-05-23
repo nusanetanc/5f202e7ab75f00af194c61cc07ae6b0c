@@ -385,7 +385,7 @@
                             </select>
                             <ul style="background-color:#FDE9BF;" class="list-group"  name="costaddon" id="costaddon" disabled>
                               <li class="list-group-item" name="costpackage" id="costpackage">
-                                <span class="label label-warning">Batal</span>
+                                <span class="label label-danger">Batal</span>
                                 Package
                               </li>
                             </ul>
