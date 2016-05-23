@@ -82,6 +82,9 @@ html, body{
             color:#666;
         }
         /* Package */
+        .package-top{
+            min-height:450px;
+        }
         .packageList{
             padding:0 0 0 19px;font-size:16px;color:#555;font-weight:600;
         }
