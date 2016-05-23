@@ -365,22 +365,22 @@
                                 <option><?php echo $row['nama']; ?></option>
                                 <?php } ?>
                             </select>
-                            <ul style="color:rgba(255, 255, 255, 0.7);" class="list-group"  name="costdetail" id="costdetail" disabled>
+                            <ul style="background-color:#FDE9BF;" class="list-group"  name="costdetail" id="costdetail" disabled>
                               <li class="list-group-item" name="costpackage" id="costpackage">
                                 <span class="badge">Rp 500.000</span>
                                 Package
                               </li>
-                              <li class="list-group-item" name="costinstalasi" id="costpackage">
+                              <li class="list-group-item" name="costinstalasi" id="costinstalasi">
                                 <span class="badge">Rp 500.000</span>
                                 Instalasi
                               </li>
-                              <li class="list-group-item"  name="costpackage" id="costpackage">
+                              <li class="list-group-item"  name="costrouter" id="costrouter">
                                 <span class="badge">Rp 500.000</span>
                                 Router/Bulan
                               </li>
-                              <li class="list-group-item"  name="costpackage" id="costpackage">
+                              <li class="list-group-item"  name="coststb" id="coststb">
                                 <span class="badge">Rp 500.000</span>
-                                STB/Bulan TV
+                                STB TV/Bulan
                               </li>
                             </ul>
                             <select style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" class="form-control" name="regisaddon" id="regisaddon">
