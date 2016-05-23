@@ -11,6 +11,18 @@ $("#valid").hide();
         $("#regislocation").prop( "disabled", false );
         $("#regisaddon").prop( "disabled", false );
         $("#costdetail").show();
+  var p = $("#regispackage").val();
+  var p300 = "Groovy Home 300";
+  var p350 = "Groovy Home 300";
+  var p750 = "Groovy Home 300";
+  var p500 = "Groovy Home 500";
+  var p800 = "Groovy Home 800";
+  var p1700 = "Groovy Home 1700";
+  if (p == p300 || p == p350 || p == p750){
+    $("#coststb").hide();
+  } else if (p == p750 || p == p800 || p == p1700){
+    $("#coststb").show();
+  }
  })
      $("#regislocation").change(function(){
       var d =  $("#regisemail").val();
