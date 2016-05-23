@@ -365,27 +365,22 @@
                                 <option><?php echo $row['nama']; ?></option>
                                 <?php } ?>
                             </select>
-                            <ul style="background-color:#FDE9BF;" class="list-group"  name="costdetail" id="costdetail" disabled>
+                            <select style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" class="form-control" name="regisaddon" id="regisaddon">
+                                <option disabled="true" selected="true">-- Add On --</option>
+                                <?php
+                                    $res = $col_service->find();
+                                    foreach($res as $row)
+                                                {
+                                                  ?>
+                                <option disabled="true"><?php echo $row['nama_group']; ?></option>
+                                <?php } ?>
+                            </select>
+                            <ul style="background-color:#FDE9BF;" class="list-group"  name="costaddon" id="costaddon" disabled>
                               <li class="list-group-item" name="costpackage" id="costpackage">
                                 <span class="badge">Rp 500.000</span>
                                 Package
                               </li>
-                              <li class="list-group-item" name="costinstalasi" id="costinstalasi">
-                                <span class="badge">Rp <?php echo rupiah($biaya_instalasi); ?></span>
-                                Instalasi
-                              </li>
-                              <li class="list-group-item"  name="costrouter" id="costrouter">
-                                <span class="badge">Rp <?php echo rupiah($biaya_router); ?></span>
-                                Router/Bulan
-                              </li>
-                              <li class="list-group-item"  name="coststb" id="coststb">
-                                <span class="badge">Rp <?php echo rupiah($biaya_stb); ?></span>
-                                STB TV/Bulan
-                              </li>
                             </ul>
-                            <select style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" class="form-control" name="regisaddon" id="regisaddon">
-                                <option disabled="true" selected="true">-- Add On --</option>
-                            </select>
                             <select style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" class="form-control" name="regislocation" id="regislocation">
                                 <option disabled="true" selected="true">-- Location --</option>
                                 <?php
