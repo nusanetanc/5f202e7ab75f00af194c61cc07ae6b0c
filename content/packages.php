@@ -1,4 +1,190 @@
-    <!-- Content1 -->
+<!-- Package Top -->
+<div style="background: linear-gradient(to top, #bfbebe , #fff);">
+    <div class="package-top" style="margin-top:50px;color:#000;background-image:url(./package-groovy.png);background-repeat:no-repeat;background-position:bottom;">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12" style="margin:60px 0 0 0;text-align:center;">
+                    <h4 style="font-weight:300;font-size:33px;margin-bottom:20px;">Pilih Paket Yang Sesuai Dengan Kebutuhan Anda</h4>
+                    <p style="font-size:16px;">Paket yang mengkombinasikan antara layanan internet berkecepatan tinggi, <br/>
+    dengan layanan Live TV terlengkap di Indonesia dengan harga sangat terjangkau.</p>
+                    <p style="font-size:16px;"><a href="#" style="color:#000;font-weight:500;text-decoration:underline;">Pelajari fitur lebih lanjut</a></p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<!-- /Package Top -->
+
+<!-- Package Bottom -->
+<div style="background-color:#fff;color:#000;padding:60px 0 0 0">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4 col-md-4" style="margin-bottom:50px;">
+                        <div class="text-center" style="background-color:#f9d650;padding:45px 0 45px 0;">
+                            <h5 style="font-size:21px;font-weight:300;">Groovy Home 300</h5>
+                            <span style="font-size:45px;font-weight:600">299</span><br/>
+                            <span style="font-size:35px;line-height:20px;">RIBU</span><br/><br/>
+                            <p style="font-size:13px;">5 Mbps Internet Access</p><br/>
+                            <button style="background-color:#fc592e;border:0px;padding:10px 30px 10px 30px;font-weight:500;color:#fff;">SUBSCRIBE</button>
+                        </div>
+                        <div style="padding-left:5px;">
+                            <h4 style="font-size:22px;font-weight:bold;color:#f9d650;">Groovy Home 300</h4>
+                            <div style="border-top:2px solid #f9d650;padding:20px 0 0 0;margin-top:10px;">
+                                <ul class="packageList">
+                                    <li>Internet 5 Mbps</li>
+                                    <li>24/7 Live Support</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4" style="margin-bottom:50px;">
+                        <div class="text-center" style="background-color:#f6c047;padding:45px 0 45px 0;">
+                            <h5 style="font-size:21px;font-weight:300;">Groovy Home 350</h5>
+                            <span style="font-size:45px;font-weight:600">349</span><br/>
+                            <span style="font-size:35px;line-height:20px;">RIBU</span><br/><br/>
+                            <p style="font-size:13px;">10 Mbps Internet Access</p><br/>
+                            <button style="background-color:#fc592e;border:0px;padding:10px 30px 10px 30px;font-weight:500;color:#fff;">SUBSCRIBE</button>
+                        </div>
+                        <div style="padding-left:5px;">
+                            <h4 style="font-size:22px;font-weight:bold;color:#f6c047;">Groovy Home 350</h4>
+                            <div style="border-top:2px solid #f6c047;padding:20px 0 0 0;margin-top:10px;">
+                                <ul class="packageList">
+                                    <li>Internet 10 Mbps</li>
+                                    <li>24/7 Live Support</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4" style="margin-bottom:50px;">
+                        <div class="text-center" style="background-color:#f3a840;padding:45px 0 45px 0;">
+                            <h5 style="font-size:21px;font-weight:300;">Groovy Home 800</h5>
+                            <span style="font-size:45px;font-weight:600">749</span><br/>
+                            <span style="font-size:35px;line-height:20px;">RIBU</span><br/><br/>
+                            <p style="font-size:13px;">30 Mbps Internet Access</p><br/>
+                            <button style="background-color:#fc592e;border:0px;padding:10px 30px 10px 30px;font-weight:500;color:#fff;">SUBSCRIBE</button>
+                        </div>
+                        <div style="padding-left:5px;">
+                            <h4 style="font-size:22px;font-weight:bold;color:#f3a840;">Groovy Home 800</h4>
+                            <div style="border-top:2px solid #f3a840;padding:20px 0 0 0;margin-top:10px;">
+                                <ul class="packageList">
+                                    <li>Internet 30 Mbps</li>
+                                    <li>24/7 Live Support</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4 col-md-4" style="margin-bottom:50px;">
+                        <div class="text-center" style="background-color:#f9724f;padding:45px 10px 45px 10px;">
+                            <h5 style="font-size:21px;font-weight:300;">Groovy Home 500</h5>
+                            <span style="font-size:45px;font-weight:600">499</span><br/>
+                            <span style="font-size:35px;line-height:20px;">RIBU</span><br/><br/>
+                            <p style="font-size:13px;">10 Mbps + Local TV Channel + International TV 
+Channel + Premium TV Channel + Video Box 
+(VOD) + Social TV + Live Radio Streaming</p><br/><br/>
+                            <button style="background-color:#fdc328;border:0px;padding:10px 30px 10px 30px;font-weight:500;color:#000;">SUBSCRIBE</button>
+                        </div>
+                        <div style="padding-left:5px;">
+                            <h4 style="font-size:22px;font-weight:bold;color:#f9724f;">Groovy Home 500</h4>
+                            <div style="border-top:2px solid #f9724f;padding:20px 0 0 0;margin-top:10px;">
+                                <ul class="packageList">
+                                    <li>Internet 10 Mbps</li>
+                                    <li>Local TV Channel<span style="font-weight:300"><br/>(Metro TV, TV One, SCTV, Indosiar, Trans TV 
+Trans 7, ANTV Net.TV, Kompas TV Berita Satu, 
+TVRI Jak TV, Rajawali TV, Da Ai TV Indonesia)</span></li>
+                                    <li>Premium Channel<span style="font-weight:300"><br/>(Disney Jr HD, DaVinci HD, Duck TV, Fox HD, 
+Starworld HD, Nat Geo HD, Kix HD)</span></li>
+                                    <li>Video Box / VOD<span style="font-weight:300"><br/>(Fast & Fun Box, Docu Box)</span></li>
+                                    <li>Social TV<span style="font-weight:300"><br/>(Music, Entertainment, News, Funny Clips, 
+Sports, Education, Lifestyle, Kids)</span></li>
+                                    <li>Live Radio Streaming<span style="font-weight:300"><br/>(Local, International)</span></li>
+                                    <li>24/7 Live Support</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4" style="margin-bottom:50px;">
+                        <div class="text-center" style="background-color:#f75b41;padding:45px 10px 45px 10px;">
+                            <h5 style="font-size:21px;font-weight:300;">Groovy Home 800</h5>
+                            <span style="font-size:45px;font-weight:600">799</span><br/>
+                            <span style="font-size:35px;line-height:20px;">RIBU</span><br/><br/>
+                            <p style="font-size:13px;">20 Mbps + Local TV Channel + International TV 
+Channel + Premium TV Channel + Video Box 
+(VOD) + Social TV + Live Radio Streaming</p><br/><br/>
+                            <button style="background-color:#fdc328;border:0px;padding:10px 30px 10px 30px;font-weight:500;color:#000;">SUBSCRIBE</button>
+                        </div>
+                        <div style="padding-left:5px;">
+                            <h4 style="font-size:22px;font-weight:bold;color:#f75b41;">Groovy Home 800</h4>
+                            <div style="border-top:2px solid #f75b41;padding:20px 0 0 0;margin-top:10px;">
+                                <ul class="packageList">
+                                    <li>Internet 20 Mbps</li>
+                                    <li>Local TV Channel<span style="font-weight:300"><br/>(Metro TV, TV One, SCTV, Indosiar, Trans TV 
+Trans 7, ANTV Net.TV, Kompas TV Berita Satu, 
+TVRI Jak TV, Rajawali TV, Da Ai TV Indonesia)</span></li>
+                                    <li>Premium Channel<span style="font-weight:300"><br/>(Disney Channel HD, Disney Jr HD, DaVinci HD, 
+Duck TV, Fox HD, Fox Crime HD, Starworld HD, 
+Nat Geo HD, Kix HD, FX HD, NGC, Trace Urban 
+HD, Channel M HD, KMTV, Aniplus HD, Pelangi)</span></li>
+                                    <li>Video Box / VOD<span style="font-weight:300"><br/>(Fast & Fun Box, Docu Box, Fashion Box, 
+Film Arthouse Box)</span></li>
+                                    <li>Social TV<span style="font-weight:300"><br/>(Music, Entertainment, News, Funny Clips, 
+Sports, Education, Lifestyle, Kids)</span></li>
+                                    <li>Live Radio Streaming<span style="font-weight:300"><br/>(Local, International)</span></li>
+                                    <li>24/7 Live Support</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4" style="margin-bottom:50px;">
+                        <div class="text-center" style="background-color:#ee5533;padding:45px 10px 45px 10px;">
+                            <h5 style="font-size:21px;font-weight:300;">Groovy Home 1700</h5>
+                            <span style="font-size:45px;font-weight:600">1699</span><br/>
+                            <span style="font-size:35px;line-height:20px;">RIBU</span><br/><br/>
+                            <p style="font-size:13px;">50 Mbps + Local TV Channel + International TV 
+Channel + Premium TV Channel + Video Box 
+(VOD) + Disney Movies on Demand + ABC Studios 
+on Demand + Social TV + Live Radio Streaming</p><br/>
+                            <button style="background-color:#fdc328;border:0px;padding:10px 30px 10px 30px;font-weight:500;color:#000;">SUBSCRIBE</button>
+                        </div>
+                        <div style="padding-left:5px;">
+                            <h4 style="font-size:22px;font-weight:bold;color:#ee5533;">Groovy Home 1700</h4>
+                            <div style="border-top:2px solid #ee5533;padding:20px 0 0 0;margin-top:10px;">
+                                <ul class="packageList">
+                                    <li>Internet 50 Mbps</li>
+                                    <li>Local TV Channel<span style="font-weight:300"><br/>(Metro TV, TV One, SCTV, Indosiar, Trans TV 
+Trans 7, ANTV Net.TV, Kompas TV Berita Satu, 
+TVRI Jak TV, Rajawali TV, Da Ai TV Indonesia)</span></li>
+                                    <li>Premium Channel<span style="font-weight:300"><br/>(Disney Channel HD, Disney Jr HD, DaVinci HD, 
+Duck TV, Fox HD, Fox Crime HD, Starworld HD, 
+Nat Geo HD, Kix HD, FX HD, NGC, Trace Urban 
+HD, Channel M HD, KMTV, Aniplus HD, Pelangi)</span></li>
+                                    <li>Video Box / VOD<span style="font-weight:300"><br/>(Fast & Fun Box, Docu Box, Fashion Box, 
+Film Arthouse Box)</span></li>
+                                    <li>Disney Movie on Demand<span style="font-weight:300"><br/>(Various Disney library live action, Disney and 
+Pixar animated features)</span></li>
+                                    <li>ABC Studio on Demand<span style="font-weight:300"><br/>(Various current and library live action series 
+from ABC Studios)</span></li>
+                                    <li>Social TV<span style="font-weight:300"><br/>(Music, Entertainment, News, Funny Clips, 
+Sports, Education, Lifestyle, Kids)</span></li>
+                                    <li>Live Radio Streaming<span style="font-weight:300"><br/>(Local, International)</span></li>
+                                    <li>24/7 Live Support</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Package Bottom -->    
+    
+    <!-- 
     <div style="margin:50px 0 80px 0;background-image:url(<?php echo $base_url; ?>/img/background-package.jpg);background-repeat: repeat-x;">
         <div class="container">
             <div class="row">
@@ -18,7 +204,6 @@
                         </div>
                         <div style="padding-left:5px;">
                             <h4 style="font-size:23px;font-weight:bold;color:#f6a835;">Groovy Home 300</h4>
-                            <!--<h6 style="color:#FF3D23;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
                             <div style="border-top:1px solid #f6a835;padding:20px 0 0 0;margin-top:20px;">
                                 <ul class="packageList">
                                     <li><b>Internet 5 Mbps</b></li>
@@ -37,7 +222,6 @@
                         </div>
                         <div style="padding-left:5px;">
                             <h4 style="font-size:23px;font-weight:bold;color:#f8c03c;">Groovy Home 350</h4>
-                            <!--<h6 style="color:#ff6520;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
                             <div style="border-top:1px solid #f8c03c;padding:20px 0 0 0;margin-top:20px;">
                                 <ul class="packageList">
                                     <li><b>Internet 10 Mbps</b></li>
@@ -56,7 +240,6 @@
                         </div>
                         <div style="padding-left:5px;">
                             <h4 style="font-size:23px;font-weight:bold;color:#fbd744;">Groovy Home 750</h4>
-                            <!--<h6 style="color:#FF931E;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
                             <div style="border-top:1px solid #fbd744;padding:20px 0 0 0;margin-top:20px;">
                                 <ul class="packageList">
                                     <li><b>Internet 30 Mbps</b></li>
@@ -76,7 +259,6 @@
                         </div>
                         <div style="padding-left:5px;">
                             <h4 style="font-size:23px;font-weight:bold;color:#f1532a;">Groovy Home 500</h4>
-                            <!--<h6 style="color:#FF931E;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
                             <div style="border-top:1px solid #f1532a;padding:20px 0 0 0;margin-top:20px;">
                                 <ul class="packageList">
                                     <li><b>Internet 10 Mbps</b></li>
@@ -107,7 +289,6 @@ Phoenix Info News, Sunna TV, Quran TV)</li>
                         </div>
                         <div style="padding-left:5px;">
                             <h4 style="font-size:23px;font-weight:bold;color:#fc592e;">Groovy Home 800</h4>
-                            <!--<h6 style="color:#FF931E;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
                             <div style="border-top:1px solid #fc592e;padding:20px 0 0 0;margin-top:20px;">
                                 <ul class="packageList">
                                     <li><b>Internet 20 Mbps</b></li>
@@ -138,7 +319,6 @@ Phoenix Info News, Sunna TV, Quran TV)</li>
                         </div>
                         <div style="padding-left:5px;">
                             <h4 style="font-size:23px;font-weight:bold;color:#fc7149;">Groovy Home 1700</h4>
-                            <!--<h6 style="color:#FF931E;font-size:20px;font-weight:400;">All of these greate feature</h6>-->
                             <div style="border-top:1px solid #fc7149;padding:20px 0 0 0;margin-top:20px;">
                                 <ul class="packageList">
                                     <li><b>Internet 50 Mbps</b></li>
@@ -162,33 +342,9 @@ Phoenix Info News, Sunna TV, Quran TV)</li>
                         </div>
                     </div>
                 </div>
-                <!--<div class="col-sm-3">
-                    <div class="text-center" style="background-color:#fc242f;color:#fff;padding:45px 0 45px 0;border-radius:10px;margin-bottom:20px;">
-                        <h5 style="font-size:26px;font-weight:200;">Diamond</h5>
-                        <span style="font-size:45px;font-weight:600">999</span><br/>
-                        <span style="font-size:35px;line-height:20px;font-weight:200">RIBU</span><br/><br/>
-                        <p style="font-size:13px;">for lorem ipsum dolor sit amet</p><br/>
-                        <button style="background-image:url(<?php echo $base_url; ?>/img/diamond-button.png);background-size:cover;border:0px;border-radius:5px;padding:10px 0 10px 0;font-weight:500;color:#000;" data-toggle="modal" data-target="#signupModal" data-dismiss="modal"><span class="buttonPackage">SUBSCRIBE</span></button>
-                    </div>
-                    <div style="padding-left:5px;">
-                        <h4 style="font-size:28px;font-weight:bold;color:#fc242f;">Diamond</h4>
-                        <h6 style="color:#fc242f;font-size:20px;font-weight:400;">All of these greate feature</h6>
-                        <div style="border-top:1px solid #fc242f;padding:20px 0 0 0;margin-top:20px;">
-                            <ul class="packageList">
-                                <li>SAML-based single sign-on (SSO)</li>
-                                <li>Compliance Exports of all message history</li>
-                                <li>Support for external message and archival solutions</li>
-                                <li>99.99% guaranteed uptime SLA</li>
-                                <li>24/7 support with 4 hour response time</li>
-                                <li>User provisioning and deprovisioning</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>-->
             </div>
         </div>
-    </div>
-    <!-- /Content1 -->
+    </div>Content1 -->
 
 
     
