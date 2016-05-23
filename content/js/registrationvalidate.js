@@ -6,11 +6,11 @@ $("#valid").hide();
    $("#regisplace").hide();
    $("#regislocation").prop( "disabled", true );
    $("#regisaddon").prop( "disabled", true );
-   $("#costdetail").prop( "disabled", true );
+   $("#costdetail").hide();
       $("#regispackage").change(function(){
         $("#regislocation").prop( "disabled", false );
         $("#regisaddon").prop( "disabled", false );
-        $("#costdetail").prop( "disabled", false );
+        $("#costdetail").show();
  })
      $("#regislocation").change(function(){
       var d =  $("#regisemail").val();
