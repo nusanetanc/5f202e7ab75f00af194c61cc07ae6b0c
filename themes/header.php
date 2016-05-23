@@ -365,7 +365,7 @@
                                 <option><?php echo $row['nama']; ?></option>
                                 <?php } ?>
                             </select>
-                            <select style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" class="form-control" name="regisaddon" id="regispackage">
+                            <select style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" class="form-control" name="regisaddon" id="regisaddon">
                                 <option disabled="true" selected="true">-- Add On --</option>
                             </select>
                             <select style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" class="form-control" name="regislocation" id="regislocation">
