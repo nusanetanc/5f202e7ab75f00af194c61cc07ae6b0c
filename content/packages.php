@@ -28,7 +28,7 @@
                             <span style="font-size:45px;font-weight:600">299</span><br/>
                             <span style="font-size:35px;line-height:20px;">RIBU</span><br/><br/>
                             <p style="font-size:13px;">5 Mbps Internet Access</p><br/>
-                            <button style="background-color:#fc592e;border:0px;padding:10px 30px 10px 30px;font-weight:500;color:#fff;">SUBSCRIBE</button>
+                            <button data-toggle="modal" data-target="#signupModal" data-dismiss="modal" style="background-color:#fc592e;border:0px;padding:10px 30px 10px 30px;font-weight:500;color:#fff;">SUBSCRIBE</button>
                         </div>
                         <div style="padding-left:5px;">
                             <h4 style="font-size:22px;font-weight:bold;color:#f9d650;">Groovy Home 300</h4>
@@ -46,7 +46,7 @@
                             <span style="font-size:45px;font-weight:600">349</span><br/>
                             <span style="font-size:35px;line-height:20px;">RIBU</span><br/><br/>
                             <p style="font-size:13px;">10 Mbps Internet Access</p><br/>
-                            <button style="background-color:#fc592e;border:0px;padding:10px 30px 10px 30px;font-weight:500;color:#fff;">SUBSCRIBE</button>
+                            <button data-toggle="modal" data-target="#signupModal" data-dismiss="modal" style="background-color:#fc592e;border:0px;padding:10px 30px 10px 30px;font-weight:500;color:#fff;">SUBSCRIBE</button>
                         </div>
                         <div style="padding-left:5px;">
                             <h4 style="font-size:22px;font-weight:bold;color:#f6c047;">Groovy Home 350</h4>
@@ -64,7 +64,7 @@
                             <span style="font-size:45px;font-weight:600">749</span><br/>
                             <span style="font-size:35px;line-height:20px;">RIBU</span><br/><br/>
                             <p style="font-size:13px;">30 Mbps Internet Access</p><br/>
-                            <button style="background-color:#fc592e;border:0px;padding:10px 30px 10px 30px;font-weight:500;color:#fff;">SUBSCRIBE</button>
+                            <button data-toggle="modal" data-target="#signupModal" data-dismiss="modal" style="background-color:#fc592e;border:0px;padding:10px 30px 10px 30px;font-weight:500;color:#fff;">SUBSCRIBE</button>
                         </div>
                         <div style="padding-left:5px;">
                             <h4 style="font-size:22px;font-weight:bold;color:#f3a840;">Groovy Home 800</h4>
@@ -87,7 +87,7 @@
                             <p style="font-size:13px;">10 Mbps + Local TV Channel + International TV 
 Channel + Premium TV Channel + Video Box 
 (VOD) + Social TV + Live Radio Streaming</p><br/><br/>
-                            <button style="background-color:#fdc328;border:0px;padding:10px 30px 10px 30px;font-weight:500;color:#000;">SUBSCRIBE</button>
+                            <button data-toggle="modal" data-target="#signupModal" data-dismiss="modal" style="background-color:#fdc328;border:0px;padding:10px 30px 10px 30px;font-weight:500;color:#000;">SUBSCRIBE</button>
                         </div>
                         <div style="padding-left:5px;">
                             <h4 style="font-size:22px;font-weight:bold;color:#f9724f;">Groovy Home 500</h4>
@@ -116,7 +116,7 @@ Sports, Education, Lifestyle, Kids)</span></li>
                             <p style="font-size:13px;">20 Mbps + Local TV Channel + International TV 
 Channel + Premium TV Channel + Video Box 
 (VOD) + Social TV + Live Radio Streaming</p><br/><br/>
-                            <button style="background-color:#fdc328;border:0px;padding:10px 30px 10px 30px;font-weight:500;color:#000;">SUBSCRIBE</button>
+                            <button data-toggle="modal" data-target="#signupModal" data-dismiss="modal" style="background-color:#fdc328;border:0px;padding:10px 30px 10px 30px;font-weight:500;color:#000;">SUBSCRIBE</button>
                         </div>
                         <div style="padding-left:5px;">
                             <h4 style="font-size:22px;font-weight:bold;color:#f75b41;">Groovy Home 800</h4>
@@ -149,7 +149,7 @@ Sports, Education, Lifestyle, Kids)</span></li>
 Channel + Premium TV Channel + Video Box 
 (VOD) + Disney Movies on Demand + ABC Studios 
 on Demand + Social TV + Live Radio Streaming</p><br/>
-                            <button style="background-color:#fdc328;border:0px;padding:10px 30px 10px 30px;font-weight:500;color:#000;">SUBSCRIBE</button>
+                            <button data-toggle="modal" data-target="#signupModal" data-dismiss="modal" style="background-color:#fdc328;border:0px;padding:10px 30px 10px 30px;font-weight:500;color:#000;">SUBSCRIBE</button>
                         </div>
                         <div style="padding-left:5px;">
                             <h4 style="font-size:22px;font-weight:bold;color:#ee5533;">Groovy Home 1700</h4>
