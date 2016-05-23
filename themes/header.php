@@ -374,12 +374,14 @@
                                     if($row['nama_group']<>""){
                                                   ?>
                                 <option disabled="true"><?php echo $row['nama_group']; ?></option>
-                                <?php }
-                                if($row['group']==$row['nama_group']){
+                                <?php
+                                $res1 = $col_service->find(array("group"=>$row['nama_group']));
+                                foreach($res1 as $row1)
+                                            {
                                               ?>
                             <option><?php echo $row['nama_group']; ?></option>
                             <?php
-                          }  } ?>
+                          } }  } ?>
                             </select>
                             <ul style="background-color:#FDE9BF;" class="list-group"  name="costaddon" id="costaddon" disabled>
                               <li class="list-group-item" name="costpackage" id="costpackage">
