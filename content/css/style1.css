@@ -157,6 +157,9 @@ html, body{
         }
         
         @media only screen and (max-width : 768px){
+            .package-top{
+                min-height:520px;
+            }
             .navMenu{
                 display:none;
             }
