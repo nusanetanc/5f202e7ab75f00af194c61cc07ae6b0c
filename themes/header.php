@@ -371,9 +371,15 @@
                                     $res = $col_service->find();
                                     foreach($res as $row)
                                                 {
+                                    if($row['nama_group']<>""){
                                                   ?>
                                 <option disabled="true"><?php echo $row['nama_group']; ?></option>
-                                <?php } ?>
+                                <?php }
+                                if($row['group']==$row['nama_group']){
+                                              ?>
+                            <option><?php echo $row['nama_group']; ?></option>
+                            <?php
+                          }  } ?>
                             </select>
                             <ul style="background-color:#FDE9BF;" class="list-group"  name="costaddon" id="costaddon" disabled>
                               <li class="list-group-item" name="costpackage" id="costpackage">
