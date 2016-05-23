@@ -1,9 +1,10 @@
 <?php
 	$base_url="http://groovy.id/beta";
 	$base_url_member="http://groovy.id/beta/member";
-	$biaya_instal="500.000";
-	$biaya_kabel="10.000";
-	$biaya_router="45.000";
+	$biaya_instalasi=500000;
+	$biaya_cable=10000;
+	$biaya_router=40000;
+	$biaya_stb=45000;
 session_start();
 if (!isset($_SESSION["id"])) {
 	if (isset($_GET['hal'])){

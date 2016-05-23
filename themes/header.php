@@ -371,15 +371,15 @@
                                 Package
                               </li>
                               <li class="list-group-item" name="costinstalasi" id="costinstalasi">
-                                <span class="badge">Rp 500.000</span>
+                                <span class="badge">Rp <?php echo rupiah($biaya_instalasi); ?></span>
                                 Instalasi
                               </li>
                               <li class="list-group-item"  name="costrouter" id="costrouter">
-                                <span class="badge">Rp 500.000</span>
+                                <span class="badge">Rp <?php echo rupiah($biaya_router); ?></span>
                                 Router/Bulan
                               </li>
                               <li class="list-group-item"  name="coststb" id="coststb">
-                                <span class="badge">Rp 500.000</span>
+                                <span class="badge">Rp <?php echo rupiah($biaya_stb); ?></span>
                                 STB TV/Bulan
                               </li>
                             </ul>
