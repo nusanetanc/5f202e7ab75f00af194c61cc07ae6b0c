@@ -379,7 +379,7 @@
                                 foreach($res1 as $row1)
                                             {
                                               ?>
-                            <option><?php echo $row['nama_group']; ?></option>
+                            <option><?php echo $row['nama']; ?></option>
                             <?php
                           } }  } ?>
                             </select>
