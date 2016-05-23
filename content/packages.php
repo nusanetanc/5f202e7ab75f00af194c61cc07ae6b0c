@@ -1,6 +1,6 @@
 <!-- Package Top -->
 <div style="background: linear-gradient(to top, #bfbebe , #fff);">
-    <div class="package-top" style="margin-top:50px;color:#000;background-image:url(./package-groovy.png);background-repeat:no-repeat;background-position:bottom;">
+    <div class="package-top" style="margin-top:50px;color:#000;background-image:url(<?php echo $base_url; ?>/img/package-groovy.png);background-repeat:no-repeat;background-position:bottom;">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12" style="margin:60px 0 0 0;text-align:center;">
