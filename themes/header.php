@@ -366,7 +366,7 @@
                                 <?php } ?>
                             </select>
                             <ul style="background-color:rgba(255, 255, 255, 0.7);" class="list-group"  name="costdetail" id="costdetail" disabled>
-                              <li class="list-group-item" name="costpackage" id="costpackage">
+                              <li class="list-group-item" name="costpackage" id="costpackage" style="background-color:rgba(255, 255, 255, 0.7);">
                                 <span class="badge">Rp 500.000</span>
                                 Package
                               </li>
@@ -380,7 +380,7 @@
                               </li>
                               <li class="list-group-item"  name="costpackage" id="costpackage">
                                 <span class="badge">Rp 500.000</span>
-                                Set Up Box TV
+                                STB/Bulan TV
                               </li>
                             </ul>
                             <select style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" class="form-control" name="regisaddon" id="regisaddon">
