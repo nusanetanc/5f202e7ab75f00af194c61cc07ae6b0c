@@ -367,8 +367,8 @@
                             </select>
                             <ul class="list-group">
                               <li class="list-group-item">
-                                <span class="badge">14</span>
-                                Cras justo odio
+                                <span class="badge">500.000</span>
+                                Instalasi
                               </li>
                             </ul>
                             <select style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" class="form-control" name="regisaddon" id="regisaddon">
