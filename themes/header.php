@@ -365,21 +365,21 @@
                                 <option><?php echo $row['nama']; ?></option>
                                 <?php } ?>
                             </select>
-                            <ul class="list-group" name="costdetail" id="costdetail" disabled>
-                              <li class="list-group-item">
-                                <span class="badge">500.000</span>
+                            <ul style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" class="list-group"  name="costdetail" id="costdetail" disabled>
+                              <li class="list-group-item" name="costpackage" id="costpackage">
+                                <span class="badge">Rp 500.000</span>
                                 Package
                               </li>
-                              <li class="list-group-item">
-                                <span class="badge">500.000</span>
+                              <li class="list-group-item" name="costinstalasi" id="costpackage">
+                                <span class="badge">Rp 500.000</span>
                                 Instalasi
                               </li>
-                              <li class="list-group-item">
-                                <span class="badge">500.000</span>
+                              <li class="list-group-item"  name="costpackage" id="costpackage">
+                                <span class="badge">Rp 500.000</span>
                                 Router/Bulan
                               </li>
-                              <li class="list-group-item">
-                                <span class="badge">500.000</span>
+                              <li class="list-group-item"  name="costpackage" id="costpackage">
+                                <span class="badge">Rp 500.000</span>
                                 Set Up Box TV
                               </li>
                             </ul>
