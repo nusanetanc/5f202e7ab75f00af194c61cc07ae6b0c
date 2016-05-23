@@ -365,7 +365,7 @@
                                 <option><?php echo $row['nama']; ?></option>
                                 <?php } ?>
                             </select>
-                            <ul class="list-group" name="costdetail" id="costdetail">
+                            <ul class="list-group" name="costdetail" id="costdetail" disabled>
                               <li class="list-group-item">
                                 <span class="badge">500.000</span>
                                 Package
