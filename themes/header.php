@@ -365,10 +365,10 @@
                                 <option><?php echo $row['nama']; ?></option>
                                 <?php } ?>
                             </select>
-                            <ul class="list-group">
+                            <ul class="list-group" name="costdetail" id="costdetail">
                               <li class="list-group-item">
                                 <span class="badge">500.000</span>
-                                Instalasi
+                                Package
                               </li>
                               <li class="list-group-item">
                                 <span class="badge">500.000</span>
@@ -376,7 +376,11 @@
                               </li>
                               <li class="list-group-item">
                                 <span class="badge">500.000</span>
-                                Instalasi
+                                Router/Bulan
+                              </li>
+                              <li class="list-group-item">
+                                <span class="badge">500.000</span>
+                                Set Up Box TV
                               </li>
                             </ul>
                             <select style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" class="form-control" name="regisaddon" id="regisaddon">
