@@ -20,7 +20,7 @@ $("#valid").hide();
   var p1700 = "Groovy Home 1700";
   if (p == p300 || p == p350 || p == p750){
     $("#coststb").hide();
-  } else if (p == p750 || p == p800 || p == p1700){
+  } else if (p == p500 || p == p800 || p == p1700){
     $("#coststb").show();
   }
  })
