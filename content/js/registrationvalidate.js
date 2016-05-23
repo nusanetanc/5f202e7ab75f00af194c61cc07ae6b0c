@@ -10,7 +10,6 @@ $("#valid").hide();
       $("#regispackage").change(function(){
         $("#regislocation").prop( "disabled", false );
         $("#regisaddon").prop( "disabled", false );
-        $("#costaddon").show();
  })
  $("#regisaddon").change(function(){;
    $("#costaddon").show();
