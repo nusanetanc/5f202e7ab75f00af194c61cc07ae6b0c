@@ -368,7 +368,7 @@
                             <select style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" class="form-control" name="regisaddon" id="regispackage">
                                 <option disabled="true" selected="true">-- Add On --</option>
                             </select>
-                            <select style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" class="form-control" name="regislocation" id="regislocation" disabled="true">
+                            <select style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" class="form-control" name="regislocation" id="regislocation">
                                 <option disabled="true" selected="true">-- Location --</option>
                                 <?php
                                     $res = $col_location->find();

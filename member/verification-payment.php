@@ -237,7 +237,7 @@ $email_message1 = "Terimakasih ".$nama_cust." sudah menggunakan layanan Tv groov
 $email_message1 .= "Bukti pembayaran ini menandakan bahwa pembayaran anda sudah kami konfirmasi dan terima.<br>";// Message that the email has in it
 $email_message1 .= "Untuk pelanggan baru kami akan segera memberi inforamsi untuk jadwal pemasangan.<br>";
 $email_message1 .= "Terimakasih sudah menggunakan layanan Tv groovy.id.<br>";
-$email_message1 .= "Selamat menikamati layanan TV dari groovy.id.<br>";
+$email_message1 .= "Selamat menikamati dari groovy.id.<br>";
 $email_message1 .= "Untuk info lebih lanjut bisa membuat pengaduan pada halaman member anda di groovy.id.\n\n" .
 "--{$mime_boundary}\n" .
 "Content-Type:text/html; charset=\"iso-8859-1\"\n" .
@@ -257,7 +257,9 @@ $pay = array("deskripsi"=>$package_cust, "harga"=>$harga_bayar, "prorate"=>$pror
 $pay1 = array("deskripsi"=>"Sewa STB", "harga"=>$biaya_stb, "prorate"=>$proraide_stb, "total_harga"=>$biaya_stb-$proraide_stb);
 $pay2 = array("deskripsi"=>"Sewa Router", "harga"=>$biaya_router, "prorate"=>$proraide_router, "total_harga"=>$biaya_router-$proraide_router);
 $pay3 = array("deskripsi"=>"Biaya Instalasi", "harga"=>$biaya_instalasi);
+if($status_cust=="registrasi"){
 $insert_bayar = $col_payment->insert(array("id_user"=>$id_cust, "tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date,"pembayaran"=>(array($pay,$pay1,$pay2,$pay3)), "total_tagihan"=>$total_bayar, "ppn"=>$ppn, "no"=>$last_pembayaran, "total_pembayaran"=>$total_pembayaran));
+}
 	if ($status_cust=="registrasi"){
 		$sisa_hari = 30-$date_month;
 		$last_proraide = $sisa_hari*$harga_hari;
