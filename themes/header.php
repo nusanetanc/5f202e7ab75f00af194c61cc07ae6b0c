@@ -435,6 +435,7 @@
                                                                   $city=$_POST['regiscity'];
                                                                   $decription=$_POST['regisdescription'];
                                                                   $place=$_POST['regisplace'];
+                                                                  $addon=$_POST['addon'];
                                                                   $date = date("Y/m/d");
                                                                   //$add_date_2days = date('Y/m/d', strtotime("+2 days"));
                                                                   $date_days = date("d");
@@ -577,6 +578,11 @@
                                                                           $insert_customer=$col_user->insert(array("id_user"=>$newid,"nama"=>$name,"email"=>$email, "phone"=>$phone, "foto"=>"","level"=>"0","password"=>$result, "aktif"=>"0", "registrasi"=>"personal",
                                                                                                                 "tanggal_registrasi"=>$date, "paket"=>$package, "harga"=>$harga, "tanggal_akhir"=>"","tanggal_aktivasi"=>"",
                                                                                                                 "tempat"=>$location, "kota"=>$city, "keterangan"=>$decription, "alamat"=>$place, "pembayaran"=>"0", "no_virtual"=>"","status"=>"registrasi"));
+                                                                                                                if(!empty($_POST['check_list'])){
+                                      // insert add on
+                                                                                        foreach($_POST['check_list'] as $selected){
+                                                                                            $insert_addon=$col_addon->insert(array("id_user"=>$newid, "layanan"=>$selected));
+                                                                                        }
                                                                               // mail for customer to registrasi
                                                                                 $to = $email;
 
