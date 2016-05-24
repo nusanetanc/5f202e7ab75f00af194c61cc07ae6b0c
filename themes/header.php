@@ -367,8 +367,11 @@
                             </select>
                             <ul style="background-color:#FDE9BF;" class="list-group"  name="regisaddon" id="regisaddon" disabled>
                               <li class="list-group-item" name="costpackage" id="costpackage">
-                                <input type="checkbox" name="vehicle" value="Bike">I have a bike<br>
-                                <input type="checkbox" name="vehicle" value="Car">I have a car
+                                <fieldset>
+                                  <legend><b>TV On Demand</b></legend>
+                                  <input type="checkbox" name="vehicle" value="Bike">I have a bike<br>
+                                  <input type="checkbox" name="vehicle" value="Car">I have a car
+                                </fieldset>
                               </li>
                             </ul>
                             <select style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" class="form-control" name="regislocation" id="regislocation">
