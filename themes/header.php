@@ -577,11 +577,9 @@
                                                                           $insert_customer=$col_user->insert(array("id_user"=>$newid,"nama"=>$name,"email"=>$email, "phone"=>$phone, "foto"=>"","level"=>"0","password"=>$result, "aktif"=>"0", "registrasi"=>"personal",
                                                                                                                 "tanggal_registrasi"=>$date, "paket"=>$package, "harga"=>$harga, "tanggal_akhir"=>"","tanggal_aktivasi"=>"",
                                                                                                                 "tempat"=>$location, "kota"=>$city, "keterangan"=>$decription, "alamat"=>$place, "pembayaran"=>"0", "no_virtual"=>"","status"=>"registrasi"));
-                                                                                      if(!empty($_POST['addon'])){
-                                                                                      // insert add on
                                                                                         foreach($_POST['addon'] as $selected){
                                                                                             $insert_addon=$col_addon->insert(array("id_user"=>$newid, "layanan"=>$selected));
-                                                                                        } }
+                                                                                        }
                                                                               // mail for customer to registrasi
                                                                                 $to = $email;
 
