@@ -378,7 +378,7 @@
                                   <?php $res1 = $col_service->find(array("group"=>$row['nama_group']));
                                   foreach($res1 as $row1)
                                               { ?>
-                                    <input type="checkbox" name="addon" id="addon" value="<?php $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
+                                    <input type="checkbox" name="addon[]" id="addon[]" value="<?php $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
                                     <?php } ?>
                                 <?php } } ?>
                               </li>
