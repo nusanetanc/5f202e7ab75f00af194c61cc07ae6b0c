@@ -366,18 +366,17 @@
                                 <?php } ?>
                             </select>
                             <ul class="list-group"  name="regisaddon" id="regisaddon" disabled>
-                              <li class="list-group-item" name="costpackage" id="costpackage">
                                 <?php
-                                $p = "<script language='javascript'> document.write(p);</script>";
-                                    $res = $col_service->find(array("paket"=>$_SESSION['p']));
+                                    $res = $col_service->find();
                                     foreach($res as $row)
                                                 {
                                                   ?>
+                              <li class="list-group-item" name="<?php echo $row['nama_group']; ?>" id="<?php echo $row['nama_group']; ?>">
                                 <h6><?php echo $row['nama_group']; ?></h6>
                                   <?php $res1 = $col_service->find(array("group"=>$row['nama_group']));
                                   foreach($res1 as $row1)
                                               { ?>
-                                    <input type="checkbox" name="vehicle" value="Bike"><?php echo ' '.$row1['nama'] ?><br>
+                                    <input type="checkbox" name="addon" value="<?php $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
                                     <?php } ?>
                                 <?php } ?>
                               </li>
