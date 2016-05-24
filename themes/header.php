@@ -365,7 +365,7 @@
                                 <option><?php echo $row['nama']; ?></option>
                                 <?php } ?>
                             </select>
-                            <ul class="list-group form-control"  name="regisaddon" id="regisaddon" disabled>
+                            <ul class="list-group"  name="regisaddon" id="regisaddon" disabled>
                               <li class="list-group-item" name="costpackage" id="costpackage">
                                 <?php
                                     $res = $col_service->find(array("paket"=>"Groovy Home 500"));
