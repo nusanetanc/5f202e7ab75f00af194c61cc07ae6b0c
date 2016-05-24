@@ -10,6 +10,16 @@ $("#valid").hide();
         $("#regislocation").prop( "disabled", false );
         var p =  $("#regispackage").val();
           $("#regisaddon").show();
+      if(p == "Groovy Home 500" || p == "Groovy Home 800"){
+        $("#Tv Chanel").show();
+        $("#Cinema Box HD").show();
+        $("#Video on Demand").show();
+      } else if (p == "Groovy Home 1700"){
+        $("#Tv Chanel").show();
+        $("#Cinema Box HD").show();
+      } else {
+        $("#regisaddon").hide();
+      }
  })
      $("#regislocation").change(function(){
       var d =  $("#regisemail").val();
