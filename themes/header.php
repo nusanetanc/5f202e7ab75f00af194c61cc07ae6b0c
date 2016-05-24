@@ -369,7 +369,7 @@
                               <li class="list-group-item" name="costpackage" id="costpackage">
                                 <?php
                                 $p = "<script language='javascript'> document.write(p);</script>";
-                                    $res = $col_service->find(array("paket"=>$p));
+                                    $res = $col_service->find(array("paket"=>$_SESSION['p']));
                                     foreach($res as $row)
                                                 {
                                                   ?>
