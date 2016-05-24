@@ -378,7 +378,7 @@
                                   <?php $res1 = $col_service->find(array("group"=>$row['nama_group']));
                                   foreach($res1 as $row1)
                                               { ?>
-                                    <input type="checkbox" name="addon" value="<?php $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
+                                    <input type="checkbox" name="addon" id="addon" value="<?php $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
                                     <?php } ?>
                                 <?php } } ?>
                               </li>
@@ -396,7 +396,7 @@
                                   <?php $res1 = $col_service->find(array("group"=>$row['nama_group']));
                                   foreach($res1 as $row1)
                                               { ?>
-                                    <input type="checkbox" name="addon" value="<?php $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
+                                    <input type="checkbox" name="addon" id="addon" value="<?php $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
                                     <?php } ?>
                                 <?php } } ?>
                               </li>
@@ -435,7 +435,6 @@
                                                                   $city=$_POST['regiscity'];
                                                                   $decription=$_POST['regisdescription'];
                                                                   $place=$_POST['regisplace'];
-                                                                  $addon=$_POST['addon'];
                                                                   $date = date("Y/m/d");
                                                                   //$add_date_2days = date('Y/m/d', strtotime("+2 days"));
                                                                   $date_days = date("d");
