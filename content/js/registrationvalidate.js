@@ -17,6 +17,7 @@ $("#valid").hide();
       } else if (p == "Groovy Home 1700"){
         $("#Tv Chanel").show();
         $("#Cinema Box HD").show();
+        $("#Video on Demand").hide();
       } else {
         $("#regisaddon").hide();
       }
