@@ -5,21 +5,21 @@ $("#valid").hide();
   $("#regiscity").hide();
    $("#regisplace").hide();
    $("#regislocation").prop( "disabled", true );
-   $("#regisaddon").hide();
+   $("#regisaddon1").hide();
+   $("#regisaddon2").hide();
       $("#regispackage").change(function(){
         $("#regislocation").prop( "disabled", false );
         var p =  $("#regispackage").val();
           $("#regisaddon").show();
       if(p == "Groovy Home 500" || p == "Groovy Home 800"){
-        $("#Tv Chanel").show();
-        $("#Cinema Box HD").show();
-
-      } else if(p == "Groovy Home 300"){
-        $("#Tv Chanel").show();
-        $("#Cinema Box HD").show();
-
+        $("#regisaddon1").hide();
+        $("#regisaddon2").show();
+      } else if(p == "Groovy Home 1700"){
+        $("#regisaddon1").show();
+        $("#regisaddon2").hide();
       } else {
-        $("#regisaddon").hide();
+        $("#regisaddon1").hide();
+        $("#regisaddon2").hide();
       }
  })
      $("#regislocation").change(function(){

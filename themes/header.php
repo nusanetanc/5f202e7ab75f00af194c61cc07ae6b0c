@@ -365,14 +365,31 @@
                                 <option><?php echo $row['nama']; ?></option>
                                 <?php } ?>
                             </select>
-                            <ul class="list-group"  name="regisaddon" id="regisaddon" disabled>
+                            <ul class="list-group"  name="regisaddon1" id="regisaddon1" disabled>
                                 <?php
                                     $res = $col_service->find();
                                     foreach($res as $row)
                                                 {
-                                        if($row['nama_group']<>""){
+                                        if($row['nama_group']=="Cinema Box HD" || $row['nama_group']=="TV Chanel"){
                                                   ?>
-                              <li class="list-group-item" name="<?php echo $row['nama_group']; ?>" id="<?php echo $row['nama_group']; ?>">
+                              <li class="list-group-item">
+                                <h6><?php echo $row['nama_group']; ?></h6>
+                                  <?php $res1 = $col_service->find(array("group"=>$row['nama_group']));
+                                  foreach($res1 as $row1)
+                                              { ?>
+                                    <input type="checkbox" name="addon" value="<?php $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
+                                    <?php } ?>
+                                <?php } } ?>
+                              </li>
+                            </ul>
+                            <ul class="list-group"  name="regisaddon2" id="regisaddon2" disabled>
+                                <?php
+                                    $res = $col_service->find();
+                                    foreach($res as $row)
+                                                {
+                                        if($row['nama_group']=="Cinema Box HD" || $row['nama_group']=="TV Chanel" || $row['nama_group']=="Video on Demand"){
+                                                  ?>
+                              <li class="list-group-item">
                                 <h6><?php echo $row['nama_group']; ?></h6>
                                   <?php $res1 = $col_service->find(array("group"=>$row['nama_group']));
                                   foreach($res1 as $row1)
