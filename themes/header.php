@@ -368,7 +368,6 @@
                             <ul class="list-group"  name="regisaddon" id="regisaddon" disabled>
                               <li class="list-group-item" name="costpackage" id="costpackage">
                                 <?php
-                                $p = p;
                                     $res = $col_service->find(array("paket"=>$p));
                                     foreach($res as $row)
                                                 {
