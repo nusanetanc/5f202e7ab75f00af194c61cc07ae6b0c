@@ -8,6 +8,7 @@ $("#valid").hide();
    $("#regisaddon").hide();
       $("#regispackage").change(function(){
         $("#regislocation").prop( "disabled", false );
+        var p =  $("#regispackage").val();
           $("#regisaddon").show();
  })
      $("#regislocation").change(function(){
