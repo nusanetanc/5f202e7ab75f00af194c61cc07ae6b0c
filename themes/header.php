@@ -368,10 +368,9 @@
                             <ul class="list-group form-control"  name="regisaddon" id="regisaddon" disabled>
                               <li class="list-group-item" name="costpackage" id="costpackage">
                                 <?php
-                                    $res = $col_service->find();
+                                    $res = $col_service->find(array("paket"=>"Groovy Home 500"));
                                     foreach($res as $row)
                                                 {
-                                        if("nama_group"<>""){
                                                   ?>
                                 <fieldset>
                                   <legend><h6><?php echo $row['nama_group']; ?></h6></legend>
@@ -381,7 +380,7 @@
                                     <input type="checkbox" name="vehicle" value="Bike"><?php echo $row1['nama'] ?><br>
                                     <?php } ?>
                                 </fieldset>
-                                <?php } } ?>
+                                <?php } ?>
                               </li>
                             </ul>
                             <select style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" class="form-control" name="regislocation" id="regislocation">
