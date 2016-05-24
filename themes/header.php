@@ -365,28 +365,10 @@
                                 <option><?php echo $row['nama']; ?></option>
                                 <?php } ?>
                             </select>
-                            <select style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" class="form-control" name="regisaddon" id="regisaddon">
-                                <option disabled="true" selected="true">-- Add On --</option>
-                                <?php
-                                    $res = $col_service->find();
-                                    foreach($res as $row)
-                                                {
-                                    if($row['nama_group']<>""){
-                                                  ?>
-                                <option disabled="true"><?php echo $row['nama_group']; ?></option>
-                                <?php
-                                $res1 = $col_service->find(array("group"=>$row['nama_group']));
-                                foreach($res1 as $row1)
-                                            {
-                                              ?>
-                            <option><?php echo $row1['nama']; ?></option>
-                            <?php
-                          } }  } ?>
-                            </select>
-                            <ul style="background-color:#FDE9BF;" class="list-group"  name="costaddon" id="costaddon" disabled>
+                            <ul style="background-color:#FDE9BF;" class="list-group"  name="regisaddon" id="regisaddon" disabled>
                               <li class="list-group-item" name="costpackage" id="costpackage">
                                 <input type="checkbox" name="vehicle" value="Bike">I have a bike<br>
-                                <input type="checkbox" name="vehicle" value="Car">I have a car 
+                                <input type="checkbox" name="vehicle" value="Car">I have a car
                               </li>
                             </ul>
                             <select style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" class="form-control" name="regislocation" id="regislocation">
