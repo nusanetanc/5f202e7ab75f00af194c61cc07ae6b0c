@@ -368,7 +368,7 @@
                             <ul class="list-group"  name="regisaddon" id="regisaddon" disabled>
                               <li class="list-group-item" name="costpackage" id="costpackage">
                                 <?php
-                                    $res = $col_service->find(array("paket"=>array("groovy Home 500")));
+                                    $res = $col_service->find(array("paket"=>"Groovy Home 500"));
                                     foreach($res as $row)
                                                 {
                                                   ?>
