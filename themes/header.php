@@ -378,7 +378,7 @@
                                   <?php $res1 = $col_service->find(array("group"=>$row['nama_group']));
                                   foreach($res1 as $row1)
                                               { ?>
-                                    <input type="checkbox" name="addon[]" id="addon[]" value="<?php $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
+                                    <input type="checkbox" name="addon" id="addon" value="<?php $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
                                     <?php } ?>
                                 <?php } } ?>
                               </li>
@@ -396,7 +396,7 @@
                                   <?php $res1 = $col_service->find(array("group"=>$row['nama_group']));
                                   foreach($res1 as $row1)
                                               { ?>
-                                    <input type="checkbox" name="addon[]" id="addon[]" value="<?php $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
+                                    <input type="checkbox" name="addon" id="addon" value="<?php $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
                                     <?php } ?>
                                 <?php } } ?>
                               </li>
@@ -574,9 +574,11 @@
                                                                                             $place=$row['place'];
                                                                                         }
 
-                                                                          $insert_customer=$col_user->insert(array("id_user"=>$newid,"nama"=>$name,"email"=>$email, "phone"=>$phone, "foto"=>"","level"=>"0","password"=>$result, "aktif"=>"0", "registrasi"=>"personal",
+                                                                /*          $insert_customer=$col_user->insert(array("id_user"=>$newid,"nama"=>$name,"email"=>$email, "phone"=>$phone, "foto"=>"","level"=>"0","password"=>$result, "aktif"=>"0", "registrasi"=>"personal",
                                                                                                                 "tanggal_registrasi"=>$date, "paket"=>$package, "harga"=>$harga, "tanggal_akhir"=>"","tanggal_aktivasi"=>"",
-                                                                                                                "tempat"=>$location, "kota"=>$city, "keterangan"=>$decription, "alamat"=>$place, "pembayaran"=>"0", "no_virtual"=>"","status"=>"registrasi"));
+                                                                                                                "tempat"=>$location, "kota"=>$city, "keterangan"=>$decription, "alamat"=>$place, "pembayaran"=>"0", "no_virtual"=>"","status"=>"registrasi")); */
+
+                                                                                      // insert add on
                                                                                         foreach($_POST['addon'] as $selected){
                                                                                             $insert_addon=$col_addon->insert(array("id_user"=>$newid, "layanan"=>$selected));
                                                                                         }
