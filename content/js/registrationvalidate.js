@@ -5,15 +5,11 @@ $("#valid").hide();
   $("#regiscity").hide();
    $("#regisplace").hide();
    $("#regislocation").prop( "disabled", true );
-   $("#regisaddon").prop( "disabled", true );
-   $("#costaddon").hide();
+   $("#regisaddon").hide();
       $("#regispackage").change(function(){
         $("#regislocation").prop( "disabled", false );
-        $("#regisaddon").prop( "disabled", false );
+          $("#regisaddon").show();
  })
- $("#regisaddon").change(function(){;
-   $("#costaddon").show();
-})
      $("#regislocation").change(function(){
       var d =  $("#regisemail").val();
       var a =  $("#regislocation").val();
