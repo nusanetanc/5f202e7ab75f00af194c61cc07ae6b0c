@@ -13,11 +13,11 @@ $("#valid").hide();
       if(p == "Groovy Home 500" || p == "Groovy Home 800"){
         $("#Tv Chanel").show();
         $("#Cinema Box HD").show();
-        $("#Video on Demand").show();
+
       } else if(p == "Groovy Home 300"){
         $("#Tv Chanel").show();
         $("#Cinema Box HD").show();
-        $("#Video on Demand").hide();
+
       } else {
         $("#regisaddon").hide();
       }
