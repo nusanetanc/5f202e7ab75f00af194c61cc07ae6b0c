@@ -385,8 +385,8 @@
                             </select>
                             <ul style="background-color:#FDE9BF;" class="list-group"  name="costaddon" id="costaddon" disabled>
                               <li class="list-group-item" name="costpackage" id="costpackage">
-                                <span class="label label-danger">Batal</span>
-                                Package
+                                <input type="checkbox" name="vehicle" value="Bike">I have a bike<br>
+                                <input type="checkbox" name="vehicle" value="Car">I have a car 
                               </li>
                             </ul>
                             <select style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" class="form-control" name="regislocation" id="regislocation">
@@ -395,6 +395,7 @@
                                     $res = $col_location->find();
                                     foreach($res as $row)
                                                 {
+
                                                   ?>
                                 <option><?php echo $row['name']; ?></option>
                                 <?php } ?>
