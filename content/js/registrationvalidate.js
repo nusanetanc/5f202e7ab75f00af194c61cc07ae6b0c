@@ -9,7 +9,6 @@ $("#valid").hide();
       $("#regispackage").change(function(){
         $("#regislocation").prop( "disabled", false );
         var p =  $("#regispackage").val();
-        <?php $p = p; ?>
           $("#regisaddon").show();
  })
      $("#regislocation").change(function(){
