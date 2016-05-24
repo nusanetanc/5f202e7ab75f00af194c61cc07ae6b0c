@@ -370,6 +370,7 @@
                                     $res = $col_service->find();
                                     foreach($res as $row)
                                                 {
+                                        if($row['nama_group']<>""){
                                                   ?>
                               <li class="list-group-item" name="<?php echo $row['nama_group']; ?>" id="<?php echo $row['nama_group']; ?>">
                                 <h6><?php echo $row['nama_group']; ?></h6>
@@ -378,7 +379,7 @@
                                               { ?>
                                     <input type="checkbox" name="addon" value="<?php $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
                                     <?php } ?>
-                                <?php } ?>
+                                <?php } } ?>
                               </li>
                             </ul>
                             <select style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" class="form-control" name="regislocation" id="regislocation">
