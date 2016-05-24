@@ -368,7 +368,7 @@
                             <ul style="background-color:#FDE9BF;" class="list-group"  name="regisaddon" id="regisaddon" disabled>
                               <li class="list-group-item" name="costpackage" id="costpackage">
                                 <fieldset>
-                                  <legend><b>TV On Demand</b></legend>
+                                  <legend style="color:#FDE9BF;"><h6>TV On Demand</h6></legend>
                                   <input type="checkbox" name="vehicle" value="Bike">I have a bike<br>
                                   <input type="checkbox" name="vehicle" value="Car">I have a car
                                 </fieldset>
