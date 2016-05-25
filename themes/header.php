@@ -587,7 +587,10 @@
                                                                                         $harga_addon=$row['harga'];
                                                                                     }
                                                                                             $insert_addon=$col_addon->insert(array("id_user"=>$newid, "layanan"=>$selectaddon, "harga"=>$harga_addon, "status"=>"unaktif"));
-                                                                                        } }
+                                                                                            $addon_service=$_POST['addon'];
+                                                                                        } } elseif(empty($_POST['addon'])){
+                                                                                            $addon_service="No";
+                                                                                         }
                                                                               // mail for customer to registrasi
                                                                                 $to = $email;
 
@@ -627,7 +630,7 @@
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <td style="border:1px solid #bbb;padding:5px;color:#777">Layanan Tambahan</td>
-                                                                                                        <td style="border:1px solid #bbb;padding:5px">-</td>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px">'.$addon_service.'</td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <td style="border:1px solid #bbb;padding:5px;color:#777">Tanggal Registrasi</td>
