@@ -587,7 +587,7 @@
                                                                                         $harga_addon=$row['harga'];
                                                                                     }
                                                                                             $insert_addon=$col_addon->insert(array("id_user"=>$newid, "layanan"=>$selectaddon, "harga"=>$harga_addon, "status"=>"unaktif"));
-                                                                                            $addon_service=$_POST['addon'];
+                                                                                            $addon_service=$selectaddon.', ';
                                                                                         } } elseif(empty($_POST['addon'])){
                                                                                             $addon_service="No";
                                                                                          }
