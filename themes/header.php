@@ -621,13 +621,7 @@
                                                                                                         <td style="border:1px solid #bbb;padding:5px;color:#777">Telepon</td>
                                                                                                         <td style="border:1px solid #bbb;padding:5px">'.$phone.'</td>
                                                                                                     </tr>
-                                                                                                    <tr>
-                                                                                                        <td style="border:1px solid #bbb;padding:5px;color:#777">Paket</td>
-                                                                                                        '.if(!empty($_POST['addon'])){
-                                                                                                            foreach($_POST['addon'] as $selectaddon){.'
-                                                                                                        <td style="border:1px solid #bbb;padding:5px">'.$package.'</td>'.} } else {.'
-                                                                                                        <td style="border:1px solid #bbb;padding:5px">-</td>'.}.'
-                                                                                                    </tr>
+                                                                                                    
                                                                                                     <tr>
                                                                                                         <td style="border:1px solid #bbb;padding:5px;color:#777">Layanan Tambahan</td>
                                                                                                         <td style="border:1px solid #bbb;padding:5px">'.$package.'</td>
