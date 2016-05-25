@@ -621,10 +621,13 @@
                                                                                                         <td style="border:1px solid #bbb;padding:5px;color:#777">Telepon</td>
                                                                                                         <td style="border:1px solid #bbb;padding:5px">'.$phone.'</td>
                                                                                                     </tr>
-                                                                                                    
+                                                                                                    <tr>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px;color:#777">Paket</td>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px">'.$package.'</td>
+                                                                                                    </tr>
                                                                                                     <tr>
                                                                                                         <td style="border:1px solid #bbb;padding:5px;color:#777">Layanan Tambahan</td>
-                                                                                                        <td style="border:1px solid #bbb;padding:5px">'.$package.'</td>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px">-</td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <td style="border:1px solid #bbb;padding:5px;color:#777">Tanggal Registrasi</td>
