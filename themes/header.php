@@ -378,7 +378,7 @@
                                   <?php $res1 = $col_service->find(array("group"=>$row['nama_group']));
                                   foreach($res1 as $row1)
                                               { ?>
-                                    <input type="checkbox" name="addon[]" id="addon[]" value="<?php $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
+                                    <input type="checkbox" name="addon[]" id="addon[]" value="<?php echo $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
                                     <?php } ?>
                                 <?php } } ?>
                               </li>
@@ -396,7 +396,7 @@
                                   <?php $res1 = $col_service->find(array("group"=>$row['nama_group']));
                                   foreach($res1 as $row1)
                                               { ?>
-                                    <input type="checkbox" name="addon[]" id="addon[]" value="<?php $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
+                                    <input type="checkbox" name="addon[]" id="addon[]" value="<?php echo $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
                                     <?php } ?>
                                 <?php } } ?>
                               </li>
@@ -579,9 +579,10 @@
                                                                                                                 "tempat"=>$location, "kota"=>$city, "keterangan"=>$decription, "alamat"=>$place, "pembayaran"=>"0", "no_virtual"=>"","status"=>"registrasi")); */
 
                                                                                       // insert add on
+                                                                                    if(!empty($_POST['addon'])){
                                                                                         foreach($_POST['addon'] as $selectaddon){
                                                                                             $insert_addon=$col_addon->insert(array("id_user"=>$newid, "layanan"=>$selectaddon));
-                                                                                        }
+                                                                                        } }
                                                                               // mail for customer to registrasi
                                                                                 $to = $email;
 
