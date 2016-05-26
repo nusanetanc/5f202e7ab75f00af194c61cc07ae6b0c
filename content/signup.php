@@ -158,7 +158,7 @@
                                                         $history=array(
                                                         			"tanggal"=>$date,
                                                         			"hal"=> "Registrasi",
-                                                              "keterangan"=>"Reistrasi via personal".$package.", dan add on layanan".$addon_service
+                                                              "keterangan"=>"Reistrasi via personal, dengan paket".$package.", dan add on layanan ".$addon_service
                                                         		);
                                                                           $insert_customer=$col_user->insert(array("id_user"=>$newid,"nama"=>$name,"email"=>$email, "phone"=>$phone, "foto"=>"","level"=>"0","password"=>$result, "aktif"=>"0", "registrasi"=>"personal",
                                                                                         "tanggal_registrasi"=>$date, "paket"=>$package, "harga"=>$harga, "tanggal_akhir"=>"","tanggal_aktivasi"=>"",
