@@ -202,6 +202,10 @@
                                                                                 <td style="border:1px solid #bbb;padding:5px">'.$package.'</td>
                                                                             </tr>
                                                                             <tr>
+                                                                                <td style="border:1px solid #bbb;padding:5px;color:#777">Layanan Tambahan</td>
+                                                                                <td style="border:1px solid #bbb;padding:5px">'.$addon_service.'</td>
+                                                                            </tr>
+                                                                            <tr>
                                                                                 <td style="border:1px solid #bbb;padding:5px;color:#777">Tanggal Registrasi</td>
                                                                                 <td style="border:1px solid #bbb;padding:5px">'.$date_days.' '.$month1.' '.$date_years.'</td>
                                                                             </tr>
