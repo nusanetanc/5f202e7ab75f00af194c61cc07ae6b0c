@@ -40,6 +40,11 @@
 											$tgl2 = substr($tanggal2, 8,10);
 										    $month2 = bulan($bln2);
 										  }
+											$res = $col_addon->find(array("id_user"=>$_GET['id_cust']));
+											foreach($res as $row)
+												  {
+														$addon_cust=$row['layanan'];
+													}
 									if(isset($_POST['konfirmregis'])){
                                         $date = date("Y/m/d");
 										$konfirmasi = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("status"=>"registrasi", "aktif"=>"0")));
@@ -107,6 +112,10 @@
                                                                                                     <tr>
                                                                                                         <td style="border:1px solid #bbb;padding:5px;color:#777">Paket</td>
                                                                                                         <td style="border:1px solid #bbb;padding:5px">'.$paket_cust.'</td>
+                                                                                                    </tr>
+																																																		<tr>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px;color:#777">Paket</td>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px">'.$addon_cust.'</td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <td style="border:1px solid #bbb;padding:5px;color:#777">Tanggal Registrasi</td>
@@ -178,6 +187,12 @@
 						      <label class="col-lg-3 control-label">Paket :</label>
 						      <div class="col-lg-9">
 						        <h4><?php echo $paket_cust; ?></h4>
+						      </div>
+						    </div>
+								<div class="form-group">
+						      <label class="col-lg-3 control-label">Layanan Tambahan :</label>
+						      <div class="col-lg-9">
+						        <h4><?php echo $addon_cust; ?></h4>
 						      </div>
 						    </div>
 						    <div class="form-group">
