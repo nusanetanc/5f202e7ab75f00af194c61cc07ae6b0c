@@ -241,7 +241,7 @@
                                 <option><?php echo $row['nama']; ?></option>
                                 <?php } ?>
                             </select>
-                            <ul class="list-group"  name="regisaddon1" id="regisaddon1" disabled>
+                            <ul style="text-align:left;" class="list-group"  name="regisaddon1" id="regisaddon1" disabled>
                               <h5>Add On Service</h5>
                                 <?php
                                     $res = $col_service->find();
@@ -259,7 +259,7 @@
                                 <?php } } ?>
                               </li>
                             </ul>
-                            <ul class="list-group"  name="regisaddon2" id="regisaddon2" disabled>
+                            <ul style="text-align:left;" class="list-group"  name="regisaddon2" id="regisaddon2" disabled>
                               <h5>Add On Service</h5>
                                 <?php
                                     $res = $col_service->find();
