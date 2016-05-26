@@ -9,9 +9,11 @@
                                                                   $decription=$_POST['regisdescription'];
                                                                   $place=$_POST['regisplace'];
                                                                   $date = date("Y/m/d");
-                                                                  $add_date_2days = date('Y/m/d', strtotime("+2 days"));
+                                                                  //$add_date_2days = date('Y/m/d', strtotime("+2 days"));
+                                                                  $date_days = date("d");
                                                                   $date_month = date("m");
                                                                   $date_years = date("y");
+                                                                  $month1 = bulan($date_month);
 
                                             if ($name=="" || $email=="" || $phone=="" || $package=="-- Select Package --" || $location=="-- Location --" || empty($_POST['g-recaptcha-response'])){
                                                                                        ?>
@@ -158,7 +160,7 @@
                                                         $history=array(
                                                         			"tanggal"=>$date,
                                                         			"hal"=> "Registrasi",
-                                                              "keterangan"=>"Reistrasi via personal, dengan paket".$package.", dan add on layanan ".$addon_service
+                                                              "keterangan"=>"Reistrasi via personal, dengan paket ".$package.", dan add on layanan ".$addon_service
                                                         		);
                                                                           $insert_customer=$col_user->insert(array("id_user"=>$newid,"nama"=>$name,"email"=>$email, "phone"=>$phone, "foto"=>"","level"=>"0","password"=>$result, "aktif"=>"0", "registrasi"=>"personal",
                                                                                         "tanggal_registrasi"=>$date, "paket"=>$package, "harga"=>$harga, "tanggal_akhir"=>"","tanggal_aktivasi"=>"",

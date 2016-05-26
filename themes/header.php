@@ -574,9 +574,27 @@
                                                                                             $place=$row['place'];
                                                                                         }
 
-                                                                         $insert_customer=$col_user->insert(array("id_user"=>$newid,"nama"=>$name,"email"=>$email, "phone"=>$phone, "foto"=>"","level"=>"0","password"=>$result, "aktif"=>"0", "registrasi"=>"personal",
-                                                                                                                "tanggal_registrasi"=>$date, "paket"=>$package, "harga"=>$harga, "tanggal_akhir"=>"","tanggal_aktivasi"=>"",
-                                                                                                                "tempat"=>$location, "kota"=>$city, "keterangan"=>$decription, "alamat"=>$place, "pembayaran"=>"0", "no_virtual"=>"","status"=>"registrasi"));
+                                          // insert add on
+                                        if(!empty($_POST['addon'])){
+                                            foreach($_POST['addon'] as $selectaddon){
+                                        $res = $col_service->find(array("nama"=>$selectaddon));
+                                        foreach($res as $row)
+                                        {
+                                            $harga_addon=$row['harga'];
+                                        }
+                                                $insert_addon=$col_addon->insert(array("id_user"=>$newid, "layanan"=>$selectaddon, "harga"=>$harga_addon, "status"=>"unaktif"));
+                                                $addon_service=$selectaddon.', ';
+                                            } } elseif(empty($_POST['addon'])){
+                                                $addon_service="No";
+                                             }
+                                                $history=array(
+                                                			"tanggal"=>$date,
+                                                			"hal"=> "Registrasi",
+                                                      "keterangan"=>"Reistrasi via personal, dengan paket ".$package.", dan add on layanan ".$addon_service
+                                                		);
+                                                                  $insert_customer=$col_user->insert(array("id_user"=>$newid,"nama"=>$name,"email"=>$email, "phone"=>$phone, "foto"=>"","level"=>"0","password"=>$result, "aktif"=>"0", "registrasi"=>"personal",
+                                                                                "tanggal_registrasi"=>$date, "paket"=>$package, "harga"=>$harga, "tanggal_akhir"=>"","tanggal_aktivasi"=>"",
+                                                                                "tempat"=>$location, "kota"=>$city, "keterangan"=>$decription, "alamat"=>$place, "pembayaran"=>"0", "no_virtual"=>"","status"=>"registrasi", "histori"=>array($history)));
 
                                                                                       // insert add on
                                                                                     if(!empty($_POST['addon'])){
