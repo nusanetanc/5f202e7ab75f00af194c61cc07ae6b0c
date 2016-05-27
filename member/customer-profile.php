@@ -192,7 +192,11 @@
 								<div class="form-group">
 						      <label class="col-lg-3 control-label">Layanan Tambahan :</label>
 						      <div class="col-lg-9">
-								<h4></h4>
+								<h4><?php	$res = $col_addon->find(array("id_user"=>$_GET['id_cust']));
+													foreach($res as $row)
+														  {
+																echo $row['layanan'].', ';
+															} ?></h4>
 						      </div>
 						    </div>
 						    <div class="form-group">
@@ -250,7 +254,7 @@
 						   </div>
 							  </fieldset>
 							<?php
-							if($level=="5" && $status_cust=="permintaan registrasi" &1 HD Movie, Winning Time,& $regis_cust=="sales"){ ?>
+							if($level=="5" && $status_cust=="permintaan registrasi" && $regis_cust=="sales"){ ?>
 							 		<td><input type="submit" name="konfirmregis" id="konfirmregis" class="btn btn-primary btn-sm" value="Konfirmasi Registrasi"></td>
 							<?php } elseif($regis_cust=="konfirmasi registrasi") { ?>
 							<div class="form-group">
