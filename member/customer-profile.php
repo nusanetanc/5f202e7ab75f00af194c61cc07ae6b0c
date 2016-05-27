@@ -49,7 +49,7 @@
                                         $date = date("Y/m/d");
 										$konfirmasi = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("status"=>"registrasi", "aktif"=>"0")));
 										$detail_info=array("share_id"=>"00000000","description"=>"Selamat Bergabung dengan groovy tv, Selamat Menikmati Layanan Kami","date"=>$date);
-                                    	$write_info = $col_info->insert(array("for"=>$id_cust, "subject"=>"Selamat Bergabung Dengan groovy", "tanggal_update"=>$date, "informasi"=>array($detail_info)));
+                    $write_info = $col_info->insert(array("for"=>$id_cust, "subject"=>"Selamat Bergabung Dengan groovy", "tanggal_update"=>$date, "informasi"=>array($detail_info)));
 	                                    	  //mail for sales manager
 	                                          $to1 = $email_sales;
 	                                          $subject1 = 'Veririfikasi Registrasi Sales';
@@ -114,7 +114,7 @@
                                                                                                         <td style="border:1px solid #bbb;padding:5px">'.$paket_cust.'</td>
                                                                                                     </tr>
 																																																		<tr>
-                                                                                                        <td style="border:1px solid #bbb;padding:5px;color:#777">Paket</td>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px;color:#777">Tambahan Layanan</td>
                                                                                                         <td style="border:1px solid #bbb;padding:5px">'.$addon_cust.'</td>
                                                                                                     </tr>
                                                                                                     <tr>
@@ -122,8 +122,8 @@
                                                                                                         <td style="border:1px solid #bbb;padding:5px">'.$date_days.' '.$month1.' '.$date_years.'</td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <td style="border:1px solid #bbb;padding:5px;color:#777">Tipe Akun</td>
-                                                                                                        <td style="border:1px solid #bbb;padding:5px">Personal</td>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px;color:#777">Registrasi</td>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px">Sales</td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <td style="border:1px solid #bbb;padding:5px;color:#777">Tempat</td>
