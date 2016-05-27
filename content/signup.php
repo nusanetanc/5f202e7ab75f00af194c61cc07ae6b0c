@@ -212,7 +212,7 @@
                                                                                 <td style="border:1px solid #bbb;padding:5px">'.$date_days.' '.$month1.' '.$date_years.'</td>
                                                                             </tr>
                                                                             <tr>
-                                                                                <td style="border:1px solid #bbb;padding:5px;color:#777">Tipe Akun</td>
+                                                                                <td style="border:1px solid #bbb;padding:5px;color:#777">Registrasi</td>
                                                                                 <td style="border:1px solid #bbb;padding:5px">Personal</td>
                                                                             </tr>
                                                                             <tr>
