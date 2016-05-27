@@ -2,7 +2,7 @@
 	<form class="form-horizontal" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 							<?php
 									$id_cust=$_GET['id_cust'];
-/*									$res = $col_user->find(array("id_user"=>$_GET['id_cust'],"level"=>"0"));
+									$res = $col_user->find(array("id_user"=>$_GET['id_cust'],"level"=>"0"));
 									foreach($res as $row)
 										  {
 										  	 $nama_cust=$row['nama'];
@@ -44,7 +44,7 @@
 											foreach($res as $row)
 												  {
 														$addon_cust=$row['layanan'];
-													} */
+													} /*
 									if(isset($_POST['konfirmregis'])){
                                         $date = date("Y/m/d");
 										$konfirmasi = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("status"=>"registrasi", "aktif"=>"0")));
@@ -153,7 +153,7 @@
                                         $status_cust = "registrasi";
 									if ($konfirmasi && $write_info && $kirimemail1 && $kirimemail2){ ?>
 										<p class="text-muted text-primary">Registrasi Customer telah di konfirmasi.!!</p>
-								<?php } }
+								<?php } } */
 								?>
 		<div class="col-sm-9" style="font-family:Arial;">
 			<div class="list-group">
