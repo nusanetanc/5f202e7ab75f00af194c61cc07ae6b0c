@@ -220,9 +220,9 @@
 						    <div class="form-group">
 						      <label class="col-lg-3 control-label">KTP :</label>
 						      <div class="col-lg-9">
-							      <a href="#ktp" class="btn btn-primary btn-xs">Open</a>
-								  	<a href="#" class="JesterBox">
-									  <div id="ktp"><img src="<?php echo $base_url_member; ?>/ktp/<?php echo $ktp_cust; ?>"></div>
+							      <a href="#imagektp" class="btn btn-primary btn-xs">Open</a>
+								  	<a href="" class="JesterBox">
+									  <div id="imagektp"><img src="<?php echo $base_url_member; ?>/ktp/<?php echo $ktp_cust; ?>"></div>
 									</a>
 							  </div>
 							  </label>
