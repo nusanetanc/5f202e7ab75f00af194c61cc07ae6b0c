@@ -163,7 +163,24 @@ $update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$
 						      <td><?php echo $row['paket']; ?></td>
 						      <td><?php echo $row['tanggal_registrasi']; ?></td>
 						      <td><?php echo $row['registrasi']; ?></td>
-						      <td><input type="submit" name="send" id="send" class="btn btn-primary btn-xs" value="Invoice"></td>
+						      <td><a class="btn btn-primary btn-xs" href="#" data-toggle="modal" data-target="#<?php echo $row['_id'] ?>">Kirim Invoice</a></td>
+											<div class="modal" name="<?php echo $row['_id'] ?>" id="<?php echo $row['_id'] ?>">
+											  <div class="modal-dialog">
+											    <div class="modal-content">
+											      <div class="modal-header">
+											        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+											        <h4 class="modal-title">Kirim Invoice</h4>
+											      </div>
+											      <div class="modal-body">
+											        <p>One fine body…</p>
+											      </div>
+											      <div class="modal-footer">
+											        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+											        <button type="button" class="btn btn-primary">Save changes</button>
+											      </div>
+											    </div>
+											  </div>
+											</div>
 						    </tr>
 						   </tbody>
 					<?php } } ?>
