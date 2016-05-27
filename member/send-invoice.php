@@ -140,13 +140,9 @@ $update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$
 						<table class="table table-striped table-hover">
 						  <thead>
 						    <tr>
-						      <th width="10%">ID Cust</th>
-						      <th width="20%">Customer</th>
-						      <th width="15">NO VA</th>
-						      <th width="15%">Paket</th>
-						      <th width="15%">Tgl Registrasi</th>
-						      <th width="15%">Registrasi</th>
-						      <th width="10%">Kirim</th>
+						      <th width="40%">Customer</th>
+						      <th width="40">NO Virtual Acount</th>
+						      <th width="20%"></th>
 						    </tr>
 						  </thead>
 						  <?php
@@ -157,30 +153,9 @@ $update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$
                       	?>
 						  <tbody>
 						    <tr>
-						      <td><?php echo $row['id_user']; ?><input type="hidden" value="<?php echo $row['id_user']; ?>" name="id_cust" id="id_cust"></td>
-						      <td><?php echo $row['nama'].' / '. $row['phone'].' / '.$row['email']; ?></td>
+						      <td><?php echo $row['id_user'].' / '.$row['nama'].' / '. $row['phone'].' / '.$row['email']; ?></td>
 						      <td><?php echo $kode_perusahaan.$row['id_user']; ?></td>
-						      <td><?php echo $row['paket']; ?></td>
-						      <td><?php echo $row['tanggal_registrasi']; ?></td>
-						      <td><?php echo $row['registrasi']; ?></td>
-						      <td><a class="btn btn-primary btn-xs" href="#" data-toggle="modal" data-target="#<?php echo $row['_id'] ?>">Kirim Invoice</a></td>
-											<div class="modal" name="<?php echo $row['_id'] ?>" id="<?php echo $row['_id'] ?>">
-											  <div class="modal-dialog">
-											    <div class="modal-content">
-											      <div class="modal-header">
-											        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-											        <h4 class="modal-title">Kirim Invoice</h4>
-											      </div>
-											      <div class="modal-body">
-											        <p>One fine body…</p>
-											      </div>
-											      <div class="modal-footer">
-											        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-											        <button type="button" class="btn btn-primary">Save changes</button>
-											      </div>
-											    </div>
-											  </div>
-											</div>
+									<td><a href="">Kirim Invoice</a></td>
 						    </tr>
 						   </tbody>
 					<?php } } ?>
