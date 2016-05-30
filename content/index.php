@@ -15,42 +15,44 @@
     <!-- /Content1 -->
     
     <!-- Content2 -->
-    <div style="background-color:#e6e6e6">
-        <div class="container" style="padding: 15px 0 10px 0;">
-            <h3 class="homeSecondTitle">Watch All Favorite Movie</h3>
+    <div style="background-color:#F2F2F2;background-image:url(<?php echo $base_url; ?>/img/high-speed-fiber-internet.png);background-repeat:no-repeat;background-position:right top;">
+        <div class="container" style="padding: 15px 20px 10px 20px;">
             <div class="row">
-                <div class="col-sm-2 col-xs-4 moviePoster"><img src="http://pic.dens.tv/vod_170x252/1441618231_3.png"/></div>
-                <div class="col-sm-2 col-xs-4 moviePoster"><img src="http://pic.dens.tv/vod_170x252/MVPRM00381_3.png"/></div>
-                <div class="col-sm-2 col-xs-4 moviePoster"><img src="http://pic.dens.tv/vod_170x252/1444201032_3.jpg"/></div>
-                <div class="col-sm-2 col-xs-4 moviePoster"><img src="http://pic.dens.tv/vod_170x252/1444189880_3.jpg"/></div>
-                <div class="col-sm-2 col-xs-4 moviePoster"><img src="http://pic.dens.tv/vod_170x252/1441683022_3.png"/></div>
-                <div class="col-sm-2 col-xs-4 moviePoster"><img src="http://pic.dens.tv/vod_170x252/1441682727_3.png"/></div>
+                <div class="col-sm-6" style="margin:170px 0 180px 0;">
+                    <h3 style="font-weight:200;font-size:40px;color:#ff5722;">High Speed Fiber Internet</h3>
+                    <p style="font-size:18px;">With Groovy High-Speed Fiber Internet, you're always connected to our reliable network.</p>
+                </div>
             </div>
-        </div>
-        <div class="container" style="padding: 15px 0 80px 0;">
-            <h3 class="homeSecondTitle">Video on Demand</h3>
-            <div class="row">
-                <div class="col-sm-2 col-xs-4 moviePoster"><img src="http://pic.dens.tv/vod_170x252/MVPRM00366_3.jpg"/></div>
-                <div class="col-sm-2 col-xs-4 moviePoster"><img src="http://pic.dens.tv/vod_170x252/MVDMD00048_3.jpg"/></div>
-                <div class="col-sm-2 col-xs-4 moviePoster"><img src="http://pic.dens.tv/vod_170x252/MVPRM00243_3.png"/></div>
-                <div class="col-sm-2 col-xs-4 moviePoster"><img src="http://pic.dens.tv/vod_170x252/1441679041_3.png"/></div>
-                <div class="col-sm-2 col-xs-4 moviePoster"><img src="http://pic.dens.tv/vod_170x252/1441678418_3.png"/></div>
-                <div class="col-sm-2 col-xs-4 moviePoster"><img src="http://pic.dens.tv/vod_170x252/MVPRM00229_3.jpg"/></div>
-            </div>
-        </div>
+            
+        </div> 
     </div>
-    <!-- /Content2 -->
+    <!-- /Content3 -->
     
     <!-- Content3 -->
-    <div style="background-color:#fff;padding:20px 0 50px 0">
+    <div style="background-color:#333;background-image:url(<?php echo $base_url; ?>/img/all-entertainment.jpg);background-size:cover;">
+        <div class="container" style="padding: 15px 20px 10px 20px;">
+            <div class="row">
+                <div class="col-sm-6" style="margin:170px 0 180px 0;">
+                    <h3 style="font-weight:200;font-size:40px;color:#fff;">All Entertainment In One Product</h3>
+                    <p style="font-size:18px;color:#fff;">You can take your entertainment with you. Watch the hottest shows and movies On Demand, stream live TV, social TV or watch your recorded shows. Just turn on your TV, laptop, tablet or phone.</p>
+                </div>
+            </div>
+            
+        </div> 
+    </div>
+    <!-- /Content3 -->
+    
+    <!-- Content 4 -->
+    <div style="background: linear-gradient(to right, #f9a825 , #fdd835);color:#000;padding:60px 0 80px 0;">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12 text-center">
-                    <h3 class="homeSecondTitle text-center">Internet &amp; TV by</h3>
-                    <a href="http://jkt.nusa.net.id" target="_blank"><img width="150px" src="<?php echo $base_url; ?>/img/logo-nusanet.png"/></a>
-                    <a href="http://www.dens.tv" target="_blank"><img width="150px" src="<?php echo $base_url; ?>/img/denstv-logo.png" style="margin:10px 0 0 30px;"/></a>
+                <div class="col-sm-9">
+                    <h3 style="font-weight:00;">Go with Groovy High-Speed Fiber Internet for a consistently fast connection.</h3>
+                </div>
+                <div class="col-sm-3" style="padding:5px 0 0 18px;">
+                    <button class="navButton" style="padding:10px 50px 10px 50px;color:#fff;font-size:18px;">Register Now</button>    
                 </div>
             </div>
         </div>
     </div>
-    <!-- /Content3 -->
+    <!-- /Content 4 -->
