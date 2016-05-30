@@ -153,9 +153,9 @@ $update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$
                       	?>
 						  <tbody>
 						    <tr>
-						      <td><a href="<?php echo $base_url_member.'/customer-profile/'.$row['id_user']; ?>"><?php echo $row['id_user']; ?></a> / <?php $row['nama']; ?></td>
+						      <td><a href="<?php echo $base_url_member.'/customer-profile/'.$row['id_user']; ?>"><?php echo $row['id_user']; ?></a> / <?php echo $row['nama']; ?></td>
 						      <td><?php echo $kode_perusahaan.$row['id_user']; ?></td>
-									<td><a href="<?php  ?>">Kirim Invoice</a></td>
+									<td><a href="<?php echo $base_url_member.'/invoice-customer/'.$row['id_user']; ?>">Kirim Invoice</a></td>
 						    </tr>
 						   </tbody>
 					<?php } } ?>
