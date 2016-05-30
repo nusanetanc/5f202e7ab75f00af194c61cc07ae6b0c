@@ -107,9 +107,10 @@ foreach($res as $row)
 												<input type="checkbox"> Router (40.000/Bulan) <br/>
 												<input type="checkbox"> Tambahan Kabel (10.000/Meter) <br/>
 												<input type="number" class="form-control" id="pjkbl" name="pjkbl" placeholder="Panjang Kabel (Meter)"><br/>
-												<input type="checkbox"> Instalasi (500.000)
+												<input type="checkbox"> Instalasi (500.000)<br/>
 											</label>
 										</div>
+										<input type="submit" class="btn btn-primary" name="send" id="send">
 								</fieldset>
 							</div>
 							</form>
