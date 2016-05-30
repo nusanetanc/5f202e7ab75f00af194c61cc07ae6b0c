@@ -201,7 +201,6 @@ $update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$
 					<div class="panel-body">
 						<br/>
 						<div class="col-sm-12">
-							<form class="form-horizontal">
 								<fieldset>
 									<div class="checkbox">
 											<label>
@@ -215,7 +214,6 @@ $update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$
 										<input type="submit" class="btn btn-success btn-sm" name="send" id="send" value="KIRIM">
 								</fieldset>
 							</div>
-							</form>
 						</div>
 					</div>
 		</div>
