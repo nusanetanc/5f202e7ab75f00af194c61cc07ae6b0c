@@ -61,10 +61,10 @@ $kol_stb = array(
     array("label"=>rupiah($biaya_stb-$proraide_stb), "length"=>30, "align"=>"C")
   );
 	$kol_kabel = array(
-	    array("label"=>"Kabel / ".$pjkbl, "length"=>80, "align"=>"C"),
-	    array("label"=>rupiah($biaya_cabel*$pjkbl), "length"=>30, "align"=>"C"),
+	    array("label"=>"Kabel / ".$pjkbl." Meter", "length"=>80, "align"=>"C"),
+	    array("label"=>rupiah($biaya_cable*$pjkbl), "length"=>30, "align"=>"C"),
 	    array("label"=>rupiah($proraide_kabel), "length"=>30, "align"=>"C"),
-	    array("label"=>rupiah($biaya_cabel*$pjkbl-$proraide_stb), "length"=>30, "align"=>"C")
+	    array("label"=>rupiah($biaya_cable*$pjkbl-$proraide_stb), "length"=>30, "align"=>"C")
 	  );
   $kol_instalasi = array(
       array("label"=>"Instalasi", "length"=>80, "align"=>"C"),
