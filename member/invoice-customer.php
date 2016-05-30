@@ -1,3 +1,24 @@
+<?php
+$res = $col_user->find(array("id_user"=>$id_cust, "level"=>"0"));
+foreach($res as $row)
+					{
+						$tanggal_registrasi = $row['tanggal_registrasi'];
+						$thn_registrasi = substr($tanggal_registrasi, 0,4);
+						$bln_registrasi = substr($tanggal_registrasi, 5,2);
+						$tgl_registrasi = substr($tanggal_registrasi, 8,10);
+						$month_registrasi = bulan($bln_registrasi);
+
+						$registrasi_cust = $row['registrasi'];
+						$sales =$row['sales'];
+						$nama_cust = $row['nama'];
+						$email_cust = $row['email'];
+						$phone_cust = $row['phone'];
+						$package_cust = $row['paket'];
+						$tempat_cust = $row['tempat'];
+						$kota_cust = $row['kota'];
+						$alamat_cust = $row['alamat'];
+															}
+?>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
 		<div class="list-group">
@@ -74,11 +95,11 @@
 								<fieldset>
 									<div class="checkbox">
 											<label>
-												<input type="checkbox"> STB <br/>
-												<input type="checkbox"> Router <br/>
-												<input type="checkbox"> kabel <br/>
+												<input type="checkbox"> STB (45.000/Bulan) <br/>
+												<input type="checkbox"> Router (40.000/Bulan) <br/>
+												<input type="checkbox"> Tambahan Kabel (10.000/Meter) <br/>
 												<input type="number" class="form-control" id="pjkbl" name="pjkbl" placeholder="Panjang Kabel (Meter)"><br/>
-												<input type="checkbox"> Instalasi
+												<input type="checkbox"> Instalasi (500.000)
 											</label>
 										</div>
 								</fieldset>
