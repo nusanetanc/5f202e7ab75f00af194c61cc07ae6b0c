@@ -105,9 +105,9 @@ $res = $col_addon->find(array("id_user"=>$id_cust));
 				$jmlon=$jmlon+1; }
 $pdf->Ln();
 $pdf->SetFont('Arial','','10');
-$pdf->SetFillColor(255,255,255);
+$pdf->SetFillColor(255,158,128);
 $pdf->SetTextColor(0);
-$pdf->SetDrawColor(0,0,0);
+$pdf->SetDrawColor(255,158,128);
 foreach ($kol_paket as $kolom_paket) {
   $pdf->Cell($kolom_paket['length'], 8, $kolom_paket['label'], 1, '0', $kolom_paket['align'], true);
 }
