@@ -80,11 +80,10 @@ foreach($res as $row)
 								$res = $col_addon->find(array("id_user"=>$id_cust));
 								foreach($res as $row)
 													{ ?>
-								<div class="col-lg-3">
-									- 
-								</div>
 								<div class="col-lg-9">
 								<h4><?php echo $row['layanan'].'/'.rupiah($row['harga']); ?></h4>
+								</div>
+								<div class="col-lg-3">
 								</div>
 								<?php } ?>
 							</div>
