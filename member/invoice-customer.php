@@ -24,6 +24,7 @@ $res = $col_package->find(array("nama"=>$package_cust));
 foreach($res as $row)
 				{
 					$ket_paket = $row['isi'];
+					$harga_paket = $row['harga'];
 				}
 if(isset($_POST['send'])){
 	$stb=$_POST['stb'];
@@ -42,10 +43,10 @@ $header = array(
     array("label"=>"Sub Total", "length"=>30, "align"=>"C")
   );
 $kol_paket = array(
-    array("label"=>$paket_bayar, "length"=>80, "align"=>"C"),
-    array("label"=>rupiah($harga_bayar), "length"=>30, "align"=>"C"),
+    array("label"=>$package_cust, "length"=>80, "align"=>"C"),
+    array("label"=>rupiah($harga_paket), "length"=>30, "align"=>"C"),
     array("label"=>rupiah($proraide), "length"=>30, "align"=>"C"),
-    array("label"=>rupiah($total_bayar), "length"=>30, "align"=>"C")
+    array("label"=>rupiah($total_paket), "length"=>30, "align"=>"C")
   );
 $kol_router = array(
     array("label"=>"Sewa Router", "length"=>80, "align"=>"C"),
@@ -59,6 +60,12 @@ $kol_stb = array(
     array("label"=>rupiah($proraide_stb), "length"=>30, "align"=>"C"),
     array("label"=>rupiah($biaya_stb-$proraide_stb), "length"=>30, "align"=>"C")
   );
+	$kol_kabel = array(
+	    array("label"=>"Kabel / ".$pjkbl, "length"=>80, "align"=>"C"),
+	    array("label"=>rupiah($biaya_cabel*$pjkbl), "length"=>30, "align"=>"C"),
+	    array("label"=>rupiah($proraide_kabel), "length"=>30, "align"=>"C"),
+	    array("label"=>rupiah($biaya_cabel*$pjkbl-$proraide_stb), "length"=>30, "align"=>"C")
+	  );
   $kol_instalasi = array(
       array("label"=>"Instalasi", "length"=>80, "align"=>"C"),
       array("label"=>rupiah($biaya_instalasi), "length"=>30, "align"=>"C"),
@@ -115,6 +122,11 @@ if($jmlon<>"0"){
 $pdf->Ln();
 foreach ($kol_router as $kolom_router) {
   $pdf->Cell($kolom_router['length'], 8, $kolom_router['label'], 1, '0', $kolom_router['align'], true);
+} }
+if($kabel=="1"){
+$pdf->Ln();
+foreach ($kol_kabel as $kolom_kabel) {
+ $pdf->Cell($kolom_kabel['length'], 8, $kolom_kabel['label'], 1, '0', $kolom_kabel['align'], true);
 } }
 	if($stb=="1"){
 $pdf->Ln();
