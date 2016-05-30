@@ -1,8 +1,7 @@
 </body>
 <?php if ($_GET['hal']<>"signin" && $_GET['hal']<>"forgot-password" && $_GET['hal']<>"signup"){ ?>
 <!-- Footer --></div>
-    <div style="background: linear-gradient(to right, #FF3D23 , #FF931E);height:2px;"><!--trosd -->
-    </div>
+    
     <div class="container footerContent" style="padding:0 20px 50px 20px">
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-3 text-left">

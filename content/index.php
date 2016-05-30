@@ -47,7 +47,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-9">
-                    <h3 style="font-weight:00;">Go with Groovy High-Speed Fiber Internet for a consistently fast connection.</h3>
+                    <h3 style="font-weight:200;">Go with Groovy High-Speed Fiber Internet for a consistently fast connection.</h3>
                 </div>
                 <div class="col-sm-3" style="padding:5px 0 0 18px;">
                     <button class="navButton" style="padding:10px 50px 10px 50px;color:#fff;font-size:18px;">Register Now</button>    
