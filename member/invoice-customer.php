@@ -21,6 +21,8 @@ foreach($res as $row)
 						$alamat_cust = $row['alamat'];
 															}
 if(isset($_POST['send'])){
+	$stb=$_POST['stb'];
+	$router=$_POST['router'];
 $ppn_paket=$harga_paket*0.1;
 $total_harga_paket=$harga_paket+$ppn_paket;
 require('../content/srcpdf/fpdf.php');
@@ -120,7 +122,11 @@ $data .= "\n\n" .
 "--{$mime_boundary}--\n";
 $sent = mail($email_to, $email_subject, $email_message, $headers);
 $update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("no_virtual"=>$kode_perusahaan.$id_cust)));
-}
+
+	if($sent && $update_user){ ?>
+		<script type="" language="JavaScript">
+		document.location='<?php echo $base_url_member; ?>/send-invoice'</script>
+<?php	} }
 ?>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
@@ -205,7 +211,7 @@ $update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$
 									<div class="checkbox">
 											<label>
 												<input type="checkbox" name="stb" id="stb"> STB (45.000/Bulan) <br/>
-												<input type="checkbox" name="router" id="router"> Router (40.000/Bulan) <br/>
+												<input type="checkbox" name="router" id="router" checked="true"> Router (40.000/Bulan) <br/>
 												<input type="checkbox" name="kabel" id="kabel"> Tambahan Kabel (10.000/Meter) <br/>
 												<input type="number" class="form-control" id="pjkbl" name="pjkbl" placeholder="Panjang Kabel (Meter)"><br/>
 												<input type="checkbox" name="instal" id="instal"> Instalasi (500.000)<br/>
