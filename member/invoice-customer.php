@@ -23,7 +23,7 @@ foreach($res as $row)
 $res = $col_package->find(array("nama"=>$package_cust));
 foreach($res as $row)
 				{
-					$ket_paket = $row['isi']
+					$ket_paket = $row['isi'];
 				}
 if(isset($_POST['send'])){
 	$stb=$_POST['stb'];
