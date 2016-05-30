@@ -29,7 +29,7 @@
     <!-- /Content3 -->
     
     <!-- Content3 -->
-    <div style="background-color:#333;background-image:url(<?php echo $base_url; ?>/img/all-entertainment.jpg);background-size:cover;">
+    <div style="background-color:#000;background-image:url(<?php echo $base_url; ?>/img/all-entertainment.jpg);background-size:cover;">
         <div class="container" style="padding: 15px 20px 10px 20px;">
             <div class="row">
                 <div class="col-sm-6" style="margin:170px 0 180px 0;">
@@ -47,7 +47,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-9">
-                    <h4 style="font-weight:200;">Go with Groovy High-Speed Fiber Internet for a consistently fast connection.</h4>
+                    <h3 style="font-weight:200;">Go with Groovy High-Speed Fiber Internet for a consistently fast connection.</h3>
                 </div>
                 <div class="col-sm-3" style="padding:5px 0 0 18px;">
                     <button class="navButton" style="padding:10px 50px 10px 50px;color:#fff;font-size:18px;">Register Now</button>    
