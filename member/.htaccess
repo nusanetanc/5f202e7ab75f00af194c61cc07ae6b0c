@@ -49,7 +49,7 @@ RewriteRule ^support-add$ ?hal=support-add
 RewriteRule ^support-list$ ?hal=support-list
 RewriteRule ^customer/([0-9A-Za-z]+)/? ?hal=customer&status=$1
 RewriteRule ^customer$ ?hal=customer
-RewriteRule ^invoice-customer/([0-9A-Za-z]+)/? ?hal=invoice-customer=$1
+RewriteRule ^invoice-customer/([0-9A-Za-z]+)/? ?hal=invoice-customer&id=$1
 RewriteRule ^add-on$ ?hal=add-on
 
 RewriteRule ^support$ ?hal=support
