@@ -1,4 +1,5 @@
 <?php
+$id_cust = $_GET['id_cust'];
 $res = $col_user->find(array("id_user"=>$id_cust, "level"=>"0"));
 foreach($res as $row)
 					{
