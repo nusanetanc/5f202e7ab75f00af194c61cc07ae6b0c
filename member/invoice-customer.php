@@ -151,10 +151,6 @@ $pdf->Ln();
 $pdf->Ln();
 $pdf->Ln();
 $pdf->Ln();
-$pdf->Ln();
-$pdf->Ln();
-$pdf->Ln();
-$pdf->Ln();
 $pdf->Cell(0,7, '* Tata cara pembayaran dapat dilihat pada FAQ web groovy.id', '0', 1, 'R');
 $pdf->Image($base_url.'/img/a.jpg','170','220','30');
 // Filename that will be used for the file as the attachment
