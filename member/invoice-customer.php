@@ -57,21 +57,9 @@ foreach($res as $row)
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="col-lg-3 control-label">Paket Aktif/Harga : </label>
-								<div class="col-lg-9">
-								<h4><?php echo $package_cust.'/'.rupiah($harga_paket); ?></h4>
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-lg-3 control-label">Tambahan Layanan/Harga : </label>
-								<div class="col-lg-9">
-								<h4><?php echo $package_cust.'/'.rupiah($harga_paket); ?></h4>
-								</div>
-							</div>
-							<div class="form-group">
 								<label class="col-lg-3 control-label">Lokasi : </label>
 								<div class="col-lg-9">
-								<h4><?php echo $tempat_cust.', '.$ket_cust.', '.$kota_cust; ?></h4>
+								<h4><?php echo $tempat_cust.', '.$kota_cust; ?></h4>
 								</div>
 							</div>
 							<div class="form-group">
@@ -79,6 +67,23 @@ foreach($res as $row)
 								<div class="col-lg-9">
 								<h4><?php echo $tgl_registrasi.' '.$month_registrasi.' '.$thn_registrasi; ?></h4>
 								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-lg-3 control-label">Paket Aktif/Harga : </label>
+								<div class="col-lg-9">
+								<h4><?php echo $package_cust.'/'.rupiah($harga_paket); ?></h4>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-lg-3 control-label">Tambahan Layanan/Harga : </label>
+								<?php
+								$res = $col_addon->find(array("id_user"=>$id_cust));
+								foreach($res as $row)
+													{ ?>
+								<div class="col-lg-9">
+								<h4><?php echo $row['layanan'].'/'.rupiah($row['harga']); ?></h4>
+								</div>
+								<?php } ?>
 							</div>
 						</div>
 							</fieldset>
