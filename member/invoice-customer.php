@@ -20,6 +20,11 @@ foreach($res as $row)
 						$kota_cust = $row['kota'];
 						$alamat_cust = $row['alamat'];
 															}
+$res = $col_package->find(array("nama"=>$package_cust));
+foreach($res as $row)
+				{
+					$ket_paket = $row['isi']
+				}
 if(isset($_POST['send'])){
 	$stb=$_POST['stb'];
 	$router=$_POST['router'];
@@ -210,8 +215,12 @@ $update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$
 								<fieldset>
 									<div class="checkbox">
 											<label>
+													<?php if($ket_paket=="internet+tv"){ ?>
+												<input type="checkbox" name="stb" id="stb" checked="true" disabled="true"> STB (45.000/Bulan) <br/>
+													<?php } else if($ket_paket=="internet"){ ?>
 												<input type="checkbox" name="stb" id="stb"> STB (45.000/Bulan) <br/>
-												<input type="checkbox" name="router" id="router" checked="true"> Router (40.000/Bulan) <br/>
+													<?php } ?>
+												<input type="checkbox" name="router" id="router" checked="true" disabled="true"> Router (40.000/Bulan) <br/>
 												<input type="checkbox" name="kabel" id="kabel"> Tambahan Kabel (10.000/Meter) <br/>
 												<input type="number" class="form-control" id="pjkbl" name="pjkbl" placeholder="Panjang Kabel (Meter)"><br/>
 												<input type="checkbox" name="instal" id="instal"> Instalasi (500.000)<br/>
