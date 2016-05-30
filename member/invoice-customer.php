@@ -86,7 +86,7 @@ foreach($res as $row)
 				</div>
 				<div class="panel" style="border:0px;" >
 					<div class="panel-body" style="background-color:#1B5E12;">
-						<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">CUSTOMER</h3>
+						<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">KIRIM INVOICE</h3>
 					</div>
 					<div class="panel-body">
 						<br/>
