@@ -289,11 +289,11 @@ $sent = mail($email_to, $email_subject, $email_message, $headers);
 									<div class="checkbox">
 											<label>
 													<?php if($ket_paket=="internet+tv"){ ?>
-												<input type="checkbox" name="stb" id="stb" checked="true" disabled="true" value="1"> STB (45.000/Bulan) <br/>
+												<input type="checkbox" name="stb" id="stb" checked="true" value="1"> STB (45.000/Bulan) <br/>
 													<?php } else if($ket_paket=="internet"){ ?>
 												<input type="checkbox" name="stb" id="stb" value="1"> STB (45.000/Bulan) <br/>
 													<?php } ?>
-												<input type="checkbox" name="router" id="router" checked="true" disabled="true" value="1"> Router (40.000/Bulan) <br/>
+												<input type="checkbox" name="router" id="router" checked="true" value="1"> Router (40.000/Bulan) <br/>
 												<input type="checkbox" name="kabel" id="kabel" value="1"> Tambahan Kabel (10.000/Meter) <br/>
 												<input type="number" class="form-control" id="pjkbl" name="pjkbl" placeholder="Panjang Kabel (Meter)"><br/>
 												<input type="checkbox" name="instal" id="instal" value="1"> Instalasi (500.000)<br/>
