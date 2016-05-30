@@ -110,7 +110,7 @@ foreach($res as $row)
 												<input type="checkbox"> Instalasi (500.000)<br/>
 											</label>
 										</div>
-										<input type="submit" class="btn btn-primary" name="send" id="send">
+										<input type="submit" class="btn btn-success btn-sm" name="send" id="send" value="KIRIM">
 								</fieldset>
 							</div>
 							</form>
