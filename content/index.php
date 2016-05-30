@@ -16,7 +16,7 @@
     
     <!-- Content2 -->
     <div style="background-color:#F2F2F2;background-image:url(<?php echo $base_url; ?>/img/high-speed-fiber-internet.png);background-repeat:no-repeat;background-position:right top;">
-        <div class="container" style="padding: 15px 20px 10px 20px;">
+        <div class="container" style="padding: 15px 20px 15px 20px;">
             <div class="row">
                 <div class="col-sm-6" style="margin:170px 0 180px 0;">
                     <h3 style="font-weight:200;font-size:40px;color:#ff5722;">High Speed Fiber Internet</h3>
