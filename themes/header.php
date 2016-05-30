@@ -365,33 +365,49 @@
                                 <option><?php echo $row['nama']; ?></option>
                                 <?php } ?>
                             </select>
-                            <ul style="background-color:rgba(255, 255, 255, 0.7);" class="list-group"  name="costdetail" id="costdetail" disabled>
-                              <li class="list-group-item" name="costpackage" id="costpackage">
-                                <span class="badge">Rp 500.000</span>
-                                Package
-                              </li>
-                              <li class="list-group-item" name="costinstalasi" id="costpackage">
-                                <span class="badge">Rp 500.000</span>
-                                Instalasi
-                              </li>
-                              <li class="list-group-item"  name="costpackage" id="costpackage">
-                                <span class="badge">Rp 500.000</span>
-                                Router/Bulan
-                              </li>
-                              <li class="list-group-item"  name="costpackage" id="costpackage">
-                                <span class="badge">Rp 500.000</span>
-                                Set Up Box TV
+                            <ul class="list-group"  name="regisaddon1" id="regisaddon1" disabled>
+                              <h5>Add On Service</h5>
+                                <?php
+                                    $res = $col_service->find();
+                                    foreach($res as $row)
+                                                {
+                                        if($row['nama_group']=="Cinema Box HD" || $row['nama_group']=="TV Chanel"){
+                                                  ?>
+                              <li class="list-group-item">
+                                <h6><?php echo $row['nama_group']; ?></h6>
+                                  <?php $res1 = $col_service->find(array("group"=>$row['nama_group']));
+                                  foreach($res1 as $row1)
+                                              { ?>
+                                    <input type="checkbox" name="addon[]" id="addon[]" value="<?php echo $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
+                                    <?php } ?>
+                                <?php } } ?>
                               </li>
                             </ul>
-                            <select style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" class="form-control" name="regisaddon" id="regisaddon">
-                                <option disabled="true" selected="true">-- Add On --</option>
-                            </select>
+                            <ul class="list-group"  name="regisaddon2" id="regisaddon2" disabled>
+                              <h5>Add On Service</h5>
+                                <?php
+                                    $res = $col_service->find();
+                                    foreach($res as $row)
+                                                {
+                                        if($row['nama_group']=="Cinema Box HD" || $row['nama_group']=="TV Chanel" || $row['nama_group']=="Video on Demand"){
+                                                  ?>
+                              <li class="list-group-item">
+                                <h6><?php echo $row['nama_group']; ?></h6>
+                                  <?php $res1 = $col_service->find(array("group"=>$row['nama_group']));
+                                  foreach($res1 as $row1)
+                                              { ?>
+                                    <input type="checkbox" name="addon[]" id="addon[]" value="<?php echo $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
+                                    <?php } ?>
+                                <?php } } ?>
+                              </li>
+                            </ul>
                             <select style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" class="form-control" name="regislocation" id="regislocation">
                                 <option disabled="true" selected="true">-- Location --</option>
                                 <?php
                                     $res = $col_location->find();
                                     foreach($res as $row)
                                                 {
+
                                                   ?>
                                 <option><?php echo $row['name']; ?></option>
                                 <?php } ?>
@@ -558,9 +574,41 @@
                                                                                             $place=$row['place'];
                                                                                         }
 
-                                                                          $insert_customer=$col_user->insert(array("id_user"=>$newid,"nama"=>$name,"email"=>$email, "phone"=>$phone, "foto"=>"","level"=>"0","password"=>$result, "aktif"=>"0", "registrasi"=>"personal",
-                                                                                                                "tanggal_registrasi"=>$date, "paket"=>$package, "harga"=>$harga, "tanggal_akhir"=>"","tanggal_aktivasi"=>"",
-                                                                                                                "tempat"=>$location, "kota"=>$city, "keterangan"=>$decription, "alamat"=>$place, "pembayaran"=>"0", "no_virtual"=>"","status"=>"registrasi"));
+                                          // insert add on
+                                        if(!empty($_POST['addon'])){
+                                            foreach($_POST['addon'] as $selectaddon){
+                                        $res = $col_service->find(array("nama"=>$selectaddon));
+                                        foreach($res as $row)
+                                        {
+                                            $harga_addon=$row['harga'];
+                                        }
+                                                $insert_addon=$col_addon->insert(array("id_user"=>$newid, "layanan"=>$selectaddon, "harga"=>$harga_addon, "status"=>"unaktif"));
+                                                $addon_service=$selectaddon.', ';
+                                            } } elseif(empty($_POST['addon'])){
+                                                $addon_service="No";
+                                             }
+                                                $history=array(
+                                                			"tanggal"=>$date,
+                                                			"hal"=> "Registrasi",
+                                                      "keterangan"=>"Reistrasi via personal, dengan paket ".$package.", dan add on layanan ".$addon_service
+                                                		);
+                                                                  $insert_customer=$col_user->insert(array("id_user"=>$newid,"nama"=>$name,"email"=>$email, "phone"=>$phone, "foto"=>"","level"=>"0","password"=>$result, "aktif"=>"0", "registrasi"=>"personal",
+                                                                                "tanggal_registrasi"=>$date, "paket"=>$package, "harga"=>$harga, "tanggal_akhir"=>"","tanggal_aktivasi"=>"",
+                                                                                "tempat"=>$location, "kota"=>$city, "keterangan"=>$decription, "alamat"=>$place, "pembayaran"=>"0", "no_virtual"=>"","status"=>"registrasi", "histori"=>array($history)));
+
+                                                                                      // insert add on
+                                                                                    if(!empty($_POST['addon'])){
+                                                                                        foreach($_POST['addon'] as $selectaddon){
+                                                                                    $res = $col_service->find(array("nama"=>$selectaddon));
+                                                                                    foreach($res as $row)
+                                                                                    {
+                                                                                        $harga_addon=$row['harga'];
+                                                                                    }
+                                                                                            $insert_addon=$col_addon->insert(array("id_user"=>$newid, "layanan"=>$selectaddon, "harga"=>$harga_addon, "status"=>"unaktif"));
+                                                                                            $addon_service=$selectaddon.', ';
+                                                                                        } } elseif(empty($_POST['addon'])){
+                                                                                            $addon_service="No";
+                                                                                         }
                                                                               // mail for customer to registrasi
                                                                                 $to = $email;
 
@@ -599,11 +647,15 @@
                                                                                                         <td style="border:1px solid #bbb;padding:5px">'.$package.'</td>
                                                                                                     </tr>
                                                                                                     <tr>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px;color:#777">Layanan Tambahan</td>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px">'.$addon_service.'</td>
+                                                                                                    </tr>
+                                                                                                    <tr>
                                                                                                         <td style="border:1px solid #bbb;padding:5px;color:#777">Tanggal Registrasi</td>
                                                                                                         <td style="border:1px solid #bbb;padding:5px">'.$date_days.' '.$month1.' '.$date_years.'</td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <td style="border:1px solid #bbb;padding:5px;color:#777">Tipe Akun</td>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px;color:#777">Registrasi</td>
                                                                                                         <td style="border:1px solid #bbb;padding:5px">Personal</td>
                                                                                                     </tr>
                                                                                                     <tr>

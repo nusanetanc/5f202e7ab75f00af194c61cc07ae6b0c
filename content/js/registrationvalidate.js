@@ -5,12 +5,22 @@ $("#valid").hide();
   $("#regiscity").hide();
    $("#regisplace").hide();
    $("#regislocation").prop( "disabled", true );
-   $("#regisaddon").prop( "disabled", true );
-   $("#costdetail").hide();
+   $("#regisaddon1").hide();
+   $("#regisaddon2").hide();
       $("#regispackage").change(function(){
         $("#regislocation").prop( "disabled", false );
-        $("#regisaddon").prop( "disabled", false );
-        $("#costdetail").show();
+        var p =  $("#regispackage").val();
+          $("#regisaddon").show();
+      if(p == "Groovy Home 500" || p == "Groovy Home 800"){
+        $("#regisaddon1").hide();
+        $("#regisaddon2").show();
+      } else if(p == "Groovy Home 1700"){
+        $("#regisaddon1").show();
+        $("#regisaddon2").hide();
+      } else {
+        $("#regisaddon1").hide();
+        $("#regisaddon2").hide();
+      }
  })
      $("#regislocation").change(function(){
       var d =  $("#regisemail").val();

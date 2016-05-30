@@ -117,9 +117,27 @@ foreach($res as $row)
                 }
                 $userid=new userId();
                 $newid=$userid->baru();
+                                                  // insert add on
+                                                if(!empty($_POST['addon'])){
+                                                    foreach($_POST['addon'] as $selectaddon){
+                                                $res = $col_service->find(array("nama"=>$selectaddon));
+                                                foreach($res as $row)
+                                                {
+                                                    $harga_addon=$row['harga'];
+                                                }
+                                                        $insert_addon=$col_addon->insert(array("id_user"=>$newid, "layanan"=>$selectaddon, "harga"=>$harga_addon, "status"=>"unaktif"));
+                                                        $addon_service=$selectaddon.', ';
+                                                    } } elseif(empty($_POST['addon'])){
+                                                        $addon_service="No";
+                                                     }
+                                                        $history=array(
+                                                              "tanggal"=>$date,
+                                                              "hal"=> "Registrasi",
+                                                              "keterangan"=>"Reistrasi via sales, dengan paket ".$package.", dan add on layanan ".$addon_service
+                                                            );
                                       $insert_customer=$col_user->insert(array("id_user"=>$newid,"nama"=>$regisname,"email"=>$regisemail, "phone"=>$regisphone, "foto"=>"","level"=>"0","password"=>$result, "aktif"=>"0", "ktp"=>$fileName, "registrasi"=>"sales", "id_sales"=>$id, "nama_sales"=>$nama,
                                                                             "email_sales"=>$email, "tanggal_registrasi"=>$date, "paket"=>$package, "harga"=>$harga, "tanggal_akhir"=>"","tanggal_aktivasi"=>"",
-                                                                             "tempat"=>$location, "kota"=>$city, "keterangan"=>$decription, "alamat"=>$place, "pembayaran"=>"0", "no_virtual"=>"","status"=>"permintaan registrasi"));
+                                                                             "tempat"=>$location, "kota"=>$city, "keterangan"=>$decription, "alamat"=>$place, "pembayaran"=>"0", "no_virtual"=>"","status"=>"permintaan registrasi", "histori"=>array($history)));
                                           //mail for sales manager
                                           // multiple recipients
                                           $to1 = $email_sm;
@@ -162,7 +180,7 @@ if($insert_customer && $kirimemail1){
 		<div class="list-group">
 			<div class="panel" style="border:0px;">
   				<div class="panel-heading" style="background-color:#FF6D20">
-    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">Add Customer groovy</h3>
+    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">New Registrasi Customer groovy</h3>
   				</div>
 	  					<br/>
 	  				    <div class="panel-body">
@@ -181,6 +199,42 @@ if($insert_customer && $kirimemail1){
                                 <option><?php echo $row['nama']; ?></option>
                                 <?php } ?>
                             </select>
+                            <ul style="text-align:left;" class="list-group"  name="regisaddon1" id="regisaddon1" disabled>
+                              <h5>Add On Service</h5>
+                                <?php
+                                    $res = $col_service->find();
+                                    foreach($res as $row)
+                                                {
+                                        if($row['nama_group']=="Cinema Box HD" || $row['nama_group']=="TV Chanel"){
+                                                  ?>
+                              <li class="list-group-item">
+                                <h6><?php echo $row['nama_group']; ?></h6>
+                                  <?php $res1 = $col_service->find(array("group"=>$row['nama_group']));
+                                  foreach($res1 as $row1)
+                                              { ?>
+                                    <input type="checkbox" name="addon[]" id="addon[]" value="<?php echo $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
+                                    <?php } ?>
+                                <?php } } ?>
+                              </li>
+                            </ul>
+                            <ul style="text-align:left;" class="list-group"  name="regisaddon2" id="regisaddon2" disabled>
+                              <h5>Add On Service</h5>
+                                <?php
+                                    $res = $col_service->find();
+                                    foreach($res as $row)
+                                                {
+                                        if($row['nama_group']=="Cinema Box HD" || $row['nama_group']=="TV Chanel" || $row['nama_group']=="Video on Demand"){
+                                                  ?>
+                              <li class="list-group-item">
+                                <h6><?php echo $row['nama_group']; ?></h6>
+                                  <?php $res1 = $col_service->find(array("group"=>$row['nama_group']));
+                                  foreach($res1 as $row1)
+                                              { ?>
+                                    <input type="checkbox" name="addon[]" id="addon[]" value="<?php echo $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
+                                    <?php } ?>
+                                <?php } } ?>
+                              </li>
+                            </ul>
                             <select id="regislocation" name="regislocation" style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" class="form-control">
                                 <option disabled="disabled" selected="true">-- Location --</option>
                                 <?php
@@ -193,7 +247,7 @@ if($insert_customer && $kirimemail1){
                             </select>
                             <input name="regisdescription" id="regisdescription" style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" name ="ket" id = "ket" type="text" class="form-control form-group-lg" placeholder="Specific Location (Block/Tower/Floor)">
                             <div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>
-                            <input id="register" name="register" type="submit" style="float:left;margin-top:5px;;text-align:center;background-color:#ff1d25;border:0px;color:#fff;height:40px;padding:0 40px 0 40px;border-radius:3px;font-weight:bold;" value="SIGN UP"/>
+                            <input id="register" name="register" type="submit" style="float:left;margin-top:5px;;text-align:center;background-color:#ff1d25;border:0px;color:#fff;height:40px;padding:0 40px 0 40px;border-radius:3px;font-weight:bold;" value="REGISTER"/>
                         </form>
         </div>
 		  				 </form>

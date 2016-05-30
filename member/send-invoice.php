@@ -140,13 +140,9 @@ $update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$
 						<table class="table table-striped table-hover">
 						  <thead>
 						    <tr>
-						      <th width="10%">ID Cust</th>
-						      <th width="20%">Customer</th>
-						      <th width="15">NO VA</th>
-						      <th width="15%">Paket</th>
-						      <th width="15%">Tgl Registrasi</th>
-						      <th width="15%">Registrasi</th>
-						      <th width="10%">Kirim</th>
+						      <th width="40%">Customer</th>
+						      <th width="40">NO Virtual Acount</th>
+						      <th width="20%"></th>
 						    </tr>
 						  </thead>
 						  <?php
@@ -157,13 +153,9 @@ $update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$
                       	?>
 						  <tbody>
 						    <tr>
-						      <td><?php echo $row['id_user']; ?><input type="hidden" value="<?php echo $row['id_user']; ?>" name="id_cust" id="id_cust"></td>
-						      <td><?php echo $row['nama'].' / '. $row['phone'].' / '.$row['email']; ?></td>
+						      <td><a href="<?php echo $base_url_member.'/customer-profile/'.$row['id_user']; ?>"><?php echo $row['id_user']; ?></a> / <?php $row['nama']; ?></td>
 						      <td><?php echo $kode_perusahaan.$row['id_user']; ?></td>
-						      <td><?php echo $row['paket']; ?></td>
-						      <td><?php echo $row['tanggal_registrasi']; ?></td>
-						      <td><?php echo $row['registrasi']; ?></td>
-						      <td><input type="submit" name="send" id="send" class="btn btn-primary btn-xs" value="Invoice"></td>
+									<td><a href="<?php  ?>">Kirim Invoice</a></td>
 						    </tr>
 						   </tbody>
 					<?php } } ?>

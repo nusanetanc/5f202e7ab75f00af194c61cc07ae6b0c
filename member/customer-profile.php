@@ -1,6 +1,6 @@
 <section>
 	<form class="form-horizontal" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
-							<?php 
+							<?php
 									$id_cust=$_GET['id_cust'];
 									$res = $col_user->find(array("id_user"=>$_GET['id_cust'],"level"=>"0"));
 									foreach($res as $row)
@@ -40,11 +40,16 @@
 											$tgl2 = substr($tanggal2, 8,10);
 										    $month2 = bulan($bln2);
 										  }
-									if(isset($_POST['konfirmregis'])){ 
+											$res = $col_addon->find(array("id_user"=>$_GET['id_cust']));
+											foreach($res as $row)
+												  {
+														$addon_cust=$row['layanan'];
+													}
+									if(isset($_POST['konfirmregis'])){
                                         $date = date("Y/m/d");
 										$konfirmasi = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("status"=>"registrasi", "aktif"=>"0")));
 										$detail_info=array("share_id"=>"00000000","description"=>"Selamat Bergabung dengan groovy tv, Selamat Menikmati Layanan Kami","date"=>$date);
-                                    	$write_info = $col_info->insert(array("for"=>$id_cust, "subject"=>"Selamat Bergabung Dengan groovy", "tanggal_update"=>$date, "informasi"=>array($detail_info)));
+                    $write_info = $col_info->insert(array("for"=>$id_cust, "subject"=>"Selamat Bergabung Dengan groovy", "tanggal_update"=>$date, "informasi"=>array($detail_info)));
 	                                    	  //mail for sales manager
 	                                          $to1 = $email_sales;
 	                                          $subject1 = 'Veririfikasi Registrasi Sales';
@@ -108,13 +113,17 @@
                                                                                                         <td style="border:1px solid #bbb;padding:5px;color:#777">Paket</td>
                                                                                                         <td style="border:1px solid #bbb;padding:5px">'.$paket_cust.'</td>
                                                                                                     </tr>
+																																																		<tr>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px;color:#777">Tambahan Layanan</td>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px">'.$addon_cust.'</td>
+                                                                                                    </tr>
                                                                                                     <tr>
                                                                                                         <td style="border:1px solid #bbb;padding:5px;color:#777">Tanggal Registrasi</td>
                                                                                                         <td style="border:1px solid #bbb;padding:5px">'.$date_days.' '.$month1.' '.$date_years.'</td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <td style="border:1px solid #bbb;padding:5px;color:#777">Tipe Akun</td>
-                                                                                                        <td style="border:1px solid #bbb;padding:5px">Personal</td>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px;color:#777">Registrasi</td>
+                                                                                                        <td style="border:1px solid #bbb;padding:5px">Sales</td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <td style="border:1px solid #bbb;padding:5px;color:#777">Tempat</td>
@@ -128,10 +137,10 @@
                                                                                                 <p>Jika tombol tidak berfungsi silahkan copy link berikut <a href="'.$base_url.'/?a='.$password_sales.'">'.$base_url.'/?a='.$password_sales.'</a></p>
                                                                                             </div>
                                                                                             </div>
-                                                                                        </div>        
+                                                                                        </div>
                                                                                     </body>
                                                                                     </html>
-                                                                                   
+
                                                                                 ';
 
                                                                                 $headers2  = 'MIME-Version: 1.0' . "\r\n";
@@ -144,7 +153,7 @@
                                         $status_cust = "registrasi";
 									if ($konfirmasi && $write_info && $kirimemail1 && $kirimemail2){ ?>
 										<p class="text-muted text-primary">Registrasi Customer telah di konfirmasi.!!</p>
-								<?php } } 	
+								<?php } }
 								?>
 		<div class="col-sm-9" style="font-family:Arial;">
 			<div class="list-group">
@@ -154,7 +163,7 @@
 	  				</div>
 	  				<div class="panel-body">
 	  					<br/>
-						<div class="col-sm-12">	
+						<div class="col-sm-12">
 							  <fieldset>
 							<div class="form-group">
 						      <label class="col-lg-3 control-label">Nama Lengkap :</label>
@@ -180,6 +189,16 @@
 						        <h4><?php echo $paket_cust; ?></h4>
 						      </div>
 						    </div>
+								<div class="form-group">
+						      <label class="col-lg-3 control-label">Layanan Tambahan :</label>
+						      <div class="col-lg-9">
+								<h4><?php	$res = $col_addon->find(array("id_user"=>$_GET['id_cust']));
+													foreach($res as $row)
+														  {
+																echo $row['layanan'].', ';
+															} ?></h4>
+						      </div>
+						    </div>
 						    <div class="form-group">
 						      <label class="col-lg-3 control-label">Phone Number :</label>
 						      <div class="col-lg-9">
@@ -187,17 +206,23 @@
 						      </div>
 						    </div>
 						    <div class="form-group">
-						      <label class="col-lg-3 control-label">Alamat :</label>
+						      <label class="col-lg-3 control-label">Tempat :</label>
 						      <div class="col-lg-9">
 						        <h4><?php echo $tempat_cust.', '.$alamat_cust.', '.$kota_cust; ?></h4>
+						      </div>
+						    </div>
+								<div class="form-group">
+						      <label class="col-lg-3 control-label">Keterangan Tempat :</label>
+						      <div class="col-lg-9">
+						        <h4><?php echo $ket_cust; ?></h4>
 						      </div>
 						    </div>
 						    <div class="form-group">
 						      <label class="col-lg-3 control-label">KTP :</label>
 						      <div class="col-lg-9">
-							      <a href="#struk" class="btn btn-primary btn-xs">Open</a>
+							      <a href="#imagektp" class="btn btn-primary btn-xs">Open</a>
 								  	<a href="" class="JesterBox">
-									  <div id="struk"><img src="<?php echo $base_url_member; ?>/ktp/<?php echo $ktp_cust; ?>"></div>
+									  <div id="imagektp"><img src="<?php echo $base_url_member; ?>/ktp/<?php echo $ktp_cust; ?>"></div>
 									</a>
 							  </div>
 							  </label>
@@ -214,23 +239,23 @@
 						      <div class="col-lg-9">
 						        <h4><?php echo $status_cust; ?></h4>
 						      </div>
-						    </div>	
+						    </div>
 						    <div class="form-group">
 						      <label class="col-lg-3 control-label">Registrasi : </label>
 						      <div class="col-lg-9"><h4>
-							  <?php 
+							  <?php
 							  	if ($regis_cust=="personal") {
-							  		echo $row['registrasi']; 
+							  		echo $row['registrasi'];
 							  	} elseif ($regis_cust=="sales") {
-							  		echo $regis_cust.' / '.$sales_cust; 
+							  		echo $regis_cust.' / '.$sales_cust;
 							  	}
 							  ?></h4></label>
 						      </div>
-						   </div>     						    						    						    						    						    
-							  </fieldset>	
-							<?php 
+						   </div>
+							  </fieldset>
+							<?php
 							if($level=="5" && $status_cust=="permintaan registrasi" && $regis_cust=="sales"){ ?>
-							 		<td><input type="submit" name="konfirmregis" id="konfirmregis" class="btn btn-primary btn-sm" value="Konfirmasi Registrasi"></td>	
+							 		<td><input type="submit" name="konfirmregis" id="konfirmregis" class="btn btn-primary btn-sm" value="Konfirmasi Registrasi"></td>
 							<?php } elseif($regis_cust=="konfirmasi registrasi") { ?>
 							<div class="form-group">
 						      <label class="col-lg-3 control-label"> Pembayaran : </label>
@@ -257,12 +282,12 @@
 						        <h4><?php echo $tgl1.' '.$month1.' '.$thn1; ?></h4>
 						      </div>
 						    </div>
-						<?php } ?>	
+						<?php } ?>
 						</div>
 	 				</div>
 				</div>
-			</div> 
-			
-		</div>	
-	</form>	
+			</div>
+
+		</div>
+	</form>
 </section>
