@@ -69,7 +69,25 @@ if(isset($_POST['send'])){
 								    <td style="border:1px;">'.$package_cust.'</td>
 								    <td style="border:1px;">'.rupiah($harga_paket).'</td>
 								    <td style="border:1px;">'.rupiah($proraide).'</td>
-										<td style="border:1px;">'.rupiah($proraide).'</td>
+										<td style="border:1px;">'.rupiah($harga_paket-$proraide).'</td>
+								  </tr>
+									<tr>
+								    <td style="border:1px;">Router/Bulan</td>
+								    <td style="border:1px;">'.rupiah($biaya_router).'</td>
+								    <td style="border:1px;">'.rupiah($proraide_router).'</td>
+										<td style="border:1px;">'.rupiah($biaya_router-$proraide_router).'</td>
+								  </tr>'.if($stb=="1"){.'
+									<tr>
+								    <td style="border:1px;">STB TV</td>
+								    <td style="border:1px;">'.rupiah($biaya_stb).'</td>
+								    <td style="border:1px;">'.rupiah($proraide_stb).'</td>
+										<td style="border:1px;">'.rupiah($biaya_stb-$proraide_stb).'</td>
+								  </tr>'.}.'
+									<tr>
+								    <td style="border:1px;">INSTALASI</td>
+								    <td style="border:1px;"></td>
+								    <td style="border:1px;">-</td>
+										<td style="border:1px;">'.rupiah($biaya_instalasi).'</td>
 								  </tr>
 									<br/>
 									<tr>
