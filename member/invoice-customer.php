@@ -66,37 +66,58 @@ if(isset($_POST['send'])){
 										<th width="20%" style="border:1px; text-align: left;">Total Harga</th>
 								  </tr>
 								  <tr>
-								    <td style="border:1px;">'.$package_cust.'</td>
+								    <td style="border:1px;">'.$package_cust.' - 1 Bulan</td>
 								    <td style="border:1px;">'.rupiah($harga_paket).'</td>
 								    <td style="border:1px;">'.rupiah($proraide).'</td>
 										<td style="border:1px;">'.rupiah($harga_paket-$proraide).'</td>
 								 </tr>';
+								 $total=$package_cust;
 	if($router=="1"){
 		$m_router =	'<tr>
-								    <td style="border:1px;">Router/Bulan</td>
+								    <td style="border:1px;">Router - 1 Bulan</td>
 								    <td style="border:1px;">'.rupiah($biaya_router).'</td>
 								    <td style="border:1px;">'.rupiah($proraide_router).'</td>
 										<td style="border:1px;">'.rupiah($biaya_router-$proraide_router).'</td>
 								  </tr>';
+									$total_router=$biaya_router-$proraide_router;
+									$total=$total+$total_router;
 								}
+	if($stb=="1"){
 		$m_stb =	'<tr>
-								    <td style="border:1px;">STB TV</td>
+								    <td style="border:1px;">STB TV - 1 Bulan</td>
 								    <td style="border:1px;">'.rupiah($biaya_stb).'</td>
 								    <td style="border:1px;">'.rupiah($proraide_stb).'</td>
 										<td style="border:1px;">'.rupiah($biaya_stb-$proraide_stb).'</td>
 										</tr>';
+										$total_stb=$biaya_stb-$proraide_stb;
+										$total=$total+$total_stb;
+
+		}
+	if($instal=="1"){
 		$m_instalasi =	'<tr>
-								    <td style="border:1px;">INSTALASI</td>
+								    <td style="border:1px;">Instalasi</td>
 								    <td style="border:1px;"></td>
 								    <td style="border:1px;">-</td>
 										<td style="border:1px;">'.rupiah($biaya_instalasi).'</td>
-								  </tr>
-									<br/>
+								  </tr>';
+									$total=$total+$biaya_instalasi;
+}
+if($kabel=="1"){
+	$m_kabel =	'<tr>
+									<td style="border:1px;">Kabel - '.$pjkbl.' Meter</td>
+									<td style="border:1px;">'.rupiah($biaya_cable).'</td>
+									<td style="border:1px;"></td>
+									<td style="border:1px;">'.rupiah($biaya_cable*$pjkbl).'</td>
+								</tr>';
+								$total_cable=$biaya_cable*$pjkbl;
+								$total=$total+$total_cable;
+}
+$m_total=		 		'<br/>
 									<tr>
 										<td style="border:1px;"></td>
 										<td style="border:1px;"></td>
 										<td style="border:1px;"><b>Total Harga</b></td>
-										<td style="border:1px;">50.000.000</td>
+										<td style="border:1px;">'.$total.'</td>
 									</tr>
 									<tr>
 										<td style="border:1px;"></td>
