@@ -73,6 +73,7 @@ $total_harga_paket=$harga_paket+$ppn_paket;
 								    <td style="border:1px;">50</td>
 										<td style="border:1px;">50</td>
 								  </tr>
+									<br/>
 									<tr>
 										<td style="border:1px;"></td>
 										<td style="border:1px;"><b>Total Harga</b></td>
