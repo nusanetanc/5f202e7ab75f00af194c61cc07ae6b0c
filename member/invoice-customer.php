@@ -76,13 +76,13 @@ if(isset($_POST['send'])){
 								    <td style="border:1px;">'.rupiah($biaya_router).'</td>
 								    <td style="border:1px;">'.rupiah($proraide_router).'</td>
 										<td style="border:1px;">'.rupiah($biaya_router-$proraide_router).'</td>
-								  </tr>'.if($stb=="1"){.'
+								  </tr>
 									<tr>
 								    <td style="border:1px;">STB TV</td>
 								    <td style="border:1px;">'.rupiah($biaya_stb).'</td>
 								    <td style="border:1px;">'.rupiah($proraide_stb).'</td>
 										<td style="border:1px;">'.rupiah($biaya_stb-$proraide_stb).'</td>
-								  </tr>'.}.'
+								  </tr>
 									<tr>
 								    <td style="border:1px;">INSTALASI</td>
 								    <td style="border:1px;"></td>
@@ -122,7 +122,7 @@ if(isset($_POST['send'])){
 	$headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
 	$headers .= 'Cc: cs@groovy.id, billing@groovy.id' . "\r\n";
 
-	$sent=mail($to, $subject, $message, $headers);
+	$sent=mail($to, $subject, $message,$message, $headers);
 
 	if($sent && $update_user){ ?>
 		<script type="" language="JavaScript">
