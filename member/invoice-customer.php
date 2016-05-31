@@ -74,22 +74,22 @@ $total_harga_paket=$harga_paket+$ppn_paket;
 										<td style="border:1px;">50</td>
 								  </tr>
 									<tr>
-										<th width="40%" style="border:1px; text-align: left;"</th>
-										<th width="20%" style="border:1px; text-align: left;"></th>
-										<th width="20%" style="border:1px; text-align: left;">Total Harga</th>
-										<th width="20%" style="border:1px; text-align: left;">100.0000</th>
+										<td style="border:1px;"></td>
+										<td style="border:1px;"><b>Total Harga</b></td>
+										<td style="border:1px;"></td>
+										<td style="border:1px;">50.000.000</td>
 									</tr>
 									<tr>
-										<th width="40%" style="border:1px; text-align: left;"</th>
-										<th width="20%" style="border:1px; text-align: left;"></th>
-										<th width="20%" style="border:1px; text-align: left;">PPN 10%</th>
-										<th width="20%" style="border:1px; text-align: left;">100.0000</th>
+										<td style="border:1px;"></td>
+										<td style="border:1px;"><b>PPN 10%</b></td>
+										<td style="border:1px;"></td>
+										<td style="border:1px;">>50.000</td>
 									</tr>
 									<tr>
-										<th width="40%" style="border:1px; text-align: left;"</th>
-										<th width="20%" style="border:1px; text-align: left;"></th>
-										<th width="20%" style="border:1px; text-align: left;">Total Pembayaran</th>
-										<th width="20%" style="border:1px; text-align: left;">100.0000</th>
+									<td style="border:1px;"></td>
+									<td style="border:1px;"><b>Total Tagihan</b></td>
+									<td style="border:1px;"></td>
+									<td style="border:1px;">>50.000</td>
 									</tr>
 								</table>
 								<br/>
