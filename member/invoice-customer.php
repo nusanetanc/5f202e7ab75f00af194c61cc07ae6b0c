@@ -34,8 +34,6 @@ if(isset($_POST['send'])){
 	$pjkbl=$_POST['pjkbl'];
 	$kabel=$_POST['kabel'];
 	//$update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("no_virtual"=>$kode_perusahaan.$id_cust, "router"=>$router, "stb"=>$stb, "kabel"=>$kabel, "panjang_kabel"=>$pjkbl, "instalasi"=>$instal)));
-$ppn_paket=$harga_paket*0.1;
-$total_harga_paket=$harga_paket+$ppn_paket;
 // mail for customer to addon
 	$to = $email_cust;
 
@@ -68,29 +66,29 @@ $total_harga_paket=$harga_paket+$ppn_paket;
 										<th width="20%" style="border:1px; text-align: left;">Total Harga</th>
 								  </tr>
 								  <tr>
-								    <td style="border:1px;">Jill</td>
-								    <td style="border:1px;">Smith</td>
-								    <td style="border:1px;">50</td>
-										<td style="border:1px;">50</td>
+								    <td style="border:1px;">'.$package_cust.'</td>
+								    <td style="border:1px;">'.rupiah($harga_paket).'</td>
+								    <td style="border:1px;">'.rupiah($proraide).'</td>
+										<td style="border:1px;">'.rupiah($proraide).'</td>
 								  </tr>
 									<br/>
 									<tr>
 										<td style="border:1px;"></td>
-										<td style="border:1px;"><b>Total Harga</b></td>
 										<td style="border:1px;"></td>
+										<td style="border:1px;"><b>Total Harga</b></td>
 										<td style="border:1px;">50.000.000</td>
 									</tr>
 									<tr>
 										<td style="border:1px;"></td>
-										<td style="border:1px;"><b>PPN 10%</b></td>
 										<td style="border:1px;"></td>
-										<td style="border:1px;">>50.000</td>
+										<td style="border:1px;"><b>PPN 10%</b></td>
+										<td style="border:1px;">50.000</td>
 									</tr>
 									<tr>
 									<td style="border:1px;"></td>
-									<td style="border:1px;"><b>Total Tagihan</b></td>
 									<td style="border:1px;"></td>
-									<td style="border:1px;">>50.000</td>
+									<td style="border:1px;"><b>Total Tagihan</b></td>
+									<td style="border:1px;">50.000</td>
 									</tr>
 								</table>
 								<br/>
