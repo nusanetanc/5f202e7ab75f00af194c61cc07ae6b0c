@@ -116,13 +116,90 @@ if(isset($_POST['send'])){
 		</body>
 		</html>
 	';
+	$message1 = '
+	<html>
+		<body style="background-color:#ddd;padding:20px 0 150px 0;font-family:arial;font-size:15px;">
+				<div style="margin:0 auto;max-width:1000px;background-color:#eee;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
+						<div style="background: linear-gradient(to right, #FF3D23 , #fc742f);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
+								<a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
+						</div>
+						<div style="padding:10px;color:#333;">
+								<p>Terimakasih telah menjadi pelanggan groovy.id<br/>
+									No Virtual Pembayaran : 9991339693900<br/>
+									Anda harus membayar pemesanan ini paling lambat tanggal : <br/><br/>
+								<p style="font-size:20px;font-weight:bold;line-height:1px">DATA CUSTOMER</p>
+								<p>ID Customer : '.$id_cust.'<br/>
+								Nama : '.$nama_cust.'<br/>
+								Email : '.$email_cust.'<br/>
+								Phone : '.$phone_cust.'<br/>
+								Tempat : '.$tempat_cust.' '.$ket_tempat.' '.$alamat_cust.' '.$kota_cust.'<br/>
+								<br/>
+								<p style="font-size:20px;font-weight:bold;line-height:1px">DATA PEMBAYARAN</p>
+								<table style="width:100%;">
+									<tr>
+										<th width="40%" style="border:1px; text-align: left;">Deskripsi</th>
+										<th width="20%" style="border:1px; text-align: left;">Harga</th>
+										<th width="20%" style="border:1px; text-align: left;">Proraide</th>
+										<th width="20%" style="border:1px; text-align: left;">Total Harga</th>
+									</tr>
+									<tr>
+										<td style="border:1px;">'.$package_cust.'</td>
+										<td style="border:1px;">'.rupiah($harga_paket).'</td>
+										<td style="border:1px;">'.rupiah($proraide).'</td>
+										<td style="border:1px;">'.rupiah($harga_paket-$proraide).'</td>
+									</tr>
+									<tr>
+										<td style="border:1px;">Router/Bulan</td>
+										<td style="border:1px;">'.rupiah($biaya_router).'</td>
+										<td style="border:1px;">'.rupiah($proraide_router).'</td>
+										<td style="border:1px;">'.rupiah($biaya_router-$proraide_router).'</td>
+									</tr>
+									<tr>
+										<td style="border:1px;">STB TV</td>
+										<td style="border:1px;">'.rupiah($biaya_stb).'</td>
+										<td style="border:1px;">'.rupiah($proraide_stb).'</td>
+										<td style="border:1px;">'.rupiah($biaya_stb-$proraide_stb).'</td>
+									</tr>
+									<tr>
+										<td style="border:1px;">INSTALASI</td>
+										<td style="border:1px;"></td>
+										<td style="border:1px;">-</td>
+										<td style="border:1px;">'.rupiah($biaya_instalasi).'</td>
+									</tr>
+									<br/>
+									<tr>
+										<td style="border:1px;"></td>
+										<td style="border:1px;"></td>
+										<td style="border:1px;"><b>Total Harga</b></td>
+										<td style="border:1px;">50.000.000</td>
+									</tr>
+									<tr>
+										<td style="border:1px;"></td>
+										<td style="border:1px;"></td>
+										<td style="border:1px;"><b>PPN 10%</b></td>
+										<td style="border:1px;">50.000</td>
+									</tr>
+									<tr>
+									<td style="border:1px;"></td>
+									<td style="border:1px;"></td>
+									<td style="border:1px;"><b>Total Tagihan</b></td>
+									<td style="border:1px;">50.000</td>
+									</tr>
+								</table>
+								<br/>
+						</div>
+						</div>
+				</div>
+		</body>
+		</html>
+	';
 	$headers  = 'MIME-Version: 1.0' . "\r\n";
 	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
 	$headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
 	$headers .= 'Cc: cs@groovy.id, billing@groovy.id' . "\r\n";
 
-	$sent=mail($to, $subject, $message,$message, $headers);
+	$sent=mail($to, $subject, $message,$message1, $headers);
 
 	if($sent && $update_user){ ?>
 		<script type="" language="JavaScript">
