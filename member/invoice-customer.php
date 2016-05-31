@@ -30,7 +30,7 @@ foreach($res as $row)
 if(isset($_POST['send'])){
 	$stb=$_POST['stb'];
 	$router=$_POST['router'];
-	$instal=$_POST['instalasi'];
+	$instal=$_POST['instal'];
 	$pjkbl=$_POST['pjkbl'];
 	$kabel=$_POST['kabel'];
 	//$update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("no_virtual"=>$kode_perusahaan.$id_cust, "router"=>$router, "stb"=>$stb, "kabel"=>$kabel, "panjang_kabel"=>$pjkbl, "instalasi"=>$instal)));
@@ -145,7 +145,7 @@ $m_total=		 		'<br/>
 	$headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
 	$headers .= 'Cc: cs@groovy.id, billing@groovy.id' . "\r\n";
 
-	$sent=mail($to, $subject, $message.$m_paket.$m_router.$m_stb.$m_instalasi, $headers);
+	$sent=mail($to, $subject, $message.$m_paket.$m_router.$m_stb.$m_instalasi.$m_kabel.$m_total, $headers);
 
 	if($sent && $update_user){ ?>
 		<script type="" language="JavaScript">
