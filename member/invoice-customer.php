@@ -57,21 +57,32 @@ $total_harga_paket=$harga_paket+$ppn_paket;
 								Tempat : '.$tempat_cust.' '.$ket_tempat.' '.$alamat_cust.' '.$kota_cust.'<br/>
 								<br/>
 								<p style="font-size:20px;font-weight:bold;line-height:1px">DATA PEMBAYARAN</p>
-								<table style="margin-top:20px;margin-bottom:20px;border:0px solid #ccc;color:#333;background-color:#fff;#ddd;width:100%;font-size:14px;">
-								<tr>
-										<td style="border:1px solid #bbb;color:#777">Deskripsi</td>
-										<td style="border:1px solid #bbb;color:#777">Harga</td>
-										<td style="border:1px solid #bbb;color:#777">Prorate</td>
-										<td style="border:1px solid #bbb;color:#777">Total Harga</td>
-								</tr>
-								<tr>
-										<td style="border:1px>Deskripsi</td>
-										<td style="border:1px>Harga</td>
-										<td style="border:1px>Prorate</td>
-										<td style="border:1px>Total Harga</td>
-								</tr>
-								</table>
+								<style>
+								table, th, td {
+								    border: 1px solid black;
+								    border-collapse: collapse;
+								}
+								th, td {
+								    padding: 5px;
+								}
+								</style>
+								</head>
+								<body>
 
+								<table style="width:100%">
+								  <tr>
+								    <th width="40%">Deskripsi</th>
+								    <th width="20%">Harga</th>
+								    <th width="20%">Proraide</th>
+										<th width="20%">Total Harga</th>
+								  </tr>
+								  <tr>
+								    <td>Jill</td>
+								    <td>Smith</td>
+								    <td>50</td>
+										<td>50</td>
+								  </tr>
+								</table>
 								<br/>
 						</div>
 						</div>
