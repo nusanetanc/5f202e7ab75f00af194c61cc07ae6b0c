@@ -57,19 +57,10 @@ $total_harga_paket=$harga_paket+$ppn_paket;
 								Tempat : '.$tempat_cust.' '.$ket_tempat.' '.$alamat_cust.' '.$kota_cust.'<br/>
 								<br/>
 								<p style="font-size:20px;font-weight:bold;line-height:1px">DATA PEMBAYARAN</p>
-								<style>
-								table, th, td {
-								    border: 1px solid black;
-								    border-collapse: collapse;
-								}
-								th, td {
-								    padding: 5px;
-								}
-								</style>
 								</head>
 								<body>
 
-								<table style="width:100%">
+								<table style="width:100%; border:1px;">
 								  <tr>
 								    <th width="40%">Deskripsi</th>
 								    <th width="20%">Harga</th>
