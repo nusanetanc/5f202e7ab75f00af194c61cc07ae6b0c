@@ -32,170 +32,48 @@ if(isset($_POST['send'])){
 	$instal=$_POST['instalasi'];
 	$pjkbl=$_POST['pjkbl'];
 	$kabel=$_POST['kabel'];
-	$update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("no_virtual"=>$kode_perusahaan.$id_cust, "router"=>$router, "stb"=>$stb, "kabel"=>$kabel, "panjang_kabel"=>$pjkbl, "instalasi"=>$instal)));
+	//$update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("no_virtual"=>$kode_perusahaan.$id_cust, "router"=>$router, "stb"=>$stb, "kabel"=>$kabel, "panjang_kabel"=>$pjkbl, "instalasi"=>$instal)));
 $ppn_paket=$harga_paket*0.1;
 $total_harga_paket=$harga_paket+$ppn_paket;
-require('../content/srcpdf/fpdf.php');
-$header = array(
-    array("label"=>"Pembayaran", "length"=>80, "align"=>"C"),
-    array("label"=>"Harga", "length"=>30, "align"=>"C"),
-    array("label"=>"Prorate", "length"=>30, "align"=>"C"),
-    array("label"=>"Sub Total", "length"=>30, "align"=>"C")
-  );
-$kol_paket = array(
-    array("label"=>$package_cust, "length"=>80, "align"=>"C"),
-    array("label"=>rupiah($harga_paket), "length"=>30, "align"=>"C"),
-    array("label"=>rupiah($proraide), "length"=>30, "align"=>"C"),
-    array("label"=>rupiah($total_paket), "length"=>30, "align"=>"C")
-  );
-$kol_router = array(
-    array("label"=>"Sewa Router", "length"=>80, "align"=>"C"),
-    array("label"=>rupiah($biaya_router), "length"=>30, "align"=>"C"),
-    array("label"=>rupiah($proraide_router), "length"=>30, "align"=>"C"),
-    array("label"=>rupiah($biaya_router-$proraide_router), "length"=>30, "align"=>"C")
-  );
-$kol_stb = array(
-    array("label"=>"Sewa STB", "length"=>80, "align"=>"C"),
-    array("label"=>rupiah($biaya_stb), "length"=>30, "align"=>"C"),
-    array("label"=>rupiah($proraide_stb), "length"=>30, "align"=>"C"),
-    array("label"=>rupiah($biaya_stb-$proraide_stb), "length"=>30, "align"=>"C")
-  );
-	$kol_kabel = array(
-	    array("label"=>"Kabel / ".$pjkbl." Meter", "length"=>80, "align"=>"C"),
-	    array("label"=>rupiah($biaya_cable*$pjkbl), "length"=>30, "align"=>"C"),
-	    array("label"=>rupiah($proraide_kabel), "length"=>30, "align"=>"C"),
-	    array("label"=>rupiah($biaya_cable*$pjkbl-$proraide_stb), "length"=>30, "align"=>"C")
-	  );
-  $kol_instalasi = array(
-      array("label"=>"Instalasi", "length"=>80, "align"=>"C"),
-      array("label"=>rupiah($biaya_instalasi), "length"=>30, "align"=>"C"),
-      array("label"=>rupiah(), "length"=>30, "align"=>"C"),
-      array("label"=>rupiah($biaya_instalasi), "length"=>30, "align"=>"C")
-    );
-$pdf = new FPDF();
-$pdf->AddPage();
-$pdf->Image($base_url.'/img/groovy-logo-orange.png','140','15','60');
-$pdf->SetFont('Arial','B','20');
-$pdf->Cell(0,30, '', '0', 5, 'L');
-$pdf->Cell(0,10, 'INVOICE PEMBAYARAN', '0', 5, 'C');
-$pdf->Ln();
-$pdf->SetFont('Arial','B','10');
-$pdf->Cell(0,7, 'DATA PELANGGAN', '0', 1, 'L');
-$pdf->Ln();
-$pdf->SetFont('Arial','','10');
-$pdf->Cell(0,7, 'Nama Lengkap            : '.$id_cust, '0', 1, 'L');
-$pdf->Cell(0,7, 'No ID Pelanggan         : '.$nama_cust, '0', 1, 'L');
-$pdf->Cell(0,7, 'Alamat Pemasangan   : '.$tempat_cust.', '.$ket_cust.', '.$alamat_cust.', '.$kota_cust, '0', 1, 'L');
-$pdf->Cell(0,7, 'Nomor Telepon           : '.$phone_cust, '0', 1, 'L');
-$pdf->Ln();
-$pdf->Ln();
-$pdf->SetFont('Arial','B','10');
-$pdf->Cell(0,7, 'DATA PEMBAYRAN - PAYMENT DATA', '0', 1, 'L');
-$pdf->Ln();
-$pdf->SetFont('Arial','B','10');
-$pdf->SetFillColor(255,110,64);
-$pdf->SetTextColor(0);
-$pdf->SetDrawColor(255,110,64);
-foreach ($header as $kolom) {
-  $pdf->Cell($kolom['length'], 10, $kolom['label'], 1, '0', $kolom['align'], true);
-}
-$jmlon=0;
-$res = $col_addon->find(array("id_user"=>$id_cust));
-			foreach($res as $row) {
-				$jmlon=$jmlon+1; }
-$pdf->Ln();
-$pdf->SetFont('Arial','','10');
-$pdf->SetFillColor(255,158,128);
-$pdf->SetTextColor(0);
-$pdf->SetDrawColor(255,158,128);
-foreach ($kol_paket as $kolom_paket) {
-  $pdf->Cell($kolom_paket['length'], 8, $kolom_paket['label'], 1, '0', $kolom_paket['align'], true);
-}
-$w = array(80, 30, 40, 45);
-if($jmlon<>"0"){
-  $res = $col_addon->find(array("id_user"=>$id_cust));
-           foreach($res as $row) {
-  $pdf->Ln();
-  $pdf->Cell($w[0],6,$row[0],'LR',0,'C');
- } }
- if($router=="1"){
-$pdf->Ln();
-foreach ($kol_router as $kolom_router) {
-  $pdf->Cell($kolom_router['length'], 8, $kolom_router['label'], 1, '0', $kolom_router['align'], true);
-} }
-if($kabel=="1"){
-$pdf->Ln();
-foreach ($kol_kabel as $kolom_kabel) {
- $pdf->Cell($kolom_kabel['length'], 8, $kolom_kabel['label'], 1, '0', $kolom_kabel['align'], true);
-} }
-	if($stb=="1"){
-$pdf->Ln();
-foreach ($kol_stb as $kolom_stb) {
-  $pdf->Cell($kolom_stb['length'], 8, $kolom_stb['label'], 1, '0', $kolom_stb['align'], true);
-} } if($instal=="1"){
-$pdf->Ln();
-foreach ($kol_instalasi as $kolom_instalasi) {
-  $pdf->Cell($kolom_instalasi['length'], 8, $kolom_instalasi['label'], 1, '0', $kolom_instalasi['align'], true);
-} }
-$pdf->Ln();
-$pdf->Ln();
-$pdf->SetFont('Arial','','10');
-$pdf->Cell(0,7, 'Kode Virtual     : '.$kode_perusahaan.$id_cust, '0', 1, 'L');
-$pdf->Cell(0,7, 'Total Harga      : '.$total_harga_paket, '0', 1, 'L');
-$pdf->Ln();
-$pdf->Ln();
-$pdf->Ln();
-$pdf->Ln();
-$pdf->Ln();
-$pdf->Ln();
-$pdf->Ln();
-$pdf->Ln();
-$pdf->Ln();
-$pdf->Cell(0,7, '* Tata cara pembayaran dapat dilihat pada FAQ web groovy.id', '0', 1, 'R');
-$pdf->Image($base_url.'/img/a.jpg','170','220','30');
-// Filename that will be used for the file as the attachment
-$fileatt_name = $kode_perusahaan.$id_cust.'.pdf';
-$dir='invoice/';
-// save pdf in directory
-$pdf ->Output($dir.$fileatt_name);
+// mail for customer to addon
+	$to = $email;
 
-//....................
+	$subject = 'Add On Service';
 
-$data = $pdf->Output("", "S");
+	$message = '
+	<html>
+		<body style="background-color:#ddd;padding:150px 0 150px 0;font-family:arial;font-size:15px;">
+				<div style="margin:0 auto;max-width:500px;background-color:#eee;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
+						<div style="background: linear-gradient(to right, #FF3D23 , #fc742f);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
+								<a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
+						</div>
+						<div style="padding:120px;color:#333;">
+								<p style="font-size:20px;font-weight:bold;line-height:1px">INVOICE</p>
+								<p>ID Customer : '.$id.'<br/>
+								Nama : '.$nama.'<br/>
+								Paket Aktif : '.$paket.'<br/>
+								Email : '.$email.'<br/>
+								Phone : '.$notelp.'<br/>
+								Tempat : '.$tempat.' '.$keterangan.' '.$alamat.' '.$kota.'<br/>
+								Permitaan penambahan layanan : '.$addon.'<br/>
+								Tanggal permintaan : '.$date_days.' '.$month_date.' '.$date_years.'</p>
+								<br/>
+								<p>Silahkan untuk melakukan pembayaran agar kami bisa memproses untuk penambahan layanan, info pembayaran terdapat pada billing di halaman member anda.</p>
+								<p>Paket baru akan aktif, setelah masa waktu paket lama habis.</p>
+								<br/>
+						</div>
+						</div>
+				</div>
+		</body>
+		</html>
+	';
+	$headers  = 'MIME-Version: 1.0' . "\r\n";
+	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
-//..................
-$email_subject = "INVOICE"; // The Subject of the email
-$email_to = $email_cust; // Who the email is to
+	$headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
+	$headers .= 'Cc: cs@groovy.id, billing@groovy.id' . "\r\n";
 
-
-$semi_rand = md5(time());
-$data = chunk_split(base64_encode($data));
-
-$fileatt_type = "application/pdf"; // File Type
-$mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";
-
-// set header ........................
-$headers = "From: billing@groovy.id";
-$headers .= "\nMIME-Version: 1.0\n" .
-"Content-Type: multipart/mixed;\n" .
-" boundary=\"{$mime_boundary}\"";
-
-// set email message......................
-$email_message = "No virtual pembayaran anda adalah :".$kode_perusahaan.$id_cust.", proraide pembayaran ke dua dapat dilihat pada halaman billing di akun groovy.id anda.<br>";
-$email_message .= "This is a multi-part message in MIME format.\n\n" .
-"--{$mime_boundary}\n" .
-"Content-Type:text/html; charset=\"iso-8859-1\"\n" .
-"Content-Transfer-Encoding: 7bit\n\n" .
-$email_message .= "\n\n";
-$email_message .= "--{$mime_boundary}\n" .
-"Content-Type: {$fileatt_type};\n" .
-" name=\"{$fileatt_name}\"\n" .
-"Content-Disposition: attachment;\n" .
-" filename=\"{$fileatt_name}\"\n" .
-"Content-Transfer-Encoding: base64\n\n" .
-$data .= "\n\n" .
-"--{$mime_boundary}--\n";
-$sent = mail($email_to, $email_subject, $email_message, $headers);
+	$sent=mail($to, $subject, $message, $headers);
 
 	if($sent && $update_user){ ?>
 		<script type="" language="JavaScript">
