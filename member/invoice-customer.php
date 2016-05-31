@@ -48,7 +48,7 @@ if(isset($_POST['send'])){
 						</div>
 						<div style="padding:10px;color:#333;">
 								<p>Terimakasih telah menjadi pelanggan groovy.id<br/>
-									No Virtual Pembayaran : 9991339693900<br/><br/>
+									No Virtual Pembayaran : '.$kode_perusahaan.$id_cust.'<br/><br/>
 								<p style="font-size:20px;font-weight:bold;line-height:1px">DATA CUSTOMER</p>
 								<p>ID Customer : '.$id_cust.'<br/>
 								Nama : '.$nama_cust.'<br/>
@@ -57,8 +57,7 @@ if(isset($_POST['send'])){
 								Tempat : '.$tempat_cust.' '.$ket_tempat.' '.$alamat_cust.' '.$kota_cust.'<br/>
 								<br/>
 	';
-	$message1 = '
-								<p style="font-size:20px;font-weight:bold;line-height:1px">DATA PEMBAYARAN</p>
+	$m_paket = '<p style="font-size:20px;font-weight:bold;line-height:1px">DATA PEMBAYARAN</p>
 								<table style="width:100%;">
 								  <tr>
 								    <th width="40%" style="border:1px; text-align: left;">Deskripsi</th>
@@ -71,20 +70,22 @@ if(isset($_POST['send'])){
 								    <td style="border:1px;">'.rupiah($harga_paket).'</td>
 								    <td style="border:1px;">'.rupiah($proraide).'</td>
 										<td style="border:1px;">'.rupiah($harga_paket-$proraide).'</td>
-								  </tr>
-									<tr>
+								 </tr>';
+	if($router=="1"){
+		$m_router =	'<tr>
 								    <td style="border:1px;">Router/Bulan</td>
 								    <td style="border:1px;">'.rupiah($biaya_router).'</td>
 								    <td style="border:1px;">'.rupiah($proraide_router).'</td>
 										<td style="border:1px;">'.rupiah($biaya_router-$proraide_router).'</td>
-								  </tr>
-									<tr>
+								  </tr>';
+								}
+		$m_stb =	'<tr>
 								    <td style="border:1px;">STB TV</td>
 								    <td style="border:1px;">'.rupiah($biaya_stb).'</td>
 								    <td style="border:1px;">'.rupiah($proraide_stb).'</td>
 										<td style="border:1px;">'.rupiah($biaya_stb-$proraide_stb).'</td>
-								  </tr>
-									<tr>
+										</tr>';
+		$m_instalasi =	'<tr>
 								    <td style="border:1px;">INSTALASI</td>
 								    <td style="border:1px;"></td>
 								    <td style="border:1px;">-</td>
@@ -123,7 +124,7 @@ if(isset($_POST['send'])){
 	$headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
 	$headers .= 'Cc: cs@groovy.id, billing@groovy.id' . "\r\n";
 
-	$sent=mail($to, $subject, $message.$message1, $headers);
+	$sent=mail($to, $subject, $message.$m_paket.$m_router.$m_stb.$m_instalasi, $headers);
 
 	if($sent && $update_user){ ?>
 		<script type="" language="JavaScript">
