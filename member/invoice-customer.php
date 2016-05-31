@@ -71,7 +71,7 @@ if(isset($_POST['send'])){
 								    <td style="border:1px;">'.rupiah($proraide).'</td>
 										<td style="border:1px;">'.rupiah($harga_paket-$proraide).'</td>
 								 </tr>';
-								 $total=$package_cust;
+								 $total=$harga_paket-$proraide;
 	if($router=="1"){
 		$m_router =	'<tr>
 								    <td style="border:1px;">Router - 1 Bulan</td>
@@ -112,24 +112,26 @@ if($kabel=="1"){
 								$total_cable=$biaya_cable*$pjkbl;
 								$total=$total+$total_cable;
 }
+$ppn=$total*0.1;
+$total_bayar=$total+$ppn;
 $m_total=		 		'<br/>
 									<tr>
 										<td style="border:1px;"></td>
 										<td style="border:1px;"></td>
 										<td style="border:1px;"><b>Total Harga</b></td>
-										<td style="border:1px;">'.$total.'</td>
+										<td style="border:1px;">'.rupiah($total).'</td>
 									</tr>
 									<tr>
 										<td style="border:1px;"></td>
 										<td style="border:1px;"></td>
 										<td style="border:1px;"><b>PPN 10%</b></td>
-										<td style="border:1px;">50.000</td>
+										<td style="border:1px;">'.rupiah($ppn).'</td>
 									</tr>
 									<tr>
 									<td style="border:1px;"></td>
 									<td style="border:1px;"></td>
 									<td style="border:1px;"><b>Total Tagihan</b></td>
-									<td style="border:1px;">50.000</td>
+									<td style="border:1px;">'.rupiah($total_bayar).'</td>
 									</tr>
 								</table>
 								<br/>
