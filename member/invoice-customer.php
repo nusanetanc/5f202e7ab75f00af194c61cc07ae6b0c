@@ -199,7 +199,7 @@ if(isset($_POST['send'])){
 	$headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
 	$headers .= 'Cc: cs@groovy.id, billing@groovy.id' . "\r\n";
 
-	$sent=mail($to, $subject, $message,$message1, $headers);
+	$sent=mail($to, $subject, $message, $headers);
 
 	if($sent && $update_user){ ?>
 		<script type="" language="JavaScript">
