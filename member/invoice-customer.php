@@ -134,8 +134,25 @@ $m_total=		 		'<br/>
 									<td style="border:1px;">'.rupiah($total_bayar).'</td>
 									</tr>
 								</table>
-								<br/>
-						</div>
+								<br/><br/><br/>
+								<p style="font-size:15px;font-weight:bold;line-height:1px">LANGKAH‐LANGKAH PEMBAYARAN - MELALUI TRANSFER ATM BANK BCA</p>
+								<p>1. Masukkan Kartu ATM dan PIN ATM Anda.<br/>
+									2. Kemudian Tampil Menu Utama, pilih “TRANSAKSI LAINNYA”.<br/>  
+									3. Pilih “TRANSFER”.<br/>  
+									4. Pilih “KE REK BCA”.<br/>  
+									5. Masukkan jumlah nominal total tagihan. Pilih “YA”.<br/>
+									6. Masukkan nomor rekening Virtual Account pembayaran. Pilih “BENAR”.<br/>
+									7. Periksa kembali data yang tampil. Pilih “BENAR”.<br/>
+									8. Transkasi selesai. Pilih “TIDAK”.<br/><br/>
+									<p style="font-size:15px;font-weight:bold;line-height:1px">LANGKAH‐LANGKAH PEMBAYARAN - MELALUI TRANSFER ATM NON BANK BCA</p>
+									<p>1. Masukkan Kartu ATM dan PIN ATM Anda.<br/>
+										2. Kemudian Tampil Menu Utama, pilih “TRANSAKSI LAINNYA”.<br/>  
+										3. Pilih “TRANSFER”.<br/>  
+										4. Pilih “ANTAR BANK ONLINE”.<br/>  
+										5. Masukkan nomor rekening Virtual Account pembayaran dengan diawali Kode Bank pada tiga digit pertama. Adapun kode Bank BCA adalah “014”. Setelah itu pilih “BENAR”.<br/>
+										6. Pada tahapan ini nomor referensi dikosongkan. Pilih “BENAR”.<br/>
+										7. Masukkan jumlah nominal total tagihan. Pilih “BENAR”.<br/>
+										8. Periksa kembali data yang tampil. Pilih “BENAR”.<br/><br/>
 						</div>
 				</div>
 		</body>
