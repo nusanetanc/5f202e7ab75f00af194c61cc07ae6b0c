@@ -135,6 +135,7 @@ $m_total=		 		'<br/>
 									</tr>
 								</table>
 								<br/><br/><br/>
+								<p style="font-size:20px;font-weight:bold;line-height:1px">TATA CARA MELAKUKAN PEMBAYARAN</p>
 								<p style="font-size:15px;font-weight:bold;line-height:1px">PEMBAYARAN MELALUI TRANSFER ATM BANK BCA</p>
 								<p>1. Masukkan Kartu ATM dan PIN ATM Anda.<br/>
 									2. Kemudian Tampil Menu Utama, pilih “TRANSAKSI LAINNYA”.<br/>  
@@ -166,7 +167,7 @@ $m_total=		 		'<br/>
 										10. Pada kolom Jumlah Rupiah  isikan jumlah uang yang akan di setor. <br/>
 										11. Pada kolom Total isikan  jumlah total yang akan di setor. <br/>
 										12. Pada kolom Terbilang  tuliskan dalam huruf jumlah total yang akan di bayarkan, contoh : “Satu Juta Sembilan Ratus Ribu Rupiah”. <br/>
-										13. Beri tanda tangan dan nama  jelas penyetor di bagian penyetor. <br/>
+										13. Beri tanda tangan dan nama  jelas penyetor di bagian penyetor. <br/><br/>
 										<p style="font-size:15px;font-weight:bold;line-height:1px">PEMBAYARAN MELALUI TRANSFER ATM NON BANK BCA</p>
 										<p>1. Isikan kolom Tanggal Bulan serta Tahun pada saat mengisi formulir Slip setoran.<br/>
 											 2.	Pada pilihan Jenis transaksi, beri centang Transfer.<br/>
