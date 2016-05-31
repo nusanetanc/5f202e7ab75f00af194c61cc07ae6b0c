@@ -135,24 +135,57 @@ $m_total=		 		'<br/>
 									</tr>
 								</table>
 								<br/><br/><br/>
-								<p style="font-size:15px;font-weight:bold;line-height:1px">LANGKAH‐LANGKAH PEMBAYARAN - MELALUI TRANSFER ATM BANK BCA</p>
+								<p style="font-size:15px;font-weight:bold;line-height:1px">PEMBAYARAN MELALUI TRANSFER ATM BANK BCA</p>
 								<p>1. Masukkan Kartu ATM dan PIN ATM Anda.<br/>
 									2. Kemudian Tampil Menu Utama, pilih “TRANSAKSI LAINNYA”.<br/>  
 									3. Pilih “TRANSFER”.<br/>  
 									4. Pilih “KE REK BCA”.<br/>  
-									5. Masukkan jumlah nominal total tagihan. Pilih “YA”.<br/>
+									5. Masukkan jumlah nominal sesuai total tagihan. Pilih “YA”.<br/>
 									6. Masukkan nomor rekening Virtual Account pembayaran. Pilih “BENAR”.<br/>
 									7. Periksa kembali data yang tampil. Pilih “BENAR”.<br/>
 									8. Transkasi selesai. Pilih “TIDAK”.<br/><br/>
-									<p style="font-size:15px;font-weight:bold;line-height:1px">LANGKAH‐LANGKAH PEMBAYARAN - MELALUI TRANSFER ATM NON BANK BCA</p>
+									<p style="font-size:15px;font-weight:bold;line-height:1px">PEMBAYARAN MELALUI TRANSFER ATM NON BANK BCA</p>
 									<p>1. Masukkan Kartu ATM dan PIN ATM Anda.<br/>
 										2. Kemudian Tampil Menu Utama, pilih “TRANSAKSI LAINNYA”.<br/>  
 										3. Pilih “TRANSFER”.<br/>  
 										4. Pilih “ANTAR BANK ONLINE”.<br/>  
 										5. Masukkan nomor rekening Virtual Account pembayaran dengan diawali Kode Bank pada tiga digit pertama. Adapun kode Bank BCA adalah “014”. Setelah itu pilih “BENAR”.<br/>
 										6. Pada tahapan ini nomor referensi dikosongkan. Pilih “BENAR”.<br/>
-										7. Masukkan jumlah nominal total tagihan. Pilih “BENAR”.<br/>
+										7. Masukkan jumlah nominal sesuai total tagihan. Pilih “BENAR”.<br/>
 										8. Periksa kembali data yang tampil. Pilih “BENAR”.<br/><br/>
+									<p style="font-size:15px;font-weight:bold;line-height:1px">PEMBAYARAN MELALUI TRANSFER ATM NON BANK BCA</p>
+									<p>1. Isikan kolom Tanggal  Bulan serta Tahun pada saat mengisi formulir Slip setoran. <br/>
+										2. Pada kolom No.Rekening/Customer isikan dengan Nomor Virtual Account pembayaran. <br/>
+										3. Pada kolom Nama Pemilik Rekening isikan  PT. Media Andalan Nusa. <br/>
+										4. Pada kolom Berita/ Keterangan isikan keterangan pembayaran groovy.  <br/>
+										5. Pada kolom Nama  Penyetor isikan nama lengkap penyetor. <br/>
+										6. Pada kolom Alamat Penyetor & Telepon isikan alamat & nomor telepon penyetor. <br/>
+										7. Pada pilihan Informasi  Penyetor, beri centang kotak Nasabah lalu tuliskan nomor rekening yang akan di debet  untuk pembayaran. Jika Anda bukan nasabah bank BCA, beri centang kotak Non Nasabah lalu tuliskan nomor tanda penyenal (KTP/SIM/KITAS/PASPOR). <br/>
+										8. Pada kolom Mata Ua ng beri centang kotak Rupiah. <br/>
+										9. Pada kolom Tunai/No.Warkat tulis Tunai jika sumber dana berupa uang tunai. Apabila sumber dana berupa cek / BG BCA yang telah jatuh tempo maka isikan nomor warkat. <br/>
+										10. Pada kolom Jumlah Rupiah  isikan jumlah uang yang akan di setor. <br/>
+										11. Pada kolom Total isikan  jumlah total yang akan di setor. <br/>
+										12. Pada kolom Terbilang  tuliskan dalam huruf jumlah total yang akan di bayarkan, contoh : “Satu Juta Sembilan Ratus Ribu Rupiah”. <br/>
+										13. Beri tanda tangan dan nama  jelas penyetor di bagian penyetor. <br/>
+										<p style="font-size:15px;font-weight:bold;line-height:1px">PEMBAYARAN MELALUI TRANSFER ATM NON BANK BCA</p>
+										<p>1. Isikan kolom Tanggal Bulan serta Tahun pada saat mengisi formulir Slip setoran.<br/>
+											 2.	Pada pilihan Jenis transaksi, beri centang Transfer.<br/>
+											 3.	Pada Pilihan Penerima, beri centang kotak Penduduk.  <br/>
+											 4. Pada kolom Nama  isikan nama pelanggan.<br/>
+											 5. Pada Kolom Nomor  Rekening isikan No. VA dengan didahului ko de bank BCA pada tiga digit pertama, adapun  kode bank BCA adalah “014”.<br/>
+												6.	Pada kolom Bank isikan dengan “BCA”.<br/>
+												7.	Pada kolom Alamat  & Nomor Telpon isikan alamat & nomor telepon  penerima.<br/>
+												8.	Pada kolom Berita Untuk Penerima isikan keterangan pembayaran groovy dan Nomor Virtual Account pembayaran.<br/>
+												10. Pada Pilihan Pengirim Beri centang kotak Penduduk.<br/>
+												11.	Pada kolom Nama isikan nama penyetor.<br/>
+												12.	Pada kolom Alamat  & Nomor Telpon isikan alamat & nomor telepon penyetor.<br/>
+												13.	Pada  pilihan sumber dana Transaksi, beri centang kotak Tunai jika anda  membayar tunai, sedangkan  jika anda membayar dengan debet rekening maka beri centang kotak debet rekening lalu  tuliskan nomor rekening yang akan di debet untuk pembayaran.<br/>
+												14.	Pada  kolom Nominal  isikan nilai nominal sesuai dengan total tagihan.<br/>
+												15.	Pada kolom Jumlah Setoran Isikan jumlah sesuai dengan total tagihan.<br/>
+												16.	Pada kolom Terbilang Tuliskan dalam huruf jumlah  yang akan di bayarkan, contoh : “Satu Juta Sembilan Ratus Ribu Rupiah”.<br/>
+												17.	Pada pilihan Biaya transaksi beri centang kotak Tunai jika anda ingin membayar tunai biaya transaksi,  sedangkan jika anda membayar dengan debet rekening maka beri centang kotak Debet rekening lalu tuliskan nomor rekening yang akan di debet untuk biaya transaksi.<br/>
+												18.	Pada kolom Tujuan Transaksi isikan Berita Pembayaran,	contoh : “Pembayaran  groovy disertai dengan id pelanggan dan nama pelanggan”.<br/>
+												19.	Beri tanda tangan dan nama jelas penyetor di bagian pemohon.<br/><br/><br/>
 						</div>
 				</div>
 		</body>
