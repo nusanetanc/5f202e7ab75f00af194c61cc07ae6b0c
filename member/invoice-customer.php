@@ -19,6 +19,7 @@ foreach($res as $row)
 						$tempat_cust = $row['tempat'];
 						$kota_cust = $row['kota'];
 						$alamat_cust = $row['alamat'];
+						$ket_tempat=$row['keterangan'];
 															}
 $res = $col_package->find(array("nama"=>$package_cust));
 foreach($res as $row)
@@ -36,9 +37,9 @@ if(isset($_POST['send'])){
 $ppn_paket=$harga_paket*0.1;
 $total_harga_paket=$harga_paket+$ppn_paket;
 // mail for customer to addon
-	$to = $email;
+	$to = $email_cust;
 
-	$subject = 'Add On Service';
+	$subject = 'Invoice Pembayaran';
 
 	$message = '
 	<html>
@@ -48,18 +49,29 @@ $total_harga_paket=$harga_paket+$ppn_paket;
 								<a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
 						</div>
 						<div style="padding:120px;color:#333;">
-								<p style="font-size:20px;font-weight:bold;line-height:1px">INVOICE</p>
-								<p>ID Customer : '.$id.'<br/>
-								Nama : '.$nama.'<br/>
-								Paket Aktif : '.$paket.'<br/>
-								Email : '.$email.'<br/>
-								Phone : '.$notelp.'<br/>
-								Tempat : '.$tempat.' '.$keterangan.' '.$alamat.' '.$kota.'<br/>
-								Permitaan penambahan layanan : '.$addon.'<br/>
-								Tanggal permintaan : '.$date_days.' '.$month_date.' '.$date_years.'</p>
+								<p style="font-size:20px;font-weight:bold;line-height:1px">DATA CUSTOMER</p>
+								<p>ID Customer : '.$id_cust.'<br/>
+								Nama : '.$nama_cust.'<br/>
+								Email : '.$email_cust.'<br/>
+								Phone : '.$phone_cust.'<br/>
+								Tempat : '.$tempat_cust.' '.$ket_tempat.' '.$alamat_cust.' '.$kota_cust.'<br/>
 								<br/>
-								<p>Silahkan untuk melakukan pembayaran agar kami bisa memproses untuk penambahan layanan, info pembayaran terdapat pada billing di halaman member anda.</p>
-								<p>Paket baru akan aktif, setelah masa waktu paket lama habis.</p>
+								<p style="font-size:20px;font-weight:bold;line-height:1px">DATA PEMBAYARAN</p>
+								<table style="margin-top:20px;margin-bottom:20px;border:0px solid #ccc;color:#333;background-color:#fff;#ddd;width:100%;font-size:14px;">
+								<tr>
+										<td style="border:1px solid #bbb;padding:5px;color:#777">Deskripsi</td>
+										<td style="border:1px solid #bbb;padding:5px;color:#777">Harga</td>
+										<td style="border:1px solid #bbb;padding:5px;color:#777">Prorate</td>
+										<td style="border:1px solid #bbb;padding:5px;color:#777">Total Harga</td>
+								</tr>
+								<tr>
+										<td style="border:1px>Deskripsi</td>
+										<td style="border:1px>Harga</td>
+										<td style="border:1px>Prorate</td>
+										<td style="border:1px>Total Harga</td>
+								</tr>
+								</table>
+
 								<br/>
 						</div>
 						</div>
