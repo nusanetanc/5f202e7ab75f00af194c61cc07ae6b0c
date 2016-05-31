@@ -60,18 +60,18 @@ $total_harga_paket=$harga_paket+$ppn_paket;
 								</head>
 								<body>
 
-								<table style="width:100%; border:1px;">
+								<table style="width:100%;">
 								  <tr>
-								    <th width="40%">Deskripsi</th>
-								    <th width="20%">Harga</th>
-								    <th width="20%">Proraide</th>
-										<th width="20%">Total Harga</th>
+								    <th width="40%" style="border:1px;">Deskripsi</th>
+								    <th width="20%" style="border:1px;">Harga</th>
+								    <th width="20%" style="border:1px;">Proraide</th>
+										<th width="20%" style="border:1px;">Total Harga</th>
 								  </tr>
 								  <tr>
-								    <td>Jill</td>
-								    <td>Smith</td>
-								    <td>50</td>
-										<td>50</td>
+								    <td style="border:1px;">Jill</td>
+								    <td style="border:1px;">Smith</td>
+								    <td style="border:1px;">50</td>
+										<td style="border:1px;">50</td>
 								  </tr>
 								</table>
 								<br/>
