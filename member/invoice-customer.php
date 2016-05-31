@@ -49,6 +49,9 @@ $total_harga_paket=$harga_paket+$ppn_paket;
 								<a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
 						</div>
 						<div style="padding:10px;color:#333;">
+								<p>Terimakasih telah menjadi pelanggan groovy.id<br/>
+									No Virtual Pembayaran : 9991339693900<br/>
+									Anda harus membayar pemesanan ini paling lambat tanggal : <br/><br/>
 								<p style="font-size:20px;font-weight:bold;line-height:1px">DATA CUSTOMER</p>
 								<p>ID Customer : '.$id_cust.'<br/>
 								Nama : '.$nama_cust.'<br/>
@@ -57,9 +60,6 @@ $total_harga_paket=$harga_paket+$ppn_paket;
 								Tempat : '.$tempat_cust.' '.$ket_tempat.' '.$alamat_cust.' '.$kota_cust.'<br/>
 								<br/>
 								<p style="font-size:20px;font-weight:bold;line-height:1px">DATA PEMBAYARAN</p>
-								</head>
-								<body>
-
 								<table style="width:100%;">
 								  <tr>
 								    <th width="40%" style="border:1px; text-align: left;">Deskripsi</th>
@@ -73,6 +73,24 @@ $total_harga_paket=$harga_paket+$ppn_paket;
 								    <td style="border:1px;">50</td>
 										<td style="border:1px;">50</td>
 								  </tr>
+									<tr>
+										<th width="40%" style="border:1px; text-align: left;"</th>
+										<th width="20%" style="border:1px; text-align: left;"></th>
+										<th width="20%" style="border:1px; text-align: left;">Total Harga</th>
+										<th width="20%" style="border:1px; text-align: left;">100.0000</th>
+									</tr>
+									<tr>
+										<th width="40%" style="border:1px; text-align: left;"</th>
+										<th width="20%" style="border:1px; text-align: left;"></th>
+										<th width="20%" style="border:1px; text-align: left;">PPN 10%</th>
+										<th width="20%" style="border:1px; text-align: left;">100.0000</th>
+									</tr>
+									<tr>
+										<th width="40%" style="border:1px; text-align: left;"</th>
+										<th width="20%" style="border:1px; text-align: left;"></th>
+										<th width="20%" style="border:1px; text-align: left;">Total Pembayaran</th>
+										<th width="20%" style="border:1px; text-align: left;">100.0000</th>
+									</tr>
 								</table>
 								<br/>
 						</div>
