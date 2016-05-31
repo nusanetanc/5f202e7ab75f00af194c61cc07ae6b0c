@@ -43,12 +43,12 @@ $total_harga_paket=$harga_paket+$ppn_paket;
 
 	$message = '
 	<html>
-		<body style="background-color:#ddd;padding:150px 0 150px 0;font-family:arial;font-size:15px;">
-				<div style="margin:0 auto;max-width:500px;background-color:#eee;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
+		<body style="background-color:#ddd;padding:50px 0 150px 0;font-family:arial;font-size:15px;">
+				<div style="margin:0 auto;max-width:1000px;background-color:#eee;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
 						<div style="background: linear-gradient(to right, #FF3D23 , #fc742f);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
 								<a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
 						</div>
-						<div style="padding:120px;color:#333;">
+						<div style="padding:10px;color:#333;">
 								<p style="font-size:20px;font-weight:bold;line-height:1px">DATA CUSTOMER</p>
 								<p>ID Customer : '.$id_cust.'<br/>
 								Nama : '.$nama_cust.'<br/>
@@ -59,10 +59,10 @@ $total_harga_paket=$harga_paket+$ppn_paket;
 								<p style="font-size:20px;font-weight:bold;line-height:1px">DATA PEMBAYARAN</p>
 								<table style="margin-top:20px;margin-bottom:20px;border:0px solid #ccc;color:#333;background-color:#fff;#ddd;width:100%;font-size:14px;">
 								<tr>
-										<td style="border:1px solid #bbb;padding:5px;color:#777">Deskripsi</td>
-										<td style="border:1px solid #bbb;padding:5px;color:#777">Harga</td>
-										<td style="border:1px solid #bbb;padding:5px;color:#777">Prorate</td>
-										<td style="border:1px solid #bbb;padding:5px;color:#777">Total Harga</td>
+										<td style="border:1px solid #bbb;color:#777">Deskripsi</td>
+										<td style="border:1px solid #bbb;color:#777">Harga</td>
+										<td style="border:1px solid #bbb;color:#777">Prorate</td>
+										<td style="border:1px solid #bbb;color:#777">Total Harga</td>
 								</tr>
 								<tr>
 										<td style="border:1px>Deskripsi</td>
