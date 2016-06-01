@@ -171,9 +171,9 @@ $(document).ready(function(){
 			<div class="col-sm-4">
 				<a href="<?php echo $base_url_member; ?>/send-invoice" style=" text-decoration:none">
 					<div class="well well-lg" style="background-color:#263238;">
-					  <h4 style="color:white;"><b>New Customer</b></h4>
+					  <h4 style="color:white;"><b>INVOICE</b></h4>
 					  <div class="text-center">
-					  	<b style="color:white; font-size:2em;"><i class="fa fa-check-square-o fa-5x"></i></b>
+					  	<b style="color:white; font-size:2em;"><i class="fa fa-files-o fa-5x"></i></b>
 					  </div>
 					</div>
 				</a>
@@ -181,9 +181,9 @@ $(document).ready(function(){
 			<div class="col-sm-4">
 				<a href="<?php echo $base_url_member; ?>/payment" style=" text-decoration:none">
 					<div class="well well-lg" style="background-color:#263238;">
-					  <h4 style="color:white;"><b>List Customer</b></h4>
+					  <h4 style="color:white;"><b>PAYMENT</b></h4>
 					  <div class="text-center">
-					  	<b style="color:white; font-size:2em;"><i class="fa fa-navicon fa-5x"></i></b>
+					  	<b style="color:white; font-size:2em;"><i class="fa fa-money fa-5x"></i></b>
 					  </div>
 					</div>
 				</a>
