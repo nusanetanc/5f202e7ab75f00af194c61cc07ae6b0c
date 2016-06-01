@@ -33,7 +33,7 @@ if(isset($_POST['send'])){
 	$instal=$_POST['instal'];
 	$pjkbl=$_POST['pjkbl'];
 	$kabel=$_POST['kabel'];
-	//$update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("no_virtual"=>$kode_perusahaan.$id_cust, "router"=>$router, "stb"=>$stb, "kabel"=>$kabel, "panjang_kabel"=>$pjkbl, "instalasi"=>$instal)));
+			$update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("no_virtual"=>$kode_perusahaan.$id_cust, "router"=>$router, "stb"=>$stb, "kabel"=>$kabel, "panjang_kabel"=>$pjkbl, "instalasi"=>$instal)));
 // mail for customer to addon
 	$to = $email_cust;
 
