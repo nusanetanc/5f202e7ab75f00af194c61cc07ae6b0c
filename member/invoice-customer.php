@@ -254,7 +254,7 @@ $m_total=		 		'<br/>
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="col-lg-3 control-label">Paket Aktif/Harga : </label>
+								<label class="col-lg-3 control-label">Paket/Harga : </label>
 								<div class="col-lg-9">
 								<h4><?php echo $package_cust.'/'.rupiah($harga_paket); ?></h4>
 								</div>
