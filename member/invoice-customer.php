@@ -88,17 +88,15 @@ if(isset($_POST['send'])){
 								    <td style="border:1px;">'.rupiah($biaya_stb).'</td>
 								    <td style="border:1px;">'.rupiah($proraide_stb).'</td>
 										<td style="border:1px;">'.rupiah($biaya_stb-$proraide_stb).'</td>
-										</tr>';
-										$total_stb=$biaya_stb-$proraide_stb;
-										$total=$total+$total_stb;
-										'<tr>
+										</tr>
+										<tr>
 																    <td style="border:1px;">STB TV - 1 Bulan</td>
 																    <td style="border:1px;">'.rupiah($biaya_stb).'</td>
 																    <td style="border:1px;">'.rupiah($proraide_stb).'</td>
 																		<td style="border:1px;">'.rupiah($biaya_stb-$proraide_stb).'</td>
 																		</tr>';
-																		$total_stb=$biaya_stb-$proraide_stb;
-																		$total=$total+$total_stb;
+										$total_stb=$biaya_stb-$proraide_stb;
+										$total=$total+$total_stb;
 
 		}
 	if($instal=="1"){
