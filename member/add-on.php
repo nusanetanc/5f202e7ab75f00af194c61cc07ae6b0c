@@ -146,23 +146,32 @@
 			</div>
 			<div class="panel" style="border:0px;" >
   				<div class="panel-heading" style="background-color:#FC9822">
-    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">Histori Add On Service</h3>
+    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">Add On Service</h3>
   				</div>
   				<div class="panel-body">
   					<br/>
   					<div class="col-sm-12">
 							<ul class="list-group">
 								<?php
-								$res = $col_user->findOne(array("id_user"=>$id));
-								foreach ($res['addon'] as $rin_addon => $rao) {
-									$thn1 = substr($rao['tanggal'], 0,4);
-									$bln1 = substr($rao['tanggal'], 5,2);
-									$tgl1 = substr($rao['tanggal'], 8,10);
+								$res = $col_addon->findOne(array("id_user"=>$id));
+								foreach ($res as $row) {
+									$tanggal = $row['tanggal_aktif'];
+									$thn = substr($tanggal, 0,4);
+									$bln = substr($tanggal, 5,2);
+									$tgl = substr($tanggal, 8,10);
+									$month = bulan($bln);
+									$tanggal1 = $row['tanggal_akhir'];
+									$thn1 = substr($tanggal1, 0,4);
+									$bln1 = substr($tanggal1, 5,2);
+									$tgl1 = substr($tanggal1, 8,10);
 									$month1 = bulan($bln1); ?>
 							  <li class="list-group-item">
-									Tanggal : <strong><?php echo $tgl1.' '.$month1.' '.$thn1; ?></strong><br/>
-									Add On Service : <strong><?php echo $rao['add_on']; ?></strong><br/>
-									Status : <strong><?php echo $rao['status']; ?></strong>
+									Add On Service : <strong><?php echo $row['layanan']; ?></strong><br/>
+									<?php if($row['status']=="unaktif") { ?>
+									Status : <span class="label label-warning"><strong><?php echo $row['status']; ?></strong></span><br/>
+									<?php } elseif($row['status']=="aktif"){ ?>
+									Tanggal Aktif : <strong><?php echo $tgl.' '.$month.' '.$thn; ?> Sampai : <?php echo $tgl1.' '.$month1.' '.$thn1; ?></strong><br/>
+									<?php } ?>
 							  </li>
 								<?php } ?>
 							</ul>
