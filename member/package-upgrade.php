@@ -13,11 +13,10 @@ foreach($res as $row)
 {
     $upgrade_harga=$row['harga'];
 }
-	$update_user=$col_user->update(array("id_user"=>$id, "level"=>"0"),array('$set'=>array("move_paket"=>$upgrade_paket, "move_harga"=>$upgrade_harga, "move_request"=>$date)));
 			// mail for customer to update paket
 				$to = $email;
 
-				$subject = 'Upgrade Paket';
+				$subject = 'Perubahan Layanan Groovy';
 
 				$message = '
 				<html>
@@ -27,18 +26,31 @@ foreach($res as $row)
 					            <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
 					        </div>
 					        <div style="padding:20px;color:#333;">
-					            <p style="font-size:20px;font-weight:bold;line-height:1px">Permintaan Pindah Paket</p>
+					            <p style="font-size:20px;font-weight:bold;line-height:1px">Permintaan perubahan layanan</p>
 											<p>ID Customer : '.$id.'<br/>
 											Nama : '.$nama.'<br/>
 											Paket Aktif : '.$paket.'<br/>
 											Email : '.$email.'<br/>
 											Phone : '.$notelp.'<br/>
 											Tempat : '.$tempat.' '.$keterangan.' '.$alamat.' '.$kota.'<br/>
-											Permitaan pindah paket ke : '.$upgrade_paket.'<br/>
+											Paket : '.$upgrade_paket.'<br/>';
+	if(!empty($_POST['addon'])){
+			$no_addon = 1;
+			foreach($_POST['addon'] as $selectaddon){
+				$no_addon = $no_addon+1;
+							$message1 = '
+											Layanan Tambahan '.$no_addon.'. : '.$selectaddon.'<br/>'; } }
+							$message2 = '
 											Tanggal permintaan : '.$tgl0.' '.$month0.' '.$thn0.'</p>
-											<br/>
-											<p>Silahkan untuk melakukan pembayaran agar kami bisa memproses untuk pindah paket, info pembayaran terdapat pada billing di halaman member anda.</p>
-											<p>Paket baru akan aktif, setelah masa waktu paket lama habis.</p>
+											<br/>';
+							$message3 = '
+											<p>Billing kami akan melakukan pergantian data pembayaran anda, dengan pengiriman invoice baru pada email anda.</p>
+											<p>Pergantian data pembayaran di lakukan pada saat hari dan jam kerja.</p>
+											<p>Paket baru akan aktif : </p>
+											<p>1. Masa waktu layanan lama telah habis.</p>
+											<p>2. Setelah anda melakukan pembayaran sesuai dengan data pembayaran yang baru.</p>
+											<p>3. Apabila tidak ada proraide pada layanan sebelumnya</p>
+											<p>Terima kasih telah menjadi pelanggan groovy</p>
 											<br/>
 					        </div>
 					        </div>
@@ -49,10 +61,10 @@ foreach($res as $row)
 				$headers  = 'MIME-Version: 1.0' . "\r\n";
 				$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
-				$headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
-				$headers .= 'Cc: cs@groovy.id, billing@groovy.id' . "\r\n";
-
-				$kirimemail=mail($to, $subject, $message, $headers);
+				$headers .= 'From: groovy.id' . "\r\n";
+				$kirimemail=mail($to, $subject, $message.$message1.$message2.$message3, $headers);
+				$kirimemail1=mail($email_billing, $subject, $message.$message1.$message2, $headers);
+				$kirimemail2=mail($email_cs, $subject, $message.$message1.$message2, $headers);
 	if ($update_user && $kirimemail){ ?>
 		<script type="" language="JavaScript">
 		document.location='<?php echo $base_url_member; ?>/change-package'</script>
