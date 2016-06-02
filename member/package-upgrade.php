@@ -97,8 +97,6 @@ foreach($res as $row)
 										<?php } ?>
 								<?php } } ?>
 							</li>
-						</ul>
-						<ul style="text-align:left;" class="list-group"  name="regisaddon2" id="regisaddon2" disabled>
 							<h5>Add On Service</h5>
 								<?php
 										$res = $col_service->find();
@@ -115,9 +113,6 @@ foreach($res as $row)
 										<?php } ?>
 								<?php } } ?>
 							</li>
-						<li class="list-group-item">
-							<div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>
-						</li>
 						<br/>
 						<input type="submit" class="btn btn-warning" name="upgrade" id="upgrade" value="Konfirmasi">
 						<br/>
