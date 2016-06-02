@@ -173,6 +173,7 @@ foreach($res as $row)
 	<?php } ?>
 <script>
  $(document).ready(function(){
+			$("#upgrade_paket").change(function(){
 				var p =  $("#upgrade_paket").val();
 			if(p == "Groovy Home 500" || p == "Groovy Home 800"){
 				$("#updateaddon1").hide();
@@ -184,5 +185,5 @@ foreach($res as $row)
 				$("#updateaddon1").hide();
 				$("#updateaddon2").hide();
 			}
-			})
+		}) });
 </script>
