@@ -11,7 +11,7 @@ RewriteRule ^pengaduan-open$ ?hal=pengaduan&a=open
 RewriteRule ^pengaduan-close$ ?hal=pengaduan&a=close
 RewriteRule ^dashboard$ ?hal=dashboard
 RewriteRule ^billing$ ?hal=billing
-RewriteRule ^change-package$ ?hal=package-upgrade
+RewriteRule ^change-service$ ?hal=package-upgrade
 RewriteRule ^information$ ?hal=information
 RewriteRule ^complete-information/([0-9A-Za-z]+)/? ?hal=complete-information&i=$1
 RewriteRule ^histori-pengaduan$ ?hal=historipengaduan

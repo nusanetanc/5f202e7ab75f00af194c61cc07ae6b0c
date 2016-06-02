@@ -30,12 +30,12 @@
 			</div>
 			<div class="col-sm-12 col-md-4 col-lg-4">
 				<?php if($status=="aktif"){ ?>
-				<a href="<?php echo $base_url_member; ?>/change-package"  style=" text-decoration:none">
+				<a href="<?php echo $base_url_member; ?>/change-service"  style=" text-decoration:none">
 				<?php } elseif($status=="unaktif" || $status=="registrasi"){  ?>
-				<a href="" data-toggle="notice-changepackage" title="Change Package Subscribe to Active 1 Month!" style=" text-decoration:none">
+				<a href="" data-toggle="notice-changeservice" title="Change Package Subscribe to Active 1 Month!" style=" text-decoration:none">
 				<?php } ?>
 					<div class="well well-lg background-btn-yellow" style=" text-decoration:none">
-					  <h4 style="color:white;"><b>MODIFY SERVICE</b></h4>
+					  <h4 style="color:white;"><b>CHANGE SERVICE</b></h4>
 					  <div class="text-center">
 					  	<b style="color:white; font-size:2em;"><i class="fa fa-retweet fa-5x"></i></b>
 					  </div>
