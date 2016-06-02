@@ -71,7 +71,7 @@ foreach($res as $row)
 						<li class="list-group-item">
 						  	Upgrade Paket :
 						  	<select class="form-control" id="upgrade_paket" name="upgrade_paket">
-						  	<option disabled="true" selected="true"><?php echo $paket; ?></option>
+						  	<option selected="true"><?php echo $paket; ?></option>
 						  	<?php
 					$res = $col_package->find();
 					foreach($res as $row)
