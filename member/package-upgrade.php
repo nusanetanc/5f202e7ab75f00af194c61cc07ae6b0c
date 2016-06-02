@@ -172,9 +172,7 @@ foreach($res as $row)
 	document.location='<?php echo $base_url; ?>/member'</script>
 	<?php } ?>
 <script>
-$("#updateaddon1").hide();
-$("#updateaddon2").hide();
-			$("#upgrade_paket").change(function(){
+ $(document).ready(function(){
 				var p =  $("#upgrade_paket").val();
 			if(p == "Groovy Home 500" || p == "Groovy Home 800"){
 				$("#updateaddon1").hide();
