@@ -62,7 +62,7 @@ foreach($res as $row)
 		<div class="list-group">
 			<div class="panel" style="border:0px;" >
   				<div class="panel-heading" style="background-color:#FC9822">
-    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">PACKAGE - MOVE</h3>
+    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">CHANGE SERVICE</h3>
   				</div>
   				<div class="panel-body">
   					<br/>
@@ -81,6 +81,40 @@ foreach($res as $row)
 					        <?php } } ?>
 					        </select>
 						</li>
+							<h5>Add On Service</h5>
+								<?php
+										$res = $col_service->find();
+										foreach($res as $row)
+																{
+												if($row['nama_group']=="Cinema Box HD" || $row['nama_group']=="TV Chanel"){
+																	?>
+							<li class="list-group-item">
+								<h6><?php echo $row['nama_group']; ?></h6>
+									<?php $res1 = $col_service->find(array("group"=>$row['nama_group']));
+									foreach($res1 as $row1)
+															{ ?>
+										<input type="checkbox" name="addon[]" id="addon[]" value="<?php echo $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
+										<?php } ?>
+								<?php } } ?>
+							</li>
+						</ul>
+						<ul style="text-align:left;" class="list-group"  name="regisaddon2" id="regisaddon2" disabled>
+							<h5>Add On Service</h5>
+								<?php
+										$res = $col_service->find();
+										foreach($res as $row)
+																{
+												if($row['nama_group']=="Cinema Box HD" || $row['nama_group']=="TV Chanel" || $row['nama_group']=="Video on Demand"){
+																	?>
+							<li class="list-group-item">
+								<h6><?php echo $row['nama_group']; ?></h6>
+									<?php $res1 = $col_service->find(array("group"=>$row['nama_group']));
+									foreach($res1 as $row1)
+															{ ?>
+										<input type="checkbox" name="addon[]" id="addon[]" value="<?php echo $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
+										<?php } ?>
+								<?php } } ?>
+							</li>
 						<li class="list-group-item">
 							<div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>
 						</li>
@@ -107,7 +141,7 @@ foreach($res as $row)
 			</div>
 			<div class="panel" style="border:0px;" >
   				<div class="panel-heading" style="background-color:#FC9822">
-    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">PACKAGE - HISTORI</h3>
+    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">HISTORI SERVICE</h3>
   				</div>
   				<div class="panel-body">
   					<br/>
