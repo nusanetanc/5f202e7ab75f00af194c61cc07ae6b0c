@@ -174,7 +174,18 @@ foreach($res as $row)
 <script>
  $(document).ready(function(){
 	 var p =  $("#upgrade_paket").val();
+	 if(p == "Groovy Home 500" || p == "Groovy Home 800"){
+		 $("#updateaddon1").hide();
+		 $("#updateaddon2").show();
+	 } else if(p == "Groovy Home 1700"){
+		 $("#updateaddon1").show();
+		 $("#updateaddon2").hide();
+	 } else {
+		 $("#updateaddon1").hide();
+		 $("#updateaddon2").hide();
+	 }
 			$("#upgrade_paket").change(function(){
+				var p =  $("#upgrade_paket").val();
 			if(p == "Groovy Home 500" || p == "Groovy Home 800"){
 				$("#updateaddon1").hide();
 				$("#updateaddon2").show();
