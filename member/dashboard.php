@@ -35,9 +35,9 @@
 				<a href="" data-toggle="notice-changepackage" title="Change Package Subscribe to Active 1 Month!" style=" text-decoration:none">
 				<?php } ?>
 					<div class="well well-lg background-btn-yellow" style=" text-decoration:none">
-					  <h4 style="color:white;"><b>CHANGE PACKAGE</b></h4>
+					  <h4 style="color:white;"><b>MODIFY SERVICE</b></h4>
 					  <div class="text-center">
-					  	<b style="color:white; font-size:2em;"><i class="fa fa-arrow-up fa-5x"></i></b>
+					  	<b style="color:white; font-size:2em;"><i class="fa fa-retweet fa-5x"></i></b>
 					  </div>
 					</div>
 				</a>
