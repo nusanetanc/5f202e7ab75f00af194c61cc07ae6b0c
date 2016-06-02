@@ -81,38 +81,42 @@ foreach($res as $row)
 					        <?php } } ?>
 					        </select>
 						</li>
-							<h5>Add On Service</h5>
-								<?php
-										$res = $col_service->find();
-										foreach($res as $row)
-																{
-												if($row['nama_group']=="Cinema Box HD" || $row['nama_group']=="TV Chanel"){
-																	?>
-							<li class="list-group-item">
-								<h6><?php echo $row['nama_group']; ?></h6>
-									<?php $res1 = $col_service->find(array("group"=>$row['nama_group']));
-									foreach($res1 as $row1)
-															{ ?>
-										<input type="checkbox" name="addon[]" id="addon[]" value="<?php echo $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
-										<?php } ?>
-								<?php } } ?>
-							</li>
-							<h5>Add On Service</h5>
-								<?php
-										$res = $col_service->find();
-										foreach($res as $row)
-																{
-												if($row['nama_group']=="Cinema Box HD" || $row['nama_group']=="TV Chanel" || $row['nama_group']=="Video on Demand"){
-																	?>
-							<li class="list-group-item">
-								<h6><?php echo $row['nama_group']; ?></h6>
-									<?php $res1 = $col_service->find(array("group"=>$row['nama_group']));
-									foreach($res1 as $row1)
-															{ ?>
-										<input type="checkbox" name="addon[]" id="addon[]" value="<?php echo $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
-										<?php } ?>
-								<?php } } ?>
-							</li>
+							<ul style="text-align:left;" class="list-group"  name="updateaddon1" id="updateaddon1" disabled>
+								<h5>Add On Service</h5>
+									<?php
+											$res = $col_service->find();
+											foreach($res as $row)
+																	{
+													if($row['nama_group']=="Cinema Box HD" || $row['nama_group']=="TV Chanel"){
+																		?>
+								<li class="list-group-item">
+									<h6><?php echo $row['nama_group']; ?></h6>
+										<?php $res1 = $col_service->find(array("group"=>$row['nama_group']));
+										foreach($res1 as $row1)
+																{ ?>
+											<input type="checkbox" name="addon[]" id="addon[]" value="<?php echo $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
+											<?php } ?>
+									<?php } } ?>
+								</li>
+							</ul>
+							<ul style="text-align:left;" class="list-group"  name="updateaddon2" id="updateaddon2" disabled>
+								<h5>Add On Service</h5>
+									<?php
+											$res = $col_service->find();
+											foreach($res as $row)
+																	{
+													if($row['nama_group']=="Cinema Box HD" || $row['nama_group']=="TV Chanel" || $row['nama_group']=="Video on Demand"){
+																		?>
+								<li class="list-group-item">
+									<h6><?php echo $row['nama_group']; ?></h6>
+										<?php $res1 = $col_service->find(array("group"=>$row['nama_group']));
+										foreach($res1 as $row1)
+																{ ?>
+											<input type="checkbox" name="addon[]" id="addon[]" value="<?php echo $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
+											<?php } ?>
+									<?php } } ?>
+								</li>
+							</ul>
 						<br/>
 						<input type="submit" class="btn btn-warning" name="upgrade" id="upgrade" value="Konfirmasi">
 						<br/>
@@ -167,3 +171,20 @@ foreach($res as $row)
 	<script type="" language="JavaScript">
 	document.location='<?php echo $base_url; ?>/member'</script>
 	<?php } ?>
+<script>
+$("#updateaddon1").hide();
+$("#updateaddon2").hide();
+			$("#upgrade_paket").change(function(){
+				var p =  $("#upgrade_paket").val();
+			if(p == "Groovy Home 500" || p == "Groovy Home 800"){
+				$("#updateaddon1").hide();
+				$("#updateaddon2").show();
+			} else if(p == "Groovy Home 1700"){
+				$("#updateaddon1").show();
+				$("#updateaddon2").hide();
+			} else {
+				$("#updateaddon1").hide();
+				$("#updateaddon2").hide();
+			}
+			})
+</script>
