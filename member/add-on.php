@@ -153,7 +153,7 @@
   					<div class="col-sm-12">
 							<ul class="list-group">
 								<?php
-								$res = $col_addon->findOne(array("id_user"=>$id));
+								$res = $col_addon->find(array("id_user"=>$id));
 								foreach ($res as $row) {
 									$tanggal = $row['tanggal_aktif'];
 									$thn = substr($tanggal, 0,4);
