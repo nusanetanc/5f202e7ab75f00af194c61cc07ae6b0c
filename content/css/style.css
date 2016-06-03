@@ -80,7 +80,7 @@ a.thumbnail1.active {
 .pic-container {
     height: 150px;
     overflow-y: scroll;
-    overflow-position: 
+    overflow-position:
 }
 .textBold{
   font-weight: 600;
@@ -93,6 +93,11 @@ a.thumbnail1.active {
 }
 @media only screen and (max-width : 600px){
   .desktop-only{
+    display:none;
+  }
+}
+@media only screen and (min-width : 600px){
+  .mobile-only{
     display:none;
   }
 }
