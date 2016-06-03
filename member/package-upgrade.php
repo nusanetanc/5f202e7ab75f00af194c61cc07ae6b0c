@@ -36,7 +36,7 @@ foreach($res as $row)
 											Paket : '.$upgrade_paket.'<br/>';
 	if(!empty($_POST['addon'])){
 			foreach($_POST['addon'] as $selectaddon=>$valaddon){
-							$message1 = '
+						'
 											Layanan Tambahan : '.$selectaddon.'<br/>'; } }
 							$message2 = '
 											Tanggal permintaan : '.$tgl0.' '.$month0.' '.$thn0.'</p>
