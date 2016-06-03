@@ -75,7 +75,7 @@ if($level=="501"){
         <li ><a href="<?php echo $base_url_member; ?>/<?php echo $row['file']; ?>"  style="font-size:14px;padding-top:20px;padding-bottom:19px;font-weight:500; color:gray;"><i style="padding-right:10px;" class="fa fa-<?php echo $row['image']; ?> fa-lg"></i><?php echo $row['title'].' '; ?></a></li>
       </ul>
       <?php } ?>
-      <ul class="dropdown nav navbar-nav navbar-right navbar-primary desktop-only">
+      <ul style="float:right;" class="dropdown nav navbar-nav navbar-right navbar-primary">
           <li class="dropdown-toggle" data-toggle="dropdown">
               <?php if ($foto=="" || $foto==null){ ?>
                           <img style="width:45px;height:45px;margin-top:7px;margin-left:10px;cursor:pointer" class="profile-img-card profile-img-card-mdm" src="<?php echo $base_url; ?>/img/default-avatar-groovy.png"/>
