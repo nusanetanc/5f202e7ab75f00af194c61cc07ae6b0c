@@ -34,12 +34,10 @@ foreach($res as $row)
 											Phone : '.$notelp.'<br/>
 											Tempat : '.$tempat.' '.$keterangan.' '.$alamat.' '.$kota.'<br/>
 											Paket : '.$upgrade_paket.'<br/>';
-											$no_addon = 1;
 	if(!empty($_POST['addon'])){
-			foreach($_POST['addon'] as $selectaddon){
-				$no_addon = $no_addon+1;
+			foreach($_POST['addon'] as $selectaddon=>$valaddon){
 							$message1 = '
-											Layanan Tambahan '.$no_addon.' : '.$selectaddon.'<br/>'; } }
+											Layanan Tambahan : '.$selectaddon.'<br/>'; } }
 							$message2 = '
 											Tanggal permintaan : '.$tgl0.' '.$month0.' '.$thn0.'</p>
 											<br/>';
