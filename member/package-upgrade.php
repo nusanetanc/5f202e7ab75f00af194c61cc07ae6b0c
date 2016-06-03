@@ -39,7 +39,7 @@ foreach($res as $row)
 			foreach($_POST['addon'] as $selectaddon){
 				$no_addon = $no_addon+1;
 							$message1 = '
-											Layanan Tambahan '.$no_addon.' : '.$selectaddon.'<br/>' } };
+											Layanan Tambahan '.$no_addon.' : '.$selectaddon.'<br/>'; } }
 							$message2 = '
 											Tanggal permintaan : '.$tgl0.' '.$month0.' '.$thn0.'</p>
 											<br/>';
