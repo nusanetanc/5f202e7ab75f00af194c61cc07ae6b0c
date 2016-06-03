@@ -39,7 +39,7 @@ foreach($res as $row)
 						${$selectaddon} = $valaddon;
 				} }
 							$message1 = '
-											Layanan Tambahan '.$valaddon.' : '.$selectaddon.' : '.${$selectaddon}.'<br/>';
+											Layanan Tambahan : '.$_POST['addon'].'<br/>';
 							$message2 = '
 											Tanggal permintaan : '.$tgl0.' '.$month0.' '.$thn0.'</p>
 											<br/>';
