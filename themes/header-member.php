@@ -55,7 +55,7 @@ if($level=="501"){
 <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button style="float:left;" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <button style="float:left;padding-top:8px;" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar" style="background-color:#FF3D23;"></span>
         <span class="icon-bar" style="background-color:#FF3D23;"></span>
@@ -70,7 +70,7 @@ if($level=="501"){
                   <img style="width:35px;height:35px; margin-top:3px;margin-left:10px;cursor:pointer" class="profile-img-card profile-img-card-mdm" src="<?php echo $base_url_member; ?>/foto/<?php echo $foto; ?>"/>
        <?php } ?>
           </li>
-            <ul style="margin-right:5px;" class="dropdown-menu">
+            <ul style="margin-right:5px;float:right;" class="dropdown-menu">
               <li><a href="<?php echo $base_url_member; ?>/edit-profile">Edit Profile</a></li>
               <?php if ($level=="0" && $status=="aktif"){ ?>
               <li><a href="#" data-toggle="modal" data-target="#confrimtermination">Berhenti Berlanganan</a></li>
