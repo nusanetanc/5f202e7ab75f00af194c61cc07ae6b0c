@@ -35,11 +35,12 @@ foreach($res as $row)
 											Tempat : '.$tempat.' '.$keterangan.' '.$alamat.' '.$kota.'<br/>
 											Paket : '.$upgrade_paket.'<br/>';
 	if(!empty($_POST['addon'])){
-			foreach($_POST['addon'] as $selectaddon=>$valaddon){
-						${$selectaddon} = $valaddon;
-				} }
+							$items = array();
+								foreach($_POST['addon'] as $listaddon) {
+								$items[] = $listaddon;
+								} }
 							$message1 = '
-											Layanan Tambahan : '.$_POST['addon'].'<br/>';
+											Layanan Tambahan : '.$items.'<br/>';
 							$message2 = '
 											Tanggal permintaan : '.$tgl0.' '.$month0.' '.$thn0.'</p>
 											<br/>';
