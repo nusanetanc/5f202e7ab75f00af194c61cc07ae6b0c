@@ -55,7 +55,7 @@ if($level=="501"){
 <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button style="float:left;padding-top:8px;" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <button style="float:left;margin-top:8px;" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar" style="background-color:#FF3D23;"></span>
         <span class="icon-bar" style="background-color:#FF3D23;"></span>
@@ -67,7 +67,7 @@ if($level=="501"){
               <?php if ($foto=="" || $foto==null){ ?>
                           <img style="width:35px;height:35px;margin-top:3px;margin-left:10px;cursor:pointer" class="profile-img-card profile-img-card-mdm" src="<?php echo $base_url; ?>/img/default-avatar-groovy.png"/>
        <?php } else { ?>
-                  <img style="width:35px;height:35px; margin-top:3px;margin-left:10px;cursor:pointer" class="profile-img-card profile-img-card-mdm" src="<?php echo $base_url_member; ?>/foto/<?php echo $foto; ?>"/>
+                  <img style="width:35px;height:35px; margin-top:3px;margin-left:10px;cursor:pointer" class="profile-img-card profile-img-card-mdm dropdown-toggle"  data-toggle="dropdown" aria-expanded="true" src="<?php echo $base_url_member; ?>/foto/<?php echo $foto; ?>"/>
        <?php } ?>
           </li>
             <ul style="margin-right:5px;float:right;" class="dropdown-menu">
