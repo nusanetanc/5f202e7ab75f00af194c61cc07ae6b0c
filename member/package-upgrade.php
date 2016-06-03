@@ -21,7 +21,7 @@ foreach($res as $row)
 				$message = '
 				<html>
 					<body style="background-color:#ddd;padding:20px 0 150px 0;font-family:arial;font-size:15px;">
-					    <div style="margin:0 auto;max-width:500px;background-color:#eee;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
+					    <div style="margin:0 auto;max-width:800px;background-color:#eee;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
 					        <div style="background: linear-gradient(to right, #FF3D23 , #fc742f);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
 					            <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
 					        </div>
@@ -34,12 +34,12 @@ foreach($res as $row)
 											Phone : '.$notelp.'<br/>
 											Tempat : '.$tempat.' '.$keterangan.' '.$alamat.' '.$kota.'<br/>
 											Paket : '.$upgrade_paket.'<br/>';
+											$no_addon = 1;
 	if(!empty($_POST['addon'])){
-			$no_addon = 1;
 			foreach($_POST['addon'] as $selectaddon){
 				$no_addon = $no_addon+1;
 							$message1 = '
-											Layanan Tambahan '.$no_addon.' : '.$selectaddon.'<br/>'; } }
+											Layanan Tambahan '.$no_addon.' : '.$selectaddon.'<br/>' } };
 							$message2 = '
 											Tanggal permintaan : '.$tgl0.' '.$month0.' '.$thn0.'</p>
 											<br/>';
