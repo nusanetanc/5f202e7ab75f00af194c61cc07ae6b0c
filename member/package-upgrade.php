@@ -35,9 +35,8 @@ foreach($res as $row)
 											Tempat : '.$tempat.' '.$keterangan.' '.$alamat.' '.$kota.'<br/>
 											Paket : '.$upgrade_paket.'<br/>';
 	if(!empty($_POST['addon'])){
-							$items = array();
-								foreach($_POST['addon'] as $listaddon) {
-								$items[] = $listaddon;
+								foreach($_POST['addon'] as $listaddon => $addondetail) {
+								$items = array($addondetail);
 								} }
 							$message1 = '
 											Layanan Tambahan : '.$items.'<br/>';
