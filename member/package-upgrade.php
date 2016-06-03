@@ -35,9 +35,9 @@ foreach($res as $row)
 											Tempat : '.$tempat.' '.$keterangan.' '.$alamat.' '.$kota.'<br/>
 											Paket : '.$upgrade_paket.'<br/>';
 	if(!empty($_POST['addon'])){
-
-								$items = array($_POST['addon']);
-								 }
+								foreach($_POST['addon'] as $listaddon) {
+								$items = perform_changes_on($listaddon);
+								} }
 							$message1 = '
 											Layanan Tambahan : '.$items.'<br/>';
 							$message2 = '
