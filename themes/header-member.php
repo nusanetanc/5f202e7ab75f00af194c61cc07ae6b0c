@@ -62,7 +62,7 @@ if($level=="501"){
         <span class="icon-bar" style="background-color:#FF3D23;"></span>
       </button>
       <a href="<?php echo $base_url_member; ?>"><img height="60px" src="<?php echo $base_url; ?>/img/groovy-logo-colour.png"/></a>
-      <ul style="float:right;" class="dropdown nav navbar-nav navbar-right navbar-primary">
+      <ul style="float:right;margin-right:15px;" class="dropdown nav navbar-nav navbar-right navbar-primary mobile-only">
           <li class="dropdown-toggle" data-toggle="dropdown">
               <?php if ($foto=="" || $foto==null){ ?>
                           <img style="width:45px;height:45px;margin-top:7px;margin-left:10px;cursor:pointer" class="profile-img-card profile-img-card-mdm" src="<?php echo $base_url; ?>/img/default-avatar-groovy.png"/>
@@ -93,7 +93,24 @@ if($level=="501"){
         <li ><a href="<?php echo $base_url_member; ?>/<?php echo $row['file']; ?>"  style="font-size:14px;padding-top:20px;padding-bottom:19px;font-weight:500; color:gray;"><i style="padding-right:10px;" class="fa fa-<?php echo $row['image']; ?> fa-lg"></i><?php echo $row['title'].' '; ?></a></li>
       </ul>
       <?php } ?>
-
+      <ul  class="dropdown nav navbar-nav navbar-right navbar-primary desktop-only">
+          <li class="dropdown-toggle" data-toggle="dropdown">
+              <?php if ($foto=="" || $foto==null){ ?>
+                          <img style="width:45px;height:45px;margin-top:7px;margin-left:10px;cursor:pointer" class="profile-img-card profile-img-card-mdm" src="<?php echo $base_url; ?>/img/default-avatar-groovy.png"/>
+       <?php } else { ?>
+                  <img style="width:45px;height:45px;margin-top:7px;margin-left:10px;cursor:pointer" class="profile-img-card profile-img-card-mdm" src="<?php echo $base_url_member; ?>/foto/<?php echo $foto; ?>"/>
+       <?php } ?>
+          </li>
+            <ul class="dropdown-menu">
+              <li><a href="<?php echo $base_url_member; ?>/edit-profile">Edit Profile</a></li>
+              <?php if ($level=="0" && $status=="aktif"){ ?>
+              <li><a href="#" data-toggle="modal" data-target="#confrimtermination">Berhenti Berlanganan</a></li>
+              <?php } elseif($level=="0" && $status=="unaktif"){ ?>
+              <li><a href="#" data-toggle="modal" data-target="#confrimbackakctiv">Berlangganan kembali</a></li>
+              <?php } ?>
+              <li><a href="<?php echo $base_url_member; ?>/logout">Logout</a></li>
+            </ul>
+        </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
   <div class="col-sm-12 grey-background">
