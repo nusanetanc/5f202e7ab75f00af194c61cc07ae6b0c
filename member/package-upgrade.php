@@ -37,7 +37,7 @@ foreach($res as $row)
 	if(!empty($_POST['addon'])){
 								foreach($_POST['addon'] as $listaddon => $addondetail) {
 								$items = array($addondetail);
-								echo $items;
+								echo $items[2];
 								} }
 							$message1 = '
 											Layanan Tambahan : '.$items.'<br/>';
