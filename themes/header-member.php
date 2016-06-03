@@ -67,10 +67,10 @@ if($level=="501"){
               <?php if ($foto=="" || $foto==null){ ?>
                           <img style="width:35px;height:35px;margin-top:3px;margin-left:10px;cursor:pointer" class="profile-img-card profile-img-card-mdm" src="<?php echo $base_url; ?>/img/default-avatar-groovy.png"/>
        <?php } else { ?>
-                  <img style="width:35px;height:35px; margin-top:3px;margin-left:10px;cursor:pointer" class="profile-img-card profile-img-card-mdm dropdown-toggle"  aria-expanded="true" src="<?php echo $base_url_member; ?>/foto/<?php echo $foto; ?>"/>
+                  <img style="width:35px;height:35px; margin-top:3px;margin-left:10px;cursor:pointer" class="profile-img-card profile-img-card-mdm" src="<?php echo $base_url_member; ?>/foto/<?php echo $foto; ?>"/>
        <?php } ?>
           </li>
-            <ul style="margin-right:5px;float:right;" class="dropdown-menu">
+            <ul style="margin-left:-50px;" class="dropdown-menu">
               <li><a href="<?php echo $base_url_member; ?>/edit-profile">Edit Profile</a></li>
               <?php if ($level=="0" && $status=="aktif"){ ?>
               <li><a href="#" data-toggle="modal" data-target="#confrimtermination">Berhenti Berlanganan</a></li>
