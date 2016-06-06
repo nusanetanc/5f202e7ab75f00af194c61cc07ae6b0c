@@ -14,7 +14,7 @@ if (isset($_POST['register'])){
                               $decription=$_POST['regisdescription'];
                               $date = date("Y/m/d");
                               $date_month = date("m");
-                              $date_years = date("y");
+                              $date_years = date("Y");
                               $date_days = date("d");
                               $bulan1 = bulan($date_month);
         if ($regisname=="" || $regisemail=="" || $regisphone=="" || $package=="-- Select Package --" || $location=="-- Location --" || $decription==""){
@@ -42,7 +42,7 @@ foreach($res as $row)
 }
                       //generate password and code activation
                     $text = 'abcdefghijklmnopqrstuvwxyz123457890';
-                    $panjang = 10;
+                    $panjang = 40;
                     $txtlen = strlen($text)-1;
                     $result = '';
                     for($i=1; $i<=$panjang; $i++){
@@ -185,7 +185,7 @@ foreach($res as $row)
                           <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
                       </div>
                       <div style="padding:20px;color:#333;">
-                          <p style="font-size:20px;font-weight:bold;line-height:1px">Hai John Doe,</p>
+                          <p style="font-size:20px;font-weight:bold;line-height:1px">Hai '.$regisname.',</p>
                           <p>Terimakasih telah mendaftarkan akun Groovy. Berikut adalah rincian akun yang anda daftarkan.</p>
                             <table style="margin-top:20px;margin-bottom:20px;border:0px solid #ccc;color:#333;background-color:#fff;#ddd;width:100%;font-size:14px;">
                                 <tr style="border:1px solid #bbb;">
@@ -206,7 +206,7 @@ foreach($res as $row)
                                 </tr>
                                 <tr>
                                     <td style="border:1px solid #bbb;padding:5px;color:#777">Paket</td>
-                                    <td style="border:1px solid #bbb;padding:5px">'.$regispackage.'</td>
+                                    <td style="border:1px solid #bbb;padding:5px">'.$package.'</td>
                                 </tr>
                                 <tr>
                                     <td style="border:1px solid #bbb;padding:5px;color:#777">Layanan Tambahan</td>
@@ -214,7 +214,7 @@ foreach($res as $row)
                                 </tr>
                                 <tr>
                                     <td style="border:1px solid #bbb;padding:5px;color:#777">Tanggal Registrasi</td>
-                                    <td style="border:1px solid #bbb;padding:5px">'.$date_days.' '.$month1.' '.$date_years.'</td>
+                                    <td style="border:1px solid #bbb;padding:5px">'.$date_days.' '.$bulan1.' '.$date_years.'</td>
                                 </tr>
                                 <tr>
                                     <td style="border:1px solid #bbb;padding:5px;color:#777">Registrasi</td>
