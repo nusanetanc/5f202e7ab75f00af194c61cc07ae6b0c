@@ -51,7 +51,8 @@ foreach($res as $row)
 											<p>2. Setelah anda melakukan pembayaran sesuai dengan data pembayaran yang baru.</p>
 											<p>3. Apabila tidak ada proraide pada layanan sebelumnya</p>
 											<p>Terima kasih telah menjadi pelanggan groovy</p>
-											<br/>
+											<br/> ';
+						$message4 = '
 					        </div>
 					        </div>
 					    </div>
@@ -62,10 +63,10 @@ foreach($res as $row)
 				$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
 				$headers .= 'From: groovy.id' . "\r\n";
-				$kirimemail=mail($to, $subject, $message.$message1.$message2.$message3, $headers);
-				$kirimemail1=mail($email_billing, $subject, $message.$message1.$message2, $headers);
-				$kirimemail2=mail($email_cs, $subject, $message.$message1.$message2, $headers);
-	if ($update_user && $kirimemail){ ?>
+				$kirimemail=mail($to, $subject, $message.$message1.$message2.$message3.$message4, $headers);
+				$kirimemail1=mail($email_billing, $subject, $message.$message1.$message2.$message4, $headers);
+				$kirimemail2=mail($email_cs, $subject, $message.$message1.$message2.$message4, $headers);
+	if ($update_user && $kirimemail && $kirimemail1 && $kirimemail2){ ?>
 		<script type="" language="JavaScript">
 		document.location='<?php echo $base_url_member; ?>/change-package'</script>
 <?php } } ?>
