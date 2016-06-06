@@ -19,7 +19,7 @@ if (isset($_POST['register'])){
                               $date_years = date("Y");
                               $date_days = date("d");
                               $bulan1 = bulan($date_month);
-        if ($regisname=="" || $regisemail=="" || $regisphone=="" || $package=="-- Select Package --" || $location=="-- Location --" || $decription=="" || $regispassword1=="" || $regispassword2=="" || $regispassword2==$regispassword1){
+        if ($regisname=="" || $regisemail=="" || $regisphone=="" || $package=="-- Select Package --" || $location=="-- Location --" || $decription=="" || $regispassword1=="" || $regispassword2==""){
                                                    echo '<p class="text-danger">Registration Failed, Please Try Again!</p>';
                                                     } else {
         $lokasifile = $_FILES['regisktp']['tmp_name'];
