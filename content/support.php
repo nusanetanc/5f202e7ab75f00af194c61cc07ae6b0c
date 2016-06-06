@@ -67,5 +67,17 @@
     </div>
     <!-- /Content1 -->
      
+     <!-- Content2 -->
+    <div style="background: linear-gradient(to right, #f9a825 , #fdd835);padding:50px 0 50px 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <span style="color:#000;font-size:18px;line-height:45px;">Butuh bantuan lebih lanjut tentang layanan Groovy ?</span>
+                    <a href="http://groovy.id/beta/?hal=support" style="float:right;border-radius:5px;border:2px solid black;background-color:rgba(0, 0, 0, 0);padding:10px 40px 10px 40px;color:#000;font-size:18px;">Pusat Bantuan</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Content2 -->
     
     
