@@ -110,7 +110,7 @@ foreach($res as $row)
                     }
                 }
                 $userid=new userId();
-                $newid=$userid->baru();
+                $newid=$userid->baru(); /*
                                                   // insert add on
                                                 if(!empty($_POST['addon'])){
                                                     foreach($_POST['addon'] as $selectaddon){
@@ -151,7 +151,7 @@ foreach($res as $row)
                                             <p>Tanggal Registrasi : '.$date.'</p>
                                             <p>Sales : '.$nama.'</p>
                                             <p>Paket : '.$package.'</p>
-                                            <p>Paket : '.$addon.'</p>
+                                            <p>Paket : '.$addon_service.'</p>
                                             <br/>
                                           </body>
                                           </html>
@@ -238,7 +238,7 @@ foreach($res as $row)
                     $headers2 .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
                     $headers2 .= 'Cc: cs@groovy.id, billing@groovy.id' . "\r\n";
 
-                    $kirimemail2 = mail($to2, $subject2, $message2, $headers2);
+                    $kirimemail2 = mail($to2, $subject2, $message2, $headers2); */
 if($insert_customer && $kirimemail1 && $kirimemail2){
     echo '<p class="text-primary">Registration succeed, please wait for confirmation from the sales manager!</p>';
      } } } } ?>
