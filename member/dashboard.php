@@ -32,7 +32,7 @@
 				<?php if($status=="aktif" && $proraide==0 && $pembayaran>=1){ ?>
 				<a href="<?php echo $base_url_member; ?>/change-service"  style=" text-decoration:none">
 				<?php } elseif($status=="unaktif" || $status=="registrasi" || $proraide<>0 || $pembayaran<=1){  ?>
-				<a href="" data-toggle="notice-changeservice" title="Change Service Subscribe to Active 1 Month Or After Prorate Empty!" style=" text-decoration:none">
+				<a href="" data-toggle="notice-billing" title="Billing Data Empty!" style=" text-decoration:none">
 				<?php } ?>
 					<div class="well well-lg background-btn-yellow" style=" text-decoration:none">
 					  <h4 style="color:white;"><b>CHANGE SERVICE</b></h4>
