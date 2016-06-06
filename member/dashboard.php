@@ -29,10 +29,10 @@
 				</a>
 			</div>
 			<div class="col-sm-12 col-md-4 col-lg-4">
-				<?php if($status=="aktif"){ ?>
+				<?php if($status=="aktif" || $proraide==0 || $pembayaran>=1){ ?>
 				<a href="<?php echo $base_url_member; ?>/change-service"  style=" text-decoration:none">
-				<?php } elseif($status=="unaktif" || $status=="registrasi"){  ?>
-				<a href="" data-toggle="notice-changeservice" title="Change Package Subscribe to Active 1 Month!" style=" text-decoration:none">
+				<?php } elseif($status=="unaktif" || $status=="registrasi" || $proraide<>0 || $pembayaran<=1){  ?>
+				<a href="" data-toggle="notice-changeservice" title="Change Service Subscribe to Active 1 Month Or After Prorate Empty!" style=" text-decoration:none">
 				<?php } ?>
 					<div class="well well-lg background-btn-yellow" style=" text-decoration:none">
 					  <h4 style="color:white;"><b>CHANGE SERVICE</b></h4>
