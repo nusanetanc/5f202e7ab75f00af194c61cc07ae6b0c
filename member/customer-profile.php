@@ -47,7 +47,8 @@
 													}
 									if(isset($_POST['konfirmregis'])){
                                         $date = date("Y/m/d");
-										$konfirmasi = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("status"=>"registrasi", "aktif"=>"1")));
+										$konfirmasi = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("status"=>"registrasi", "aktif"=>"10.
+										")));
 										$detail_info=array("share_id"=>"00000000","description"=>"Selamat Bergabung dengan groovy tv, Selamat Menikmati Layanan Kami","date"=>$date);
                     $write_info = $col_info->insert(array("for"=>$id_cust, "subject"=>"Selamat Bergabung Dengan groovy", "tanggal_update"=>$date, "informasi"=>array($detail_info)));
 	                                    	  //mail for sales manager
