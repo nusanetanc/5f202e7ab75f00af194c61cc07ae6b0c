@@ -73,7 +73,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <span style="color:#000;font-size:18px;line-height:45px;">Ingin bertanya lebih detail tentang layanan Groovy ?</span>
-                    <a href="http://groovy.id/beta/?hal=contact-us" style="float:right;border-radius:5px;border:2px solid black;background-color:rgba(0, 0, 0, 0);padding:10px 40px 10px 40px;color:#000;font-size:18px;">Hubungin Kami</a>
+                    <a href="<?php echo $base_url; ?>/?hal=contact-us" style="float:right;border-radius:5px;border:2px solid black;background-color:rgba(0, 0, 0, 0);padding:10px 40px 10px 40px;color:#000;font-size:18px;">Hubungin Kami</a>
                 </div>
             </div>
         </div>
