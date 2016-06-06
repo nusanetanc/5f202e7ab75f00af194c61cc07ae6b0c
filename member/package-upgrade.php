@@ -35,14 +35,9 @@ foreach($res as $row)
 											Tempat : '.$tempat.' '.$keterangan.' '.$alamat.' '.$kota.'<br/>
 											Paket : '.$upgrade_paket.'<br/>';
 	if(!empty($_POST['addon'])){
-								$items1=array($_POST['addon']);
-								var_export($items1);
-								foreach($_POST['addon'] as $listaddon => $addondetail) {
-								$items = array($addondetail);
-								echo $items[2];
-								} }
+								$items=implode($_POST['addon'],",");
 							$message1 = '
-											Layanan Tambahan : '.$items1.'<br/>';
+											Layanan Tambahan : '.$items.'<br/>';
 							$message2 = '
 											Tanggal permintaan : '.$tgl0.' '.$month0.' '.$thn0.'</p>
 											<br/>';
