@@ -19,7 +19,7 @@ if (isset($_POST['register'])){
                               $date_years = date("Y");
                               $date_days = date("d");
                               $bulan1 = bulan($date_month);
-        if ($regisname=="" || $regisemail=="" || $regisphone=="" || $package=="-- Select Package --" || $location=="-- Location --" || $decription=="" || $regispassword1=="" || $regispassword2==""){
+        if ($regisname=="" || $regisemail=="" || $regisphone=="" || $package=="-- Select Package --" || $location=="-- Location --" || $decription=="" || $regispassword1=="" || $regispassword2=="" || $regispassword1<>$regispassword2){
                                                    echo '<p class="text-danger">Registration Failed, Please Try Again!</p>';
                                                     } else {
         $lokasifile = $_FILES['regisktp']['tmp_name'];
@@ -167,7 +167,7 @@ foreach($res as $row)
                                           $headers1 .= 'Cc: cs@groovy.id' . "\r\n";
                                           // Mail it
                                           $kirimemail1 = mail($to1, $subject1, $message1, $headers1);
-                                          // mail for customer to registrasi
+                  // mail for customer to registrasi
                     $to2 = $regisemail;
 
                     $subject2 = 'Registrasi groovy TV';
@@ -220,8 +220,7 @@ foreach($res as $row)
                                     <td style="border:1px solid #bbb;padding:5px">'.$location.', '.$decription.', '.$place.', '.$city.'</td>
                                 </tr>
                             </table>
-                          <p>Untuk melihat profile member anda, silahkan login pada halaman berikut.</p>
-
+                            <p>Akun anda sudah aktif, silahkan login pada halaman groovy.id</p>
                       </div>
                       </div>
                     </div>
