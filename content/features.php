@@ -5,8 +5,8 @@
                 <div class="col-sm-12"><img width="100%" src="<?php echo $base_url; ?>/img/background-feature-tv.png"/></div>
             
                 <div class="col-sm-12 text-center">
-                    <h2 class="mainFeatureHeading">All entertainments in one product</h2>
-                    <p class="featureParagraph">Stream live TV throughout your home using many of your favorite devices with 94 + Local & International Channel. Explore interesting features and lineups while away from home on your smart phone, tablet or laptop.</p>
+                    <h2 class="mainFeatureHeading">High Speed Fiber Optic Internet For Home & Personal</h2>
+                    <p class="featureParagraph">Go with Groovy High-Speed Internet for a consistently fast connection. Enjoy high speed internet access to your home now. Stream live TV throughout your home using many of your favorite devices with 94 + Local & International Channel. Explore interesting features and lineups while away from home on your smart phone, tablet or laptop.</p>
                 </div>
             </div>
         </div>
