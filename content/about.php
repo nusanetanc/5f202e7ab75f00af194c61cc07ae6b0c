@@ -11,24 +11,24 @@
             <div class="row">
                 <div class="col-sm-6">
                     <h4>High Speed Internet Access</h4>
-                    <p style="line-height:1.5;font-size:14px;color:#444;">Layanan internet berkecepatan tinggi yang menghadirkan koneksi fiber optic langsung ke komplek perumahan / apartemen Anda.</p>
+                    <p style="line-height:1.5;font-size:18px;color:#444;">Layanan internet berkecepatan tinggi yang menghadirkan koneksi fiber optic langsung ke komplek perumahan / apartemen Anda.</p>
                     <br/>
                     <h4>Live TV</h4>
-                    <p style="line-height:1.5;font-size:14px;color:#444;">Layanan yang menghadirkan siaran langsung televisi nasional dan internasional dengan menggunakan alat STB terbaik.</p>
+                    <p style="line-height:1.5;font-size:18px;color:#444;">Layanan yang menghadirkan siaran langsung televisi nasional dan internasional dengan menggunakan alat STB terbaik.</p>
                     <br/>
                     <h4>Video on Demand</h4>
-                    <p style="line-height:1.5;font-size:14px;color:#444;">Layanan tambahan yang menghadirkan berbagai macam video on demand berkualitas.</p>
+                    <p style="line-height:1.5;font-size:18px;color:#444;">Layanan tambahan yang menghadirkan berbagai macam video on demand berkualitas.</p>
                     <br/>
                 </div>
                 <div class="col-sm-6">
                     <h4>Social TV</h4>
-                    <p style="line-height:1.5;font-size:14px;color:#444;">Layanan streaming yang menghadirkan berbagai macam video dan channel-channel terbaik yang sudah dikategorikan berdasarkan keinginan Anda.</p>
+                    <p style="line-height:1.5;font-size:18px;color:#444;">Layanan streaming yang menghadirkan berbagai macam video dan channel-channel terbaik yang sudah dikategorikan berdasarkan keinginan Anda.</p>
                     <br/>
                     <h4>Catch-up TV Channel</h4>
-                    <p style="line-height:1.5;font-size:14px;color:#444;">Menghadirkan siaran ulang televisi lokal & internasional sampai dengan 3 hari kebelakang.</p>
+                    <p style="line-height:1.5;font-size:18px;color:#444;">Menghadirkan siaran ulang televisi lokal & internasional sampai dengan 3 hari kebelakang.</p>
                     <br/>
                     <h4>Radio Streaming</h4>
-                    <p style="line-height:1.5;font-size:14px;color:#444;">Siarkan langsung radio lokal dan internasional dengan kualitas suara terbaik.</p>
+                    <p style="line-height:1.5;font-size:18px;color:#444;">Siarkan langsung radio lokal dan internasional dengan kualitas suara terbaik.</p>
                     <br/>
                 </div>
             </div>
