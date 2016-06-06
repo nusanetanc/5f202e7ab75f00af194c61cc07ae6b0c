@@ -36,7 +36,7 @@ foreach($res as $row)
 											Paket : '.$upgrade_paket.'<br/>';
 	if(!empty($_POST['addon'])){
 							$arr = array($_POST['addon']);
-								$items=implode(",", $arr);
+								$items=implode(",", $_POST['addon']);
 							}
 							$message1 = '
 											Layanan Tambahan : '.$items.'<br/>';
