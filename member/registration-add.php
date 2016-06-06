@@ -165,7 +165,7 @@ foreach($res as $row)
                                           $headers1 .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
                                           $headers1 .= 'Cc: cs@groovy.id' . "\r\n";
                                           // Mail it
-                                          $kirimemail1 = mail($to1, $subject1, $message1, $headers1);
+                                          $kirimemail1 = mail($to1, $subject1, $message1, $headers1); */
                                           // mail for customer to registrasi
                     $to2 = $regisemail;
 
@@ -238,7 +238,7 @@ foreach($res as $row)
                     $headers2 .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
                     $headers2 .= 'Cc: cs@groovy.id, billing@groovy.id' . "\r\n";
 
-                    $kirimemail2 = mail($to2, $subject2, $message2, $headers2); */
+                    $kirimemail2 = mail($to2, $subject2, $message2, $headers2);
 if($insert_customer && $kirimemail1 && $kirimemail2){
     echo '<p class="text-primary">Registration succeed, please wait for confirmation from the sales manager!</p>';
      } } } } ?>
