@@ -227,9 +227,9 @@ foreach($res as $row)
                             </table>
                           <p>Untuk mengaktifkan akun silahkan klik tombol aktivasi ini.</p>
                           <div style="text-align:center;margin:30px 0 30px 0;">
-                              <a href="'.$base_url.'/?a='.$password_sales.'" style="text-decoration:none;color:#fff;"><span style="background-color:#FF3D23;border:0;border-radius:5px;padding:10px 40px 10px 40px;color:#fff;font-size:17px;">Aktivasi Akun</span></a>
+                              <a href="'.$base_url.'/?a='.$result.'" style="text-decoration:none;color:#fff;"><span style="background-color:#FF3D23;border:0;border-radius:5px;padding:10px 40px 10px 40px;color:#fff;font-size:17px;">Aktivasi Akun</span></a>
                           </div>
-                          <p>Jika tombol tidak berfungsi silahkan copy link berikut <a href="'.$base_url.'/?a='.$password_sales.'">'.$base_url.'/?a='.$password_sales.'</a></p>
+                          <p>Jika tombol tidak berfungsi silahkan copy link berikut <a href="'.$base_url.'/?a='.$result.'">'.$base_url.'/?a='.$result.'</a></p>
                       </div>
                       </div>
                     </div>
