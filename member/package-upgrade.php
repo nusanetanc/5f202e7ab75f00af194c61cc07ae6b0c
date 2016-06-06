@@ -37,6 +37,7 @@ foreach($res as $row)
 	if(!empty($_POST['addon'])){
 							$arr = array($_POST['addon']);
 								$items=implode((",", $arr);
+							}
 							$message1 = '
 											Layanan Tambahan : '.$items.'<br/>';
 							$message2 = '
