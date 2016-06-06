@@ -110,7 +110,8 @@ foreach($res as $row)
                     }
                 }
                 $userid=new userId();
-                $newid=$userid->baru(); /*
+                $newid=$userid->baru();
+
                                                   // insert add on
                                                 if(!empty($_POST['addon'])){
                                                     foreach($_POST['addon'] as $selectaddon){
@@ -165,7 +166,7 @@ foreach($res as $row)
                                           $headers1 .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
                                           $headers1 .= 'Cc: cs@groovy.id' . "\r\n";
                                           // Mail it
-                                          $kirimemail1 = mail($to1, $subject1, $message1, $headers1); */
+                                          $kirimemail1 = mail($to1, $subject1, $message1, $headers1);
                                           // mail for customer to registrasi
                     $to2 = $regisemail;
 
@@ -220,10 +221,7 @@ foreach($res as $row)
                                 </tr>
                             </table>
                           <p>Untuk melihat profile member anda, silahkan login pada halaman berikut.</p>
-                          <div style="text-align:center;margin:30px 0 30px 0;">
-                              <a href="'.$base_url.'/signin''" style="text-decoration:none;color:#fff;"><span style="background-color:#FF3D23;border:0;border-radius:5px;padding:10px 40px 10px 40px;color:#fff;font-size:17px;">Aktivasi Akun</span></a>
-                          </div>
-                          <p>Jika tombol tidak berfungsi silahkan copy link berikut <a href="'.$base_url.'/signin''">'.$base_url.'/signin''"</a></p>
+                          
                       </div>
                       </div>
                     </div>
