@@ -36,6 +36,7 @@ foreach($res as $row)
 											Paket : '.$upgrade_paket.'<br/>';
 	if(!empty($_POST['addon'])){
 								$items1=array($_POST['addon']);
+								var_export($items1);
 								foreach($_POST['addon'] as $listaddon => $addondetail) {
 								$items = array($addondetail);
 								echo $items[2];
