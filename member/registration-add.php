@@ -221,7 +221,10 @@ foreach($res as $row)
                                 </tr>
                             </table>
                           <p>Untuk melihat profile member anda, silahkan login pada halaman berikut.</p>
-                          
+                          <div style="text-align:center;margin:30px 0 30px 0;">
+                              <a href="'.$base_url.'/signin''" style="text-decoration:none;color:#fff;"><span style="background-color:#FF3D23;border:0;border-radius:5px;padding:10px 40px 10px 40px;color:#fff;font-size:17px;">Aktivasi Akun</span></a>
+                          </div>
+                          <p>Jika tombol tidak berfungsi silahkan copy link berikut <a href="'.$base_url.'/signin''">'.$base_url.'/signin''"</a></p>
                       </div>
                       </div>
                     </div>
@@ -253,8 +256,6 @@ if($insert_customer && $kirimemail1 && $kirimemail2){
                             <input name="regisname" id="regisname" style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Full Name" type="text" class="form-control">
                             <input name="regisemail" id="regisemail" style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Email" type="email" class="form-control">
                             <input name="regisphone" id="regisphone" style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Phone Number" type="number" class="form-control">
-                            <input name="regispassword1" id="regispassword1" style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Password di isi customer" type="password" class="form-control">
-                            <input name="regispassword2" id="regispassword2" style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Password di isi customer" type="password" class="form-control">
                             <input name="regisktp" id="regisktp" style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="KTP" type="file" class="form-control">
                             <select id="regispackage" name="regispackage" style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" class="form-control">
                                 <option disabled="disabled" selected="true">-- Select Package --</option>
@@ -313,6 +314,8 @@ if($insert_customer && $kirimemail1 && $kirimemail2){
                                 <?php } ?>
                             </select>
                             <input name="regisdescription" id="regisdescription" style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" name ="ket" id = "ket" type="text" class="form-control form-group-lg" placeholder="Specific Location (Block/Tower/Floor)">
+                            <input name="regispassword1" id="regispassword1" style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Password di isi customer" type="password" class="form-control">
+                            <input name="regispassword2" id="regispassword2" style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Password di isi customer" type="password" class="form-control">
                             <div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>
                             <input id="register" name="register" type="submit" style="float:left;margin-top:5px;;text-align:center;background-color:#ff1d25;border:0px;color:#fff;height:40px;padding:0 40px 0 40px;border-radius:3px;font-weight:bold;" value="REGISTER"/>
                         </form>
