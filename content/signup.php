@@ -154,7 +154,8 @@
                                                 }
                                                         $insert_addon=$col_addon->insert(array("id_user"=>$newid, "layanan"=>$selectaddon, "harga"=>$harga_addon, "status"=>"unaktif"));
                                                         $addon_service=$selectaddon.', ';
-                                                    } } elseif(empty($_POST['addon'])){
+                                                    } $addon_service=implode(", ", $_POST['addon']);
+                                                   } elseif(empty($_POST['addon'])){
                                                         $addon_service="No";
                                                      }
                                                         $history=array(

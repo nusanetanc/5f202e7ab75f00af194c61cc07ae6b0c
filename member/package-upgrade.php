@@ -35,7 +35,6 @@ foreach($res as $row)
 											Tempat : '.$tempat.' '.$keterangan.' '.$alamat.' '.$kota.'<br/>
 											Paket : '.$upgrade_paket.'<br/>';
 	if(!empty($_POST['addon'])){
-							$arr = array($_POST['addon']);
 								$items=implode(", ", $_POST['addon']);
 							}
 							$message1 = '
