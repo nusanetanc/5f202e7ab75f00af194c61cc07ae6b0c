@@ -12,12 +12,14 @@ if (isset($_POST['register'])){
                               $package=$_POST['regispackage'];
                               $location=$_POST['regislocation'];
                               $decription=$_POST['regisdescription'];
+                              $regispassword1=$_POST['regispassword1'];
+                              $regispassword2=$_POST['regispassword2'];
                               $date = date("Y/m/d");
                               $date_month = date("m");
                               $date_years = date("Y");
                               $date_days = date("d");
                               $bulan1 = bulan($date_month);
-        if ($regisname=="" || $regisemail=="" || $regisphone=="" || $package=="-- Select Package --" || $location=="-- Location --" || $decription==""){
+        if ($regisname=="" || $regisemail=="" || $regisphone=="" || $package=="-- Select Package --" || $location=="-- Location --" || $decription=="" || $regispassword1=="" || $regispassword2=="" || $regispassword2==$regispassword1){
                                                    echo '<p class="text-danger">Registration Failed, Please Try Again!</p>';
                                                     } else {
         $lokasifile = $_FILES['regisktp']['tmp_name'];
@@ -40,14 +42,6 @@ foreach($res as $row)
 {
     $email1=$row['email'];
 }
-                      //generate password and code activation
-                    $text = 'abcdefghijklmnopqrstuvwxyz123457890';
-                    $panjang = 40;
-                    $txtlen = strlen($text)-1;
-                    $result = '';
-                    for($i=1; $i<=$panjang; $i++){
-                                                    $result .= $text[rand(0, $txtlen)];
-                                                    }
           if ($email1==$email){
                         echo '<p class="text-warning">Email already exist!!</p>';
                               } else {
@@ -135,8 +129,8 @@ foreach($res as $row)
                                                               "hal"=> "Registrasi",
                                                               "keterangan"=>"Reistrasi via sales, dengan paket ".$package.", dan add on layanan ".$addon_service
                                                             );
-                                      $insert_customer=$col_user->insert(array("id_user"=>$newid,"nama"=>$regisname,"email"=>$regisemail, "phone"=>$regisphone, "foto"=>"","level"=>"0","password"=>$result, "aktif"=>"0", "ktp"=>$fileName, "registrasi"=>"sales", "id_sales"=>$id, "nama_sales"=>$nama,
-                                                                            "email_sales"=>$email, "tanggal_registrasi"=>$date, "paket"=>$package, "harga"=>$harga, "tanggal_akhir"=>"","tanggal_aktivasi"=>"",
+                                      $insert_customer=$col_user->insert(array("id_user"=>$newid,"nama"=>$regisname,"email"=>$regisemail, "phone"=>$regisphone, "foto"=>"","level"=>"0","password"=>$regispassword1, "aktif"=>"0", "ktp"=>$fileName, "registrasi"=>"sales", "id_sales"=>$id, "nama_sales"=>$nama,
+                                                                            "email_sales"=>$email, "tanggal_registrasi"=>$date, "paket"=>$package, "harga"=>$harga, "tanggal_akhir"=>"","tanggal_aktivasi"=>"", "addon"=>$addon_service,
                                                                              "tempat"=>$location, "kota"=>$city, "keterangan"=>$decription, "alamat"=>$place, "pembayaran"=>"0", "no_virtual"=>"","status"=>"permintaan registrasi", "histori"=>array($history)));
                                           //mail for sales manager
                                           // multiple recipients
@@ -225,11 +219,11 @@ foreach($res as $row)
                                     <td style="border:1px solid #bbb;padding:5px">'.$location.', '.$decription.', '.$place.', '.$city.'</td>
                                 </tr>
                             </table>
-                          <p>Untuk mengaktifkan akun silahkan klik tombol aktivasi ini.</p>
+                          <p>Untuk melihat profile member anda, silahkan login pada halaman berikut.</p>
                           <div style="text-align:center;margin:30px 0 30px 0;">
-                              <a href="'.$base_url.'/?a='.$result.'" style="text-decoration:none;color:#fff;"><span style="background-color:#FF3D23;border:0;border-radius:5px;padding:10px 40px 10px 40px;color:#fff;font-size:17px;">Aktivasi Akun</span></a>
+                              <a href="'.$base_url.'/signin''" style="text-decoration:none;color:#fff;"><span style="background-color:#FF3D23;border:0;border-radius:5px;padding:10px 40px 10px 40px;color:#fff;font-size:17px;">Aktivasi Akun</span></a>
                           </div>
-                          <p>Jika tombol tidak berfungsi silahkan copy link berikut <a href="'.$base_url.'/?a='.$result.'">'.$base_url.'/?a='.$result.'</a></p>
+                          <p>Jika tombol tidak berfungsi silahkan copy link berikut <a href="'.$base_url.'/signin''">'.$base_url.'/signin''"</a></p>
                       </div>
                       </div>
                     </div>
@@ -261,6 +255,8 @@ if($insert_customer && $kirimemail1 && $kirimemail2){
                             <input name="regisname" id="regisname" style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Full Name" type="text" class="form-control">
                             <input name="regisemail" id="regisemail" style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Email" type="email" class="form-control">
                             <input name="regisphone" id="regisphone" style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Phone Number" type="number" class="form-control">
+                            <input name="regispassword1" id="regispassword1" style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Password di isi customer" type="password" class="form-control">
+                            <input name="regispassword2" id="regispassword2" style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="Password di isi customer" type="password" class="form-control">
                             <input name="regisktp" id="regisktp" style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" placeholder="KTP" type="file" class="form-control">
                             <select id="regispackage" name="regispackage" style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:40px" class="form-control">
                                 <option disabled="disabled" selected="true">-- Select Package --</option>
