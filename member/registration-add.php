@@ -19,7 +19,6 @@ if (isset($_POST['register'])){
                               $date_years = date("Y");
                               $date_days = date("d");
                               $bulan1 = bulan($date_month);
-                              echo $regispassword2.'-'.$regispassword2;
         if ($regisname=="" || $regisemail=="" || $regisphone=="" || $package=="-- Select Package --" || $location=="-- Location --" || $decription=="" || $regispassword1=="" || $regispassword2=="" || $regispassword2==$regispassword1){
                                                    echo '<p class="text-danger">Registration Failed, Please Try Again!</p>';
                                                     } else {
