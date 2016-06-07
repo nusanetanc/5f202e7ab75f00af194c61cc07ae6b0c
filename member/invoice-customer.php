@@ -223,14 +223,13 @@ $m_total=		 		'<br/>
 							<li class="list-group-item">
 							  	Upgrade Paket :
 							  	<select class="form-control" id="paket" name="paket">
-							  	<option selected="true"><?php echo $paket; ?></option>
 							  	<?php
 						$res = $col_package->find();
 						foreach($res as $row)
-	                      {  if($row['nama']<>$paket) {
+	                      {
 	                      	?>
 						          <option><?php echo $row['nama']; ?></option>
-						        <?php } } ?>
+						        <?php } ?>
 						        </select>
 							</li>
 								<ul style="text-align:left;" class="list-group">
