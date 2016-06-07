@@ -62,6 +62,10 @@ $payment_kabel = array (
 "total"=>$biaya_cable*$pjkbl
 ); }
 			$update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("no_virtual"=>$kode_perusahaan.$id_cust, "payment_data"=>array($payment_paket, $payment_router, $payment_stb, $payment_kabel, $payment_instal))));
+			foreach($_POST['addon'] as $addon_select)
+			{
+				$update_user1= $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("payment_data"=>array(array("layanan"=>$addon_select, "harga"=>$addon_harga, "prorate"=>$addon_prorate, "total"=>$addon_harga-$addon_prorate)))));
+			}
 // mail for customer to addon
 	$to = $email_cust;
 
