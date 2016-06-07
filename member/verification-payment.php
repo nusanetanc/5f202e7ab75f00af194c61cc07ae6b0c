@@ -589,35 +589,6 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 									  	<td><?php echo rupiah($proraide); ?></td>
 									  	<td><?php echo rupiah($total_bayar); ?></td>
 									  </tbody>
-                    <?php	$res = $col_addon->find(array("id_user"=>"$id_cust"));
-                          foreach($res as $row) { ?>
-                    <tbody>
-									  	<td><?php echo $row['layanan']; ?></td>
-									  	<td><?php echo rupiah($row['harga']); ?></td>
-									  	<td><?php echo rupiah($row['proraide']); ?></td>
-                      <?php $total_bayar0=$row['harga']-$row['proraide'];
-                            $total_harga_addon=$total_harga_addon+$total_bayar0;  ?>
-									  	<td><?php echo rupiah($total_bayar0); ?></td>
-									  </tbody>
-                    <?php } ?>
-                    <tbody>
-                      <td>Sewa Router</td>
-                      <td></td>
-                      <td></td>
-                      <td><?php echo rupiah($biaya_router); ?></td>
-                    </tbody>
-                    <?php $rslt = $col_package->find(array("nama"=>$package_cust));
-                    foreach ($rslt as $row) {
-                      $isi_paket = $row['isi'];
-                    }
-                    if($isi_paket=="internet+tv"){ ?>
-                    <tbody>
-                      <td>Sewa STB</td>
-                      <td></td>
-                      <td></td>
-                      <td><?php echo rupiah($biaya_stb); ?></td>
-                    </tbody>
-                    <?php } ?>
                     <?php if($status_cust=="unaktif" || $status_cust=="registrasi"){ ?>
                     <tbody>
                       <td>Instalasi</td>
