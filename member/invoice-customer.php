@@ -60,10 +60,10 @@ if(isset($_POST['send'])){
 	$m_paket = '<p style="font-size:20px;font-weight:bold;line-height:1px">DATA PEMBAYARAN</p>
 								<table style="width:100%;">
 								  <tr>
-								    <th width="40%" style="border:1px; text-align: left;">Deskripsi</th>
-								    <th width="20%" style="border:1px; text-align: left;">Harga</th>
-								    <th width="20%" style="border:1px; text-align: left;">Proraide</th>
-										<th width="20%" style="border:1px; text-align: left;">Total Harga</th>
+								    <th width="50%" style="border:1px; text-align: left;">Deskripsi</th>
+								    <th width="30%" style="border:1px; text-align: left;">Harga</th>
+								    <th width="10%" style="border:1px; text-align: left;">Proraide</th>
+										<th width="10%" style="border:1px; text-align: left;">Total Harga</th>
 								  </tr>
 								  <tr>
 								    <td style="border:1px;">'.$package_cust.' - 1 Bulan</td>
@@ -195,8 +195,7 @@ $m_total=		 		'<br/>
 	$headers  = 'MIME-Version: 1.0' . "\r\n";
 	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
-	$headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
-	$headers .= 'Cc: cs@groovy.id, billing@groovy.id' . "\r\n";
+	$headers .= 'From: billing@groovy.id' . "\r\n";
 
 	$sent=mail($to, $subject, $message.$m_paket.$m_router.$m_stb.$m_instalasi.$m_kabel.$m_total, $headers);
 
@@ -298,24 +297,6 @@ $m_total=		 		'<br/>
 								        <?php } } ?>
 								        </select>
 									</li>
-										<ul style="text-align:left;" class="list-group"  name="updateaddon1" id="updateaddon1" disabled>
-											<h5>Add On Service</h5>
-												<?php
-														$res = $col_service->find();
-														foreach($res as $row)
-																				{
-																if($row['nama_group']=="Cinema Box HD" || $row['nama_group']=="TV Chanel"){
-																					?>
-											<li class="list-group-item">
-												<h6><?php echo $row['nama_group']; ?></h6>
-													<?php $res1 = $col_service->find(array("group"=>$row['nama_group']));
-													foreach($res1 as $row1)
-																			{ ?>
-														<input type="checkbox" name="addon[]" id="addon[]" value="<?php echo $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
-														<?php } ?>
-												<?php } } ?>
-											</li>
-										</ul>
 										<ul style="text-align:left;" class="list-group"  name="updateaddon2" id="updateaddon2" disabled>
 											<h5>Add On Service</h5>
 												<?php
