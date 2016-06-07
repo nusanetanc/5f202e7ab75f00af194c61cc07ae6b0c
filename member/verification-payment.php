@@ -34,6 +34,7 @@ $date_month = date("y");
 
 												$registrasi_cust = $row['registrasi'];
 												$sales =$row['sales'];
+                        $addon_cust =$row['addon'];
 												$nama_cust = $row['nama'];
 												$email_cust = $row['email'];
 												$phone_cust = $row['phone'];
@@ -233,7 +234,7 @@ $headers1.= "\nMIME-Version: 1.0\n" .
 " boundary=\"{$mime_boundary}\"";
 
 // set email message......................
-$email_message1 = "Terimakasih ".$nama_cust." sudah menggunakan layanan Tv groovy.id.<br>";
+$email_message1 = "Terimakasih ".$nama_cust." sudah menggunakan layanan groovy.id.<br>";
 $email_message1 .= "Bukti pembayaran ini menandakan bahwa pembayaran anda sudah kami konfirmasi dan terima.<br>";// Message that the email has in it
 $email_message1 .= "Untuk pelanggan baru kami akan segera memberi inforamsi untuk jadwal pemasangan.<br>";
 $email_message1 .= "Terimakasih sudah menggunakan layanan Tv groovy.id.<br>";
@@ -529,9 +530,9 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 							  </div>
 							</div>
 							<div class="form-group">
-							  <label class="col-lg-3 control-label">Paket Aktif/Harga : </label>
+							  <label class="col-lg-3 control-label">Paket Aktif/Layanan Tambahan: </label>
 							  <div class="col-lg-9">
-								<h4><?php echo $package_cust.'/'.rupiah($harga_paket); ?></h4>
+								<h4><?php echo $package_cust.'/'.$addon_cust; ?></h4>
 							  </div>
 							</div>
 							<div class="form-group">
