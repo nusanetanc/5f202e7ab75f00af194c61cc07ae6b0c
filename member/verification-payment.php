@@ -586,7 +586,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                     <?php
                     $res = $col_user->findOne(array("id_user"=>$id_cust));
 										foreach ($res['payment_data'] as $payment => $pay) {
-                      if ($payment==null){
+                      if ($pay==null){
                       ?>
 									  <tbody>
 									  	<td><?php echo $pay['layanan']; ?></td>
