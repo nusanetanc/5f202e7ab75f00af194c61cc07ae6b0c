@@ -285,6 +285,55 @@ $m_total=		 		'<br/>
 						<br/>
 						<div class="col-sm-12">
 								<fieldset>
+									<li class="list-group-item">
+									  	Upgrade Paket :
+									  	<select class="form-control" id="upgrade_paket" name="upgrade_paket">
+									  	<option selected="true"><?php echo $package_cust; ?></option>
+									  	<?php
+								$res = $col_package->find();
+								foreach($res as $row)
+			                      {  if($row['nama']<>$package_cust) {
+			                      	?>
+								          <option><?php echo $row['nama']; ?></option>
+								        <?php } } ?>
+								        </select>
+									</li>
+										<ul style="text-align:left;" class="list-group"  name="updateaddon1" id="updateaddon1" disabled>
+											<h5>Add On Service</h5>
+												<?php
+														$res = $col_service->find();
+														foreach($res as $row)
+																				{
+																if($row['nama_group']=="Cinema Box HD" || $row['nama_group']=="TV Chanel"){
+																					?>
+											<li class="list-group-item">
+												<h6><?php echo $row['nama_group']; ?></h6>
+													<?php $res1 = $col_service->find(array("group"=>$row['nama_group']));
+													foreach($res1 as $row1)
+																			{ ?>
+														<input type="checkbox" name="addon[]" id="addon[]" value="<?php echo $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
+														<?php } ?>
+												<?php } } ?>
+											</li>
+										</ul>
+										<ul style="text-align:left;" class="list-group"  name="updateaddon2" id="updateaddon2" disabled>
+											<h5>Add On Service</h5>
+												<?php
+														$res = $col_service->find();
+														foreach($res as $row)
+																				{
+																if($row['nama_group']=="Cinema Box HD" || $row['nama_group']=="TV Chanel" || $row['nama_group']=="Video on Demand"){
+																					?>
+											<li class="list-group-item">
+												<h6><?php echo $row['nama_group']; ?></h6>
+													<?php $res1 = $col_service->find(array("group"=>$row['nama_group']));
+													foreach($res1 as $row1)
+																			{ ?>
+														<input type="checkbox" name="addon[]" id="addon[]" value="<?php echo $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
+														<?php } ?>
+												<?php } } ?>
+											</li>
+										</ul>
 									<div class="checkbox">
 											<label>
 													<?php if($ket_paket=="internet+tv"){ ?>
