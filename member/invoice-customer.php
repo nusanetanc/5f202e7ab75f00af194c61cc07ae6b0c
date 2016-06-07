@@ -113,12 +113,13 @@ $payment_kabel = array (
 								 </tr>';
 								 $total=$harga_paket-$proraid_paket;
 		if(!empty($_POST['addon'])){
-										'<tr>
-											<td style="border:1px;">'.$listaddon.' - 1 Bulan</td>
-											<td style="border:1px;"></td>
-											<td style="border:1px;"></td>
-											<td style="border:1px;"></td>
-										</tr>';
+		$m_addon=
+								'<tr>
+									<td style="border:1px;">'.$listaddon.' - 1 Bulan</td>
+									<td style="border:1px;"></td>
+									<td style="border:1px;"></td>
+									<td style="border:1px;"></td>
+								</tr>';
 		}
 	if($router=="1"){
 		$m_router =	'<tr>
@@ -245,7 +246,7 @@ $m_total=		 		'<br/>
 
 	$headers .= 'From: billing@groovy.id' . "\r\n";
 
-	$sent=mail($to, $subject, $message.$m_paket.$m_router.$m_stb.$m_instalasi.$m_kabel.$m_total, $headers);
+	$sent=mail($to, $subject, $message.$m_paket.$m_addon.$m_router.$m_stb.$m_instalasi.$m_kabel.$m_total, $headers);
 
 	if($sent && $update_user){ ?>
 		<script type="" language="JavaScript">
