@@ -10,8 +10,6 @@ foreach($res as $row)
 						$tgl_registrasi = substr($tanggal_registrasi, 8,10);
 						$month_registrasi = bulan($bln_registrasi);
 
-						$registrasi_cust = $row['registrasi'];
-						$sales =$row['sales'];
 						$nama_cust = $row['nama'];
 						$email_cust = $row['email'];
 						$phone_cust = $row['phone'];
@@ -74,12 +72,12 @@ if(isset($_POST['send'])){
 										<th width="10%" style="border:1px; text-align: left;">Total Harga</th>
 								  </tr>
 								  <tr>
-								    <td style="border:1px;">'.$package_cust1.' - 1 Bulan</td>
-								    <td style="border:1px;">'.rupiah($harga_paket1).'</td>
-								    <td style="border:1px;">'.rupiah($proraide1).'</td>
-										<td style="border:1px;">'.rupiah($harga_paket-$proraide1).'</td>
+								    <td style="border:1px;">'.$package_cust.' - 1 Bulan</td>
+								    <td style="border:1px;">'.rupiah($harga_paket).'</td>
+								    <td style="border:1px;">'.rupiah($proraide_paket).'</td>
+										<td style="border:1px;">'.rupiah($harga_paket-$proraide_paket).'</td>
 								 </tr>';
-								 $total=$harga_paket-$proraide;
+								 $total=$harga_paket-$proraid_paket;
 	if($router=="1"){
 		$m_router =	'<tr>
 								    <td style="border:1px;">Router - 1 Bulan</td>
@@ -215,75 +213,6 @@ $m_total=		 		'<br/>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
 		<div class="list-group">
-			<div class="panel" style="border:0px;" >
-				<div class="panel-body" style="background-color:#1B5E12;">
-					<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">CUSTOMER</h3>
-				</div>
-				<div class="panel-body">
-					<br/>
-					<div class="col-sm-12">
-						<form class="form-horizontal">
-							<fieldset>
-							<div class="form-group">
-								<label class="col-lg-3 control-label">Nama : </label>
-								<div class="col-lg-9">
-								<h4><?php echo $nama_cust; ?></h4>
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-lg-3 control-label">Email : </label>
-								<div class="col-lg-9">
-								<h4><?php echo $email_cust; ?></h4>
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-lg-3 control-label">Custommer ID : </label>
-								<div class="col-lg-9">
-								<h4><?php echo $id_cust ?></h4>
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-lg-3 control-label">Phone Number : </label>
-								<div class="col-lg-9">
-								<h4><?php echo $phone_cust; ?></h4>
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-lg-3 control-label">Lokasi : </label>
-								<div class="col-lg-9">
-								<h4><?php echo $tempat_cust.', '.$kota_cust; ?></h4>
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-lg-3 control-label">Tanggal Registrasi : </label>
-								<div class="col-lg-9">
-								<h4><?php echo $tgl_registrasi.' '.$month_registrasi.' '.$thn_registrasi; ?></h4>
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-lg-3 control-label">Paket/Harga/Prorate : </label>
-								<div class="col-lg-9">
-								<h4><?php echo $package_cust.'/'.rupiah($harga_paket); ?></h4>
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-lg-3 control-label">Tambahan Layanan/Harga/Prorate : </label>
-								<?php
-								$res = $col_addon->find(array("id_user"=>$id_cust));
-								foreach($res as $row)
-													{ ?>
-								<div class="col-lg-9">
-								<h4><?php echo $row['layanan'].'/'.rupiah($row['harga']); ?></h4>
-								</div>
-								<div class="col-lg-3">
-								</div>
-								<?php } ?>
-							</div>
-						</div>
-							</fieldset>
-						</form>
-					</div>
-				</div>
 				<div class="panel" style="border:0px;" >
 					<div class="panel-body" style="background-color:#1B5E12;">
 						<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">KIRIM INVOICE</h3>
@@ -291,6 +220,37 @@ $m_total=		 		'<br/>
 					<div class="panel-body">
 						<br/>
 						<div class="col-sm-12">
+							<li class="list-group-item">
+							  	Upgrade Paket :
+							  	<select class="form-control" id="paket" name="paket">
+							  	<option selected="true"><?php echo $paket; ?></option>
+							  	<?php
+						$res = $col_package->find();
+						foreach($res as $row)
+	                      {  if($row['nama']<>$paket) {
+	                      	?>
+						          <option><?php echo $row['nama']; ?></option>
+						        <?php } } ?>
+						        </select>
+							</li>
+								<ul style="text-align:left;" class="list-group">
+									<h5>Add On Service</h5>
+										<?php
+												$res = $col_service->find();
+												foreach($res as $row)
+																		{
+														if($row['nama_group']=="Cinema Box HD" || $row['nama_group']=="TV Chanel" || $row['nama_group']=="Video on Demand"){
+																			?>
+									<li class="list-group-item">
+										<h6><?php echo $row['nama_group']; ?></h6>
+											<?php $res1 = $col_service->find(array("group"=>$row['nama_group']));
+											foreach($res1 as $row1)
+																	{ ?>
+												<input type="checkbox" name="addon[]" id="addon[]" value="<?php echo $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
+												<?php } ?>
+										<?php } } ?>
+									</li>
+								</ul>
 								<fieldset>
 									<div class="checkbox">
 											<label>
