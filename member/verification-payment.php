@@ -590,7 +590,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 									  	<td><?php echo $pay['layanan']; ?></td>
 									  	<td><?php echo rupiah($pay['harga']); ?></td>
 									  	<td><?php echo rupiah($pay['prorate']); ?></td>
-									  	<td><?php echo rupiah($pay['harga']-$pay['prorate']); ?></td>
+									  	<td><?php echo rupiah($pay['total']); ?></td>
 									  </tbody>
                     <?php } ?>
 								</table>
