@@ -606,6 +606,25 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                       <td></td>
                       <td><?php echo rupiah($biaya_router); ?></td>
                     </tbody>
+                    <?php $rslt = $col_package->find(array("nama"=>$package_cust));
+                    foreach ($rslt as $row) {
+                      $isi_paket = $row['isi'];
+                    }
+                    if($isi_paket=="internet+tv"){ ?>
+                    <tbody>
+                      <td>Sewa STB</td>
+                      <td></td>
+                      <td></td>
+                      <td><?php echo rupiah($biaya_stb); ?></td>
+                    </tbody>
+                    <?php } ?>
+                    <?php if($status_cust=="unaktif" || $status_cust=="registrasi"){ ?>
+                    <tbody>
+                      <td>Instalasi</td>
+                      <td></td>
+                      <td></td>
+                      <td><?php echo rupiah($biaya_instalasi); ?></td>
+                    </tbody>
                     <tbody>
                       <td><strong>Total Tagihan</strong></td>
                       <td></td>
