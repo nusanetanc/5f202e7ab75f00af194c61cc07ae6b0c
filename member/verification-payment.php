@@ -644,7 +644,6 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                         <td></td>
                         <td><strong><?php echo rupiah($harga_total+$ppn); ?></strong></td>
                       </strong></tbody>
-                    <?php } ?>
 								</table>
 		  				    </div>
 		  				 </div>
