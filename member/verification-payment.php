@@ -583,48 +583,17 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 									      <th width="20%">Total Bayar</th>
 									    </tr>
 									  </thead>
+                    <?php
+                    $res = $col_user->findOne(array("id_user"=>$id_cust));
+										foreach ($res['payment_data'] as $pay_data => $pd) {
+                      ?>
 									  <tbody>
-									  	<td><?php echo $paket_bayar; ?></td>
-									  	<td><?php echo rupiah($harga_bayar); ?></td>
-									  	<td><?php echo rupiah($proraide); ?></td>
-									  	<td><?php echo rupiah($total_bayar); ?></td>
-									  </tbody>
-                    <?php	$res = $col_addon->find(array("id_user"=>"$id_cust"));
-                          foreach($res as $row) { ?>
-                    <tbody>
-									  	<td><?php echo $row['layanan']; ?></td>
-									  	<td><?php echo rupiah($row['harga']); ?></td>
-									  	<td><?php echo rupiah($row['proraide']); ?></td>
-                      <?php $total_bayar0=$row['harga']-$row['proraide'];
-                            $total_harga_addon=$total_harga_addon+$total_bayar0;  ?>
-									  	<td><?php echo rupiah($total_bayar0); ?></td>
+									  	<td><?php echo $pd['layanan']; ?></td>
+									  	<td><?php echo rupiah($pd['harga']); ?></td>
+									  	<td><?php echo rupiah($pd['prorate']); ?></td>
+									  	<td><?php echo rupiah($pd['total']); ?></td>
 									  </tbody>
                     <?php } ?>
-                    <tbody>
-                      <td>Sewa Router</td>
-                      <td></td>
-                      <td></td>
-                      <td><?php echo rupiah($biaya_router); ?></td>
-                    </tbody>
-                    <?php $rslt = $col_package->find(array("nama"=>$package_cust));
-                    foreach ($rslt as $row) {
-                      $isi_paket = $row['isi'];
-                    }
-                    if($isi_paket=="internet+tv"){ ?>
-                    <tbody>
-                      <td>Sewa STB</td>
-                      <td></td>
-                      <td></td>
-                      <td><?php echo rupiah($biaya_stb); ?></td>
-                    </tbody>
-                    <?php } ?>
-                    <?php if($status_cust=="unaktif" || $status_cust=="registrasi"){ ?>
-                    <tbody>
-                      <td>Instalasi</td>
-                      <td></td>
-                      <td></td>
-                      <td><?php echo rupiah($biaya_instalasi); ?></td>
-                    </tbody>
                     <tbody>
                       <td><strong>Total Tagihan</strong></td>
                       <td></td>
