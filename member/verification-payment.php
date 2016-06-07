@@ -585,14 +585,16 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 									  </thead>
                     <?php
                     $res = $col_user->findOne(array("id_user"=>$id_cust));
-										foreach ($res['payment_data'] as $payment => $pay) { ?>
+										foreach ($res['payment_data'] as $payment => $pay) {
+                      if ($pay=="null"){
+                      ?>
 									  <tbody>
 									  	<td><?php echo $pay['layanan']; ?></td>
 									  	<td><?php echo rupiah($pay['harga']); ?></td>
 									  	<td><?php echo rupiah($pay['prorate']); ?></td>
 									  	<td><?php echo rupiah($pay['total']); ?></td>
 									  </tbody>
-                    <?php } ?>
+                    <?php } } ?>
 								</table>
 		  				    </div>
 		  				 </div>
