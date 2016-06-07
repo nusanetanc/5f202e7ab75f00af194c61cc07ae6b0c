@@ -583,69 +583,15 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 									      <th width="20%">Total Bayar</th>
 									    </tr>
 									  </thead>
+                    <?php
+                    $res = $col_user->findOne(array("id_user"=>$id_cust));
+										foreach ($res['payment_data'] as $payment => $pay) { ?>
 									  <tbody>
-									  	<td><?php echo $paket_bayar; ?></td>
-									  	<td><?php echo rupiah($harga_bayar); ?></td>
-									  	<td><?php echo rupiah($proraide); ?></td>
-									  	<td><?php echo rupiah($total_bayar); ?></td>
+									  	<td><?php echo $pay['layanan']; ?></td>
+									  	<td><?php echo rupiah($pay['harga']); ?></td>
+									  	<td><?php echo rupiah($pay['prorate']); ?></td>
+									  	<td><?php echo rupiah($pay['harga']-$pay['prorate']); ?></td>
 									  </tbody>
-                    <?php if($status_cust=="unaktif" || $status_cust=="registrasi"){ ?>
-                    <tbody>
-                      <td>Instalasi</td>
-                      <td></td>
-                      <td></td>
-                      <td><?php echo rupiah($biaya_instalasi); ?></td>
-                    </tbody>
-                    <tbody>
-                      <td><strong>Total Tagihan</strong></td>
-                      <td></td>
-                      <td></td> <?php if($isi_paket=="internet+tv"){
-                          $harga_total = $biaya_instalasi+$biaya_router+$biaya_stb+$total_bayar+$total_harga_addon;
-                        } elseif($isi_paket=="internet"){
-                          $harga_total = $biaya_instalasi+$biaya_router+$total_bayar+$total_harga_addon;
-                        }
-                        $ppn=$harga_total*0.1;
-                        ?>
-                      <td><strong><?php echo rupiah($harga_total); ?></strong></td>
-                    </tbody>
-                    <tbody>
-                      <td>PPN 10%</td>
-                      <td></td>
-                      <td></td>
-                      <td><?php echo rupiah($ppn); ?></td>
-                    </tbody>
-                    <tbody>
-                      <td><strong>Total Pembayaran</strong></td>
-                      <td></td>
-                      <td></td>
-                      <td><strong><?php echo rupiah($harga_total+$ppn); ?></strong></td>
-                    </strong></tbody>
-                    <?php } elseif($status_cust=="aktif"){ ?>
-                      <tbody>
-                        <td><strong>Total Tagihan</strong></td>
-                        <td></td>
-                        <td></td>
-                        <?php if($isi_paket=="internet+tv"){
-                            $harga_total = $biaya_router+$biaya_stb+$total_bayar+$total_harga_addon;
-                          } elseif($isi_paket=="internet"){
-                            $harga_total = $biaya_router+$total_bayar+$total_harga_addon;
-                          }
-                          $ppn=$harga_total*0.1;
-                          ?>
-                        <td><strong><?php echo rupiah($harga_total); ?></strong></td>
-                      </tbody>
-                      <tbody>
-                        <td>PPN 10%</td>
-                        <td></td>
-                        <td></td>
-                        <td><?php echo rupiah($ppn); ?></td>
-                      </tbody>
-                      <tbody>
-                        <td><strong>Total Pembayaran</strong></td>
-                        <td></td>
-                        <td></td>
-                        <td><strong><?php echo rupiah($harga_total+$ppn); ?></strong></td>
-                      </strong></tbody>
                     <?php } ?>
 								</table>
 		  				    </div>
