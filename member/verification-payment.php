@@ -582,7 +582,30 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 									      <th width="20%">Prorate</th>
 									      <th width="20%">Total Bayar</th>
 									    </tr>
-
+									  </thead>
+									  <tbody>
+									  	<td><?php echo $paket_bayar; ?></td>
+									  	<td><?php echo rupiah($harga_bayar); ?></td>
+									  	<td><?php echo rupiah($proraide); ?></td>
+									  	<td><?php echo rupiah($total_bayar); ?></td>
+									  </tbody>
+                    <?php	$res = $col_addon->find(array("id_user"=>"$id_cust"));
+                          foreach($res as $row) { ?>
+                    <tbody>
+									  	<td><?php echo $row['layanan']; ?></td>
+									  	<td><?php echo rupiah($row['harga']); ?></td>
+									  	<td><?php echo rupiah($row['proraide']); ?></td>
+                      <?php $total_bayar0=$row['harga']-$row['proraide'];
+                            $total_harga_addon=$total_harga_addon+$total_bayar0;  ?>
+									  	<td><?php echo rupiah($total_bayar0); ?></td>
+									  </tbody>
+                    <?php } ?>
+                    <tbody>
+                      <td>Sewa Router</td>
+                      <td></td>
+                      <td></td>
+                      <td><?php echo rupiah($biaya_router); ?></td>
+                    </tbody>
                     <tbody>
                       <td><strong>Total Tagihan</strong></td>
                       <td></td>
@@ -633,6 +656,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                         <td></td>
                         <td><strong><?php echo rupiah($harga_total+$ppn); ?></strong></td>
                       </strong></tbody>
+                    <?php } ?>
 								</table>
 		  				    </div>
 		  				 </div>
