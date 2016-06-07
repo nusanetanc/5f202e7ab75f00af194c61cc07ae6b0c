@@ -40,21 +40,25 @@ if(isset($_POST['send'])){
 if($router=="1"){
 $payment_router = array (
 "layanan"=>"Sewa Router",
+"harga"=>$biaya_router,
 "total"=>$biaya_router
 ); }
 if($stb=="1"){
 $payment_stb = array (
 "layanan"=>"Sewa STB",
+"harga"=>$biaya_stb,
 "total"=>$biaya_stb
 ); }
 if($instal=="1"){
 $payment_instal = array (
 "layanan"=>"Instalasi",
+"harga"=>$biaya_instalasi,
 "total"=>$biaya_instalasi
 ); }
 if($kabel=="1"){
 $payment_kabel = array (
 "layanan"=>"Kabel / ".$pjkbl." Meter",
+"harga"=>$biaya_cable
 "total"=>$biaya_cable*$pjkbl
 ); }
 			$update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("no_virtual"=>$kode_perusahaan.$id_cust, "payment_data"=>array($payment_paket, $payment_router, $payment_stb, $payment_kabel, $payment_instal))));
