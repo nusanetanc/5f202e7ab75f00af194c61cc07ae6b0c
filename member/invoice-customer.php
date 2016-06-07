@@ -58,7 +58,7 @@ $payment_instal = array (
 if($kabel=="1"){
 $payment_kabel = array (
 "layanan"=>"Kabel / ".$pjkbl." Meter",
-"harga"=>$biaya_cable
+"harga"=>$biaya_cable,
 "total"=>$biaya_cable*$pjkbl
 ); }
 			$update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("no_virtual"=>$kode_perusahaan.$id_cust, "payment_data"=>array($payment_paket, $payment_router, $payment_stb, $payment_kabel, $payment_instal))));
