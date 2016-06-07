@@ -33,6 +33,14 @@ if(isset($_POST['send'])){
 	$instal=$_POST['instal'];
 	$pjkbl=$_POST['pjkbl'];
 	$kabel=$_POST['kabel'];
+	$package_cust1=$_POST['paket'];
+	$proraide1=$_POST['proraide'];
+	$res = $col_package->find(array("nama"=>$package_cust1));
+	foreach($res as $row)
+					{
+						$ket_paket1 = $row['isi'];
+						$harga_paket1 = $row['harga'];
+					}
 			$update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("no_virtual"=>$kode_perusahaan.$id_cust, "router"=>$router, "stb"=>$stb, "kabel"=>$kabel, "panjang_kabel"=>$pjkbl, "instalasi"=>$instal)));
 // mail for customer to addon
 	$to = $email_cust;
@@ -66,10 +74,10 @@ if(isset($_POST['send'])){
 										<th width="10%" style="border:1px; text-align: left;">Total Harga</th>
 								  </tr>
 								  <tr>
-								    <td style="border:1px;">'.$package_cust.' - 1 Bulan</td>
-								    <td style="border:1px;">'.rupiah($harga_paket).'</td>
-								    <td style="border:1px;">'.rupiah($proraide).'</td>
-										<td style="border:1px;">'.rupiah($harga_paket-$proraide).'</td>
+								    <td style="border:1px;">'.$package_cust1.' - 1 Bulan</td>
+								    <td style="border:1px;">'.rupiah($harga_paket1).'</td>
+								    <td style="border:1px;">'.rupiah($proraide1).'</td>
+										<td style="border:1px;">'.rupiah($harga_paket-$proraide1).'</td>
 								 </tr>';
 								 $total=$harga_paket-$proraide;
 	if($router=="1"){
@@ -117,20 +125,20 @@ $total_bayar=$total+$ppn;
 $m_total=		 		'<br/>
 									<tr>
 										<td style="border:1px;"></td>
-										<td style="border:1px;"></td>
 										<td style="border:1px;"><b>Total Harga</b></td>
+										<td style="border:1px;"></td>
 										<td style="border:1px;">'.rupiah($total).'</td>
 									</tr>
 									<tr>
 										<td style="border:1px;"></td>
-										<td style="border:1px;"></td>
 										<td style="border:1px;"><b>PPN 10%</b></td>
+										<td style="border:1px;"></td>
 										<td style="border:1px;">'.rupiah($ppn).'</td>
 									</tr>
 									<tr>
 									<td style="border:1px;"></td>
-									<td style="border:1px;"></td>
 									<td style="border:1px;"><b>Total Tagihan</b></td>
+									<td style="border:1px;"></td>
 									<td style="border:1px;">'.rupiah($total_bayar).'</td>
 									</tr>
 								</table>
@@ -253,13 +261,13 @@ $m_total=		 		'<br/>
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="col-lg-3 control-label">Paket/Harga : </label>
+								<label class="col-lg-3 control-label">Paket/Harga/Prorate : </label>
 								<div class="col-lg-9">
 								<h4><?php echo $package_cust.'/'.rupiah($harga_paket); ?></h4>
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="col-lg-3 control-label">Tambahan Layanan/Harga : </label>
+								<label class="col-lg-3 control-label">Tambahan Layanan/Harga/Prorate : </label>
 								<?php
 								$res = $col_addon->find(array("id_user"=>$id_cust));
 								foreach($res as $row)
@@ -284,37 +292,6 @@ $m_total=		 		'<br/>
 						<br/>
 						<div class="col-sm-12">
 								<fieldset>
-									<li class="list-group-item">
-									  	Upgrade Paket :
-									  	<select class="form-control" id="upgrade_paket" name="upgrade_paket">
-									  	<option selected="true"><?php echo $package_cust; ?></option>
-									  	<?php
-								$res = $col_package->find();
-								foreach($res as $row)
-			                      {  if($row['nama']<>$package_cust) {
-			                      	?>
-								          <option><?php echo $row['nama']; ?></option>
-								        <?php } } ?>
-								        </select>
-									</li>
-										<ul style="text-align:left;" class="list-group"  name="updateaddon2" id="updateaddon2" disabled>
-											<h5>Add On Service</h5>
-												<?php
-														$res = $col_service->find();
-														foreach($res as $row)
-																				{
-																if($row['nama_group']=="Cinema Box HD" || $row['nama_group']=="TV Chanel" || $row['nama_group']=="Video on Demand"){
-																					?>
-											<li class="list-group-item">
-												<h6><?php echo $row['nama_group']; ?></h6>
-													<?php $res1 = $col_service->find(array("group"=>$row['nama_group']));
-													foreach($res1 as $row1)
-																			{ ?>
-														<input type="checkbox" name="addon[]" id="addon[]" value="<?php echo $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
-														<?php } ?>
-												<?php } } ?>
-											</li>
-										</ul>
 									<div class="checkbox">
 											<label>
 													<?php if($ket_paket=="internet+tv"){ ?>
