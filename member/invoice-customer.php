@@ -67,7 +67,7 @@ $payment_kabel = array (
 				$res = $col_service->find(array("nama"=>$addon_select));
 				foreach($res as $row)
 									{
-										$addon_harga=$row['harga']
+										$addon_harga=$row['harga'];
 									}
 				$update_user1= $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("payment_data"=>array("layanan"=>$addon_select, "harga"=>$addon_harga, "prorate"=>$addon_prorate, "total"=>$addon_harga-$addon_prorate))));
 			}
