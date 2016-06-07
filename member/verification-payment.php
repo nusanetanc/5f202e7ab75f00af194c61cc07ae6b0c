@@ -582,18 +582,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 									      <th width="20%">Prorate</th>
 									      <th width="20%">Total Bayar</th>
 									    </tr>
-									  </thead>
-                    <?php
-                    $res = $col_user->findOne(array("id_user"=>$id_cust));
-										foreach ($res['payment_data'] as $pay_data => $pd) {
-                      ?>
-									  <tbody>
-									  	<td><?php echo $pd['layanan']; ?></td>
-									  	<td><?php echo rupiah($pd['harga']); ?></td>
-									  	<td><?php echo rupiah($pd['prorate']); ?></td>
-									  	<td><?php echo rupiah($pd['total']); ?></td>
-									  </tbody>
-                    <?php } ?>
+
                     <tbody>
                       <td><strong>Total Tagihan</strong></td>
                       <td></td>
