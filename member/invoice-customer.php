@@ -13,31 +13,24 @@ foreach($res as $row)
 						$nama_cust = $row['nama'];
 						$email_cust = $row['email'];
 						$phone_cust = $row['phone'];
-						$package_cust = $row['paket'];
 						$tempat_cust = $row['tempat'];
 						$kota_cust = $row['kota'];
 						$alamat_cust = $row['alamat'];
 						$ket_tempat=$row['keterangan'];
 															}
-$res = $col_package->find(array("nama"=>$package_cust));
-foreach($res as $row)
-				{
-					$ket_paket = $row['isi'];
-					$harga_paket = $row['harga'];
-				}
 if(isset($_POST['send'])){
 	$stb=$_POST['stb'];
 	$router=$_POST['router'];
 	$instal=$_POST['instal'];
 	$pjkbl=$_POST['pjkbl'];
 	$kabel=$_POST['kabel'];
-	$package_cust1=$_POST['paket'];
-	$proraide1=$_POST['proraide'];
-	$res = $col_package->find(array("nama"=>$package_cust1));
+	$package_cust=$_POST['paket'];
+	$proraide_paket=$_POST['proraide'];
+	$res = $col_package->find(array("nama"=>$package_cust));
 	foreach($res as $row)
 					{
-						$ket_paket1 = $row['isi'];
-						$harga_paket1 = $row['harga'];
+						$ket_paket = $row['isi'];
+						$harga_paket = $row['harga'];
 					}
 			$update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("no_virtual"=>$kode_perusahaan.$id_cust, "router"=>$router, "stb"=>$stb, "kabel"=>$kabel, "panjang_kabel"=>$pjkbl, "instalasi"=>$instal)));
 // mail for customer to addon
@@ -221,7 +214,7 @@ $m_total=		 		'<br/>
 						<br/>
 						<div class="col-sm-12">
 							<li class="list-group-item">
-							  	Upgrade Paket :
+							  	Paket :
 							  	<select class="form-control" id="paket" name="paket">
 							  	<?php
 						$res = $col_package->find();
@@ -231,9 +224,10 @@ $m_total=		 		'<br/>
 						          <option><?php echo $row['nama']; ?></option>
 						        <?php } ?>
 						        </select>
+										<input type="number" class="form-control" id="proraide_paket" name="proraide_paket" placeholder="Prorate Paket"><br/>
 							</li>
 								<ul style="text-align:left;" class="list-group">
-									<h5>Add On Service</h5>
+									Add On Service
 										<?php
 												$res = $col_service->find();
 												foreach($res as $row)
