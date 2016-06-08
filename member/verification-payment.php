@@ -603,10 +603,10 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                     <td><b>Total Harga</b></td>
                     <td></td>
                     <td></td>
-                    <td><?php echo rupiah($total); ?></td>
+                    <td><b><?php echo rupiah($total); ?></b></td>
                   </tbody>
                   <tbody>
-                    <td><b>PPN 10%</b></td>
+                    <td>PPN 10%</td>
                     <td></td>
                     <td></td>
                     <td><?php echo rupiah($total*0.1); ?></td>
@@ -615,7 +615,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                     <td><b>Total Pembayaran</b></td>
                     <td></td>
                     <td></td>
-                    <td><?php echo rupiah($total*0.1+$total); ?></td>
+                    <td><b><?php echo rupiah($total*0.1+$total); ?></b></td>
                   </tbody>
 								</table>
 		  				    </div>
