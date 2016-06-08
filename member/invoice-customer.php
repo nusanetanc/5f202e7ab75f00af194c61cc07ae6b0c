@@ -125,6 +125,8 @@ $payment_kabel = array (
 									<td style="border:1px;">'.rupiah($addon_prorate).'</td>
 									<td style="border:1px;">'.rupiah($addon_harga-$addon_prorate).'</td>
 								</tr>';
+								$total_addon=$addon_harga-$addon_prorate;
+								$total=$total+$total_addon;
 		} }
 	if($router=="1"){
 		$m_router =	'<tr>
