@@ -605,6 +605,18 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                     <td></td>
                     <td><?php echo rupiah($total); ?></td>
                   </tbody>
+                  <tbody>
+                    <td><b>PPN 10%</b></td>
+                    <td></td>
+                    <td></td>
+                    <td><?php echo rupiah($total*0.1); ?></td>
+                  </tbody>
+                  <tbody>
+                    <td><b>Total Pembayaran</b></td>
+                    <td></td>
+                    <td></td>
+                    <td><?php echo rupiah($total*0.1+$total); ?></td>
+                  </tbody>
 								</table>
 		  				    </div>
 		  				 </div>
