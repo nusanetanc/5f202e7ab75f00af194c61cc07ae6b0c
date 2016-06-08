@@ -424,10 +424,6 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 								<input type="text" class="form-control" id="inputPaymentdate" name="inputPaymentdate" placeholder="Payment Date" required>
 								<br/>
 								<input type="submit" class="btn" style="background-color:#1B5E12; color:#FFFFFF" name="verifikasi" id="verifikasi" value="Vertifikasi">
-                <br/><br/>
-                <input type="text" class="form-control" id="inputRequestdate" name="inputRequestdate" placeholder="Date Request Change Service" required>
-                <br/>
-                <input type="submit" class="btn" style="background-color:#1B5E12; color:#FFFFFF" name="request" id="request" value="Request">
 							  </div>
 							</div>
 						  </fieldset>
@@ -567,6 +563,28 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 					  	</div>
 					</div>
 				</div>
+        <div class="col-sm-12">
+    		<div class="list-group">
+    			<div class="panel" style="border:0px;">
+      				<div class="panel-heading" style="background-color:#1B5E12">
+        				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">CHANGE LAYANAN</h3>
+      				</div>
+    	  					<br/>
+    	  				    <div class="panel-body">
+    	  				    <form method="post">
+    	  				    <div class="row">
+    	  				    	<div class="col-sm-12">
+                        <br/>
+                        <input type="text" class="form-control" id="inputRequestdate" name="inputRequestdate" placeholder="Date Request Change Service" required>
+                        <br/>
+                        <input type="submit" class="btn" style="background-color:#1B5E12; color:#FFFFFF" name="request" id="request" value="Request">
+    		  				    </div>
+    		  				 </div>
+    		  				 </form>
+    		  				 </div>
+    					  	</div>
+    					</div>
+    				</div>
 		<div class="col-sm-12">
 		<div class="list-group">
 			<div class="panel" style="border:0px;">
