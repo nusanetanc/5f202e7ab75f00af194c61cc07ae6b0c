@@ -71,8 +71,6 @@ $payment_kabel = array (
 										$addon_harga=$row['harga'];
 									}
 				$update_user1= $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("payment_data"=>array("layanan"=>$addon_select, "harga"=>$addon_harga, "prorate"=>$addon_prorate, "total"=>$addon_harga-$addon_prorate))));
-				$listaddon=implode(", ", $addon_select);
-				$listharga=implode(", ", $addon_harga);
 			} }
 // mail for customer to addon
 	$to = $email_cust;
@@ -113,14 +111,21 @@ $payment_kabel = array (
 								 </tr>';
 								 $total=$harga_paket-$proraid_paket;
 		if(!empty($_POST['addon'])){
-		$m_addon=
+			foreach($_POST['addon'] as $addon_select)
+			{
+				$res = $col_service->find(array("nama"=>$addon_select));
+				foreach($res as $row)
+									{
+										$addon_harga=$row['harga'];
+									}
+		$m_addon .=
 								'<tr>
-									<td style="border:1px;">'.$listaddon.' - 1 Bulan</td>
-									<td style="border:1px;"></td>
-									<td style="border:1px;"></td>
-									<td style="border:1px;"></td>
+									<td style="border:1px;">'.$addon_select.' - 1 Bulan</td>
+									<td style="border:1px;">'.rupiah($addon_harga).'</td>
+									<td style="border:1px;">'.rupiah($addon_prorate).'</td>
+									<td style="border:1px;">'.rupiah($addon_harga-$addon_prorate).'</td>
 								</tr>';
-		}
+		} }
 	if($router=="1"){
 		$m_router =	'<tr>
 								    <td style="border:1px;">Router - 1 Bulan</td>
