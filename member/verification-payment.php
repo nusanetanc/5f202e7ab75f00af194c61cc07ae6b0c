@@ -9,6 +9,9 @@
         $("#inputTerminationdate").datepicker({
       	format:'yyyy/mm/dd'
         });
+        $("#inputRequestdate").datepicker({
+      	format:'yyyy/mm/dd'
+        });
             });
     </script>
 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
@@ -64,18 +67,6 @@ $date_month = date("y");
 		}
 	}
 
-	if($move_paket_cust<>""){
-		$paket_bayar = $move_paket_cust;
-		$harga_bayar = $move_harga_cust;
-		$pindah_paket = "PINDAH PAKET";
-	}else if($move_paket_cust==""){
-		$paket_bayar = $package_cust;
-		$harga_bayar = $harga_paket;
-		$pindah_paket = "PAKET AKTIF";
-	}
-	$total_bayar =$harga_paket - $proraide;
-	            $res_pack = $col_package->find(array("nama"=>$package_cust));
-	            foreach($res_pack as $row_pack) { $harga_hari = $row_pack['harga_hari']; }
 $res = $col_package->find(array("nama"=>$package_cust));
 	foreach($res as $row)
 	{
@@ -93,17 +84,8 @@ if(isset($_POST['verifikasi'])){
 		$tgl_bayar = substr($tanggal_bayar, 8,10);
 		$month_bayar = bulan($bln_bayar);
 		$last_pembayaran = $pembayaran + 1;
-if ($total_revenue=="" || empty($total_revenue)){
-	$update_revenue = $col_revenue->insert(array("date"=>$date, "total"=>$total_bayar));
-} else {
-	$revenue=$total_revenue+$total_bayar;
-	$update_revenue = $col_revenue->update(array("date"=>$date), array('$set'=>array("total"=>$revenue)));
-}
-if ($status_cust=="aktif"){
-  $biaya_instalasi=0;
-}
 //mail to bukti pembayaran
-/*
+
 require('../content/srcpdf/fpdf.php');
 $pdf = new FPDF();
 $pdf->AddPage();
@@ -199,18 +181,9 @@ $email_message1 .= "--{$mime_boundary}\n" .
 $data .= "\n\n" .
 "--{$mime_boundary}--\n";
 
-$emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1); */
-$pay = array("deskripsi"=>$package_cust, "harga"=>$harga_bayar, "prorate"=>$prorate, "total_harga"=>$harga_bayar-$prorate);
-$pay1 = array("deskripsi"=>"Sewa STB", "harga"=>$biaya_stb, "prorate"=>$proraide_stb, "total_harga"=>$biaya_stb-$proraide_stb);
-$pay2 = array("deskripsi"=>"Sewa Router", "harga"=>$biaya_router, "prorate"=>$proraide_router, "total_harga"=>$biaya_router-$proraide_router);
-$pay3 = array("deskripsi"=>"Biaya Instalasi", "harga"=>$biaya_instalasi);
-if($status_cust=="registrasi"){
-$insert_bayar = $col_payment->insert(array("id_user"=>$id_cust, "tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date,"pembayaran"=>(array($pay,$pay1,$pay2,$pay3)), "total_tagihan"=>$total_bayar, "ppn"=>$ppn, "no"=>$last_pembayaran, "total_pembayaran"=>$total_pembayaran));
-}
+$emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1);
+
 	if ($status_cust=="registrasi"){
-		$sisa_hari = 30-$date_month;
-		$last_proraide = $sisa_hari*$harga_hari;
-		$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$push'=>array("pembayaran"=>$last_pembayaran, "proraide"=>$last_proraide)));
 				// mail for supevisior teknik
 				$subject = 'Atur Jadwal Pemasangan';
 				$message = '
@@ -238,59 +211,8 @@ $insert_bayar = $col_payment->insert(array("id_user"=>$id_cust, "tanggal_bayar"=
 				$emailpasang=mail($row['email'], $subject, $message, $headers);
 			}
 	} else {
-		$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("tanggal_akhir"=>$next_years.'/'.$next_month.'/01', "pembayaran"=>$last_pembayaran, "proraide"=>"0")));
+		$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("tanggal_akhir"=>$next_years.'/'.$next_month.'/01', "pembayaran"=>$last_pembayaran)));
 	}
-		if($move_paket_cust<>""){
-			// mail for supevisior teknik
-				$subject = 'Pindah Paket';
-				$message = '
-				<html>
-				<body>
-				  <p>Customer pindah paket : </p>
-				  <br/>
-				  <p>ID Customer : '.$id_cust.'</p>
-				  <p>Nama : '.$nama_cust.'</p>
-				  <p>Tempat : '.$tempat_cust.', '.$ket_cust.', '.$kota_cust.'</p>
-				  <p>Paket Aktif : '.$package_cust.'('.$deskripsi_paket0.')</p>
-				  <p>Pindah Paket : '.$move_paket_cust.'('.$deskripsi_paket1.')</p>
-				  <p>Tanggal Pindah Paket : '.$tgl_akhir.' '.$month_akhir.' '.$thn_akhir.'</p>
-				  <br/>
-				</body>
-				</html>
-				';
-				$headers  = 'MIME-Version: 1.0' . "\r\n";
-				$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-				$headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
-				$headers .= 'Cc: cs@groovy.id' . "\r\n";
-			$res = $col_user->find(array("level"=>"3"));
-						foreach($res as $row)
-											{
-				$emailpindah=mail($row['email'], $subject, $message, $headers);
-			}
-					// mail for customer
-				$subject1 = 'Pemberitahuan Pindah Paket';
-				$message1 = '
-				<html>
-					<body style="background-color:#ddd;padding:50px 0 50px 0;font-family:arial;font-size:15px;">
-					    <div style="margin:0 auto;max-width:500px;background-color:#eee;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
-					        <div style="background: linear-gradient(to right, #FF3D23 , #fc742f);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
-					            <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
-					        </div>
-					        <div style="padding:20px;color:#333;">
-					            <p style="font-size:20px;font-weight:bold;line-height:1px">Pemberitahuan Pindah Paket</p>
-					            <p>Kami akan mengganti paket anda dari paket : '.$package_cust.' ('.$deskripsi_paket0.'), ke paket : '.$move_paket_cust.' ('.$deskripsi_paket1.'),pada tanggal : '.$tgl_akhir.' '.$month_akhir.' '.$thn_akhir.'.</p>
-					        </div>
-					        </div>
-					    </div>
-					</body>
-					</html>
-				';
-				$headers1  = 'MIME-Version: 1.0' . "\r\n";
-				$headers1 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-				$headers1 .= 'From: cs@groovy.id' . "\r\n";
-				$headers1 .= 'Cc: cs@groovy.id' . "\r\n";
-				$emailcust_pindah=mail($email_cust, $subject1, $message1, $headers1);
-}
 if ($update_user && $update_bayar && $emailinvoice){
 	?>
 		<script type="" language="JavaScript">
@@ -501,9 +423,11 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                 <?php } ?><br/>
 								<input type="text" class="form-control" id="inputPaymentdate" name="inputPaymentdate" placeholder="Payment Date" required>
 								<br/>
-								<div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>
-								<br/>
 								<input type="submit" class="btn" style="background-color:#1B5E12; color:#FFFFFF" name="verifikasi" id="verifikasi" value="Vertifikasi">
+                <br/>
+                <input type="text" class="form-control" id="inputRequestdate" name="inputRequestdate" placeholder="Date Request Change Service" required>
+                <br/>
+                <input type="submit" class="btn" style="background-color:#1B5E12; color:#FFFFFF" name="request" id="request" value="Request">
 							  </div>
 							</div>
 						  </fieldset>
