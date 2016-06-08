@@ -400,7 +400,7 @@ if(isset($_POST['request'])){
 				$subject1 = 'Pemberitahuan Pindah Paket';
 				$message1 = '
 				<html>
-					<body style="background-color:#ddd;padding:50px 0 100px 0;font-family:arial;font-size:15px;">
+					<body style="background-color:#ddd;padding:50px 0 150px 0;font-family:arial;font-size:15px;">
 					    <div style="margin:0 auto;max-width:500px;background-color:#eee;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
 					        <div style="background: linear-gradient(to right, #FF3D23 , #fc742f);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
 					            <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
