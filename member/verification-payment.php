@@ -410,7 +410,7 @@ if(isset($_POST['request'])){
                       <p>Sehubungan dengan permintaan pergantian layanan, dapat kami informasikan bahwa layanan yang anda gunakan saat ini :<br/>
                       Paket : '.$package_cust.'<br/>
                       Layanan Tambahan : '.$addon_cust.'<br/>
-                      Akan kami lakukan pergantian layanan pada tanggal menjadi : <br/>
+                      Akan kami lakukan pergantian layanan pada tanggal '.$tgl_pindah.' '.$month_pindah.' '.$thn_pindah.' menjadi : <br/>
                       Paket : '.$inputpaket.'<br/>
                       Layanan Tambahan : '.$inputaddon.'<br/>
                       Terima kasih telah menggunakan layanan groovy.</p><br/><br/>
