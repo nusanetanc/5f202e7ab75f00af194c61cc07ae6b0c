@@ -362,19 +362,27 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>
 <?php }  }
 if(isset($_POST['request'])){
+  $inputpaket=$_POST['inputpaket'];
+  $inputaddon=implode(", ", $_POST['addon']);
+  $daterequest=$_POST['inputRequestdate'];
+
+  $thn_pindah = substr($daterequest, 0,4);
+  $bln_pindah = substr($daterequest, 5,2);
+  $tgl_pindah = substr($daterequest, 8,10);
+  $month_pindah = bulan($bln_pindah);
   // mail for supevisior teknik
-				$subject = 'Pindah Paket';
+				$subject = 'Pindah Layanan';
 				$message = '
 				<html>
 				<body>
-				  <p>Customer pindah paket : </p>
+				  <p>Request Customer Pindah Layanan : </p>
 				  <br/>
 				  <p>ID Customer : '.$id_cust.'</p>
 				  <p>Nama : '.$nama_cust.'</p>
 				  <p>Tempat : '.$tempat_cust.', '.$ket_cust.', '.$kota_cust.'</p>
-				  <p>Pindah Paket : '.$move_paket_cust.'</p>
-          <p>Layanan Tambahan : '.$move_paket_cust.'</p>
-				  <p>Tanggal Pindah Paket : '.$tgl_akhir.' '.$month_akhir.' '.$thn_akhir.'</p>
+				  <p>Pindah Paket : '.$inputpaket.'</p>
+          <p>Layanan Tambahan : '.$inputaddon.'</p>
+				  <p>Tanggal Pindah Paket : '.$tgl_pindah.' '.$month_pindah.' '.$thn_pindah.'</p>
 				  <br/>
 				</body>
 				</html>
@@ -392,7 +400,7 @@ if(isset($_POST['request'])){
 				$subject1 = 'Pemberitahuan Pindah Paket';
 				$message1 = '
 				<html>
-					<body style="background-color:#ddd;padding:50px 0 50px 0;font-family:arial;font-size:15px;">
+					<body style="background-color:#ddd;padding:50px 0 100px 0;font-family:arial;font-size:15px;">
 					    <div style="margin:0 auto;max-width:500px;background-color:#eee;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
 					        <div style="background: linear-gradient(to right, #FF3D23 , #fc742f);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
 					            <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
@@ -400,11 +408,11 @@ if(isset($_POST['request'])){
 					        <div style="padding:20px;color:#333;">
 					            <p style="font-size:20px;font-weight:bold;line-height:1px">Pemberitahuan Pergantian Layanan</p>
                       <p>Sehubungan dengan permintaan pergantian layanan, dapat kami informasikan bahwa layanan yang anda gunakan saat ini :<br/>
-                      Paket : <br/>
-                      Layanan Tambahan : <br/>
+                      Paket : '.$package_cust.'<br/>
+                      Layanan Tambahan : '.$addon_cust.'<br/>
                       Akan kami lakukan pergantian layanan pada tanggal menjadi : <br/>
-                      Paket : <br/>
-                      Layanan Tambahan : <br/>
+                      Paket : '.$inputpaket.'<br/>
+                      Layanan Tambahan : '.$inputaddon.'<br/>
                       Terima kasih telah menggunakan layanan groovy.</p><br/><br/>
 					        </div>
                   <div style="padding:10px;color:#333;">
@@ -640,7 +648,7 @@ if(isset($_POST['request'])){
     	  				    	<div class="col-sm-12">
                         <li class="list-group-item">
                             Paket :
-                            <select class="form-control" id="paket" name="paket">
+                            <select class="form-control" id="inputpaket" name="inputpaket">
                             <?php
                       $res = $col_package->find();
                       foreach($res as $row)
