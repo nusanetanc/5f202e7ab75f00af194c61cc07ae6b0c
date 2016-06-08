@@ -98,10 +98,10 @@ $payment_kabel = array (
 	$m_paket = '<p style="font-size:20px;font-weight:bold;line-height:1px">DATA PEMBAYARAN</p>
 								<table style="width:100%;">
 								  <tr>
-								    <th width="50%" style="border:1px; text-align: left;">Deskripsi</th>
-								    <th width="30%" style="border:1px; text-align: left;">Harga</th>
-								    <th width="10%" style="border:1px; text-align: left;">Proraide</th>
-										<th width="10%" style="border:1px; text-align: left;">Total Harga</th>
+								    <th width="40%" style="border:1px; text-align: left;">Deskripsi</th>
+								    <th width="20%" style="border:1px; text-align: left;">Harga</th>
+								    <th width="20%" style="border:1px; text-align: left;">Proraide</th>
+										<th width="20%" style="border:1px; text-align: left;">Total Harga</th>
 								  </tr>
 								  <tr>
 								    <td style="border:1px;">'.$package_cust.' - 1 Bulan</td>
