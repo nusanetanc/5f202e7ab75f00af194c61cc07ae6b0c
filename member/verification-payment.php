@@ -574,7 +574,38 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
     	  				    <form method="post">
     	  				    <div class="row">
     	  				    	<div class="col-sm-12">
-                        <br/>
+                        <li class="list-group-item">
+                            Paket :
+                            <select class="form-control" id="paket" name="paket">
+                            <?php
+                      $res = $col_package->find();
+                      foreach($res as $row)
+                                  {
+                                    ?>
+                                <option><?php echo $row['nama']; ?></option>
+                              <?php } ?>
+                              </select>
+                              <input type="number" class="form-control" id="proraide_paket" name="proraide_paket" placeholder="Prorate Paket"><br/>
+                        </li>
+                          <ul style="text-align:left;" class="list-group">
+                            Add On Service
+                              <?php
+                                  $res = $col_service->find();
+                                  foreach($res as $row)
+                                              {
+                                      if($row['nama_group']=="Cinema Box HD" || $row['nama_group']=="TV Chanel" || $row['nama_group']=="Video on Demand"){
+                                                ?>
+                            <li class="list-group-item">
+                              <h6><?php echo $row['nama_group']; ?></h6>
+                                <?php $res1 = $col_service->find(array("group"=>$row['nama_group']));
+                                foreach($res1 as $row1)
+                                            { ?>
+                                  <input type="checkbox" name="addon[]" id="addon[]" value="<?php echo $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
+                                  <?php } ?>
+                              <?php } } ?>
+                            </li>
+                          </ul>
+                          <br/>
                         <input type="text" class="form-control" id="inputRequestdate" name="inputRequestdate" placeholder="Date Request Change Service" required>
                         <br/>
                         <input type="submit" class="btn" style="background-color:#1B5E12; color:#FFFFFF" name="request" id="request" value="Request">
