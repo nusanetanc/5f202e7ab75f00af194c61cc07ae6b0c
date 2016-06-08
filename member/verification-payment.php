@@ -585,6 +585,7 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 									    </tr>
 									  </thead>
                     <?php
+                    $total=0;
                     $res = $col_user->findOne(array("id_user"=>$id_cust));
 										foreach ($res['payment_data'] as $payment => $pay) {
                       if ($pay<>null){
@@ -595,7 +596,15 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 									  	<td><?php echo rupiah($pay['prorate']); ?></td>
 									  	<td><?php echo rupiah($pay['total']); ?></td>
 									  </tbody>
-                    <?php } } ?>
+                    <?php
+                        $total = $total+$pay['total'];
+                  } } ?>
+                  <tbody>
+                    <td><b>Total Harga</b></td>
+                    <td></td>
+                    <td></td>
+                    <td><?php echo rupiah($total); ?></td>
+                  </tbody>
 								</table>
 		  				    </div>
 		  				 </div>
