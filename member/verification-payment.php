@@ -105,21 +105,6 @@ if ($status_cust=="aktif"){
 //mail to bukti pembayaran
 
 require('../content/srcpdf/fpdf.php');
-$header = array(
-    array("label"=>"Pembayaran", "length"=>80, "align"=>"C"),
-    array("label"=>"Harga", "length"=>30, "align"=>"C"),
-    array("label"=>"Prorate", "length"=>30, "align"=>"C"),
-    array("label"=>"Sub Total", "length"=>30, "align"=>"C")
-  );
-  $res = $col_user->findOne(array("id_user"=>$id_cust));
-  foreach ($res['payment_data'] as $payment => $pay) {
-    if ($pay<>null){
-$kol_bayar .= array(
-    array("label"=>$pay['layanan'], "length"=>80, "align"=>"C"),
-    array("label"=>rupiah($pay['harga']), "length"=>30, "align"=>"C"),
-    array("label"=>rupiah($pay['prorate']), "length"=>30, "align"=>"C"),
-    array("label"=>rupiah($pay['total']), "length"=>30, "align"=>"C")
-  ); }}
 $pdf = new FPDF();
 $pdf->AddPage();
 $pdf->Image('../img/groovy-logo-orange.png','140','15','60');
@@ -140,21 +125,22 @@ $pdf->Ln();
 $pdf->SetFont('Arial','B','10');
 $pdf->Cell(0,7, 'DATA PEMBAYARAN', '0', 1, 'L');
 $pdf->Ln();
-$pdf->SetFont('Arial','B','10');
-$pdf->SetFillColor(255,110,64);
-$pdf->SetTextColor(0);
-$pdf->SetDrawColor(255,110,64);
-foreach ($header as $kolom) {
-  $pdf->Cell($kolom['length'], 10, $kolom['label'], 1, '0', $kolom['align'], true);
-}
-$pdf->Ln();
-$pdf->SetFont('Arial','B','7');
-$pdf->SetFillColor(255,158,128);
-$pdf->SetTextColor(0);
-$pdf->SetDrawColor(255,158,128);
-foreach ($kol_bayar as $kolom_bayar) {
-  $pdf->Cell($kolom_bayar['length'], 8, $kolom_bayar['label'], 1, '0', $kolom_bayar['align'], true);
-}
+$this->fpdf->ln(0.3);
+$this->fpdf->Cell(1,0.5,'DESKRIPSI PEMBAYARAN',1,0,'C');
+$this->fpdf->Cell(2,0.5,'HARGA',1,0,'C');
+$this->fpdf->Cell(5,0.5,'PRORATE',1,0,'C');
+$this->fpdf->Cell(6,0.5,'TOTAL HARGA',1,0,'C');
+$this->fpdf->Ln();
+$this->load->model('member_model','',TRUE);
+$res = $col_user->findOne(array("id_user"=>$id_cust));
+foreach ($res['payment_data'] as $payment => $pay) {
+  if ($pay<>null){
+$this->fpdf->Cell(1,0.5,$pay['layanan'],1,0,'C');
+$this->fpdf->Cell(2,0.5,$pay['harga'],1,0,'L');
+$this->fpdf->Cell(5,0.5,$pay['prorate'],1,0,'L');
+$this->fpdf->Cell(6,0.5,$pay['total'],1,0,'L');
+$this->fpdf->Ln();
+} }
 $pdf->Ln();
 $pdf->Ln();
 $pdf->Ln();
@@ -199,8 +185,6 @@ $headers1.= "\nMIME-Version: 1.0\n" .
 $email_message1 = "Terimakasih ".$nama_cust." sudah menggunakan layanan groovy.id.<br>";
 $email_message1 .= "Bukti pembayaran ini menandakan bahwa pembayaran anda sudah kami konfirmasi dan terima.<br>";// Message that the email has in it
 $email_message1 .= "Untuk pelanggan baru kami akan segera memberi inforamsi untuk jadwal pemasangan.<br>";
-$email_message1 .= "Terimakasih sudah menggunakan layanan Tv groovy.id.<br>";
-$email_message1 .= "Selamat menikamati dari groovy.id.<br>";
 $email_message1 .= "Untuk info lebih lanjut bisa membuat pengaduan pada halaman member anda di groovy.id.\n\n" .
 "--{$mime_boundary}\n" .
 "Content-Type:text/html; charset=\"iso-8859-1\"\n" .
