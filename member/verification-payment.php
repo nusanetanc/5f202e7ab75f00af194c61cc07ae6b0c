@@ -103,7 +103,7 @@ if ($status_cust=="aktif"){
   $biaya_instalasi=0;
 }
 //mail to bukti pembayaran
-
+/*
 require('../content/srcpdf/fpdf.php');
 $pdf = new FPDF();
 $pdf->AddPage();
@@ -199,7 +199,7 @@ $email_message1 .= "--{$mime_boundary}\n" .
 $data .= "\n\n" .
 "--{$mime_boundary}--\n";
 
-$emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1);
+$emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1); */
 $pay = array("deskripsi"=>$package_cust, "harga"=>$harga_bayar, "prorate"=>$prorate, "total_harga"=>$harga_bayar-$prorate);
 $pay1 = array("deskripsi"=>"Sewa STB", "harga"=>$biaya_stb, "prorate"=>$proraide_stb, "total_harga"=>$biaya_stb-$proraide_stb);
 $pay2 = array("deskripsi"=>"Sewa Router", "harga"=>$biaya_router, "prorate"=>$proraide_router, "total_harga"=>$biaya_router-$proraide_router);
