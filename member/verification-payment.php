@@ -360,7 +360,71 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
 	?>
 		<script type="" language="JavaScript">
 		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>
-<?php }  } ?>
+<?php }  }
+if(isset($_POST['request'])){
+  // mail for supevisior teknik
+				$subject = 'Pindah Paket';
+				$message = '
+				<html>
+				<body>
+				  <p>Customer pindah paket : </p>
+				  <br/>
+				  <p>ID Customer : '.$id_cust.'</p>
+				  <p>Nama : '.$nama_cust.'</p>
+				  <p>Tempat : '.$tempat_cust.', '.$ket_cust.', '.$kota_cust.'</p>
+				  <p>Pindah Paket : '.$move_paket_cust.'</p>
+          <p>Layanan Tambahan : '.$move_paket_cust.'</p>
+				  <p>Tanggal Pindah Paket : '.$tgl_akhir.' '.$month_akhir.' '.$thn_akhir.'</p>
+				  <br/>
+				</body>
+				</html>
+				';
+				$headers  = 'MIME-Version: 1.0' . "\r\n";
+				$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+				$headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
+				$headers .= 'Cc: cs@groovy.id' . "\r\n";
+			$res = $col_user->find(array("level"=>"3"));
+						foreach($res as $row)
+											{
+				$emailpindah=mail($row['email'], $subject, $message, $headers);
+			}
+					// mail for customer
+				$subject1 = 'Pemberitahuan Pindah Paket';
+				$message1 = '
+				<html>
+					<body style="background-color:#ddd;padding:50px 0 50px 0;font-family:arial;font-size:15px;">
+					    <div style="margin:0 auto;max-width:500px;background-color:#eee;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
+					        <div style="background: linear-gradient(to right, #FF3D23 , #fc742f);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
+					            <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
+					        </div>
+					        <div style="padding:20px;color:#333;">
+					            <p style="font-size:20px;font-weight:bold;line-height:1px">Pemberitahuan Pergantian Layanan</p>
+                      <p>Sehubungan dengan permintaan pergantian layanan, dapat kami informasikan bahwa layanan yang anda gunakan saat ini :<br/>
+                      Paket : <br/>
+                      Layanan Tambahan : <br/>
+                      Akan kami lakukan pergantian layanan pada tanggal menjadi : <br/>
+                      Paket : <br/>
+                      Layanan Tambahan : <br/>
+                      Terima kasih telah menggunakan layanan groovy.</p><br/><br/>
+					        </div>
+                  <div style="padding:10px;color:#333;">
+                      <img src="http://groovy.id/beta/img/groovy-logo-orange.png" height="20px;"/>
+                      <p>Hormat Kami<br/>
+                      Customer Service groovy<br/>
+                      PT Media Andalan Nusa<p>
+                  </div>
+					        </div>
+					    </div>
+					</body>
+					</html>
+				';
+				$headers1  = 'MIME-Version: 1.0' . "\r\n";
+				$headers1 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+				$headers1 .= 'From: cs@groovy.id' . "\r\n";
+				$headers1 .= 'Cc: cs@groovy.id' . "\r\n";
+				$emailcust_pindah=mail($email_cust, $subject1, $message1, $headers1);
+}
+?>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
 		<div class="list-group">
@@ -585,7 +649,6 @@ if ($update_user && $emailbongkar && $emailnotice && $sent){
                                 <option><?php echo $row['nama']; ?></option>
                               <?php } ?>
                               </select>
-                              <input type="number" class="form-control" id="proraide_paket" name="proraide_paket" placeholder="Prorate Paket"><br/>
                         </li>
                           <ul style="text-align:left;" class="list-group">
                             Add On Service
