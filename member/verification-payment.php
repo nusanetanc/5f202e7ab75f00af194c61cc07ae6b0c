@@ -111,34 +111,15 @@ $header = array(
     array("label"=>"Prorate", "length"=>30, "align"=>"C"),
     array("label"=>"Sub Total", "length"=>30, "align"=>"C")
   );
-$kol_paket = array(
-    array("label"=>$paket_bayar, "length"=>80, "align"=>"C"),
-    array("label"=>rupiah($harga_bayar), "length"=>30, "align"=>"C"),
-    array("label"=>rupiah($proraide), "length"=>30, "align"=>"C"),
-    array("label"=>rupiah($total_bayar), "length"=>30, "align"=>"C")
-  );
-$kol_router = array(
-    array("label"=>"Sewa Router", "length"=>80, "align"=>"C"),
-    array("label"=>rupiah($biaya_router), "length"=>30, "align"=>"C"),
-    array("label"=>rupiah($proraide_router), "length"=>30, "align"=>"C"),
-    array("label"=>rupiah($biaya_router-$proraide_router), "length"=>30, "align"=>"C")
-  );
-$kol_stb = array(
-    array("label"=>"Sewa STB", "length"=>80, "align"=>"C"),
-    array("label"=>rupiah($biaya_stb), "length"=>30, "align"=>"C"),
-    array("label"=>rupiah($proraide_stb), "length"=>30, "align"=>"C"),
-    array("label"=>rupiah($biaya_stb-$proraide_stb), "length"=>30, "align"=>"C")
-  ); if($status_cust=="registrasi"){
-  $kol_instalasi = array(
-      array("label"=>"Instalasi", "length"=>80, "align"=>"C"),
-      array("label"=>rupiah($biaya_instalasi), "length"=>30, "align"=>"C"),
-      array("label"=>rupiah(), "length"=>30, "align"=>"C"),
-      array("label"=>rupiah($biaya_instalasi), "length"=>30, "align"=>"C")
-    ); }
-    $jmlon=0;
- $res = $col_addon->find(array("id_user"=>$id_cust));
-          foreach($res as $row) {
-            $jmlon=$jmlon+1; }
+  $res = $col_user->findOne(array("id_user"=>$id_cust));
+  foreach ($res['payment_data'] as $payment => $pay) {
+    if ($pay<>null){
+$kol_bayar .= array(
+    array("label"=>$pay['layanan'], "length"=>80, "align"=>"C"),
+    array("label"=>rupiah($pay['harga']), "length"=>30, "align"=>"C"),
+    array("label"=>rupiah($pay['prorate']), "length"=>30, "align"=>"C"),
+    array("label"=>rupiah($pay['total']), "length"=>30, "align"=>"C")
+  ); }}
 $pdf = new FPDF();
 $pdf->AddPage();
 $pdf->Image('../img/groovy-logo-orange.png','140','15','60');
@@ -171,28 +152,9 @@ $pdf->SetFont('Arial','B','7');
 $pdf->SetFillColor(255,158,128);
 $pdf->SetTextColor(0);
 $pdf->SetDrawColor(255,158,128);
-foreach ($kol_paket as $kolom_paket) {
-  $pdf->Cell($kolom_paket['length'], 8, $kolom_paket['label'], 1, '0', $kolom_paket['align'], true);
+foreach ($kol_bayar as $kolom_bayar) {
+  $pdf->Cell($kolom_bayar['length'], 8, $kolom_bayar['label'], 1, '0', $kolom_bayar['align'], true);
 }
-$w = array(80, 30, 40, 45);
-if($jmlon<>"0"){
-  $res = $col_addon->find(array("id_user"=>$id_cust));
-           foreach($res as $row) {
-  $pdf->Ln();
-  $pdf->Cell($w[0],6,$row[0],'LR',0,'C');
- } }
-$pdf->Ln();
-foreach ($kol_router as $kolom_router) {
-  $pdf->Cell($kolom_router['length'], 8, $kolom_router['label'], 1, '0', $kolom_router['align'], true);
-}
-$pdf->Ln();
-foreach ($kol_stb as $kolom_stb) {
-  $pdf->Cell($kolom_stb['length'], 8, $kolom_stb['label'], 1, '0', $kolom_stb['align'], true);
-} if($status_cust=="registrasi"){
-$pdf->Ln();
-foreach ($kol_instalasi as $kolom_instalasi) {
-  $pdf->Cell($kolom_instalasi['length'], 8, $kolom_instalasi['label'], 1, '0', $kolom_instalasi['align'], true);
-} }
 $pdf->Ln();
 $pdf->Ln();
 $pdf->Ln();
