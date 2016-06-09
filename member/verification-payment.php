@@ -87,12 +87,19 @@ if(isset($_POST['verifikasi'])){
 //mail to bukti pembayaran
 
 require('../content/srcpdf/fpdf.php');
+
 $header_table = array(
 array("label"=>"DESKRIPSI", "length"=>70, "align"=>"C"),
 array("label"=>"HARGA", "length"=>40, "align"=>"C"),
 array("label"=>"PRORATE", "length"=>40, "align"=>"C"),
 array("label"=>"TOTAL HARGA", "length"=>40, "align"=>"C")
 );
+$data = array();
+$res = $col_user->findOne(array("id_user"=>$id_cust));
+foreach ($res['payment_data'] as $payment => $pay) {
+  if ($pay<>null){
+    array_push($data, $pay);
+  }}
 $pdf = new FPDF();
 $pdf->AddPage();
 $pdf->Image('../img/groovy-logo-orange.png','140','15','60');
@@ -120,6 +127,22 @@ $pdf->SetDrawColor(254,60,34);
 foreach ($header_table as $kolom_table) {
 $pdf->Cell($kolom_table['length'], 7, $kolom_table['label'], 1, '0',
 $kolom['align'], true);
+}
+$pdf->Ln();
+#tampilkan data dari tabel
+$pdf->SetFillColor(224,235,255);
+$pdf->SetTextColor(0);
+$pdf->SetFont('');
+$fill=false;
+foreach ($data as $baris) {
+$i = 0;
+foreach ($baris as $cell) {
+$pdf->Cell($header[$i]['length'], 5, $cell, 1, '0',
+$kolom['align'], $fill);
+$i++;
+}
+$fill = !$fill;
+$pdf->Ln();
 }
 $pdf->Ln();
 $pdf->Ln();
