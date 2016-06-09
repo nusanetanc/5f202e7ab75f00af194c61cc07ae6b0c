@@ -215,7 +215,7 @@ $emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1);
 	}
 if ($update_user && $update_bayar && $emailinvoice){
 	?>
-		<script type="" language="JavaScript">
+		<script type="" language="JavaScript">alert('Pembayaran sudah di konfirmasi');
 		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>
 <?php } }
 if(isset($_POST['terminasi'])){
@@ -358,7 +358,7 @@ if(isset($_POST['terminasi'])){
 				$sent = mail($email_to, $email_subject, $email_message, $headers);
 if ($update_user && $emailbongkar && $emailnotice && $sent){
 	?>
-		<script type="" language="JavaScript">
+		<script type="" language="JavaScript">alert('Penutupan layanan sudah di konfirmasi');
 		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>
 <?php }  }
 if(isset($_POST['request'])){
@@ -431,8 +431,10 @@ if(isset($_POST['request'])){
 				$headers1 .= 'From: cs@groovy.id' . "\r\n";
 				$headers1 .= 'Cc: cs@groovy.id' . "\r\n";
 				$emailcust_pindah=mail($email_cust, $subject1, $message1, $headers1);
-}
-?>
+        if($emailpindah && $emailcust_pindah){ ?>
+          <script type="" language="JavaScript">alert('Pindah layanan sudah di konfirmasi');
+      		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>
+<?php } } ?>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
 		<div class="list-group">
