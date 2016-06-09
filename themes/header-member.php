@@ -57,9 +57,9 @@ if($level=="501"){
     <div class="navbar-header">
       <button style="float:left;margin-top:8px;" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar" style="background-color:#FF3D23;"></span>
-        <span class="icon-bar" style="background-color:#FF3D23;"></span>
-        <span class="icon-bar" style="background-color:#FF3D23;"></span>
+        <span class="icon-bar" style="background-color:#f9a825;"></span>
+        <span class="icon-bar" style="background-color:#f9a825;"></span>
+        <span class="icon-bar" style="background-color:#f9a825;"></span>
       </button>
       <a href="<?php echo $base_url_member; ?>"><img height="60px" src="<?php echo $base_url; ?>/img/groovy-logo-colour.png"/></a>
       <ul style="float:right;margin-right:15px;" class="dropdown nav navbar-nav navbar-right navbar-primary mobile-only">
@@ -157,7 +157,7 @@ if($level=="501"){
       <html>
         <body style="background-color:#ddd;padding:50px 0 50px 0;font-family:arial;font-size:15px;">
             <div style="margin:0 auto;max-width:500px;background-color:#eee;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
-                <div style="background: linear-gradient(to right, #FF3D23 , #fc742f);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
+                <div style="background: linear-gradient(to right, #f9a825 , #fdd835);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
                     <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
                 </div>
                 <div style="padding:20px;color:#333;">
@@ -247,7 +247,7 @@ if($level=="501"){
       <html>
         <body style="background-color:#ddd;padding:50px 0 50px 0;font-family:arial;font-size:15px;">
             <div style="margin:0 auto;max-width:500px;background-color:#eee;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
-                <div style="background: linear-gradient(to right, #FF3D23 , #fc742f);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
+                <div style="background: linear-gradient(to right, #f9a825 , #fdd835);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
                     <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
                 </div>
                 <div style="padding:20px;color:#333;">
