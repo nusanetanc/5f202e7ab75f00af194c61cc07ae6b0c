@@ -88,7 +88,7 @@ if(isset($_POST['verifikasi'])){
 
 require('../content/srcpdf/fpdf.php');
 $header_table = array(
-array("label"=>"DESKRIPSI", "length"=>80, "align"=>"C"),
+array("label"=>"DESKRIPSI", "length"=>70, "align"=>"C"),
 array("label"=>"HARGA", "length"=>40, "align"=>"C"),
 array("label"=>"PRORATE", "length"=>40, "align"=>"C"),
 array("label"=>"TOTAL HARGA", "length"=>40, "align"=>"C")
@@ -118,12 +118,13 @@ $pdf->SetFillColor(254,60,34);
 $pdf->SetTextColor(255);
 $pdf->SetDrawColor(254,60,34);
 foreach ($header_table as $kolom_table) {
-$pdf->Cell($kolom_table['length'], 10, $kolom_table['label'], 1, '0',
+$pdf->Cell($kolom_table['length'], 7, $kolom_table['label'], 1, '0',
 $kolom['align'], true);
 }
 $pdf->Ln();
 $pdf->Ln();
 $pdf->Ln();
+$pdf->SetTextColor(0);
 $pdf->SetFont('Arial','B','10');
 $pdf->Cell(0,7, 'KONFIRMASI PEMBAYRAN - PAYMENT CONFIRMATION', '0', 1, 'L');
 $pdf->Ln();
