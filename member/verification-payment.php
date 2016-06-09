@@ -130,9 +130,10 @@ $kolom['align'], true);
 }
 $pdf->Ln();
 #tampilkan data dari tabel
-$pdf->SetFillColor(224,235,255);
+$pdf->SetFillColor(249,162,35);
 $pdf->SetTextColor(0);
 $pdf->SetFont('');
+$pdf->SetDrawColor((249,162,35);
 $fill=false;
 foreach ($data as $baris) {
 $i = 0;
