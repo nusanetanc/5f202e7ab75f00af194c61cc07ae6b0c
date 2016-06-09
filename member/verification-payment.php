@@ -113,7 +113,7 @@ $this->fpdf->Cell(2,0.5,'HARGA',1,0,'C');
 $this->fpdf->Cell(5,0.5,'PRORATE',1,0,'C');
 $this->fpdf->Cell(6,0.5,'TOTAL HARGA',1,0,'C');
 $this->fpdf->Ln();
-$res = $col_user->findOne(array("id_user"=>$id_cust));
+$res = $col_user->findOne(array("id_user"=>$id_cust)); */
 foreach ($res['payment_data'] as $payment => $pay) {
   if ($pay<>null){
 $this->fpdf->Cell(1,0.5,$pay['layanan'],1,0,'C');
@@ -124,7 +124,7 @@ $this->fpdf->Ln();
 } }
 $pdf->Ln();
 $pdf->Ln();
-$pdf->Ln(); */
+$pdf->Ln();
 $pdf->SetFont('Arial','B','10');
 $pdf->Cell(0,7, 'KONFIRMASI PEMBAYRAN - PAYMENT CONFIRMATION', '0', 1, 'L');
 $pdf->Ln();
