@@ -113,7 +113,7 @@ $this->fpdf->Cell(2,0.5,'HARGA',1,0,'C');
 $this->fpdf->Cell(5,0.5,'PRORATE',1,0,'C');
 $this->fpdf->Cell(6,0.5,'TOTAL HARGA',1,0,'C');
 $this->fpdf->Ln();
-$res = $col_user->findOne(array("id_user"=>$id_cust)); /*
+$res = $col_user->findOne(array("id_user"=>$id_cust));
 foreach ($res['payment_data'] as $payment => $pay) {
   if ($pay<>null){
 $this->fpdf->Cell(1,0.5,$pay['layanan'],1,0,'C');
@@ -121,7 +121,7 @@ $this->fpdf->Cell(2,0.5,$pay['harga'],1,0,'L');
 $this->fpdf->Cell(5,0.5,$pay['prorate'],1,0,'L');
 $this->fpdf->Cell(6,0.5,$pay['total'],1,0,'L');
 $this->fpdf->Ln();
-} } */
+} }
 $pdf->Ln();
 $pdf->Ln();
 $pdf->Ln();
@@ -180,7 +180,7 @@ $email_message1 .= "--{$mime_boundary}\n" .
 $data .= "\n\n" .
 "--{$mime_boundary}--\n";
 
-$emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1);
+$emailinvoice = mail($email_to1, $email_subject1);
 
 	if ($status_cust=="registrasi"){
 				// mail for supevisior teknik
