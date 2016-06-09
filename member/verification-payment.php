@@ -88,10 +88,10 @@ if(isset($_POST['verifikasi'])){
 
 require('../content/srcpdf/fpdf.php');
 $header_table = array(
-array("label"=>"DESKRIPSI", "length"=>60, "align"=>"C"),
-array("label"=>"HARGA", "length"=>30, "align"=>"C"),
-array("label"=>"PRORATE", "length"=>30, "align"=>"C"),
-array("label"=>"TOTAL HARGA", "length"=>30, "align"=>"C")
+array("label"=>"DESKRIPSI", "length"=>80, "align"=>"C"),
+array("label"=>"HARGA", "length"=>40, "align"=>"C"),
+array("label"=>"PRORATE", "length"=>40, "align"=>"C"),
+array("label"=>"TOTAL HARGA", "length"=>40, "align"=>"C")
 );
 $pdf = new FPDF();
 $pdf->AddPage();
