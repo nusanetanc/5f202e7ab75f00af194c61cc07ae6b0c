@@ -96,8 +96,8 @@ array("label"=>"TOTAL HARGA", "length"=>40, "align"=>"C")
 );
 $data = array();
 $res = $col_user->findOne(array("id_user"=>$id_cust));
-foreach ($res['payment_data'] as $payment) {
-  if ($payment<>null){
+foreach ($res['payment_data'] as $payment => $pay) {
+  if ($pay<>null){
     array_push($data, $pay);
   }}
 $pdf = new FPDF();
@@ -137,7 +137,7 @@ $fill=false;
 foreach ($data as $baris) {
 $i = 0;
 foreach ($baris as $cell) {
-$pdf->Cell($header[$i]['length'], 5, $cell, 1, '0',
+$pdf->Cell($header_table[$i]['length'], 5, $cell, 1, '0',
 $kolom['align'], $fill);
 $i++;
 }
