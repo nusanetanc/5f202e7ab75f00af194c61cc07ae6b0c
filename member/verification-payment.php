@@ -114,11 +114,11 @@ $pdf->SetFont('Arial','B','10');
 $pdf->Cell(0,7, 'DATA PEMBAYARAN', '0', 1, 'L');
 $pdf->Ln();
 $pdf->SetFont('Arial','','10');
-$pdf->SetFillColor(255,0,0);
+$pdf->SetFillColor(254,60,34);
 $pdf->SetTextColor(255);
-$pdf->SetDrawColor(128,0,0);
+$pdf->SetDrawColor(254,60,34);
 foreach ($header_table as $kolom_table) {
-$pdf->Cell($kolom_table['length'], 5, $kolom_table['label'], 1, '0',
+$pdf->Cell($kolom_table['length'], 10, $kolom_table['label'], 1, '0',
 $kolom['align'], true);
 }
 $pdf->Ln();
