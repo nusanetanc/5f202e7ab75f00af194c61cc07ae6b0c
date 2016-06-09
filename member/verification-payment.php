@@ -182,7 +182,7 @@ $data .= "\n\n" .
 "--{$mime_boundary}--\n";
 
 $emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1);
-
+/*
 	if ($status_cust=="registrasi"){
 				// mail for supevisior teknik
 				$subject = 'Atur Jadwal Pemasangan';
@@ -212,7 +212,7 @@ $emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1);
 			}
 	} else {
 		$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("tanggal_akhir"=>$next_years.'/'.$next_month.'/01', "pembayaran"=>$last_pembayaran)));
-	}
+	} */
 if ($update_user && $update_bayar && $emailinvoice){
 	?>
 		<script type="" language="JavaScript">alert('Pembayaran sudah di konfirmasi');

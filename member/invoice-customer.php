@@ -256,7 +256,7 @@ $m_total=		 		'<br/>
 	$sent=mail($to, $subject, $message.$m_paket.$m_addon.$m_router.$m_stb.$m_instalasi.$m_kabel.$m_total, $headers);
 
 	if($sent && $update_user){ ?>
-		<script type="" language="JavaScript">
+		<script type="" language="JavaScript">alert('Invoice Telah Terkirim');
 		document.location='<?php echo $base_url_member; ?>/send-invoice'</script>
 <?php	} }
 ?>
