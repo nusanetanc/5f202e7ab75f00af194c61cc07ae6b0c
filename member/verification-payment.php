@@ -112,7 +112,7 @@ $this->fpdf->Cell(1,0.5,'DESKRIPSI PEMBAYARAN',1,0,'C');
 $this->fpdf->Cell(2,0.5,'HARGA',1,0,'C');
 $this->fpdf->Cell(5,0.5,'PRORATE',1,0,'C');
 $this->fpdf->Cell(6,0.5,'TOTAL HARGA',1,0,'C');
-$this->fpdf->Ln(); /*
+$this->fpdf->Ln();/*
 $res = $col_user->findOne(array("id_user"=>$id_cust));
 foreach ($res['payment_data'] as $payment => $pay) {
   if ($pay<>null){
