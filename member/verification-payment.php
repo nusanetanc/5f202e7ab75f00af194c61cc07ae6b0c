@@ -133,7 +133,7 @@ $pdf->Ln();
 $pdf->SetFillColor(249,162,35);
 $pdf->SetTextColor(0);
 $pdf->SetFont('');
-$pdf->SetDrawColor((249,162,35);
+$pdf->SetDrawColor(249,162,35);
 $fill=false;
 foreach ($data as $baris) {
 $i = 0;
