@@ -130,16 +130,14 @@ $kolom['align'], true);
 }
 $pdf->Ln();
 #tampilkan data dari tabel
-$pdf->SetFillColor(249,162,35);
 $pdf->SetTextColor(0);
 $pdf->SetFont('');
 $pdf->SetDrawColor(249,162,35);
-$fill=false;
 foreach ($data as $baris) {
 $i = 0;
 foreach ($baris as $cell) {
 $pdf->Cell($header_table[$i]['length'], 5, $cell, 1, '0',
-$kolom['align'], $fill);
+$kolom['align'], true);
 $i++;
 }
 $fill = !$fill;
