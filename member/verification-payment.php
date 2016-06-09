@@ -87,6 +87,12 @@ if(isset($_POST['verifikasi'])){
 //mail to bukti pembayaran
 
 require('../content/srcpdf/fpdf.php');
+$header_table = array(
+array("label"=>"DESKRIPSI", "length"=>60, "align"=>"C"),
+array("label"=>"HARGA", "length"=>30, "align"=>"C"),
+array("label"=>"PRORATE", "length"=>30, "align"=>"C"),
+array("label"=>"TOTAL HARGA", "length"=>30, "align"=>"C")
+);
 $pdf = new FPDF();
 $pdf->AddPage();
 $pdf->Image('../img/groovy-logo-orange.png','140','15','60');
@@ -106,22 +112,15 @@ $pdf->Cell(0,7, 'Alamat Email               : '.$email_cust, '0', 1, 'L');
 $pdf->Ln();
 $pdf->SetFont('Arial','B','10');
 $pdf->Cell(0,7, 'DATA PEMBAYARAN', '0', 1, 'L');
-$pdf->Ln(); /*
-$this->fpdf->ln(0.3);
-$this->fpdf->Cell(1,0.5,'DESKRIPSI PEMBAYARAN',1,0,'C');
-$this->fpdf->Cell(2,0.5,'HARGA',1,0,'C');
-$this->fpdf->Cell(5,0.5,'PRORATE',1,0,'C');
-$this->fpdf->Cell(6,0.5,'TOTAL HARGA',1,0,'C');
-$this->fpdf->Ln();
-$res = $col_user->findOne(array("id_user"=>$id_cust));
-foreach ($res['payment_data'] as $payment => $pay) {
-  if ($pay<>null){
-$this->fpdf->Cell(1,0.5,$pay['layanan'],1,0,'C');
-$this->fpdf->Cell(2,0.5,$pay['harga'],1,0,'L');
-$this->fpdf->Cell(5,0.5,$pay['prorate'],1,0,'L');
-$this->fpdf->Cell(6,0.5,$pay['total'],1,0,'L');
-$this->fpdf->Ln();
-} } */
+$pdf->Ln();
+$pdf->SetFont('Arial','','10');
+$pdf->SetFillColor(255,0,0);
+$pdf->SetTextColor(255);
+$pdf->SetDrawColor(128,0,0);
+foreach ($header_table as $kolom_table) {
+$pdf->Cell($kolom_table['length'], 5, $kolom_table['label'], 1, '0',
+$kolom['align'], true);
+}
 $pdf->Ln();
 $pdf->Ln();
 $pdf->Ln();
