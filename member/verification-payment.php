@@ -85,7 +85,7 @@ if(isset($_POST['verifikasi'])){
 		$month_bayar = bulan($bln_bayar);
 		$last_pembayaran = $pembayaran + 1;
 //mail to bukti pembayaran
-
+/*
 require('../content/srcpdf/fpdf.php');
 $pdf = new FPDF();
 $pdf->AddPage();
@@ -113,7 +113,6 @@ $this->fpdf->Cell(2,0.5,'HARGA',1,0,'C');
 $this->fpdf->Cell(5,0.5,'PRORATE',1,0,'C');
 $this->fpdf->Cell(6,0.5,'TOTAL HARGA',1,0,'C');
 $this->fpdf->Ln();
-$this->load->model('member_model','',TRUE);
 $res = $col_user->findOne(array("id_user"=>$id_cust));
 foreach ($res['payment_data'] as $payment => $pay) {
   if ($pay<>null){
@@ -182,7 +181,7 @@ $data .= "\n\n" .
 "--{$mime_boundary}--\n";
 
 $emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1);
-
+*/
 	if ($status_cust=="registrasi"){
 				// mail for supevisior teknik
 				$subject = 'Atur Jadwal Pemasangan';
@@ -213,7 +212,7 @@ $emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1);
 	} else {
 		$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("tanggal_akhir"=>$next_years.'/'.$next_month.'/01', "pembayaran"=>$last_pembayaran)));
 	}
-if ($update_user && $emailinvoice){
+if ($emailinvoice){
 	?>
 		<script type="" language="JavaScript">alert('Pembayaran sudah di konfirmasi');
 		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>
