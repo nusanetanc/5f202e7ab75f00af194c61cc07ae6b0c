@@ -96,8 +96,8 @@ array("label"=>"TOTAL HARGA", "length"=>40, "align"=>"C")
 );
 $data = array();
 $res = $col_user->findOne(array("id_user"=>$id_cust));
-foreach ($res['payment_data'] as $payment => $pay) {
-  if ($pay<>null){
+foreach ($res['payment_data'] as $payment) {
+  if ($payment<>null){
     array_push($data, $pay);
   }}
 $pdf = new FPDF();
