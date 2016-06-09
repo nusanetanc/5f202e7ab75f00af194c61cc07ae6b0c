@@ -88,7 +88,7 @@ if(isset($_POST['verifikasi'])){
 
 require('../content/srcpdf/fpdf.php');
 $pdf = new FPDF();
-$pdf->AddPage();
+$pdf->AddPage(); /*
 $pdf->Image('../img/groovy-logo-orange.png','140','15','60');
 $pdf->SetFont('Arial','B','20');
 $pdf->Cell(0,30, '', '0', 5, 'L');
@@ -124,7 +124,7 @@ $this->fpdf->Ln();
 } }
 $pdf->Ln();
 $pdf->Ln();
-$pdf->Ln();
+$pdf->Ln(); */
 $pdf->SetFont('Arial','B','10');
 $pdf->Cell(0,7, 'KONFIRMASI PEMBAYRAN - PAYMENT CONFIRMATION', '0', 1, 'L');
 $pdf->Ln();
@@ -164,7 +164,7 @@ $headers1.= "\nMIME-Version: 1.0\n" .
 
 // set email message......................
 $email_message1 = "Terimakasih ".$nama_cust." sudah menggunakan layanan groovy.id.<br>";
-$email_message1 .= "Bukti pembayaran ini menandakan bahwa pembayaran anda sudah kami konfirmasi dan terima.<br>";// Message that the email has in it
+$email_message1 .= "Bukti pembayaran ini menandakan bahwa pembayaran anda sudah kami konfirmasi dan terima.<br>";
 $email_message1 .= "Untuk pelanggan baru kami akan segera memberi inforamsi untuk jadwal pemasangan.<br>";
 $email_message1 .= "Untuk info lebih lanjut bisa membuat pengaduan pada halaman member anda di groovy.id.\n\n" .
 "--{$mime_boundary}\n" .
@@ -180,7 +180,7 @@ $email_message1 .= "--{$mime_boundary}\n" .
 $data .= "\n\n" .
 "--{$mime_boundary}--\n";
 
-$emailinvoice = mail($email_to1, $email_subject1);
+$emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1);
 
 	if ($status_cust=="registrasi"){
 				// mail for supevisior teknik
