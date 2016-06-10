@@ -241,7 +241,7 @@ $res = $col_user->findOne(array("id_user"=>$id_cust));
 foreach ($res['payment_data'] as $payment => $pay) {
   if ($pay<>null){
     $bay=array("deskripsi"=>$pay['layanan'], "harga"=>$pay['harga'], "prorate"=>$pay['prorate'], "total_harga"=>$pay['total_harga']);
-$bayar = col_payment->update(array("id_user"=>$id_cust, "no"=>$pembayaran),array('$push'=>array("pembayaran"=>$bay)));
+$bayar = $col_payment->update(array("id_user"=>$id_cust, "no"=>$pembayaran),array('$push'=>array("pembayaran"=>$bay)));
 } } }
 if ($emailinvoice){
 	?>
