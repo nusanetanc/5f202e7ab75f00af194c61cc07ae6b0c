@@ -125,18 +125,18 @@ $pdf->SetFillColor(254,60,34);
 $pdf->SetTextColor(255);
 $pdf->SetDrawColor(254,60,34);
 foreach ($header_table as $kolom_table) {
-$pdf->Cell($kolom_table['length'], 7, $kolom_table['label'], 1, '0',
+$pdf->Cell($kolom_table['length'], 10, $kolom_table['label'], 1, '0',
 $kolom['align'], true);
 }
 $pdf->Ln();
 #tampilkan data dari tabel
 $pdf->SetTextColor(0);
 $pdf->SetFont('');
-$pdf->SetDrawColor(249,162,35);
+$pdf->SetDrawColor(254,60,34);
 foreach ($data as $baris) {
 $i = 0;
 foreach ($baris as $cell) {
-$pdf->Cell($header_table[$i]['length'], 5, $cell, 1, '0',
+$pdf->Cell($header_table[$i]['length'], 8, $cell, 1, '0',
 $kolom['align'], false);
 $i++;
 }
