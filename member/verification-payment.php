@@ -234,13 +234,14 @@ $emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1);
 	} else {
 		$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("tanggal_akhir"=>$next_years.'/'.$next_month.'/01', "pembayaran"=>$last_pembayaran)));
 	}
-  $total=0;
-  $res = $col_user->findOne(array("id_user"=>$id_cust));
-  foreach ($res['payment_data'] as $payment => $pay) {
-    if ($pay<>null){
-  $bayar = array("deskripsi"=>$pay['layanan'], "harga"=>$pay['harga'], "prorate"=>$pay['prorate'], "total_harga"=>$pay['total_harga']);
-} }
-$add_payment = $col_payment->insert(array("id_user"=>$id_cust, "tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date, "pembayaran"=>array($bayar), "total_tagihan"=>$total_tagihan, "ppn"=>$ppn, "no"=>$pembayaran,"total_pembayaran"=>$total_pembayaran));
+$add_payment = $col_payment->insert(array("id_user"=>$id_cust, "tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date, "pembayaran"=>"", "total_tagihan"=>$total_tagihan, "ppn"=>$ppn, "no"=>$pembayaran,"total_pembayaran"=>$total_pembayaran));
+if($add_payment){
+$total=0;
+$res = $col_user->findOne(array("id_user"=>$id_cust));
+foreach ($res['payment_data'] as $payment => $pay) {
+  if ($pay<>null){
+$bayar = col_payment->update(array("id_user"=>$id_cust, "no"=>$pembayaran),array('$set'=>array("deskripsi"=>$pay['layanan'], "harga"=>$pay['harga'], "prorate"=>$pay['prorate'], "total_harga"=>$pay['total_harga'])));
+} } }
 if ($emailinvoice){
 	?>
 		<script type="" language="JavaScript">alert('Pembayaran sudah di konfirmasi');
