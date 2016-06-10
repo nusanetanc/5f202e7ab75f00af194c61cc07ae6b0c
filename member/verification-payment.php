@@ -137,8 +137,7 @@ foreach ($data as $baris) {
 $i = 'layanan';
 foreach ($baris as $cell) {
 $pdf->Cell($header_table[$i]['length'], 8, $cell, 1, '0',
-$kolom['align'], false);
-$pdf->Cell($header_table[$i]['length'], 8, $cell, 1, '0',
+$pdf->Cell($header_table['harga']['length'], 8, $cell, 1, '0',
 $kolom['align'], false);
 $i++;
 }
