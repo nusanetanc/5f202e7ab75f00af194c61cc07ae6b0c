@@ -134,7 +134,7 @@ $pdf->SetTextColor(0);
 $pdf->SetFont('');
 $pdf->SetDrawColor(254,60,34);
 foreach ($data as $baris) {
-$i = 0;
+$i = 'layanan';
 foreach ($baris as $cell) {
 $pdf->Cell($header_table[$i]['length'], 8, $cell, 1, '0',
 $kolom['align'], false);
