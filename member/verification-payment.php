@@ -137,6 +137,7 @@ foreach ($data as $baris) {
 $i = 0;
 foreach ($baris as $cell) {
 $pdf->Cell($header_table[$i]['length'], 5, $cell, 1, '0',
+$kolom['align'], false);
 $i++;
 }
 $fill = !$fill;
