@@ -1,5 +1,5 @@
 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
-<?php 
+<?php
 	$id_jobs =new mongoId($_GET['id']);
 	$res = $col_history->find(array("_id"=>$id_jobs));
 foreach ($res as $row) {
@@ -20,10 +20,10 @@ foreach ($res as $row) {
 		$bln1 = substr($tanggal_selesai, 5,2);
 		$tgl1 = substr($tanggal_selesai, 8,10);
 		$month1 = bulan($bln1);
-} 
+}
 	$res = $col_user->find(array("id_user"=>$id_cust));
 	foreach($res as $row)
-	{ 
+	{
 		$email_cust = $row['email'];
         $nama_cust = $row['nama'];
         $notelp_cust = $row['phone'];
@@ -33,8 +33,9 @@ foreach ($res as $row) {
         $alamat_cust = $row['alamat'];
         $keterangan_cust = $row['keterangan'];
         $paket_cust = $row['paket'];
-    } 
-if (isset($_POST['save'])){ 
+				$addon_cust = $row['addon'];
+    }
+if (isset($_POST['save'])){
 	$note = $_POST['inputNote'];
 	$date = date("Y/m/d");
 	$date_years = date("Y");
@@ -45,12 +46,12 @@ if (isset($_POST['save'])){
 	} else {
 		$next_month=$date_month+1;
 		$next_years=$date_years;
-	} 
+	}
 	if($next_month<10){
 		$next_month = '0'.$next_month;
 	}
 	if($nama_jobs=="pasang"){
-	$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("tanggal_aktivasi"=>$date, "status"=>"aktif", "tanggal_akhir"=>$next_years.'/'.$next_month.'/01'))); 
+	$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("tanggal_aktivasi"=>$date, "status"=>"aktif", "tanggal_akhir"=>$next_years.'/'.$next_month.'/01')));
 }
 	$update_jobs = $col_history->update(array("id_cust"=>$id_cust, "status"=>$status_jobs, "hal"=>$nama_jobs),array('$set'=>array("catatan"=>$note, "status"=>"done", "tanggal_selesai"=>$date)));
 				// mail for supevisior teknik
@@ -63,7 +64,7 @@ if (isset($_POST['save'])){
 				  <p>ID Customer : '.$id_cust.'</p>
 				  <p>Nama : '.$nama_cust.'</p>
 				  <p>Tempat : '.$tempat_cust.', '.$ket_cust.', '.$kota_cust.'</p>
-				  <p>Paket : '.$package_cust.'</p>
+				  <p>Layanan : <b>'.$package_cust.'</b> '.$addon_cust.'</p>
 				  <p>Paket : '.$no_box.'</p>
 				  <p>Status : Done</p>
 				  <p>Catatan Job : '.$note.'</p>
@@ -76,15 +77,15 @@ if (isset($_POST['save'])){
 				$headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
 				$headers .= 'Cc: cs@groovy.id' . "\r\n";
 			$res = $col_user->find(array("level"=>"3"));
-						foreach($res as $row) { 	
-				$emailpasang=mail($row['email'], $subject, $message, $headers); 
+						foreach($res as $row) {
+				$emailpasang=mail($row['email'], $subject, $message, $headers);
 			}
-} 
+}
 
 if ($update_user && $update_jobs){ ?>
 				<script type="" language="JavaScript">
-				document.location='<?php echo $base_url_member; ?>/jobs-list-pending'</script>	
-<?php } 
+				document.location='<?php echo $base_url_member; ?>/jobs-list-pending'</script>
+<?php }
 ?>
 <style>
     .datepicker{z-index:1151;}
@@ -119,7 +120,7 @@ if ($update_user && $update_jobs){ ?>
   				<div class="panel-body">
   					<br/>
   					<?php if ($nama_field<>'') { ?>
-					<div class="col-sm-12">	
+					<div class="col-sm-12">
 						<form class="form-horizontal">
 						  <fieldset>
 						    <div class="form-group">
@@ -141,9 +142,9 @@ if ($update_user && $update_jobs){ ?>
 						      </div>
 						    </div>
 						    <div class="form-group">
-						      <label class="col-lg-3 control-label">Package : </label>
+						      <label class="col-lg-3 control-label">Layanan : </label>
 						      <div class="col-lg-9">
-						        <h4><?php echo $paket_cust; ?></h4>
+						        <h4><b><?php echo $paket_cust; ?></b> <?php echo $addon_cust; ?></h4>
 						      </div>
 						    </div>
 						    <div class="form-group">
@@ -157,13 +158,13 @@ if ($update_user && $update_jobs){ ?>
 						      <div class="col-lg-9">
 						        <h4><?php echo $no_box; ?></h4>
 						      </div>
-						    </div>	
+						    </div>
 						    <div class="form-group">
 						      <label class="col-lg-3 control-label">Jobs Date : </label>
 						      <div class="col-lg-9">
 						        <h4><td><?php echo $tgl.' '.$month.' '.$thn; ?></td></h4>
 						      </div>
-						    </div>	
+						    </div>
 						    <div class="form-group">
 						      <label class="col-lg-3 control-label">Status : </label>
 						      <div class="col-lg-9">
@@ -183,16 +184,16 @@ if ($update_user && $update_jobs){ ?>
 								      <div class="col-lg-9">
 								        <h4><?php echo $jobs_report; ?></h4>
 								      </div>
-								    </div> 
+								    </div>
 								    <div class="form-group">
 								      <label class="col-lg-3 control-label">Date Jobs Report : </label>
 								      <div class="col-lg-9">
 								        <h4><?php echo $tgl1.' '.$month1.' '.$thn1; ?></h4>
 								      </div>
-								    </div> 
+								    </div>
 							<?php
 						    	} else if($level=="301" && $status_jobs=="progress" && $nama_field==$nama){
-						     ?>			    					    		    						    						    		
+						     ?>
 						    <div class="form-group">
 						      <label for="inputNote" class="col-lg-3 control-label">Note</label>
 						      <div class="col-lg-9">
@@ -202,17 +203,17 @@ if ($update_user && $update_jobs){ ?>
 						        <br/>
 						      	<input type="submit" class="btn btn-default" name="save" id="save" value="SELESAI">
 						      </div>
-						    </div>	
+						    </div>
 						    <?php
 						    	}
-						    ?>	
-						  </fieldset>	
-						</form>    		
-					</div>	
+						    ?>
+						  </fieldset>
+						</form>
+					</div>
 					<?php } ?>
  				</div>
 			</div>
 		</div>
-	</div>	
+	</div>
 </section>
 </form>
