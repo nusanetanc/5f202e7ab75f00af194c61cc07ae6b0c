@@ -168,7 +168,7 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 							//..................
 
 							$email_subject = "[REGISTRATION] - Nusanet - ".$nama_cust; // The Subject of the email
-							$email_to = $email_dens; // Who the email is to
+							$email_to = $email_dens.', '.$email_cs; // Who the email is to
 
 
 							$semi_rand = md5(time());
@@ -178,11 +178,10 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 							$mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";
 
 							// set header ........................
-							$headers = "From: support@groovy.id";
+							$headers = "From: ".$email_support;
 							$headers .= "\nMIME-Version: 1.0\n" .
 							"Content-Type: multipart/mixed;\n" .
 							" boundary=\"{$mime_boundary}\"";
-							$headers .= 'Cc: '.$email_cs . "\r\n";
 
 							// set email message......................
 							$email_message = "Mohon segera diaktivasi STB dengan serial number  : ".$boxtv."<br>";
