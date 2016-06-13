@@ -27,7 +27,7 @@
 						  <tbody>
 						    <tr>
 						      <td><?php echo $row['id_user'].' / '.$row['nama'].' / '.$row['phone'].' / '.$row['email']; ?></td>
-						      <td><?php echo $row['paket']; ?></td>
+						      <td><b><?php echo $row['paket']; ?></b> <?php echo $row['addon_cust']; ?></td>
 						      <td><?php echo $row['tempat'].', '.$row['keterangan'].', '.$row['kota']; ?></td>
 						      <?php if($status=="registrasi"){ ?>
 						      <td><b><a href="<?php echo $base_url_member; ?>/detail-pemasangan/<?php echo $row['id_user']; ?>" class="btn btn-warning btn-sm">Pasang</a></b></td>

@@ -35,24 +35,81 @@ foreach ($res as $row) {
         $paket_cust = $row['paket'];
 				$addon_cust = $row['addon'];
     }
+		$date = date("Y/m/d");
+		$date_years = date("Y");
+		$date_month = date("m");
+if(isset($_POST['aktif'])){
+		if ($date_month=="12"){
+			$next_month="01";
+			$next_years=$date_years+1;
+		} else {
+			$next_month=$date_month+1;
+			$next_years=$date_years;
+		}
+		if($next_month<10){
+			$next_month = '0'.$next_month;
+		}
+		$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("tanggal_aktivasi"=>$date, "status"=>"aktif", "tanggal_akhir"=>$next_years.'/'.$next_month.'/01')));
+		// mail for customer to aktifasi
+		$to1 = $email_cust;
+
+		$subject1 = 'Aktivasi groovy';
+
+		$message1 = '
+		<html>
+			<body style="background-color:#ddd;padding:50px 0 50px 0;font-family:arial;font-size:15px;">
+					<div style="margin:0 auto;max-width:500px;background-color:#eee;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
+							<div style="background: linear-gradient(to right, #FF3D23 , #fc742f);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
+									<a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
+							</div>
+							<div style="padding:20px;color:#333;">
+									<p style="font-size:20px;font-weight:bold;line-height:1px">Terimakasih sudah menjadi pelanggan Groovy</p>
+									<p>Kami sudah melakukan pemasangan dan aktivasi, terhitung dari tanggal : '.$tgl_psng.' '.$month_psng.' '.$thn_psng.' layanan groovy anda sudah aktiv.<br/><br/>
+									Jika ada pertanyaan lebih detail silahkan membuat pengaduan pada halaman member Anda. Selamat menikmati layanan Groovy</p>
+									<p style="color:#888;">Terimakasih.</p>
+							</div>
+							</div>
+					</div>
+			</body>
+			</html>
+		';
+
+		$headers1  = 'MIME-Version: 1.0' . "\r\n";
+		$headers1 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+		$headers1 .= 'From: '.$email_support . "\r\n";
+
+		$kirim_email1=mail($to1, $subject1, $message1, $headers1);
+
+		// mail for billing or cs
+		$to = $email_cs.', '.$email_billing;
+
+		$subject = 'Info Aktivasi';
+
+		$message = '
+		<html>
+		<body>
+			<p>Customer Berikut Sudah aktiv: </p>
+			<br/>
+			<p>Customer : '.$id_cust.' / '.$nama_cust.' / '.$phone_cust.' / '.$email_cust.'</p>
+			<p>Layanan : '.$package_cust.' / '.$addon_cust.'</p>
+			<br/>
+		</body>
+		</html>
+		';
+
+		$headers  = 'MIME-Version: 1.0' . "\r\n";
+		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+		$headers .= 'From: '.$email_support . "\r\n";
+
+		$kirim_email=mail($to, $subject, $message, $headers);
+if($kirim_email && $kirim_email1 && $update_user){ ?>
+	<script type="" language="JavaScript"> alert('Layanan Customer Sudah Aktif');
+	document.location='<?php echo $base_url_member; ?>/jobs-list-pending'</script>
+<?php } }
 if (isset($_POST['save'])){
 	$note = $_POST['inputNote'];
-	$date = date("Y/m/d");
-	$date_years = date("Y");
-	$date_month = date("m");
-	if ($date_month=="12"){
-		$next_month="01";
-		$next_years=$date_years+1;
-	} else {
-		$next_month=$date_month+1;
-		$next_years=$date_years;
-	}
-	if($next_month<10){
-		$next_month = '0'.$next_month;
-	}
-	if($nama_jobs=="pasang"){
-	$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("tanggal_aktivasi"=>$date, "status"=>"aktif", "tanggal_akhir"=>$next_years.'/'.$next_month.'/01')));
-}
 	$update_jobs = $col_history->update(array("id_cust"=>$id_cust, "status"=>$status_jobs, "hal"=>$nama_jobs),array('$set'=>array("catatan"=>$note, "status"=>"done", "tanggal_selesai"=>$date)));
 				// mail for supevisior teknik
 				$subject = 'Laporan Job Support - '.$nama_jobs.' - '.$nama.' - Coba Sistem';
@@ -81,9 +138,8 @@ if (isset($_POST['save'])){
 				$emailpasang=mail($row['email'], $subject, $message, $headers);
 			}
 }
-
-if ($update_user && $update_jobs){ ?>
-				<script type="" language="JavaScript">
+if ($emailpasang && $update_jobs){ ?>
+				<script type="" language="JavaScript"> alert('Laporan Kerja Tersimpan');
 				document.location='<?php echo $base_url_member; ?>/jobs-list-pending'</script>
 <?php }
 ?>
@@ -191,15 +247,16 @@ if ($update_user && $update_jobs){ ?>
 								        <h4><?php echo $tgl1.' '.$month1.' '.$thn1; ?></h4>
 								      </div>
 								    </div>
-							<?php
+										<?php if($status_cust=="registrasi"){ ?>
+										<br/>
+										<input type="submit" class="btn btn-default" name="aktif" id="aktif" value="AKTIVASI">
+							<?php }
 						    	} else if($level=="301" && $status_jobs=="progress" && $nama_field==$nama){
 						     ?>
 						    <div class="form-group">
 						      <label for="inputNote" class="col-lg-3 control-label">Note</label>
 						      <div class="col-lg-9">
 						        <textarea type="text" class="form-control" id="inputNote" name="inputNote" placeholder="Note"></textarea>
-						        <br/>
-						        <div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>
 						        <br/>
 						      	<input type="submit" class="btn btn-default" name="save" id="save" value="SELESAI">
 						      </div>

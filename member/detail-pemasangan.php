@@ -71,7 +71,7 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 		  <p>Tanggal Pemasangan : '.$tgl_psng.' '.$month_psng.' '.$thn_psng.'</p>
 		  <p>Support : '.$support_field.' dan '.$support_Assfield.'</p>
 		  <br/>
-		  <p>Mohon untuk melakukan report pada halaman member di groovy.id setelah TV customer aktif</p>
+		  <p>Mohon untuk melakukan report pada halaman groovy.id</p>
 		</body>
 		</html>
 		';
