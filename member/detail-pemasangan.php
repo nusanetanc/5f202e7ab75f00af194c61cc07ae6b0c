@@ -61,7 +61,7 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 		$message = '
 		<html>
 		<body>
-		  <p>Lakukan pemasangan dengan rincian customer berikut : </p>
+		  <p>pemasangan dengan rincian customer berikut : </p>
 		  <br/>
 		  <p>Customer : '.$id_cust.' / '.$nama_cust.' / '.$phone_cust.' / '.$email_cust.'</p>
 		  <p>Paket : '.$package_cust.'</p>
@@ -112,7 +112,6 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 			$headers1 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
 			$headers1 .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
-			$headers1 .= 'Cc: cs@groovy.id' . "\r\n";
 
 			$kirim_email1=mail($to1, $subject1, $message1, $headers1);
 		if($isi_paket=="internet+tv"){
@@ -200,7 +199,7 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 							"Content-Transfer-Encoding: base64\n\n" .
 							$data .= "\n\n" .
 							"--{$mime_boundary}--\n";
-							$sent_aktivasi = mail($email_dens, $email_subject, $email_message, $headers);
+							$sent_aktivasi = mail($to1, $email_subject, $email_message, $headers);
 }
 if ($update_user && $insert_activty && $kirim_email1 && $kirim_email){ ?>
 	<script type="" language="JavaScript"> alert('Info pemasangan sudah terkirim ke customer dan dens');
