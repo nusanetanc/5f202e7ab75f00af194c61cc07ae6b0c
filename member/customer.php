@@ -12,11 +12,10 @@
 						<table class="table table-striped table-hover ">
 						  <thead>
 						    <tr>
-						      <th width="10%">ID Cust</th>
-						      <th width="20%">Customer</th>
-						      <th width="15%">Paket</th>
-						      <th width="35%">Location</th>
-						      <th width="20%">Action</th>
+						      <th width="30%">Customer</th>
+						      <th width="30%">Layanan</th>
+						      <th width="30%">Location</th>
+						      <th width="10%">Action</th>
 						    </tr>
 						  </thead>
 						  <?php
@@ -27,8 +26,7 @@
 						?>
 						  <tbody>
 						    <tr>
-						      <td><?php echo $row['id_user']; ?></td>
-						      <td><?php echo $row['nama'].' / '.$row['phone'].' / '.$row['email']; ?></td>
+						      <td><?php echo $row['id_user'].' / '.$row['nama'].' / '.$row['phone'].' / '.$row['email']; ?></td>
 						      <td><?php echo $row['paket']; ?></td>
 						      <td><?php echo $row['tempat'].', '.$row['keterangan'].', '.$row['kota']; ?></td>
 						      <?php if($status=="registrasi"){ ?>
