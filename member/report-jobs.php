@@ -34,6 +34,7 @@ foreach ($res as $row) {
         $keterangan_cust = $row['keterangan'];
         $paket_cust = $row['paket'];
 				$addon_cust = $row['addon'];
+				$status_cust = $row['status'];
     }
 		$date = date("Y/m/d");
 		$date_years = date("Y");
