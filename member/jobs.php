@@ -3,7 +3,7 @@
 		<div class="list-group">
 			<div class="panel" style="border:0px;" >
   				<div class="panel-heading" style="background-color:#F1453C">
-    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">List Jobs Supoort <?php echo $_GET['status']; ?></h3>
+    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">List Jobs Support <?php echo $_GET['status']; ?></h3>
   				</div>
   				<div class="panel-body">
   					<br/>

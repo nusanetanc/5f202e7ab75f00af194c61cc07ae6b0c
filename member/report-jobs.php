@@ -65,7 +65,7 @@ if(isset($_POST['aktif'])){
 							</div>
 							<div style="padding:20px;color:#333;">
 									<p style="font-size:20px;font-weight:bold;line-height:1px">Terimakasih sudah menjadi pelanggan Groovy</p>
-									<p>Kami sudah melakukan pemasangan dan aktivasi, terhitung dari tanggal : '.$tgl_psng.' '.$month_psng.' '.$thn_psng.' layanan groovy anda sudah aktiv.<br/><br/>
+									<p>Kami sudah melakukan pemasangan dan aktivasi, terhitung dari tanggal : '.date("d").' '.bulan(date("d")).' '.date("Y").' layanan groovy anda sudah aktiv.<br/><br/>
 									Jika ada pertanyaan lebih detail silahkan membuat pengaduan pada halaman member Anda. Selamat menikmati layanan Groovy</p>
 									<p style="color:#888;">Terimakasih.</p>
 							</div>
@@ -94,6 +94,7 @@ if(isset($_POST['aktif'])){
 			<br/>
 			<p>Customer : '.$id_cust.' / '.$nama_cust.' / '.$phone_cust.' / '.$email_cust.'</p>
 			<p>Layanan : '.$package_cust.' / '.$addon_cust.'</p>
+			<p>Tanggal Aktivasi : '.date("d/m/Y").'</p>
 			<br/>
 		</body>
 		</html>
@@ -107,7 +108,7 @@ if(isset($_POST['aktif'])){
 		$kirim_email=mail($to, $subject, $message, $headers);
 if($kirim_email && $kirim_email1 && $update_user){ ?>
 	<script type="" language="JavaScript"> alert('Layanan Customer Sudah Aktif');
-	document.location='<?php echo $base_url_member; ?>/jobs-list-pending'</script>
+	document.location='<?php echo $base_url_member; ?>/jobs/status/done'</script>
 <?php } }
 if (isset($_POST['save'])){
 	$note = $_POST['inputNote'];
