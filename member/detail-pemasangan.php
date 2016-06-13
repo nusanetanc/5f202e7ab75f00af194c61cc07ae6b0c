@@ -114,7 +114,7 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 			$headers1 .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
 
 			$kirim_email1=mail($to1, $subject1, $message1, $headers1);
-	//	if($isi_paket=="internet+tv"){
+		if($isi_paket=="internet+tv"){
 							require('../content/srcpdf/fpdf.php');
 							$pdf = new FPDF();
 							$pdf->AddPage();
@@ -182,6 +182,7 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 							$headers .= "\nMIME-Version: 1.0\n" .
 							"Content-Type: multipart/mixed;\n" .
 							" boundary=\"{$mime_boundary}\"";
+							$headers .= 'Cc: '.$email_cs . "\r\n";
 
 							// set email message......................
 							$email_message = "Mohon segera diaktivasi STB dengan serial number  : ".$boxtv."<br>";
@@ -200,7 +201,7 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 							$data .= "\n\n" .
 							"--{$mime_boundary}--\n";
 							$sent_aktivasi = mail($email_to, $email_subject, $email_message, $headers);
-//}
+}
 if ($update_user && $insert_activty && $kirim_email1 && $kirim_email){ ?>
 	<script type="" language="JavaScript"> alert('Info pemasangan sudah terkirim ke customer dan dens');
 	document.location='<?php echo $base_url_member; ?>/customer/registrasi'</script>
