@@ -65,7 +65,7 @@ if(isset($_POST['aktif'])){
 							</div>
 							<div style="padding:20px;color:#333;">
 									<p style="font-size:20px;font-weight:bold;line-height:1px">Terimakasih sudah menjadi pelanggan Groovy</p>
-									<p>Kami sudah melakukan pemasangan dan aktivasi, terhitung dari tanggal : '.date("d").' '.bulan(date("d")).' '.date("Y").' layanan groovy anda sudah aktiv.<br/><br/>
+									<p>Kami sudah melakukan pemasangan dan aktivasi, terhitung dari tanggal : '.date("d").' '.bulan(date("m")).' '.date("Y").' layanan groovy anda sudah aktiv.<br/><br/>
 									Jika ada pertanyaan lebih detail silahkan membuat pengaduan pada halaman member Anda. Selamat menikmati layanan Groovy</p>
 									<p style="color:#888;">Terimakasih.</p>
 							</div>
