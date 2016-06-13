@@ -114,127 +114,93 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 			$headers1 .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
 
 			$kirim_email1=mail($to1, $subject1, $message1, $headers1);
-		if($isi_paket=="internet+tv"){
-			//mail to bukti pembayaran
+	//	if($isi_paket=="internet+tv"){
+							require('../content/srcpdf/fpdf.php');
+							$pdf = new FPDF();
+							$pdf->AddPage();
+							$pdf->SetFont('Arial','B','10');
+							$pdf->Cell(0,20, 'PT Media Andalan Nusa (Nusanet)', '0', 1, 'R');
+							$pdf->SetFont('Arial','B','14');
+							$pdf->Cell(0,10, 'FORMULIR PENDAFTRAN', '0', 5, 'C');
+							$pdf->Ln();
+							$pdf->SetFont('Arial','B','10');
+							$pdf->Cell(0,7, 'DATA PELANGGAN', '0', 1, 'L');
+							$pdf->Ln();
+							$pdf->SetFont('Arial','','10');
+							$pdf->Cell(0,7, 'Jenis Pendaftaran        : Baru', '0', 1, 'L');
+							$pdf->Cell(0,7, 'Nama Lengkap             : '.$nama_cust, '0', 1, 'L');
+							$pdf->Cell(0,7, 'No ID Pelanggan          : '.$id_cust, '0', 1, 'L');
+							$pdf->Cell(0,7, 'Alamat Pemasangan    : '.$tempat_cust.' '.$keterangan_cust.' '.$alamat_cust.' '.$kota_cust, '0', 1, 'L');
+							$pdf->Cell(0,7, 'Nomor Telepon             : '.$phone_cust, '0', 1, 'L');
+							$pdf->Ln();
+							$pdf->SetFont('Arial','B','10');
+							$pdf->Cell(0,7, 'LAYANAN', '0', 1, 'L');
+							$pdf->Ln();
+							$pdf->SetFont('Arial','','10');
+							$pdf->Cell(0,7, 'Jenis Layanan               : '.$package_cust.' - '.$deskripsi_paket, '0', 1, 'L');
+							$pdf->Cell(0,7, 'Layanan Tembahan      : '.$addon_cust, '0', 1, 'L');
+							$pdf->Cell(0,7, 'Nomor SN STB             : '.$boxtv, '0', 1, 'L');
+							$pdf->Cell(0,7, 'Alamat Email                 : '.$email_cust, '0', 1, 'L');
+							$pdf->Cell(0,7, 'Kata Sandi                    : g456789', '0', 1, 'L');
+							$pdf->Ln();
+							$pdf->Ln();
+							$pdf->Ln();
+							$pdf->SetFont('Arial','B','10');
+							$pdf->Cell(0,7, 'Tanggal : '.$date_days.' '.$date_month1.' '.$date_years, '0', 1, 'R');
+							$pdf->SetFont('Arial','','10');
+							$pdf->Ln();
+							$pdf->Ln();
+							$pdf->Ln();
+							$pdf->Ln();
+							$pdf->Image('../img/tanda_tangan.jpg','165','185','33','33');
+							$pdf->SetFont('Arial','','10');
+							$pdf->Cell(0,7, 'Customer Relation Officer', '0', 1, 'R');
+							$pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R');
+							// Filename that will be used for the file as the attachment
+							$fileatt_name = $id_cust.'-'.$tgl_psng.$bln_psng.$thn_psng.'-'.$boxtv.".pdf";
+							$dir='pasang/';
+							// save pdf in directory
+							$pdf ->Output($dir.$fileatt_name);
+							//....................
 
-			require('../content/srcpdf/fpdf.php');
+							$data = $pdf->Output("", "S");
 
-			$header_table = array(
-			array("label"=>"DESKRIPSI", "length"=>70, "align"=>"C"),
-			array("label"=>"HARGA", "length"=>40, "align"=>"C"),
-			array("label"=>"PRORATE", "length"=>40, "align"=>"C"),
-			array("label"=>"TOTAL HARGA", "length"=>40, "align"=>"C")
-			);
-			$data = array();
-			$res = $col_user->findOne(array("id_user"=>$id_cust));
-			foreach ($res['payment_data'] as $payment => $pay) {
-			  if ($pay<>null){
-			    array_push($data, $pay);
-			  }}
-			$pdf = new FPDF();
-			$pdf->AddPage();
-			$pdf->Image('../img/groovy-logo-orange.png','140','15','60');
-			$pdf->SetFont('Arial','B','20');
-			$pdf->Cell(0,30, '', '0', 5, 'L');
-			$pdf->Cell(0,10, 'BUKTI PEMBAYARAN', '0', 5, 'C');
-			$pdf->Ln();
-			$pdf->SetFont('Arial','B','10');
-			$pdf->Cell(0,7, 'DATA PELANGGAN', '0', 1, 'L');
-			$pdf->Ln();
-			$pdf->SetFont('Arial','','10');
-			$pdf->Cell(0,7, 'Nama Lengkap            : '.$nama_cust, '0', 1, 'L');
-			$pdf->Cell(0,7, 'No ID Pelanggan         : '.$id_cust, '0', 1, 'L');
-			$pdf->Cell(0,7, 'Alamat Pemasangan   : '.$tempat_cust.', '.$ket_cust.', '.$alamat_cust.', '.$kota_cust, '0', 1, 'L');
-			$pdf->Cell(0,7, 'Nomor Telepon            : '.$phone_cust, '0', 1, 'L');
-			$pdf->Cell(0,7, 'Alamat Email               : '.$email_cust, '0', 1, 'L');
-			$pdf->Ln();
-			$pdf->SetFont('Arial','B','10');
-			$pdf->Cell(0,7, 'DATA PEMBAYARAN', '0', 1, 'L');
-			$pdf->Ln();
-			$pdf->SetFont('Arial','','10');
-			$pdf->SetFillColor(254,60,34);
-			$pdf->SetTextColor(255);
-			$pdf->SetDrawColor(254,60,34);
-			foreach ($header_table as $kolom_table) {
-			$pdf->Cell($kolom_table['length'], 10, $kolom_table['label'], 1, '0',
-			$kolom['align'], true);
-			}
-			$pdf->Ln();
-			#tampilkan data dari tabel
-			$pdf->SetTextColor(0);
-			$pdf->SetFont('');
-			$pdf->SetDrawColor(254,60,34);
-			foreach ($data as $baris) {
-			$i = 0;
-			foreach ($baris as $cell) {
-			$pdf->Cell($header_table[$i]['length'], 8, $cell, 1, '0',
-			$kolom['align'], false);
-			$i++;
-			}
-			$fill = !$fill;
-			$pdf->Ln();
-			}
-			$pdf->Ln();
-			$pdf->Ln();
-			$pdf->Ln();
-			$pdf->SetTextColor(0);
-			$pdf->SetFont('Arial','B','10');
-			$pdf->Cell(0,7, 'KONFIRMASI PEMBAYRAN - PAYMENT CONFIRMATION', '0', 1, 'L');
-			$pdf->Ln();
-			$pdf->SetFont('Arial','','10');
-			$pdf->Cell(0,7, 'Tanggal Bayar               : '.$tgl_bayar.' '.$month_bayar.' '.$thn_bayar, '0', 1, 'L');
-			$pdf->Cell(0,7, 'Kode Virtual                   : '.$no_virtual, '0', 1, 'L');
-			$pdf->Cell(0,7, 'Jumlah Pembayaran      : '.rupiah($total_bayar), '0', 1, 'L');
-			$pdf->Ln();
-			$pdf->Ln();
-			$pdf->Image('../img/a.jpg','170','240','30');
-			// Filename that will be used for the file as the attachment
-			$fileatt_name = $no_virtual.$last_pembayaran.'.pdf';
-			$dir='bukti/';
-			// save pdf in directory
-			$pdf ->Output($dir.$fileatt_name);
-			//....................
+							//..................
 
-			$data = $pdf->Output("", "S");
-
-			//..................
-
-			$email_subject1 = "Bukti Pembayaran groovy"; // The Subject of the email
-			$email_to1 = $email_cust; // Who the email is to
+							$email_subject = "[REGISTRATION] - Nusanet - ".$nama_cust; // The Subject of the email
+							$email_to = $email_dens; // Who the email is to
 
 
-			$semi_rand = md5(time());
-			$data = chunk_split(base64_encode($data));
+							$semi_rand = md5(time());
+							$data = chunk_split(base64_encode($data));
 
-			$fileatt_type = "application/pdf"; // File Type
-			$mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";
+							$fileatt_type = "application/pdf"; // File Type
+							$mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";
 
-			// set header ........................
-			$headers1 = "From: billing@groovy.id";
-			$headers1.= "\nMIME-Version: 1.0\n" .
-			"Content-Type: multipart/mixed;\n" .
-			" boundary=\"{$mime_boundary}\"";
+							// set header ........................
+							$headers = "From: support@groovy.id";
+							$headers .= "\nMIME-Version: 1.0\n" .
+							"Content-Type: multipart/mixed;\n" .
+							" boundary=\"{$mime_boundary}\"";
 
-			// set email message......................
-			$email_message1 = "Terimakasih ".$nama_cust." sudah menggunakan layanan groovy.id.<br>";
-			$email_message1 .= "Bukti pembayaran ini menandakan bahwa pembayaran anda sudah kami konfirmasi dan terima.<br>";
-			$email_message1 .= "Untuk pelanggan baru kami akan segera memberi inforamsi untuk jadwal pemasangan.<br>";
-			$email_message1 .= "Untuk info lebih lanjut bisa membuat pengaduan pada halaman member anda di groovy.id.\n\n" .
-			"--{$mime_boundary}\n" .
-			"Content-Type:text/html; charset=\"iso-8859-1\"\n" .
-			"Content-Transfer-Encoding: 7bit\n\n" .
-			$email_message1 .= "\n\n";
-			$email_message1 .= "--{$mime_boundary}\n" .
-			"Content-Type: {$fileatt_type};\n" .
-			" name=\"{$fileatt_name}\"\n" .
-			"Content-Disposition: attachment;\n" .
-			" filename=\"{$fileatt_name}\"\n" .
-			"Content-Transfer-Encoding: base64\n\n" .
-			$data .= "\n\n" .
-			"--{$mime_boundary}--\n";
-
-			$emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1);
-}
+							// set email message......................
+							$email_message = "Mohon segera diaktivasi STB dengan serial number  : ".$boxtv."<br>";
+							$email_message .= "Work Order : Instalasi<br>";// Message that the email has in it
+							$email_message .= "This is a multi-part message in MIME format.\n\n" .
+							"--{$mime_boundary}\n" .
+							"Content-Type:text/html; charset=\"iso-8859-1\"\n" .
+							"Content-Transfer-Encoding: 7bit\n\n" .
+							$email_message .= "\n\n";
+							$email_message .= "--{$mime_boundary}\n" .
+							"Content-Type: {$fileatt_type};\n" .
+							" name=\"{$fileatt_name}\"\n" .
+							"Content-Disposition: attachment;\n" .
+							" filename=\"{$fileatt_name}\"\n" .
+							"Content-Transfer-Encoding: base64\n\n" .
+							$data .= "\n\n" .
+							"--{$mime_boundary}--\n";
+							$sent_aktivasi = mail($email_to, $email_subject, $email_message, $headers);
+//}
 if ($update_user && $insert_activty && $kirim_email1 && $kirim_email){ ?>
 	<script type="" language="JavaScript"> alert('Info pemasangan sudah terkirim ke customer dan dens');
 	document.location='<?php echo $base_url_member; ?>/customer/registrasi'</script>
