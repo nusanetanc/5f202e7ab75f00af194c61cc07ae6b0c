@@ -139,7 +139,7 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 							$pdf->Ln();
 							$pdf->SetFont('Arial','','10');
 							$pdf->Cell(0,7, 'Jenis Layanan               : '.$package_cust.' - '.$deskripsi_paket, '0', 1, 'L');
-							$pdf->Cell(0,7, 'Layanan Tembahan      : No', '0', 1, 'L');
+							$pdf->Cell(0,7, 'Layanan Tembahan      : '.$addon_cust, '0', 1, 'L');
 							$pdf->Cell(0,7, 'Nomor SN STB             : '.$boxtv, '0', 1, 'L');
 							$pdf->Cell(0,7, 'Alamat Email                 : '.$email_cust, '0', 1, 'L');
 							$pdf->Cell(0,7, 'Kata Sandi                    : g456789', '0', 1, 'L');
@@ -155,7 +155,6 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 							$pdf->Ln();
 							$pdf->Image('../img/tanda_tangan.jpg','165','185','33','33');
 							$pdf->SetFont('Arial','','10');
-							$pdf->Cell(0,7, 'John Doe              ', '0', 1, 'R');
 							$pdf->Cell(0,7, 'Customer Relation Officer', '0', 1, 'R');
 							$pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R');
 							// Filename that will be used for the file as the attachment
@@ -203,8 +202,8 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 							"--{$mime_boundary}--\n";
 							$sent_aktivasi = mail($email_dens, $email_subject, $email_message, $headers);
 }
-if ($update_user && $insert_activty && $kirim_email1 && $kirim_email && $sent_aktivasi){ ?>
-	<script type="" language="JavaScript">
+if ($update_user && $insert_activty && $kirim_email1 && $kirim_email){ ?>
+	<script type="" language="JavaScript"> alert('Info pemasangan sudah terkirim ke customer dan dens');
 	document.location='<?php echo $base_url_member; ?>/customer/registrasi'</script>
 <?php } } ?>
 <style>
