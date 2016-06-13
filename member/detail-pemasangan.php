@@ -30,7 +30,7 @@ $res = $col_user->find(array("id_user"=>$id_cust,"tanggal_aktivasi"=>"","status"
 $res1 = $col_package->find(array("nama"=>$package_cust));
 						foreach ($res1 as $row1) {
 							$deskripsi_paket=$row1['deskripsi'];
-								$isi_paket = $row['isi'];
+								$isi_paket = $row1['isi'];
 						}
 if (isset($_POST['save'])){
 	$tanggal_pasang = $_POST['inputTanggal'];
@@ -130,7 +130,7 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 							$pdf->Cell(0,7, 'Jenis Pendaftaran        : Baru', '0', 1, 'L');
 							$pdf->Cell(0,7, 'Nama Lengkap             : '.$nama_cust, '0', 1, 'L');
 							$pdf->Cell(0,7, 'No ID Pelanggan          : '.$id_cust, '0', 1, 'L');
-							$pdf->Cell(0,7, 'Alamat Pemasangan    : '.$tempat_cust.' '.$keterangan_cust.' '.$alamat_cust.' '.$kota_cust, '0', 1, 'L');
+							$pdf->Cell(0,7, 'Alamat Pemasangan    : '.$tempat_cust.' '.$ket_cust.' '.$alamat_cust.' '.$kota_cust, '0', 1, 'L');
 							$pdf->Cell(0,7, 'Nomor Telepon             : '.$phone_cust, '0', 1, 'L');
 							$pdf->Ln();
 							$pdf->SetFont('Arial','B','10');
@@ -272,6 +272,7 @@ if ($update_user && $insert_activty && $kirim_email1 && $kirim_email){ ?>
 						        <br/>
 						      </div>
 						    </div>
+								<?php if($isi_paket=="internet+tv"){ ?>
 						  	<div class="form-group">
 						      <label for="inputDate" class="col-lg-3 control-label">No Kode Box Tv</label>
 						      <div class="col-lg-9">
@@ -279,6 +280,7 @@ if ($update_user && $insert_activty && $kirim_email1 && $kirim_email){ ?>
 						        <br/>
 						      </div>
 						    </div>
+								<?php } ?>
 						    <div class="form-group">
 						      <label for="inputField" class="col-lg-3 control-label">Support</label>
 						      <div class="col-lg-4">
