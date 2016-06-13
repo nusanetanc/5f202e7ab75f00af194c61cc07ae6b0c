@@ -20,19 +20,17 @@ $res = $col_user->find(array("id_user"=>$id_cust,"tanggal_aktivasi"=>"","status"
 												$email_cust = $row['email'];
 												$phone_cust = $row['phone'];
 												$package_cust = $row['paket'];
+												$addon_cust = $row['addon'];
 												$tempat_cust = $row['tempat'];
 						                        $kota_cust = $row['kota'];
 						                        $status_cust = $row['status'];
 						                        $alamat_cust = $row['alamat'];
 						                        $ket_cust = $row['keterangan'];
-						                        $harga_paket = $row['harga'];
-	                                            $no_virtual = $row['no_virtual'];
-	                                            $pembayaran = $row['pembayaran'];
-	                                            $proraide = $row['proraide'];
 	                                        }
 $res1 = $col_package->find(array("nama"=>$package_cust));
 						foreach ($res1 as $row1) {
 							$deskripsi_paket=$row1['deskripsi'];
+								$isi_paket = $row['isi'];
 						}
 if (isset($_POST['save'])){
 	$tanggal_pasang = $_POST['inputTanggal'];
@@ -117,6 +115,7 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 			$headers1 .= 'Cc: cs@groovy.id' . "\r\n";
 
 			$kirim_email1=mail($to1, $subject1, $message1, $headers1);
+		if($isi_paket=="internet+tv"){
 							require('../content/srcpdf/fpdf.php');
 							$pdf = new FPDF();
 							$pdf->AddPage();
@@ -203,7 +202,7 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 							$data .= "\n\n" .
 							"--{$mime_boundary}--\n";
 							$sent_aktivasi = mail($email_dens, $email_subject, $email_message, $headers);
-
+}
 if ($update_user && $insert_activty && $kirim_email1 && $kirim_email && $sent_aktivasi){ ?>
 	<script type="" language="JavaScript">
 	document.location='<?php echo $base_url_member; ?>/customer/registrasi'</script>
@@ -256,9 +255,9 @@ if ($update_user && $insert_activty && $kirim_email1 && $kirim_email && $sent_ak
 						      </div>
 						    </div>
 						    <div class="form-group">
-						      <label class="col-lg-3 control-label">Paket</label>
+						      <label class="col-lg-3 control-label">Layanan</label>
 						      <div class="col-lg-9">
-						        <h4>:<?php echo $package_cust; ?></h4>
+						        <h4>:<b><?php echo $package_cust; ?></b> <?php echo $addon_cust; ?></h4>
 						      </div>
 						    </div>
 						    <div class="form-group">
