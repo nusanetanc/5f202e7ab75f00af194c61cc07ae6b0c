@@ -247,11 +247,7 @@ if ($emailpasang && $update_jobs){ ?>
 								        <h4><?php echo $tgl1.' '.$month1.' '.$thn1; ?></h4>
 								      </div>
 								    </div>
-										<?php if($status_cust=="registrasi"){ ?>
-										<br/>
-										<input type="submit" class="btn btn-default" name="aktif" id="aktif" value="AKTIVASI">
-							<?php }
-						    	} else if($level=="301" && $status_jobs=="progress" && $nama_field==$nama){
+							<?php	} else if($level=="301" && $status_jobs=="progress" && $nama_field==$nama){
 						     ?>
 						    <div class="form-group">
 						      <label for="inputNote" class="col-lg-3 control-label">Note</label>
@@ -262,12 +258,14 @@ if ($emailpasang && $update_jobs){ ?>
 						      </div>
 						    </div>
 						    <?php
-						    	}
+							} if($status_jobs=="done" && $level=="3" && $status_cust=="progress pasang"){
 						    ?>
+								<br/>
+								<input type="submit" class="btn btn-default" name="aktif" id="aktif" value="AKTIVASI">
 						  </fieldset>
 						</form>
 					</div>
-					<?php } ?>
+					<?php } } ?>
  				</div>
 			</div>
 		</div>
