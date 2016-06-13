@@ -6,7 +6,7 @@ $date_days = date("d");
 $date_years = date("Y");
 $date_month = date("m");
 $date_month1 = bulan($date_month);
-$res = $col_user->find(array("id_user"=>$id_cust,"tanggal_aktivasi"=>"","status"=>"registrasi","level"=>"0"));	
+$res = $col_user->find(array("id_user"=>$id_cust,"tanggal_aktivasi"=>"","status"=>"registrasi","level"=>"0"));
 						foreach ($res as $row) {
 												$tanggal_registrasi = $row['tanggal_registrasi'];
 												$thn_registrasi = substr($tanggal_registrasi, 0,4);
@@ -30,10 +30,10 @@ $res = $col_user->find(array("id_user"=>$id_cust,"tanggal_aktivasi"=>"","status"
 	                                            $pembayaran = $row['pembayaran'];
 	                                            $proraide = $row['proraide'];
 	                                        }
-$res1 = $col_package->find(array("nama"=>$package_cust));	
+$res1 = $col_package->find(array("nama"=>$package_cust));
 						foreach ($res1 as $row1) {
 							$deskripsi_paket=$row1['deskripsi'];
-						}                                       	                                                	
+						}
 if (isset($_POST['save'])){
 	$tanggal_pasang = $_POST['inputTanggal'];
 	$boxtv = $_POST['inputKodebox'];
@@ -44,17 +44,17 @@ if (isset($_POST['save'])){
 		$bln_psng = substr($tanggal_pasang, 5,2);
 		$tgl_psng = substr($tanggal_pasang, 8,10);
 		$month_psng = bulan($bln_psng);
-$res2 = $col_user->find(array("nama"=>$support_field, "level"=>"301"));	
+$res2 = $col_user->find(array("nama"=>$support_field, "level"=>"301"));
 						foreach ($res2 as $row2) {
 							$email_field=$row2['email'];
-						} 	
-$res3 = $col_user->find(array("nama"=>$support_Assfield, "level"=>"302"));	
+						}
+$res3 = $col_user->find(array("nama"=>$support_Assfield, "level"=>"302"));
 						foreach ($res3 as $row3) {
 							$email_Assfield=$row3['email'];
-						} 
-$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("tanggal_pasang"=>$tanggal_pasang, "field_engginer_pasang"=>$support_field, "ass_field_pasang"=>$support_Assfield, "status"=>"progress pasang", "no_box"=>$boxtv)));
+						}
+$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("status"=>"progress pasang")));
 $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$tanggal_pasang, "field_engineer"=>$support_field, "ass_field"=>$support_Assfield, "status"=>"progress", "id_cust"=>$id_cust, "nama_cust"=>$nama_cust, "tempat_customer"=>$tempat_cust, "alamat_customer"=>$alamat_cust, "kota_customer"=>$kota_cust ,"keterangan_customer"=>$ket_cust, "phone_customer"=>$phone_cust, "paket"=>$package_cust, "status"=>"progress", "no_box"=>$boxtv));
-		
+
 		// mail for field engineer
 		$to = $email_field.', '.$email_Assfield;
 
@@ -101,11 +101,11 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 				            <p style="font-size:20px;font-weight:bold;line-height:1px">Terimakasih sudah menjadi pelanggan Groovy</p>
 				            <p>Kami akan melakukan pemasangan dan aktivasi pada tanggal : '.$tgl_psng.' '.$month_psng.' '.$thn_psng.'.<br/><br/>
 				            Jika ada pertanyaan lebih detail silahkan membuat pengaduan pada halaman member Anda. Selamat menikmati layanan Groovy</p>
-				            
+
 				            <p style="color:#888;">Terimakasih.</p>
 				        </div>
 				        </div>
-				    </div>        
+				    </div>
 				</body>
 				</html>
 			';
@@ -202,7 +202,7 @@ $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$t
 							"Content-Transfer-Encoding: base64\n\n" .
 							$data .= "\n\n" .
 							"--{$mime_boundary}--\n";
-							$sent_aktivasi = mail($email_to, $email_subject, $email_message, $headers);
+							$sent_aktivasi = mail($email_dens, $email_subject, $email_message, $headers);
 
 if ($update_user && $insert_activty && $kirim_email1 && $kirim_email && $sent_aktivasi){ ?>
 	<script type="" language="JavaScript">
@@ -228,7 +228,7 @@ if ($update_user && $insert_activty && $kirim_email1 && $kirim_email && $sent_ak
   				<div class="panel-body">
   					<br/>
   					<?php if ($nama_cust<>"") { ?>
-					<div class="col-sm-12">	
+					<div class="col-sm-12">
 						<form class="form-horizontal">
 						  <fieldset>
 						    <div class="form-group">
@@ -266,14 +266,14 @@ if ($update_user && $insert_activty && $kirim_email1 && $kirim_email && $sent_ak
 						      <div class="col-lg-9">
 						        <h4>:<?php echo $tempat_cust.', '.$keterangan_cust.', '.$kota_cust; ?></h4>
 						      </div>
-						    </div>					    						    						    						    
+						    </div>
 						    <div class="form-group">
 						      <label for="inputDate" class="col-lg-3 control-label">Tanggal Pemasangan</label>
 						      <div class="col-lg-9">
 						        <input type="text" class="form-control" id="inputTanggal" name="inputTanggal" placeholder="Date" readonly>
 						        <br/>
 						      </div>
-						    </div>	
+						    </div>
 						  	<div class="form-group">
 						      <label for="inputDate" class="col-lg-3 control-label">No Kode Box Tv</label>
 						      <div class="col-lg-9">
@@ -287,9 +287,9 @@ if ($update_user && $insert_activty && $kirim_email1 && $kirim_email && $sent_ak
 						            <select class="form-control" id="inputField" name="inputField">
 							          <option disabled selected>Select Field Engineer</option>
 							          <?php
-							          $res = $col_user->find(array("level"=>"301"));	
-										foreach ($res as $row) {  ?>  
-									  <option><?php echo $row['nama']; ?></option>	 
+							          $res = $col_user->find(array("level"=>"301"));
+										foreach ($res as $row) {  ?>
+									  <option><?php echo $row['nama']; ?></option>
 									  <?php } ?>
 							        </select>
 							        <br/>
@@ -298,26 +298,26 @@ if ($update_user && $insert_activty && $kirim_email1 && $kirim_email && $sent_ak
 						            <select class="form-control" id="inputAssfield" name="inputAssfield">
 							          <option disabled selected>Select Ass Field Engineer</option>
 							          <?php
-							          $res = $col_user->find(array("level"=>"302"));	
-										foreach ($res as $row) {  ?>  
-									  <option><?php echo $row['nama']; ?></option>	 
+							          $res = $col_user->find(array("level"=>"302"));
+										foreach ($res as $row) {  ?>
+									  <option><?php echo $row['nama']; ?></option>
 									  <?php } ?>
 							        </select>
 							        <br/>
 						      </div>
-						    </div>	
-						    <div class="col-lg-9">	
+						    </div>
+						    <div class="col-lg-9">
 						        <div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>
 						        <br/>
-						      	<button class="btn btn-success" type="submit" name="save" id="save"><b>PASANG</b></button>	
+						      	<button class="btn btn-success" type="submit" name="save" id="save"><b>PASANG</b></button>
 						    </div>
-						  </fieldset>	
-						</form>    		
-					</div>	
+						  </fieldset>
+						</form>
+					</div>
 					<?php } ?>
  				</div>
 			</div>
 		</div>
-	</div>	
+	</div>
 </section>
 </form>
