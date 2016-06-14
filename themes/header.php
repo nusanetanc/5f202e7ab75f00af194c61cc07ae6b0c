@@ -594,7 +594,7 @@
                                                       "keterangan"=>"Reistrasi via personal, dengan paket ".$package.", dan add on layanan ".$addon_service
                                                 		);
                                                                   $insert_customer=$col_user->insert(array("id_user"=>$newid,"nama"=>$name,"email"=>$email, "phone"=>$phone, "foto"=>"","level"=>"0","password"=>$result, "aktif"=>"0", "registrasi"=>"personal",
-                                                                                "tanggal_registrasi"=>$date, "paket"=>$package, "harga"=>$harga, "tanggal_akhir"=>"","tanggal_aktivasi"=>"",
+                                                                                "tanggal_registrasi"=>$date, "paket"=>$package, "harga"=>$harga, "tanggal_akhir"=>"","tanggal_aktivasi"=>"","addon"=>$addon_service,
                                                                                 "tempat"=>$location, "kota"=>$city, "keterangan"=>$decription, "alamat"=>$place, "pembayaran"=>"0", "no_virtual"=>"","status"=>"registrasi", "histori"=>array($history)));
                                                                               // mail for customer to registrasi
                                                                                 $to = $email;
