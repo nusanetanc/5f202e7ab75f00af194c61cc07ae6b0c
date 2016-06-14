@@ -35,7 +35,7 @@ if ($level=="0"){
 										<span class="badge"><?php echo $row['total']; ?></span>
 										<?php echo $row['layanan']; ?>
 									</li>
-									<?php } ?>
+									<?php } } ?>
 								</ul>
 						</div>
 					</fieldset>
