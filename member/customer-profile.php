@@ -173,7 +173,7 @@
 						      <div class="col-lg-9"><h4>
 							  <?php
 							  	if ($regis_cust=="personal") {
-							  		echo $row['registrasi'];
+							  		echo $regis_cust;
 							  	} elseif ($regis_cust=="sales") {
 							  		echo $regis_cust.' / '.$sales_cust;
 							  	}
