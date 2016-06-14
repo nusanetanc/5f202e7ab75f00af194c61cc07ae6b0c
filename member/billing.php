@@ -25,87 +25,18 @@ if ($level=="0"){
 						<div class="col-sm-12">
 							<fieldset>
 								<ul class="list-group">
-								  <li class="list-group-item">
-								  	<h4 class="list-group-item-heading"><strong>#<?php echo $paket; ?></strong></h4>
-										<?php if($status=="unaktif" || $status=="registrasi"){ ?>
-											<span class="label label-warning"><?php echo $status; ?></span>
-										<?php } elseif($status=="aktif"){ ?>
-											<p>Tanggal Mulai Aktif : <strong><?php echo $tgl_aktif.' '.$month_aktif.' '.$thn_aktif; ?></strong>.</p>
-											<p>Tanggal Akhir Pembayaran : <strong><?php echo $tgl_akhir.' '.$month_akhir.' '.$thn_akhir; ?></strong>.</p>
-										<?php } ?>
-										<p>Harga : <strong><?php echo rupiah($harga); ?></strong></p>
-										<p>Prorate : <strong><?php echo rupiah($proraide); ?></strong></p>
-										<?php $total_harga_paket = $harga-$proraide;
-													$total_harga_addon=0;
-										 ?>
-										<p>subtotal : <strong><?php echo rupiah($total_harga_paket); ?></strong></p>
-								  </li>
-									<?php $res = $col_addon->find(array("id_user"=>$id));
-												foreach ($res as $add) {
-													$thn_aktif0 = substr($add['tanggal_aktif'], 0,4);
-													$bln_aktif0 = substr($add['tanggal_aktif'], 5,2);
-													$tgl_aktif0 = substr($add['tanggal_aktif'], 8,10);
-													$month_aktif0 = bulan($bln_aktif0);
-
-													$thn_akhir0 = substr($add['tanggal_aktif'], 0,4);
-													$bln_akhir0 = substr($add['tanggal_akhir'], 5,2);
-													$tgl_akhir0 = substr($add['tanggal_akhir'], 8,10);
-													$month_akhir0 = bulan($bln_akhir0);
-													 ?>
-									<li class="list-group-item">
-										<h4 class="list-group-item-heading"><strong class="text-primary">#<?php echo $add['layanan']; ?></strong></h4>
-										<?php if($add['status']=="unaktif"){ ?>
-										<span class="label label-warning"><?php echo $add['status']; ?></span>
-									<?php } elseif($add['status']=="aktif"){ ?>
-										<span class="label label-primary"><?php echo $add['status']; ?></span>
-										<p>Tanggal Mulai Aktif : <strong><?php echo $tgl_aktif0.' '.$month_aktif0.' '.$thn_aktif0; ?></strong></p>
-										<p>Tanggal Akhir Aktif : <strong><?php echo $tgl_akhir0.' '.$month_akhir0.' '.$thn_akhir0; ?></strong></p>
-										<?php } ?>
-										<p>Harga : <strong><?php echo rupiah($add['harga']); ?></strong></p>
-										<p>Prorate : <strong><?php echo rupiah($add['proraide']); ?></strong></p>
-										<?php $total_harga = $add['harga']-$add['proraide'];
-										 ?>
-										<p>Subtotal : <strong><?php echo rupiah($total_harga); ?></strong></p>
-									</li>
 									<?php
-									$total_harga_addon=$total_harga_addon+$total_harga;
-									} ?>
-								<li class="list-group-item">
-									<p>No Virtual Pembayaran : <strong><?php echo $no_virtual; ?></strong></p>
-									<p>Biaya Sewa Router : <strong><?php echo rupiah($biaya_router); ?></strong></p>
-									<?php $rslt = $col_package->find(array("nama"=>$paket));
-									foreach ($rslt as $row) {
-										$isi_paket = $row['isi'];
-									}
-									if($isi_paket=="internet+tv"){ ?>
-									<p>Biaya Sewa STB : <strong><?php echo rupiah($biaya_stb); ?></strong></p>
+									$total=0;
+									$res = $col_user->findOne(array("id_user"=>$id_cust));
+									foreach ($res['payment_data'] as $payment => $pay) {
+										if ($pay<>null){
+										?>
+									<li class="list-group-item">
+										<span class="badge"><?php echo $row['total']; ?></span>
+										<?php echo $row['layanan']; ?>
+									</li>
 									<?php } ?>
-									<?php if($status=="registrasi" && $isi_paket=="internet+tv"){ ?>
-									<p>Biaya instalasi : <strong><?php echo rupiah($biaya_instalasi); ?></strong></p>
-									<p>Total Harga : <strong><?php echo rupiah($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router+$biaya_instalasi); ?></strong></p>
-									<?php $ppn = ($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router+$biaya_instalasi)*0.1; ?>
-									<p>PPN 10% : <strong><?php echo rupiah($ppn); ?></strong></p>
-									<p>Total Pembayaran : <strong><?php echo rupiah($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router+$biaya_instalasi+$ppn); ?></strong></p>
-									<?php } elseif($status=="registrasi" && $isi_paket=="internet"){ ?>
-									<p>Biaya instalasi : <strong><?php echo rupiah($biaya_instalasi); ?></strong></p>
-									<p>Total Harga : <strong><?php echo rupiah($total_harga_paket+$total_harga_addon+$biaya_router+$biaya_instalasi); ?></strong></p>
-									<?php $ppn = ($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_instalasi)*0.1; ?>
-									<p>PPN 10% : <strong><?php echo rupiah($ppn); ?></strong></p>
-									<p>Total Pembayaran : <strong><?php echo rupiah($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router+$biaya_instalasi+$ppn); ?></strong></p>
-									<?php } elseif ($status=="unaktif" || $status=="aktif") { 
-										if($isi_paket=="internet"){ ?>
-									<p>Total Harga : <strong><?php echo rupiah($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router); ?></strong></p>
-									<?php $ppn = ($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router)*0.1; ?>
-									<p>PPN 10% : <strong><?php echo rupiah($ppn); ?></strong></p>
-									<p>Total Pembayaran : <strong><?php echo rupiah($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router+$ppn); ?></strong></p>
-									<?php	} if($isi_paket=="internet+tv"){  ?>
-										<p>Total Harga : <strong><?php echo rupiah($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router); ?></strong></p>
-										<?php $ppn = ($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router)*0.1; ?>
-										<p>PPN 10% : <strong><?php echo rupiah($ppn); ?></strong></p>
-										<p>Total Pembayaran : <strong><?php echo rupiah($total_harga_paket+$total_harga_addon+$biaya_stb+$biaya_router+$ppn); ?></strong></p>
-									<?php } } ?>
-								</li>
-							</ul>
+								</ul>
 						</div>
 					</fieldset>
 					</div>
