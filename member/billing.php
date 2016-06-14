@@ -27,7 +27,7 @@ if ($level=="0"){
 								<ul class="list-group">
 									<?php
 									$total=0;
-									$res = $col_user->findOne(array("id_user"=>$id_cust));
+									$res = $col_user->findOne(array("id_user"=>$id));
 									foreach ($res['payment_data'] as $payment => $pay) {
 										if ($pay<>null){
 										?>
