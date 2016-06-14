@@ -714,6 +714,7 @@ if(isset($_POST['request'])){
                         <input type="text" class="form-control" id="inputRequestdate" name="inputRequestdate" placeholder="Date Request Change Service" required>
                         <br/>
                         <input type="submit" class="btn" style="background-color:#1B5E12; color:#FFFFFF" name="request" id="request" value="Request">
+                        <input type="submit" class="btn" style="background-color:#1B5E12; color:#FFFFFF" name="change" id="change" value="Change">
     		  				    </div>
     		  				 </div>
     		  				 </form>
