@@ -32,11 +32,11 @@ if ($level=="0"){
 										if ($pay<>null){
 										?>
 									<li class="list-group-item">
-										<span class="badge">Harga : <?php echo rupiah($pay['total']); ?></span>
-										<span class="badge">Harga : <?php echo rupiah($pay['total']); ?></span>
-										<span class="badge">Harga : <?php echo rupiah($pay['total']); ?></span>
-										<br/>
-										<?php echo $pay['layanan']; ?>
+										<p><h4><?php echo $pay['layanan']; ?><h4><br/>
+												<span class="badge">Harga : <?php echo $pay['harga']; ?></span>
+												<span class="badge">Prorate : <?php echo $pay['prorate']; ?></span>
+												<span class="badge">Sub Total : <?php echo $pay['total']; ?></span>
+										</p>
 									</li>
 									<?php } } ?>
 								</ul>
