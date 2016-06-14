@@ -31,10 +31,11 @@ if ($level=="0"){
 									foreach ($res['payment_data'] as $payment => $pay) {
 										if ($pay<>null){
 										?>
-										<a class="list-group-item" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title="" aria-describedby="popover531580">
-										<span class="badge"><?php echo rupiah($pay['total']); ?></span>
+									<li class="list-group-item">
+										<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title="" aria-describedby="popover531580">
+										<span class="badge"><?php echo rupiah($pay['total']); ?></span></button>
 										<?php echo $pay['layanan']; ?>
-									</a>
+									</li>
 									<?php } } ?>
 								</ul>
 						</div>
