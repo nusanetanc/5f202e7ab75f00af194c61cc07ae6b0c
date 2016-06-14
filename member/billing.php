@@ -41,9 +41,11 @@ if ($level=="0"){
 									<?php $total = $total+$pay['total'];
 								 				} } ?>
 									<li class="list-group-item active">
-										<p><h4><?php echo $total; ?><h4></p>
-										<p><h4><?php echo $total*0.1; ?><h4></p>
-										<p><h3><?php echo $total*0.1+$total; ?><h3></p>
+										<p><h4>Total Harga : <?php echo rupiah($total); ?><h4></p>
+										<p><h4>PPN 10 % : <?php echo rupiah($total*0.1); ?><h4></p>
+									</li>
+									<li class="list-group-item active">
+										<p><h3>Total Pembayaran : <?php echo rupiah($total*0.1+$total); ?><h3></p>
 									</li>
 								</ul>
 						</div>
