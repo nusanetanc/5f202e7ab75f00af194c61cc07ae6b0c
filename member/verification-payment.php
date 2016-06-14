@@ -480,13 +480,14 @@ if(isset($_POST['request'])){
     	  $pdf->Cell(0,7, 'No ID Pelanggan                  : '.$id_cust, '0', 1, 'L');
     	  $pdf->Cell(0,7, 'Nomor Telepon                    : '.$phone_cust, '0', 1, 'L');
     	  $pdf->Cell(0,7, 'Alamat Email                        : '.$email_cust, '0', 1, 'L');
-    	  $pdf->Cell(0,7, 'Layanan yang Digunakan    : '.$package_cust.' ('.$deskripsi_paket0.')', '0', 1, 'L');
-    	  $pdf->Cell(0,7, 'Layanan Add-ons                 : No', '0', 1, 'L');
+    	  $pdf->Cell(0,7, 'Layanan yang Digunakan    : '.$package_cust, '0', 1, 'L');
+    	  $pdf->Cell(0,7, 'Layanan Add-ons                 : '.$addon_cust, '0', 1, 'L');
     	  $pdf->Ln();
     	  $pdf->SetFont('Arial','B','10');
     	  $pdf->Cell(0,7, 'PERGANTIAN LAYANAN', '0', 1, 'L');
     	  $pdf->SetFont('Arial','','10');
-    	  $pdf->Cell(0,7, 'Pergantian Layanan : '.$input_paket.' ('.$deskripsi_paket1.')', '0', 1, 'L');
+    	  $pdf->Cell(0,7, 'Pergantian Layanan : '.$inputpaket, '0', 1, 'L');
+        $pdf->Cell(0,7, 'Layanan Tambahan : '.$inputaddon, '0', 1, 'L');
     	  $pdf->Ln();
     	  $pdf->Ln();
     	  $pdf->Ln();
@@ -535,8 +536,8 @@ if(isset($_POST['request'])){
     	  "--{$mime_boundary}--\n";
 
     	 $sent0 = mail($email_to0, $email_subject0, $email_message0, $email_headers0);
-       
-        if($emailpindah && $emailcust_pindah){ ?>
+
+        if($emailpindah && $emailcust_pindah && $sent0 ){ ?>
           <script type="" language="JavaScript">alert('Pindah layanan sudah di konfirmasi');
       		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>
 <?php } } ?>
