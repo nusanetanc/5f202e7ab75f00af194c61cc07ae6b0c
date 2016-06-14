@@ -25,7 +25,7 @@ if(isset($_POST['send'])){
 	$pjkbl=$_POST['pjkbl'];
 	$kabel=$_POST['kabel'];
 	$package_cust=$_POST['paket'];
-	$proraide_paket=$_POST['proraide'];
+	$proraide_paket=$_POST['proraide_paket'];
 	$res = $col_package->find(array("nama"=>$package_cust));
 	foreach($res as $row)
 					{
