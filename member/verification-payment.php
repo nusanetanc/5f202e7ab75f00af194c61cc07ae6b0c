@@ -230,7 +230,7 @@ $emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1);
 						foreach($res as $row)
 											{
 				$emailpasang=mail($row['email'], $subject, $message, $headers);
-			}
+			} $last_pembayaran=1;
 	} else {
 		$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("tanggal_akhir"=>$next_years.'/'.$next_month.'/01', "pembayaran"=>$last_pembayaran)));
 	}
