@@ -32,7 +32,7 @@ if ($level=="0"){
 										if ($pay<>null){
 										?>
 									<li class="list-group-item">
-										<p><h4><?php echo $pay['layanan']; ?><h4><br/>
+										<p><h4><?php echo $pay['layanan']; ?><h4></p><p>
 												<span class="badge">Harga : <?php echo $pay['harga']; ?></span>
 												<span class="badge">Prorate : <?php echo $pay['prorate']; ?></span>
 												<span class="badge">Sub Total : <?php echo $pay['total']; ?></span>
