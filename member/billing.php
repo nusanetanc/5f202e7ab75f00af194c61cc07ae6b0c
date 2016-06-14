@@ -38,7 +38,13 @@ if ($level=="0"){
 												<span class="badge">Sub Total : <?php echo rupiah($pay['total']); ?></span>
 										</p>
 									</li>
-									<?php } } ?>
+									<?php $total = $total+$pay['total'];
+								 				} } ?>
+									<li class="list-group-item active">
+										<p><h4><?php echo $total; ?><h4></p>
+										<p><h4><?php echo $total*0.1; ?><h4></p>
+										<p><h3><?php echo $total*0.1+$total; ?><h3></p>
+									</li>
 								</ul>
 						</div>
 					</fieldset>
