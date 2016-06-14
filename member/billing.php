@@ -32,8 +32,8 @@ if ($level=="0"){
 										if ($pay<>null){
 										?>
 									<li class="list-group-item">
-										<span class="badge"><?php echo $row['total']; ?></span>
-										<?php echo $row['layanan']; ?>
+										<span class="badge"><?php echo $pay['total']; ?></span>
+										<?php echo $pay['layanan']; ?>
 									</li>
 									<?php } } ?>
 								</ul>
