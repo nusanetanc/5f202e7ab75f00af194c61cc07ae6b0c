@@ -35,7 +35,8 @@ if ($level=="0"){
 										<span class="badge">Harga : <?php echo rupiah($pay['total']); ?></span>
 										<span class="badge">Harga : <?php echo rupiah($pay['total']); ?></span>
 										<span class="badge">Harga : <?php echo rupiah($pay['total']); ?></span>
-										<?php echo $pay['layanan']; ?><br/>
+										<br/>
+										<?php echo $pay['layanan']; ?>
 									</li>
 									<?php } } ?>
 								</ul>
