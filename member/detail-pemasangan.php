@@ -261,7 +261,7 @@ if ($update_user && $insert_activty && $kirim_email1 && $kirim_email){ ?>
 						    <div class="form-group">
 						      <label class="col-lg-3 control-label">Lokasi</label>
 						      <div class="col-lg-9">
-						        <h4>:<?php echo $tempat_cust.', '.$keterangan_cust.', '.$kota_cust; ?></h4>
+						        <h4>:<?php echo $tempat_cust.', '.$ket_cust.', '.$kota_cust; ?></h4>
 						      </div>
 						    </div>
 						    <div class="form-group">
