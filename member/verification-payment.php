@@ -13,6 +13,10 @@
       	format:'yyyy/mm/dd'
         });
             });
+         $(document).ready(function(){
+           $("#kolpostchange").hide();
+           $("#kolpostrequest").hide();
+         });
     </script>
 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 <?php
@@ -799,8 +803,8 @@ if($emailcust){ ?>
     	  				    <div class="row">
     	  				    	<div class="col-sm-12">
                         <li class="list-group-item">
-                            <p><input type="radio" name="optionsService" id="optionsService" value="request">Request</p>
-                            <p><input type="radio" name="optionsService" id="optionsService" value="change">Change</p>
+                            <p><input type="radio" name="optionsService" id="optionsService" value="request"> Request</p>
+                            <p><input type="radio" name="optionsService" id="optionsService" value="change"> Change</p>
                         </li>
                         <li class="list-group-item">
                             Paket :
@@ -833,11 +837,13 @@ if($emailcust){ ?>
                             </li>
                           </ul>
                           <br/>
-                        <input type="submit" class="btn" style="background-color:#1B5E12; color:#FFFFFF" name="change" id="change" value="Change">
-                        <br/>
-                        <input type="text" class="form-control" id="inputRequestdate" name="inputRequestdate" placeholder="Date Request Change Service">
-                        <br/>
-                        <input type="submit" class="btn" style="background-color:#1B5E12; color:#FFFFFF" name="request" id="request" value="Request">
+                        <li class="list-group-item" name="kolpostchange" name="kolpostchange">
+                          <input type="submit" class="btn" style="background-color:#1B5E12; color:#FFFFFF" name="change" id="change" value="Change">
+                        </li>
+                        <li class="list-group-item" name="kolpostrequest" name="kolpostrequest">
+                          <input type="text" class="form-control" id="inputRequestdate" name="inputRequestdate" placeholder="Date Request Change Service">
+                          <input type="submit" class="btn" style="background-color:#1B5E12; color:#FFFFFF" name="request" id="request" value="Request">
+                        </li>
     		  				    </div>
     		  				 </div>
     		  				 </form>
