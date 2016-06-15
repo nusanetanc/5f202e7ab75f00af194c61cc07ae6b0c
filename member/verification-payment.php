@@ -18,7 +18,8 @@
            $("#kolpostrequest").hide();
         $("#optionsService").change(function(){
           var os =  $("#optionsService").val();
-            if(os == "change"){
+          var ch = "change";
+            if(os == ch){
               $("#kolpostchange").show();
               $("#kolpostrequest").hide();
             }
