@@ -414,15 +414,17 @@ if(isset($_POST['request'])){
 				  <p>Tempat : '.$tempat_cust.', '.$ket_cust.', '.$kota_cust.'</p>
 				  <p>Pindah Paket : '.$inputpaket.'</p>
           <p>Layanan Tambahan : '.$inputaddon.'</p>
-				  <p>Tanggal Pindah Paket : '.$tgl_pindah.' '.$month_pindah.' '.$thn_pindah.'</p>
+				  <p>Tanggal Pindah Layanan : '.$tgl_pindah.' '.$month_pindah.' '.$thn_pindah.'</p>
 				  <br/>
+          <p>Mohon Konfirmasi Setelah Di Lakukan Pindah Layanan</p>
+          <br/>
 				</body>
 				</html>
 				';
 				$headers  = 'MIME-Version: 1.0' . "\r\n";
 				$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-				$headers .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
-				$headers .= 'Cc: cs@groovy.id' . "\r\n";
+				$headers .= 'From: '.$email_billing . "\r\n";
+				$headers .= 'Cc: '.$email_cs . "\r\n";
 			$res = $col_user->find(array("level"=>"3"));
 						foreach($res as $row)
 											{
@@ -538,8 +540,50 @@ if(isset($_POST['request'])){
     	 $sent0 = mail($email_to0, $email_subject0, $email_message0, $email_headers0);
 
         if($emailpindah && $emailcust_pindah && $sent0 ){ ?>
-          <script type="" language="JavaScript">alert('Pindah layanan sudah di konfirmasi');
+          <script type="" language="JavaScript">alert('Request pindah layanan sudah di konfirmasi');
       		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>
+<?php } }
+  if(isset($_POST['change'])){
+    $inputpaket=$_POST['inputpaket'];
+    $inputaddon=implode(", ", $_POST['addon']);
+                // mail for customer
+              $subject1 = 'Pemberitahuan Pindah Paket';
+              $message1 = '
+              <html>
+                <body style="background-color:#ddd;padding:50px 0 50px 0;font-family:arial;font-size:15px;">
+                    <div style="margin:0 auto;max-width:750px;background-color:#eee;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
+                        <div style="background: linear-gradient(to right, #FF3D23 , #fc742f);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
+                            <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
+                        </div>
+                        <div style="padding:20px;color:#333;">
+                            <p style="font-size:20px;font-weight:bold;line-height:1px">Pemberitahuan Pergantian Layanan</p>
+                            <p>Sehubungan dengan permintaan pergantian layanan, dapat kami informasikan bahwa layanan yang anda gunakan saat ini :<br/>
+                            Paket : '.$package_cust.'<br/>
+                            Layanan Tambahan : '.$addon_cust.'<br/>
+                            Kami sudah melakukan pergantian layanan pada tanggal '.$tgl_pindah.' '.$month_pindah.' '.$thn_pindah.' menjadi : <br/>
+                            Paket : '.$inputpaket.'<br/>
+                            Layanan Tambahan : '.$inputaddon.'<br/>
+                            Terima kasih telah menggunakan layanan groovy.</p><br/><br/>
+                        </div>
+                        <div style="padding:10px;color:#333;">
+                            <img src="http://groovy.id/beta/img/groovy-logo-orange.png" height="20px;"/>
+                            <p>Hormat Kami<br/>
+                            Customer Service groovy<br/>
+                            PT Media Andalan Nusa<p>
+                        </div>
+                        </div>
+                    </div>
+                </body>
+                </html>
+              ';
+              $headers1  = 'MIME-Version: 1.0' . "\r\n";
+              $headers1 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+              $headers1 .= 'From: cs@groovy.id' . "\r\n";
+              $headers1 .= 'Cc: cs@groovy.id' . "\r\n";
+              $emailcust=mail($email_cust, $subject1, $message1, $headers1);
+if($emailcust){ ?>
+                <script type="" language="JavaScript">alert('Pindah layanan sudah di konfirmasi');
+                document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>
 <?php } } ?>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
