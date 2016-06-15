@@ -837,10 +837,10 @@ if($emailcust){ ?>
                             </li>
                           </ul>
                           <br/>
-                        <li class="list-group-item" name="kolpostchange" name="kolpostchange">
+                        <li class="list-group-item" name="kolpostchange" id="kolpostchange">
                           <input type="submit" class="btn" style="background-color:#1B5E12; color:#FFFFFF" name="change" id="change" value="Change">
                         </li>
-                        <li class="list-group-item" name="kolpostrequest" name="kolpostrequest">
+                        <li class="list-group-item" name="kolpostrequest" id="kolpostrequest">
                           <input type="text" class="form-control" id="inputRequestdate" name="inputRequestdate" placeholder="Date Request Change Service">
                           <input type="submit" class="btn" style="background-color:#1B5E12; color:#FFFFFF" name="request" id="request" value="Request">
                         </li>
