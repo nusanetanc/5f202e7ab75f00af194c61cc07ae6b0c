@@ -16,7 +16,13 @@
          $(document).ready(function(){
            $("#kolpostchange").hide();
            $("#kolpostrequest").hide();
-         });
+        $("#optionsService").change(function(){
+          var os =  $("#optionsService").val();
+            if(os == "change"){
+              $("#kolpostchange").show();
+              $("#kolpostrequest").hide();
+            }
+        }) });
     </script>
 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 <?php
