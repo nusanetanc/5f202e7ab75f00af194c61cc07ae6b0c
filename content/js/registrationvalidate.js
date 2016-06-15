@@ -6,8 +6,7 @@ $("#valid").hide();
    $("#regisplace").hide();
    $("#regislocation").prop( "disabled", true );
    $("#regisaddon1").hide();
-   $("#regisaddon2").hide();
-   $("#inputRequestdate").hide();
+   $("#regisaddon2").hide(); 
       $("#regispackage").change(function(){
         $("#regislocation").prop( "disabled", false );
         var p =  $("#regispackage").val();
