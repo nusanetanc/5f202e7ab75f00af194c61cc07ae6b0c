@@ -791,13 +791,17 @@ if($emailcust){ ?>
     		<div class="list-group">
     			<div class="panel" style="border:0px;">
       				<div class="panel-heading" style="background-color:#1B5E12">
-        				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">CHANGE LAYANAN</h3>
+        				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">LAYANAN</h3>
       				</div>
     	  					<br/>
     	  				    <div class="panel-body">
     	  				    <form method="post">
     	  				    <div class="row">
     	  				    	<div class="col-sm-12">
+                        <li class="list-group-item">
+                            <p><input type="radio" name="optionsService" id="optionsService" value="request">Request</p>
+                            <p><input type="radio" name="optionsService" id="optionsService" value="change">Change</p>
+                        </li>
                         <li class="list-group-item">
                             Paket :
                             <select class="form-control" id="inputpaket" name="inputpaket">
@@ -831,7 +835,7 @@ if($emailcust){ ?>
                           <br/>
                         <input type="submit" class="btn" style="background-color:#1B5E12; color:#FFFFFF" name="change" id="change" value="Change">
                         <br/>
-                        <input type="text" class="form-control" id="inputRequestdate" name="inputRequestdate" placeholder="Date Request Change Service" required>
+                        <input type="text" class="form-control" id="inputRequestdate" name="inputRequestdate" placeholder="Date Request Change Service">
                         <br/>
                         <input type="submit" class="btn" style="background-color:#1B5E12; color:#FFFFFF" name="request" id="request" value="Request">
     		  				    </div>
