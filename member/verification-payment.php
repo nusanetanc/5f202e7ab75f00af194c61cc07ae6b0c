@@ -16,7 +16,7 @@
          $(document).ready(function(){
            $("#kolpostchange").hide();
            $("#kolpostrequest").hide();
-        $("#optionsService").click(function(){
+        $("input[type='radio']").click(function(){
           var os =  $("#optionsService").val();
           var ch = "change";
             if(os == ch){
