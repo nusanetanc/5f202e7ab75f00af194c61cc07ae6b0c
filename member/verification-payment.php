@@ -25,7 +25,7 @@
         $("#kolpostchange").show();
   } else if(sel_kol == pil2) {
     $("#kolpostchange").hide();
-    $("#kolpostrequest").show();    
+    $("#kolpostrequest").show();
 }
 }) });
     </script>
@@ -855,7 +855,7 @@ if($emailcust){ ?>
                           <input type="submit" class="btn" style="background-color:#1B5E12; color:#FFFFFF" name="change" id="change" value="Change">
                         </li>
                         <li class="list-group-item" name="kolpostrequest" id="kolpostrequest">
-                          <input type="text" class="form-control" id="inputRequestdate" name="inputRequestdate" placeholder="Date Request Change Service">
+                          <input type="text" class="form-control" id="inputRequestdate" name="inputRequestdate" placeholder="Date Request Change Service"><br/>
                           <input type="submit" class="btn" style="background-color:#1B5E12; color:#FFFFFF" name="request" id="request" value="Request">
                         </li>
     		  				    </div>
