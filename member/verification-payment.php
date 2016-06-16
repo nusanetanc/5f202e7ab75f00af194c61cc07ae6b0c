@@ -16,14 +16,18 @@
          $(document).ready(function(){
            $("#kolpostchange").hide();
            $("#kolpostrequest").hide();
-        $("input[type='radio']").click(function(){
-          var os =  $("#optionsService").val();
-          var ch = "change";
-            if(os == ch){
-              $("#kolpostchange").show();
-              $("#kolpostrequest").hide();
-            }
-        }) });
+           $("#select_kol").change(function(){
+            var sel_kol =  $("#select_kol").val();
+            var pil1 = "change";
+            var pil2 = "request";
+      if (sel_kol == pil1) {
+        $("#kolpostrequest").hide();
+        $("#kolpostchange").show();
+  } else if(sel_kol == pil2) {
+    $("#kolpostchange").hide();
+    $("#kolpostrequest").show();    
+}
+}) });
     </script>
 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 <?php
@@ -810,8 +814,11 @@ if($emailcust){ ?>
     	  				    <div class="row">
     	  				    	<div class="col-sm-12">
                         <li class="list-group-item">
-                            <p><input type="radio" name="optionsService" id="optionsService" value="request"> Request</p>
-                            <p><input type="radio" name="optionsService" id="optionsService" value="change"> Change</p>
+                          <select class="form-control" id="select_kol" name="select_kol">
+                            <option disabled="true" selected="true">Select</option>
+                            <option value="request">Request</option>
+                            <option value="change">Change</option>
+                          </select>
                         </li>
                         <li class="list-group-item">
                             Paket :
