@@ -596,7 +596,7 @@ if(isset($_POST['request'])){
               $headers1 .= 'From: cs@groovy.id' . "\r\n";
               $headers1 .= 'Cc: cs@groovy.id' . "\r\n";
               $emailcust=mail($email_cust, $subject1, $message1, $headers1);
-              $update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("paket"=>$inputpaket, "addon"=>$inputaddon)), array('$push'=>array("histori"=>array("tanggal"=>$date, "hal"=>"Update Layanan", "keterangan"=>"Update layanan utama (".$inputpaket.", dan layanan tambahan ".$inputaddon)))));
+              $update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("paket"=>$inputpaket, "addon"=>$inputaddon)), array('$push'=>array("histori"=>array("tanggal"=>$date, "hal"=>"Update Layanan", "keterangan"=>"Update layanan utama ".$inputpaket.", dan layanan tambahan ".$inputaddon))));
 if($emailcust && $update_user){ ?>
                 <script type="" language="JavaScript">alert('Pindah layanan sudah di konfirmasi');
                 document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>
