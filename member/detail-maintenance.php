@@ -244,76 +244,32 @@ if ($update_user && $update_user1 && $insert_activty && $kirim_email && $kirim_e
 			</div>
 			<div class="panel" style="border:0px;">
 					<div class="panel-heading" style="background-color:#F1453C">
-						<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">DATA MAINTENANCE</h3>
+						<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">LOG HISTORY</h3>
 					</div>
 					<div class="panel-body">
 						<br/>
 						<div class="col-sm-12">
 							<table class="table table-striped table-hover ">
-								<thead>
-									<tr>
-										<th width="15%">Tanggal kerja</th>
-										<th width="20%">Maintenance</th>
-										<th width="20%">Support</th>
-										<th width="10%">Status</th>
-										<th width="15%">Tanggal Selesai</th>
-										<th width="20%">Catatan</th>
-									</tr>
-								</thead>
-								<?php
-								$status=$_GET['status'];
-									$res = $col_history->find(array("hal"=>"maintenance"))->sort(array("tanggal_kerja"));
-									foreach($res as $row)
-									{
-							?>
-								<tbody>
-									<tr>
-										<td><?php echo $row['tanggal_kerja']; ?></td>
-										<td><?php echo $row['maintenance']; ?></td>
-										<td><?php echo $row['field_engineer'].'-'.$row['ass_field']; ?></td>
-										<td><?php echo $row['status']; ?></td>
-										<td><?php echo $row['tanggal_selesai']; ?></td>
-										<td><?php echo $row['catatan']; ?></td>
-									</tr>
-								 </tbody>
-							<?php
-								}
-							?>
-							</table>
-						</div>
-					</div>
-			</div>
-			<div class="panel" style="border:0px;">
-					<div class="panel-heading" style="background-color:#F1453C">
-						<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">DATA UPDATE</h3>
-					</div>
-					<div class="panel-body">
-						<br/>
-						<div class="col-sm-12">
-							<table class="table table-striped table-hover ">
-								<thead>
-									<tr>
-										<th width="15%">Tanggal Update</th>
-										<th width="20%">Paket Lama</th>
-										<th width="20%">Paket Baru</th>
-									</tr>
-								</thead>
-								<?php
-								$status=$_GET['status'];
-									$res = $col_history->find(array("hal"=>"update"))->sort(array("tanggal_update"));
-									foreach($res as $row)
-									{
-							?>
-								<tbody>
-									<tr>
-										<td><?php echo $row['tanggal_update']; ?></td>
-										<td><?php echo $row['paket_lama']; ?></td>
-										<td><?php echo $row['paket_baru']; ?></td>
-									</tr>
-								 </tbody>
-							<?php
-								}
-							?>
+								 <thead>
+										<tr>
+											<th width="20%">Tanggal</th>
+											<th width="20%">Log</th>
+											<th width="60%">Keterangan</th>
+										</tr>
+									</thead>
+									<?php
+										$res = $col_user->findOne(array("id_user"=>$id_cust));
+									foreach ($res['histori'] as $histori => $log) {
+										$thn_log = substr($log['tanggal'], 0,4);
+										$bln_log = substr($log['tanggal'], 5,2);
+										$tgl_log = substr($log['tanggal'], 8,10);
+										$month_log = bulan($bln_log);
+									 ?>
+									<tbody class="pic-container down">
+										<td><?php echo $tgl_log.' '.$month_log.' '.$thn_log; ?></td>
+										<td><?php echo $log['hal']; ?></td>
+										<td><?php echo $log['keterangan']; ?></td>
+									</tbody> <?php } ?>
 							</table>
 						</div>
 					</div>
