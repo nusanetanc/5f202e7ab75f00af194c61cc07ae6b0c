@@ -22,7 +22,7 @@
 										  	 $sales_cust=$row['nama_sales'];
 										  	 $invoice_cust=$row['invoice'];
 										  	 $harga_cust=$row['harga'];
-												 $addon_cust=$row['addon'];
+												 $addon_cust =$row['addon'];
 										  	 $email_sales=$row['email_sales'];
 										  	 $password_sales=$row['password'];
 									$tanggal = $tglregis_cust;
@@ -121,7 +121,7 @@
 								<div class="form-group">
 						      <label class="col-lg-3 control-label">Layanan Tambahan :</label>
 						      <div class="col-lg-9">
-								<h4><?php	echo $addon_cust; ?></h4>
+										<h4><?php	echo $addon_cust; ?></h4>
 						      </div>
 						    </div>
 						    <div class="form-group">
