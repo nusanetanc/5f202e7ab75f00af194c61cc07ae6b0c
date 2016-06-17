@@ -902,8 +902,8 @@ if($emailcust && $update_user && $push_histori){ ?>
       									 <thead>
       									    <tr>
       									      <th width="10%">Tanggal</th>
-      									      <th width="30%">Log</th>
-      									      <th width="30%">Keterangan</th>
+      									      <th width="20%">Log</th>
+      									      <th width="70%">Keterangan</th>
       									    </tr>
       									  </thead>
                           <?php
