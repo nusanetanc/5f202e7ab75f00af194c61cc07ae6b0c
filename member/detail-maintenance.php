@@ -52,7 +52,7 @@ $res3 = $col_user->find(array("nama"=>$inputAssfield, "level"=>"302"));
 						$histori=array(
 									"tanggal"=>$date,
 									"hal"=> "Maintenance",
-									"keterangan"=>"Penjadwalan maintenance pada tanggal ".$inputTanggal
+									"keterangan"=>"Penjadwalan maintenance pada tanggal ".$tgl_maintenance." ".$month_maintenance." ".$thn_maintenance." untuk ".$inputMaintenance
 								);
 	$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>$histori)));
 	$insert_activty = $col_history->insert(array("hal"=>"maintenance","tanggal_kerja"=>$inputTanggal, "field_engineer"=>$inputField, "ass_field"=>$inputAssfield, "status"=>"progress", "id_cust"=>$id_cust, "nama_cust"=>$nama_cust, "tempat_customer"=>$tempat_cust, "alamat_customer"=>$alamat_cust, "kota_customer"=>$kota_cust ,"keterangan_customer"=>$ket_cust, "phone_customer"=>$phone_cust, "paket"=>$paket, "no_box"=>$no_box, "maintenance"=>$inputMaintenance));
