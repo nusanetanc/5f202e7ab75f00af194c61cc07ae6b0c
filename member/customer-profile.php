@@ -40,7 +40,7 @@
 										    $bln2 = substr($tanggal2, 5,2);
 											$tgl2 = substr($tanggal2, 8,10);
 										    $month2 = bulan($bln2);
-										  }
+										  } echo $addon_cust;
 											$res = $col_addon->find(array("id_user"=>$_GET['id_cust']));
 											foreach($res as $row)
 												  {
