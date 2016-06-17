@@ -901,9 +901,9 @@ if($emailcust && $update_user && $push_histori){ ?>
                       <table class="table table-striped table-hover ">
       									 <thead>
       									    <tr>
-      									      <th width="10%">Tanggal</th>
+      									      <th width="20%">Tanggal</th>
       									      <th width="20%">Log</th>
-      									      <th width="70%">Keterangan</th>
+      									      <th width="60%">Keterangan</th>
       									    </tr>
       									  </thead>
                           <?php
