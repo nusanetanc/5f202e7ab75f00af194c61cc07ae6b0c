@@ -898,7 +898,28 @@ if($emailcust && $update_user && $push_histori){ ?>
               </div>
                   <br/>
                     <div class="panel-body">
-                      
+                      <table class="table table-striped table-hover ">
+      									 <thead>
+      									    <tr>
+      									      <th width="10%">Tanggal</th>
+      									      <th width="30%">Log</th>
+      									      <th width="30%">Keterangan</th>
+      									    </tr>
+      									  </thead>
+                          <?php
+                            $res = $col_user->findOne(array("id_user"=>$id_cust));
+                          foreach ($res['histori'] as $histori => $log) {
+                            $thn_log = substr($log['tanggal'], 0,4);
+                            $bln_log = substr($log['tanggal'], 5,2);
+                            $tgl_log = substr($log['tanggal'], 8,10);
+                            $month_log = bulan($bln_log);
+                           ?>
+                          <tbody class="pic-container down">
+                            <td><?php echo $tgl_log.' '.$month_log.' '.$thn_log; ?></td>
+                            <td><?php echo $log['hal']; ?></td>
+                            <td><?php echo $log['keterangan']; ?></td>
+                          </tbody> <?php } ?>
+                      </table>
                    </div>
                   </div>
               </div>
