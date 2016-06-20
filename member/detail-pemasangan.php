@@ -56,6 +56,7 @@ $res3 = $col_user->find(array("nama"=>$support_Assfield, "level"=>"302"));
 									"keterangan"=>"Penjadwalan Pasang pada tanggal ".$tgl_psng." ".$mont_psng." ".$thn_psng
 								);
 $update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("status"=>"progress pasang")),array('$push'=>array("histori"=>$histori)));
+$update_user1 = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>$histori)));
 $insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$tanggal_pasang, "field_engineer"=>$support_field, "ass_field"=>$support_Assfield, "status"=>"progress", "id_cust"=>$id_cust, "nama_cust"=>$nama_cust, "tempat_customer"=>$tempat_cust, "alamat_customer"=>$alamat_cust, "kota_customer"=>$kota_cust ,"keterangan_customer"=>$ket_cust, "phone_customer"=>$phone_cust, "paket"=>$package_cust, "status"=>"progress", "no_box"=>$boxtv));
 
 		// mail for field engineer
