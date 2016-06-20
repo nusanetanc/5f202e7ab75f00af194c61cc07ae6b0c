@@ -276,6 +276,12 @@
                                     $move = move_uploaded_file($lokasifilektp, "$dirKtp".$namaktp);
                                     $active_acount = $col_user->update(array("email"=>$email_aktif),
                                                                         array('$set'=>array("password"=>$passwordBaru1, "aktif"=>"1", "ktp"=>$namaktp)));
+                                    $history=array(
+                                          "tanggal"=>$date,
+                                          "hal"=> "Aktivasi",
+                                          "keterangan"=>"Aktivasi Akun Member groovy"
+                                        );
+                                    	$update_user = $col_user->update(array("id_user"=>$id_aktif, "level"=>"0"),array('$push'=>array("histori"=>$histori)));
                                     $detail_info=array("share_id"=>"00000000","description"=>"Selamat Bergabung dengan groovy tv, Selamat Menikmati Layanan Kami","date"=>$date_time);
                                     $write_info = $col_info->insert(array("for"=>$id_aktif, "subject"=>"Selamat Bergabung Dengan groovy", "tanggal_update"=>$date_time, "informasi"=>array($detail_info)));
                                     if ($active_acount && $write_info){
@@ -576,14 +582,6 @@
 
                                           // insert add on
                                         if(!empty($_POST['addon'])){
-                                            foreach($_POST['addon'] as $selectaddon){
-                                        $res = $col_service->find(array("nama"=>$selectaddon));
-                                        foreach($res as $row)
-                                        {
-                                            $harga_addon=$row['harga'];
-                                        }
-                                                $insert_addon=$col_addon->insert(array("id_user"=>$newid, "layanan"=>$selectaddon, "harga"=>$harga_addon, "status"=>"unaktif"));
-                                            }
                                             $addon_service=implode(", ", $_POST['addon']);
                                           } elseif(empty($_POST['addon'])){
                                                 $addon_service="No";

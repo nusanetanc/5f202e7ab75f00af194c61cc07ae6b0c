@@ -246,10 +246,17 @@ $emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1);
 											{
 				$emailpasang=mail($row['email'], $subject, $message, $headers);
 			} 	$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("pembayaran"=>$last_pembayaran)));
+
 	} else {
 		$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("tanggal_akhir"=>$next_years.'/'.$next_month.'/01', "pembayaran"=>$last_pembayaran)));
 	}
 $add_payment = $col_payment->insert(array("id_user"=>$id_cust, "tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date, "total_tagihan"=>"", "ppn"=>"", "no"=>$pembayaran,"total_pembayaran"=>""));
+$histori=array(
+      "tanggal"=>$date,
+      "hal"=> "Payment",
+      "keterangan"=>"Pembayaran Pada Tanggal".$tgl_bayar." ".$month_bayar." ".$thn_bayar." ,dan Dikonfirmasi Pada Tanggal ".$date("d")." ".bulan($date("m"))." ".$date(Y)
+    );
+	$update_histori = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>$histori)));
 $total=0;
 if($add_payment){
 $res = $col_user->findOne(array("id_user"=>$id_cust));

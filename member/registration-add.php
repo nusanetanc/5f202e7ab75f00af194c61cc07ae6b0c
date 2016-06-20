@@ -114,14 +114,7 @@ foreach($res as $row)
 
                                                   // insert add on
                                                 if(!empty($_POST['addon'])){
-                                                    foreach($_POST['addon'] as $selectaddon){
-                                                $res = $col_service->find(array("nama"=>$selectaddon));
-                                                foreach($res as $row)
-                                                {
-                                                    $harga_addon=$row['harga'];
-                                                }
-                                                        $insert_addon=$col_addon->insert(array("id_user"=>$newid, "layanan"=>$selectaddon, "harga"=>$harga_addon, "status"=>"unaktif"));
-                                                    } $addon_service=implode(", ", $_POST['addon']);
+                                                   $addon_service=implode(", ", $_POST['addon']);
                                                    } elseif(empty($_POST['addon'])){
                                                         $addon_service="No";
                                                      }
