@@ -276,7 +276,7 @@
                                     $move = move_uploaded_file($lokasifilektp, "$dirKtp".$namaktp);
                                     $active_acount = $col_user->update(array("email"=>$email_aktif),
                                                                         array('$set'=>array("password"=>$passwordBaru1, "aktif"=>"1", "ktp"=>$namaktp)));
-                                    $history=array(
+                                    $histori=array(
                                           "tanggal"=>$date,
                                           "hal"=> "Aktivasi",
                                           "keterangan"=>"Aktivasi Akun Member groovy"
