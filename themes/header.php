@@ -277,7 +277,7 @@
                                     $active_acount = $col_user->update(array("email"=>$email_aktif),
                                                                         array('$set'=>array("password"=>$passwordBaru1, "aktif"=>"1", "ktp"=>$namaktp)));
                                     $histori=array(
-                                          "tanggal"=>$date,
+                                          "tanggal"=>date("Y/m/d"),
                                           "hal"=> "Aktivasi",
                                           "keterangan"=>"Aktivasi Akun Member groovy"
                                         );
