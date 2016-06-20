@@ -145,11 +145,24 @@ if (isset($_POST['save'])){
 						foreach($res as $row) {
 				$emailpasang=mail($row['email'], $subject, $message, $headers);
 			}
+	if($nama_jobs=="pasang"){
 			$histori=array(
 						"tanggal"=>date("Y/m/d"),
 						"hal"=> "Pasang",
 						"keterangan"=>"Pemasangan Selesai"
-					);
+					); }
+					if($nama_jobs=="maintenance"){
+							$histori=array(
+										"tanggal"=>date("Y/m/d"),
+										"hal"=> "Maintenance",
+										"keterangan"=>"Maintenance Selesai"
+									); }
+					if($nama_jobs=="bongkar"){
+							$histori=array(
+										"tanggal"=>date("Y/m/d"),
+										"hal"=> "Ambil Perangkat",
+										"keterangan"=>"Perangkat Yang di Gunakan Sudah di Ambil"
+									); }
 $update_user1 = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>$histori)));
 }
 if ($emailpasang && $update_jobs){ ?>
