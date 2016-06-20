@@ -86,6 +86,7 @@ $res = $col_package->find(array("nama"=>$package_cust));
 	foreach($res as $row)
 	{
 		$deskripsi_paket0=$row['deskripsi'];
+    $isi_paket0=$row['isi'];
 	}
 $res = $col_package->find(array("nama"=>$move_paket_cust));
 	foreach($res as $row)
@@ -487,7 +488,12 @@ if(isset($_POST['request'])){
 				$headers1 .= 'From: cs@groovy.id' . "\r\n";
 				$headers1 .= 'Cc: cs@groovy.id' . "\r\n";
 				$emailcust_pindah=mail($email_cust, $subject1, $message1, $headers1);
-
+$res = $col_package->find(array("nama"=>$inputpaket));
+	foreach($res as $row)
+	{
+		$isi_paket=$row['isi'];
+	}
+if ($isi_paket=="internet+tv" && $isi_paket0=="internet+tv"){
         require('../content/srcpdf/fpdf.php');
     	  $pdf = new FPDF();
     	  $pdf->AddPage();
@@ -560,7 +566,7 @@ if(isset($_POST['request'])){
     	  "--{$mime_boundary}--\n";
 
     	 $sent0 = mail($email_to0, $email_subject0, $email_message0, $email_headers0);
-
+}
         if($emailpindah && $emailcust_pindah && $sent0 ){ ?>
           <script type="" language="JavaScript">alert('Request pindah layanan sudah di konfirmasi');
       		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>
@@ -827,6 +833,7 @@ if($emailcust && $update_user && $push_histori){ ?>
                             <option disabled="true" selected="true">Select</option>
                             <option value="request">Request</option>
                             <option value="change">Change</option>
+                            <option value="termination">Termination</option>
                           </select>
                         </li>
                         <li class="list-group-item">
