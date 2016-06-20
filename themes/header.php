@@ -278,7 +278,7 @@
                                                                         array('$set'=>array("password"=>$passwordBaru1, "aktif"=>"1", "ktp"=>$namaktp)));
                                     $histori=array(
                                           "tanggal"=>date("Y/m/d"),
-                                          "hal"=> "Aktivasi",
+                                          "hal"=> "Aktivasi Akun",
                                           "keterangan"=>"Aktivasi Akun Member groovy"
                                         );
                                     	$update_user = $col_user->update(array("id_user"=>$id_aktif, "level"=>"0"),array('$push'=>array("histori"=>$histori)));

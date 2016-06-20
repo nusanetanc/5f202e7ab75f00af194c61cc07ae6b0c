@@ -50,7 +50,13 @@ if(isset($_POST['aktif'])){
 		if($next_month<10){
 			$next_month = '0'.$next_month;
 		}
-		$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("tanggal_aktivasi"=>$date, "status"=>"aktif", "tanggal_akhir"=>$next_years.'/'.$next_month.'/01')));
+		$histori=array(
+					"tanggal"=>date("d/m/Y"),
+					"hal"=> "Aktivasi Layanan",
+					"keterangan"=>"Layanan sudah di aktivasi"
+				);
+$update_user1 = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>$histori)));
+$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("tanggal_aktivasi"=>$date, "status"=>"aktif", "tanggal_akhir"=>$next_years.'/'.$next_month.'/01')));
 		// mail for customer to aktifasi
 		$to1 = $email_cust;
 
@@ -139,6 +145,12 @@ if (isset($_POST['save'])){
 						foreach($res as $row) {
 				$emailpasang=mail($row['email'], $subject, $message, $headers);
 			}
+			$histori=array(
+						"tanggal"=>date("d/m/Y"),
+						"hal"=> "Pasang",
+						"keterangan"=>"Pemasangan Selesai"
+					);
+$update_user1 = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>$histori)));
 }
 if ($emailpasang && $update_jobs){ ?>
 				<script type="" language="JavaScript"> alert('Laporan Kerja Tersimpan');
