@@ -245,12 +245,12 @@ $emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1);
 						foreach($res as $row)
 											{
 				$emailpasang=mail($row['email'], $subject, $message, $headers);
-			} 	$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("pembayaran"=>$pembayaran)));
+			} 	$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("pembayaran"=>$last_pembayaran)));
 
 	} else {
-		$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("tanggal_akhir"=>$next_years.'/'.$next_month.'/01', "pembayaran"=>$pembayaran)));
+		$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("tanggal_akhir"=>$next_years.'/'.$next_month.'/01', "pembayaran"=>$last_pembayaran)));
 	}
-$add_payment = $col_payment->insert(array("id_user"=>$id_cust, "tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date, "total_tagihan"=>"", "ppn"=>"", "no"=>$pembayaran,"total_pembayaran"=>""));
+$add_payment = $col_payment->insert(array("id_user"=>$id_cust, "tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date, "total_tagihan"=>"", "ppn"=>"", "no"=>$last_pembayaran,"total_pembayaran"=>""));
 $histori=array(
       "tanggal"=>$date,
       "hal"=> "Payment",
@@ -262,10 +262,10 @@ if($add_payment){
 $res = $col_user->findOne(array("id_user"=>$id_cust));
 foreach ($res['payment_data'] as $payment => $pay) {
   if ($pay<>null){
-$bayar = $col_payment->update(array("id_user"=>$id_cust, "no"=>$pembayaran),array('$push'=>array("pembayaran"=>array("deskripsi"=>$pay['layanan'], "harga"=>$pay['harga'], "prorate"=>$pay['prorate'], "total_harga"=>$pay['total']))));
+$bayar = $col_payment->update(array("id_user"=>$id_cust, "no"=>$last_pembayaran),array('$push'=>array("pembayaran"=>array("deskripsi"=>$pay['layanan'], "harga"=>$pay['harga'], "prorate"=>$pay['prorate'], "total_harga"=>$pay['total']))));
 $total=$total+$pay['total'];
 } }
-$update_payment=$col_payment->update(array("id_user"=>$id_cust, "no"=>$pembayaran), array('$set'=>array("total_tagihan"=>$total, "ppn"=>$total*0.1, "total_pembayaran"=>$total*0.1+$total)));
+$update_payment=$col_payment->update(array("id_user"=>$id_cust, "no"=>$last_pembayaran), array('$set'=>array("total_tagihan"=>$total, "ppn"=>$total*0.1, "total_pembayaran"=>$total*0.1+$total)));
 }
 if ($emailinvoice || $update_payment){
 	?>
