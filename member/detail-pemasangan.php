@@ -51,7 +51,7 @@ $res3 = $col_user->find(array("nama"=>$support_Assfield, "level"=>"302"));
 							$email_Assfield=$row3['email'];
 						}
 						$histori=array(
-									"tanggal"=>date("d/m/Y"),
+									"tanggal"=>date("Y/m/d"),
 									"hal"=> "Pasang",
 									"keterangan"=>"Penjadwalan Pasang pada tanggal ".$tgl_psng." ".$month_psng." ".$thn_psng
 								);

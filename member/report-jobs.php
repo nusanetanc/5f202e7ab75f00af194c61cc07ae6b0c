@@ -51,7 +51,7 @@ if(isset($_POST['aktif'])){
 			$next_month = '0'.$next_month;
 		}
 		$histori=array(
-					"tanggal"=>date("d/m/Y"),
+					"tanggal"=>date("Y/m/d"),
 					"hal"=> "Aktivasi Layanan",
 					"keterangan"=>"Layanan sudah di aktivasi"
 				);
@@ -146,7 +146,7 @@ if (isset($_POST['save'])){
 				$emailpasang=mail($row['email'], $subject, $message, $headers);
 			}
 			$histori=array(
-						"tanggal"=>date("d/m/Y"),
+						"tanggal"=>date("Y/m/d"),
 						"hal"=> "Pasang",
 						"keterangan"=>"Pemasangan Selesai"
 					);
@@ -198,55 +198,55 @@ if ($emailpasang && $update_jobs){ ?>
 						      <div class="col-lg-9">
 						        <h4><?php echo $id_cust; ?></h4>
 						      </div>
-						    </div>
+						    </div><br/>
 						    <div class="form-group">
 						      <label class="col-lg-3 control-label">Customer : </label>
 						      <div class="col-lg-9">
 						        <h4><?php echo $nama_cust.' / '.$email_cust.' / '.$notelp_cust; ?></h4>
 						      </div>
-						    </div>
+						    </div><br/>
 						    <div class="form-group">
 						      <label class="col-lg-3 control-label">Location : </label>
 						      <div class="col-lg-9">
 						        <h4><?php echo $tempat_cust.' / '.$keterangan_cust.' / '.$alamat_cust.' / '.$kota_cust; ?></h4>
 						      </div>
-						    </div>
+						    </div><br/>
 						    <div class="form-group">
 						      <label class="col-lg-3 control-label">Layanan : </label>
 						      <div class="col-lg-9">
 						        <h4><b><?php echo $paket_cust; ?></b> <?php echo $addon_cust; ?></h4>
 						      </div>
-						    </div>
+						    </div><br/>
 						    <div class="form-group">
 						      <label class="col-lg-3 control-label">Jobs : </label>
 						      <div class="col-lg-9">
 						        <h4><?php echo $nama_jobs; ?></h4>
 						      </div>
-						    </div>
+						    </div><br/>
 						    <div class="form-group">
 						      <label class="col-lg-3 control-label">No Box Tv : </label>
 						      <div class="col-lg-9">
 						        <h4><?php echo $no_box; ?></h4>
 						      </div>
-						    </div>
+						    </div><br/>
 						    <div class="form-group">
 						      <label class="col-lg-3 control-label">Jobs Date : </label>
 						      <div class="col-lg-9">
 						        <h4><td><?php echo $tgl.' '.$month.' '.$thn; ?></td></h4>
 						      </div>
-						    </div>
+						    </div><br/>
 						    <div class="form-group">
 						      <label class="col-lg-3 control-label">Status : </label>
 						      <div class="col-lg-9">
 						        <h4><?php echo $status_jobs; ?></h4>
 						      </div>
-						    </div>
+						    </div><br/>
 						    <div class="form-group">
 						      <label class="col-lg-3 control-label">Support : </label>
 						      <div class="col-lg-9">
 						        <h4><?php echo $nama_field.' / '.$nama_assfield; ?></h4>
 						      </div>
-						    </div>
+						    </div><br/>
 						    <?php
 						    	if($status_jobs=="done"){ ?>
 						    		<div class="form-group">
@@ -260,7 +260,7 @@ if ($emailpasang && $update_jobs){ ?>
 								      <div class="col-lg-9">
 								        <h4><?php echo $tgl1.' '.$month1.' '.$thn1; ?></h4>
 								      </div>
-								    </div>
+								    </div><br/>
 							<?php	} else if($level=="301" && $status_jobs=="progress" && $nama_field==$nama){
 						     ?>
 						    <div class="form-group">
