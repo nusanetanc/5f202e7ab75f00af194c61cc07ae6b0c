@@ -13,6 +13,17 @@ foreach($res as $row)
 {
     $upgrade_harga=$row['harga'];
 }
+if(!empty($_POST['addon'])){
+							$items=implode(", ", $_POST['addon']);
+						}else{
+							$items="No";
+						}
+$histori=array(
+			"tanggal"=>date("Y/m/d"),
+			"hal"=> "Perubahan Layanan",
+			"keterangan"=>"Permintaan Perubahan Layanan Utama ".$upgrade_paket.", dan Layanan Tambahan ".$items
+		);
+$update_user1 = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>$histori)));
 			// mail for customer to update paket
 				$to = $email;
 
@@ -34,9 +45,6 @@ foreach($res as $row)
 											Phone : '.$notelp.'<br/>
 											Tempat : '.$tempat.' '.$keterangan.' '.$alamat.' '.$kota.'<br/>
 											Paket : '.$upgrade_paket.'<br/>';
-	if(!empty($_POST['addon'])){
-								$items=implode(", ", $_POST['addon']);
-							}
 							$message1 = '
 											Layanan Tambahan : '.$items.'<br/>';
 							$message2 = '
