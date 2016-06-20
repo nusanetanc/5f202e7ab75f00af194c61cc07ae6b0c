@@ -52,8 +52,8 @@ $res3 = $col_user->find(array("nama"=>$support_Assfield, "level"=>"302"));
 						}
 						$histori=array(
 									"tanggal"=>date("d/m/Y"),
-									"hal"=> "Maintenance",
-									"keterangan"=>"Penjadwalan Pasang pada tanggal ".$tgl_psng." ".$mont_psng." ".$thn_psng
+									"hal"=> "Pasang",
+									"keterangan"=>"Penjadwalan Pasang pada tanggal ".$tgl_psng." ".$month_psng." ".$thn_psng
 								);
 $update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("status"=>"progress pasang")),array('$push'=>array("histori"=>$histori)));
 $update_user1 = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>$histori)));
