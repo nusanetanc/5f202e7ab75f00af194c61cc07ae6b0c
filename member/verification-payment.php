@@ -254,7 +254,7 @@ $add_payment = $col_payment->insert(array("id_user"=>$id_cust, "tanggal_bayar"=>
 $histori=array(
       "tanggal"=>$date,
       "hal"=> "Payment",
-      "keterangan"=>"Konfirmasi Pembayaran Pada Tanggal".$tgl_bayar." ".$month_bayar." ".$thn_bayar
+      "keterangan"=>"Konfirmasi Pembayaran Pada Tanggal ".$tgl_bayar." ".$month_bayar." ".$thn_bayar
     );
 	$update_histori = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>$histori)));
 $total=0;
