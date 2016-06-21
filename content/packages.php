@@ -77,15 +77,15 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="row">
                     <div class="col-xs-12 col-sm-4 col-md-4" style="margin-bottom:50px;">
                         <div class="text-center" style="background-color:#f9724f;padding:45px 10px 45px 10px;">
                             <h5 style="font-size:21px;font-weight:300;">Groovy Home 500</h5>
                             <span style="font-size:45px;font-weight:600">499</span><br/>
                             <span style="font-size:35px;line-height:20px;">RIBU</span><br/><br/>
-                            <p style="font-size:13px;">10 Mbps + Local TV Channel + International TV 
-Channel + Premium TV Channel + Video Box 
+                            <p style="font-size:13px;">10 Mbps + Local TV Channel + International TV
+Channel + Premium TV Channel + Video Box
 (VOD) + Social TV + Live Radio Streaming</p><br/><br/>
                             <button data-toggle="modal" data-target="#signupModal" data-dismiss="modal" style="background-color:#fdc328;border:0px;padding:10px 30px 10px 30px;font-weight:500;color:#000;">SUBSCRIBE</button>
                         </div>
@@ -94,13 +94,13 @@ Channel + Premium TV Channel + Video Box
                             <div style="border-top:2px solid #f9724f;padding:20px 0 0 0;margin-top:10px;">
                                 <ul class="packageList">
                                     <li>Internet 10 Mbps</li>
-                                    <li>Local TV Channel<span style="font-weight:300"><br/>(Metro TV, TV One, SCTV, Indosiar, Trans TV 
-Trans 7, ANTV Net.TV, Kompas TV Berita Satu, 
+                                    <li>Local TV Channel<span style="font-weight:300"><br/>(Metro TV, TV One, SCTV, Indosiar, Trans TV
+Trans 7, ANTV Net.TV, Kompas TV Berita Satu,
 TVRI Jak TV, Rajawali TV, Da Ai TV Indonesia)</span></li>
-                                    <li>Premium Channel<span style="font-weight:300"><br/>(Disney Jr HD, DaVinci HD, Duck TV, Fox HD, 
+                                    <li>Premium Channel<span style="font-weight:300"><br/>(Disney Jr HD, DaVinci HD, Duck TV, Fox HD,
 Starworld HD, Nat Geo HD, Kix HD)</span></li>
                                     <li>Video Box / VOD<span style="font-weight:300"><br/>(Fast & Fun Box, Docu Box)</span></li>
-                                    <li>Social TV<span style="font-weight:300"><br/>(Music, Entertainment, News, Funny Clips, 
+                                    <li>Social TV<span style="font-weight:300"><br/>(Music, Entertainment, News, Funny Clips,
 Sports, Education, Lifestyle, Kids)</span></li>
                                     <li>Live Radio Streaming<span style="font-weight:300"><br/>(Local, International)</span></li>
                                     <li>24/7 Live Support</li>
@@ -113,8 +113,8 @@ Sports, Education, Lifestyle, Kids)</span></li>
                             <h5 style="font-size:21px;font-weight:300;">Groovy Home 800</h5>
                             <span style="font-size:45px;font-weight:600">799</span><br/>
                             <span style="font-size:35px;line-height:20px;">RIBU</span><br/><br/>
-                            <p style="font-size:13px;">20 Mbps + Local TV Channel + International TV 
-Channel + Premium TV Channel + Video Box 
+                            <p style="font-size:13px;">20 Mbps + Local TV Channel + International TV
+Channel + Premium TV Channel + Video Box
 (VOD) + Social TV + Live Radio Streaming</p><br/><br/>
                             <button data-toggle="modal" data-target="#signupModal" data-dismiss="modal" style="background-color:#fdc328;border:0px;padding:10px 30px 10px 30px;font-weight:500;color:#000;">SUBSCRIBE</button>
                         </div>
@@ -123,16 +123,16 @@ Channel + Premium TV Channel + Video Box
                             <div style="border-top:2px solid #f75b41;padding:20px 0 0 0;margin-top:10px;">
                                 <ul class="packageList">
                                     <li>Internet 20 Mbps</li>
-                                    <li>Local TV Channel<span style="font-weight:300"><br/>(Metro TV, TV One, SCTV, Indosiar, Trans TV 
-Trans 7, ANTV Net.TV, Kompas TV Berita Satu, 
+                                    <li>Local TV Channel<span style="font-weight:300"><br/>(Metro TV, TV One, SCTV, Indosiar, Trans TV
+Trans 7, ANTV Net.TV, Kompas TV Berita Satu,
 TVRI Jak TV, Rajawali TV, Da Ai TV Indonesia)</span></li>
-                                    <li>Premium Channel<span style="font-weight:300"><br/>(Disney Channel HD, Disney Jr HD, DaVinci HD, 
-Duck TV, Fox HD, Fox Crime HD, Starworld HD, 
-Nat Geo HD, Kix HD, FX HD, NGC, Trace Urban 
+                                    <li>Premium Channel<span style="font-weight:300"><br/>(Disney Channel HD, Disney Jr HD, DaVinci HD,
+Duck TV, Fox HD, Fox Crime HD, Starworld HD,
+Nat Geo HD, Kix HD, FX HD, NGC, Trace Urban
 HD, Channel M HD, KMTV, Aniplus HD, Pelangi)</span></li>
-                                    <li>Video Box / VOD<span style="font-weight:300"><br/>(Fast & Fun Box, Docu Box, Fashion Box, 
+                                    <li>Video Box / VOD<span style="font-weight:300"><br/>(Fast & Fun Box, Docu Box, Fashion Box,
 Film Arthouse Box)</span></li>
-                                    <li>Social TV<span style="font-weight:300"><br/>(Music, Entertainment, News, Funny Clips, 
+                                    <li>Social TV<span style="font-weight:300"><br/>(Music, Entertainment, News, Funny Clips,
 Sports, Education, Lifestyle, Kids)</span></li>
                                     <li>Live Radio Streaming<span style="font-weight:300"><br/>(Local, International)</span></li>
                                     <li>24/7 Live Support</li>
@@ -145,9 +145,9 @@ Sports, Education, Lifestyle, Kids)</span></li>
                             <h5 style="font-size:21px;font-weight:300;">Groovy Home 1700</h5>
                             <span style="font-size:45px;font-weight:600">1699</span><br/>
                             <span style="font-size:35px;line-height:20px;">RIBU</span><br/><br/>
-                            <p style="font-size:13px;">50 Mbps + Local TV Channel + International TV 
-Channel + Premium TV Channel + Video Box 
-(VOD) + Disney Movies on Demand + ABC Studios 
+                            <p style="font-size:13px;">50 Mbps + Local TV Channel + International TV
+Channel + Premium TV Channel + Video Box
+(VOD) + Disney Movies on Demand + ABC Studios
 on Demand + Social TV + Live Radio Streaming</p><br/>
                             <button data-toggle="modal" data-target="#signupModal" data-dismiss="modal" style="background-color:#fdc328;border:0px;padding:10px 30px 10px 30px;font-weight:500;color:#000;">SUBSCRIBE</button>
                         </div>
@@ -156,20 +156,20 @@ on Demand + Social TV + Live Radio Streaming</p><br/>
                             <div style="border-top:2px solid #ee5533;padding:20px 0 0 0;margin-top:10px;">
                                 <ul class="packageList">
                                     <li>Internet 50 Mbps</li>
-                                    <li>Local TV Channel<span style="font-weight:300"><br/>(Metro TV, TV One, SCTV, Indosiar, Trans TV 
-Trans 7, ANTV Net.TV, Kompas TV Berita Satu, 
+                                    <li>Local TV Channel<span style="font-weight:300"><br/>(Metro TV, TV One, SCTV, Indosiar, Trans TV
+Trans 7, ANTV Net.TV, Kompas TV Berita Satu,
 TVRI Jak TV, Rajawali TV, Da Ai TV Indonesia)</span></li>
-                                    <li>Premium Channel<span style="font-weight:300"><br/>(Disney Channel HD, Disney Jr HD, DaVinci HD, 
-Duck TV, Fox HD, Fox Crime HD, Starworld HD, 
-Nat Geo HD, Kix HD, FX HD, NGC, Trace Urban 
+                                    <li>Premium Channel<span style="font-weight:300"><br/>(Disney Channel HD, Disney Jr HD, DaVinci HD,
+Duck TV, Fox HD, Fox Crime HD, Starworld HD,
+Nat Geo HD, Kix HD, FX HD, NGC, Trace Urban
 HD, Channel M HD, KMTV, Aniplus HD, Pelangi)</span></li>
-                                    <li>Video Box / VOD<span style="font-weight:300"><br/>(Fast & Fun Box, Docu Box, Fashion Box, 
+                                    <li>Video Box / VOD<span style="font-weight:300"><br/>(Fast & Fun Box, Docu Box, Fashion Box,
 Film Arthouse Box)</span></li>
-                                    <li>Disney Movie on Demand<span style="font-weight:300"><br/>(Various Disney library live action, Disney and 
+                                    <li>Disney Movie on Demand<span style="font-weight:300"><br/>(Various Disney library live action, Disney and
 Pixar animated features)</span></li>
-                                    <li>ABC Studio on Demand<span style="font-weight:300"><br/>(Various current and library live action series 
+                                    <li>ABC Studio on Demand<span style="font-weight:300"><br/>(Various current and library live action series
 from ABC Studios)</span></li>
-                                    <li>Social TV<span style="font-weight:300"><br/>(Music, Entertainment, News, Funny Clips, 
+                                    <li>Social TV<span style="font-weight:300"><br/>(Music, Entertainment, News, Funny Clips,
 Sports, Education, Lifestyle, Kids)</span></li>
                                     <li>Live Radio Streaming<span style="font-weight:300"><br/>(Local, International)</span></li>
                                     <li>24/7 Live Support</li>
@@ -182,9 +182,9 @@ Sports, Education, Lifestyle, Kids)</span></li>
         </div>
     </div>
 </div>
-<!-- /Package Bottom -->    
-    
-    <!-- 
+<!-- /Package Bottom -->
+
+    <!--
     <div style="margin:50px 0 80px 0;background-image:url(<?php echo $base_url; ?>/img/background-package.jpg);background-repeat: repeat-x;">
         <div class="container">
             <div class="row">
@@ -244,7 +244,7 @@ Sports, Education, Lifestyle, Kids)</span></li>
                                 <ul class="packageList">
                                     <li><b>Internet 30 Mbps</b></li>
                                     <li><b>24/7 Live Support</b></li>
-                                    
+
                                 </ul>
                             </div>
                         </div>
@@ -347,14 +347,14 @@ Phoenix Info News, Sunna TV, Quran TV)</li>
     </div>Content1 -->
 
 
-    
+
     <!-- Content2 -->
     <div style="background: linear-gradient(to right, #f9a825 , #fdd835);padding:50px 0 50px 0;">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
                     <span style="color:#000;font-size:18px;line-height:45px;">Butuh bantuan lebih lanjut tentang layanan Groovy ?</span>
-                    <a href="<?php echo $base_url; ?>/?hal=support" style="float:right;border-radius:5px;border:2px solid black;background-color:rgba(0, 0, 0, 0);padding:10px 40px 10px 40px;color:#000;font-size:18px;">Pusat Bantuan</a>
+                    <a href="<?php echo $base_url; ?>/support" style="float:right;border-radius:5px;border:2px solid black;background-color:rgba(0, 0, 0, 0);padding:10px 40px 10px 40px;color:#000;font-size:18px;">Pusat Bantuan</a>
                 </div>
             </div>
         </div>
