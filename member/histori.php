@@ -7,7 +7,16 @@
   				</div>
 	  					<br/>
 	  				    <div class="panel-body">
-
+									<tbody>
+									    <tr>
+									      <td>Column content</td>
+									      <td>Column content</td>
+									    </tr>
+											<tr>
+									      <td>Column content</td>
+									      <td>Column content</td>
+									    </tr>
+									</tbody>
 		  				 </div>
 		  	</div>
 		</div>
