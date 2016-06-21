@@ -125,13 +125,8 @@ if ($update_user && $update_user1 && $insert_activty && $kirim_email && $kirim_e
 if (isset($_POST['btnupdate'])){
 	$select_update=$_POST['select_update'];
 	$no_stb = $_POST['no_stb'];
-	$tgl_update = $_POST['inputTanggal1'];
 	$inputpaket=$_POST['inputpaket'];
 	$inputaddon=implode(", ", $_POST['addon']);
-	$daterequest=$_POST['inputTanggal1'];
-	$thn_pindah = substr($daterequest, 0,4);
-	$bln_pindah = substr($daterequest, 5,2);
-	$tgl_pindah = substr($daterequest, 8,10);
 	$month_pindah = bulan($bln_pindah);
 		if($select_update=="change"){
         require('../content/srcpdf/fpdf.php');
@@ -345,12 +340,6 @@ if (isset($_POST['btnupdate'])){
 						<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">UPDATE LAYANAN</h3>
 					</div>
 					<div class="panel-body">
-						<li class="list-group-item">
-								Tanggal Update :
-									<input type="text" class="form-control" id="inputTanggal1" name="inputTanggal1" placeholder="Tanggal Update" readonly>
-									<br/>
-						</li>
-						<br/>
 						<li class="list-group-item">
 								Paket :
 								<select class="form-control" id="inputpaket" name="inputpaket">
