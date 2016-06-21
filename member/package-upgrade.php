@@ -158,32 +158,6 @@ $update_user1 = $col_user->update(array("id_user"=>$id, "level"=>"0"),array('$pu
 					<?php } ?>
  				</div>
 			</div>
-			<div class="panel" style="border:0px;" >
-  				<div class="panel-heading" style="background-color:#FC9822">
-    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">HISTORI SERVICE</h3>
-  				</div>
-  				<div class="panel-body">
-  					<br/>
-  					<div class="col-sm-12">
-						<?php
-						$res = $col_user->findOne(array("id_user"=>$id, "level"=>"0"));
-						foreach ($res['histori'] as $res_paket => $row_paket) {
-							if($row_paket['hal']=="update"){
-								$tanggal = $row_paket['tanggal_update'];
-							  	$thn = substr($tanggal, 0,4);
-							    $bln = substr($tanggal, 5,2);
-								$tgl = substr($tanggal, 8,10);
-							    $month = bulan($bln);
-						?>
-							<li class="list-group-item" style="border:2;">
-								Tanggal Pindah Paket : <b><?php echo $tgl.' '.$month.' '.$thn; ?></b><br/>
-								Paket Lama : <b><?php echo $row_paket['paket_lama']; ?></b><br/>
-						    	Paket Baru : <b><?php echo $row_paket['paket_baru']; ?></b><br/>
-							</li>
-						<?php } } ?>
-					</div>
- 				</div>
-			</div>
 		</div>
 	</div>
 </section>
