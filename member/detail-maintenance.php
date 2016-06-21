@@ -242,8 +242,8 @@ if (isset($_POST['btnupdate'])){
 							$pdf->Cell(0,7, 'Support Customer ', '0', 1, 'R');
 							$pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R');
 							// Filename that will be used for the file as the attachment
-							$fileatt_name = $id_cust.'-'.$tgl_psng.$bln_psng.$thn_psng.'-'.$boxtv.".pdf";
-							$dir='pasang/';
+							$fileatt_name = $id_cust.'-'.$tgl_psng.$bln_psng.$thn_psng.'-'.$boxtv."-pasang.pdf";
+							$dir='bukti/';
 							// save pdf in directory
 							$pdf ->Output($dir.$fileatt_name);
 							//....................
@@ -269,7 +269,7 @@ if (isset($_POST['btnupdate'])){
 							" boundary=\"{$mime_boundary}\"";
 
 							// set email message......................
-							$email_message = "Mohon segera diaktivasi STB dengan serial number  : ".$boxtv."<br>";
+							$email_message = "Mohon segera diaktivasi STB dengan serial number  : ".$no_stb."<br>";
 							$email_message .= "Work Order : Instalasi<br>";// Message that the email has in it
 							$email_message .= "This is a multi-part message in MIME format.\n\n" .
 							"--{$mime_boundary}\n" .
