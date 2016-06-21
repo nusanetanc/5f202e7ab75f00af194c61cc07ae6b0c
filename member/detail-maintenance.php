@@ -203,6 +203,167 @@ if (isset($_POST['btnupdate'])){
 
     	 $sent0 = mail($email_to0, $email_subject0, $email_message0, $email_headers0);
 		}
+		if($select_update=="request"){
+							require('../content/srcpdf/fpdf.php');
+							$pdf = new FPDF();
+							$pdf->AddPage();
+							$pdf->SetFont('Arial','B','10');
+							$pdf->Cell(0,20, 'PT Media Andalan Nusa (Nusanet)', '0', 1, 'R');
+							$pdf->SetFont('Arial','B','14');
+							$pdf->Cell(0,10, 'FORMULIR PENDAFTRAN', '0', 5, 'C');
+							$pdf->Ln();
+							$pdf->SetFont('Arial','B','10');
+							$pdf->Cell(0,7, 'DATA PELANGGAN', '0', 1, 'L');
+							$pdf->Ln();
+							$pdf->SetFont('Arial','','10');
+							$pdf->Cell(0,7, 'Jenis Pendaftaran        : Baru', '0', 1, 'L');
+							$pdf->Cell(0,7, 'Nama Lengkap             : '.$nama_cust, '0', 1, 'L');
+							$pdf->Cell(0,7, 'No ID Pelanggan          : '.$id_cust, '0', 1, 'L');
+							$pdf->Cell(0,7, 'Alamat Pemasangan    : '.$tempat_cust.' '.$ket_cust.' '.$alamat_cust.' '.$kota_cust, '0', 1, 'L');
+							$pdf->Cell(0,7, 'Nomor Telepon             : '.$phone_cust, '0', 1, 'L');
+							$pdf->Ln();
+							$pdf->SetFont('Arial','B','10');
+							$pdf->Cell(0,7, 'LAYANAN', '0', 1, 'L');
+							$pdf->Ln();
+							$pdf->SetFont('Arial','','10');
+							$pdf->Cell(0,7, 'Jenis Layanan               : '.$inputpaket, '0', 1, 'L');
+							$pdf->Cell(0,7, 'Layanan Tembahan      : '.$inputaddon, '0', 1, 'L');
+							$pdf->Cell(0,7, 'Nomor SN STB             : '.$no_stb, '0', 1, 'L');
+							$pdf->Cell(0,7, 'Alamat Email                 : '.$email_cust, '0', 1, 'L');
+							$pdf->Cell(0,7, 'Kata Sandi                    : g456789', '0', 1, 'L');
+							$pdf->Ln();
+							$pdf->Ln();
+							$pdf->Ln();
+							$pdf->Ln();
+							$pdf->Image('../img/tanda_tangan.jpg','165','130','33','33');
+							$pdf->SetFont('Arial','','10');
+							$pdf->Cell(0,7, 'John Doe', '0', 1, 'R');
+							$pdf->Cell(0,7, 'Support Customer ', '0', 1, 'R');
+							$pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R');
+							// Filename that will be used for the file as the attachment
+							$fileatt_name = $id_cust.'-'.$tgl_psng.$bln_psng.$thn_psng.'-'.$boxtv.".pdf";
+							$dir='pasang/';
+							// save pdf in directory
+							$pdf ->Output($dir.$fileatt_name);
+							//....................
+
+							$data = $pdf->Output("", "S");
+
+							//..................
+
+							$email_subject = "[REGISTRATION] - Nusanet - ".$nama_cust; // The Subject of the email
+							$email_to = $email_dens.', '.$email_cs; // Who the email is to
+
+
+							$semi_rand = md5(time());
+							$data = chunk_split(base64_encode($data));
+
+							$fileatt_type = "application/pdf"; // File Type
+							$mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";
+
+							// set header ........................
+							$headers = "From: ".$email_support;
+							$headers .= "\nMIME-Version: 1.0\n" .
+							"Content-Type: multipart/mixed;\n" .
+							" boundary=\"{$mime_boundary}\"";
+
+							// set email message......................
+							$email_message = "Mohon segera diaktivasi STB dengan serial number  : ".$boxtv."<br>";
+							$email_message .= "Work Order : Instalasi<br>";// Message that the email has in it
+							$email_message .= "This is a multi-part message in MIME format.\n\n" .
+							"--{$mime_boundary}\n" .
+							"Content-Type:text/html; charset=\"iso-8859-1\"\n" .
+							"Content-Transfer-Encoding: 7bit\n\n" .
+							$email_message .= "\n\n";
+							$email_message .= "--{$mime_boundary}\n" .
+							"Content-Type: {$fileatt_type};\n" .
+							" name=\"{$fileatt_name}\"\n" .
+							"Content-Disposition: attachment;\n" .
+							" filename=\"{$fileatt_name}\"\n" .
+							"Content-Transfer-Encoding: base64\n\n" .
+							$data .= "\n\n" .
+							"--{$mime_boundary}--\n";
+							$sent0 = mail($email_to, $email_subject, $email_message, $headers);
+}
+if($select_update=="termination"){
+	require('../content/srcpdf/fpdf.php');
+	$pdf = new FPDF();
+	$pdf->AddPage();
+	$pdf->SetFont('Arial','B','10');
+	$pdf->Cell(0,20, 'PT Media Andalan Nusa (Nusanet)', '0', 1, 'R');
+	$pdf->SetFont('Arial','B','14');
+	$pdf->Cell(0,10, 'FORMULIR PENUTUPAN LAYANAN', '0', 5, 'C');
+	$pdf->Ln();
+	$pdf->SetFont('Arial','B','10');
+	$pdf->Cell(0,7, 'DATA PELANGGAN', '0', 1, 'L');
+	$pdf->Ln();
+	$pdf->SetFont('Arial','','10');
+	$pdf->Cell(0,7, 'Nama Lengkap                     : '.$nama_cust, '0', 1, 'L');
+	$pdf->Cell(0,7, 'No ID Pelanggan                  : '.$id_cust, '0', 1, 'L');
+	$pdf->Cell(0,7, 'Nomor Telepon                    : '.$phone_cust, '0', 1, 'L');
+	$pdf->Cell(0,7, 'Alamat Email                        : '.$email_cust, '0', 1, 'L');
+	$pdf->Cell(0,7, 'Layanan yang Digunakan    : '.$package_cust.' ('.$deskripsi_paket0.')', '0', 1, 'L');
+	$pdf->Cell(0,7, 'Layanan Add-ons                 : No', '0', 1, 'L');
+	$pdf->Ln();
+	$pdf->SetFont('Arial','B','10');
+	$pdf->Cell(0,7, 'PENUTUPAN / TERMINASI', '0', 1, 'L');
+	$pdf->SetFont('Arial','','10');
+	$pdf->Cell(0,7, 'Tanggal Penutupan : '.$tgl_tutup.' '.$month_tutup.' '.$thn_tutup, '0', 1, 'L');
+	$pdf->Cell(0,7, 'Alasan Penutupan   : '.$textalasanberhenti, '0', 1, 'L');
+	$pdf->Ln();
+	$pdf->SetFont('Arial','B','10');
+	$pdf->Cell(0,7, 'Tanggal : '.$tgl_tutup.' '.$month_tutup.' '.$thn_tutup, '0', 1, 'R');
+	$pdf->Ln();
+	$pdf->Ln();
+	$pdf->Ln();
+	$pdf->Ln();
+	$pdf->Image('../img/tanda_tangan.jpg','165','150','33','33');
+	$pdf->SetFont('Arial','','10');
+	$pdf->Cell(0,7, 'John Doe              ', '0', 1, 'R');
+	$pdf->Cell(0,7, 'Customer Relation Officer', '0', 1, 'R');
+	$pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R');
+
+	// Filename that will be used for the file as the attachment
+	$fileatt_name = $tgl_tutup.$month_tutup.$thn_tutup.$id_cust."termination.pdf";
+	$dir='bukti/';
+	$pdf ->Output($dir.$fileatt_name);
+
+	$data = $pdf->Output("", "S");
+
+	$email_from = "cs@groovy.id"; // Who the email is from
+	$email_subject = "[SERVICE TERMINATION REQUEST] - Nusanet - ".$nama_cust; // The Subject of the email
+	$email_to = $email_dens; // Who the email is to
+
+
+	$semi_rand = md5(time());
+	$data = chunk_split(base64_encode($data));
+
+	$fileatt_type = "application/pdf"; // File Type
+	$mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";
+
+	// set header ........................
+	$headers = "From: ".$email_from;
+	$headers .= "\nMIME-Version: 1.0\n" .
+	"Content-Type: multipart/mixed;\n" .
+	" boundary=\"{$mime_boundary}\"";
+
+	// set email message......................
+	$email_message .= "This is a multi-part message in MIME format.\n\n" .
+	"--{$mime_boundary}\n" .
+	"Content-Type:text/html; charset=\"iso-8859-1\"\n" .
+	"Content-Transfer-Encoding: 7bit\n\n" .
+	$email_message .= "\n\n";
+	$email_message .= "--{$mime_boundary}\n" .
+	"Content-Type: {$fileatt_type};\n" .
+	" name=\"{$fileatt_name}\"\n" .
+	"Content-Disposition: attachment;\n" .
+	" filename=\"{$fileatt_name}\"\n" .
+	"Content-Transfer-Encoding: base64\n\n" .
+	$data .= "\n\n" .
+	"--{$mime_boundary}--\n";
+
+	$sent0 = mail($email_to, $email_subject, $email_message, $headers);
+}
 		if($sent0){ ?>
 			<script type="" language="JavaScript">alert("Terkirim ke den's")
 			document.location='<?php echo $base_url_member; ?>/detail-maintenance/<?php echo $id_cust; ?>'</script>
