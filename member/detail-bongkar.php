@@ -6,7 +6,7 @@ $date_days = date("d");
 $date_years = date("Y");
 $date_month = date("m");
 $date_month1 = bulan($date_month);
-$res = $col_user->find(array("id_user"=>$id_cust,"status"=>"unaktif","level"=>"0"));	
+$res = $col_user->find(array("id_user"=>$id_cust,"status"=>"unaktif","level"=>"0"));
 						foreach ($res as $row) {
 												$tanggal_akhir = $row['tanggal_akhir'];
 												$thn_akhir = substr($tanggal_akhir, 0,4);
@@ -25,19 +25,19 @@ $res = $col_user->find(array("id_user"=>$id_cust,"status"=>"unaktif","level"=>"0
 						                        $ket_cust = $row['keterangan'];
 						                        $harga_paket = $row['harga'];
 						                        $no_box = $row['no_box'];
-	                                        }                                   	                                                	
+	                                        }
 if(isset($_POST['save'])){
 $tanggal_bongkar = $_POST['inputTanggal'];
 $support_field = $_POST['inputField'];
 $support_Assfield = $_POST['inputAssfield'];
-$res2 = $col_user->find(array("nama"=>$support_field, "level"=>"301"));	
+$res2 = $col_user->find(array("nama"=>$support_field, "level"=>"301"));
 						foreach ($res2 as $row2) {
 							$email_field=$row2['email'];
-						} 	
-$res3 = $col_user->find(array("nama"=>$support_Assfield, "level"=>"302"));	
+						}
+$res3 = $col_user->find(array("nama"=>$support_Assfield, "level"=>"302"));
 						foreach ($res3 as $row3) {
 							$email_Assfield=$row3['email'];
-						} 
+						}
 	$histori=array("hal"=>"bongkar", "tanggal_bongkar"=>$tanggal_bongkar, "field_engineer"=>$support_field, "ass_filed"=>$support_Assfield);
 	$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>$histori)));
 	$insert_activty = $col_history->insert(array("hal"=>"bongkar","tanggal_kerja"=>$tanggal_bongkar, "field_engineer"=>$support_field, "ass_field"=>$support_Assfield, "status"=>"progress", "id_cust"=>$id_cust, "nama_cust"=>$nama_cust, "tempat_customer"=>$tempat_cust, "alamat_customer"=>$alamat_cust, "kota_customer"=>$kota_cust ,"keterangan_customer"=>$ket_cust, "phone_customer"=>$phone_cust, "paket"=>$package_cust, "no_box"=>$no_box));
@@ -85,14 +85,14 @@ $res3 = $col_user->find(array("nama"=>$support_Assfield, "level"=>"302"));
 			        <div style="padding:20px;color:#333;">
 			            <p style="font-size:20px;font-weight:bold;line-height:1px">Terimakasih sudah menjadi customer Groovy</p>
 			            <p>Kami akan melakukan pengambilan perangkat pada tanggal : '.$tgl_akhir.' '.$month_akhir.' '.$thn_akhir.'.</p>
-			            
+
 			            <p style="color:#888;">Terimakasih</p>
 			        </div>
 			        </div>
-			    </div>        
+			    </div>
 			</body>
 			</html>
-		
+
 		';
 
 		$headers1  = 'MIME-Version: 1.0' . "\r\n";
@@ -127,7 +127,7 @@ if ($update_user && $insert_activty && $kirim_email1 && $kirim_email && $sent_ak
   				<div class="panel-body">
   					<br/>
   					<?php if ($nama_cust<>"") { ?>
-					<div class="col-sm-12">	
+					<div class="col-sm-12">
 						<form class="form-horizontal">
 						  <fieldset>
 						    <div class="form-group">
@@ -184,16 +184,16 @@ if ($update_user && $insert_activty && $kirim_email1 && $kirim_email && $sent_ak
 						        <input type="text" class="form-control" id="inputTanggal" name="inputTanggal" placeholder="Date" readonly>
 						        <br/>
 						      </div>
-						    </div>	<br/>						    
+						    </div>	<br/>
 						    <div class="form-group">
 						      <label for="inputField" class="col-lg-3 control-label">Support</label>
 						      <div class="col-lg-4">
 						            <select class="form-control" id="inputField" name="inputField">
 							          <option disabled selected>Select Field Engineer</option>
 							          <?php
-							          $res = $col_user->find(array("level"=>"301"));	
-										foreach ($res as $row) {  ?>  
-									  <option><?php echo $row['nama']; ?></option>	 
+							          $res = $col_user->find(array("level"=>"301"));
+										foreach ($res as $row) {  ?>
+									  <option><?php echo $row['nama']; ?></option>
 									  <?php } ?>
 							        </select>
 							        <br/>
@@ -202,26 +202,45 @@ if ($update_user && $insert_activty && $kirim_email1 && $kirim_email && $sent_ak
 						            <select class="form-control" id="inputAssfield" name="inputAssfield">
 							          <option disabled selected>Select Ass Field Engineer</option>
 							          <?php
-							          $res = $col_user->find(array("level"=>"302"));	
-										foreach ($res as $row) {  ?>  
-									  <option><?php echo $row['nama']; ?></option>	 
+							          $res = $col_user->find(array("level"=>"302"));
+										foreach ($res as $row) {  ?>
+									  <option><?php echo $row['nama']; ?></option>
 									  <?php } ?>
 							        </select>
 							        <br/>
 						      </div>
-						    </div>	
-						    <div class="col-lg-9">	
+						    </div>
+								<div class="form-group">
+							      <label for="inputPerangkat" class="col-lg-3 control-label">Perangkat</label>
+							      <div class="col-lg-9">
+											<div class="checkbox">
+							          <label>
+							            <input type="checkbox"> Checkbox
+							          </label>
+							        </div>
+											<div class="checkbox">
+												<label>
+													<input type="checkbox"> Checkbox
+												</label>
+												<label>
+													<input type="checkbox"> Checkbox
+												</label>
+											</div>
+							        <br/>
+							      </div>
+							    </div>	<br/>
+						    <div class="col-lg-9">
 						        <div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>
 						        <br/>
-						      	<button class="btn btn-success" type="submit" name="save" id="save"><b>AMBIL PERANGKAT</b></button>	
+						      	<button class="btn btn-success" type="submit" name="save" id="save"><b>AMBIL PERANGKAT</b></button>
 						    </div>
-						  </fieldset>	
-						</form>    		
-					</div>	
+						  </fieldset>
+						</form>
+					</div>
 					<?php } ?>
  				</div>
 			</div>
 		</div>
-	</div>	
+	</div>
 </section>
 </form>
