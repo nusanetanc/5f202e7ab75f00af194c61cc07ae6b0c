@@ -254,13 +254,9 @@ if ($update_user && $update_user1 && $insert_activty && $kirim_email && $kirim_e
 					</div>
 					<div class="panel-body">
 						<li class="list-group-item">
-						<div class="form-group">
-								<label for="inputDate" class="col-lg-3 control-label">Tanggal Update</label>
-								<div class="col-lg-9">
-									<input type="text" class="form-control" id="inputTanggal1" name="inputTanggal1" placeholder="Date" readonly>
+								Tanggal Update :
+									<input type="text" class="form-control" id="inputTanggal1" name="inputTanggal1" placeholder="Tanggal Update" readonly>
 									<br/>
-								</div>
-							</div>
 						</li>
 						<br/>
 						<li class="list-group-item">
