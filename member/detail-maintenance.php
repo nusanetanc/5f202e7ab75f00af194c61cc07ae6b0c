@@ -253,6 +253,7 @@ if ($update_user && $update_user1 && $insert_activty && $kirim_email && $kirim_e
 						<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">UPDATE LAYANAN</h3>
 					</div>
 					<div class="panel-body">
+						<li class="list-group-item">
 						<div class="form-group">
 								<label for="inputDate" class="col-lg-3 control-label">Tanggal Update</label>
 								<div class="col-lg-9">
@@ -260,6 +261,7 @@ if ($update_user && $update_user1 && $insert_activty && $kirim_email && $kirim_e
 									<br/>
 								</div>
 							</div>
+						</li>
 						<br/>
 						<li class="list-group-item">
 								Paket :
