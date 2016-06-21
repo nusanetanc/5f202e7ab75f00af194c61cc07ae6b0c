@@ -8,15 +8,19 @@
 	  					<br/>
 	  				    <div class="panel-body">
 									<table class="table table-striped table-hover ">
-										<tbody>
-										    <tr>
-										      <td>Column content</td>
-										      <td>Column content</td>
-										    </tr>
-												<tr>
-										      <td>Column content</td>
-										      <td>Column content</td>
-										    </tr>
+											<?php
+												$res = $col_user->findOne(array("id_user"=>$id));
+											foreach ($res['histori'] as $histori => $log) {
+												$thn_log = substr($log['tanggal'], 0,4);
+												$bln_log = substr($log['tanggal'], 5,2);
+												$tgl_log = substr($log['tanggal'], 8,10);
+												$month_log = bulan($bln_log);
+											 ?>
+											<tbody class="pic-container down">
+												<td><?php echo $tgl_log.' '.$month_log.' '.$thn_log; ?></td>
+												<td><?php echo $log['hal']; ?></td>
+												<td><?php echo $log['keterangan']; ?></td>
+											</tbody> <?php } ?>
 										</tbody>
 									</table>
 		  				 </div>
