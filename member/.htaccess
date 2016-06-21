@@ -51,6 +51,7 @@ RewriteRule ^customer/([0-9A-Za-z]+)/? ?hal=customer&status=$1
 RewriteRule ^customer$ ?hal=customer
 RewriteRule ^invoice-customer/([0-9A-Za-z]+)/? ?hal=invoice-customer&id_cust=$1
 RewriteRule ^add-on$ ?hal=add-on
+RewriteRule ^histori$ ?hal=histori
 
 RewriteRule ^support$ ?hal=support
 RewriteRule ^user-add$ ?hal=user-add
