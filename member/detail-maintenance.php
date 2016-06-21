@@ -27,6 +27,7 @@ $res = $col_user->find(array("id_user"=>$id_cust,"status"=>"aktif","level"=>"0")
 						                        $ket_cust = $row['keterangan'];
 						                        $harga_paket = $row['harga'];
 						                        $no_box = $row['no_box'];
+																		$addon_cust = $row['addon'];
 	                                        }
 $res1 = $col_package->find(array("nama"=>$package_cust));
 						foreach ($res1 as $row1) {
