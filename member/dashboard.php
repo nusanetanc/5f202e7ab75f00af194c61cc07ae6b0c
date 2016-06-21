@@ -181,7 +181,7 @@ $(document).ready(function(){
 			<div class="col-sm-4">
 				<a href="<?php echo $base_url_member; ?>/payment" style=" text-decoration:none">
 					<div class="well well-lg" style="background-color:#263238;">
-					  <h4 style="color:white;"><b>USER</b></h4>
+					  <h4 style="color:white;"><b>CUSTOMER</b></h4>
 					  <div class="text-center">
 					  	<b style="color:white; font-size:2em;"><i class="fa fa-users fa-5x"></i></b>
 					  </div>

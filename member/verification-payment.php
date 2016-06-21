@@ -833,7 +833,6 @@ if($emailcust && $update_user && $push_histori){ ?>
                             <option disabled="true" selected="true">Select</option>
                             <option value="request">Request</option>
                             <option value="change">Change</option>
-                            <option value="termination">Termination</option>
                           </select>
                         </li>
                         <li class="list-group-item">

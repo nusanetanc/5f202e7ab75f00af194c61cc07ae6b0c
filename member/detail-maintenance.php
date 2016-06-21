@@ -130,6 +130,9 @@ if ($update_user && $update_user1 && $insert_activty && $kirim_email && $kirim_e
         $("#inputTanggal").datepicker({
       	format:'yyyy/mm/dd'
         });
+				$("#inputTanggal1").datepicker({
+      	format:'yyyy/mm/dd'
+        });
             });
     </script>
 <section>
@@ -244,6 +247,75 @@ if ($update_user && $update_user1 && $insert_activty && $kirim_email && $kirim_e
 				      	<button class="btn btn-primary btn-sm" type="submit" name="btnmaintenance" id="btnmaintenance"><b>MAINTENANCE</b></button>
 				    </div>
  				</div>
+			</div>
+			<div class="panel" style="border:0px;">
+					<div class="panel-heading" style="background-color:#F1453C">
+						<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">UPDATE LAYANAN</h3>
+					</div>
+					<div class="panel-body">
+						<div class="form-group">
+								<label for="inputDate" class="col-lg-3 control-label">Tanggal Update</label>
+								<div class="col-lg-9">
+									<input type="text" class="form-control" id="inputTanggal1" name="inputTanggal1" placeholder="Date" readonly>
+									<br/>
+								</div>
+							</div>
+						<br/>
+						<li class="list-group-item">
+								Paket :
+								<select class="form-control" id="inputpaket" name="inputpaket">
+								<?php
+					$res = $col_package->find();
+					foreach($res as $row)
+											{
+												?>
+										<option><?php echo $row['nama']; ?></option>
+									<?php } ?>
+									</select>
+						</li>
+							<ul style="text-align:left;" class="list-group">
+								Add On Service
+									<?php
+											$res = $col_service->find();
+											foreach($res as $row)
+																	{
+													if($row['nama_group']=="Cinema Box HD" || $row['nama_group']=="TV Chanel" || $row['nama_group']=="Video on Demand"){
+																		?>
+								<li class="list-group-item">
+									<h6><?php echo $row['nama_group']; ?></h6>
+										<?php $res1 = $col_service->find(array("group"=>$row['nama_group']));
+										foreach($res1 as $row1)
+																{ ?>
+											<input type="checkbox" name="addon[]" id="addon[]" value="<?php echo $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
+											<?php } ?>
+									<?php } } ?>
+								</li>
+							</ul>
+							<br/>
+						<div class="form-group">
+								<div class="col-lg-12">
+									<select class="form-control" id="select_update" name="select_update">
+					          <option value="request">Request Dens</option>
+					          <option value="termination">Termination Dens</option>
+					        </select>
+									<br/>
+								</div>
+							</div>
+							<div class="panel-body">
+								<div class="form-group">
+										<label for="inputDate" class="col-lg-3 control-label">No STB</label>
+										<div class="col-lg-9">
+											<input type="text" class="form-control" id="no_stb" name="no_stb" placeholder="Set Up Box TV" readonly>
+											<br/>
+										</div>
+									</div>
+								<br/>
+						<div class="col-lg-9">
+								<div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>
+								<br/>
+								<button class="btn btn-primary btn-sm" type="submit" name="btnupdate" id="btnupdate"><b>MAINTENANCE</b></button>
+						</div>
+				</div>
 			</div>
 			<div class="panel" style="border:0px;">
 					<div class="panel-heading" style="background-color:#F1453C">
