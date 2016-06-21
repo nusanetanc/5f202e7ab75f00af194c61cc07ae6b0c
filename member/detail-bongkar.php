@@ -214,16 +214,14 @@ if ($update_user && $insert_activty && $kirim_email1 && $kirim_email && $sent_ak
 							      <label for="inputPerangkat" class="col-lg-3 control-label">Perangkat</label>
 							      <div class="col-lg-9">
 											<div class="checkbox">
-							          <label>
-							            <input type="checkbox"> Checkbox
-							          </label>
-							        </div>
-											<div class="checkbox">
 												<label>
-													<input type="checkbox"> Checkbox
+													<input type="checkbox" name="perangkat[]" id="perangkat[]" value="STB TV"> STB Tv
 												</label>
 												<label>
-													<input type="checkbox"> Checkbox
+													<input type="checkbox" name="perangkat[]" id="perangkat[]" value="Router"> Router
+												</label>
+												<label>
+													<input type="checkbox" name="perangkat[]" id="perangkat[]" value="Kabel 10 M"> Kabel 10 M
 												</label>
 											</div>
 							        <br/>
