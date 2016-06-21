@@ -121,7 +121,99 @@ $res3 = $col_user->find(array("nama"=>$inputAssfield, "level"=>"302"));
 if ($update_user && $update_user1 && $insert_activty && $kirim_email && $kirim_email1){ ?>
 	<script type="" language="JavaScript">
 	document.location='<?php echo $base_url_member; ?>/detail-maintenance/<?php echo $id_cust; ?>'</script>
-<?php } } ?>
+<?php } }
+if (isset($_POST['btnupdate'])){
+	$select_update=$_POST['select_update'];
+	$no_stb = $_POST['no_stb'];
+	$tgl_update = $_POST['inputTanggal1'];
+	$inputpaket=$_POST['inputpaket'];
+	$inputaddon=implode(", ", $_POST['addon']);
+	$daterequest=$_POST['inputTanggal1'];
+	$thn_pindah = substr($daterequest, 0,4);
+	$bln_pindah = substr($daterequest, 5,2);
+	$tgl_pindah = substr($daterequest, 8,10);
+	$month_pindah = bulan($bln_pindah);
+		if($select_update=="change"){
+        require('../content/srcpdf/fpdf.php');
+    	  $pdf = new FPDF();
+    	  $pdf->AddPage();
+    	  $pdf->SetFont('Arial','B','10');
+    	  $pdf->Cell(0,20, 'PT Media Andalan Nusa (Nusanet)', '0', 1, 'R');
+    	  $pdf->SetFont('Arial','B','14');
+    	  $pdf->Cell(0,10, 'FORMULIR PERUBAHAN JENIS LAYANAN', '0', 5, 'C');
+    	  $pdf->Ln();
+    	  $pdf->SetFont('Arial','B','10');
+    	  $pdf->Cell(0,7, 'DATA PELANGGAN', '0', 1, 'L');
+    	  $pdf->Ln();
+    	  $pdf->SetFont('Arial','','10');
+    	  $pdf->Cell(0,7, 'Nama Lengkap                     : '.$nama_cust, '0', 1, 'L');
+    	  $pdf->Cell(0,7, 'No ID Pelanggan                  : '.$id_cust, '0', 1, 'L');
+    	  $pdf->Cell(0,7, 'Nomor Telepon                    : '.$phone_cust, '0', 1, 'L');
+    	  $pdf->Cell(0,7, 'Alamat Email                        : '.$email_cust, '0', 1, 'L');
+				$pdf->Cell(0,7, 'NO STB TV                        : '.$no_stb, '0', 1, 'L');
+    	  $pdf->Cell(0,7, 'Layanan yang Digunakan    : '.$package_cust, '0', 1, 'L');
+    	  $pdf->Cell(0,7, 'Layanan Add-ons                 : '.$addon_cust, '0', 1, 'L');
+    	  $pdf->Ln();
+    	  $pdf->SetFont('Arial','B','10');
+    	  $pdf->Cell(0,7, 'PERGANTIAN LAYANAN', '0', 1, 'L');
+    	  $pdf->SetFont('Arial','','10');
+    	  $pdf->Cell(0,7, 'Pergantian Layanan : '.$inputpaket, '0', 1, 'L');
+        $pdf->Cell(0,7, 'Layanan Tambahan : '.$inputaddon, '0', 1, 'L');
+    	  $pdf->Ln();
+    	  $pdf->Ln();
+    	  $pdf->Ln();
+    	  $pdf->Ln();
+    	  $pdf->Image('../img/tanda_tangan.jpg','165','130','33','33');
+    	  $pdf->SetFont('Arial','','10');
+    	  $pdf->Cell(0,7, 'John Doe', '0', 1, 'R');
+    	  $pdf->Cell(0,7, 'Support Customer ', '0', 1, 'R');
+    	  $pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R');
+
+    	  // Filename that will be used for the file as the attachment
+    	  $fileatt_name0 = $id_cust.$package_cust.'update.pdf';
+    	  $dir0='invoice/';
+    	  $pdf ->Output($dir0.$fileatt_name0);
+    	  $data = $pdf->Output("", "S");
+
+    	  $email_from0 = "cs@groovy.id"; // Who the email is from
+    	  $email_subject0 = "[CHANGE SERVICE REQUEST] - Nusanet - ".$nama_cust; // The Subject of the email
+    	  $email_to0 = $email_dens; // Who the email is to
+
+    	  $semi_rand = md5(time());
+    	  $data = chunk_split(base64_encode($data));
+
+    	  $fileatt_type = "application/pdf"; // File Type
+    	  $mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";
+
+    	  // set header ........................
+    	  $email_headers0 = "From: cs@groovy.id";
+    	  $email_headers0 .= "\nMIME-Version: 1.0\n" .
+    	  "Content-Type: multipart/mixed;\n" .
+    	  " boundary=\"{$mime_boundary}\"";
+
+    	  // set email message......................
+    	  $email_message0 .= "This is a multi-part message in MIME format.\n\n" .
+    	  "--{$mime_boundary}\n" .
+    	  "Content-Type:text/html; charset=\"iso-8859-1\"\n" .
+    	  "Content-Transfer-Encoding: 7bit\n\n" .
+    	  $email_message0 .= "\n\n";
+    	  $email_message0 .= "--{$mime_boundary}\n" .
+    	  "Content-Type: {$fileatt_type};\n" .
+    	  " name=\"{$fileatt_name}\"\n" .
+    	  "Content-Disposition: attachment;\n" .
+    	  " filename=\"{$fileatt_name}\"\n" .
+    	  "Content-Transfer-Encoding: base64\n\n" .
+    	  $data .= "\n\n" .
+    	  "--{$mime_boundary}--\n";
+
+    	 $sent0 = mail($email_to0, $email_subject0, $email_message0, $email_headers0);
+		}
+		if($sent0){ ?>
+			<script type="" language="JavaScript">alert("Terkirim ke den's")
+			document.location='<?php echo $base_url_member; ?>/detail-maintenance/<?php echo $id_cust; ?>'</script>
+<?php	}
+}
+?>
 <style>
     .datepicker{z-index:1151;}
 </style>
@@ -295,6 +387,7 @@ if ($update_user && $update_user1 && $insert_activty && $kirim_email && $kirim_e
 									<select class="form-control" id="select_update" name="select_update">
 					          <option value="request">Request Dens</option>
 					          <option value="termination">Termination Dens</option>
+										<option value="change">Change Dens</option>
 					        </select>
 									<br/>
 								</div>
@@ -303,7 +396,7 @@ if ($update_user && $update_user1 && $insert_activty && $kirim_email && $kirim_e
 								<div class="form-group">
 										<label for="inputDate" class="col-lg-3 control-label">No STB</label>
 										<div class="col-lg-9">
-											<input type="text" class="form-control" id="no_stb" name="no_stb" placeholder="Set Up Box TV" readonly>
+											<input type="text" class="form-control" id="no_stb" name="no_stb" placeholder="Set Up Box TV">
 											<br/>
 										</div>
 									</div>
@@ -311,7 +404,7 @@ if ($update_user && $update_user1 && $insert_activty && $kirim_email && $kirim_e
 						<div class="col-lg-9">
 								<div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>
 								<br/>
-								<button class="btn btn-primary btn-sm" type="submit" name="btnupdate" id="btnupdate"><b>MAINTENANCE</b></button>
+								<button class="btn btn-primary btn-sm" type="submit" name="btnupdate" id="btnupdate"><b>UPDATE</b></button>
 						</div>
 				</div>
 			</div>
