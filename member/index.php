@@ -1,7 +1,7 @@
 <?php
 	$base_url="http://groovy.id/beta";
 	$base_url_member="http://groovy.id/beta/member";
-	$email_dens="nurhandiy@ymail.com";
+	$email_dens="nurhandiy@gmail.com";
 	$email_billing="nurhandiy@ymail.com";
 	$email_cs="nurhandiy@ymail.com";
 	$email_support="nurhandiy@ymail.com";
