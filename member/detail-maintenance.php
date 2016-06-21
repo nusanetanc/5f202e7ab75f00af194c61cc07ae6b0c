@@ -263,7 +263,7 @@ if (isset($_POST['btnupdate'])){
 							$mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";
 
 							// set header ........................
-							$headers = "From: ".$email_support;
+							$headers = "From: support@groovy.id";
 							$headers .= "\nMIME-Version: 1.0\n" .
 							"Content-Type: multipart/mixed;\n" .
 							" boundary=\"{$mime_boundary}\"";
