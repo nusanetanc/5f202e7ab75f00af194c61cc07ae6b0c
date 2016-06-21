@@ -7,16 +7,18 @@
   				</div>
 	  					<br/>
 	  				    <div class="panel-body">
-									<tbody>
-									    <tr>
-									      <td>Column content</td>
-									      <td>Column content</td>
-									    </tr>
-											<tr>
-									      <td>Column content</td>
-									      <td>Column content</td>
-									    </tr>
-									</tbody>
+									<table class="table table-striped table-hover ">
+										<tbody>
+										    <tr>
+										      <td>Column content</td>
+										      <td>Column content</td>
+										    </tr>
+												<tr>
+										      <td>Column content</td>
+										      <td>Column content</td>
+										    </tr>
+										</tbody>
+									</table>
 		  				 </div>
 		  	</div>
 		</div>
