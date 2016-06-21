@@ -30,6 +30,7 @@ if(isset($_POST['save'])){
 $tanggal_bongkar = $_POST['inputTanggal'];
 $support_field = $_POST['inputField'];
 $support_Assfield = $_POST['inputAssfield'];
+$perangkat=implode(", ", $_POST['perangkat']);
 $res2 = $col_user->find(array("nama"=>$support_field, "level"=>"301"));
 						foreach ($res2 as $row2) {
 							$email_field=$row2['email'];
@@ -38,9 +39,9 @@ $res3 = $col_user->find(array("nama"=>$support_Assfield, "level"=>"302"));
 						foreach ($res3 as $row3) {
 							$email_Assfield=$row3['email'];
 						}
-	$histori=array("hal"=>"bongkar", "tanggal_bongkar"=>$tanggal_bongkar, "field_engineer"=>$support_field, "ass_filed"=>$support_Assfield);
+	$histori=array("hal"=>"bongkar", "tanggal_bongkar"=>$tanggal_bongkar, "field_engineer"=>$support_field, "ass_filed"=>$support_Assfield, "perangkat"=>$perangkat);
 	$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>$histori)));
-	$insert_activty = $col_history->insert(array("hal"=>"bongkar","tanggal_kerja"=>$tanggal_bongkar, "field_engineer"=>$support_field, "ass_field"=>$support_Assfield, "status"=>"progress", "id_cust"=>$id_cust, "nama_cust"=>$nama_cust, "tempat_customer"=>$tempat_cust, "alamat_customer"=>$alamat_cust, "kota_customer"=>$kota_cust ,"keterangan_customer"=>$ket_cust, "phone_customer"=>$phone_cust, "paket"=>$package_cust, "no_box"=>$no_box));
+	$insert_activty = $col_history->insert(array("hal"=>"bongkar","tanggal_kerja"=>$tanggal_bongkar, "field_engineer"=>$support_field, "ass_field"=>$support_Assfield, "status"=>"progress", "id_cust"=>$id_cust, "nama_cust"=>$nama_cust, "tempat_customer"=>$tempat_cust, "alamat_customer"=>$alamat_cust, "kota_customer"=>$kota_cust ,"keterangan_customer"=>$ket_cust, "phone_customer"=>$phone_cust, "paket"=>$package_cust, "no_box"=>$no_box, "perangkat"=>$perangkat));
 	// mail for field engineer
 	$to = $email_field.', '.$email_Assfield;
 
@@ -54,7 +55,7 @@ $res3 = $col_user->find(array("nama"=>$support_Assfield, "level"=>"302"));
 	  <p>Customer : '.$id_cust.' / '.$nama_cust.' / '.$phone_cust.' / '.$email_cust.'</p>
 	  <p>Paket : '.$package_cust.'</p>
 	  <p>Tempat : '.$tempat_cust.' '.$ket_cust.' '.$alamat_cust.' '.$kota_cust.'</p>
-	  <p>No STB : '.$no_box.'</p>
+		<p>Perangkat yang Diambil : '.$perangkat.'</p>
 	  <p>Tanggal Kerja : '.$tgl_psng.' '.$month_psng.' '.$thn_psng.'</p>
 	  <p>Support : '.$support_field.' dan '.$support_Assfield.'</p>
 	  <br/>
@@ -84,7 +85,7 @@ $res3 = $col_user->find(array("nama"=>$support_Assfield, "level"=>"302"));
 			        </div>
 			        <div style="padding:20px;color:#333;">
 			            <p style="font-size:20px;font-weight:bold;line-height:1px">Terimakasih sudah menjadi customer Groovy</p>
-			            <p>Kami akan melakukan pengambilan perangkat pada tanggal : '.$tgl_akhir.' '.$month_akhir.' '.$thn_akhir.'.</p>
+			            <p>Kami akan melakukan pengambilan perangkat '.$perangkat.', pada tanggal : '.$tgl_akhir.' '.$month_akhir.' '.$thn_akhir.'.</p>
 
 			            <p style="color:#888;">Terimakasih</p>
 			        </div>
