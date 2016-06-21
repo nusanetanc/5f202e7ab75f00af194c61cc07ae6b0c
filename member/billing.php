@@ -57,35 +57,68 @@ if ($level=="0"){
 				<div class="panel-body" style="background-color:#FF6D20;">
 					<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">BILLING - DATA</h3>
 				</div>
-  				    <div class="panel-body">
-  				    	<ul class="list-group">
-									  <?php
-										$res = $col_user->findOne(array("id_user"=>$id, "level"=>$level));
-										foreach ($res['payment'] as $byr => $payment) {
-												$tanggal = $payment['tanggal_bayar'];
-											  	$thn = substr($tanggal, 0,4);
-											    $bln = substr($tanggal, 5,2);
-												$tgl = substr($tanggal, 8,10);
-											    $month = bulan($bln);
-												    $tanggal1 = $payment['tanggal_konfirmasi'];
-												  	$thn1 = substr($tanggal1, 0,4);
-												    $bln1 = substr($tanggal1, 5,2);
-													$tgl1 = substr($tanggal1, 8,10);
-												    $month1 = bulan($bln1);
-										?>
+				<div class="panel-body">
+				<form method="post">
+				<div class="row">
+					<div class="col-sm-12">
+						<table class="table table-striped table-hover ">
+					 <thead>
+							<tr>
+								<th width="10%">No</th>
+								<th width="30%">Pembayaran</th>
+								<th width="30%">Konfirmasi</th>
+								<th width="30%"></th>
+							</tr>
+						</thead>
+						<?php
+							$res = $col_payment->find(array("id_user"=>$id, "level"=>$level));
+						foreach ($res as $byr) {
+							$thn_konfirmasi = substr($byr['tanggal_konfirmasi'], 0,4);
+							$bln_konfirmasi = substr($byr['tanggal_konfirmasi'], 5,2);
+							$tgl_konfirmasi = substr($byr['tanggal_konfirmasi'], 8,10);
+							$month_konfirmasi = bulan($bln_konfirmasi);
 
-  									<li class="list-group-item" style="border:2;">
-										Tanggal Pembayaran : <b><?php echo $tgl.' '.$month.' '.$thn; ?></b><br/>
-										Tanggal Konfirmasi Billing : <b><?php echo $tgl1.' '.$month1.' '.$thn1; ?></b><br/>
-								    	Pembayaran : <b><?php echo $payment['paket']; ?></b><br/>
-											Pembayaran : <b><?php echo rupiah($payment['harga']); ?></b><br/>
-											Prorate : <b><?php echo rupiah($payment['proraide']); ?></b><br/>
-											Ppn : <b><?php echo rupiah($payment['ppn']); ?></b><br/>
-								    	Subtotal : <b><?php echo rupiah($payment['total']).',-'; ?></b>
-									</li>
-									  <?php } ?>
-						</ul>
+							$thn_bayar = substr($byr['tanggal_bayar'], 0,4);
+							$bln_bayar = substr($byr['tanggal_bayar'], 5,2);
+							$tgl_bayar = substr($byr['tanggal_bayar'], 8,10);
+							$month_bayar = bulan($bln_bayar);
+						 ?>
+						<tbody class="pic-container down">
+							<td><?php echo $byr['no']; ?></td>
+							<td><?php echo $tgl_bayar.' '.$month_bayar.' '.$thn_bayar; ?></td>
+							<td><?php echo $tgl_konfirmasi.' '.$month_konfirmasi.' '.$thn_konfirmasi; ?></td>
+							<td><a href="#" data-toggle="modal" data-target="#<?php echo $byr['no']; ?>">Deskripsi</a></td>
+						</tbody>
+						<div class="modal" name=<?php echo $byr['no']; ?> id=<?php echo $byr['no']; ?>>
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+										<h4 class="modal-title">Data Pembayaran</h4>
+									</div>
+									<div class="modal-body">
+											<div class="panel panel-default">
+												<?php foreach ($byr['pembayaran'] as $pmbyr) { ?>
+													<div class="panel-body">
+														<strong><?php print_r($pmbyr['deskripsi']); ?></strong>=>Harga<b>(<?php print_r(rupiah($pmbyr['harga'])); ?>)</b> - Prorate<b>(<?php print_r(rupiah($pmbyr['prorate'])); ?>)</b> = Subtotal<b>(<?php print_r(rupiah($pmbyr['total_harga'])); ?>)</b>
+													</div>
+													<?php } ?>
+												</div>
+									</div>
+									<div class="modal-footer">
+										<p>Total Tagihan : <b><?php echo rupiah($byr['total_tagihan']); ?></b></p>
+										<p>PPN 10% : <b><?php echo rupiah($byr['ppn']); ?></b></p>
+										<p>Total Pembayaran : <b><?php echo rupiah($byr['total_pembayaran']); ?></b></p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<?php } ?>
+				</table>
 					</div>
+			 </div>
+			 </form>
+			 </div>
  				</div>
 			</div>
 		</div>
