@@ -71,7 +71,7 @@ if ($level=="0"){
 							</tr>
 						</thead>
 						<?php
-							$res = $col_payment->find(array("id_user"=>$id, "level"=>$level));
+							$res = $col_payment->find(array("id_user"=>$id));
 						foreach ($res as $byr) {
 							$thn_konfirmasi = substr($byr['tanggal_konfirmasi'], 0,4);
 							$bln_konfirmasi = substr($byr['tanggal_konfirmasi'], 5,2);
