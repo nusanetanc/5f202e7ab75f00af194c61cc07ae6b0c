@@ -253,7 +253,7 @@ if (isset($_POST['btnupdate'])){
 							//..................
 
 							$email_subject = "[REGISTRATION] - Nusanet - ".$nama_cust; // The Subject of the email
-							$email_to = $email_dens.', '.$email_cs; // Who the email is to
+							$email_to = $email_dens; // Who the email is to
 
 
 							$semi_rand = md5(time());
