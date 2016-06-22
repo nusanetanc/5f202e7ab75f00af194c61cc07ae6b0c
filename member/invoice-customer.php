@@ -19,6 +19,14 @@ foreach($res as $row)
 						$ket_tempat=$row['keterangan'];
 															}
 if(isset($_POST['send'])){
+						//generate password and code activation
+						$text = 'abcdefghijklmnopqrstuvwxyz123457890';
+						$panjang = 6;
+						$txtlen = strlen($text)-1;
+						$result = '';
+						for($i=1; $i<=$panjang; $i++){
+													$result .= $text[rand(0, $txtlen)];
+													}
 	$stb=$_POST['stb'];
 	$router=$_POST['router'];
 	$instal=$_POST['instal'];
@@ -61,7 +69,7 @@ $payment_kabel = array (
 "harga"=>$biaya_cable,
 "total"=>$biaya_cable*$pjkbl
 ); }
-			$update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("no_virtual"=>$kode_perusahaan.$id_cust, "payment_data"=>array($payment_paket, $payment_router, $payment_stb, $payment_kabel, $payment_instal))));
+			$update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("no_virtual"=>$kode_perusahaan.$id_cust, "invoice"=>$result,"payment_data"=>array($payment_paket, $payment_router, $payment_stb, $payment_kabel, $payment_instal))));
 	if(!empty($_POST['addon'])){
 			foreach($_POST['addon'] as $addon_select)
 			{
@@ -75,7 +83,7 @@ $payment_kabel = array (
 // mail for customer to addon
 	$to = $email_cust;
 
-	$subject = 'Invoice Pembayaran';
+	$subject = 'Invoice Pembayaran-'.$result;
 
 	$message = '
 	<html>
@@ -95,7 +103,7 @@ $payment_kabel = array (
 								Tempat : '.$tempat_cust.' '.$ket_tempat.' '.$alamat_cust.' '.$kota_cust.'<br/>
 								<br/>
 	';
-	$m_paket = '<p style="font-size:20px;font-weight:bold;line-height:1px">DATA PEMBAYARAN</p>
+	$m_paket = '<p style="font-size:20px;font-weight:bold;line-height:1px">DATA PEMBAYARAN #'.$result.'</p>
 								<table style="width:100%;">
 								  <tr>
 								    <th width="40%" style="border:1px; text-align: left;">Deskripsi</th>
