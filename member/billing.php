@@ -37,15 +37,18 @@ if ($level=="0"){
 													foreach ($res['payment_data'] as $payment => $pay) {
 														if ($pay<>null){ ?>
 														<div class="panel-body">
-															<strong><?php print_r($pay['layanan']); ?></strong>=>Harga<b>(<?php print_r(rupiah($pay['harga'])); ?>)</b> - Prorate<b>(<?php print_r(rupiah($pay['prorate'])); ?>)</b> = Subtotal<b>(<?php print_r(rupiah($pay['total_harga'])); ?>)</b>
+															<strong><?php print_r($pay['layanan']); ?></strong>=>Harga<b>(<?php print_r(rupiah($pay['harga'])); ?>)</b> - Prorate<b>(<?php print_r(rupiah($pay['prorate'])); ?>)</b> = Subtotal<b>(<?php print_r(rupiah($pay['total'])); ?>)</b>
 														</div>
-														<?php } } ?>
+														<?php $total=$total+$pay['total']; } }
+																	$ppn=$total*0.1;
+																	$total_bayar=$total+$ppn;
+														?>
 													</div>
 										</div>
 										<div class="modal-footer">
-											<p>Total Tagihan : <b><?php echo rupiah($byr['total_tagihan']); ?></b></p>
-											<p>PPN 10% : <b><?php echo rupiah($byr['ppn']); ?></b></p>
-											<p>Total Pembayaran : <b><?php echo rupiah($byr['total_pembayaran']); ?></b></p>
+											<p>Total Tagihan : <b><?php echo rupiah($total); ?></b></p>
+											<p>PPN 10% : <b><?php echo rupiah($ppn); ?></b></p>
+											<p>Total Pembayaran : <b><?php echo rupiah($total_bayar); ?></b></p>
 										</div>
 									</div>
 								</div>
@@ -61,7 +64,7 @@ if ($level=="0"){
 							  <tbody>
 							    <tr>
 							      <td>1</td>
-							      <td>Column content</td>
+							      <td><?php echo rupiah($total_bayar); ?></td>
 							      <td><a href="#" data-toggle="modal" data-target="#billing-detail">Deskripsi</a></td>
 							    </tr>
 								</tbody>
