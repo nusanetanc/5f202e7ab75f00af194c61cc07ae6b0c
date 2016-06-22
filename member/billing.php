@@ -37,7 +37,7 @@ if ($level=="0"){
 													foreach ($res['payment_data'] as $payment => $pay) {
 														if ($pay<>null){ ?>
 														<div class="panel-body">
-															<strong><?php print_r($pmbyr['layanan']); ?></strong>=>Harga<b>(<?php print_r(rupiah($pmbyr['harga'])); ?>)</b> - Prorate<b>(<?php print_r(rupiah($pmbyr['prorate'])); ?>)</b> = Subtotal<b>(<?php print_r(rupiah($pmbyr['total_harga'])); ?>)</b>
+															<strong><?php print_r($pay['layanan']); ?></strong>=>Harga<b>(<?php print_r(rupiah($pay['harga'])); ?>)</b> - Prorate<b>(<?php print_r(rupiah($pay['prorate'])); ?>)</b> = Subtotal<b>(<?php print_r(rupiah($pay['total_harga'])); ?>)</b>
 														</div>
 														<?php } } ?>
 													</div>
