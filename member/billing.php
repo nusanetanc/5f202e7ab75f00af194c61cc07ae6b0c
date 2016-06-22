@@ -62,7 +62,7 @@ if ($level=="0"){
 							    <tr>
 							      <td>1</td>
 							      <td>Column content</td>
-							      <td>Column content</td>
+							      <td><a href="#" data-toggle="modal" data-target="#billing-detail">Deskripsi</a></td>
 							    </tr>
 								</tbody>
 							</table>
