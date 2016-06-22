@@ -23,33 +23,49 @@ if ($level=="0"){
 				</div>
 				<div class="panel-body">
 						<div class="col-sm-12">
-							<fieldset>
-								<ul class="list-group">
-									<?php
-									$total=0;
-									$res = $col_user->findOne(array("id_user"=>$id));
-									foreach ($res['payment_data'] as $payment => $pay) {
-										if ($pay<>null){
-										?>
-									<li class="list-group-item">
-										<p><h4><?php echo $pay['layanan']; ?><h4></p><p>
-												<span class="badge">Harga : <?php echo rupiah($pay['harga']); ?></span>
-												<span class="badge">Prorate : <?php echo rupiah($pay['prorate']); ?></span>
-												<span class="badge">Sub Total : <?php echo rupiah($pay['total']); ?></span>
-										</p>
-									</li>
-									<?php $total = $total+$pay['total'];
-								 				} } ?>
-									<li class="list-group-item active">
-										<p><h4>Total Harga : <?php echo rupiah($total); ?><h4></p>
-										<p><h4>PPN 10 % : <?php echo rupiah($total*0.1); ?><h4></p>
-									</li>
-									<li class="list-group-item active">
-										<p><h3>Total Pembayaran : <?php echo rupiah($total*0.1+$total); ?><h3></p>
-									</li>
-								</ul>
-						</div>
-					</fieldset>
+							<div class="modal" name="billing-detail" id="billing-detail">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+											<h4 class="modal-title">Data Pembayaran</h4>
+										</div>
+										<div class="modal-body">
+												<div class="panel panel-default">
+													<?php $total=0;
+													$res = $col_user->findOne(array("id_user"=>$id));
+													foreach ($res['payment_data'] as $payment => $pay) {
+														if ($pay<>null){ ?>
+														<div class="panel-body">
+															<strong><?php print_r($pmbyr['layanan']); ?></strong>=>Harga<b>(<?php print_r(rupiah($pmbyr['harga'])); ?>)</b> - Prorate<b>(<?php print_r(rupiah($pmbyr['prorate'])); ?>)</b> = Subtotal<b>(<?php print_r(rupiah($pmbyr['total_harga'])); ?>)</b>
+														</div>
+														<?php } } ?>
+													</div>
+										</div>
+										<div class="modal-footer">
+											<p>Total Tagihan : <b><?php echo rupiah($byr['total_tagihan']); ?></b></p>
+											<p>PPN 10% : <b><?php echo rupiah($byr['ppn']); ?></b></p>
+											<p>Total Pembayaran : <b><?php echo rupiah($byr['total_pembayaran']); ?></b></p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<table class="table table-striped table-hover ">
+							  <thead>
+							    <tr>
+							      <th>Invoice</th>
+							      <th>Total Pembayaran</th>
+							      <th></th>
+							    </tr>
+							  </thead>
+							  <tbody>
+							    <tr>
+							      <td>1</td>
+							      <td>Column content</td>
+							      <td>Column content</td>
+							    </tr>
+								</tbody>
+							</table>
 					</div>
 				</div>
 			</div>
