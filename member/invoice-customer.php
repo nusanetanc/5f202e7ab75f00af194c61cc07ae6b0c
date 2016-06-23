@@ -20,7 +20,7 @@ foreach($res as $row)
 															}
 if(isset($_POST['send'])){
 						//generate password and code activation
-						$text = 'abcdefghijklmnopqrstuvwxyz123457890';
+						$text = 'QWERTYUIOPASDFGHJKLZXCVBNM123457890';
 						$panjang = 6;
 						$txtlen = strlen($text)-1;
 						$result = '';
@@ -69,7 +69,7 @@ $payment_kabel = array (
 "harga"=>$biaya_cable,
 "total"=>$biaya_cable*$pjkbl
 ); }
-			$update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("no_virtual"=>$kode_perusahaan.$id_cust, "invoice"=>$result,"payment_data"=>array($payment_paket, $payment_router, $payment_stb, $payment_kabel, $payment_instal))));
+			$update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("no_virtual"=>$kode_perusahaan.$id_cust, "invoice"=>$result,"tanggal_tagihan"=>date("Y/m/d"),"payment_data"=>array($payment_paket, $payment_router, $payment_stb, $payment_kabel, $payment_instal))));
 	if(!empty($_POST['addon'])){
 			foreach($_POST['addon'] as $addon_select)
 			{
@@ -83,7 +83,7 @@ $payment_kabel = array (
 // mail for customer to addon
 	$to = $email_cust;
 
-	$subject = 'Invoice Pembayaran-'.$result;
+	$subject = 'Invoice Pembayaran groovy ('.$result.')';
 
 	$message = '
 	<html>
