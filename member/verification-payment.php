@@ -730,18 +730,18 @@ if($emailcust && $update_user && $push_histori){ ?>
 		<div class="list-group">
 			<div class="panel" style="border:0px;">
   				<div class="panel-heading" style="background-color:#1B5E12">
-    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">TERMINASI LAYANAN</h3>
+    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">TERMINASI</h3>
   				</div>
 	  					<br/>
 	  				    <div class="panel-body">
 	  				    <form method="post">
 	  				    <div class="row">
 	  				    	<div class="col-sm-12">
-                <select class="form-control" id="select_kol" name="select_kol">
+                <select class="form-control" id="select_kol1" name="select_kol1">
                   <option disabled="true" selected="true">Select</option>
                   <option value="request">Request</option>
                   <option value="change">Change</option>
-                </select>
+                </select><br/>
 								<input type="text" class="form-control" id="inputTerminationdate" name="inputTerminationdate" placeholder="Termination Date" required> <br/>
 								<input type="text" class="form-control" name="textalasanberhenti" id="textalasanberhenti" placeholder="Alasan Penutupan"><br/>
 								<div style="margin-bottom:7px;" class="g-recaptcha" data-sitekey="6Ldx_BsTAAAAAOYrQegHLVhslSvd6z78zAr-4Knc"></div>
