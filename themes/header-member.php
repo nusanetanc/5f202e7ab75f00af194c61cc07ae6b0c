@@ -149,6 +149,7 @@ if($level=="501"){
                       {
         $emailpasang=mail($row['email'], $subject, $message, $headers);
       }
+
       // mail for customer to berhenti berlangganan
 
       $subject1 = 'Permintaan Berhenti Berlangganan';
@@ -179,6 +180,12 @@ if($level=="501"){
       $headers1 .= 'Cc: cs@groovy.id' . "\r\n";
 
       $kirim_email1=mail($email, $subject1, $message1, $headers1);
+      $histori=array(
+            "tanggal"=>date("Y/m/d"),
+            "hal"=> "Berhenti Berlangganan",
+            "keterangan"=>"Permintaan Berhenti Berlangganan"
+          );
+        $update_user = $col_user->update(array("id_user"=>$id, "level"=>"0"),array('$push'=>array("histori"=>$histori)));
     } }  ?>
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
