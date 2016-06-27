@@ -737,11 +737,6 @@ if($emailcust && $update_user && $push_histori){ ?>
 	  				    <form method="post">
 	  				    <div class="row">
 	  				    	<div class="col-sm-12">
-                <select class="form-control" id="select_kol1" name="select_kol1">
-                  <option disabled="true" selected="true">Select</option>
-                  <option value="request">Request</option>
-                  <option value="change">Change</option>
-                </select><br/>
 								<input type="text" class="form-control" id="inputTerminationdate" name="inputTerminationdate" placeholder="Termination Date" required> <br/>
 								<input type="text" class="form-control" name="textalasanberhenti" id="textalasanberhenti" placeholder="Alasan Penutupan"><br/>
 								<div style="margin-bottom:7px;" class="g-recaptcha" data-sitekey="6Ldx_BsTAAAAAOYrQegHLVhslSvd6z78zAr-4Knc"></div>
