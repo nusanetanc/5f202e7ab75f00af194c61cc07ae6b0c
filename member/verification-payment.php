@@ -16,6 +16,7 @@
          $(document).ready(function(){
            $("#kolpostchange").hide();
            $("#kolpostrequest").hide();
+           $("#kol_term").hide();
            $("#select_kol").change(function(){
             var sel_kol =  $("#select_kol").val();
             var pil1 = "change";
@@ -737,11 +738,17 @@ if($emailcust && $update_user && $push_histori){ ?>
 	  				    <form method="post">
 	  				    <div class="row">
 	  				    	<div class="col-sm-12">
-								<input type="text" class="form-control" id="inputTerminationdate" name="inputTerminationdate" placeholder="Termination Date" required> <br/>
-								<input type="text" class="form-control" name="textalasanberhenti" id="textalasanberhenti" placeholder="Alasan Penutupan"><br/>
-								<div style="margin-bottom:7px;" class="g-recaptcha" data-sitekey="6Ldx_BsTAAAAAOYrQegHLVhslSvd6z78zAr-4Knc"></div>
+                <select class="form-control" id="select_kol1" name="select_kol1">
+                  <option disabled="true" selected="true">Select</option>
+                  <option value="request">Request</option>
+                  <option value="change">Change</option>
+                </select>
+                <li class="list-group-item" name="kol_term" id="kol_term">
+      							<input type="text" class="form-control" id="inputTerminationdate" name="inputTerminationdate" placeholder="Termination Date" required> <br/>
+      							<input type="text" class="form-control" name="textalasanberhenti" id="textalasanberhenti" placeholder="Alasan Penutupan"><br/>
+                </li>
 									<br/>
-								<input type="submit" class="btn" style="background-color:#1B5E12; color:#FFFFFF" name="terminasi" id="terminasi" value="TUTUP">
+								<input type="submit" class="btn" style="background-color:#1B5E12; color:#FFFFFF" name="terminasi" id="terminasi" value="INPUT">
 		  				    </div>
 		  				 </div>
 		  				 </form>
