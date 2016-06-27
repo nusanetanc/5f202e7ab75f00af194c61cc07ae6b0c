@@ -33,9 +33,9 @@ $("#select_kol1").change(function(){
    var sel_kol1 =  $("#select_kol1").val();
    var pil1 = "change";
    var pil2 = "request";
-if (sel_kol1 == pil1) {
+if (sel_kol1 == pil2) {
     $("#kol_term").show();
-} else if(sel_kol1 == pil2) {
+} else if(sel_kol1 == pil1) {
     $("#kol_term").hide();
 }
 })
@@ -286,22 +286,23 @@ if ($emailinvoice || $update_payment){
 		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>
 <?php } }
 if(isset($_POST['terminasi'])){
+  $selterm=$_POST['sel_kol1'];
 	$termination_date=$_POST['inputTerminationdate'];
 	$textalasanberhenti=$_POST['textalasanberhenti'];
 		$thn_tutup = substr($termination_date, 0,4);
 		$bln_tutup = substr($termination_date, 5,2);
 		$tgl_tutup = substr($termination_date, 8,10);
 		$month_tutup = bulan($bln_tutup);
+    if($selterm=="change"){
 				// mail for supevisior teknik
-				$subject0 = 'Request Ambil Perangkat';
+				$subject0 = 'Berhenti Berlangganan';
 				$message0 = '
 				<html>
 				<body>
-				  <p>Mohon segera diatur Support untuk pengambilan perangkat untuk customer berikut : </p>
+				  <p>Berikut Permintaan Customer Close : </p>
 				  <br/>
 				  <p>ID Customer : '.$id_cust.'</p>
 				  <p>Nama : '.$nama_cust.'</p>
-				  <p>Tempat : '.$tempat_cust.', '.$ket_cust.', '.$kota_cust.'</p>
 				  <p>Tanggal Tutup : '.$tgl_tutup.' '.$month_tutup.' '.$thn_tutup.'</p>
 				  <br/>
 				</body>
@@ -342,12 +343,15 @@ if(isset($_POST['terminasi'])){
 				$headers1 .= 'From: cs@groovy.id' . "\r\n";
 				$headers1 .= 'Cc: billing@groovy.id' . "\r\n";
 				$emailnotice=mail($email_cust, $subject1, $message1, $headers1);
-
-if ($update_user && $emailbongkar && $emailnotice){
+  $push_histori=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>array("tanggal"=>date("Y/m/d"), "hal"=>"Berhenti Berlangganan", "keterangan"=>"Konfirmasi Permintaan Berhenti Berlangganan"))));
+} elseif($selterm=="request"){
+  $update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("status"=>"unaktif")));
+  $push_histori=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>array("tanggal"=>date("Y/m/d"), "hal"=>"Berhenti Berlangganan", "keterangan"=>"Layanan Sudah Berhenti"))));
+}
 	?>
 		<script type="" language="JavaScript">alert('Penutupan layanan sudah di konfirmasi');
 		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>
-<?php }  }
+<?php } 
 if(isset($_POST['request'])){
   $inputpaket=$_POST['inputpaket'];
   $inputaddon=implode(", ", $_POST['addon']);
