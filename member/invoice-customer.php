@@ -68,7 +68,7 @@ $payment_kabel = array (
 "layanan"=>"Kabel / ".$pjkbl." Meter",
 "harga"=>$biaya_cable,
 "total"=>$biaya_cable*$pjkbl
-); }
+); } /*
 			$update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("no_virtual"=>$kode_perusahaan.$id_cust, "invoice"=>$result,"tanggal_tagihan"=>date("Y/m/d"),"payment_data"=>array($payment_paket, $payment_router, $payment_stb, $payment_kabel, $payment_instal))));
 	if(!empty($_POST['addon'])){
 			foreach($_POST['addon'] as $addon_select)
@@ -79,182 +79,108 @@ $payment_kabel = array (
 										$addon_harga=$row['harga'];
 									}
 				$update_user1= $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("payment_data"=>array("layanan"=>$addon_select, "harga"=>$addon_harga, "prorate"=>$addon_prorate, "total"=>$addon_harga-$addon_prorate))));
-			} }
+			} } */
 // mail for customer to addon
 	$to = $email_cust;
 
 	$subject = 'Invoice Pembayaran groovy ('.$result.')';
 
 	$message = '
-	<html>
-		<body style="background-color:#ddd;padding:20px 0 150px 0;font-family:arial;font-size:15px;">
-				<div style="margin:0 auto;max-width:1000px;background-color:#eee;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
-						<div style="background: linear-gradient(to right, #FF3D23 , #fc742f);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
-								<a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
-						</div>
-						<div style="padding:10px;color:#333;">
-								<p>Terimakasih telah menjadi pelanggan groovy.id<br/>
-									No Virtual Pembayaran : '.$kode_perusahaan.$id_cust.'<br/><br/>
-								<p style="font-size:20px;font-weight:bold;line-height:1px">DATA CUSTOMER</p>
-								<p>ID Customer : '.$id_cust.'<br/>
-								Nama : '.$nama_cust.'<br/>
-								Email : '.$email_cust.'<br/>
-								Phone : '.$phone_cust.'<br/>
-								Tempat : '.$tempat_cust.' '.$ket_tempat.' '.$alamat_cust.' '.$kota_cust.'<br/>
-								<br/>
-	';
-	$m_paket = '<p style="font-size:20px;font-weight:bold;line-height:1px">DATA PEMBAYARAN #'.$result.'</p>
-								<table style="width:100%;">
-								  <tr>
-								    <th width="40%" style="border:1px; text-align: left;">Deskripsi</th>
-								    <th width="20%" style="border:1px; text-align: left;">Harga</th>
-								    <th width="20%" style="border:1px; text-align: left;">Proraide</th>
-										<th width="20%" style="border:1px; text-align: left;">Total Harga</th>
-								  </tr>
-								  <tr>
-								    <td style="border:1px;">'.$package_cust.' - 1 Bulan</td>
-								    <td style="border:1px;">'.rupiah($harga_paket).'</td>
-								    <td style="border:1px;">'.rupiah($proraide_paket).'</td>
-										<td style="border:1px;">'.rupiah($harga_paket-$proraide_paket).'</td>
-								 </tr>';
-								 $total=$harga_paket-$proraid_paket;
-		if(!empty($_POST['addon'])){
-			foreach($_POST['addon'] as $addon_select)
-			{
-				$res = $col_service->find(array("nama"=>$addon_select));
-				foreach($res as $row)
-									{
-										$addon_harga=$row['harga'];
-									}
-		$m_addon .=
-								'<tr>
-									<td style="border:1px;">'.$addon_select.' - 1 Bulan</td>
-									<td style="border:1px;">'.rupiah($addon_harga).'</td>
-									<td style="border:1px;">'.rupiah($addon_prorate).'</td>
-									<td style="border:1px;">'.rupiah($addon_harga-$addon_prorate).'</td>
-								</tr>';
-								$total_addon=$addon_harga-$addon_prorate;
-								$total=$total+$total_addon;
-		} }
-	if($router=="1"){
-		$m_router =	'<tr>
-								    <td style="border:1px;">Router - 1 Bulan</td>
-								    <td style="border:1px;">'.rupiah($biaya_router).'</td>
-								    <td style="border:1px;">'.rupiah($proraide_router).'</td>
-										<td style="border:1px;">'.rupiah($biaya_router-$proraide_router).'</td>
-								  </tr>';
-									$total_router=$biaya_router-$proraide_router;
-									$total=$total+$total_router;
-								}
-	if($stb=="1"){
-		$m_stb =	'<tr>
-								    <td style="border:1px;">STB TV - 1 Bulan</td>
-								    <td style="border:1px;">'.rupiah($biaya_stb).'</td>
-								    <td style="border:1px;">'.rupiah($proraide_stb).'</td>
-										<td style="border:1px;">'.rupiah($biaya_stb-$proraide_stb).'</td>
-										</tr>';
-										$total_stb=$biaya_stb-$proraide_stb;
-										$total=$total+$total_stb;
+<html>
+<body style="background-color:#ddd;padding:0px 0 50px 0;font-family:arial;font-size:15px;">
+  <div style="margin:0 auto;background-color:#eee;">
+      <div style="background: linear-gradient(to right, #f9a825 , #fdd835);padding:5px 0 2px 0;text-align:center;">
+          <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
+      </div>
+      <div style="padding:20px 20px 20px 20px;color:#333;">
+          <div style="float:right;font-size:14px;">
+              <img width="100px" height="100px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Wikipedia_mobile_en.svg/2000px-Wikipedia_mobile_en.svg.png"/>
+          </div>
+          <p style="font-size:24px;font-weight:bold;line-height:30px;text-align:center">Rincian Tagihan</p>
+          <span></span>
+          <table style="margin-top:20px;margin-bottom:20px;border:0px solid #ccc;color:#333;background-color:#eee;#ddd;width:100%;font-size:14px;">
+              <tr style="border:1px solid #bbb;">
+                  <td style="border:1px solid #bbb;padding:5px;color:#777;">ID Invoice</td>
+                  <td style="border:1px solid #bbb;padding:5px">14C02F767</td>
+              </tr>
+              <tr>
+                  <td style="border:1px solid #bbb;padding:5px;color:#777">No. Virtual Account</td>
+                  <td style="border:1px solid #bbb;padding:5px">991821212812312</td>
+              </tr>
+              <tr>
+                  <td style="border:1px solid #bbb;padding:5px;color:#777">Tanggal Tagihan</td>
+                  <td style="border:1px solid #bbb;padding:5px">12 Juni 2016</td>
+              </tr>
+              <tr>
+                  <td style="border:1px solid #bbb;padding:5px;color:#777">Tanggal Jatuh Tempo</td>
+                  <td style="border:1px solid #bbb;padding:5px">12 Juni 2016</td>
+              </tr>
+              <tr>
+                  <td style="border:1px solid #bbb;padding:5px;color:#777">ID Customer</td>
+                  <td style="border:1px solid #bbb;padding:5px">121231412</td>
+              </tr>
+              <tr>
+                  <td style="border:1px solid #bbb;padding:5px;color:#777">Nama</td>
+                  <td style="border:1px solid #bbb;padding:5px">John Doe</td>
+              </tr>
+              <tr>
+                  <td style="border:1px solid #bbb;padding:5px;color:#777">Tempat</td>
+                  <td style="border:1px solid #bbb;padding:5px">Apartemen Laguna, dsf, Jl. Pluit Timur Raya, Blok MM, Jakarta Utara</td>
+              </tr>
+              <tr>
+                  <td style="border:1px solid #bbb;padding:5px;color:#777">Status</td>
+                  <td style="border:1px solid #bbb;padding:5px">-</td>
+              </tr>
+          </table>
+          <br/>
+          <table style="margin-top:20px;margin-bottom:20px;float:right;border:0px solid #ccc;color:#333;background-color:#eee;#ddd;width:100%;font-size:14px;">
+              <tr style="border:1px solid #bbb;">
+                  <td style="border:2px solid #666;padding:10px;color:#666;text-align:center;font-size:15px;">DESCRIPTION</td>
+                  <td style="border:2px solid #666;padding:10px;color:#666;text-align:center;font-size:15px;">PRICE (Rp.)</td>
+              </tr>
+              <tr>
+                  <td style="border:1px solid #bbb;padding:5px;color:#777">NUSANET provider Broadband Wireless, Broadband SOHO, Dedicated Wireless Unlimited, Fiber Optic, Rack Space, Colocation Server, Dedicated Server, Web and Mail Hosting in Medan, Lampung, Jakarta, Surabaya and Malang. Please visit our website for details.</td>
+                  <td style="border:1px solid #bbb;padding:5px">500.000</td>
+              </tr>
+              <tr>
+                  <td style="border:1px solid #bbb;padding:5px;color:#777">NUSANET provider Broadband Wireless, Broadband SOHO, Dedicated Wireless Unlimited, Fiber Optic, Rack Space, Colocation Server, Dedicated Server, Web and Mail Hosting in Medan, Lampung, Jakarta, Surabaya and Malang. Please visit our website for details.</td>
+                  <td style="border:1px solid #bbb;padding:5px">500.000</td>
+              </tr>
+              <tr>
+                  <td style="border:1px solid #bbb;padding:5px;color:#777">NUSANET provider Broadband Wireless, Broadband SOHO, Dedicated Wireless Unlimited, Fiber Optic, Rack Space, Colocation Server, Dedicated Server, Web and Mail Hosting in Medan, Lampung, Jakarta, Surabaya and Malang. Please visit our website for details.</td>
+                  <td style="border:1px solid #bbb;padding:5px">500.000</td>
+              </tr>
+              <tr>
+                  <td style="border:1px solid #bbb;padding:5px;color:#777">NUSANET provider Broadband Wireless, Broadband SOHO, Dedicated Wireless Unlimited, Fiber Optic, Rack Space, Colocation Server, Dedicated Server, Web and Mail Hosting in Medan, Lampung, Jakarta, Surabaya and Malang. Please visit our website for details.</td>
+                  <td style="border:1px solid #bbb;padding:5px">500.000</td>
+              </tr>
+              <tr>
+                  <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">JUMLAH</td>
+                  <td style="border:1px solid #bbb;padding:5px">1.000.000</td>
+              </tr>
+              <tr>
+                  <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">PPN 10%</td>
+                  <td style="border:1px solid #bbb;padding:5px">100.000</td>
+              </tr>
+              <tr>
+                  <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">TOTAL PEMBAYARAN</td>
+                  <td style="border:1px solid #bbb;padding:5px">900.000</td>
+              </tr>
+          </table>
 
-		}
-	if($instal=="1"){
-		$m_instalasi =	'<tr>
-								    <td style="border:1px;">Instalasi</td>
-								    <td style="border:1px;"></td>
-								    <td style="border:1px;">-</td>
-										<td style="border:1px;">'.rupiah($biaya_instalasi).'</td>
-								  </tr>';
-									$total=$total+$biaya_instalasi;
-}
-if($kabel=="1"){
-	$m_kabel =	'<tr>
-									<td style="border:1px;">Kabel - '.$pjkbl.' Meter</td>
-									<td style="border:1px;">'.rupiah($biaya_cable).'</td>
-									<td style="border:1px;"></td>
-									<td style="border:1px;">'.rupiah($biaya_cable*$pjkbl).'</td>
-								</tr>';
-								$total_cable=$biaya_cable*$pjkbl;
-								$total=$total+$total_cable;
-}
-$ppn=$total*0.1;
-$total_bayar=$total+$ppn;
-$m_total=		 		'<br/>
-									<tr>
-										<td style="border:1px;"></td>
-										<td style="border:1px;"><b>Total Harga</b></td>
-										<td style="border:1px;"></td>
-										<td style="border:1px;">'.rupiah($total).'</td>
-									</tr>
-									<tr>
-										<td style="border:1px;"></td>
-										<td style="border:1px;"><b>PPN 10%</b></td>
-										<td style="border:1px;"></td>
-										<td style="border:1px;">'.rupiah($ppn).'</td>
-									</tr>
-									<tr>
-									<td style="border:1px;"></td>
-									<td style="border:1px;"><b>Total Tagihan</b></td>
-									<td style="border:1px;"></td>
-									<td style="border:1px;">'.rupiah($total_bayar).'</td>
-									</tr>
-								</table>
-								<br/><br/><br/>
-								<p style="font-size:20px;font-weight:bold;line-height:1px">TATA CARA MELAKUKAN PEMBAYARAN</p>
-								<p style="font-size:15px;font-weight:bold;line-height:1px">PEMBAYARAN MELALUI TRANSFER ATM BANK BCA</p>
-								<p>1. Masukkan Kartu ATM dan PIN ATM Anda.<br/>
-									2. Kemudian Tampil Menu Utama, pilih “TRANSAKSI LAINNYA”.<br/>  
-									3. Pilih “TRANSFER”.<br/>  
-									4. Pilih “KE REK BCA”.<br/>  
-									5. Masukkan jumlah nominal sesuai total tagihan. Pilih “YA”.<br/>
-									6. Masukkan nomor rekening Virtual Account pembayaran. Pilih “BENAR”.<br/>
-									7. Periksa kembali data yang tampil. Pilih “BENAR”.<br/>
-									8. Transkasi selesai. Pilih “TIDAK”.<br/><br/>
-									<p style="font-size:15px;font-weight:bold;line-height:1px">PEMBAYARAN MELALUI TRANSFER ATM NON BANK BCA</p>
-									<p>1. Masukkan Kartu ATM dan PIN ATM Anda.<br/>
-										2. Kemudian Tampil Menu Utama, pilih “TRANSAKSI LAINNYA”.<br/>  
-										3. Pilih “TRANSFER”.<br/>  
-										4. Pilih “ANTAR BANK ONLINE”.<br/>  
-										5. Masukkan nomor rekening Virtual Account pembayaran dengan diawali Kode Bank pada tiga digit pertama. Adapun kode Bank BCA adalah “014”. Setelah itu pilih “BENAR”.<br/>
-										6. Pada tahapan ini nomor referensi dikosongkan. Pilih “BENAR”.<br/>
-										7. Masukkan jumlah nominal sesuai total tagihan. Pilih “BENAR”.<br/>
-										8. Periksa kembali data yang tampil. Pilih “BENAR”.<br/><br/>
-									<p style="font-size:15px;font-weight:bold;line-height:1px">PEMBAYARAN MELALUI TRANSFER ATM NON BANK BCA</p>
-									<p>1. Isikan kolom Tanggal  Bulan serta Tahun pada saat mengisi formulir Slip setoran. <br/>
-										2. Pada kolom No.Rekening/Customer isikan dengan Nomor Virtual Account pembayaran. <br/>
-										3. Pada kolom Nama Pemilik Rekening isikan  PT. Media Andalan Nusa. <br/>
-										4. Pada kolom Berita/ Keterangan isikan keterangan pembayaran groovy.  <br/>
-										5. Pada kolom Nama  Penyetor isikan nama lengkap penyetor. <br/>
-										6. Pada kolom Alamat Penyetor & Telepon isikan alamat & nomor telepon penyetor. <br/>
-										7. Pada pilihan Informasi  Penyetor, beri centang kotak Nasabah lalu tuliskan nomor rekening yang akan di debet  untuk pembayaran. Jika Anda bukan nasabah bank BCA, beri centang kotak Non Nasabah lalu tuliskan nomor tanda penyenal (KTP/SIM/KITAS/PASPOR). <br/>
-										8. Pada kolom Mata Ua ng beri centang kotak Rupiah. <br/>
-										9. Pada kolom Tunai/No.Warkat tulis Tunai jika sumber dana berupa uang tunai. Apabila sumber dana berupa cek / BG BCA yang telah jatuh tempo maka isikan nomor warkat. <br/>
-										10. Pada kolom Jumlah Rupiah  isikan jumlah uang yang akan di setor. <br/>
-										11. Pada kolom Total isikan  jumlah total yang akan di setor. <br/>
-										12. Pada kolom Terbilang  tuliskan dalam huruf jumlah total yang akan di bayarkan, contoh : “Satu Juta Sembilan Ratus Ribu Rupiah”. <br/>
-										13. Beri tanda tangan dan nama  jelas penyetor di bagian penyetor. <br/><br/>
-										<p style="font-size:15px;font-weight:bold;line-height:1px">PEMBAYARAN MELALUI TRANSFER ATM NON BANK BCA</p>
-										<p>1. Isikan kolom Tanggal Bulan serta Tahun pada saat mengisi formulir Slip setoran.<br/>
-											 2.	Pada pilihan Jenis transaksi, beri centang Transfer.<br/>
-											 3.	Pada Pilihan Penerima, beri centang kotak Penduduk.  <br/>
-											 4. Pada kolom Nama  isikan nama pelanggan.<br/>
-											 5. Pada Kolom Nomor  Rekening isikan No. VA dengan didahului ko de bank BCA pada tiga digit pertama, adapun  kode bank BCA adalah “014”.<br/>
-												6.	Pada kolom Bank isikan dengan “BCA”.<br/>
-												7.	Pada kolom Alamat  & Nomor Telpon isikan alamat & nomor telepon  penerima.<br/>
-												8.	Pada kolom Berita Untuk Penerima isikan keterangan pembayaran groovy dan Nomor Virtual Account pembayaran.<br/>
-												10. Pada Pilihan Pengirim Beri centang kotak Penduduk.<br/>
-												11.	Pada kolom Nama isikan nama penyetor.<br/>
-												12.	Pada kolom Alamat  & Nomor Telpon isikan alamat & nomor telepon penyetor.<br/>
-												13.	Pada  pilihan sumber dana Transaksi, beri centang kotak Tunai jika anda  membayar tunai, sedangkan  jika anda membayar dengan debet rekening maka beri centang kotak debet rekening lalu  tuliskan nomor rekening yang akan di debet untuk pembayaran.<br/>
-												14.	Pada  kolom Nominal  isikan nilai nominal sesuai dengan total tagihan.<br/>
-												15.	Pada kolom Jumlah Setoran Isikan jumlah sesuai dengan total tagihan.<br/>
-												16.	Pada kolom Terbilang Tuliskan dalam huruf jumlah  yang akan di bayarkan, contoh : “Satu Juta Sembilan Ratus Ribu Rupiah”.<br/>
-												17.	Pada pilihan Biaya transaksi beri centang kotak Tunai jika anda ingin membayar tunai biaya transaksi,  sedangkan jika anda membayar dengan debet rekening maka beri centang kotak Debet rekening lalu tuliskan nomor rekening yang akan di debet untuk biaya transaksi.<br/>
-												18.	Pada kolom Tujuan Transaksi isikan Berita Pembayaran,	contoh : “Pembayaran  groovy disertai dengan id pelanggan dan nama pelanggan”.<br/>
-												19.	Beri tanda tangan dan nama jelas penyetor di bagian pemohon.<br/><br/><br/>
-						</div>
-				</div>
-		</body>
-		</html>
+          <br/>
+          <h4>Tata Cara Pembayaran</h4>
+          <ol>
+              <li>asdfsdf</li>
+              <li>asdfsdf</li>
+              <li>asdfsdf</li>
+          </ol>
+          <p>Lorem Ipsum</p>
+      </div>
+      </div>
+  </div>
+</body>
+</html>
 	';
 	$headers  = 'MIME-Version: 1.0' . "\r\n";
 	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
