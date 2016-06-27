@@ -28,7 +28,18 @@
     $("#kolpostchange").hide();
     $("#kolpostrequest").show();
 }
-}) });
+})
+$("#select_kol1").change(function(){
+   var sel_kol1 =  $("#select_kol1").val();
+   var pil1 = "change";
+   var pil2 = "request";
+if (sel_kol1 == pil1) {
+    $("#kol_term").show();
+} else if(sel_kol1 == pil2) {
+    $("#kol_term").hide();
+}
+})
+ });
     </script>
 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 <?php
