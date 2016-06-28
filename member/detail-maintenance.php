@@ -387,7 +387,7 @@ if($select_update=="termination"){
 							$("#kol_term").hide();
 							var sel_kol =  $("#select_update").val();
 							var pil = "termination";
-				$("#select_kol").change(function(){
+				$("#select_update").change(function(){
 								if(sel_kol == pil){
 									$("#kol_term").show();
 								} else{
