@@ -242,7 +242,7 @@ $ketrincian=implode("", $rincian_biaya);
 	} else {
 		$update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"), array('$set'=>array("tanggal_akhir"=>$next_years.'/'.$next_month.'/01', "pembayaran"=>$last_pembayaran)));
 	}
-$add_payment = $col_payment->insert(array("id_user"=>$id_cust, "tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date, "total_tagihan"=>"", "ppn"=>"", "no"=>$last_pembayaran,"total_pembayaran"=>""));
+$add_payment = $col_payment->insert(array("id_user"=>$id_cust, "invoice"=>$kode_invoice, "tanggal_bayar"=>$tanggal_bayar, "tanggal_konfirmasi"=>$date, "total_tagihan"=>"", "ppn"=>"", "no"=>$last_pembayaran,"total_pembayaran"=>""));
 $histori=array(
       "tanggal"=>$date,
       "hal"=> "Payment",
@@ -601,9 +601,10 @@ if($emailcust && $update_user && $push_histori){ ?>
 									 <thead>
 									    <tr>
 									      <th width="10%">No</th>
+                        <th width="20%">Invoice</th>
 									      <th width="30%">Pembayaran</th>
 									      <th width="30%">Konfirmasi</th>
-									      <th width="30%"></th>
+									      <th width="10%"></th>
 									    </tr>
 									  </thead>
 									  <?php
@@ -621,6 +622,7 @@ if($emailcust && $update_user && $push_histori){ ?>
 									   ?>
 									  <tbody class="pic-container down">
 									  	<td><?php echo $byr['no']; ?></td>
+                      <td><?php echo $byr['invoice']; ?></td>
 									  	<td><?php echo $tgl_bayar.' '.$month_bayar.' '.$thn_bayar; ?></td>
 									  	<td><?php echo $tgl_konfirmasi.' '.$month_konfirmasi.' '.$thn_konfirmasi; ?></td>
 									  	<td><a href="#" data-toggle="modal" data-target="#<?php echo $byr['no']; ?>">Deskripsi</a></td>
@@ -630,7 +632,7 @@ if($emailcust && $update_user && $push_histori){ ?>
                         <div class="modal-content">
                           <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title">Data Pembayaran</h4>
+                            <h4 class="modal-title">Data Pembayaran (<?php echo $byr['invoice']; ?>)</h4>
                           </div>
                           <div class="modal-body">
                               <div class="panel panel-default">
