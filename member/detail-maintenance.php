@@ -383,6 +383,16 @@ if($select_update=="termination"){
       	format:'yyyy/mm/dd'
         });
             });
+						$(document).ready(function(){
+							$("#kol_term").hide();
+							var sel_kol =  $("#select_kol").val();
+							var pil = "termination";
+								if(sel_kol == pil){
+									$("#kol_term").show();
+								} else{
+									$("#kol_term").hide();
+								}
+						});
     </script>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
@@ -543,6 +553,10 @@ if($select_update=="termination"){
 									<br/>
 								</div>
 							</div>
+							<li class="list-group-item" name="kol_term" id="kol_term">
+									<input type="text" class="form-control" id="inputTerminationdate" name="inputTerminationdate" placeholder="Termination Date" required> <br/>
+									<input type="text" class="form-control" name="textalasanberhenti" id="textalasanberhenti" placeholder="Alasan Penutupan"><br/>
+							</li>
 							<div class="panel-body">
 								<div class="form-group">
 										<label for="inputDate" class="col-lg-3 control-label">No STB</label>
@@ -553,7 +567,6 @@ if($select_update=="termination"){
 									</div>
 								<br/>
 						<div class="col-lg-9">
-								<div class="g-recaptcha" data-sitekey="6LfARxMTAAAAADdReVu9DmgfmTQBIlZrUOHOjR-8"></div>
 								<br/>
 								<button class="btn btn-primary btn-sm" type="submit" name="btnupdate" id="btnupdate"><b>UPDATE</b></button>
 						</div>
