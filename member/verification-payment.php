@@ -114,8 +114,6 @@ if(isset($_POST['verifikasi'])){
 		$last_pembayaran = $pembayaran + 1;
 //mail to bukti pembayaran
 
-$to = $email_cust;
-
 $subject = 'Bukti Pembayaran groovy ('.$result.')';
 
 $message = '
@@ -203,7 +201,7 @@ $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
 $headers .= 'From: billing@groovy.id' . "\r\n";
 
-$emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1);
+$emailinvoice = mail($email_cust, $subject, $message, $headers);
 
 	if ($status_cust=="registrasi"){
 				// mail for supevisior teknik
