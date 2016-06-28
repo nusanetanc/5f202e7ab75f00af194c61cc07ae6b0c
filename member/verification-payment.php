@@ -113,123 +113,97 @@ if(isset($_POST['verifikasi'])){
 		$month_bayar = bulan($bln_bayar);
 		$last_pembayaran = $pembayaran + 1;
 //mail to bukti pembayaran
-$email_subject1 = 'Berhenti Berlangganan';
-$email_message1 = '
+
+$to = $email_cust;
+
+$subject = 'Bukti Pembayaran groovy ('.$result.')';
+
+$message = '
 <html>
-  <body style="background-color:#ddd;padding:50px 0 50px 0;font-family:arial;font-size:15px;">
-      <div style="margin:0 auto;max-width:500px;background-color:#eee;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
-          <div style="background: linear-gradient(to right, #FF3D23 , #fc742f);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
-              <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
-          </div>
-          <div style="padding:20px;color:#333;">
-              <p style="font-size:20px;font-weight:bold;line-height:1px">Hai '.$nama_cust.',</p>
-              <p>Terimakasih sudah berlangganan Groovy.</p>
-              <p>Layanan anda akan berakhir pada tanggal '.$tgl_tutup.' '.$month_tutup.' '.$thn_tutup.'<br/><br/>
-              Kami akan segera memberikan informasi terkait pengambilan perangkat yang Anda gunakan. Untuk Melakukan aktivasi kembali layanan kami bisa di halaman member anda.</p>
-              <p style="color:#888;">Terimakasih.</p>
-          </div>
-          </div>
-      </div>
-  </body>
-  </html>
+<body style="background-color:#ddd;padding:0px 0 50px 0;font-family:arial;font-size:15px;">
+    <div style="margin:0 auto;background-color:#eee;">
+        <div style="background: linear-gradient(to right, #f9a825 , #fdd835);padding:5px 0 2px 0;text-align:center;">
+            <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
+        </div>
+        <div style="padding:20px 20px 20px 20px;color:#333;">
+            <div style="float:right;font-size:14px;">
+                <img width="100px" height="100px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Wikipedia_mobile_en.svg/2000px-Wikipedia_mobile_en.svg.png"/>
+            </div>
+            <p style="font-size:24px;font-weight:bold;line-height:30px;text-align:center">Bukti Pembayaran</p>
+            <span></span>
+            <table style="margin-top:20px;margin-bottom:20px;border:0px solid #ccc;color:#333;background-color:#eee;#ddd;width:100%;font-size:14px;">
 
+                <tr>
+                    <td style="border:1px solid #bbb;padding:5px;color:#777">ID Customer</td>
+                    <td style="border:1px solid #bbb;padding:5px">'.$id_cust.'</td>
+                </tr>
+                <tr>
+                    <td style="border:1px solid #bbb;padding:5px;color:#777">Nama</td>
+                    <td style="border:1px solid #bbb;padding:5px">'.$nama_cust.'</td>
+                </tr>
+                <tr>
+                    <td style="border:1px solid #bbb;padding:5px;color:#777">Tempat</td>
+                    <td style="border:1px solid #bbb;padding:5px">'.$tempat_cust.' '.$ket_cust.' '.$alamat_cust.' '.$kota_cust.'</td>
+                </tr>
+            </table>
+            <br/>
+            <h4>Detail Pembayaran</h4>
+            <table style="margin-top:20px;margin-bottom:20px;float:right;border:0px solid #ccc;color:#333;background-color:#eee;#ddd;width:100%;font-size:14px;">
+                <tr style="border:1px solid #bbb;">
+                    <td style="border:2px solid #666;padding:10px;color:#666;text-align:center;font-size:15px;">DESCRIPTION</td>
+                    <td style="border:2px solid #666;padding:10px;color:#666;text-align:center;font-size:15px;">PRICE (Rp.)</td>
+                </tr>
+                <tr>
+                    <td style="border:1px solid #bbb;padding:5px;color:#777">NUSANET provider Broadband Wireless, Broadband SOHO, Dedicated Wireless Unlimited, Fiber Optic, Rack Space, Colocation Server, Dedicated Server, Web and Mail Hosting in Medan, Lampung, Jakarta, Surabaya and Malang. Please visit our website for details.</td>
+                    <td style="border:1px solid #bbb;padding:5px">500.000</td>
+                </tr>
+                <tr>
+                    <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">JUMLAH</td>
+                    <td style="border:1px solid #bbb;padding:5px">1.000.000</td>
+                </tr>
+                <tr>
+                    <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">PPN 10%</td>
+                    <td style="border:1px solid #bbb;padding:5px">100.000</td>
+                </tr>
+                <tr>
+                    <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">TOTAL PEMBAYARAN</td>
+                    <td style="border:1px solid #bbb;padding:5px">900.000</td>
+                </tr>
+            </table>
+
+            <br/>
+            <table style="margin-top:20px;margin-bottom:20px;border:0px solid #ccc;color:#333;background-color:#eee;#ddd;width:100%;font-size:14px;">
+
+                <tr>
+                    <td style="border:1px solid #bbb;padding:5px;color:#777">ID Invoice</td>
+                    <td style="border:1px solid #bbb;padding:5px">'.$id_invoice.'</td>
+                </tr>
+                <tr>
+                    <td style="border:1px solid #bbb;padding:5px;color:#777">No Virtual Account</td>
+                    <td style="border:1px solid #bbb;padding:5px">'.$kode_perusahaan.$id_cust.'</td>
+                </tr>
+                <tr>
+                    <td style="border:1px solid #bbb;padding:5px;color:#777">Tanggal Bayar</td>
+                    <td style="border:1px solid #bbb;padding:5px">'.$tgl_bayar.' '.$month_bayar.' '.$thn_bayar.'</td>
+                </tr>
+                <tr>
+                    <td style="border:1px solid #bbb;padding:5px;color:#777">Tanggal Konfirmasi</td>
+                    <td style="border:1px solid #bbb;padding:5px">'.date("d").' '.bulan(date("m")).' '.date("Y").'</td>
+                </tr>
+            </table>
+            <p>groovy.id</p>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
 ';
-$headers1  = 'MIME-Version: 1.0' . "\r\n";
-$headers1 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-$headers1 .= 'From: cs@groovy.id' . "\r\n";
-$headers1 .= 'Cc: billing@groovy.id' . "\r\n";
-$emailinvoice = mail($email_cust_, $email_subject1, $email_message1, $headers1);
+$headers  = 'MIME-Version: 1.0' . "\r\n";
+$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
-	if ($status_cust=="registrasi"){
-				// mail for supevisior teknik
-				$subject = 'Atur Jadwal Pemasangan';
-				$message = '
-        <html>
-          <body style="background-color:#ddd;padding:0px 0 50px 0;font-family:arial;font-size:15px;">
-              <div style="margin:0 auto;background-color:#eee;">
-                  <div style="background: linear-gradient(to right, #f9a825 , #fdd835);padding:5px 0 2px 0;text-align:center;">
-                      <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
-                  </div>
-                  <div style="padding:20px 20px 20px 20px;color:#333;">
-                      <div style="float:right;font-size:14px;">
-                          <img width="100px" height="100px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Wikipedia_mobile_en.svg/2000px-Wikipedia_mobile_en.svg.png"/>
-                      </div>
-                      <p style="font-size:24px;font-weight:bold;line-height:30px;text-align:center">Bukti Pembayaran</p>
-                      <span></span>
-                      <table style="margin-top:20px;margin-bottom:20px;border:0px solid #ccc;color:#333;background-color:#eee;#ddd;width:100%;font-size:14px;">
+$headers .= 'From: billing@groovy.id' . "\r\n";
 
-                          <tr>
-                              <td style="border:1px solid #bbb;padding:5px;color:#777">ID Customer</td>
-                              <td style="border:1px solid #bbb;padding:5px">'.$id_cust.'</td>
-                          </tr>
-                          <tr>
-                              <td style="border:1px solid #bbb;padding:5px;color:#777">Nama</td>
-                              <td style="border:1px solid #bbb;padding:5px">'.$nama_cust.'</td>
-                          </tr>
-                          <tr>
-                              <td style="border:1px solid #bbb;padding:5px;color:#777">Tempat</td>
-                              <td style="border:1px solid #bbb;padding:5px">'.$tempat_cust.' '.$ket_cust.' '.$alamat_cust.' '.$kota_cust.'</td>
-                          </tr>
-                      </table>
-                      <br/>
-                      <h4>Detail Pembayaran</h4>
-                      <table style="margin-top:20px;margin-bottom:20px;float:right;border:0px solid #ccc;color:#333;background-color:#eee;#ddd;width:100%;font-size:14px;">
-                          <tr style="border:1px solid #bbb;">
-                              <td style="border:2px solid #666;padding:10px;color:#666;text-align:center;font-size:15px;">DESCRIPTION</td>
-                              <td style="border:2px solid #666;padding:10px;color:#666;text-align:center;font-size:15px;">PRICE (Rp.)</td>
-                          </tr>
-                          <tr>
-                              <td style="border:1px solid #bbb;padding:5px;color:#777">NUSANET provider Broadband Wireless, Broadband SOHO, Dedicated Wireless Unlimited, Fiber Optic, Rack Space, Colocation Server, Dedicated Server, Web and Mail Hosting in Medan, Lampung, Jakarta, Surabaya and Malang. Please visit our website for details.</td>
-                              <td style="border:1px solid #bbb;padding:5px">500.000</td>
-                          </tr>
-                          <tr>
-                              <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">JUMLAH</td>
-                              <td style="border:1px solid #bbb;padding:5px">1.000.000</td>
-                          </tr>
-                          <tr>
-                              <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">PPN 10%</td>
-                              <td style="border:1px solid #bbb;padding:5px">100.000</td>
-                          </tr>
-                          <tr>
-                              <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">TOTAL PEMBAYARAN</td>
-                              <td style="border:1px solid #bbb;padding:5px">900.000</td>
-                          </tr>
-                      </table>
-
-                      <br/>
-                      <table style="margin-top:20px;margin-bottom:20px;border:0px solid #ccc;color:#333;background-color:#eee;#ddd;width:100%;font-size:14px;">
-
-                          <tr>
-                              <td style="border:1px solid #bbb;padding:5px;color:#777">ID Invoice</td>
-                              <td style="border:1px solid #bbb;padding:5px">'.$no_invoice.'</td>
-                          </tr>
-                          <tr>
-                              <td style="border:1px solid #bbb;padding:5px;color:#777">No Virtual Account</td>
-                              <td style="border:1px solid #bbb;padding:5px">'.$kode_perusahaan.$id_cust.'</td>
-                          </tr>
-                          <tr>
-                              <td style="border:1px solid #bbb;padding:5px;color:#777">Tanggal Bayar</td>
-                              <td style="border:1px solid #bbb;padding:5px">'.$tgl_bayar.' '.$month_bayar.' '.$thn_bayar.'</td>
-                          </tr>
-                          <tr>
-                              <td style="border:1px solid #bbb;padding:5px;color:#777">Tanggal Konfirmasi</td>
-                              <td style="border:1px solid #bbb;padding:5px">'.date("d").' '.bulan(date("m")).' '.date("Y").'</td>
-                          </tr>
-                      </table>
-                      <p>Salam</p>
-                      <p>groovy.id</p>
-                  </div>
-                  </div>
-              </div>
-          </body>
-          </html>
-
-';
-$headers1  = 'MIME-Version: 1.0' . "\r\n";
-$headers1 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-$headers1 .= 'From: cs@groovy.id' . "\r\n";
-$headers1 .= 'Cc: billing@groovy.id' . "\r\n";
-$emailinvoice = mail($email_cust, $subject, $message, $headers1);
+$emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1);
 
 	if ($status_cust=="registrasi"){
 				// mail for supevisior teknik

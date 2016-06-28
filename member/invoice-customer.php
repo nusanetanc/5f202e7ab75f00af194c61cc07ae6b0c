@@ -226,7 +226,7 @@ $payment_kabel = array (
 							<li>Pada kolom Tujuan Transaksi isikan Berita Pembayaran, contoh : “Pembayaran groovy disertai dengan id pelanggan dan nama pelanggan”</li>
 							<li>Beri tanda tangan dan nama jelas penyetor di bagian pemohon</li>
 					</ol>
-          <p>Lorem Ipsum</p>
+          <p>groovy.id</p>
       </div>
       </div>
   </div>
