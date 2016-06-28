@@ -138,17 +138,12 @@ $payment_kabel = array (
               <tr style="border:1px solid #bbb;">
                   <td style="border:2px solid #666;padding:10px;color:#666;text-align:center;font-size:15px;">DESCRIPTION</td>
                   <td style="border:2px solid #666;padding:10px;color:#666;text-align:center;font-size:15px;">PRICE (Rp.)</td>
-              </tr>';
-							$total=0;
-							$res = $col_user->findOne(array("id_user"=>$id_cust));
-							foreach ($res['payment_data'] as $payment => $pay) {
-								if ($pay<>null){
-              '<tr>
+              </tr>
+							<tr>
                   <td style="border:1px solid #bbb;padding:5px;color:#777">'.$pay['layanan'].'.</td>
                   <td style="border:1px solid #bbb;padding:5px">500.000</td>
-              </tr>';
-						}};
-              '<tr>
+              </tr>
+							<tr>
                   <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">JUMLAH</td>
                   <td style="border:1px solid #bbb;padding:5px">1.000.000</td>
               </tr>

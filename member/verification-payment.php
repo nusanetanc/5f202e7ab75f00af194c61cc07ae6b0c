@@ -113,142 +113,116 @@ if(isset($_POST['verifikasi'])){
 		$month_bayar = bulan($bln_bayar);
 		$last_pembayaran = $pembayaran + 1;
 //mail to bukti pembayaran
+$email_subject1 = 'Berhenti Berlangganan';
+$email_message1 = '
+<html>
+  <body style="background-color:#ddd;padding:50px 0 50px 0;font-family:arial;font-size:15px;">
+      <div style="margin:0 auto;max-width:500px;background-color:#eee;-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;">
+          <div style="background: linear-gradient(to right, #FF3D23 , #fc742f);-moz-border-radius: 0px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;padding:5px 0 2px 0;text-align:center;">
+              <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
+          </div>
+          <div style="padding:20px;color:#333;">
+              <p style="font-size:20px;font-weight:bold;line-height:1px">Hai '.$nama_cust.',</p>
+              <p>Terimakasih sudah berlangganan Groovy.</p>
+              <p>Layanan anda akan berakhir pada tanggal '.$tgl_tutup.' '.$month_tutup.' '.$thn_tutup.'<br/><br/>
+              Kami akan segera memberikan informasi terkait pengambilan perangkat yang Anda gunakan. Untuk Melakukan aktivasi kembali layanan kami bisa di halaman member anda.</p>
+              <p style="color:#888;">Terimakasih.</p>
+          </div>
+          </div>
+      </div>
+  </body>
+  </html>
 
-require('../content/srcpdf/fpdf.php');
-
-$header_table = array(
-array("label"=>"DESKRIPSI", "length"=>70, "align"=>"C"),
-array("label"=>"HARGA", "length"=>40, "align"=>"C"),
-array("label"=>"PRORATE", "length"=>40, "align"=>"C"),
-array("label"=>"TOTAL HARGA", "length"=>40, "align"=>"C")
-);
-$data = array();
-$res = $col_user->findOne(array("id_user"=>$id_cust));
-foreach ($res['payment_data'] as $payment => $pay) {
-  if ($pay<>null){
-    array_push($data, $pay);
-  }}
-$pdf = new FPDF();
-$pdf->AddPage();
-$pdf->Image('../img/groovy-logo-orange.png','140','15','60');
-$pdf->SetFont('Arial','B','20');
-$pdf->Cell(0,30, '', '0', 5, 'L');
-$pdf->Cell(0,10, 'BUKTI PEMBAYARAN', '0', 5, 'C');
-$pdf->Ln();
-$pdf->SetFont('Arial','B','10');
-$pdf->Cell(0,7, 'DATA PELANGGAN', '0', 1, 'L');
-$pdf->Ln();
-$pdf->SetFont('Arial','','10');
-$pdf->Cell(0,7, 'Nama Lengkap            : '.$nama_cust, '0', 1, 'L');
-$pdf->Cell(0,7, 'No ID Pelanggan         : '.$id_cust, '0', 1, 'L');
-$pdf->Cell(0,7, 'Alamat Pemasangan   : '.$tempat_cust.', '.$ket_cust.', '.$alamat_cust.', '.$kota_cust, '0', 1, 'L');
-$pdf->Cell(0,7, 'Nomor Telepon            : '.$phone_cust, '0', 1, 'L');
-$pdf->Cell(0,7, 'Alamat Email               : '.$email_cust, '0', 1, 'L');
-$pdf->Ln();
-$pdf->SetFont('Arial','B','10');
-$pdf->Cell(0,7, 'DATA PEMBAYARAN', '0', 1, 'L');
-$pdf->Ln();
-$pdf->SetFont('Arial','','10');
-$pdf->SetFillColor(254,60,34);
-$pdf->SetTextColor(255);
-$pdf->SetDrawColor(254,60,34);
-foreach ($header_table as $kolom_table) {
-$pdf->Cell($kolom_table['length'], 10, $kolom_table['label'], 1, '0',
-$kolom['align'], true);
-}
-$pdf->Ln();
-#tampilkan data dari tabel
-$pdf->SetTextColor(0);
-$pdf->SetFont('');
-$pdf->SetDrawColor(254,60,34);
-foreach ($data as $baris) {
-$i = 0;
-foreach ($baris as $cell) {
-$pdf->Cell($header_table[$i]['length'], 8, $cell, 1, '0',
-$kolom['align'], false);
-$i++;
-}
-$fill = !$fill;
-$pdf->Ln();
-}
-$pdf->Ln();
-$pdf->Ln();
-$pdf->Ln();
-$pdf->SetTextColor(0);
-$pdf->SetFont('Arial','B','10');
-$pdf->Cell(0,7, 'KONFIRMASI PEMBAYRAN - PAYMENT CONFIRMATION', '0', 1, 'L');
-$pdf->Ln();
-$pdf->SetFont('Arial','','10');
-$pdf->Cell(0,7, 'Tanggal Bayar               : '.$tgl_bayar.' '.$month_bayar.' '.$thn_bayar, '0', 1, 'L');
-$pdf->Cell(0,7, 'Kode Virtual                   : '.$no_virtual, '0', 1, 'L');
-$pdf->Cell(0,7, 'Jumlah Pembayaran      : '.rupiah($total_bayar), '0', 1, 'L');
-$pdf->Ln();
-$pdf->Ln();
-$pdf->Image('../img/a.jpg','170','240','30');
-// Filename that will be used for the file as the attachment
-$fileatt_name = $no_virtual.$last_pembayaran.'.pdf';
-$dir='bukti/';
-// save pdf in directory
-$pdf ->Output($dir.$fileatt_name);
-//....................
-
-$data = $pdf->Output("", "S");
-
-//..................
-
-$email_subject1 = "Bukti Pembayaran groovy"; // The Subject of the email
-$email_to1 = $email_cust; // Who the email is to
-
-
-$semi_rand = md5(time());
-$data = chunk_split(base64_encode($data));
-
-$fileatt_type = "application/pdf"; // File Type
-$mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";
-
-// set header ........................
-$headers1 = "From: billing@groovy.id";
-$headers1.= "\nMIME-Version: 1.0\n" .
-"Content-Type: multipart/mixed;\n" .
-" boundary=\"{$mime_boundary}\"";
-
-// set email message......................
-$email_message1 = "Terimakasih ".$nama_cust." sudah menggunakan layanan groovy.id.<br>";
-$email_message1 .= "Bukti pembayaran ini menandakan bahwa pembayaran anda sudah kami konfirmasi dan terima.<br>";
-$email_message1 .= "Untuk pelanggan baru kami akan segera memberi inforamsi untuk jadwal pemasangan.<br>";
-$email_message1 .= "Untuk info lebih lanjut bisa membuat pengaduan pada halaman member anda di groovy.id.\n\n" .
-"--{$mime_boundary}\n" .
-"Content-Type:text/html; charset=\"iso-8859-1\"\n" .
-"Content-Transfer-Encoding: 7bit\n\n" .
-$email_message1 .= "\n\n";
-$email_message1 .= "--{$mime_boundary}\n" .
-"Content-Type: {$fileatt_type};\n" .
-" name=\"{$fileatt_name}\"\n" .
-"Content-Disposition: attachment;\n" .
-" filename=\"{$fileatt_name}\"\n" .
-"Content-Transfer-Encoding: base64\n\n" .
-$data .= "\n\n" .
-"--{$mime_boundary}--\n";
-
-$emailinvoice = mail($email_to1, $email_subject1, $email_message1, $headers1);
+';
+$headers1  = 'MIME-Version: 1.0' . "\r\n";
+$headers1 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+$headers1 .= 'From: cs@groovy.id' . "\r\n";
+$headers1 .= 'Cc: billing@groovy.id' . "\r\n";
+$emailinvoice = mail($email_cust_, $email_subject1, $email_message1, $headers1);
 
 	if ($status_cust=="registrasi"){
 				// mail for supevisior teknik
 				$subject = 'Atur Jadwal Pemasangan';
 				$message = '
-				<html>
-				<body>
-				  <p>Mohon segera diatur jadwal pemasangan untuk customer berikut : </p>
-				  <br/>
-				  <p>ID Customer : '.$id_cust.'</p>
-				  <p>Nama : '.$nama_cust.'</p>
-				  <p>Tempat : '.$tempat_cust.', '.$ket_cust.', '.$kota_cust.'</p>
-				  <p>Tanggal Registrasi : '.$tgl_registrasi.' '.$month_registrasi.' '.$thn_registrasi.'</p>
-				  <p>Registrasi : '.$registrasi_cust.' '.$sales.'</p>
-				  <p>Paket : '.$package_cust.'('.$deskripsi_paket0.')</p>
-				  <br/>
-				</body>
-				</html>
+        <html>
+          <body style="background-color:#ddd;padding:0px 0 50px 0;font-family:arial;font-size:15px;">
+              <div style="margin:0 auto;background-color:#eee;">
+                  <div style="background: linear-gradient(to right, #f9a825 , #fdd835);padding:5px 0 2px 0;text-align:center;">
+                      <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
+                  </div>
+                  <div style="padding:20px 20px 20px 20px;color:#333;">
+                      <div style="float:right;font-size:14px;">
+                          <img width="100px" height="100px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Wikipedia_mobile_en.svg/2000px-Wikipedia_mobile_en.svg.png"/>
+                      </div>
+                      <p style="font-size:24px;font-weight:bold;line-height:30px;text-align:center">Bukti Pembayaran</p>
+                      <span></span>
+                      <table style="margin-top:20px;margin-bottom:20px;border:0px solid #ccc;color:#333;background-color:#eee;#ddd;width:100%;font-size:14px;">
+
+                          <tr>
+                              <td style="border:1px solid #bbb;padding:5px;color:#777">ID Customer</td>
+                              <td style="border:1px solid #bbb;padding:5px">'.$id_cust.'</td>
+                          </tr>
+                          <tr>
+                              <td style="border:1px solid #bbb;padding:5px;color:#777">Nama</td>
+                              <td style="border:1px solid #bbb;padding:5px">'.$nama_cust.'</td>
+                          </tr>
+                          <tr>
+                              <td style="border:1px solid #bbb;padding:5px;color:#777">Tempat</td>
+                              <td style="border:1px solid #bbb;padding:5px">'.$tempat_cust.' '.$ket_cust.' '.$alamat_cust.' '.$kota_cust.'</td>
+                          </tr>
+                      </table>
+                      <br/>
+                      <h4>Detail Pembayaran</h4>
+                      <table style="margin-top:20px;margin-bottom:20px;float:right;border:0px solid #ccc;color:#333;background-color:#eee;#ddd;width:100%;font-size:14px;">
+                          <tr style="border:1px solid #bbb;">
+                              <td style="border:2px solid #666;padding:10px;color:#666;text-align:center;font-size:15px;">DESCRIPTION</td>
+                              <td style="border:2px solid #666;padding:10px;color:#666;text-align:center;font-size:15px;">PRICE (Rp.)</td>
+                          </tr>
+                          <tr>
+                              <td style="border:1px solid #bbb;padding:5px;color:#777">NUSANET provider Broadband Wireless, Broadband SOHO, Dedicated Wireless Unlimited, Fiber Optic, Rack Space, Colocation Server, Dedicated Server, Web and Mail Hosting in Medan, Lampung, Jakarta, Surabaya and Malang. Please visit our website for details.</td>
+                              <td style="border:1px solid #bbb;padding:5px">500.000</td>
+                          </tr>
+                          <tr>
+                              <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">JUMLAH</td>
+                              <td style="border:1px solid #bbb;padding:5px">1.000.000</td>
+                          </tr>
+                          <tr>
+                              <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">PPN 10%</td>
+                              <td style="border:1px solid #bbb;padding:5px">100.000</td>
+                          </tr>
+                          <tr>
+                              <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">TOTAL PEMBAYARAN</td>
+                              <td style="border:1px solid #bbb;padding:5px">900.000</td>
+                          </tr>
+                      </table>
+
+                      <br/>
+                      <table style="margin-top:20px;margin-bottom:20px;border:0px solid #ccc;color:#333;background-color:#eee;#ddd;width:100%;font-size:14px;">
+
+                          <tr>
+                              <td style="border:1px solid #bbb;padding:5px;color:#777">ID Invoice</td>
+                              <td style="border:1px solid #bbb;padding:5px">'.$no_invoice.'</td>
+                          </tr>
+                          <tr>
+                              <td style="border:1px solid #bbb;padding:5px;color:#777">No Virtual Account</td>
+                              <td style="border:1px solid #bbb;padding:5px">'.$kode_perusahaan.$id_cust.'</td>
+                          </tr>
+                          <tr>
+                              <td style="border:1px solid #bbb;padding:5px;color:#777">Tanggal Bayar</td>
+                              <td style="border:1px solid #bbb;padding:5px">'.$tgl_bayar.' '.$month_bayar.' '.$thn_bayar.'</td>
+                          </tr>
+                          <tr>
+                              <td style="border:1px solid #bbb;padding:5px;color:#777">Tanggal Konfirmasi</td>
+                              <td style="border:1px solid #bbb;padding:5px">'.date("d").' '.bulan(date("m")).' '.date("Y").'</td>
+                          </tr>
+                      </table>
+                      <p>Salam</p>
+                      <p>groovy.id</p>
+                  </div>
+                  </div>
+              </div>
+          </body>
+          </html>
 				';
 				$headers  = 'MIME-Version: 1.0' . "\r\n";
 				$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
