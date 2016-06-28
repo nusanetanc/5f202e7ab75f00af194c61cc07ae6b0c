@@ -223,6 +223,31 @@ $emailinvoice = mail($email_cust_, $email_subject1, $email_message1, $headers1);
               </div>
           </body>
           </html>
+
+';
+$headers1  = 'MIME-Version: 1.0' . "\r\n";
+$headers1 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+$headers1 .= 'From: cs@groovy.id' . "\r\n";
+$headers1 .= 'Cc: billing@groovy.id' . "\r\n";
+$emailinvoice = mail($email_cust, $subject, $message, $headers1);
+
+	if ($status_cust=="registrasi"){
+				// mail for supevisior teknik
+				$subject = 'Atur Jadwal Pemasangan';
+				$message = '
+				<html>
+				<body>
+				  <p>Mohon segera diatur jadwal pemasangan untuk customer berikut : </p>
+				  <br/>
+				  <p>ID Customer : '.$id_cust.'</p>
+				  <p>Nama : '.$nama_cust.'</p>
+				  <p>Tempat : '.$tempat_cust.', '.$ket_cust.', '.$kota_cust.'</p>
+				  <p>Tanggal Registrasi : '.$tgl_registrasi.' '.$month_registrasi.' '.$thn_registrasi.'</p>
+				  <p>Registrasi : '.$registrasi_cust.' '.$sales.'</p>
+				  <p>Paket : '.$package_cust.'('.$deskripsi_paket0.')</p>
+				  <br/>
+				</body>
+				</html>
 				';
 				$headers  = 'MIME-Version: 1.0' . "\r\n";
 				$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
