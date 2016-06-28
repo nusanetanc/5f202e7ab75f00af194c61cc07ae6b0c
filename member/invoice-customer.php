@@ -144,10 +144,10 @@ $payment_kabel = array (
 							foreach ($res['payment_data'] as $payment => $pay) {
 								if ($pay<>null){
               '<tr>
-                  <td style="border:1px solid #bbb;padding:5px;color:#777">NUSANET provider Broadband Wireless, Broadband SOHO, Dedicated Wireless Unlimited, Fiber Optic, Rack Space, Colocation Server, Dedicated Server, Web and Mail Hosting in Medan, Lampung, Jakarta, Surabaya and Malang. Please visit our website for details.</td>
+                  <td style="border:1px solid #bbb;padding:5px;color:#777">'.$pay['layanan'].'.</td>
                   <td style="border:1px solid #bbb;padding:5px">500.000</td>
               </tr>';
-						}}
+						}};
               '<tr>
                   <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">JUMLAH</td>
                   <td style="border:1px solid #bbb;padding:5px">1.000.000</td>
