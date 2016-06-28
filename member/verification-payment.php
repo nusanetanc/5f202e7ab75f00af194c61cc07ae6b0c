@@ -113,8 +113,6 @@ if(isset($_POST['verifikasi'])){
 		$month_bayar = bulan($bln_bayar);
 		$last_pembayaran = $pembayaran + 1;
 //mail to bukti pembayaran
-  include "content/qrbarcode/phpqrcode-master/qrlib.php";
-   QRcode::png("cobacoba","qr.png","C", 6,6);
 
 $subject = 'Bukti Pembayaran groovy ('.$kode_invoice.')';
 
