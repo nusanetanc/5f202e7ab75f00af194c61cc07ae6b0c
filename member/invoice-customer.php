@@ -147,7 +147,7 @@ $payment_kabel = array (
 $rincian_biaya[] =
 							'<tr>
                   <td style="border:1px solid #bbb;padding:5px;color:#777">'.$pay['layanan'].'.</td>
-                  <td style="border:1px solid #bbb;padding:5px">'.$pay['harga'].'</td>
+                  <td style="border:1px solid #bbb;padding:5px">'.rupiah($pay['harga']).'</td>
               </tr>'; }}
 $message1 =
 							'<tr>
