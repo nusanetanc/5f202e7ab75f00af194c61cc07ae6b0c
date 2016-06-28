@@ -147,7 +147,7 @@ $payment_kabel = array (
 $rincian_biaya[] =
 							'<tr>
                   <td style="border:1px solid #bbb;padding:5px;color:#777">'.$pay['layanan'].'.</td>
-                  <td style="border:1px solid #bbb;padding:5px">500.000</td>
+                  <td style="border:1px solid #bbb;padding:5px">'.$pay['harga'].'</td>
               </tr>'; }}
 $message1 =
 							'<tr>
@@ -244,8 +244,8 @@ $message1 =
 	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
 	$headers .= 'From: billing@groovy.id' . "\r\n";
-
-	$sent=mail($to, $subject, $message.array($rincian_biaya).$message1, $headers);
+$ketrincian=implode(".", $rincian_biaya);
+	$sent=mail($to, $subject, $message.$ketrincian.$message1, $headers);
 
 	if($sent && $update_user){ ?>
 		<script type="" language="JavaScript">alert('Invoice Telah Terkirim');
