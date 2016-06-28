@@ -85,7 +85,8 @@ $payment_kabel = array (
 	$to = $email_cust;
 
 	$subject = 'Invoice Pembayaran groovy ('.$result.')';
-
+include "../content/qrbarcode/phpqrcode-master/qrlib.php";
+QRcode::png($result,"bukti/".$result.".png","C", 6,6);
 	$message = '
 <html>
 <body style="background-color:#ddd;padding:0px 0 50px 0;font-family:arial;font-size:15px;">
@@ -95,7 +96,7 @@ $payment_kabel = array (
       </div>
       <div style="padding:20px 20px 20px 20px;color:#333;">
           <div style="float:right;font-size:14px;">
-              <img width="100px" height="100px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Wikipedia_mobile_en.svg/2000px-Wikipedia_mobile_en.svg.png"/>
+              '.QRcode::png($result).'
           </div>
           <p style="font-size:24px;font-weight:bold;line-height:30px;text-align:center">Rincian Tagihan</p>
           <span></span>
