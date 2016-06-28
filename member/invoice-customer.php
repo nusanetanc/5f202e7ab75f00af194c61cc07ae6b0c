@@ -146,7 +146,7 @@ $payment_kabel = array (
 			if ($pay<>null){
 $rincian_biaya[] =
 							'<tr>
-                  <td style="border:1px solid #bbb;padding:5px;color:#777">'.$pay['layanan'].'.</td>
+                  <td style="border:1px solid #bbb;padding:5px;color:#777">'.$pay['layanan'].'</td>
                   <td style="border:1px solid #bbb;padding:5px">'.rupiah($pay['harga']).'</td>
               </tr>'; }}
 $message1 =
@@ -244,7 +244,7 @@ $message1 =
 	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
 	$headers .= 'From: billing@groovy.id' . "\r\n";
-$ketrincian=implode(".", $rincian_biaya);
+$ketrincian=implode("", $rincian_biaya);
 	$sent=mail($to, $subject, $message.$ketrincian.$message1, $headers);
 
 	if($sent && $update_user){ ?>
