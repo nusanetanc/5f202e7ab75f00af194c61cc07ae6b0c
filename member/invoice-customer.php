@@ -96,7 +96,7 @@ $payment_kabel = array (
       </div>
       <div style="padding:20px 20px 20px 20px;color:#333;">
           <div style="float:right;font-size:14px;">
-              <img width="100px" height="100px" src="http://groovy.id/beta/bukti/".$result/>
+              <img width="100px" height="100px" src="http://groovy.id/beta/bukti/"'.$result.'/>
           </div>
           <p style="font-size:24px;font-weight:bold;line-height:30px;text-align:center">Rincian Tagihan</p>
           <span></span>
