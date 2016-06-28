@@ -113,6 +113,7 @@ if(isset($_POST['verifikasi'])){
 		$month_bayar = bulan($bln_bayar);
 		$last_pembayaran = $pembayaran + 1;
 //mail to bukti pembayaran
+  include "content/qrbarcode/phpqrcode-master/qrlib.php";
 
 $subject = 'Bukti Pembayaran groovy ('.$result.')';
 
@@ -124,9 +125,9 @@ $message = '
             <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
         </div>
         <div style="padding:20px 20px 20px 20px;color:#333;">
-            <div style="float:right;font-size:14px;">
-                <img width="100px" height="100px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Wikipedia_mobile_en.svg/2000px-Wikipedia_mobile_en.svg.png"/>
-            </div>
+            <div style="float:right;font-size:14px;">'
+              .QRcode::png("cobacoba").
+            '</div>
             <p style="font-size:24px;font-weight:bold;line-height:30px;text-align:center">Bukti Pembayaran</p>
             <span></span>
             <table style="margin-top:20px;margin-bottom:20px;border:0px solid #ccc;color:#333;background-color:#eee;#ddd;width:100%;font-size:14px;">
