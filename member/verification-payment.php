@@ -209,7 +209,7 @@ $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 $headers .= 'From: billing@groovy.id' . "\r\n";
 
 $ketrincian=implode("", $rincian_biaya);
-	$sent=mail($to, $subject, $message.$ketrincian.$message1, $headers);
+	$sent=mail($email_cust, $subject, $message.$ketrincian.$message1, $headers);
 
 	if ($status_cust=="registrasi"){
 				// mail for supevisior teknik
