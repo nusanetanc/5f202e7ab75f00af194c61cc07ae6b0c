@@ -27,8 +27,8 @@ if(isset($_POST['send'])){
 						$result = '';
 						for($i=1; $i<=$panjang; $i++){
 													$result .= $text[rand(0, $txtlen)];
-												//	include "../content/qrbarcode/phpqrcode-master/qrlib.php";
-												//	QRcode::png($result,"../bukti/".$result.".png","C", 6,6);
+													include "../content/qrbarcode/phpqrcode-master/qrlib.php";
+													QRcode::png($result,"../bukti/".$result.".png","C", 6,6);
 													}
 	$stb=$_POST['stb'];
 	$router=$_POST['router'];
@@ -96,7 +96,7 @@ $payment_kabel = array (
       </div>
       <div style="padding:20px 20px 20px 20px;color:#333;">
           <div style="float:right;font-size:14px;">
-              '<img width="100px" height="100px" src="http://groovy.id/beta/bukti/".$result/>'
+              <img width="100px" height="100px" src="http://groovy.id/beta/bukti/".$result/>
           </div>
           <p style="font-size:24px;font-weight:bold;line-height:30px;text-align:center">Rincian Tagihan</p>
           <span></span>
