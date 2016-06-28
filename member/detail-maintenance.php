@@ -385,14 +385,15 @@ if($select_update=="termination"){
             });
 						$(document).ready(function(){
 							$("#kol_term").hide();
-							var sel_kol =  $("#select_kol").val();
+							var sel_kol =  $("#select_update").val();
 							var pil = "termination";
+				$("#select_kol").change(function(){
 								if(sel_kol == pil){
 									$("#kol_term").show();
 								} else{
 									$("#kol_term").hide();
 								}
-						});
+				})	});
     </script>
 <section>
 	<div class="col-sm-9" style="font-family:Arial;">
