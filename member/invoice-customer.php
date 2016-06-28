@@ -86,7 +86,7 @@ $payment_kabel = array (
 
 	$subject = 'Invoice Pembayaran groovy ('.$result.')';
 include "../content/qrbarcode/phpqrcode-master/qrlib.php";
-QRcode::png($result,"bukti/".$result.".png","C", 6,6);
+QRcode::png($result,"../bukti/".$result.".png","C", 6,6);
 	$message = '
 <html>
 <body style="background-color:#ddd;padding:0px 0 50px 0;font-family:arial;font-size:15px;">
