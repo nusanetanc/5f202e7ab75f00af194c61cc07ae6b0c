@@ -77,7 +77,7 @@ $date_month = date("y");
                         $tanggal_akhir = $row['tanggal_akhir'];
                         $tanggal_aktif = $row['tanggal_aktif'];
                         $harga_paket = $row['harga'];
-                        $no_virtual = $row['no_virtual'];
+                        $kode_invoice = $row['invoice'];
                         $pembayaran = $row['pembayaran'];
                         $proraide = $row['proraide'];
                         $move_paket_cust = $row['move_paket'];
@@ -116,7 +116,7 @@ if(isset($_POST['verifikasi'])){
   include "content/qrbarcode/phpqrcode-master/qrlib.php";
    QRcode::png("cobacoba","qr.png","C", 6,6);
 
-$subject = 'Bukti Pembayaran groovy ('.$result.')';
+$subject = 'Bukti Pembayaran groovy ('.$kode_invoice.')';
 
 $message = '
 <html>
@@ -127,7 +127,7 @@ $message = '
         </div>
         <div style="padding:20px 20px 20px 20px;color:#333;">
             <div style="float:right;font-size:14px;">
-                <img width="100px" height="100px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Wikipedia_mobile_en.svg/2000px-Wikipedia_mobile_en.svg.png"/>
+                <img width="150px" height="150px" src="http://groovy.id/beta/member/bukti/'.$kode_invoice.'.png"/>
             </div>
             <p style="font-size:24px;font-weight:bold;line-height:30px;text-align:center">Bukti Pembayaran</p>
             <span></span>
@@ -152,12 +152,19 @@ $message = '
                 <tr style="border:1px solid #bbb;">
                     <td style="border:2px solid #666;padding:10px;color:#666;text-align:center;font-size:15px;">DESCRIPTION</td>
                     <td style="border:2px solid #666;padding:10px;color:#666;text-align:center;font-size:15px;">PRICE (Rp.)</td>
-                </tr>
-                <tr>
-                    <td style="border:1px solid #bbb;padding:5px;color:#777">NUSANET provider Broadband Wireless, Broadband SOHO, Dedicated Wireless Unlimited, Fiber Optic, Rack Space, Colocation Server, Dedicated Server, Web and Mail Hosting in Medan, Lampung, Jakarta, Surabaya and Malang. Please visit our website for details.</td>
-                    <td style="border:1px solid #bbb;padding:5px">500.000</td>
-                </tr>
-                <tr>
+                </tr>';
+                $total=0;
+            		$res = $col_user->findOne(array("id_user"=>$id_cust));
+            		foreach ($res['payment_data'] as $payment => $pay) {
+            			if ($pay<>null){
+            				$total = $total+$pay['harga'];
+$rincian_biaya[] =
+  							'<tr>
+                    <td style="border:1px solid #bbb;padding:5px;color:#777">'.$pay['layanan'].'</td>
+                    <td style="border:1px solid #bbb;padding:5px">'.rupiah($pay['harga']).'</td>
+                </tr>'; }}
+$message1 =
+                '<tr>
                     <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">JUMLAH</td>
                     <td style="border:1px solid #bbb;padding:5px">1.000.000</td>
                 </tr>
@@ -176,7 +183,7 @@ $message = '
 
                 <tr>
                     <td style="border:1px solid #bbb;padding:5px;color:#777">ID Invoice</td>
-                    <td style="border:1px solid #bbb;padding:5px">'.$id_invoice.'</td>
+                    <td style="border:1px solid #bbb;padding:5px">'.$kode_invoice.'</td>
                 </tr>
                 <tr>
                     <td style="border:1px solid #bbb;padding:5px;color:#777">No Virtual Account</td>
@@ -203,7 +210,8 @@ $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
 $headers .= 'From: billing@groovy.id' . "\r\n";
 
-$emailinvoice = mail($email_cust, $subject, $message, $headers);
+$ketrincian=implode("", $rincian_biaya);
+	$sent=mail($to, $subject, $message.$ketrincian.$message1, $headers);
 
 	if ($status_cust=="registrasi"){
 				// mail for supevisior teknik
