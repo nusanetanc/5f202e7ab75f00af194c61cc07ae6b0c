@@ -27,9 +27,9 @@ if(isset($_POST['send'])){
 						$result = '';
 						for($i=1; $i<=$panjang; $i++){
 													$result .= $text[rand(0, $txtlen)];
-													include "../content/qrbarcode/phpqrcode-master/qrlib.php";
-													QRcode::png($result,"../bukti/".$result.".png","C", 6,6);
 													}
+				include "../content/qrbarcode/phpqrcode-master/qrlib.php";
+				QRcode::png($result,"bukti/".$result.".png","C", 6,6);												
 	$stb=$_POST['stb'];
 	$router=$_POST['router'];
 	$instal=$_POST['instal'];
