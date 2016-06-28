@@ -69,7 +69,7 @@ $payment_kabel = array (
 "layanan"=>"Kabel / ".$pjkbl." Meter",
 "harga"=>$biaya_cable,
 "total"=>$biaya_cable*$pjkbl
-); } /*
+); }
 			$update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("no_virtual"=>$kode_perusahaan.$id_cust, "invoice"=>$result,"tanggal_tagihan"=>date("Y/m/d"),"payment_data"=>array($payment_paket, $payment_router, $payment_stb, $payment_kabel, $payment_instal))));
 	if(!empty($_POST['addon'])){
 			foreach($_POST['addon'] as $addon_select)
@@ -80,7 +80,7 @@ $payment_kabel = array (
 										$addon_harga=$row['harga'];
 									}
 				$update_user1= $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("payment_data"=>array("layanan"=>$addon_select, "harga"=>$addon_harga, "prorate"=>$addon_prorate, "total"=>$addon_harga-$addon_prorate))));
-			} } */
+			} }
 // mail for customer to addon
 	$to = $email_cust;
 
@@ -138,24 +138,17 @@ $payment_kabel = array (
               <tr style="border:1px solid #bbb;">
                   <td style="border:2px solid #666;padding:10px;color:#666;text-align:center;font-size:15px;">DESCRIPTION</td>
                   <td style="border:2px solid #666;padding:10px;color:#666;text-align:center;font-size:15px;">PRICE (Rp.)</td>
-              </tr>
-              <tr>
+              </tr>';
+							$total=0;
+							$res = $col_user->findOne(array("id_user"=>$id_cust));
+							foreach ($res['payment_data'] as $payment => $pay) {
+								if ($pay<>null){
+              '<tr>
                   <td style="border:1px solid #bbb;padding:5px;color:#777">NUSANET provider Broadband Wireless, Broadband SOHO, Dedicated Wireless Unlimited, Fiber Optic, Rack Space, Colocation Server, Dedicated Server, Web and Mail Hosting in Medan, Lampung, Jakarta, Surabaya and Malang. Please visit our website for details.</td>
                   <td style="border:1px solid #bbb;padding:5px">500.000</td>
-              </tr>
-              <tr>
-                  <td style="border:1px solid #bbb;padding:5px;color:#777">NUSANET provider Broadband Wireless, Broadband SOHO, Dedicated Wireless Unlimited, Fiber Optic, Rack Space, Colocation Server, Dedicated Server, Web and Mail Hosting in Medan, Lampung, Jakarta, Surabaya and Malang. Please visit our website for details.</td>
-                  <td style="border:1px solid #bbb;padding:5px">500.000</td>
-              </tr>
-              <tr>
-                  <td style="border:1px solid #bbb;padding:5px;color:#777">NUSANET provider Broadband Wireless, Broadband SOHO, Dedicated Wireless Unlimited, Fiber Optic, Rack Space, Colocation Server, Dedicated Server, Web and Mail Hosting in Medan, Lampung, Jakarta, Surabaya and Malang. Please visit our website for details.</td>
-                  <td style="border:1px solid #bbb;padding:5px">500.000</td>
-              </tr>
-              <tr>
-                  <td style="border:1px solid #bbb;padding:5px;color:#777">NUSANET provider Broadband Wireless, Broadband SOHO, Dedicated Wireless Unlimited, Fiber Optic, Rack Space, Colocation Server, Dedicated Server, Web and Mail Hosting in Medan, Lampung, Jakarta, Surabaya and Malang. Please visit our website for details.</td>
-                  <td style="border:1px solid #bbb;padding:5px">500.000</td>
-              </tr>
-              <tr>
+              </tr>';
+						}}
+              '<tr>
                   <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">JUMLAH</td>
                   <td style="border:1px solid #bbb;padding:5px">1.000.000</td>
               </tr>
