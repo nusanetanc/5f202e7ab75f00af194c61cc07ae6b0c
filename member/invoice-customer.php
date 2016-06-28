@@ -144,6 +144,7 @@ $payment_kabel = array (
 		$res = $col_user->findOne(array("id_user"=>$id_cust));
 		foreach ($res['payment_data'] as $payment => $pay) {
 			if ($pay<>null){
+				$total = $total+$pay['harga'];
 $rincian_biaya[] =
 							'<tr>
                   <td style="border:1px solid #bbb;padding:5px;color:#777">'.$pay['layanan'].'</td>
@@ -151,16 +152,16 @@ $rincian_biaya[] =
               </tr>'; }}
 $message1 =
 							'<tr>
-                  <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">JUMLAH</td>
-                  <td style="border:1px solid #bbb;padding:5px">1.000.000</td>
+                  <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">TOTAL HARGA</td>
+                  <td style="border:1px solid #bbb;padding:5px">'.rupiah($total).'</td>
               </tr>
               <tr>
                   <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">PPN 10%</td>
-                  <td style="border:1px solid #bbb;padding:5px">100.000</td>
+                  <td style="border:1px solid #bbb;padding:5px">'.rupiah($total*0.1).'</td>
               </tr>
               <tr>
                   <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">TOTAL PEMBAYARAN</td>
-                  <td style="border:1px solid #bbb;padding:5px">900.000</td>
+                  <td style="border:1px solid #bbb;padding:5px">'.rupiah($total*0.1+$total).'</td>
               </tr>
           </table>
 
