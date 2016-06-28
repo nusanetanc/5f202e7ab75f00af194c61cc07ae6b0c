@@ -245,7 +245,7 @@ $message1 =
 
 	$headers .= 'From: billing@groovy.id' . "\r\n";
 
-	$sent=mail($to, $subject, $message.array($rincian_biaya.)$message1, $headers);
+	$sent=mail($to, $subject, $message.array($rincian_biaya).$message1, $headers);
 
 	if($sent && $update_user){ ?>
 		<script type="" language="JavaScript">alert('Invoice Telah Terkirim');
