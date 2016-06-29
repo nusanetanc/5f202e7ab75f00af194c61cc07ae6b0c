@@ -517,7 +517,7 @@ if($select_update=="termination"){
 								Paket :
 								<select class="form-control" id="inputpaket" name="inputpaket">
 								<?php
-					$res = $col_package->find();
+					$res = $col_package->find(array("isi"=>"internet+tv"));
 					foreach($res as $row)
 											{
 												?>
