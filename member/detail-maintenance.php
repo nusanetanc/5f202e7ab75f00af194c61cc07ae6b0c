@@ -388,9 +388,9 @@ if($select_update=="termination"){
 							var sel_kol =  $("#select_update").val();
 							var pil = "Termination Dens";
 				$("#select_update").change(function(){
-								if(sel_kol == pil){
+								//if(sel_kol == pil){
 									$("#kol_term").show();
-								}
+								//}
 				})	});
     </script>
 <section>
