@@ -513,16 +513,6 @@ if($select_update=="termination"){
 					</div>
 					<div class="panel-body">
 						<li class="list-group-item">
-								Paket :
-								<select class="form-control" id="inputpaket" name="inputpaket">
-								<?php
-					$res = $col_package->find(array("isi"=>"internet+tv"));
-					foreach($res as $row)
-											{
-												?>
-										<option><?php echo $row['nama']; ?></option>
-									<?php } ?>
-								</select><br/>
 									<select class="form-control" id="select_update" name="select_update">
 					          <option value="request">Request Dens</option>
 					          <option value="termination">Termination Dens</option>
@@ -530,6 +520,18 @@ if($select_update=="termination"){
 					        </select>
 						</li>
 							<ul style="text-align:left;" class="list-group">
+								<li class="list-group-item">
+											Paket :
+											<select class="form-control" id="inputpaket" name="inputpaket">
+											<?php
+								$res = $col_package->find(array("isi"=>"internet+tv"));
+								foreach($res as $row)
+														{
+															?>
+													<option><?php echo $row['nama']; ?></option>
+												<?php } ?>
+											</select>
+									</li>
 								Add On Service
 									<?php
 											$res = $col_service->find();
