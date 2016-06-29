@@ -532,7 +532,6 @@ if($select_update=="termination"){
 												<?php } ?>
 											</select>
 									</li>
-								Add On Service
 									<?php
 											$res = $col_service->find();
 											foreach($res as $row)
