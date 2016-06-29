@@ -385,12 +385,12 @@ if($select_update=="termination"){
             });
 						$(document).ready(function(){
 							$("#kol_term").hide();
-							var sel_kol =  $("#select_update").val();
-							var pil = "Termination Dens";
 				$("#select_update").change(function(){
-								//if(sel_kol == pil){
+					var sel_kol =  $("#select_update").val();
+					var pil = "termination";
+								if(sel_kol == pil){
 									$("#kol_term").show();
-								//}
+								}
 				})	});
     </script>
 <section>
