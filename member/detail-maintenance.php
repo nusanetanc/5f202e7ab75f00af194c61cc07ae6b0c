@@ -390,6 +390,8 @@ if($select_update=="termination"){
 					var pil = "termination";
 								if(sel_kol == pil){
 									$("#kol_term").show();
+								} else {
+									$("#kol_term").hide();
 								}
 				})	});
     </script>
