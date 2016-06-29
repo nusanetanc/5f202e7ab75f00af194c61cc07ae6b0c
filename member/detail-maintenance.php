@@ -522,6 +522,11 @@ if($select_update=="termination"){
 										<option><?php echo $row['nama']; ?></option>
 									<?php } ?>
 									</select>
+									<select class="form-control" id="select_update" name="select_update">
+					          <option value="request">Request Dens</option>
+					          <option value="termination">Termination Dens</option>
+										<option value="change">Change Dens</option>
+					        </select>
 						</li>
 							<ul style="text-align:left;" class="list-group">
 								Add On Service
@@ -542,16 +547,6 @@ if($select_update=="termination"){
 								</li>
 							</ul>
 							<br/>
-						<div class="form-group">
-								<div class="col-lg-12">
-									<select class="form-control" id="select_update" name="select_update">
-					          <option value="request">Request Dens</option>
-					          <option value="termination">Termination Dens</option>
-										<option value="change">Change Dens</option>
-					        </select>
-									<br/>
-								</div>
-							</div>
 							<li class="list-group-item" name="kol_term" id="kol_term">
 									<input type="text" class="form-control" id="inputTerminationdate" name="inputTerminationdate" placeholder="Termination Date" required> <br/>
 									<input type="text" class="form-control" name="textalasanberhenti" id="textalasanberhenti" placeholder="Alasan Penutupan"><br/>
