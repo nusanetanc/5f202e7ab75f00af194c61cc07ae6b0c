@@ -128,7 +128,6 @@ if (isset($_POST['btnupdate'])){
 	$no_stb = $_POST['no_stb'];
 	$inputpaket=$_POST['inputpaket'];
 	$inputaddon=implode(", ", $_POST['addon']);
-	$month_pindah = bulan($bln_pindah);
 		if($select_update=="change"){
         require('../content/srcpdf/fpdf.php');
     	  $pdf = new FPDF();
@@ -550,7 +549,7 @@ if($select_update=="termination"){
 							</ul>
 							<br/>
 							<li class="list-group-item" name="kol_term" id="kol_term">
-									<input type="text" class="form-control" id="inputTerminationdate" name="inputTerminationdate" placeholder="Termination Date" required> <br/>
+									<input type="text" class="form-control" id="inputTerminationdate" name="inputTerminationdate" placeholder="Termination Date"> <br/>
 									<input type="text" class="form-control" name="textalasanberhenti" id="textalasanberhenti" placeholder="Alasan Penutupan"><br/>
 							</li>
 							<div class="panel-body">
