@@ -570,6 +570,9 @@ if($select_update=="termination"){
 							</li>
 								<br/>
 								<button class="btn btn-primary btn-sm" type="submit" name="btnupdate" id="btnupdate"><b>UPDATE</b></button>
+								<br/>
+						</div>
+					</div>
 			<div class="panel" style="border:0px;">
 					<div class="panel-heading" style="background-color:#F1453C">
 						<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">LOG HISTORY</h3>
