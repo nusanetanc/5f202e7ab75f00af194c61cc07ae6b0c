@@ -384,14 +384,19 @@ if($select_update=="termination"){
             });
 						$(document).ready(function(){
 							$("#kol_term").hide();
-							$("#kol_layanan").hide();
+							$("#kol_change").hide();
+							$("#kol_regis").hide();
 				$("#select_update").change(function(){
 					var sel_kol =  $("#select_update").val();
-					var pil = "termination";
-								if(sel_kol == pil){
+					var pil1 = "termination";
+					var pil2 = "change";
+					var pil3 = "request";
+								if(sel_kol == pil1){
 									$("#kol_term").show();
-								} else {
-									$("#kol_term").hide();
+								} else if(sel_kol == pil2) {
+									$("#kol_change").hide();
+								} else if(sel_kol == pil3) {
+									$("#kol_regis").hide();
 								}
 				})	});
     </script>
@@ -520,7 +525,7 @@ if($select_update=="termination"){
 										<option value="change">Change Dens</option>
 					        </select>
 						</li>
-							<ul style="text-align:left;" class="list-group" name="kol_layanan" id="kol_layanan">
+							<ul style="text-align:left;" class="list-group" name="kol_change" id="kol_change">
 								<li class="list-group-item">
 											Paket :
 											<select class="form-control" id="inputpaket" name="inputpaket">
@@ -554,21 +559,11 @@ if($select_update=="termination"){
 									<input type="text" class="form-control" id="inputTerminationdate" name="inputTerminationdate" placeholder="Termination Date"> <br/>
 									<input type="text" class="form-control" name="textalasanberhenti" id="textalasanberhenti" placeholder="Alasan Penutupan"><br/>
 							</li>
-							<div class="panel-body">
-								<div class="form-group">
-										<label for="inputDate" class="col-lg-3 control-label">No STB</label>
-										<div class="col-lg-9">
-											<input type="text" class="form-control" id="no_stb" name="no_stb" placeholder="Set Up Box TV">
-											<br/>
-										</div>
-									</div>
-								<br/>
-						<div class="col-lg-9">
+							<li class="list-group-item" name="kol_regis" id="kol_regis">
+								<input type="text" class="form-control" id="no_stb" name="no_stb" placeholder="Set Up Box TV">
+							</li>
 								<br/>
 								<button class="btn btn-primary btn-sm" type="submit" name="btnupdate" id="btnupdate"><b>UPDATE</b></button>
-						</div>
-				</div>
-			</div>
 			<div class="panel" style="border:0px;">
 					<div class="panel-heading" style="background-color:#F1453C">
 						<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">LOG HISTORY</h3>
