@@ -384,6 +384,7 @@ if($select_update=="termination"){
             });
 						$(document).ready(function(){
 							$("#kol_term").hide();
+							$("#kol_layanan").hide();
 				$("#select_update").change(function(){
 					var sel_kol =  $("#select_update").val();
 					var pil = "termination";
@@ -519,7 +520,7 @@ if($select_update=="termination"){
 										<option value="change">Change Dens</option>
 					        </select>
 						</li>
-							<ul style="text-align:left;" class="list-group">
+							<ul style="text-align:left;" class="list-group" name="kol_layanan" id="kol_layanan">
 								<li class="list-group-item">
 											Paket :
 											<select class="form-control" id="inputpaket" name="inputpaket">
