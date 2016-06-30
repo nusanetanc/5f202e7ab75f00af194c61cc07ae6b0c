@@ -385,18 +385,24 @@ if($select_update=="termination"){
 						$(document).ready(function(){
 							$("#kol_term").hide();
 							$("#kol_change").hide();
-							$("#kol_regis").hide();
+							$("#kol_regis").show();
 				$("#select_update").change(function(){
 					var sel_kol =  $("#select_update").val();
 					var pil1 = "termination";
 					var pil2 = "change";
 					var pil3 = "request";
 								if(sel_kol == pil1){
+									$("#kol_regis").hide();
+									$("#kol_change").hide();
 									$("#kol_term").show();
 								} else if(sel_kol == pil2) {
-									$("#kol_change").hide();
-								} else if(sel_kol == pil3) {
+									$("#kol_term").hide();
 									$("#kol_regis").hide();
+									$("#kol_change").show();
+								} else if(sel_kol == pil3) {
+									$("#kol_term").hide();
+									$("#kol_change").hide();
+									$("#kol_regis").show();
 								}
 				})	});
     </script>
