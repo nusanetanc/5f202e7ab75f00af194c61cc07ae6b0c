@@ -165,9 +165,10 @@ if (isset($_POST['btnupdate'])){
     	  $pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R');
 
     	  // Filename that will be used for the file as the attachment
-    	  $fileatt_name0 = $id_cust.$package_cust.'update.pdf';
-    	  $dir0='invoice/';
-    	  $pdf ->Output($dir0.$fileatt_name0);
+				$fileatt_name0 = $id_cust.'-'.date("d").bulan(date("m")).date("Y")."-change.pdf";
+				$dir0='bukti/';
+				// save pdf in directory
+				$pdf ->Output($dir0.$fileatt_name0);
     	  $data = $pdf->Output("", "S");
 
     	  $email_from0 = "cs@groovy.id"; // Who the email is from
@@ -241,7 +242,7 @@ if (isset($_POST['btnupdate'])){
 							$pdf->Cell(0,7, 'Support Customer ', '0', 1, 'R');
 							$pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R');
 							// Filename that will be used for the file as the attachment
-							$fileatt_name = $id_cust.'-'.$tgl_psng.$bln_psng.$thn_psng.'-'.$boxtv."-pasang.pdf";
+							$fileatt_name = $id_cust.'-'.$tgl_psng.$bln_psng.$thn_psng.'-'.$boxtv."-registrasi.pdf";
 							$dir='bukti/';
 							// save pdf in directory
 							$pdf ->Output($dir.$fileatt_name);
