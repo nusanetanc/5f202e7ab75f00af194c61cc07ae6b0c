@@ -384,7 +384,7 @@ if($select_update=="termination"){
             });
 						$(document).ready(function(){
 							$("#kol_term").hide();
-							$("#kol_change").hide();
+							$("#kol_change").show();
 							$("#kol_regis").show();
 				$("#select_update").change(function(){
 					var sel_kol =  $("#select_update").val();
@@ -401,7 +401,7 @@ if($select_update=="termination"){
 									$("#kol_change").show();
 								} else if(sel_kol == pil3) {
 									$("#kol_term").hide();
-									$("#kol_change").hide();
+									$("#kol_change").show();
 									$("#kol_regis").show();
 								}
 				})	});
