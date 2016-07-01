@@ -194,9 +194,9 @@ if (isset($_POST['btnupdate'])){
     	  $email_message0 .= "\n\n";
     	  $email_message0 .= "--{$mime_boundary}\n" .
     	  "Content-Type: {$fileatt_type};\n" .
-    	  " name=\"{$fileatt_name}\"\n" .
+    	  " name=\"{$fileatt_name0}\"\n" .
     	  "Content-Disposition: attachment;\n" .
-    	  " filename=\"{$fileatt_name}\"\n" .
+    	  " filename=\"{$fileatt_name0}\"\n" .
     	  "Content-Transfer-Encoding: base64\n\n" .
     	  $data .= "\n\n" .
     	  "--{$mime_boundary}--\n";
@@ -241,7 +241,7 @@ if (isset($_POST['btnupdate'])){
 							$pdf->Cell(0,7, 'Support Customer ', '0', 1, 'R');
 							$pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R');
 							// Filename that will be used for the file as the attachment
-							$fileatt_name = $id_cust.'-'.$boxtv."-registrasi.pdf";
+							$fileatt_name = $id_cust.'-'.$no_stb."-registrasi.pdf";
 							$dir='bukti/';
 							// save pdf in directory
 							$pdf ->Output($dir.$fileatt_name);
