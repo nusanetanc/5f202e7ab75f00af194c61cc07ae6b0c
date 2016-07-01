@@ -171,7 +171,6 @@ if (isset($_POST['btnupdate'])){
 				$pdf ->Output($dir0.$fileatt_name0);
     	  $data = $pdf->Output("", "S");
 
-    	  $email_from0 = "cs@groovy.id"; // Who the email is from
     	  $email_subject0 = "[CHANGE SERVICE REQUEST] - Nusanet - ".$nama_cust; // The Subject of the email
     	  $email_to0 = $email_dens; // Who the email is to
 
@@ -182,7 +181,7 @@ if (isset($_POST['btnupdate'])){
     	  $mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";
 
     	  // set header ........................
-    	  $email_headers0 = "From: cs@groovy.id";
+    	  $email_headers0 = "From: support@groovy.id";
     	  $email_headers0 .= "\nMIME-Version: 1.0\n" .
     	  "Content-Type: multipart/mixed;\n" .
     	  " boundary=\"{$mime_boundary}\"";
