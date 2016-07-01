@@ -145,7 +145,7 @@ if (isset($_POST['btnupdate'])){
     	  $pdf->Cell(0,7, 'No ID Pelanggan                  : '.$id_cust, '0', 1, 'L');
     	  $pdf->Cell(0,7, 'Nomor Telepon                    : '.$phone_cust, '0', 1, 'L');
     	  $pdf->Cell(0,7, 'Alamat Email                        : '.$email_cust, '0', 1, 'L');
-				$pdf->Cell(0,7, 'NO STB TV                        : '.$no_stb, '0', 1, 'L');
+				$pdf->Cell(0,7, 'NO STB TV                        : '.$no_box, '0', 1, 'L');
     	  $pdf->Cell(0,7, 'Layanan yang Digunakan    : '.$package_cust, '0', 1, 'L');
     	  $pdf->Cell(0,7, 'Layanan Add-ons                 : '.$addon_cust, '0', 1, 'L');
     	  $pdf->Ln();
