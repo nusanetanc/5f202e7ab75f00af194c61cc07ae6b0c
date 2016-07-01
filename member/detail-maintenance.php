@@ -235,7 +235,7 @@ if (isset($_POST['btnupdate'])){
 							$pdf->Ln();
 							$pdf->Ln();
 							$pdf->Ln();
-							$pdf->Image('../img/tanda_tangan.jpg','165','130','33','33');
+							$pdf->Image('../img/tanda_tangan.jpg','180','130','33','33');
 							$pdf->SetFont('Arial','','10');
 							$pdf->Cell(0,7, 'John Doe', '0', 1, 'R');
 							$pdf->Cell(0,7, 'Support Customer ', '0', 1, 'R');
