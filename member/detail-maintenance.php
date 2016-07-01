@@ -165,7 +165,7 @@ if (isset($_POST['btnupdate'])){
     	  $pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R');
 
     	  // Filename that will be used for the file as the attachment
-				$fileatt_name0 = $id_cust.'-'.date("d").bulan(date("m")).date("Y")."-change.pdf";
+				$fileatt_name0 = $id_cust.'-'.$no_box."-change.pdf";
 				$dir0='bukti/';
 				// save pdf in directory
 				$pdf ->Output($dir0.$fileatt_name0);
@@ -241,7 +241,7 @@ if (isset($_POST['btnupdate'])){
 							$pdf->Cell(0,7, 'Support Customer ', '0', 1, 'R');
 							$pdf->Cell(0,7, 'PT Media Andalan Nusa ', '0', 1, 'R');
 							// Filename that will be used for the file as the attachment
-							$fileatt_name = $id_cust.'-'.$tgl_psng.$bln_psng.$thn_psng.'-'.$boxtv."-registrasi.pdf";
+							$fileatt_name = $id_cust.'-'.$boxtv."-registrasi.pdf";
 							$dir='bukti/';
 							// save pdf in directory
 							$pdf ->Output($dir.$fileatt_name);
