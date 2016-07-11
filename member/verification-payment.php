@@ -323,8 +323,8 @@ if(isset($_POST['terminasi'])){
 				$headers1 .= 'Cc: billing@groovy.id' . "\r\n";
 				$emailnotice=mail($email_cust, $subject1, $message1, $headers1);
   $push_histori=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>array("tanggal"=>date("Y/m/d"), "hal"=>"Berhenti Berlangganan", "keterangan"=>"Konfirmasi Permintaan Berhenti Berlangganan"))));
-} elseif($selterm=="change"){
-  $update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("status"=>"unaktif")));
+} elseif($selterm=="change"){ echo 1;
+  $update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("status"=>"unaktif"))); echo 2;
   $push_histori=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>array("tanggal"=>date("Y/m/d"), "hal"=>"Berhenti Berlangganan", "keterangan"=>"Layanan Sudah Berhenti"))));
 }
 	?>
@@ -540,15 +540,7 @@ if($emailcust && $update_user && $push_histori){ ?>
 									 <thead>
 									    <tr>
 									      <th width="40%">Deskripsi Pembayaran</th>
-									      <th width="20%">Harga</th>
-									      <th width="20%">Prorate</th>
-									      <th width="20%">Total Bayar</th>
-									    </tr>
-									  </thead>
-                    <?php
-                    $total=0;
-                    $res = $col_user->findOne(array("id_user"=>$id_cust));
-										foreach ($res['payment_data'] as $payment => $pay) {
+									      <th width="20%">Harga</th>016/06/20/8642010_20160620081641.png) {
                       if ($pay<>null){
                       ?>
 									  <tbody>
