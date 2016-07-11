@@ -7,7 +7,7 @@
   				</div>
 	  					<br/>
 	  				    <div class="panel-body">
-									<table class="table table-striped table-hover" style="width: 1000px; height: 1000px; overflow: scroll;">
+									<table class="table table-striped table-hover" style="height: 500px; overflow: scroll;">
 											<?php
 												$res = $col_user->findOne(array("id_user"=>$id));
 											foreach ($res['histori'] as $histori => $log) {
