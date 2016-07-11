@@ -16,7 +16,7 @@
 												$tgl_log = substr($log['tanggal'], 8,10);
 												$month_log = bulan($bln_log);
 											 ?>
-											<tbody class="pic-container down">
+											<tbody class="pic-container down" style="width: 1000px; height: 1000px; overflow: scroll;">
 												<td><?php echo $tgl_log.' '.$month_log.' '.$thn_log; ?></td>
 												<td><?php echo $log['hal']; ?></td>
 												<td><?php echo $log['keterangan']; ?></td>
