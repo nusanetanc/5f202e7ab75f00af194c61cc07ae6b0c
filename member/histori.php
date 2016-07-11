@@ -6,7 +6,7 @@
     				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">HISTORI</h3>
   				</div>
 	  					<br/>
-	  				    <div class="panel-body" style="height:550px; overflow:auto;">
+	  				    <div class="panel-body" style="height:570px; overflow:auto;">
 									<table class="table table-striped table-hover">
 											<?php
 												$res = $col_user->findOne(array("id_user"=>$id));
