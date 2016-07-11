@@ -7,7 +7,7 @@
   				</div>
 	  					<br/>
 	  				    <div class="panel-body">
-									<table class="table table-striped table-hover" style="overflow: scroll;">
+									<table class="table table-striped table-hover pic-container">
 											<?php
 												$res = $col_user->findOne(array("id_user"=>$id));
 											foreach ($res['histori'] as $histori => $log) {
