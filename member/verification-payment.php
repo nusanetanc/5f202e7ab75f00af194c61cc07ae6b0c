@@ -271,7 +271,7 @@ if(isset($_POST['terminasi'])){
 		$thn_tutup = substr($termination_date, 0,4);
 		$bln_tutup = substr($termination_date, 5,2);
 		$tgl_tutup = substr($termination_date, 8,10);
-		$month_tutup = bulan($bln_tutup);
+		$month_tutup = bulan($bln_tutup); /*
     if($selterm=="change"){
      $update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("status"=>"unaktif")));
      $push_histori=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>array("tanggal"=>date("Y/m/d"), "hal"=>"Berhenti Berlangganan", "keterangan"=>"Layanan Sudah Berhenti"))));
@@ -327,7 +327,7 @@ if(isset($_POST['terminasi'])){
 				$headers1 .= 'Cc: billing@groovy.id' . "\r\n";
 				$emailnotice=mail($email_cust, $subject1, $message1, $headers1);
   $push_histori=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>array("tanggal"=>date("Y/m/d"), "hal"=>"Berhenti Berlangganan", "keterangan"=>"Konfirmasi Permintaan Berhenti Berlangganan"))));
-}
+} */
 	?>
 		<script type="" language="JavaScript">alert('Penutupan layanan sudah di konfirmasi');
 		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>
