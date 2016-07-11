@@ -265,7 +265,7 @@ if ($emailinvoice || $update_payment){
 		document.location='<?php echo $base_url_member; ?>/verification-payment/<?php echo $id_cust; ?>'</script>
 <?php } }
 if(isset($_POST['terminasi'])){
-  $selterm=$_POST['select_kol1'];
+  $selterm=$_POST['select_kol1']; echo $selterm;
 	$termination_date=$_POST['inputTerminationdate'];
 	$textalasanberhenti=$_POST['textalasanberhenti'];
 		$thn_tutup = substr($termination_date, 0,4);
