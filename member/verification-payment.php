@@ -324,8 +324,8 @@ if(isset($_POST['terminasi'])){
 				$emailnotice=mail($email_cust, $subject1, $message1, $headers1);
   $push_histori=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>array("tanggal"=>date("Y/m/d"), "hal"=>"Berhenti Berlangganan", "keterangan"=>"Konfirmasi Permintaan Berhenti Berlangganan"))));
 } elseif($selterm=="change"){
-  $update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("status"=>"unaktif"))); echo 1;
-  $push_histori=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>array("tanggal"=>date("Y/m/d"), "hal"=>"Berhenti Berlangganan", "keterangan"=>"Layanan Sudah Berhenti")))); echo 2;
+  $update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("status"=>"unaktif")));
+  $push_histori=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>array("tanggal"=>date("Y/m/d"), "hal"=>"Berhenti Berlangganan", "keterangan"=>"Layanan Sudah Berhenti")))); 
 }
 	?>
 		<script type="" language="JavaScript">alert('Penutupan layanan sudah di konfirmasi');
