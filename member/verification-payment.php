@@ -325,7 +325,7 @@ if(isset($_POST['terminasi'])){
   $push_histori=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>array("tanggal"=>date("Y/m/d"), "hal"=>"Berhenti Berlangganan", "keterangan"=>"Konfirmasi Permintaan Berhenti Berlangganan"))));
 } elseif($selterm=="change"){
   $update_user=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("status"=>"unaktif")));
-  $push_histori=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>array("tanggal"=>date("Y/m/d"), "hal"=>"Berhenti Berlangganan", "keterangan"=>"Layanan Sudah Berhenti")))); 
+  $push_histori=$col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>array("tanggal"=>date("Y/m/d"), "hal"=>"Berhenti Berlangganan", "keterangan"=>"Layanan Sudah Berhenti"))));
 }
 	?>
 		<script type="" language="JavaScript">alert('Penutupan layanan sudah di konfirmasi');
@@ -540,7 +540,15 @@ if($emailcust && $update_user && $push_histori){ ?>
 									 <thead>
 									    <tr>
 									      <th width="40%">Deskripsi Pembayaran</th>
-									      <th width="20%">Harga</th>016/06/20/8642010_20160620081641.png) {
+									      <th width="20%">Harga</th>
+									      <th width="20%">Prorate</th>
+									      <th width="20%">Total Bayar</th>
+									    </tr>
+									  </thead>
+                    <?php
+                    $total=0;
+                    $res = $col_user->findOne(array("id_user"=>$id_cust));
+										foreach ($res['payment_data'] as $payment => $pay) {
                       if ($pay<>null){
                       ?>
 									  <tbody>
