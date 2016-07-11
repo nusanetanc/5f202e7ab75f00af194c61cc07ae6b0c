@@ -6,8 +6,8 @@
     				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">HISTORI</h3>
   				</div>
 	  					<br/>
-	  				    <div class="panel-body">
-									<table class="table table-striped table-hover pic-container">
+	  				    <div class="panel-body" style="width:320px; height:60px; overflow:auto;">
+									<table class="table table-striped table-hover">
 											<?php
 												$res = $col_user->findOne(array("id_user"=>$id));
 											foreach ($res['histori'] as $histori => $log) {
