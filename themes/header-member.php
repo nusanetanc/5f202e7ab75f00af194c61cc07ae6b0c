@@ -215,9 +215,9 @@ if($level=="501"){
      <form style="form-group" method="post">
         <?php
         if (isset($_POST['activeback'])) {
-          if(!empty($_POST['addon'])){
-              $addon_service=implode(", ", $_POST['addon']);
-            } elseif(empty($_POST['addon'])){
+          if(!empty($_POST['addonaktiv'])){
+              $addon_service=implode(", ", $_POST['addonaktiv']);
+            } elseif(empty($_POST['addonaktiv'])){
                   $addon_service="No";
                }
                     // mail for billing dan cs
