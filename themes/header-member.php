@@ -282,7 +282,7 @@ $histori=array(
       "hal"=> "Permintaan Berlangganan",
       "keterangan"=>"Permintaan berlangganan, dengan paket ".$_POST['regispackage'].", dan add on layanan ".$addon_service
     );
-$push_histori = $col_user->update(array("id_user"=>$id, "level"=>"0"), array('$push'=>array("histori"=>$histori)))
+$push_histori = $col_user->update(array("id_user"=>$id, "level"=>"0"), array('$push'=>array("histori"=>$histori)));
 if($emailaktivasi && $update_user && $kirim_email1 && $push_histori){ ?>
       <script type="" language="JavaScript">
     document.location='<?php echo $base_url_member; ?>'</script>
