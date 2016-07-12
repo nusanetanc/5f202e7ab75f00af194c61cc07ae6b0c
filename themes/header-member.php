@@ -298,7 +298,44 @@ if($emailaktivasi && $update_user){ ?>
             <?php } ?>
         </select>
         </p>
-        <p><div style="margin-bottom:7px;" class="g-recaptcha" data-sitekey="6Lfq2x0TAAAAADMdzR1xsz8qqzC1iBqlR6iG4LI_"></div></p>
+        <p>
+          <ul class="list-group"  name="selectaddonaktiv1" id="selectaddonaktiv1" disabled>
+            <h5>Add On Service</h5>
+              <?php
+                  $res = $col_service->find();
+                  foreach($res as $row)
+                              {
+                      if($row['nama_group']=="Cinema Box HD" || $row['nama_group']=="TV Chanel"){
+                                ?>
+            <li class="list-group-item">
+              <h6><?php echo $row['nama_group']; ?></h6>
+                <?php $res1 = $col_service->find(array("group"=>$row['nama_group']));
+                foreach($res1 as $row1)
+                            { ?>
+                  <input type="checkbox" name="addonaktiv[]" id="addonaktiv[]" value="<?php echo $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
+                  <?php } ?>
+              <?php } } ?>
+            </li>
+          </ul>
+          <ul class="list-group"  name="selectaddonaktiv2" id="selectaddonaktiv2" disabled>
+            <h5>Add On Service</h5>
+              <?php
+                  $res = $col_service->find();
+                  foreach($res as $row)
+                              {
+                      if($row['nama_group']=="Cinema Box HD" || $row['nama_group']=="TV Chanel" || $row['nama_group']=="Video on Demand"){
+                                ?>
+            <li class="list-group-item">
+              <h6><?php echo $row['nama_group']; ?></h6>
+                <?php $res1 = $col_service->find(array("group"=>$row['nama_group']));
+                foreach($res1 as $row1)
+                            { ?>
+                  <input type="checkbox" name="addonaktiv[]" id="addonaktiv[]" value="<?php echo $row1['nama']; ?>"><?php echo ' '.$row1['nama']; ?><br>
+                  <?php } ?>
+              <?php } } ?>
+            </li>
+          </ul>
+        </p>
       </div>
       <div class="modal-footer">
         <input type="submit" class="btn btn-default" data-dismiss="modal" value="Batal">
