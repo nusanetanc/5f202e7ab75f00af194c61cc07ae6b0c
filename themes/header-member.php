@@ -215,9 +215,11 @@ if($level=="501"){
      <form style="form-group" method="post">
         <?php
         if (isset($_POST['activeback'])) {
-          if($_POST['selectpackageaktiv']=="Selected Package"){ ?>
-            <p class="text-danger">Tolong isi paket.</p>
-          <?php } else {
+          if(!empty($_POST['addon'])){
+              $addon_service=implode(", ", $_POST['addon']);
+            } elseif(empty($_POST['addon'])){
+                  $addon_service="No";
+               }
                     // mail for billing dan cs
         $subject = 'Permintaan Berlanganan Kembali';
         $message = '
@@ -229,7 +231,8 @@ if($level=="501"){
           <p>Nama : '.$nama.'</p>
           <p>Tempat : '.$tempat.', '.$ket.', '.$kota.'</p>
           <p>Tanggal Permintaan : '.date("d-m-Y").'</p>
-          <p>Paket : '.$_POST['selectpackageaktiv'].'</p>
+          <p>Paket : '.$_POST['regispackage'].'</p>
+          <p>Layanan Tambahan : '.$addon_service.'</p>
           <br/>
         </body>
         </html>
@@ -256,7 +259,7 @@ if($level=="501"){
                 </div>
                 <div style="padding:20px;color:#333;">
                     <p style="font-size:20px;font-weight:bold;line-height:1px">Terimakasih sudah menjadi customer Groovy</p>
-                    <p>Anda melakukan permintaan berlangganan kembali pada tanggal : '.date("d").' '.bulan(date("m")).' '.date("Y").'.</p>
+                    <p>Anda melakukan permintaan berlangganan kembali pada tanggal : '.date("d").' '.bulan(date("m")).' '.date("Y").', dengan paket : '.$_POST['regispackage'].', layanan tambahan : '.$addon_service.'.</p>
                     <p style="color:#888;">Kami akan segera memproses permintaan anda</p>
                 </div>
                 </div>
@@ -273,11 +276,17 @@ if($level=="501"){
       $headers1 .= 'Cc: cs@groovy.id' . "\r\n";
 
       $kirim_email1=mail($email, $subject1, $message1, $headers1);
-$update_user = $col_user->update(array("id_user"=>$id, "level"=>"0"), array('$set'=>array("status"=>"registrasi", "paket"=>$_POST['selectpackageaktiv'])));
-if($emailaktivasi && $update_user){ ?>
+$update_user = $col_user->update(array("id_user"=>$id, "level"=>"0"), array('$set'=>array("status"=>"registrasi", "paket"=>$_POST[' regispackage'], "addon"=>$addon_service)));
+$histori=array(
+      "tanggal"=>date("Y/m/d"),
+      "hal"=> "Permintaan Berlangganan",
+      "keterangan"=>"Permintaan berlangganan, dengan paket ".$_POST['regispackage'].", dan add on layanan ".$addon_service
+    );
+$push_histori = $col_user->update(array("id_user"=>$id, "level"=>"0"), array('$push'=>array("histori"=>$histori)))
+if($emailaktivasi && $update_user && $kirim_email1 && $push_histori){ ?>
       <script type="" language="JavaScript">
     document.location='<?php echo $base_url_member; ?>'</script>
-<?php } } }  ?>
+<?php } }  ?>
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title">Permintaan Berlanganan Kembali</h4>
