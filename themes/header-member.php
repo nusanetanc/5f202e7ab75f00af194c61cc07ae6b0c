@@ -1,23 +1,4 @@
-<script>
- $(document).ready(function(){
-   $("#selectaddonaktiv1").hide();
-   $("#selectaddonaktiv2").hide();
-   $("#regispackage").change(function(){
-     $("#regislocation").prop( "disabled", false );
-     var p =  $("#regispackage").val();
-   if(p == "Groovy Home 500" || p == "Groovy Home 800"){
-     $("#regisaddon1").hide();
-     $("#regisaddon2").show();
-   } else if(p == "Groovy Home 1700"){
-     $("#regisaddon1").show();
-     $("#regisaddon2").hide();
-   } else {
-     $("#regisaddon1").hide();
-     $("#regisaddon2").hide();
-   }
-})
-});
-</script>
+
 <?php
 if (!isset($_SESSION["id"]))
 { ?>
@@ -304,7 +285,7 @@ if($emailaktivasi && $update_user){ ?>
       <div class="modal-body">
         <p>Pilih Paket</p>
         <p>
-        <select class="form-control" id="selectpackageaktiv" name="selectpackageaktiv">
+        <select class="form-control" id="regispackage" name="regispackage">
             <?php
                 $res = $col_package->find();
                 foreach($res as $row)
@@ -315,7 +296,7 @@ if($emailaktivasi && $update_user){ ?>
         </select>
         </p>
         <p>
-          <ul class="list-group"  name="selectaddonaktiv1" id="selectaddonaktiv1" disabled>
+          <ul class="list-group"  name="regisaddon1" id="regisaddon1">
             <h5>Add On Service</h5>
               <?php
                   $res = $col_service->find();
@@ -333,7 +314,7 @@ if($emailaktivasi && $update_user){ ?>
               <?php } } ?>
             </li>
           </ul>
-          <ul class="list-group"  name="selectaddonaktiv2" id="selectaddonaktiv2" disabled>
+          <ul class="list-group"  name="regisaddon2" id="regisaddon2">
             <h5>Add On Service</h5>
               <?php
                   $res = $col_service->find();
