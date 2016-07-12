@@ -230,7 +230,7 @@ if ($update_user && $insert_activty && $kirim_email1 && $kirim_email){ ?>
   				</div>
   				<div class="panel-body">
   					<br/>
-  					<?php if ($nama_cust<>"") { ?>
+  					<?php //if ($nama_cust<>"") { ?>
 					<div class="col-sm-12">
 						<form class="form-horizontal">
 						  <fieldset>
@@ -319,7 +319,7 @@ if ($update_user && $insert_activty && $kirim_email1 && $kirim_email){ ?>
 						  </fieldset>
 						</form>
 					</div>
-					<?php } ?>
+					<?php// } ?>
  				</div>
 			</div>
 		</div>
