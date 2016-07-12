@@ -1,5 +1,21 @@
 <script>
  $(document).ready(function(){
+   $("#selectaddonaktiv1").hide();
+   $("#selectaddonaktiv2").show();
+   $("#regispackage").change(function(){
+     $("#regislocation").prop( "disabled", false );
+     var p =  $("#regispackage").val();
+   if(p == "Groovy Home 500" || p == "Groovy Home 800"){
+     $("#regisaddon1").hide();
+     $("#regisaddon2").show();
+   } else if(p == "Groovy Home 1700"){
+     $("#regisaddon1").show();
+     $("#regisaddon2").hide();
+   } else {
+     $("#regisaddon1").hide();
+     $("#regisaddon2").hide();
+   }
+})
 });
 </script>
 <?php
