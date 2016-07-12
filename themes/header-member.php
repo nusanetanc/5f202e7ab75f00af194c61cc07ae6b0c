@@ -1,7 +1,7 @@
 <script>
  $(document).ready(function(){
    $("#selectaddonaktiv1").hide();
-   $("#selectaddonaktiv2").show();
+   $("#selectaddonaktiv2").hide();
    $("#regispackage").change(function(){
      $("#regislocation").prop( "disabled", false );
      var p =  $("#regispackage").val();
