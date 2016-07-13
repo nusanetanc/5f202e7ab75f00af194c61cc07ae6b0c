@@ -277,6 +277,13 @@ if ($update_user && $insert_activty && $kirim_email1 && $kirim_email){ ?>
 						        <br/>
 						      </div>
 						    </div>
+								<div class="form-group">
+						      <label for="inputPerangkat" class="col-lg-3 control-label">Perangkat</label>
+						      <div class="col-lg-9">
+						        <input type="text" class="form-control" id="inputPerangkat" name="inputPerangkat" placeholder="Daftar Perangkat" readonly>
+						        <br/>
+						      </div>
+						    </div>
 								<?php if($isi_paket=="internet+tv"){ ?>
 						  	<div class="form-group">
 						      <label for="inputDate" class="col-lg-3 control-label">No Kode Box Tv</label>
