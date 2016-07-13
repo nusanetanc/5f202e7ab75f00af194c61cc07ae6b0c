@@ -64,7 +64,7 @@ if ($level=="0"){
 							  <tbody>
 							    <tr>
 							      <td><?php echo $no_invoice; ?></td>
-							      <td><?php echo $kode_perusahaan.$id_user; ?></td>
+							      <td><?php echo $kode_perusahaan.$id; ?></td>
 							      <td><a href="#" data-toggle="modal" data-target="#billing-detail">Deskripsi</a></td>
 							    </tr>
 								</tbody>
