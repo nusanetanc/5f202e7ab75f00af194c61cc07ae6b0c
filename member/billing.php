@@ -76,7 +76,7 @@ if ($level=="0"){
 				<div class="panel-body" style="background-color:#FF6D20;">
 					<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">BILLING - DATA</h3>
 				</div>
-				<div class="panel-body" style="height:300px; overflow:auto;">
+				<div class="panel-body scroll-300">
 				<form method="post">
 				<div class="row">
 					<div class="col-sm-12">

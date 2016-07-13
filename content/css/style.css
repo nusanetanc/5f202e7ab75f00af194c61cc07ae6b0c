@@ -86,6 +86,10 @@ a.thumbnail1.active {
 	height:570px;
 	overflow:auto;
 }
+.scroll-300{
+	height:300px;
+	overflow:auto;
+}
 .textBold{
   font-weight: 600;
 }
