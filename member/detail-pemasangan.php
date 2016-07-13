@@ -34,6 +34,7 @@ $res1 = $col_package->find(array("nama"=>$package_cust));
 						}
 if (isset($_POST['save'])){
 	$tanggal_pasang = $_POST['inputTanggal'];
+	$perangkat = $_POST['inputPerangkat'];
 	$boxtv = $_POST['inputKodebox'];
 	$support_field = $_POST['inputField'];
 	$support_Assfield = $_POST['inputAssfield'];
@@ -57,7 +58,7 @@ $res3 = $col_user->find(array("nama"=>$support_Assfield, "level"=>"302"));
 								);
 $update_user1 = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$push'=>array("histori"=>$histori)));
 $update_user = $col_user->update(array("id_user"=>$id_cust, "level"=>"0"),array('$set'=>array("status"=>"progress pasang")),array('$push'=>array("histori"=>$histori)));
-$insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$tanggal_pasang, "field_engineer"=>$support_field, "ass_field"=>$support_Assfield, "status"=>"progress", "id_cust"=>$id_cust, "nama_cust"=>$nama_cust, "tempat_customer"=>$tempat_cust, "alamat_customer"=>$alamat_cust, "kota_customer"=>$kota_cust ,"keterangan_customer"=>$ket_cust, "phone_customer"=>$phone_cust, "paket"=>$package_cust, "status"=>"progress", "no_box"=>$boxtv));
+$insert_activty = $col_history->insert(array("hal"=>"pasang","tanggal_kerja"=>$tanggal_pasang, "field_engineer"=>$support_field, "ass_field"=>$support_Assfield, "status"=>"progress", "id_cust"=>$id_cust, "nama_cust"=>$nama_cust, "tempat_customer"=>$tempat_cust, "alamat_customer"=>$alamat_cust, "kota_customer"=>$kota_cust ,"keterangan_customer"=>$ket_cust, "phone_customer"=>$phone_cust, "paket"=>$package_cust, "status"=>"progress", "perangkat"=>$perangkat, "no_box"=>$boxtv));
 
 		// mail for field engineer
 		$to = $email_field.', '.$email_Assfield;
@@ -280,7 +281,7 @@ if ($update_user && $insert_activty && $kirim_email1 && $kirim_email){ ?>
 								<div class="form-group">
 						      <label for="inputPerangkat" class="col-lg-3 control-label">Perangkat</label>
 						      <div class="col-lg-9">
-						        <input type="text" class="form-control" id="inputPerangkat" name="inputPerangkat" placeholder="Daftar Perangkat" readonly>
+						        <input type="text" class="form-control" id="inputPerangkat" name="inputPerangkat" placeholder="Daftar Perangkat">
 						        <br/>
 						      </div>
 						    </div>
