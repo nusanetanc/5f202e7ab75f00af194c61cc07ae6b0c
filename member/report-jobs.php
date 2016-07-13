@@ -8,6 +8,7 @@ foreach ($res as $row) {
 	$nama_jobs = $row['hal'];
 	$jobs_report = $row['catatan'];
 	$no_box = $row['no_box'];
+	$perangkat = $row['perangkat'];
 	$nama_field = $row['field_engineer'];
 	$nama_assfield = $row['ass_field'];
 	$tanggal_kerja = $row['tanggal_kerja'];
@@ -236,6 +237,12 @@ if ($emailpasang && $update_jobs){ ?>
 						        <h4><?php echo $nama_jobs; ?></h4>
 						      </div>
 						    </div><br/>
+								<div class="form-group">
+									<label class="col-lg-3 control-label">Perangkat : </label>
+									<div class="col-lg-9">
+										<h4><?php echo $perangkat; ?></h4>
+									</div>
+								</div><br/>
 								<?php if($no_box<>"" || $no_box<>null){ ?>
 						    <div class="form-group">
 						      <label class="col-lg-3 control-label">No Box Tv : </label>
