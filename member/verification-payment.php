@@ -594,7 +594,7 @@ if($emailcust && $update_user && $push_histori){ ?>
     				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">DATA PEMBAYARAN - <?php echo $pembayaran; ?></h3>
   				</div>
 	  					<br/>
-	  				    <div class="panel-body">
+	  				    <div class="panel-body scroll-570">
 	  				    <form method="post">
 	  				    <div class="row">
 	  				    	<div class="col-sm-12">
