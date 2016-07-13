@@ -236,7 +236,7 @@ if ($emailpasang && $update_jobs){ ?>
 						        <h4><?php echo $nama_jobs; ?></h4>
 						      </div>
 						    </div><br/>
-								<?php if($no_box=="" || $no_box==null){ ?>
+								<?php if($no_box<>"" || $no_box<>null){ ?>
 						    <div class="form-group">
 						      <label class="col-lg-3 control-label">No Box Tv : </label>
 						      <div class="col-lg-9">
