@@ -56,15 +56,15 @@ if ($level=="0"){
 							<table class="table table-striped table-hover ">
 							  <thead>
 							    <tr>
-							      <th>Invoice</th>
-							      <th>Total Pembayaran</th>
+							      <th>Kode Invoice</th>
+							      <th>No Virtual</th>
 							      <th></th>
 							    </tr>
 							  </thead>
 							  <tbody>
 							    <tr>
-							      <td>1</td>
-							      <td><?php echo rupiah($total_bayar); ?></td>
+							      <td><?php echo $no_invoice; ?></td>
+							      <td><?php echo $kode_perusahaan.$id_user; ?></td>
 							      <td><a href="#" data-toggle="modal" data-target="#billing-detail">Deskripsi</a></td>
 							    </tr>
 								</tbody>

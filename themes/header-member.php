@@ -34,6 +34,7 @@ if ($level=="0"){
                         $move_paket = $row['move_paket'];
                         $move_harga = $row['move_harga'];
                         $move_request = $row['move_request'];
+                        $no_invoice = $row['invoice'];
                       }
 if($level=="501"){
                       $sm=$row['sm'];
