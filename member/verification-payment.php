@@ -760,7 +760,7 @@ if($emailcust && $update_user && $push_histori){ ?>
                 <h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">LOG</h3>
               </div>
                   <br/>
-                    <div class="panel-body">
+                    <div class="panel-body scroll-570">
                       <table class="table table-striped table-hover ">
       									 <thead>
       									    <tr>
