@@ -1,9 +1,7 @@
 <?php
-include('con/koneksi.php'); echo 1;
+include('con/koneksi.php');
 $res = $col_user->find(array("invoice"=>$_GET['invoice']));
 foreach ($res as $user) {
-
-} echo 2;
 ?>
 <html>
 <body style="background-color:#ddd;padding:0px 0 50px 0;font-family:arial;font-size:15px;">
@@ -17,7 +15,7 @@ foreach ($res as $user) {
           <table style="margin-top:20px;margin-bottom:20px;border:0px solid #ccc;color:#333;background-color:#eee;#ddd;width:100%;font-size:14px;">
               <tr style="border:1px solid #bbb;">
                   <td style="border:1px solid #bbb;padding:5px;color:#777;">ID Invoice</td>
-                  <td style="border:1px solid #bbb;padding:5px">'.$result.'</td>
+                  <td style="border:1px solid #bbb;padding:5px"><?php echo $user['invoice']; ?></td>
               </tr>
               <tr>
                   <td style="border:1px solid #bbb;padding:5px;color:#777">No. Virtual Account</td>
@@ -147,3 +145,4 @@ foreach ($res as $user) {
   </div>
 </body>
 </html>
+<?php } ?>
