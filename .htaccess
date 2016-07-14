@@ -16,5 +16,5 @@ RewriteRule ^privacy-policy$ ?hal=privacy-policy
 RewriteRule ^term-of-use$ ?hal=term-of-use
 RewriteRule ^about$ ?hal=about
 RewriteRule ^404$ ?hal=not-found
-RewriteRule ^payment/([0-9A-Za-z]+)/? payment.php&invoice=$1
+RewriteRule ^payment/([0-9A-Za-z]+)/? payment.php/?invoice=$1
 </IfModule>
