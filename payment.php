@@ -2,6 +2,10 @@
 include('con/koneksi.php');
 $res = $col_user->find(array("invoice"=>$_GET['invoice']));
 foreach ($res as $user) {
+  $thn_akhir = substr($user['tanggal_akhir'], 0,4);
+  $bln_akhir = substr($user['tanggal_akhir'], 5,2);
+  $tgl_akhir = substr($user['tanggal_akhir'], 8,10);
+  $month_akhir = bulan($bln_akhir);
 ?>
 <html>
 <body style="background-color:#ddd;padding:0px 0 50px 0;font-family:arial;font-size:15px;">
@@ -19,15 +23,11 @@ foreach ($res as $user) {
               </tr>
               <tr>
                   <td style="border:1px solid #bbb;padding:5px;color:#777">No. Virtual Account</td>
-                  <td style="border:1px solid #bbb;padding:5px">'.$kode_perusahaan.$id_user.'</td>
-              </tr>
-              <tr>
-                  <td style="border:1px solid #bbb;padding:5px;color:#777">Tanggal Tagihan</td>
-                  <td style="border:1px solid #bbb;padding:5px">'.date("d").' '.bulan(date("m")).' '.date("Y").'</td>
+                  <td style="border:1px solid #bbb;padding:5px"><?php echo $user['no_virtual']; ?></td>
               </tr>
               <tr>
                   <td style="border:1px solid #bbb;padding:5px;color:#777">Tanggal Jatuh Tempo</td>
-                  <td style="border:1px solid #bbb;padding:5px">'.$tgl_akhir.' '.$month_akhir.' '.$thn_akhir.'</td>
+                  <td style="border:1px solid #bbb;padding:5px"><?php echo tgl_akhir.' '.month_akhir.' '.thn_akhir; ?></td>
               </tr>
               <tr>
                   <td style="border:1px solid #bbb;padding:5px;color:#777">ID Customer</td>
