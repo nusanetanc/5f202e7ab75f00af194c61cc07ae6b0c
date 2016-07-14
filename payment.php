@@ -1,6 +1,4 @@
-<?php
-echo
-'<html>
+<html>
 <body style="background-color:#ddd;padding:0px 0 50px 0;font-family:arial;font-size:15px;">
   <div style="margin:0 auto;background-color:#eee;">
       <div style="background: linear-gradient(to right, #f9a825 , #fdd835);padding:5px 0 2px 0;text-align:center;">
@@ -144,5 +142,4 @@ echo
       </div>
   </div>
 </body>
-</html>';
-?>
+</html>
