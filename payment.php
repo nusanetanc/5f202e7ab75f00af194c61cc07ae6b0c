@@ -27,23 +27,23 @@ foreach ($res as $user) {
               </tr>
               <tr>
                   <td style="border:1px solid #bbb;padding:5px;color:#777">Tanggal Jatuh Tempo</td>
-                  <td style="border:1px solid #bbb;padding:5px"><?php echo tgl_akhir.' '.month_akhir.' '.thn_akhir; ?></td>
+                  <td style="border:1px solid #bbb;padding:5px"><?php echo $tgl_akhir.' '.$month_akhir.' '.$thn_akhir; ?></td>
               </tr>
               <tr>
                   <td style="border:1px solid #bbb;padding:5px;color:#777">ID Customer</td>
-                  <td style="border:1px solid #bbb;padding:5px">'.$id_cust.'</td>
+                  <td style="border:1px solid #bbb;padding:5px"><?php echo $user['id_user']; ?></td>
               </tr>
               <tr>
                   <td style="border:1px solid #bbb;padding:5px;color:#777">Nama</td>
-                  <td style="border:1px solid #bbb;padding:5px">'.$nama_cust.'</td>
+                  <td style="border:1px solid #bbb;padding:5px"><?php echo $user['nama']; ?></td>
               </tr>
               <tr>
                   <td style="border:1px solid #bbb;padding:5px;color:#777">Tempat</td>
-                  <td style="border:1px solid #bbb;padding:5px">'.$tempat_cust.' '.$ket_tempat.' '.$alamat_cust.' '.$kota_cust.'</td>
+                  <td style="border:1px solid #bbb;padding:5px"><?php echo $user['tempat'].' '.$user['keterangan'].' '.$user['kota']; ?></td>
               </tr>
               <tr>
                   <td style="border:1px solid #bbb;padding:5px;color:#777">Status</td>
-                  <td style="border:1px solid #bbb;padding:5px">'.$status_cust.'</td>
+                  <td style="border:1px solid #bbb;padding:5px"><?php echo $user['status']; ?></td>
               </tr>
           </table>
           <br/>
