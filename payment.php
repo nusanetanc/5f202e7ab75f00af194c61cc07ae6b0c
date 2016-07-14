@@ -1,3 +1,9 @@
+<?php
+$res = $col_user->find(array("invoice"=>$_GET['invoice']));
+foreach ($res as $user) {
+
+}
+?>
 <html>
 <body style="background-color:#ddd;padding:0px 0 50px 0;font-family:arial;font-size:15px;">
   <div style="margin:0 auto;background-color:#eee;">
@@ -5,9 +11,6 @@
           <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
       </div>
       <div style="padding:20px 20px 20px 20px;color:#333;">
-          <div style="float:right;font-size:14px;">
-              <img width="150px" height="150px" src="http://groovy.id/beta/member/bukti/'.$result.'.png"/>
-          </div>
           <p style="font-size:24px;font-weight:bold;line-height:30px;text-align:center">Rincian Tagihan</p>
           <span></span>
           <table style="margin-top:20px;margin-bottom:20px;border:0px solid #ccc;color:#333;background-color:#eee;#ddd;width:100%;font-size:14px;">
