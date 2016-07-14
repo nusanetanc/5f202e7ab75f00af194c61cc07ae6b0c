@@ -51,19 +51,12 @@ echo
               <tr style="border:1px solid #bbb;">
                   <td style="border:2px solid #666;padding:10px;color:#666;text-align:center;font-size:15px;">DESCRIPTION</td>
                   <td style="border:2px solid #666;padding:10px;color:#666;text-align:center;font-size:15px;">PRICE (Rp.)</td>
-              </tr>';
-		$total=0;
-		$res = $col_user->findOne(array("id_user"=>$id_cust));
-		foreach ($res['payment_data'] as $payment => $pay) {
-			if ($pay<>null){
-				$total = $total+$pay['harga'];
-$rincian_biaya[] =
-							'<tr>
+              </tr>
+              <tr>
                   <td style="border:1px solid #bbb;padding:5px;color:#777">'.$pay['layanan'].'</td>
                   <td style="border:1px solid #bbb;padding:5px">'.rupiah($pay['harga']).'</td>
-              </tr>'; }}
-$message1 =
-							'<tr>
+              </tr>
+              <tr>
                   <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">TOTAL HARGA</td>
                   <td style="border:1px solid #bbb;padding:5px">'.rupiah($total).'</td>
               </tr>
@@ -151,5 +144,5 @@ $message1 =
       </div>
   </div>
 </body>
-</html>'
+</html>';
 ?>
