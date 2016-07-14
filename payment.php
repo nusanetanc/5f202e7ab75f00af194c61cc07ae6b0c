@@ -1,9 +1,4 @@
-<?php
-$res = $col_user->find(array("invoice"=>$_GET['invoice']));
-foreach ($res as $user) {
 
-}
-?>
 <html>
 <body style="background-color:#ddd;padding:0px 0 50px 0;font-family:arial;font-size:15px;">
   <div style="margin:0 auto;background-color:#eee;">
