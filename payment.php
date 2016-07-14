@@ -1,9 +1,9 @@
 <?php
-include('con/koneksi.php');
+include('con/koneksi.php'); echo 1;
 $res = $col_user->find(array("invoice"=>$_GET['invoice']));
 foreach ($res as $user) {
 
-}
+} echo 2;
 ?>
 <html>
 <body style="background-color:#ddd;padding:0px 0 50px 0;font-family:arial;font-size:15px;">
