@@ -151,3 +151,89 @@ foreach ($res as $user) {
 </body>
 </html>
 <?php } ?>
+<?php
+$res = $col_payment->find(array("invoice"=>$_GET['invoice']));
+foreach ($res as $pay) {
+  $tanggal_bayar=$user['tanggal_bayar'];
+  $thn_bayar = substr($tanggal_bayar, 0,4);
+  $bln_bayar = substr($tanggal_bayar, 5,2);
+  $tgl_bayar = substr($tanggal_bayar, 8,10);
+      $tanggal_konfirmasi=$user['tanggal_konfirmasi'];
+      $thn_konfirmasi = substr($tanggal_konfirmasi, 0,4);
+      $bln_konfirmasi = substr($tanggal_konfirmasi, 5,2);
+      $tgl_konfirmasi = substr($tanggal_konfirmasi, 8,10);
+?>
+<html>
+  <body style="background-color:#ddd;padding:0px 0 50px 0;font-family:arial;font-size:15px;">
+      <div style="margin:0 auto;background-color:#eee;">
+          <div style="background: linear-gradient(to right, #f9a825 , #fdd835);padding:5px 0 2px 0;text-align:center;">
+              <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
+          </div>
+          <div style="padding:20px 20px 20px 20px;color:#333;">
+              <p style="font-size:24px;font-weight:bold;line-height:30px;text-align:center">Bukti Pembayaran</p>
+              <span></span>
+              <table style="margin-top:20px;margin-bottom:20px;border:0px solid #ccc;color:#333;background-color:#eee;#ddd;width:100%;font-size:14px;">
+
+                  <tr>
+                      <td style="border:1px solid #bbb;padding:5px;color:#777">ID Customer</td>
+                      <td style="border:1px solid #bbb;padding:5px"><?php echo $pay['id_user']; ?></td>
+                  </tr>
+                  <tr>
+                      <td style="border:1px solid #bbb;padding:5px;color:#777">Nama</td>
+                      <td style="border:1px solid #bbb;padding:5px">Yudi Nurhandi</td>
+                  </tr>
+                  <tr>
+                      <td style="border:1px solid #bbb;padding:5px;color:#777">Tempat</td>
+                      <td style="border:1px solid #bbb;padding:5px">Apartemen Laguna tower 5f lanta10 Jl. Pluit Timur Raya, Blok MM Jakarta Utara</td>
+                  </tr>
+              </table>
+              <br/>
+              <h4>Detail Pembayaran</h4>
+              <table style="margin-top:20px;margin-bottom:20px;float:right;border:0px solid #ccc;color:#333;background-color:#eee;#ddd;width:100%;font-size:14px;">
+                  <tr style="border:1px solid #bbb;">
+                      <td style="border:2px solid #666;padding:10px;color:#666;text-align:center;font-size:15px;">DESCRIPTION</td>
+                      <td style="border:2px solid #666;padding:10px;color:#666;text-align:center;font-size:15px;">PRICE (Rp.)</td>
+                  </tr><tr>
+                      <td style="border:1px solid #bbb;padding:5px;color:#777">Groovy Home 1700</td>
+                      <td style="border:1px solid #bbb;padding:5px">1.699.000</td>
+                  </tr><tr>
+                      <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">JUMLAH</td>
+                      <td style="border:1px solid #bbb;padding:5px">1.000.000</td>
+                  </tr>
+                  <tr>
+                      <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">PPN 10%</td>
+                      <td style="border:1px solid #bbb;padding:5px">100.000</td>
+                  </tr>
+                  <tr>
+                      <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">TOTAL PEMBAYARAN</td>
+                      <td style="border:1px solid #bbb;padding:5px">900.000</td>
+                  </tr>
+              </table>
+
+              <br/>
+              <table style="margin-top:20px;margin-bottom:20px;border:0px solid #ccc;color:#333;background-color:#eee;#ddd;width:100%;font-size:14px;">
+
+                  <tr>
+                      <td style="border:1px solid #bbb;padding:5px;color:#777">ID Invoice</td>
+                      <td style="border:1px solid #bbb;padding:5px"><?php echo $pay['invoice']; ?></td>
+                  </tr>
+                  <tr>
+                      <td style="border:1px solid #bbb;padding:5px;color:#777">No Virtual Account</td>
+                      <td style="border:1px solid #bbb;padding:5px"><?php echo $kode_perusahaan.$pay['id_user']; ?></td>
+                  </tr>
+                  <tr>
+                      <td style="border:1px solid #bbb;padding:5px;color:#777">Tanggal Bayar</td>
+                      <td style="border:1px solid #bbb;padding:5px"><?php echo $tgl_bayar.' - '.bulan($bln_bayar).' - '.$thn_bayar; ?></td>
+                  </tr>
+                  <tr>
+                      <td style="border:1px solid #bbb;padding:5px;color:#777">Tanggal Konfirmasi</td>
+                      <td style="border:1px solid #bbb;padding:5px"><?php echo $tgl_konfirmasi.' - '.bulan($bln_konfirmasi).' - '.$thn_konfirmasi; ?></td>
+                  </tr>
+              </table>
+              <p>groovy.id</p>
+          </div>
+          </div>
+      </div>
+  </body>
+</html>
+<?php } ?>
