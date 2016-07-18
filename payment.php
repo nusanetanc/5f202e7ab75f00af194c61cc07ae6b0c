@@ -40,7 +40,7 @@ foreach ($res as $user) {
               </tr>
               <tr>
                   <td style="border:1px solid #bbb;padding:5px;color:#777">Tempat</td>
-                  <td style="border:1px solid #bbb;padding:5px"><?php echo $user['tempat'].' '.$user['keterangan'].' '.$user['kota']; ?></td>
+                  <td style="border:1px solid #bbb;padding:5px"><?php echo $user['tempat'].', '.$user['keterangan'].', '.$user['kota']; ?></td>
               </tr>
               <tr>
                   <td style="border:1px solid #bbb;padding:5px;color:#777">Status</td>
@@ -186,7 +186,7 @@ foreach ($res as $pay) {
                   </tr>
                   <tr>
                       <td style="border:1px solid #bbb;padding:5px;color:#777">Tempat</td>
-                      <td style="border:1px solid #bbb;padding:5px"><?php echo $user['tempat'].' '.$user['keterangan'].' '.$user['kota']; ?></td>
+                      <td style="border:1px solid #bbb;padding:5px"><?php echo $user['tempat'].', '.$user['keterangan'].', '.$user['kota']; ?></td>
                   </tr> <?php } ?>
               </table>
               <br/>
