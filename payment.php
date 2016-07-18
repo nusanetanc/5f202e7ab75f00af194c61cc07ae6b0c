@@ -177,15 +177,17 @@ foreach ($res as $pay) {
                   <tr>
                       <td style="border:1px solid #bbb;padding:5px;color:#777">ID Customer</td>
                       <td style="border:1px solid #bbb;padding:5px"><?php echo $pay['id_user']; ?></td>
-                  </tr>
+                  </tr> <?php
+                  $res2 = $col_user->find(array("id_user"=>$pay['id_user']));
+                  foreach ($res2 as $user) { ?>
                   <tr>
                       <td style="border:1px solid #bbb;padding:5px;color:#777">Nama</td>
-                      <td style="border:1px solid #bbb;padding:5px">Yudi Nurhandi</td>
+                      <td style="border:1px solid #bbb;padding:5px"><?php echo $user['nama']; ?></td>
                   </tr>
                   <tr>
                       <td style="border:1px solid #bbb;padding:5px;color:#777">Tempat</td>
-                      <td style="border:1px solid #bbb;padding:5px">Apartemen Laguna tower 5f lanta10 Jl. Pluit Timur Raya, Blok MM Jakarta Utara</td>
-                  </tr>
+                      <td style="border:1px solid #bbb;padding:5px"><?php echo $user['tempat'].' '.$user['keterangan'].' '.$user['kota']; ?></td>
+                  </tr> <?php } ?>
               </table>
               <br/>
               <h4>Detail Pembayaran</h4>
