@@ -1,5 +1,6 @@
 <?php
 include('con/koneksi.php');
+include('con/function.php');
 $res = $col_user->find(array("invoice"=>$_GET['invoice']));
 foreach ($res as $user) {
   $tanggal_akhir=$user['tanggal_akhir'];
@@ -27,7 +28,7 @@ foreach ($res as $user) {
               </tr>
               <tr>
                   <td style="border:1px solid #bbb;padding:5px;color:#777">Tanggal Jatuh Tempo</td>
-                  <td style="border:1px solid #bbb;padding:5px"><?php echo $tgl_akhir.' - '.$bln_akhir.' - '.$thn_akhir; ?></td>
+                  <td style="border:1px solid #bbb;padding:5px"><?php echo $tgl_akhir.' - '.bulan($bln_akhir).' - '.$thn_akhir; ?></td>
               </tr>
               <tr>
                   <td style="border:1px solid #bbb;padding:5px;color:#777">ID Customer</td>
@@ -57,20 +58,20 @@ foreach ($res as $user) {
                 if ($pay<>null){ ?>
               <tr>
                   <td style="border:1px solid #bbb;padding:5px;color:#777"><?php echo $pay['layanan']; ?></td>
-                  <td style="border:1px solid #bbb;padding:5px"></td>
+                  <td style="border:1px solid #bbb;padding:5px"><?php echo rupiah($pay['harga']); ?></td>
               </tr>
-              <?php } } ?>
+              <?php $total=$total+$pay['harga']; } } ?>
               <tr>
                   <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">TOTAL HARGA</td>
-                  <td style="border:1px solid #bbb;padding:5px">'.rupiah($total).'</td>
+                  <td style="border:1px solid #bbb;padding:5px"><?php echo rupiah($total); ?></td>
               </tr>
               <tr>
                   <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">PPN 10%</td>
-                  <td style="border:1px solid #bbb;padding:5px">'.rupiah($total*0.1).'</td>
+                  <td style="border:1px solid #bbb;padding:5px"><?php echo rupiah($total*0.1); ?></td>
               </tr>
               <tr>
                   <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">TOTAL PEMBAYARAN</td>
-                  <td style="border:1px solid #bbb;padding:5px">'.rupiah($total*0.1+$total).'</td>
+                  <td style="border:1px solid #bbb;padding:5px"><?php echo rupiah($total*0.1+$total); ?></td>
               </tr>
           </table>
 
