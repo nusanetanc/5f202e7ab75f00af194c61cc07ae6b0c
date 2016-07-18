@@ -1,12 +1,7 @@
-<?php /*
+<?php 
 include('con/koneksi.php');
 $res = $col_user->find(array("invoice"=>$_GET['invoice']));
 foreach ($res as $user) {
-  $thn_akhir = substr($user['tanggal_akhir'], 0,4);
-  $bln_akhir = substr($user['tanggal_akhir'], 5,2);
-  $tgl_akhir = substr($user['tanggal_akhir'], 8,10);
-  $month_akhir = bulan($bln_akhir);
-} */
 ?>
 <html>
 <body style="background-color:#ddd;padding:0px 0 50px 0;font-family:arial;font-size:15px;">
@@ -146,3 +141,4 @@ foreach ($res as $user) {
   </div>
 </body>
 </html>
+<?php } ?>
