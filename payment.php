@@ -52,10 +52,14 @@ foreach ($res as $user) {
                   <td style="border:2px solid #666;padding:10px;color:#666;text-align:center;font-size:15px;">DESCRIPTION</td>
                   <td style="border:2px solid #666;padding:10px;color:#666;text-align:center;font-size:15px;">PRICE (Rp.)</td>
               </tr>
+              <?php $res = $col_user->findOne(array("invoice"=>$_GET['invoice']));
+              foreach ($res['payment_data'] as $payment => $pay) {
+                if ($pay<>null){ ?>
               <tr>
-                  <td style="border:1px solid #bbb;padding:5px;color:#777">'.$pay['layanan'].'</td>
-                  <td style="border:1px solid #bbb;padding:5px">'.rupiah($pay['harga']).'</td>
+                  <td style="border:1px solid #bbb;padding:5px;color:#777"><?php echo $pay['layanan']; ?></td>
+                  <td style="border:1px solid #bbb;padding:5px"></td>
               </tr>
+              <?php } } ?>
               <tr>
                   <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">TOTAL HARGA</td>
                   <td style="border:1px solid #bbb;padding:5px">'.rupiah($total).'</td>
