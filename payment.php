@@ -193,20 +193,26 @@ foreach ($res as $pay) {
                   <tr style="border:1px solid #bbb;">
                       <td style="border:2px solid #666;padding:10px;color:#666;text-align:center;font-size:15px;">DESCRIPTION</td>
                       <td style="border:2px solid #666;padding:10px;color:#666;text-align:center;font-size:15px;">PRICE (Rp.)</td>
-                  </tr><tr>
-                      <td style="border:1px solid #bbb;padding:5px;color:#777">Groovy Home 1700</td>
-                      <td style="border:1px solid #bbb;padding:5px">1.699.000</td>
-                  </tr><tr>
+                  </tr>
+                  <?php $res = $col_payment->findOne(array("invoice"=>$_GET['invoice']));
+                  foreach ($res['pembayaran'] as $payment => $pay1) {
+                    if ($pay<>null){ ?>
+                  <tr>
+                      <td style="border:1px solid #bbb;padding:5px;color:#777"><?php echo $pay1['deskripsi']; ?></td>
+                      <td style="border:1px solid #bbb;padding:5px"><?php echo rupiah($pay1['harga']); ?></td>
+                  </tr>
+                  <?php $total1=$total1+$pay1['harga']; } } ?>
+                  <tr>
                       <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">JUMLAH</td>
-                      <td style="border:1px solid #bbb;padding:5px">1.000.000</td>
+                      <td style="border:1px solid #bbb;padding:5px"><?php echo rupiah($total1); ?></td>
                   </tr>
                   <tr>
                       <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">PPN 10%</td>
-                      <td style="border:1px solid #bbb;padding:5px">100.000</td>
+                      <td style="border:1px solid #bbb;padding:5px"><?php echo rupiah($total1*0.1) ?></td>
                   </tr>
                   <tr>
                       <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">TOTAL PEMBAYARAN</td>
-                      <td style="border:1px solid #bbb;padding:5px">900.000</td>
+                      <td style="border:1px solid #bbb;padding:5px"><?php echo rupiah($total1*0.1+$total1); ?></td>
                   </tr>
               </table>
 
