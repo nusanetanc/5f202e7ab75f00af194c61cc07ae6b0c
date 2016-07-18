@@ -154,11 +154,11 @@ foreach ($res as $user) {
 <?php
 $res = $col_payment->find(array("invoice"=>$_GET['invoice']));
 foreach ($res as $pay) {
-  $tanggal_bayar=$user['tanggal_bayar'];
+  $tanggal_bayar=$pay['tanggal_bayar'];
   $thn_bayar = substr($tanggal_bayar, 0,4);
   $bln_bayar = substr($tanggal_bayar, 5,2);
   $tgl_bayar = substr($tanggal_bayar, 8,10);
-      $tanggal_konfirmasi=$user['tanggal_konfirmasi'];
+      $tanggal_konfirmasi=$pay['tanggal_konfirmasi'];
       $thn_konfirmasi = substr($tanggal_konfirmasi, 0,4);
       $bln_konfirmasi = substr($tanggal_konfirmasi, 5,2);
       $tgl_konfirmasi = substr($tanggal_konfirmasi, 8,10);
