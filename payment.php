@@ -1,6 +1,101 @@
 <?php
 include('con/koneksi.php');
 include('con/function.php');
+$res = $col_payment->find(array("invoice"=>$_GET['invoice']));
+foreach ($res as $pay) {
+  $tanggal_bayar=$pay['tanggal_bayar'];
+  $thn_bayar = substr($tanggal_bayar, 0,4);
+  $bln_bayar = substr($tanggal_bayar, 5,2);
+  $tgl_bayar = substr($tanggal_bayar, 8,10);
+      $tanggal_konfirmasi=$pay['tanggal_konfirmasi'];
+      $thn_konfirmasi = substr($tanggal_konfirmasi, 0,4);
+      $bln_konfirmasi = substr($tanggal_konfirmasi, 5,2);
+      $tgl_konfirmasi = substr($tanggal_konfirmasi, 8,10);
+?>
+<html>
+  <body style="background-color:#ddd;padding:0px 0 50px 0;font-family:arial;font-size:15px;">
+      <div style="margin:0 auto;background-color:#eee;">
+          <div style="background: linear-gradient(to right, #f9a825 , #fdd835);padding:5px 0 2px 0;text-align:center;">
+              <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
+          </div>
+          <div style="padding:20px 20px 20px 20px;color:#333;">
+              <p style="font-size:24px;font-weight:bold;line-height:30px;text-align:center">Bukti Pembayaran</p>
+              <span></span>
+              <table style="margin-top:20px;margin-bottom:20px;border:0px solid #ccc;color:#333;background-color:#eee;#ddd;width:100%;font-size:14px;">
+
+                  <tr>
+                      <td style="border:1px solid #bbb;padding:5px;color:#777">ID Customer</td>
+                      <td style="border:1px solid #bbb;padding:5px"><?php echo $pay['id_user']; ?></td>
+                  </tr> <?php
+                  $res2 = $col_user->find(array("id_user"=>$pay['id_user']));
+                  foreach ($res2 as $user) { ?>
+                  <tr>
+                      <td style="border:1px solid #bbb;padding:5px;color:#777">Nama</td>
+                      <td style="border:1px solid #bbb;padding:5px"><?php echo $user['nama']; ?></td>
+                  </tr>
+                  <tr>
+                      <td style="border:1px solid #bbb;padding:5px;color:#777">Tempat</td>
+                      <td style="border:1px solid #bbb;padding:5px"><?php echo $user['tempat'].', '.$user['keterangan'].', '.$user['kota']; ?></td>
+                  </tr> <?php } ?>
+              </table>
+              <br/>
+              <h4>Detail Pembayaran</h4>
+              <table style="margin-top:20px;margin-bottom:20px;float:right;border:0px solid #ccc;color:#333;background-color:#eee;#ddd;width:100%;font-size:14px;">
+                  <tr style="border:1px solid #bbb;">
+                      <td style="border:2px solid #666;padding:10px;color:#666;text-align:center;font-size:15px;">DESCRIPTION</td>
+                      <td style="border:2px solid #666;padding:10px;color:#666;text-align:center;font-size:15px;">PRICE (Rp.)</td>
+                  </tr>
+                  <?php $res = $col_payment->findOne(array("invoice"=>$_GET['invoice']));
+                  foreach ($res['pembayaran'] as $payment => $pay1) {
+                    if ($pay<>null){ ?>
+                  <tr>
+                      <td style="border:1px solid #bbb;padding:5px;color:#777"><?php echo $pay1['deskripsi']; ?></td>
+                      <td style="border:1px solid #bbb;padding:5px"><?php echo rupiah($pay1['harga']); ?></td>
+                  </tr>
+                  <?php $total1=$total1+$pay1['harga']; } } ?>
+                  <tr>
+                      <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">JUMLAH</td>
+                      <td style="border:1px solid #bbb;padding:5px"><?php echo rupiah($total1); ?></td>
+                  </tr>
+                  <tr>
+                      <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">PPN 10%</td>
+                      <td style="border:1px solid #bbb;padding:5px"><?php echo rupiah($total1*0.1) ?></td>
+                  </tr>
+                  <tr>
+                      <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">TOTAL PEMBAYARAN</td>
+                      <td style="border:1px solid #bbb;padding:5px"><?php echo rupiah($total1*0.1+$total1); ?></td>
+                  </tr>
+              </table>
+
+              <br/>
+              <table style="margin-top:20px;margin-bottom:20px;border:0px solid #ccc;color:#333;background-color:#eee;#ddd;width:100%;font-size:14px;">
+
+                  <tr>
+                      <td style="border:1px solid #bbb;padding:5px;color:#777">ID Invoice</td>
+                      <td style="border:1px solid #bbb;padding:5px"><?php echo $pay['invoice']; ?></td>
+                  </tr>
+                  <tr>
+                      <td style="border:1px solid #bbb;padding:5px;color:#777">No Virtual Account</td>
+                      <td style="border:1px solid #bbb;padding:5px"><?php echo $kode_perusahaan.$pay['id_user']; ?></td>
+                  </tr>
+                  <tr>
+                      <td style="border:1px solid #bbb;padding:5px;color:#777">Tanggal Bayar</td>
+                      <td style="border:1px solid #bbb;padding:5px"><?php echo $tgl_bayar.' - '.bulan($bln_bayar).' - '.$thn_bayar; ?></td>
+                  </tr>
+                  <tr>
+                      <td style="border:1px solid #bbb;padding:5px;color:#777">Tanggal Konfirmasi</td>
+                      <td style="border:1px solid #bbb;padding:5px"><?php echo $tgl_konfirmasi.' - '.bulan($bln_konfirmasi).' - '.$thn_konfirmasi; ?></td>
+                  </tr>
+              </table>
+              <p>groovy.id</p>
+          </div>
+          </div>
+      </div>
+  </body>
+</html>
+<?php } ?>
+
+<?php
 $res = $col_user->find(array("invoice"=>$_GET['invoice']));
 foreach ($res as $user) {
   $tanggal_akhir=$user['tanggal_akhir'];
@@ -149,99 +244,5 @@ foreach ($res as $user) {
       </div>
   </div>
 </body>
-</html>
-<?php } ?>
-<?php
-$res = $col_payment->find(array("invoice"=>$_GET['invoice']));
-foreach ($res as $pay) {
-  $tanggal_bayar=$pay['tanggal_bayar'];
-  $thn_bayar = substr($tanggal_bayar, 0,4);
-  $bln_bayar = substr($tanggal_bayar, 5,2);
-  $tgl_bayar = substr($tanggal_bayar, 8,10);
-      $tanggal_konfirmasi=$pay['tanggal_konfirmasi'];
-      $thn_konfirmasi = substr($tanggal_konfirmasi, 0,4);
-      $bln_konfirmasi = substr($tanggal_konfirmasi, 5,2);
-      $tgl_konfirmasi = substr($tanggal_konfirmasi, 8,10);
-?>
-<html>
-  <body style="background-color:#ddd;padding:0px 0 50px 0;font-family:arial;font-size:15px;">
-      <div style="margin:0 auto;background-color:#eee;">
-          <div style="background: linear-gradient(to right, #f9a825 , #fdd835);padding:5px 0 2px 0;text-align:center;">
-              <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
-          </div>
-          <div style="padding:20px 20px 20px 20px;color:#333;">
-              <p style="font-size:24px;font-weight:bold;line-height:30px;text-align:center">Bukti Pembayaran</p>
-              <span></span>
-              <table style="margin-top:20px;margin-bottom:20px;border:0px solid #ccc;color:#333;background-color:#eee;#ddd;width:100%;font-size:14px;">
-
-                  <tr>
-                      <td style="border:1px solid #bbb;padding:5px;color:#777">ID Customer</td>
-                      <td style="border:1px solid #bbb;padding:5px"><?php echo $pay['id_user']; ?></td>
-                  </tr> <?php
-                  $res2 = $col_user->find(array("id_user"=>$pay['id_user']));
-                  foreach ($res2 as $user) { ?>
-                  <tr>
-                      <td style="border:1px solid #bbb;padding:5px;color:#777">Nama</td>
-                      <td style="border:1px solid #bbb;padding:5px"><?php echo $user['nama']; ?></td>
-                  </tr>
-                  <tr>
-                      <td style="border:1px solid #bbb;padding:5px;color:#777">Tempat</td>
-                      <td style="border:1px solid #bbb;padding:5px"><?php echo $user['tempat'].', '.$user['keterangan'].', '.$user['kota']; ?></td>
-                  </tr> <?php } ?>
-              </table>
-              <br/>
-              <h4>Detail Pembayaran</h4>
-              <table style="margin-top:20px;margin-bottom:20px;float:right;border:0px solid #ccc;color:#333;background-color:#eee;#ddd;width:100%;font-size:14px;">
-                  <tr style="border:1px solid #bbb;">
-                      <td style="border:2px solid #666;padding:10px;color:#666;text-align:center;font-size:15px;">DESCRIPTION</td>
-                      <td style="border:2px solid #666;padding:10px;color:#666;text-align:center;font-size:15px;">PRICE (Rp.)</td>
-                  </tr>
-                  <?php $res = $col_payment->findOne(array("invoice"=>$_GET['invoice']));
-                  foreach ($res['pembayaran'] as $payment => $pay1) {
-                    if ($pay<>null){ ?>
-                  <tr>
-                      <td style="border:1px solid #bbb;padding:5px;color:#777"><?php echo $pay1['deskripsi']; ?></td>
-                      <td style="border:1px solid #bbb;padding:5px"><?php echo rupiah($pay1['harga']); ?></td>
-                  </tr>
-                  <?php $total1=$total1+$pay1['harga']; } } ?>
-                  <tr>
-                      <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">JUMLAH</td>
-                      <td style="border:1px solid #bbb;padding:5px"><?php echo rupiah($total1); ?></td>
-                  </tr>
-                  <tr>
-                      <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">PPN 10%</td>
-                      <td style="border:1px solid #bbb;padding:5px"><?php echo rupiah($total1*0.1) ?></td>
-                  </tr>
-                  <tr>
-                      <td style="border:0px solid #bbb;padding:5px;color:#777;text-align:right;">TOTAL PEMBAYARAN</td>
-                      <td style="border:1px solid #bbb;padding:5px"><?php echo rupiah($total1*0.1+$total1); ?></td>
-                  </tr>
-              </table>
-
-              <br/>
-              <table style="margin-top:20px;margin-bottom:20px;border:0px solid #ccc;color:#333;background-color:#eee;#ddd;width:100%;font-size:14px;">
-
-                  <tr>
-                      <td style="border:1px solid #bbb;padding:5px;color:#777">ID Invoice</td>
-                      <td style="border:1px solid #bbb;padding:5px"><?php echo $pay['invoice']; ?></td>
-                  </tr>
-                  <tr>
-                      <td style="border:1px solid #bbb;padding:5px;color:#777">No Virtual Account</td>
-                      <td style="border:1px solid #bbb;padding:5px"><?php echo $kode_perusahaan.$pay['id_user']; ?></td>
-                  </tr>
-                  <tr>
-                      <td style="border:1px solid #bbb;padding:5px;color:#777">Tanggal Bayar</td>
-                      <td style="border:1px solid #bbb;padding:5px"><?php echo $tgl_bayar.' - '.bulan($bln_bayar).' - '.$thn_bayar; ?></td>
-                  </tr>
-                  <tr>
-                      <td style="border:1px solid #bbb;padding:5px;color:#777">Tanggal Konfirmasi</td>
-                      <td style="border:1px solid #bbb;padding:5px"><?php echo $tgl_konfirmasi.' - '.bulan($bln_konfirmasi).' - '.$thn_konfirmasi; ?></td>
-                  </tr>
-              </table>
-              <p>groovy.id</p>
-          </div>
-          </div>
-      </div>
-  </body>
 </html>
 <?php } ?>
