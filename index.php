@@ -5,6 +5,10 @@
 	$biaya_cable=10000;
 	$biaya_router=40000;
 	$biaya_stb=45000;
+$email_dens="nurhandiy@gmail.com";
+$email_billing="nurhandiy@ymail.com";
+$email_cs="nurhandiy@ymail.com";
+$email_support="nurhandiy@ymail.com";
 session_start();
 if (!isset($_SESSION["id"])) {
 	if (isset($_GET['hal'])){
