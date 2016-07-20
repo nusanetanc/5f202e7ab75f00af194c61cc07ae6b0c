@@ -59,7 +59,7 @@
                                           $headers_contact .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
                                           // Additional headers
-                                          $headers_contact .= 'From: anc@jkt.nusa.net.id' . "\r\n";
+                                          $headers_contact .= 'From: groovy.id' . "\r\n";
 
                                           // message cs
                                           $message_contact1 = '
@@ -82,7 +82,7 @@
                                           $headers_contact1 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
                                           // Additional headers
-                                          $headers_contact1 .= 'From: anc@jkt.nusa.net.id' . "\r\n";
+                                          $headers_contact1 .= 'From: groovy.id' . "\r\n";
 
                                           // Mail it
                                           $kirimemail_contact = mail($to_contact, $subject_contact, $message_contact, $headers_contact);
