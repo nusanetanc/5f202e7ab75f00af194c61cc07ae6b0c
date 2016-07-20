@@ -11,19 +11,19 @@
         <div class="row">
             <div class="col-sm-12 col-md-6">
                 <h5 style="font-size:17px;color:#777;margin-top:40px;margin-bottom:15px;">OUR OFFICE</h5>
-                
+
                 <p style="margin-top:27px;font-size:15px;color:#333;font-weight:light;line-height:1.5">Nusanet Office<br/>Cyber Building, 7th Floor<br/>
                 Jl. Kuningan Barat 8<br/>
                 Jakarta 12710, Indonesia</p>
                 <h5 style="font-size:17px;color:#777;margin-top:40px;margin-bottom:15px;">SOCIAL MEDIA</h5>
                 <p style="line-height:25px;">
-                    <a href="" target="_blank"><i style="color:#3b5998" class="fa fa-facebook fa-2x footer-facebook"></i></a>&nbsp;&nbsp;&nbsp; 
-                    <a href="" target="_blank"><i style="color:#517fa4" class="fa fa-instagram fa-2x footer-instagram"></i></a>&nbsp;&nbsp;&nbsp; 
-                    <a href="" target="_blank"><i style="color:#00aced" class="fa fa-twitter fa-2x footer-twitter"></i></a>&nbsp;&nbsp;&nbsp; 
+                    <a href="" target="_blank"><i style="color:#3b5998" class="fa fa-facebook fa-2x footer-facebook"></i></a>&nbsp;&nbsp;&nbsp;
+                    <a href="" target="_blank"><i style="color:#517fa4" class="fa fa-instagram fa-2x footer-instagram"></i></a>&nbsp;&nbsp;&nbsp;
+                    <a href="" target="_blank"><i style="color:#00aced" class="fa fa-twitter fa-2x footer-twitter"></i></a>&nbsp;&nbsp;&nbsp;
                     <a href="" target="_blank"><i style="color:#bb0000" class="fa fa-youtube-play fa-2x footer-youtube"></i></a>
                 </p>
             </div>
-            <div class="col-sm-12 col-md-6">                  
+            <div class="col-sm-12 col-md-6">
                 <h5 style="font-size:17px;color:#777;margin-top:40px;margin-bottom:15px;">CONTACT FORM</h5>
                 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" style="margin-top:30px;margin-bottom:100px;">
                     <?php
@@ -60,7 +60,6 @@
 
                                           // Additional headers
                                           $headers_contact .= 'From: groovy.id <no_reply@groovy.id>' . "\r\n";
-                                          $headers_contact .= 'Cc: cs@groovy.id' . "\r\n";
 
                                           // Mail it
                                           $kirimemail_contact = mail($to_contact, $subject_contact, $message_contact, $headers_contact);
@@ -73,8 +72,8 @@
                     <input name ="contact_email" id = "contact_email" style="background-color:rgba(255, 255, 255, 1);margin-bottom:9px;height:40px" placeholder="Email" type="email" class="form-control" required>
                     <input name ="contact_subject" id = "contact_subject" style="background-color:rgba(255, 255, 255, 1);margin-bottom:9px;height:40px" placeholder="Subject" type="text" class="form-control" require>
                     <textarea name ="contact_message" id = "contact_message" rows="5" class="form-control" style="background-color:rgba(255, 255, 255, 0.7);margin-bottom:9px;height:100px;width:100%;" placeholder="Message" require></textarea>
-                    <div style="margin-bottom:7px;" class="g-recaptcha" data-sitekey="6Ldx_BsTAAAAAOYrQegHLVhslSvd6z78zAr-4Knc"></div> 
-                    <input id="contact_send" name="contact_send" type="submit" style=";text-align:center;background-color:#FF3D23;border:0px;color:#fff;height:40px;padding:0 40px 0 40px;border-radius:3px;font-weight:bold;" value="SEND"/>  
+                    <div style="margin-bottom:7px;" class="g-recaptcha" data-sitekey="6Ldx_BsTAAAAAOYrQegHLVhslSvd6z78zAr-4Knc"></div>
+                    <input id="contact_send" name="contact_send" type="submit" style=";text-align:center;background-color:#FF3D23;border:0px;color:#fff;height:40px;padding:0 40px 0 40px;border-radius:3px;font-weight:bold;" value="SEND"/>
                     <?php if(isset($_SESSION['message-sent'])) { ?>
                     <!-- Notification -->
                     <span style="margin-left:20px;"><?php echo $_SESSION['message-sent']; ?></span>
@@ -82,7 +81,7 @@
                     <?php unset($_SESSION["message-sent"]);  } ?>
                 </form>
             </div>
-            
+
         </div>
     </div>
 </div>
