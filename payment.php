@@ -18,6 +18,7 @@ foreach ($res as $pay) {
           <div style="background: linear-gradient(to right, #f9a825 , #fdd835);padding:5px 0 2px 0;text-align:center;">
               <a href="http://www.groovy.id"><img src="http://groovy.id/beta/img/groovy-logo-white.png" height="50px;"/></a>
           </div>
+          <i class="fa fa-print" aria-hidden="true"></i>
           <div style="padding:20px 20px 20px 20px;color:#333;">
               <p style="font-size:24px;font-weight:bold;line-height:30px;text-align:center">Bukti Pembayaran</p>
               <span></span>
