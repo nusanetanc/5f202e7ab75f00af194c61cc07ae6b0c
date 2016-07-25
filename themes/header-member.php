@@ -91,9 +91,11 @@ if($level=="501"){
         <li ><a href="<?php echo $base_url_member; ?>/<?php echo $row['file']; ?>"  style="font-size:14px;padding-top:20px;padding-bottom:19px;font-weight:500; color:gray;"><i style="padding-right:10px;" class="fa fa-<?php echo $row['image']; ?> fa-lg"></i><?php echo $row['title'].' '; ?></a></li>
       </ul>
       <?php } ?>
-      <li class="dropdown-toggle" data-toggle="dropdown">
-        <i class="fa fa-bell-o" aria-hidden="true"></i>
-      </li>
+      <ul  class="dropdown nav navbar-nav navbar-right navbar-primary desktop-only">
+        <li class="dropdown-toggle" data-toggle="dropdown">
+          <i class="fa fa-bell-o" aria-hidden="true"></i>
+        </li>
+      </ul>
       <ul  class="dropdown nav navbar-nav navbar-right navbar-primary desktop-only">
           <li class="dropdown-toggle" data-toggle="dropdown">
               <?php if ($foto=="" || $foto==null){ ?>
