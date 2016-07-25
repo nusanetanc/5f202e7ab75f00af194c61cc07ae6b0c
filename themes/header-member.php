@@ -95,6 +95,14 @@ if($level=="501"){
         <li class="dropdown-toggle" data-toggle="dropdown">
           <i style="margin-top:15px;margin-left:15px;cursor:pointer" class="profile-img-card profile-img-card-mdm fa fa-bell-o fa-2x" aria-hidden="true"></i>
         </li>
+        <ul class="dropdown-menu">
+          <li class="list-group">
+            <a href="#" class="list-group-item">
+              <h4 class="list-group-item-heading">List group item heading</h4>
+              <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+            </a>
+          </li>
+        </ul>
       </ul>
       <ul  class="dropdown nav navbar-nav navbar-right navbar-primary desktop-only">
           <li class="dropdown-toggle" data-toggle="dropdown">
