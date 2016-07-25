@@ -97,14 +97,10 @@ if($level=="501"){
         </li>
         <ul class="dropdown-menu">
           <li>
-            <a href="<?php echo $base_url_member; ?>/information" class="list-group-item">
-              <h5 class="list-group-item-heading">Information <span class="badge">3</span></h5>
-            </a>
+            <a href="<?php echo $base_url_member; ?>/information">Information <span class="badge">3</span></a>
           </li>
           <li>
-            <a href="<?php echo $base_url_member; ?>/pengaduan" class="list-group-item">
-              <h5 class="list-group-item-heading">Pengaduan <span class="badge">3</span></h5>
-            </a>
+            <a href="<?php echo $base_url_member; ?>/pengaduan">Pengaduan <span class="badge">3</span></a>
           </li>
           </li>
         </ul>
