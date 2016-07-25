@@ -5,7 +5,7 @@
 			<div class="col-sm-12 col-md-4 col-lg-4">
 				<a href="<?php echo $base_url_member; ?>/pengaduan" style=" text-decoration:none">
 					<div class="well well-lg" style="background-color:#F1453C;">
-					  <h4 style="color:white;"><b>PENGADUAN <span class="badge">3</span></b></h4>
+					  <h4 style="color:white;"><b>PENGADUAN <i class="fa fa-certificate" aria-hidden="true"></i></b></h4>
 					  <div class="text-center">
 					  	<b style="color:white; font-size:2em;"><i class="fa fa-flag fa-5x"></i></b>
 					  </div>
