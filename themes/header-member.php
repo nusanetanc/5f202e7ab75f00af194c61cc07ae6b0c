@@ -352,8 +352,7 @@ if($emailaktivasi && $update_user && $kirim_email1 && $push_histori){ ?>
     </form>
   </div>
 </div>
-  <div class="alert alert-dismissible alert-warning">
+  <div class="modal alert alert-dismissible alert-warning">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <h4>Warning!</h4>
-    <p>Best check yo self, you're not looking too good, <a href="#" class="alert-link">vel scelerisque nisl consectetur et</a>.</p>
+    <p><a href="#" class="alert-link">Chat Pengaduan 2</a></p>
   </div>
