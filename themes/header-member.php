@@ -98,12 +98,10 @@ if($level=="501"){
         <ul class="dropdown-menu">
           <li class="list-group">
             <a href="#" class="list-group-item">
-              <h4 class="list-group-item-heading">List group item heading</h4>
-              <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus.</p>
+              <h4 class="list-group-item-heading">Information <span class="badge">3</span></h4>
             </a>
             <a href="#" class="list-group-item">
-              <h4 class="list-group-item-heading">List group item heading</h4>
-              <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus.</p>
+              <h4 class="list-group-item-heading">Pengaduan <span class="badge">3</span></h4>
             </a>
           </li>
         </ul>
