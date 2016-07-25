@@ -99,7 +99,11 @@ if($level=="501"){
           <li class="list-group">
             <a href="#" class="list-group-item">
               <h4 class="list-group-item-heading">List group item heading</h4>
-              <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+              <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus.</p>
+            </a>
+            <a href="#" class="list-group-item">
+              <h4 class="list-group-item-heading">List group item heading</h4>
+              <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus.</p>
             </a>
           </li>
         </ul>
