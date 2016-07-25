@@ -92,6 +92,9 @@ if($level=="501"){
       </ul>
       <?php } ?>
       <ul  class="dropdown nav navbar-nav navbar-right navbar-primary desktop-only">
+        <li class="dropdown-toggle" data-toggle="dropdown">
+          <i class="fa fa-bell-o" aria-hidden="true"></i>
+        </li>
           <li class="dropdown-toggle" data-toggle="dropdown">
               <?php if ($foto=="" || $foto==null){ ?>
                           <img style="width:45px;height:45px;margin-top:7px;margin-left:10px;cursor:pointer" class="profile-img-card profile-img-card-mdm" src="<?php echo $base_url; ?>/img/default-avatar-groovy.png"/>
