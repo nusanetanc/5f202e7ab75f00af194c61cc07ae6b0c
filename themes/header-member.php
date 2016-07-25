@@ -61,6 +61,20 @@ if($level=="501"){
       </button>
       <a href="<?php echo $base_url_member; ?>"><img height="60px" src="<?php echo $base_url; ?>/img/groovy-logo-colour.png"/></a>
       <ul style="float:right;margin-right:15px;" class="dropdown nav navbar-nav navbar-right navbar-primary mobile-only">
+        <li class="dropdown-toggle" data-toggle="dropdown">
+          <i style="margin-top:15px;margin-left:15px;cursor:pointer" class="profile-img-card profile-img-card-mdm fa fa-bell-o fa-2x" aria-hidden="true"></i>
+        </li>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="<?php echo $base_url_member; ?>/information">Information <span class="badge">3</span></a>
+          </li>
+          <li>
+            <a href="<?php echo $base_url_member; ?>/pengaduan">Pengaduan <span class="badge">3</span></a>
+          </li>
+          </li>
+        </ul>
+      </ul>
+      <ul style="float:right;margin-right:30px;" class="dropdown nav navbar-nav navbar-right navbar-primary mobile-only">
           <li class="dropdown-toggle" data-toggle="dropdown">
               <?php if ($foto=="" || $foto==null){ ?>
                           <img style="width:35px;height:35px;margin-top:3px;margin-left:10px;cursor:pointer" class="profile-img-card profile-img-card-mdm" src="<?php echo $base_url; ?>/img/default-avatar-groovy.png"/>
