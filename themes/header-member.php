@@ -93,7 +93,7 @@ if($level=="501"){
       <?php } ?>
       <ul  class="dropdown nav navbar-nav navbar-right navbar-primary desktop-only">
         <li class="dropdown-toggle" data-toggle="dropdown">
-          <i style="width:45px;height:45px;margin-top:7px;margin-left:10px;cursor:pointer" class="profile-img-card profile-img-card-mdm fa fa-bell-o fa-3x" aria-hidden="true"></i>
+          <i style="width:45px;height:45px;margin-top:7px;margin-left:10px;cursor:pointer" class="profile-img-card profile-img-card-mdm fa fa-bell-o fa-2x" aria-hidden="true"></i>
         </li>
       </ul>
       <ul  class="dropdown nav navbar-nav navbar-right navbar-primary desktop-only">
