@@ -96,13 +96,16 @@ if($level=="501"){
           <i style="margin-top:15px;margin-left:15px;cursor:pointer" class="profile-img-card profile-img-card-mdm fa fa-bell-o fa-2x" aria-hidden="true"></i>
         </li>
         <ul class="dropdown-menu">
-          <li class="list-group">
+          <li>
             <a href="#" class="list-group-item">
               <h4 class="list-group-item-heading">Information <span class="badge">3</span></h4>
             </a>
+          </li>
+          <li>
             <a href="#" class="list-group-item">
               <h4 class="list-group-item-heading">Pengaduan <span class="badge">3</span></h4>
             </a>
+          </li>  
           </li>
         </ul>
       </ul>
