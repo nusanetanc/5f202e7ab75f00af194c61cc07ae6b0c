@@ -352,7 +352,17 @@ if($emailaktivasi && $update_user && $kirim_email1 && $push_histori){ ?>
     </form>
   </div>
 </div>
-  <div class="modal alert alert-dismissible alert-warning">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <p><a href="#" class="alert-link">Chat Pengaduan 2</a></p>
+<div class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Notification</h4>
+      </div>
+      <div class="modal-body">
+        <p><a href="#">2 Chat Pengaduan Belum Di Baca</a></p>
+        <p><a href="#">2 Informasi Belum Di Baca</a></p>
+      </div>
+    </div>
   </div>
+</div>
