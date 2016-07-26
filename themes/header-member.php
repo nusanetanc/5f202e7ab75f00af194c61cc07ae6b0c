@@ -352,7 +352,7 @@ if($emailaktivasi && $update_user && $kirim_email1 && $push_histori){ ?>
     </form>
   </div>
 </div>
-<div class="modal">
+<div class="modal" name="modal-notification" id="modal-notification">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -366,3 +366,7 @@ if($emailaktivasi && $update_user && $kirim_email1 && $push_histori){ ?>
     </div>
   </div>
 </div>
+<script >
+$(document).ready(function(){
+    $('#modal-notification').modal('show');
+}); </script>
