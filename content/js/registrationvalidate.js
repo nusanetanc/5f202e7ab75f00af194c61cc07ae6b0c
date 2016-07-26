@@ -6,7 +6,8 @@ $("#valid").hide();
    $("#regisplace").hide();
    $("#regislocation").prop( "disabled", true );
    $("#regisaddon1").hide();
-   $("#regisaddon2").hide(); 
+   $("#regisaddon2").hide();
+   $('#modal-notif').modal('show');
       $("#regispackage").change(function(){
         $("#regislocation").prop( "disabled", false );
         var p =  $("#regispackage").val();

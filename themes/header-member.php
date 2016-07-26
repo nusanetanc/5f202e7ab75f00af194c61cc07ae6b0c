@@ -41,10 +41,6 @@ if($level=="501"){
 }
                     }
   ?>
-  <script >
-  $(document).ready(function(){
-      $('#modal-notif').modal('show');
-  }); </script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
