@@ -43,7 +43,7 @@ if($level=="501"){
   ?>
   <script >
   $(document).ready(function(){
-      $('#modal-notification').modal('show');
+      $('#modal-notif').modal('show');
   }); </script>
 <!DOCTYPE html>
 <html lang="en">
@@ -356,7 +356,7 @@ if($emailaktivasi && $update_user && $kirim_email1 && $push_histori){ ?>
     </form>
   </div>
 </div>
-<div class="modal" name="modal-notification" id="modal-notification">
+<div class="modal" name="modal-notif" id="modal-notif">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -364,8 +364,8 @@ if($emailaktivasi && $update_user && $kirim_email1 && $push_histori){ ?>
         <h4 class="modal-title">Notification</h4>
       </div>
       <div class="modal-body">
-        <p><a href="#">2 Chat Pengaduan Belum Di Baca</a></p>
-        <p><a href="#">2 Informasi Belum Di Baca</a></p>
+        <p><a href="#" style="text-decoration:none;">2 Chat Pengaduan Belum Di Baca</a></p>
+        <p><a href="#" style="text-decoration:none;">2 Informasi Belum Di Baca</a></p>
       </div>
     </div>
   </div>
