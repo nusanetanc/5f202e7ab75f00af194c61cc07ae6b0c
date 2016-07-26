@@ -41,6 +41,10 @@ if($level=="501"){
 }
                     }
   ?>
+  <script >
+  $(document).ready(function(){
+      $('#modal-notification').modal('show');
+  }); </script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -366,7 +370,3 @@ if($emailaktivasi && $update_user && $kirim_email1 && $push_histori){ ?>
     </div>
   </div>
 </div>
-<script >
-$(document).ready(function(){
-    $('#modal-notification').show();
-}); </script>
