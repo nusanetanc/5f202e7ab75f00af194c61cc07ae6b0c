@@ -354,7 +354,7 @@ if($emailaktivasi && $update_user && $kirim_email1 && $push_histori){ ?>
   </div>
 </div>
 <?php
-$count_info = $col_info->find(array("tempat"=>"All", "for"=>$id))->count();
+$count_info = $col_info->find(array("for"=>$id))->count();
     if($count_info<>0) {
  ?>
 <div class="modal" name="modal-notif" id="modal-notif">
