@@ -365,7 +365,7 @@ $count_info = $col_info->find(array("for"=>$id))->count();
         <h4 class="modal-title">Notification</h4>
       </div>
       <div class="modal-body">
-        <p><a href="#" style="text-decoration:none;"><?php echo $col_info; ?> Informasi Belum Di Baca</a></p>
+        <p><a href="#" style="text-decoration:none;"><?php echo $count_info; ?> Informasi Belum Di Baca</a></p>
       </div>
     </div>
   </div>
