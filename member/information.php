@@ -12,42 +12,43 @@
 								<?php
 									$res = $col_info->find()->sort(array("tanggal_update"=>-1));
 									foreach($res as $row)
-									  { 
+									  {
 									  	if($row['tempat']==$tempat || $row['tempat']=="All" || $row['for']==$id) {
 										$tanggal = $row['tanggal_update'];
 										$thn = substr($tanggal, 0,4);
 									    $bln = substr($tanggal, 5,2);
 										$tgl = substr($tanggal, 8,2);
 										$month = bulan($bln);
-								?>		    					
+								?>
 									  <tbody>
  										<td width="20%"><?php echo $tgl.' '.$month.' '.$thn; ?></td>
 									    <td width="50%"><a href="<?php echo $base_url_member; ?>/complete-information/<?php echo $row['_id'] ?>" style="text-decoration:none"> <?php echo $row['subject']; ?></td>
-									    <td width="30%"> 
+											<td width="10%"><?php if(array($row['read']=>$id)){ ?><label class="text-danger">New</label><?php } ?></td>
+									    <td width="20%">
 									    				<?php switch ($row['status']) {
 									    						case 'on schedule':
-									    				?> 
+									    				?>
 									    				<span class="label label-primary">
-									    				<?php 	break; 		
+									    				<?php 	break;
 									    						case 'on progress':
-									    				 ?> 
+									    				 ?>
 									    				<span class="label label-warning">
 									    				<?php 	break;
 									    						case 'done':
 									    					?>
-									    				<span class="label label-success">	
-									    					<?php break; 
+									    				<span class="label label-success">
+									    					<?php break;
 									    					} ?>
 
 									    				<?php echo $row['status']; ?></span></td>
 									  </tbody>
-								<?php } } ?>	  
-								</table> 
+								<?php } } ?>
+								</table>
 					</div>
  				</div>
 			</div>
 		</div>
-	</div>	
+	</div>
 </section>
 <?php } else if($level=="1" || $level=="3" || $level=="301" || $level=="302" || $level=="4" || $level=="401") { ?>
 <section>
@@ -65,46 +66,46 @@
 					<br/>
 					<table class="table table-striped table-hover">
 						<thead><tr><th></th></tr></thead>
-											<?php 
+											<?php
 												$res = $col_info->find();
 												foreach($res as $row)
-												  { 
+												  {
 												  	if(!(empty($row['tanggal_maintenance']))){
 									  			$tanggal=$row['tanggal_maintenance'];
 									  			$thn = substr($tanggal, 0,4);
 											    $bln = substr($tanggal, 5,2);
 												$tgl = substr($tanggal, 8,10);
 												$month = bulan($bln);
-					 ?> 
+					 ?>
 						<tbody>
 						    <tr>
 						      <td>
 						      <h4><b><?php echo $row['tempat'].', '.$row['kota']; ?></b></h4>
 						      <h5><?php switch ($row['status']) {
 																case 'on schedule':
-									    				?> 
+									    				?>
 									    				<span class="label label-primary">
-									    				<?php 	break; 		
+									    				<?php 	break;
 									    						case 'on progress':
-									    				 ?> 
+									    				 ?>
 									    				<span class="label label-warning">
 									    				<?php 	break;
 									    						case 'done':
 									    					?>
-									    				<span class="label label-success">	
-									    					<?php break; 
+									    				<span class="label label-success">
+									    					<?php break;
 									    					} ?>
 
 									<?php echo $row['status']; ?></span><a href="<?php echo $base_url_member; ?>/complete-information/<?php echo $row['_id']; ?>" style="text-decoration:none"><b><?php echo ' '.$row['subject']; ?></b></a></h5>
 						      <h5><?php echo 'Tanggal Maintenance : '.$tgl.' '.$month.' '.$thn; ?></h5>
 						      </td>
 						    </tr>
-						    <?php } } ?> 
-						</tbody>   
-					</table>	    
+						    <?php } } ?>
+						</tbody>
+					</table>
  				</div>
 			</div>
 		</div>
-	</div>	
+	</div>
 </section>
 <?php } ?>
