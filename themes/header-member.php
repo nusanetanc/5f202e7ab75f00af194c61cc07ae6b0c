@@ -355,7 +355,7 @@ if($emailaktivasi && $update_user && $kirim_email1 && $push_histori){ ?>
 </div>
 <?php
 $count_info = $col_info->find(array("for"=>$id))->count();
-    if($count_info<>0 || $hal=="information") {
+    if($count_info<>0 || $_GET['hal']<>"information") {
  ?>
 <div class="modal" name="modal-notif" id="modal-notif">
   <div class="modal-dialog">
