@@ -40,6 +40,7 @@ if($level=="501"){
                       $sm=$row['sm'];
 }
                     }
+
   ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -352,6 +353,10 @@ if($emailaktivasi && $update_user && $kirim_email1 && $push_histori){ ?>
     </form>
   </div>
 </div>
+<?php
+$count_info = $col_info->find(array("tempat"=>"All", "for"=>$id))->count();
+    if($count_info<>0) {
+ ?>
 <div class="modal" name="modal-notif" id="modal-notif">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -360,9 +365,9 @@ if($emailaktivasi && $update_user && $kirim_email1 && $push_histori){ ?>
         <h4 class="modal-title">Notification</h4>
       </div>
       <div class="modal-body">
-        <p><a href="#" style="text-decoration:none;">2 Chat Pengaduan Belum Di Baca</a></p>
-        <p><a href="#" style="text-decoration:none;">2 Informasi Belum Di Baca</a></p>
+        <p><a href="#" style="text-decoration:none;"><?php echo $col_info; ?> Informasi Belum Di Baca</a></p>
       </div>
     </div>
   </div>
 </div>
+<?php } ?>
