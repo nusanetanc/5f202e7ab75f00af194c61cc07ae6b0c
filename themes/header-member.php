@@ -353,21 +353,3 @@ if($emailaktivasi && $update_user && $kirim_email1 && $push_histori){ ?>
     </form>
   </div>
 </div>
-<?php
-$count_info = $col_info->find(array("for"=>$id))->count();
-    if($count_info<>0 || $_GET['hal']<>"information") {
- ?>
-<div class="modal" name="modal-notif" id="modal-notif">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-        <h4 class="modal-title">Notification</h4>
-      </div>
-      <div class="modal-body">
-        <p><a href="<?php echo $base_url_member; ?>/information" style="text-decoration:none;" data-dismiss="modal"><?php echo $count_info; ?> Informasi Belum Di Baca</a></p>
-      </div>
-    </div>
-  </div>
-</div>
-<?php } ?>
