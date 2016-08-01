@@ -2,16 +2,6 @@
 <section>
 	<div class="col-sm-12 col-md-12 col-lg-9" style="font-family:Arial;">
 		<div class="row">
-			<div class="col-sm-12 col-md-4 col-lg-4">
-				<a href="<?php echo $base_url_member; ?>/pengaduan" style=" text-decoration:none">
-					<div class="well well-lg" style="background-color:#F1453C;">
-					  <h4 style="color:white;"><b>PENGADUAN</b></h4>
-					  <div class="text-center">
-					  	<b style="color:white; font-size:2em;"><i class="fa fa-flag fa-5x"></i></b>
-					  </div>
-					</div>
-				</a>
-			</div>
 			<div class="col-sm-12 col-md-4 col-lg-4" >
 				<?php if($no_virtual<>"" || $no_virtual<>null){ ?>
 				<a href="<?php echo $base_url_member; ?>/billing"  style=" text-decoration:none">
@@ -39,6 +29,16 @@
 					  <div class="text-center">
 					  	<b style="color:white; font-size:2em;"><i class="fa fa-retweet fa-5x"></i></b>
 					  </div>
+					</div>
+				</a>
+			</div>
+			<div class="col-sm-12 col-md-4 col-lg-4">
+				<a href="<?php echo $base_url_member; ?>/histori" style=" text-decoration:none">
+					<div class="well well-lg" style="background-color:#FDD735;">
+						<h4 style="color:white;"><b>HISTORI</b></h4>
+						<div class="text-center">
+							<b style="color:white; font-size:2em;"><i class="fa fa-history fa-5x"></i></b>
+						</div>
 					</div>
 				</a>
 			</div>
