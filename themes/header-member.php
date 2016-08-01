@@ -89,7 +89,11 @@ if($level=="501"){
                       {
       ?>
       <ul class="nav navbar-nav">
-        <li ><a href="<?php echo $base_url_member; ?>/<?php echo $row['file']; ?>"  style="font-size:14px;padding-top:20px;padding-bottom:19px;font-weight:500; color:gray;"><i style="padding-right:10px;" class="fa fa-<?php echo $row['image']; ?> fa-lg"></i><?php echo $row['title'].' '; ?></a></li>
+        <li ><a href="<?php echo $base_url_member; ?>/<?php echo $row['file']; ?>"  style="font-size:14px;padding-top:20px;padding-bottom:19px;font-weight:500; color:gray;"><i style="padding-right:10px;" class="fa fa-<?php echo $row['image']; ?> fa-lg"></i><?php echo $row['title'].' '; ?>
+          <?php if($row['title'] == "information"){ ?>
+            <span class="badge">3</span>
+          <?php }  ?>
+        </a></li>
       </ul>
       <?php } ?>
       <ul  class="dropdown nav navbar-nav navbar-right navbar-primary desktop-only">
