@@ -85,7 +85,7 @@ if($level=="501"){
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <?php
       $info_noread=0;
-      $res = $col_info->find(array("read"=>$id));
+      $res = $col_info->find(array(array("read"=>$id)));
       foreach($res as $row)
         {
           if($row['tempat']==$tempat || $row['tempat']=="All" || $row['for']==$id) {
