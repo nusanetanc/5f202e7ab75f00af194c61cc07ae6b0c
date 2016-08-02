@@ -84,6 +84,14 @@ if($level=="501"){
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <?php
+      $info_noread=0;
+      $res = $col_info->find(array("read"=>$id));
+      foreach($res as $row)
+        {
+          if($row['tempat']==$tempat || $row['tempat']=="All" || $row['for']==$id) {
+              $info_noread=$info_noread+1;
+          }
+        }
              $res = $col_menu->find(array("hakakses"=>$level));
              foreach($res as $row)
                       {
