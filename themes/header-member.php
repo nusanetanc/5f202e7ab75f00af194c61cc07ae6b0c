@@ -85,6 +85,7 @@ if($level=="501"){
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <?php
       $info_noread=0;
+      $pengaduan_noread=0;
       $res = $col_info->find(array(array("read"=>$id)));
       foreach($res as $row)
         {
@@ -92,6 +93,7 @@ if($level=="501"){
               $info_noread=$info_noread+1;
           }
         }
+
              $res = $col_menu->find(array("hakakses"=>$level));
              foreach($res as $row)
                       {
@@ -101,7 +103,7 @@ if($level=="501"){
           <?php if($row['title'] == "INFORMATION" && $info_noread<>"0"){ ?>
             <span class="badge"><?php echo $info_noread; ?></span>
           <?php } else if ($row['title']=="PENGADUAN"){ ?>
-            <span class="badge">3</span>
+            <span class="badge" style="font-size: 10px;">New</span>
         <?php  } ?>
         </a></li>
       </ul>
