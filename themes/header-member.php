@@ -103,7 +103,7 @@ if($level=="501"){
           <?php if($row['title'] == "INFORMATION" && $info_noread<>"0"){ ?>
             <span class="badge"><?php echo $info_noread; ?></span>
           <?php } else if ($row['title']=="PENGADUAN"){ ?>
-            <span class="badge" style="font-size: 10px;">New</span>
+            <span class="badge" style="font-size: 5px;">New</span>
         <?php  } ?>
         </a></li>
       </ul>
