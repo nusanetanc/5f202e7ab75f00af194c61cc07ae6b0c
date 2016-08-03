@@ -108,131 +108,29 @@ $res1 = $col_package->find(array("nama"=>$package_cust));
  				</div>
 			</div>
 			<div class="panel" style="border:0px;">
-					<div class="panel-heading" style="background-color:#F1453C">
-						<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">PASANG</h3>
-					</div>
-					<div class="panel-body">
-						<br/>
-						<div class="col-sm-12">
-							<table class="table table-striped table-hover ">
-								<?php
-								$status=$_GET['status'];
-									$res = $col_history->find(array("hal"=>"pasang", "id_cust"=>$id_cust))->sort(array("tanggal_kerja"));
-									foreach($res as $row)
-									{
-							?>
-								<tbody>
-									<tr>
-										<td><?php echo $row['tanggal_kerja']; ?></td>
-										<td><?php echo $row['field_engineer'].'-'.$row['ass_field']; ?></td>
-										<td><?php echo $row['status']; ?></td>
-										<td><?php echo $row['tanggal_selesai']; ?></td>
-										<td><?php echo $row['catatan']; ?></td>
-									</tr>
-								 </tbody>
-							<?php
-								}
-							?>
-							</table>
-						</div>
-					</div>
-			</div>
-			<div class="panel" style="border:0px;">
-					<div class="panel-heading" style="background-color:#F1453C">
-						<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">MAINTENANCE</h3>
-					</div>
-					<div class="panel-body">
-						<br/>
-						<div class="col-sm-12">
-							<table class="table table-striped table-hover ">
-								<?php
-								$status=$_GET['status'];
-									$res = $col_history->find(array("hal"=>"maintenance", "id_cust"=>$id_cust))->sort(array("tanggal_kerja"));
-									foreach($res as $row)
-									{
-							?>
-								<tbody>
-									<tr>
-										<td><?php echo $row['tanggal_kerja']; ?></td>
-										<td><?php echo $row['maintenance']; ?></td>
-										<td><?php echo $row['field_engineer'].'-'.$row['ass_field']; ?></td>
-										<td><?php echo $row['status']; ?></td>
-										<td><?php echo $row['tanggal_selesai']; ?></td>
-										<td><?php echo $row['catatan']; ?></td>
-									</tr>
-								 </tbody>
-							<?php
-								}
-							?>
-							</table>
-						</div>
-					</div>
-			</div>
-			<div class="panel" style="border:0px;">
-					<div class="panel-heading" style="background-color:#F1453C">
-						<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">UPDATE PAKET</h3>
-					</div>
-					<div class="panel-body">
-						<br/>
-						<div class="col-sm-12">
-							<table class="table table-striped table-hover ">
-								<thead>
-									<tr>
-										<th width="15%">Tanggal Update</th>
-										<th width="20%">Paket Lama</th>
-										<th width="20%">Paket Baru</th>
-									</tr>
-								</thead>
-								<?php
-								$status=$_GET['status'];
-									$res = $col_history->find(array("hal"=>"update", "id_cust"=>$id_cust))->sort(array("tanggal_update"));
-									foreach($res as $row)
-									{
-							?>
-								<tbody>
-									<tr>
-										<td><?php echo $row['tanggal_update']; ?></td>
-										<td><?php echo $row['paket_lama']; ?></td>
-										<td><?php echo $row['paket_baru']; ?></td>
-									</tr>
-								 </tbody>
-							<?php
-								}
-							?>
-							</table>
-						</div>
-					</div>
-			</div>
-			<div class="panel" style="border:0px;">
-					<div class="panel-heading" style="background-color:#F1453C">
-						<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">AMBIL PERANGKAT</h3>
-					</div>
-					<div class="panel-body">
-						<br/>
-						<div class="col-sm-12">
-							<table class="table table-striped table-hover ">
-								<?php
-								$status=$_GET['status'];
-									$res = $col_history->find(array("hal"=>"bongkar", "id_cust"=>$id_cust))->sort(array("tanggal_kerja"));
-									foreach($res as $row)
-									{
-							?>
-								<tbody>
-									<tr>
-										<td><?php echo $row['tanggal_kerja']; ?></td>
-										<td><?php echo $row['field_engineer'].'-'.$row['ass_field']; ?></td>
-										<td><?php echo $row['status']; ?></td>
-										<td><?php echo $row['tanggal_selesai']; ?></td>
-										<td><?php echo $row['catatan']; ?></td>
-									</tr>
-								 </tbody>
-							<?php
-								}
-							?>
-							</table>
-						</div>
-					</div>
-			</div>
+  				<div class="panel-heading" style="background-color:#FF5722">
+    				<h3 class="panel-title" style="font-weight:600; color:white; margin-top:10px; margin-bottom:10px;">HISTORI</h3>
+  				</div>
+	  					<br/>
+	  				    <div class="panel-body scroll-570">
+									<table class="table table-striped table-hover">
+											<?php
+												$res = $col_user->findOne(array("id_user"=>$id_cust));
+											foreach ($res['histori'] as $histori => $log) {
+												$thn_log = substr($log['tanggal'], 0,4);
+												$bln_log = substr($log['tanggal'], 5,2);
+												$tgl_log = substr($log['tanggal'], 8,10);
+												$month_log = bulan($bln_log);
+											 ?>
+											<tbody class="pic-container down">
+												<td><?php echo $tgl_log.' '.$month_log.' '.$thn_log; ?></td>
+												<td><?php echo $log['hal']; ?></td>
+												<td><?php echo $log['keterangan']; ?></td>
+											</tbody> <?php } ?>
+										</tbody>
+									</table>
+		  				 </div>
+		  	</div>
 		</div>
 	</div>
 </section>
