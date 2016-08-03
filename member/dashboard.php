@@ -437,7 +437,7 @@ $(document).ready(function(){
 			</div>
 			<div class="col-md-4" >
 				<a href="<?php echo $base_url_member; ?>/information"  style=" text-decoration:none">
-					<div class="well well-lg" style="background-color:1F4E79;">
+					<div class="well well-lg" style="background-color:#1F4E79;">
 					  <h4 style="color:white;"><b>INFORMATION</b></h4>
 						<br/>
 					  <div class="text-center">
