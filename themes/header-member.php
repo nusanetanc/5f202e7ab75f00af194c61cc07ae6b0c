@@ -103,7 +103,7 @@ if($level=="501"){
           <?php if($row['title'] == "INFORMATION" && $info_noread<>"0"){ ?>
             <span class="badge"><?php echo $info_noread; ?></span>
           <?php } else if ($row['title']=="PENGADUAN"){ ?>
-            <img src="<?php echo $base_url; ?>/img/comment_new.gif" alt="new chat">
+            <img src="<?php echo $base_url; ?>/img/comment_new.png" alt="new chat">
         <?php  } ?>
         </a></li>
       </ul>
