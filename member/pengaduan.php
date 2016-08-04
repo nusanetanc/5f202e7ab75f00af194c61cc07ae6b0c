@@ -305,7 +305,7 @@ if ($chat<>'' || $_GET['c']<>''){
  										<tr>
 									      <td><?php echo $tgl.' '.$month.' '.$thn; ?></td>
 												<td><a style="text-decoration:none;" href="<?php echo $base_url_member.'/detail-customer/'.$row['id_user']; ?>"><?php echo $row['id_user']; ?></a></td>
-									      <td><a style=" text-decoration:none" href="<?php echo $base_url_member; ?>/chat-pengaduan/<?php echo $row['idchat'] ?>"><?php echo $row['subject']; ?></a><small> Last Update (Member, 12 Agustus 2016)<small></td>
+									      <td><a style=" text-decoration:none" href="<?php echo $base_url_member; ?>/chat-pengaduan/<?php echo $row['idchat'] ?>"><?php echo $row['subject']; ?></a><small> Last Update (Member, 12-08-2016 08:10)<small></td>
 									    </tr>
 									    	  <?php
 									    		} }
