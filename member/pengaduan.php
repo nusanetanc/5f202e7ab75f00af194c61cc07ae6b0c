@@ -285,7 +285,7 @@ if ($chat<>'' || $_GET['c']<>''){
 		    					<table class="table table-striped table-hover ">
 									 <thead>
 									    <tr>
-									      <th width="15%">Date</th>
+									      <th width="15%">Date Open</th>
 												<th width="15">Id Customer</th>
 									      <th width="70%">Subject</th>
 									    </tr>
@@ -325,7 +325,7 @@ if ($chat<>'' || $_GET['c']<>''){
 										<table class="table table-striped table-hover ">
 										 <thead>
 												<tr>
-													<th width="15%">Date</th>
+													<th width="15%">Date Solved</th>
 													<th width="15">Id Customer</th>
 										      <th width="70%">Subject</th>
 												</tr>
@@ -365,7 +365,7 @@ if ($chat<>'' || $_GET['c']<>''){
 											<table class="table table-striped table-hover ">
 											 <thead>
 													<tr>
-														<th width="15%">Date</th>
+														<th width="15%">Date Done</th>
 														<th width="15">Id Customer</th>
 											      <th width="70%">Subject</th>
 													</tr>
@@ -413,7 +413,7 @@ if ($chat<>'' || $_GET['c']<>''){
 		    					<table class="table table-striped table-hover ">
 									 <thead>
 									    <tr>
-									      <th width="15%">Date</th>
+									      <th width="15%">Date Solved</th>
 									      <th width="65%">Subject</th>
 									      <th width="30%">Status</th>
 									    </tr>
