@@ -89,8 +89,6 @@ if ($chat<>'' || $_GET['c']<>''){
 								      						<br/>
 								       						<textarea class="form-control" rows="3" id="message" name="message" placeholder="Message"></textarea>
 								       						<br/>
-															<div class="g-recaptcha" data-sitekey="6Ldx_BsTAAAAAOYrQegHLVhslSvd6z78zAr-4Knc"></div>
-															<br/>
 															<input type="submit" class="btn btn-default background-btn-red" type="submit" name="kirim" id="kirim" value="KIRIM">
 														</div>
 												</div>
@@ -231,7 +229,8 @@ if ($chat<>'' || $_GET['c']<>''){
 											</b></h5>
 											<h6 class="list-group-item-text"><b><?php echo $msg['message']; ?></b></h6>
 											<br/>
-											<h6><p class="list-group-item-text"><?php echo 'Dikirim '.$tgl.' '.$month.' '.$thn.', '.$jam.' WIB'.', Dilihat Oleh : '; ?></p></h6>
+											<h6><p class="list-group-item-text"><?php echo 'Dikirim '.$tgl.' '.$month.' '.$thn.', '.$jam.' WIB'; ?></p>
+													<p class="list-group-item-text"><?php echo 'Dilihat '.$tgl.' '.$month.' '.$thn.', '.$jam.' WIB'; ?></p></h6>
 										</div>
 
 								<?php } else { ?>
@@ -250,7 +249,8 @@ if ($chat<>'' || $_GET['c']<>''){
 											</b></h5>
 											<h6 class="list-group-item-text"><b><?php echo $msg['message']; ?></b></h6>
 											<br/>
-											<h6><p class="list-group-item-text"><?php echo 'Dikirim '.$tgl.' '.$month.' '.$thn.', '.$jam.' WIB'.', Dilihat Oleh : '; ?></p></h6>
+											<h6><p class="list-group-item-text"><?php echo 'Dikirim '.$tgl.' '.$month.' '.$thn.', '.$jam.' WIB'; ?></p>
+													<p class="list-group-item-text"><?php echo 'Dilihat '.$tgl.' '.$month.' '.$thn.', '.$jam.' WIB'; ?></p></h6>
 										</div>
 
 								<?php } ?>
@@ -305,7 +305,7 @@ if ($chat<>'' || $_GET['c']<>''){
  										<tr>
 									      <td><?php echo $tgl.' '.$month.' '.$thn; ?></td>
 												<td><a style="text-decoration:none;" href="<?php echo $base_url_member.'/detail-customer/'.$row['id_user']; ?>"><?php echo $row['id_user']; ?></a></td>
-									      <td><a style=" text-decoration:none" href="<?php echo $base_url_member; ?>/chat-pengaduan/<?php echo $row['idchat'] ?>"><?php echo $row['subject']; ?></a><small> Last Update (Member, 12-08-2016 08:10)<small></td>
+									      <td><a style=" text-decoration:none" href="<?php echo $base_url_member; ?>/chat-pengaduan/<?php echo $row['idchat'] ?>"><?php echo $row['subject']; ?></a><small> Last Update (Member, 12-08-2016, 08:10)<small></td>
 									    </tr>
 									    	  <?php
 									    		} }
@@ -345,7 +345,7 @@ if ($chat<>'' || $_GET['c']<>''){
 											<tr>
 													<td><?php echo $tgl.' '.$month.' '.$thn; ?></td>
 													<td><a style="text-decoration:none;" href="<?php echo $base_url_member.'/detail-customer/'.$row['id_user']; ?>"><?php echo $row['id_user']; ?></a></td>
-													<td><a style=" text-decoration:none" href="<?php echo $base_url_member; ?>/chat-pengaduan/<?php echo $row['idchat'] ?>"><?php echo $row['subject']; ?><a></td>
+													<td><a style=" text-decoration:none" href="<?php echo $base_url_member; ?>/chat-pengaduan/<?php echo $row['idchat'] ?>"><?php echo $row['subject']; ?></a><small> Last Update (Member, 12-08-2016, 08:10)<small></td>
 												</tr>
 														<?php
 														} }
@@ -385,7 +385,7 @@ if ($chat<>'' || $_GET['c']<>''){
 												<tr>
 														<td><?php echo $tgl.' '.$month.' '.$thn; ?></td>
 														<td><a style="text-decoration:none;" href="<?php echo $base_url_member.'/detail-customer/'.$row['id_user']; ?>"><?php echo $row['id_user']; ?></a></td>
-														<td><a style=" text-decoration:none" href="<?php echo $base_url_member; ?>/chat-pengaduan/<?php echo $row['idchat'] ?>"><?php echo $row['subject']; ?><a></td>
+														<td><a style=" text-decoration:none" href="<?php echo $base_url_member; ?>/chat-pengaduan/<?php echo $row['idchat'] ?>"><?php echo $row['subject']; ?></a><small> Last Update (Member, 12-08-2016, 08:10)<small></td>
 													</tr>
 															<?php
 															} }
