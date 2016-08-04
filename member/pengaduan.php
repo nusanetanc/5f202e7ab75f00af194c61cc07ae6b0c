@@ -285,8 +285,9 @@ if ($chat<>'' || $_GET['c']<>''){
 		    					<table class="table table-striped table-hover ">
 									 <thead>
 									    <tr>
-									      <th width="25%">Date</th>
-									      <th width="75%">Subject</th>
+									      <th width="15%">Date</th>
+												<th width="15">Id Customer</th>
+									      <th width="70%">Subject</th>
 									    </tr>
 									  </thead>
 									  <tbody>
@@ -303,6 +304,7 @@ if ($chat<>'' || $_GET['c']<>''){
 											  	?>
  										<tr>
 									      <td><?php echo $tgl.' '.$month.' '.$thn; ?></td>
+												<td><a href="<?php echo $base_url_member.'/detail-customer'.$row['id_user']; ?>"</td>
 									      <td><a style=" text-decoration:none" href="<?php echo $base_url_member; ?>/chat-pengaduan/<?php echo $row['idchat'] ?>"><?php echo $row['subject']; ?><a></td>
 									    </tr>
 									    	  <?php
