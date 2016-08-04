@@ -304,7 +304,7 @@ if ($chat<>'' || $_GET['c']<>''){
 											  	?>
  										<tr>
 									      <td><?php echo $tgl.' '.$month.' '.$thn; ?></td>
-												<td><a href="<?php echo $base_url_member.'/detail-customer'.$row['id_user']; ?>"</td>
+												<td><a style="text-decoration:none;" href="<?php echo $base_url_member.'/detail-customer'.$row['id_user']; ?>"><?php echo $row['id_user']; ?></a></td>
 									      <td><a style=" text-decoration:none" href="<?php echo $base_url_member; ?>/chat-pengaduan/<?php echo $row['idchat'] ?>"><?php echo $row['subject']; ?><a></td>
 									    </tr>
 									    	  <?php
