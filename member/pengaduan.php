@@ -229,8 +229,7 @@ if ($chat<>'' || $_GET['c']<>''){
 											</b></h5>
 											<h6 class="list-group-item-text"><b><?php echo $msg['message']; ?></b></h6>
 											<br/>
-											<h6><p class="list-group-item-text"><?php echo 'Dikirim '.$tgl.' '.$month.' '.$thn.', '.$jam.' WIB'; ?></p>
-													<p class="list-group-item-text"><?php echo 'Dilihat '.$tgl.' '.$month.' '.$thn.', '.$jam.' WIB'; ?></p></h6>
+											<h6><p class="list-group-item-text"><?php echo 'Dikirim '.$tgl.' '.$month.' '.$thn.', '.$jam.' WIB, Dilihat '.$tgl.' '.$month.' '.$thn.', '.$jam.' WIB'; ?></p></h6>
 										</div>
 
 								<?php } else { ?>
@@ -249,8 +248,7 @@ if ($chat<>'' || $_GET['c']<>''){
 											</b></h5>
 											<h6 class="list-group-item-text"><b><?php echo $msg['message']; ?></b></h6>
 											<br/>
-											<h6><p class="list-group-item-text"><?php echo 'Dikirim '.$tgl.' '.$month.' '.$thn.', '.$jam.' WIB'; ?></p>
-													<p class="list-group-item-text"><?php echo 'Dilihat '.$tgl.' '.$month.' '.$thn.', '.$jam.' WIB'; ?></p></h6>
+											<h6><p class="list-group-item-text"><?php echo 'Dikirim '.$tgl.' '.$month.' '.$thn.', '.$jam.' WIB, Dilihat '.$tgl.' '.$month.' '.$thn.', '.$jam.' WIB'; ?></p></h6>
 										</div>
 
 								<?php } ?>
