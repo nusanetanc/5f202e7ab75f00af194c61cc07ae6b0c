@@ -57,7 +57,7 @@ if ($chat<>'' || $_GET['c']<>''){
 											)
 									  );
 							$insert = $col_ticket->insert(array("idchat"=>$result, "id_user"=>$id, "subject"=>$subject, "kategori"=>$kategori, "dateopen"=>$dateopen,
-																 "status"=>"open", "message"=>(array($msg))));
+																 "status"=>"open","last_time"=>$date, "last_chat"=>"member", "message"=>(array($msg))));
 							if ($insert) { ?>
 											<script type="" language="JavaScript">
 											document.location='./pengaduan'</script>
