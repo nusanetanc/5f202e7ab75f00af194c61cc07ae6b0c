@@ -137,6 +137,9 @@ if ($chat<>'' || $_GET['c']<>''){
 			$insert = $col_ticket->update(
 											array("idchat"=>$idchat),
 								   			array('$push'=>array("message"=>$msg)));
+			$insert1 = $col_ticket->update(
+												array("idchat"=>$idchat),
+												array('$set'=>array("last_time"=>$date, "last_chat"=>"member")));
 			if ($insert){
 					  		?>
 							<script type="" language="JavaScript">
